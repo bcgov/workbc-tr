@@ -1,0 +1,29 @@
+// Bootstrap variables
+
+// override default bootstrap colors for accessibility
+$white: #fff !default;
+$black: #000 !default;
+$gray-700: #495057 !default;
+
+$blue: #0056b3 !default;
+$cyan: #006170 !default;
+$pink: #e21181 !default;
+$green: #008a00 !default;
+
+$breadcrumb-divider-color: $gray-700 !default;
+$breadcrumb-active-color: $gray-700 !default;
+
+$navbar-light-color: rgba($black, .6) !default;
+$navbar-dark-color: rgba($white, .6) !default;
+
+$form-text-margin-top: 0 !default;
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           20px !default;
+
+$container-max-widths: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1196px
+) !default;

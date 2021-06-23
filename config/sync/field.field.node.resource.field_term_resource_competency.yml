@@ -1,0 +1,29 @@
+uuid: 9dc6a11c-2cd4-4fda-bfd3-04f8caa94808
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_term_resource_competency
+    - node.type.resource
+    - taxonomy.vocabulary.curricular_competencies
+id: node.resource.field_term_resource_competency
+field_name: field_term_resource_competency
+entity_type: node
+bundle: resource
+label: 'Curricular Competencies'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      curricular_competencies: curricular_competencies
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

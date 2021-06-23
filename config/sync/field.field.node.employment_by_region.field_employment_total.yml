@@ -1,0 +1,23 @@
+uuid: 2c320219-5e53-404c-974e-3cd0341b1ae4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_employment_total
+    - node.type.employment_by_region
+id: node.employment_by_region.field_employment_total
+field_name: field_employment_total
+entity_type: node
+bundle: employment_by_region
+label: 'Total Employment'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

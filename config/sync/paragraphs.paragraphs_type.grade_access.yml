@@ -1,0 +1,10 @@
+uuid: 60a2b86e-0f08-4272-a4d4-b08f1927fefb
+langcode: en
+status: true
+dependencies: {  }
+id: grade_access
+label: 'Grade Access'
+icon_uuid: null
+icon_default: null
+description: 'Grade access block on Home page'
+behavior_plugins: {  }

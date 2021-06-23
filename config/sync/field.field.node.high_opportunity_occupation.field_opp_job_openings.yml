@@ -1,0 +1,23 @@
+uuid: 5a0081ff-cf21-4b33-a134-208136f25be0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_opp_job_openings
+    - node.type.high_opportunity_occupation
+id: node.high_opportunity_occupation.field_opp_job_openings
+field_name: field_opp_job_openings
+entity_type: node
+bundle: high_opportunity_occupation
+label: 'Job openings'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

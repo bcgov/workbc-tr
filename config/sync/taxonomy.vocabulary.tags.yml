@@ -1,0 +1,10 @@
+uuid: 0752b079-ec3e-40fa-84c6-87b7aa969f3a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yoNVreoTdTZTY7GuE8fI9Jmxqdz8vlo4ZJKixMNSosw
+name: Tags
+vid: tags
+description: 'Generic tags - default Vocabulary provided by Drupal.'
+weight: 0

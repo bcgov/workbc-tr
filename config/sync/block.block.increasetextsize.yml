@@ -1,0 +1,25 @@
+uuid: bc79159a-321c-4eb5-a4bd-e6bf254b6d37
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:335b7fa0-66f0-4a7a-ae69-20178033eb7e'
+  module:
+    - block_content
+  theme:
+    - bootstrap_teachers
+id: increasetextsize
+theme: bootstrap_teachers
+region: footer
+weight: -6
+provider: null
+plugin: 'block_content:335b7fa0-66f0-4a7a-ae69-20178033eb7e'
+settings:
+  id: 'block_content:335b7fa0-66f0-4a7a-ae69-20178033eb7e'
+  label: 'Increase Text Size'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

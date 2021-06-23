@@ -1,0 +1,28 @@
+uuid: 5614fe57-3867-4bf3-9e32-5ee4b1d2de6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.high_opportunity_occupation.field_opp_job_openings
+    - field.field.node.high_opportunity_occupation.field_opp_occupation
+    - field.field.node.high_opportunity_occupation.field_opp_salary
+    - field.field.node.high_opportunity_occupation.field_term_opp_region
+    - node.type.high_opportunity_occupation
+  module:
+    - user
+id: node.high_opportunity_occupation.teaser
+targetEntityType: node
+bundle: high_opportunity_occupation
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_opp_job_openings: true
+  field_opp_occupation: true
+  field_opp_salary: true
+  field_term_opp_region: true

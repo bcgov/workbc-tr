@@ -1,0 +1,160 @@
+footer {
+  padding: 0;
+}
+
+.footer {
+  padding: 60px 0;
+  background: $teachers-secondary-blue;
+
+  .region-footer {
+    padding: 0;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-item {
+    .nav-link {
+      margin-left: 0.5rem;
+      padding: 0;
+
+      &:before {
+        content: " ";
+        display: inline-block;
+        height: 0.8rem;
+        width: 1px;
+        margin-right: 0.5rem;
+        background: $white;
+      }
+
+      &:link,
+      &:visited {
+        color: $white;
+        text-decoration: none;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+    &:first-child {
+      .nav-link {
+        margin-left: 0;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+#block-bootstrap-teachers-footer {
+  margin-bottom: 1.375rem;
+}
+
+.social-icons {
+  a {
+    display: inline-block;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 21px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:link,
+    &:visited {
+      background: $white;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $teachers-bg-light-grey;
+    }
+
+    &.social-twitter { color: #009cd8; }
+    &.social-youtube { color: #d21c22; }
+    &.social-linkedin { color: #006caa; }
+    &.social-facebook { color: #3d5b98; }
+  }
+
+  span {
+    text-indent: -9999px;
+    overflow: hidden;
+    display: inline-block;
+  }
+}
+
+#block-increasetextsize {
+  p {
+    color: $white;
+    margin-bottom: 0;
+  }
+
+  a {
+    display: inline-block;
+    margin-left: 25px;
+    font-weight: bold;
+
+    &:link,
+    &:visited {
+      color: $white;
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white;
+      text-decoration: underline;
+    }
+
+    &.size-normal {
+      font-size: 1rem;
+    }
+    &.size-big {
+      font-size: 1.3rem;
+    }
+    &.size-bigger {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.region-under-footer {
+  display: flex;
+  padding: 30px 0;
+  align-items: center;
+  justify-content: space-between;
+
+  #block-copyright {
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  #block-footerbclogo {
+    p {
+      margin: 0;
+      padding: 0;
+    }
+    img {
+      display: block;
+      width: 175px;
+      height: auto;
+    }
+  }
+}

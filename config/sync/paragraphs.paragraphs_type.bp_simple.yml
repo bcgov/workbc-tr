@@ -1,0 +1,12 @@
+uuid: de7a0dbf-04fc-4a33-aec5-1b5de3476af2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: U5OgkeyHhY-ghqwBwG0_dh8HuRGDq0ZbPIJx6UHU9FA
+id: bp_simple
+label: Simple
+icon_uuid: null
+icon_default: null
+description: null
+behavior_plugins: {  }

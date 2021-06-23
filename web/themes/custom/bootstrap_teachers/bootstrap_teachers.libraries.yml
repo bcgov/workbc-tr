@@ -1,0 +1,14 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+
+global-scripts:
+  js:
+    js/script.js: {}
+
+fontawesome_5:
+  version: 5.1.0
+  css:
+    component:
+      //use.fontawesome.com/releases/v5.1.0/css/all.css: {}

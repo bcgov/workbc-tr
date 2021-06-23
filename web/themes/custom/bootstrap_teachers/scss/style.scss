@@ -1,0 +1,17 @@
+// Sub theme styling.
+@import 'variables_theme';
+
+// Bootstrap overriden variables.
+// @see https://getbootstrap.com/docs/4.6/getting-started/theming/#variable-defaults.
+@import 'variables_bootstrap';
+
+// Include custom variables.
+@import 'custom/variables';
+
+// Include bootstrap.
+@import '../../../../themes/contrib/bootstrap4/scss/style';
+
+// Include custom sub theme.
+@import 'layout/header';
+@import 'layout/footer';
+@import 'navigation/navbar';

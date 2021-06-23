@@ -1,0 +1,24 @@
+uuid: f9893487-e313-4fb5-86fa-22216c4ed112
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.employment_by_region.field_employment_total
+    - field.field.node.employment_by_region.field_term_employment_region
+    - node.type.employment_by_region
+  module:
+    - user
+id: node.employment_by_region.teaser
+targetEntityType: node
+bundle: employment_by_region
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_employment_total: true
+  field_term_employment_region: true

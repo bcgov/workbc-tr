@@ -1,0 +1,26 @@
+uuid: 34e79d6b-08f9-47a3-bd34-3badfde63b62
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+    - system
+  theme:
+    - bootstrap_teachers
+id: searchform
+theme: bootstrap_teachers
+region: nav_branding
+weight: -6
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+  page_id: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/6
+    negate: true
