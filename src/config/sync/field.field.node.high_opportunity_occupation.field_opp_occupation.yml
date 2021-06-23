@@ -1,0 +1,19 @@
+uuid: a6be1549-9ee0-4ebb-89e3-c66fcf838cf1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_opp_occupation
+    - node.type.high_opportunity_occupation
+id: node.high_opportunity_occupation.field_opp_occupation
+field_name: field_opp_occupation
+entity_type: node
+bundle: high_opportunity_occupation
+label: Occupation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

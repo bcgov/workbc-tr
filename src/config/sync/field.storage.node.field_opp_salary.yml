@@ -1,0 +1,20 @@
+uuid: fafc1907-f51e-4e2d-aba2-b53275063331
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_opp_salary
+field_name: field_opp_salary
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

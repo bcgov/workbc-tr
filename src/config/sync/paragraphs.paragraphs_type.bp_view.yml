@@ -1,0 +1,12 @@
+uuid: 642dfbf9-e575-4fb7-8fa5-ba8726fe7824
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: gIOTjGVpbMvQbnxkIJLxPr1PJANXDzxV23vhP_aXWfM
+id: bp_view
+label: View
+icon_uuid: null
+icon_default: null
+description: null
+behavior_plugins: {  }

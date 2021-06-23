@@ -1,0 +1,22 @@
+uuid: 8b46501a-b71f-4097-b005-cae1b9310a64
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bootstrap_teachers
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: bootstrap_teachers_local_tasks
+theme: bootstrap_teachers
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

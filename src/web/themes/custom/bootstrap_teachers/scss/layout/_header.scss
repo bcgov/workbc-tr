@@ -1,0 +1,127 @@
+.region-header {
+  > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 145px;
+  }
+
+  .navbar-brand {
+    margin-right: 0;
+
+    img {
+      width: auto;
+      height: 48px;
+    }
+
+    .site-title {
+      display: block;
+      padding-top: 4px;
+      text-transform: inherit;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 50px;
+      line-height: 50px;
+      letter-spacing: normal;
+
+      @media (max-width: 576px) {
+        font-size: 18px;
+        line-height: 18px;
+      }
+      @media (max-width: 768px) {
+        font-size: 25px;
+        line-height: 25px;
+      }
+      @media (max-width: 992px) {
+        font-size: 30px;
+        line-height: 30px;
+      }
+      @media (max-width: 1196px) {
+        font-size: 45px;
+        line-height: 45px;
+      }
+    }
+
+    a.site-title {
+      color: $teachers-secondary-blue;
+    }
+  }
+
+  .block-system-branding-block {
+    text-align: center;
+    flex-grow: 2;
+  }
+
+  .site-logo {
+    float: left;
+  }
+}
+
+.block-search {
+  order: 2;
+  width: 300px;
+  height: 35px;
+  margin-top: 5px;
+  border: 2px solid $teachers-secondary-blue;
+  border-radius: 15px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    .region-header & {
+      display: none;
+    }
+  }
+
+  .contextual {
+    display: none;
+  }
+
+  form {
+    display: flex;
+  }
+
+  h2 {
+    display: none;
+  }
+
+  .navbar & form .form-actions {
+    margin: 0;
+  }
+
+  .form-search {
+    width: 245px;
+    height: 31px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+    background: none;
+    border-radius: 0;
+
+    .region-nav-branding & {
+      background: $white;
+    }
+
+    &::placeholder {
+      color: #999;
+      font-size: 0.85em;
+    }
+  }
+
+  .form-submit {
+    width: 51px;
+    height: 31px;
+    padding: 0;
+    line-height: 31px;
+    background: $teachers-bg-light-grey;
+    border: none;
+    border-radius: 0;
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    font-size: 20px;
+    color: $teachers-secondary-blue;
+
+    &:hover {
+      background: #c5c5c5;
+    }
+  }
+}

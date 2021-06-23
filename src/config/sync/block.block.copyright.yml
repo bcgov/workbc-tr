@@ -1,0 +1,25 @@
+uuid: 60e972b7-dd62-4fef-bb8d-29f8f4067e7d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:da09c073-863b-49a8-b23e-5096b94df0fe'
+  module:
+    - block_content
+  theme:
+    - bootstrap_teachers
+id: copyright
+theme: bootstrap_teachers
+region: under_footer
+weight: -8
+provider: null
+plugin: 'block_content:da09c073-863b-49a8-b23e-5096b94df0fe'
+settings:
+  id: 'block_content:da09c073-863b-49a8-b23e-5096b94df0fe'
+  label: Copyright
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

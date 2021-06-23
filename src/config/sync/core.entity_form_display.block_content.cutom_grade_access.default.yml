@@ -1,0 +1,52 @@
+uuid: da558610-d250-443e-af3a-13d057991ccf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cutom_grade_access
+    - field.field.block_content.cutom_grade_access.body
+    - field.field.block_content.cutom_grade_access.field_grade_access_resource_link
+    - field.field.block_content.cutom_grade_access.field_grade_access_title
+  module:
+    - link
+    - text
+id: block_content.cutom_grade_access.default
+targetEntityType: block_content
+bundle: cutom_grade_access
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_grade_access_resource_link:
+    weight: 28
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_grade_access_title:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

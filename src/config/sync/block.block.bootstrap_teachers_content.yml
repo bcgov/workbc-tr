@@ -1,0 +1,22 @@
+uuid: d1b522f5-13d1-4b24-be1c-2f1ea7186035
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bootstrap_teachers
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: bootstrap_teachers_content
+theme: bootstrap_teachers
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

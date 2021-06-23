@@ -1,0 +1,42 @@
+uuid: 1eb6b53f-0f12-4cb6-968f-c275fc81935a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_simple.field_para_simple_body
+    - field.field.paragraph.paragraph_simple.field_para_simple_title
+    - paragraphs.paragraphs_type.paragraph_simple
+  module:
+    - text
+id: paragraph.paragraph_simple.default
+targetEntityType: paragraph
+bundle: paragraph_simple
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_para_simple_body:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_para_simple_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

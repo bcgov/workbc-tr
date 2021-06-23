@@ -1,0 +1,59 @@
+.navbar {
+  min-height: 55px;
+  padding-top: 0;
+  padding-bottom: 0;
+  background: $teachers-primary-blue;
+  align-items: stretch;
+
+  > .container {
+    height: 100%;
+    min-height: 55px;
+    align-items: stretch;
+    align-content: center;
+
+    > .navbar-toggler {
+      border: none;
+    }
+  }
+
+  .region-nav-main {
+    height: 100%;
+  }
+
+  .menu--main {
+    height: 100%;
+
+    .nav {
+      height: 100%;
+    }
+
+    .nav-item {
+      display: table;
+    }
+
+    .nav-link {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    a {
+      &:link,
+      &:visited {
+        color: $white;
+        text-decoration: none;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $white;
+        text-decoration: underline;
+      }
+
+      &.active,
+      &.is-active {
+        background-color: $teachers-secondary-blue;
+      }
+    }
+  }
+}
