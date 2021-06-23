@@ -1,8 +1,0 @@
-uuid: 95e55fa1-d77a-4d7e-bae3-b7639d82d3c7
-langcode: en
-status: true
-dependencies: {  }
-name: 'Search data library'
-vid: search_data_library
-description: ''
-weight: 0

@@ -1,8 +1,0 @@
-uuid: 8d4ab055-76ab-42f2-9ea7-62561a8b3596
-langcode: en
-status: true
-dependencies: {  }
-name: 'Education Type'
-vid: education_type
-description: ''
-weight: 0
