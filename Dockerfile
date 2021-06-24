@@ -1,4 +1,5 @@
 FROM wdst-ocp-drupal-base:1.0
-USER 1001
+#USER 1001
 COPY src /code
-#RUN cd /code && rm -rf .git && composer install
+RUN chown -R 1001:0 /code && chmod -R g+rwX /code
+RUN cd /code && rm -rf .git && composer install
