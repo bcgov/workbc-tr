@@ -717,7 +717,8 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 
 $settings['trusted_host_patterns'] = [
   '^erebus.wbu-dev.com$',
-  '^teachers.ddev.site$'
+  '^teachers.ddev.site$',
+  '^teacher-resources-bdaa18-dev.apps.silver.devops.gov.bc.ca$'
 ];
 
 /**
