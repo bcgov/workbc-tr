@@ -16,7 +16,6 @@
     ],
     "require": {
         "composer/installers": "^1.9",
-        "drupal/admin_toolbar": "^3.0",
         "drupal/adminimal_admin_toolbar": "^1.11",
         "drupal/bootstrap_layout_builder": "^2.0",
         "drupal/bootstrap4": "^2.1",
