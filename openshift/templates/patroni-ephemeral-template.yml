@@ -1,0 +1,208 @@
+---
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  name: patroni-ephemeral-template
+objects:
+  - apiVersion: v1
+    kind: ServiceAccount
+    metadata:
+      labels:
+        app: ${APP_NAME}
+        cluster-name: ${CLUSTER_NAME}
+      name: ${SERVICE_ACCOUNT_NAME}
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: Role
+    metadata:
+      labels:
+        app: ${APP_NAME}
+        cluster-name: ${CLUSTER_NAME}
+      name: ${ROLE_NAME}
+    rules:
+    - apiGroups:
+      - ""
+      resources:
+      - configmaps
+      verbs:
+      - create
+      - get
+      - list
+      - patch
+      - update
+      - watch
+      - delete
+      - deletecollection
+    - apiGroups:
+      - ""
+      resources:
+      - endpoints
+      verbs:
+      - get
+      - patch
+      - update
+      - create
+      - list
+      - watch
+      - delete
+      - deletecollection
+    - apiGroups:
+      - ""
+      resources:
+      - pods
+      verbs:
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    - apiGroups:
+      - ""
+      resources:
+      - services
+      verbs:
+      - create
+      - get
+      - list
+      - patch
+      - update
+      - watch
+      - delete
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    metadata:
+      labels:
+        app: ${APP_NAME}
+        cluster-name: ${CLUSTER_NAME}
+      name: ${BIND_NAME}
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: Role
+      name: ${ROLE_NAME}
+    subjects:
+    - kind: ServiceAccount
+      name: ${SERVICE_ACCOUNT_NAME}
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: ${SERVICE_NAME}
+      labels:
+        app: ${APP_NAME}
+        cluster-name: ${CLUSTER_NAME}
+    spec:
+      clusterIP: None
+      selector:
+        app: ${APP_NAME}
+        cluster-name: ${CLUSTER_NAME}
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: ${SERVICE_NAME_MASTER}
+      labels:
+        app: ${APP_NAME}
+        cluster-name:  ${CLUSTER_NAME}
+    spec:
+      type: ClusterIP
+      selector:
+        app: ${APP_NAME}
+        cluster-name: ${CLUSTER_NAME}
+        role: master
+      ports:
+      - port: 5432
+        targetPort: 5432
+  - apiVersion: apps/v1
+    kind: StatefulSet
+    metadata:
+      name: ${SET_NAME}
+      labels:
+        app: ${APP_NAME}
+        cluster-name: ${CLUSTER_NAME}
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: ${APP_NAME}
+          cluster-name: ${CLUSTER_NAME}
+      serviceName: ${SERVICE_NAME}
+      template:
+        metadata:
+          labels:
+            app: ${APP_NAME}
+            cluster-name: ${CLUSTER_NAME}
+        spec:
+          serviceAccountName: ${SERVICE_ACCOUNT_NAME}
+          containers:
+          - name: ${CLUSTER_NAME}
+            image: '${IMAGE_NAME}'
+            imagePullPolicy: IfNotPresent
+            ports:
+            - containerPort: 8008
+              protocol: TCP
+            - containerPort: 5432
+              protocol: TCP
+            volumeMounts:
+            - mountPath: /home/postgres/pgdata
+              name: pgdata
+            env:
+            - name: PATRONI_KUBERNETES_POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: PATRONI_KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: PATRONI_KUBERNETES_LABELS
+              value: '{app: ${APP_NAME}, cluster-name: ${CLUSTER_NAME}}'
+            - name: PATRONI_SUPERUSER_USERNAME
+              value: postgres
+            - name: PATRONI_SUPERUSER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ${SECRET_NAME}
+                  key: superuser-password
+            - name: PATRONI_REPLICATION_USERNAME
+              value: standby
+            - name: PATRONI_REPLICATION_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ${SECRET_NAME}
+                  key: replication-password
+            - name: PATRONI_SCOPE
+              value: ${CLUSTER_NAME}
+            - name: PATRONI_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: PATRONI_POSTGRESQL_DATA_DIR
+              value: /home/postgres/pgdata/pgroot/data
+            - name: PATRONI_POSTGRESQL_PGPASS
+              value: /tmp/pgpass
+            - name: PATRONI_POSTGRESQL_LISTEN
+              value: '0.0.0.0:5432'
+            - name: PATRONI_RESTAPI_LISTEN
+              value: '0.0.0.0:8008'
+          terminationGracePeriodSeconds: 0
+          volumes:
+          - name: pgdata
+            emptyDir: {}
+parameters:
+  - name: APP_NAME
+    value: workbc-tr-backend
+  - name: CLUSTER_NAME
+    value: workbc-tr-cluster
+  - name: SERVICE_ACCOUNT_NAME
+    value: workbc-tr-sa
+  - name: ROLE_NAME
+    value: workbc-tr-role
+  - name: BIND_NAME
+    value: workbc-tr-bind
+  - name: SERVICE_NAME
+    value: workbc-tr-backend-service
+  - name: SERVICE_NAME_MASTER
+    value: workbc-tr-service-master
+  - name: SET_NAME
+    value: workbc-tr-statefulset
+  - name: SECRET_NAME
+    value: workbc-tr-sec
+  - name: IMAGE_NAME
+    value: image-registry.openshift-image-registry.svc:5000/bdaa18-tools/wdst-ocp-patroni:1.1
