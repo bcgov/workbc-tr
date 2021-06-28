@@ -1,0 +1,162 @@
+---
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  name: drupal-nginx-template
+objects:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: ${PVC_NAME}
+      labels:
+        app: ${APP_NAME}
+    spec:
+      accessModes:
+      - ReadWriteMany
+      resources:
+        requests:
+          storage: 5Gi
+      storageClassName: netapp-file-standard
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: ${SERVICE_NAME}
+      labels:
+        app: ${APP_NAME}
+    spec:
+      ports:
+      - name: ${PORT_NAME}
+        port: 80
+        protocol: TCP
+        targetPort: 8080
+      selector:
+        name: ${POD_NAME}
+        app: ${APP_NAME}
+      sessionAffinity: ClientIP
+  - apiVersion: route.openshift.io/v1
+    kind: Route
+    metadata:
+      name: ${ROUTE_NAME}
+      labels:
+        app: ${APP_NAME}
+    spec:
+      to:
+        kind: Service
+        name: ${SERVICE_NAME}
+        weight: 100
+      port:
+        targetPort: ${PORT_NAME}
+      wildcardPolicy: None
+  - apiVersion: v1
+    kind: DeploymentConfig
+    metadata:
+      name: ${DC_NAME}
+      labels:
+        app: ${APP_NAME}
+    spec:
+      triggers:
+        - type: ConfigChange
+        - type: ImageChange
+          imageChangeParams:
+            automatic: true
+            containerNames:
+              - php-fpm
+            from:
+              kind: ImageStreamTag
+              namespace: ${IMAGE_NAMESPACE}
+              name: '${IMAGE_NAME1}'
+      replicas: 1
+      selector:
+        app: ${APP_NAME}
+        name: ${POD_NAME}
+      template:
+        metadata:
+          labels:
+            app: ${APP_NAME}
+            name: ${POD_NAME}
+        spec:
+          volumes:
+            - name: app-codes
+              emptyDir: {}
+            - name: app-files
+              persistentVolumeClaim:
+                claimName: ${PVC_NAME}
+          containers:
+          - name: php-fpm
+            image: '${IMAGE_REPO}/${IMAGE_NAMESPACE}/${IMAGE_NAME1}'
+            env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  key: regular-user
+                  name: ${SECRET_NAME}
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: regular-password
+                  name: ${SECRET_NAME}
+            - name: POSTGRES_HOST
+              value: ${BACKEND_SERVICE_NAME}
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_DB
+              value: ${DB_NAME}
+            volumeMounts:
+              - name: app-codes
+                mountPath: /app
+              - name: app-files
+                mountPath: /contents
+            lifecycle:
+              postStart:
+                exec:
+                  command:
+                    - "/bin/sh"
+                    - "-c"
+                    - > 
+                      cp -rf /code/. /app;
+                      mkdir -p /contents/public;
+                      mkdir -p /contents/private;
+                      ln -s /contents/public /app/web/sites/default/files;
+                      ln -s /contents/private /app/private;
+                      composer update;
+                      drush cr;
+                      drush cim -y;
+          - name: nginx
+            image: '${IMAGE_REPO}/${IMAGE_NAMESPACE}/${IMAGE_NAME2}'
+            ports:
+              - name: ${PORT_NAME}
+                containerPort: 8080
+            volumeMounts:
+              - name: app-codes
+                mountPath: /app
+              - name: app-files
+                mountPath: /contents
+parameters:
+  - name: APP_NAME
+    value: workbc-tr-frontend
+  - name: PVC_NAME
+    value: workbc-tr-pvc
+  - name: ROUTE_NAME
+    value: teacher-resources
+  - name: SERVICE_NAME
+    value: workbc-tr-frontend-service
+  - name: PORT_NAME
+    value: http
+  - name: DC_NAME
+    value: workbc-tr-dc
+  - name: POD_NAME
+    value: workbc-tr-frontend-pod
+  - name: SECRET_NAME
+    value: workbc-tr-sec
+  - name: BACKEND_SERVICE_NAME
+    value: workbc-tr-service-master
+  - name: DB_NAME
+    value: workbc_tr_drupal
+  - name: IMAGE_REPO
+    value: image-registry.openshift-image-registry.svc:5000
+  - name: IMAGE_NAMESPACE
+    value: bdaa18-tools
+  - name: IMAGE_NAME1
+    value: wdst-ocp-drupal-tr:latest
+  - name: IMAGE_NAME2
+    value: wdst-ocp-nginx:1.0
