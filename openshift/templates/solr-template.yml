@@ -1,0 +1,79 @@
+---
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  name: solr-template
+objects:
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: ${SERVICE_NAME}
+      labels:
+        app: ${APP_NAME}
+    spec:
+      ports:
+      - name: ${PORT_NAME}
+        port: 8983
+        protocol: TCP
+        targetPort: 8983
+      selector:
+        name: ${POD_NAME}
+        app: ${APP_NAME}
+  - apiVersion: route.openshift.io/v1
+    kind: Route
+    metadata:
+      name: ${ROUTE_NAME}
+      labels:
+        app: ${APP_NAME}
+    spec:
+      to:
+        kind: Service
+        name: ${SERVICE_NAME}
+        weight: 100
+      port:
+        targetPort: ${PORT_NAME}
+      wildcardPolicy: None
+  - apiVersion: v1
+    kind: DeploymentConfig
+    metadata:
+      name: ${DC_NAME}
+      labels:
+        app: ${APP_NAME}
+    spec:
+      replicas: 1
+      selector:
+        app: ${APP_NAME}
+        name: ${POD_NAME}
+      template:
+        metadata:
+          labels:
+            app: ${APP_NAME}
+            name: ${POD_NAME}
+        spec:
+          volumes:
+            - name: data
+              emptyDir: {}
+          containers:
+          - name: solr
+            image: '${IMAGE_NAME}'
+            ports:
+              - name: ${PORT_NAME}
+                containerPort: 8983
+            volumeMounts:
+              - name: data
+                mountPath: /var/solr/data
+parameters:
+  - name: APP_NAME
+    value: workbc-tr-solr
+  - name: ROUTE_NAME
+    value: teacher-resources-solr
+  - name: SERVICE_NAME
+    value: workbc-tr-solr-service
+  - name: PORT_NAME
+    value: tcp-8983
+  - name: DC_NAME
+    value: workbc-tr-solr-dc
+  - name: POD_NAME
+    value: workbc-tr-solr-pod
+  - name: IMAGE_NAME
+    value: image-registry.openshift-image-registry.svc:5000/bdaa18-tools/wdst-ocp-solr:1.0
