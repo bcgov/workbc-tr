@@ -8,6 +8,11 @@ spec:
       kind: ImageStreamTag
       namespace: bdaa18-tools
       name: 'wdst-ocp-drupal-tr:latest'
+  resources:
+    limits:
+      memory: 4Gi
+    requests:
+      memory: 1Gi
   strategy:
     type: Docker
     dockerStrategy:

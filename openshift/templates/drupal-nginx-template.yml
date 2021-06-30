@@ -84,6 +84,11 @@ objects:
           containers:
           - name: php-fpm
             image: '${IMAGE_REPO}/${IMAGE_NAMESPACE}/${IMAGE_NAME1}'
+            resources:
+              limits:
+                memory: 2Gi
+              requests:
+                memory: 512Mi
             env:
             - name: POSTGRES_USER
               valueFrom:
@@ -118,7 +123,6 @@ objects:
                       mkdir -p /contents/private;
                       ln -s /contents/public /app/web/sites/default/files;
                       ln -s /contents/private /app/private;
-                      composer update;
                       drush cr;
                       drush cim -y;
           - name: nginx
