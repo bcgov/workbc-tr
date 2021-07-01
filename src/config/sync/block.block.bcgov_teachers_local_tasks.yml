@@ -1,0 +1,22 @@
+uuid: fae9104a-2ffe-497e-8a0b-e0e50007c8b4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bcgov_teachers
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: bcgov_teachers_local_tasks
+theme: bcgov_teachers
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

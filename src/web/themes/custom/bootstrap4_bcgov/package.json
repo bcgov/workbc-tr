@@ -1,0 +1,36 @@
+{
+  "name": "bootstrap4_bcgov",
+  "version": "1.0.0",
+  "description": "Drupal 8 theme - subtheme of bootstrap4",
+  "main": "index.js",
+  "scripts": {
+    "static:start": "http-server . -a localhost -p 8088",
+    "lint:sass": "sass-lint -c .sass-lint.yml --verbose",
+    "build:sass": "sass scss/style.scss css/style.css",
+    "build:sass:4.4": "sass scss/style-4-4.scss css/style-4-4.css",
+    "build:js": "cross-env BABEL_ENV=legacy node ./bin/babel/babel-es6-build.js",
+    "lint:js": "eslint --no-eslintrc -c=./.eslintrc.json js/**.es6.js"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "http-server": "^0.12.3",
+    "prettier": "^1.14.0",
+    "sass-lint": "^1.13.1",
+    "babel-core": "^6.26.0",
+    "babel-plugin-add-header-comment": "^1.0.3",
+    "babel-preset-env": "^1.4.0",
+    "cross-env": "^5.1.3",
+    "glob": "^7.1.2",
+    "minimist": "^1.2.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.10.0"
+  },
+  "dependencies": {
+    "sass": "^1.29.0"
+  }
+}

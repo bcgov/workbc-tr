@@ -1,0 +1,14 @@
+uuid: d4da8be4-4581-43f4-b924-d1c242da3f9b
+name: 'Teachers'' Resources'
+mail: admin@example.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/15
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

@@ -1,0 +1,8 @@
+{
+  "name": "cgiweb/bootstrap4_bcgov",
+  "description": "Drupal 8 subtheme of drupal.org/project/bootstrap4",
+  "type": "drupal-custom-theme",
+  "require": {
+    "drupal/bootstrap4": "^2.1"
+  }
+}

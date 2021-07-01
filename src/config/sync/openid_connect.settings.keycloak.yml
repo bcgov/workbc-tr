@@ -1,0 +1,18 @@
+enabled: true
+settings:
+  redirect_url: ''
+  client_id: work-bc-teacher-resources
+  client_secret: ee9dffc8-39ef-42cb-b984-5310d847a5f1
+  keycloak_base: 'https://dev.oidc.gov.bc.ca/auth'
+  keycloak_realm: onestopauth
+  userinfo_update_email: false
+  keycloak_sso: false
+  keycloak_sign_out: false
+  check_session:
+    interval: 2
+    enabled: false
+  keycloak_i18n:
+    enabled: false
+    mapping: {  }
+_core:
+  default_config_hash: JqBwqp7jx6-SBqochcl766zgqu1w7vfs5DivdAmqCXQ

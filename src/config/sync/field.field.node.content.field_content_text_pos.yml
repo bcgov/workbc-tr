@@ -1,0 +1,23 @@
+uuid: 4737bf2d-472e-4897-a048-1e563fde5254
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_text_pos
+    - node.type.content
+id: node.content.field_content_text_pos
+field_name: field_content_text_pos
+entity_type: node
+bundle: content
+label: 'Text Position'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Left
+  off_label: Right
+field_type: boolean

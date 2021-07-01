@@ -1,0 +1,185 @@
+header {
+  .region-header {
+    background: $white;
+    border-bottom: none;
+    height: auto;
+
+    > .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 145px;
+      transition: height 0.4s;
+
+      @media (max-width: 400px) {
+        height: auto;
+      }
+
+      @media (min-width: 401px) and (max-width: 768px) {
+        height: 65px;
+      }
+    }
+
+    .navbar-brand {
+      padding: 20px 0;
+      margin-right: 0;
+      background: none;
+
+      @media (max-width: 400px) {
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+
+      @media (min-width: 401px) {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .site-logo {
+        padding: 0;
+        margin: 0;
+      }
+
+      img {
+        display: block;
+        width: 260px;
+        max-width: 100%;
+        height: auto;
+        transition: width 0.4s;
+
+        @media (max-width: 768px) {
+          width: 175px;
+        }
+      }
+
+      h1 {
+        width: 100%;
+        margin-bottom: 0;
+        margin-left: 0;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        transition: font-size 0.4s, line-height 0.4s;
+
+        @media (max-width: 400px) {
+          text-align: left;
+          margin-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+          font-size: 1.6rem;
+          line-height: 1.6rem;
+        }
+        @media (min-width: 991px) {
+          font-size: 2.2rem;
+          line-height: 2.2rem;
+        }
+        @media (min-width: 1195px) {
+          font-size: 3rem;
+          line-height: 3rem;
+        }
+      }
+
+      .site-title {
+        display: block;
+        text-transform: inherit;
+        font-size: inherit;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: normal;
+      }
+
+      a.site-title {
+        color: $teachers-secondary-blue;
+      }
+    }
+
+    .block-system-branding-block {
+      text-align: center;
+      flex-grow: 2;
+    }
+
+    .site-logo {
+      float: left;
+    }
+
+    @media (max-width: 767px) {
+      .block-search {
+        display: none;
+      }
+    }
+  }
+
+  .block-search {
+    order: 2;
+    width: 300px;
+    height: 35px;
+    margin-top: 9px;
+    border: 2px solid $teachers-secondary-blue;
+    border-radius: 15px;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      min-width: 300px;
+    }
+
+    .contextual {
+      display: none;
+    }
+
+    form {
+      display: flex;
+      flex-direction: row;
+    }
+
+    h2 {
+      display: none;
+    }
+
+    .form-search {
+      width: 245px;
+      height: 31px;
+      padding-top: 0;
+      padding-bottom: 0;
+      border: none;
+      background: none;
+      border-radius: 0;
+
+      &::placeholder {
+        color: #999;
+        font-size: 0.85em;
+      }
+    }
+
+    .form-submit {
+      width: 51px;
+      height: 31px;
+      padding: 0;
+      line-height: 31px;
+      background: $teachers-bg-light-grey;
+      border: none;
+      border-radius: 0;
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free";
+      font-size: 20px;
+      color: $teachers-secondary-blue;
+
+      &:hover {
+        background: #c5c5c5;
+      }
+    }
+  }
+
+  .navbar {
+    .region-nav-branding {
+      .block-search {
+        margin-top: 0;
+        background: $white;
+      }
+
+      .form-actions {
+        margin: 0;
+        width: 51px;
+      }
+    }
+  }
+}

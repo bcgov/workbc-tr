@@ -1,0 +1,9 @@
+uuid: 1d4d9f2d-23f9-4051-8a48-a83a8d30a81e
+langcode: en
+status: true
+dependencies: {  }
+id: node__resource
+label: 'Content: Resource'
+tags:
+  description: '[node:field_content_body]'
+  keywords: 'Grade 4, Grade 5, Grade 6, Grade 7, Grade 8, Grade 9, CLE, CLC, students, teachers, lesson plans, resources'

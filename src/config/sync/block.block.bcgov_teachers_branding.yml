@@ -1,0 +1,25 @@
+uuid: 230327be-7185-434e-9c5e-de9667b82389
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bcgov_teachers
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: bcgov_teachers_branding
+theme: bcgov_teachers
+region: header
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

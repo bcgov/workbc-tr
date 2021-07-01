@@ -1,0 +1,25 @@
+uuid: 42e2b4a8-1886-4851-a577-b7f6940e0ba6
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ed60eafe-6ef0-4013-9109-44c9543d9471'
+  module:
+    - block_content
+  theme:
+    - bootstrap4_bcgov
+id: bootstrap4_bcgov_socialnetworks
+theme: bootstrap4_bcgov
+region: footer
+weight: -8
+provider: null
+plugin: 'block_content:ed60eafe-6ef0-4013-9109-44c9543d9471'
+settings:
+  id: 'block_content:ed60eafe-6ef0-4013-9109-44c9543d9471'
+  label: 'Social Networks'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: be5c6c09-06e0-4664-8584-e8a57c594614
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - bcgov_teachers
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: bcgov_teachers_breadcrumbs
+theme: bcgov_teachers
+region: header
+weight: -3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

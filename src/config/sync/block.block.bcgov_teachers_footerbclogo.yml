@@ -1,0 +1,25 @@
+uuid: 7e738038-1fb0-4a95-9653-b2dc28e78038
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:524dfa19-3a9e-4fb9-96b7-dd3b3e417989'
+  module:
+    - block_content
+  theme:
+    - bcgov_teachers
+id: bcgov_teachers_footerbclogo
+theme: bcgov_teachers
+region: under_footer
+weight: 0
+provider: null
+plugin: 'block_content:524dfa19-3a9e-4fb9-96b7-dd3b3e417989'
+settings:
+  id: 'block_content:524dfa19-3a9e-4fb9-96b7-dd3b3e417989'
+  label: 'Footer BC Logo'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

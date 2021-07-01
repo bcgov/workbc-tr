@@ -1,0 +1,22 @@
+uuid: b4e4aa59-e3b1-49ab-964a-ffb649ba9da9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bcgov_teachers
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: bcgov_teachers_messages
+theme: bcgov_teachers
+region: content
+weight: -8
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

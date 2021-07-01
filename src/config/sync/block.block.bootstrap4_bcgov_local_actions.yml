@@ -1,0 +1,20 @@
+uuid: f0a4d9d6-8ebc-4fc9-9fda-dc9a8aaf98b4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bootstrap4_bcgov
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: bootstrap4_bcgov_local_actions
+theme: bootstrap4_bcgov
+region: content
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

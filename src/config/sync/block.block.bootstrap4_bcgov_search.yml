@@ -1,0 +1,28 @@
+uuid: 52b62d1f-ecc9-47a6-918c-c99fd2372a18
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+    - system
+  theme:
+    - bootstrap4_bcgov
+_core:
+  default_config_hash: Q-4EcGAsu26ICu4ejEz0uE1zv4akpiaOsizxgZfAmEw
+id: bootstrap4_bcgov_search
+theme: bootstrap4_bcgov
+region: header
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+  page_id: node_search
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/6
+    negate: true

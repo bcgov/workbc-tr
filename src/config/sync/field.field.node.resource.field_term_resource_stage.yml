@@ -1,0 +1,29 @@
+uuid: f9ef8b9b-25f1-45fc-862f-75eb2286835f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_term_resource_stage
+    - node.type.resource
+    - taxonomy.vocabulary.career_life_cycle_stage
+id: node.resource.field_term_resource_stage
+field_name: field_term_resource_stage
+entity_type: node
+bundle: resource
+label: 'Career Lifecycle Stage'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      career_life_cycle_stage: career_life_cycle_stage
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

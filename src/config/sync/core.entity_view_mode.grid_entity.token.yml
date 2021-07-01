@@ -1,0 +1,10 @@
+uuid: 84d62847-72a9-4434-9f8c-7d7d13380b8d
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_grid
+id: grid_entity.token
+label: Token
+targetEntityType: grid_entity
+cache: true
