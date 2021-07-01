@@ -717,8 +717,7 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 
 $settings['trusted_host_patterns'] = [
   '^erebus.wbu-dev.com$',
-  '^teachers.ddev.site$',
-  '^teacher-resources-bdaa18-dev.apps.silver.devops.gov.bc.ca$'
+  '^teachers.ddev.site$'
 ];
 
 /**
@@ -813,7 +812,7 @@ if (php_sapi_name() != 'cli') {
 }
 else {
   // Ensure it all works from the CLI too (i.e. drush)
-  if (file_exists($app_root . '/' . $site_path . '/settings.openshift.php') && getenv('OPENSHIFT_BUILD_NAME') != '') {
+  if (file_exists($app_root . '/' . $site_path . '/settings.openshift.php') && getenv('OPENSHIFT_BUILD_NAME')) {
     include $app_root . '/' . $site_path . '/settings.openshift.php';
   } else if (file_exists($app_root . '/' . $site_path . '/settings.local.php') && getenv('VIRTUAL_HOST') == 'erebus.wbu-dev.com') {
     include $app_root . '/' . $site_path . '/settings.local.php';
