@@ -1,8 +1,0 @@
-uuid: ba2bbecc-f533-4942-9e69-dec70e622605
-langcode: en
-status: true
-dependencies: {  }
-name: 'Career Life Cycle Stage'
-vid: career_life_cycle_stage
-description: ''
-weight: 0

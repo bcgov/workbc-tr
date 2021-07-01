@@ -1,8 +1,0 @@
-uuid: 49b6cb6b-e6fe-43c7-8ff0-d9786100c1e5
-langcode: en
-status: true
-dependencies: {  }
-name: 'Report Types'
-vid: bachelor_s_graduate_or_professio
-description: ''
-weight: 0
