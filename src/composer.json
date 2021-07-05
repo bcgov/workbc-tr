@@ -36,7 +36,6 @@
         "drupal/paragraphs": "^1.12",
         "drupal/paragraphs_grid": "^1.2",
         "drupal/pathauto": "^1.8",
-        "drupal/redirect": " ^1.6",
         "drupal/search_api_autocomplete": "^1.4",
         "drupal/search_api_solr": "^4.1",
         "drupal/search_api_spellcheck": "^3.0@beta",
