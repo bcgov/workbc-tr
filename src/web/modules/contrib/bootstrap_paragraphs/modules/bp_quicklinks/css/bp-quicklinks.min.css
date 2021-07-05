@@ -1,0 +1,7 @@
+/**
+ * @file
+ * The Minified CSS file for Bootstrap Paragraphs Quicklinks module.
+ *
+ * Minified from the CSS file of the same name.
+ */
+.quicklinks{align-items:stretch;display:flex;flex-wrap:wrap;justify-content:space-around;list-style:none;margin:0;padding:0}.quicklinks .quicklink{margin-bottom:1rem;padding:3rem 2rem}.quicklinks .quicklink a{background:#f8f9fa;padding:3rem 2rem;transition:all .25s ease-in-out}.quicklinks .quicklink a:hover{background:#6c757d;transition:all .25s ease-in-out}

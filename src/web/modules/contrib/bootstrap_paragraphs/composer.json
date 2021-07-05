@@ -1,0 +1,18 @@
+{
+  "name": "drupal/bootstrap_paragraphs",
+  "description": "The Bootstrap Paragraphs module provides a suite of content and layout Paragraph bundles made with the Bootstrap front-end framework.",
+  "type": "drupal-module",
+  "homepage": "https://drupal.org/project/bootstrap_paragraphs",
+  "require": {
+    "drupal/core": "*",
+    "drupal/entity_reference_revisions": "*",
+    "drupal/paragraphs": "*",
+    "drupal/viewsreference": "*"
+  },
+  "support": {
+    "issues": "https://drupal.org/project/issues/bootstrap_paragraphs",
+    "source": "https://git.drupalcode.org/project/bootstrap_paragraphs"
+  },
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev"
+}

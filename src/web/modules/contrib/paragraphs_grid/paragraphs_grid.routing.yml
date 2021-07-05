@@ -1,0 +1,10 @@
+
+paragraphs_grid.paragraphs_grid_config_form:
+  path: '/admin/config/content/paragraphs_grid'
+  defaults:
+    _form: '\Drupal\paragraphs_grid\Form\ParagraphsGridConfigForm'
+    _title: 'Paragraphs Grid Configuration'
+  requirements:
+    _permission: 'use paragraphs_grid config form'
+  options:
+    _admin_route: TRUE

@@ -1,0 +1,64 @@
+# Schema for the configuration of the OpenID Connect plugin.
+openid_connect.settings.keycloak:
+  type: config_object
+  label: 'OpenID Connect Keycloak settings'
+  mapping:
+    enabled:
+      type: boolean
+      label: 'Enable client'
+    settings:
+      type: mapping
+      mapping:
+        debug:
+          type: boolean
+          label: 'Enable debug mode'
+        client_id:
+          type: string
+          label: 'Client ID'
+        client_secret:
+          type: string
+          label: 'Client secret'
+        keycloak_base:
+          type: string
+          label: 'Keycloak base URL'
+        keycloak_realm:
+          type: string
+          label: 'Keycloak realm'
+        userinfo_update_email:
+          type: boolean
+          label: 'Update email address in user profile'
+        keycloak_i18n:
+          type: mapping
+          label: 'Multi-language settings'
+          mapping:
+            enabled:
+              type: boolean
+              label: 'Enable multi-language support'
+            mapping:
+              type: sequence
+              label: 'Language mapping'
+              sequence:
+                type: mapping
+                mapping:
+                  langcode:
+                    type: string
+                    label: 'Drupal language code'
+                  target:
+                    type: string
+                    label: 'Keycloak language code'
+        keycloak_sso:
+          type: boolean
+          label: 'Replace Drupal login with Keycloak single sign-on'
+        keycloak_sign_out:
+          type: boolean
+          label: 'Enable Drupal-initiated single sign-out'
+        check_session:
+          type: mapping
+          label: 'Check session settings'
+          mapping:
+            enabled:
+              type: boolean
+              label: 'Enable Keycloak-initiated single sign-out'
+            interval:
+              type: integer
+              label: 'Session check interval'

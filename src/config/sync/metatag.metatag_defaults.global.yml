@@ -1,0 +1,13 @@
+uuid: d296e1ae-37ee-4945-b385-ba8f5cc0f612
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Global
+tags:
+  title: '[current-page:title] | [site:name]'
+  description: 'This is the source for WorkBC Teacher Resources and Lesson Plans.'
+  keywords: 'workbc, teacher resources, lesson plans, students, teachers'
+  canonical_url: '[current-page:url]'

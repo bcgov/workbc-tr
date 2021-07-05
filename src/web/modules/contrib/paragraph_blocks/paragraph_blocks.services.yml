@@ -1,0 +1,11 @@
+services:
+  paragraph_blocks.route_subscriber:
+    class: Drupal\paragraph_blocks\Routing\ParagraphBlocksRouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  paragraph_blocks.entity_manager:
+    class: Drupal\paragraph_blocks\ParagraphBlocksEntityManager
+    arguments: ['@path_alias.manager', '@entity_type.manager', '@request_stack', '@config.factory']
+  paragraph_blocks.labeller:
+    class: Drupal\paragraph_blocks\ParagraphBlocksLabeller
+    arguments: ['@paragraph_blocks.entity_manager', '@entity_field.manager']

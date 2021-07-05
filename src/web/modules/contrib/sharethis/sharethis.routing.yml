@@ -1,0 +1,7 @@
+sharethis.configuration_form:
+  path: 'admin/config/services/sharethis'
+  defaults:
+    _form: '\Drupal\sharethis\Form\SharethisConfigurationForm'
+    _title: 'ShareThis'
+  requirements:
+    _permission: 'administer sharethis'

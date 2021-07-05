@@ -1,0 +1,6 @@
+paragraphs_grid.paragraphs_grid_config_form:
+  title: 'Paragraphs Grid'
+  route_name: paragraphs_grid.paragraphs_grid_config_form
+  description: 'Paragraphs Grid configuration.'
+  parent: system.admin_config_content
+  weight: 99

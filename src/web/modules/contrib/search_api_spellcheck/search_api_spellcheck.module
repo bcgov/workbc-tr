@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function search_api_spellcheck_theme() {
+  $themes = [
+    'search_api_spellcheck_did_you_mean' => [
+      'variables' => [
+        'label' => NULL,
+        'link' => NULL,
+      ],
+    ],
+    'search_api_spellcheck_suggestions' => [
+      'variables' => [
+        'label' => NULL,
+        'suggestions' => [],
+      ],
+    ]
+  ];
+
+  return $themes;
+}

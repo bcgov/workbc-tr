@@ -1,0 +1,4 @@
+bp-statistics:
+  css:
+    component:
+      css/bp-statistics.min.css: { preprocess: false, minified: true }

@@ -1,0 +1,17 @@
+{
+  "name": "drupal/bp_webform",
+  "description": "A reusable Webform Paragraph bundle.",
+  "type": "drupal-module",
+  "homepage": "https://drupal.org/project/bootstrap_paragraphs",
+  "require": {
+    "drupal/core": "*",
+    "drupal/bootstrap_paragraphs": "*",
+    "drupal/webform": "*"
+  },
+  "support": {
+    "issues": "https://drupal.org/project/issues/bootstrap_paragraphs",
+    "source": "https://git.drupalcode.org/project/bootstrap_paragraphs"
+  },
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev"
+}

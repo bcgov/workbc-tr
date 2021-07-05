@@ -1,0 +1,92 @@
+/**
+ * @file
+ * The CSS file for Bootstrap Paragraphs Callout module.
+ *
+ * Compiled from the SCSS file of the same name.
+ */
+.paragraph--type--bp-callout > .paragraph__column {
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+.callout-header,
+.callout-body {
+  padding: 1rem;
+}
+
+.paragraph.paragraph--type--bp-callout.paragraph--color > .paragraph__column {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.callout-style--primary {
+  border: 2px solid #007bff;
+}
+.callout-style--primary .callout-header {
+  background: #007bff;
+  color: #ffffff;
+}
+
+.callout-style--secondary {
+  border: 2px solid #6c757d;
+}
+.callout-style--secondary .callout-header {
+  background: transparent;
+  color: #ffffff;
+}
+
+.callout-style--success {
+  border: 2px solid #28a745;
+}
+.callout-style--success .callout-header {
+  background: #28a745;
+  color: #ffffff;
+}
+
+.callout-style--danger {
+  border: 2px solid #dc3545;
+}
+.callout-style--danger .callout-header {
+  background: #dc3545;
+  color: #ffffff;
+}
+
+.callout-style--warning {
+  border: 2px solid #ffc107;
+}
+.callout-style--warning .callout-header {
+  background: #ffc107;
+}
+
+.callout-style--info {
+  border: 2px solid #17a2b8;
+}
+.callout-style--info .callout-header {
+  background: #17a2b8;
+  color: #ffffff;
+}
+
+.callout-style--dark {
+  border: 2px solid #343a40;
+}
+.callout-style--dark .callout-header {
+  background: #343a40;
+  color: #ffffff;
+}
+
+.callout-style--light {
+  background: #f8f9fa;
+  border: 2px solid #f8f9fa;
+}
+.callout-style--light .callout-header {
+  background: #f8f9fa;
+}
+
+.callout-style--white {
+  background: #ffffff;
+  border: 2px solid #ffffff;
+}
+.callout-style--white .callout-header {
+  background: #ffffff;
+}

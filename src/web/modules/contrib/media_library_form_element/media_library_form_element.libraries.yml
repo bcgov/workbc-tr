@@ -1,0 +1,9 @@
+media_library_form_element:
+  version: 1.0
+  js:
+    assets/js/media_library.form-element.js: {}
+  dependencies:
+    - core/drupal.dialog.ajax
+    - core/sortable
+    - core/jquery.once
+    - media_library/style

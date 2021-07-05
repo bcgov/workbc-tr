@@ -1,0 +1,38 @@
+uuid: c86a0182-9eeb-4250-923c-adb26a528097
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_image
+    - node.type.content
+  module:
+    - image
+id: node.content.field_content_image
+field_name: field_content_image
+entity_type: node
+bundle: content
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: banner
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

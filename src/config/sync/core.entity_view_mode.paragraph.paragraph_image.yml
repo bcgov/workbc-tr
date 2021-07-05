@@ -1,0 +1,10 @@
+uuid: afb04bac-9c22-4c04-8536-f89b1473323f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.paragraph_image
+label: 'paragraph image'
+targetEntityType: paragraph
+cache: true

@@ -1,0 +1,38 @@
+name: SEO Checklist Optional Modules
+type: module
+description: Installs the optional modules recommended by the SEO Checklist.
+package: SEO
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:addtoany
+  - drupal:admin_toolbar
+  - drupal:advagg
+  # Not currently installable on Drupal 9 due to Composer requirements conflicts.
+  # - drupal:amp
+  - drupal:cloudflare
+  - drupal:coffee
+  - drupal:diff
+  - drupal:easy_breadcrumb
+  - drupal:editor_advanced_link
+  - drupal:filefield_paths
+  - drupal:google_tag
+  - drupal:honeypot
+  - drupal:hreflang
+  - drupal:metatag
+  - drupal:pathauto
+  - drupal:redirect
+  - drupal:robotstxt
+  - drupal:scheduler
+  - drupal:search404
+  - drupal:security_review
+  - drupal:seo_checklist
+  - drupal:sitemap
+  - drupal:xmlsitemap
+  - drupal:yoast_seo
+configure: checklistapi.checklists.seo_checklist
+
+# Information added by Drupal.org packaging script on 2021-05-14
+version: '5.0.0'
+project: 'seo_checklist'
+datestamp: 1621000996

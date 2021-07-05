@@ -1,0 +1,85 @@
+sharethis.settings:
+  type: config_object
+  mapping:
+    button_option:
+      type: string
+      label: 'Max timeout value'
+    comments:
+      type: integer
+      label: 'Enable comments'
+    late_load:
+      type: integer
+      label: 'Enable late load'
+    location:
+      type: string
+      label: 'Location of the sharethis buttons'
+    callesi:
+      type: string
+      label: 'Callesi'
+    node_types:
+      type: sequence
+      label: 'Content types'
+      sequence:
+        type: string
+        label: 'Bundles'
+    option_extras:
+      type: mapping
+      label: 'Options extra'
+      mapping:
+        'Google Plus One:plusone':
+          type: string
+          label: 'Google Plus One'
+        'Facebook Like:fblike':
+          type: string
+          label: 'Facebook Like'
+    option_neworzero:
+      type: integer
+      label: 'Option New or Zero'
+    option_onhover:
+      type: integer
+      label: 'Option on hover'
+    option_shorten:
+      type: integer
+      label: 'Option Shorten'
+    publisherID:
+      type: string
+      label: 'Publisher ID'
+    service_option:
+      type: string
+      label: 'Service Option'
+    twitter_handle:
+      type: string
+      label: 'Twitter handle'
+    twitter_recommends:
+      type: string
+      label: 'Twitter Recommends'
+    twitter_suffix:
+      type: string
+      label: 'Twitter Suffix'
+    webform_options:
+      type: string
+      label: 'Webform Options'
+    weight:
+      type: integer
+      label: 'Weight'
+    widget_option:
+      type: string
+      label: 'Widget Option'
+    cns:
+      type: mapping
+      label: 'CNS'
+      mapping:
+        donotcopy:
+          type: string
+          label: 'Do not Copy'
+        hashaddress:
+          type: string
+          label: 'Has Address'
+    sharethisnodes:
+      type: sequence
+      label: 'Node Option Modes'
+      sequence:
+        type: sequence
+        sequence:
+          type: string
+          label: 'View Modes'

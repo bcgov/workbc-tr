@@ -1,0 +1,66 @@
+header {
+  color: #fff;
+
+  .region-header {
+    background-color: $bc-primary-blue;
+    border-bottom: 2px solid $bc-primary-gold;
+    height: 65px;
+  }
+
+  .navbar-brand {
+    img {
+      height: 50px;
+      margin: 0;
+    }
+    a {
+      color: #fff;
+
+      :hover {
+        color: #aaa;
+      }
+
+      &.site-title {
+        color: #fff;
+      }
+    }
+  }
+  .navbar-brand a.site-title:hover {
+    color: #aaa;
+  }
+
+  .bc-navbar {
+    background-color: $bc-background-blue;
+    color: #fff;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  .navbar a {
+    text-decoration: none;
+  }
+
+}
+
+@include media-breakpoint-down(md) {
+  a.site-logo {
+    padding-left: 65px;
+    padding-top: 12px;
+    margin-left: -30px;
+
+    img {
+      display: none;
+    }
+  }
+
+  .navbar-brand {
+    background-size: 50px;
+    background-position: 20px 8px;
+    background-image: url('/themes/custom/bootstrap4_bcgov/assets/bc-logo-v.png');
+    background-repeat: no-repeat;
+    h1 {
+      margin-left: 3rem;
+    }
+  }
+}

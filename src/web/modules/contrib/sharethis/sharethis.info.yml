@@ -1,0 +1,10 @@
+name: ShareThis
+description: 'Add the <a href="http://www.sharethis.com/">ShareThis</a> widget to nodes on your site.'
+core_version_requirement: ^8.8 || ^9
+type: module
+configure: sharethis.configuration_form
+
+# Information added by Drupal.org packaging script on 2020-06-16
+version: '8.x-2.0-beta5'
+project: 'sharethis'
+datestamp: 1592286579

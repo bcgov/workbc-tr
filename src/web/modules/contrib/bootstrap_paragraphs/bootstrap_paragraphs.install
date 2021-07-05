@@ -1,0 +1,392 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall and update hooks for Bootstrap Paragraphs module.
+ */
+
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\Component\Utility\NestedArray;
+use Symfony\Component\Yaml\Yaml;
+
+/**
+ * Reads in new configuration.
+ *
+ * @param string $config_name
+ *   Configuration name.
+ * @param string $bp_path
+ *   Base path.
+ */
+function bootstrap_paragraphs_read_in_new_config($config_name, $bp_path) {
+  /** @var \Drupal\Core\Config\StorageInterface $active_storage */
+  $active_storage = \Drupal::service('config.storage');
+  $active_storage->write($config_name, Yaml::parse(file_get_contents($bp_path . '/config/install/' . $config_name . '.yml')));
+}
+
+/**
+ * Updates a configuration from yml file.
+ *
+ * @param string $ymlFileName
+ *   Yml file name (without .yml suffix).
+ * @param array $sets
+ *   An array of what needs to be set.
+ *   - The key will be what we are setting (Can have . in string for array).
+ *   - The value is the key that will be used from the new config file (Can have
+ *     . in string for array).
+ *
+ *   For example if you are updating 'content' with 'content' from the new
+ *   config file, $sets would be ['content' => 'content'].
+ */
+function bootstrap_paragraphs_update_configuration_from_yml($ymlFileName, array $sets) {
+  $bp_path = drupal_get_path('module', 'bootstrap_paragraphs');
+  $yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/' . $ymlFileName . '.yml'));
+  $config = \Drupal::configFactory()->getEditable($ymlFileName);
+  foreach ($sets as $key => $value) {
+    $parts = explode('.', $value);
+    if (count($parts) == 1) {
+      $config->set($key, $yml[$value]);
+    }
+    else {
+      $value = NestedArray::getValue($yml, $parts);
+      $config->set($key, $value);
+    }
+  }
+  $config->save(TRUE);
+}
+
+/**
+ * Update entity from yml.
+ *
+ * Some config like form display needs to be updated via config manager.
+ *
+ * @param string $ymlFileName
+ *   Yml file name.
+ * @param string $entityType
+ *   The entity type for this storage.
+ * @param mixed $id
+ *   The ID of the entity to load.
+ * @param array $setComponents
+ *   Array of components you want to add.
+ *   - The key will be what we are setting.
+ *   - The value is the key that will be used from the new config file (Can have
+ *     . in string for array).
+ */
+function bootstrap_paragraphs_update_entity_from_yml($ymlFileName, $entityType, $id, array $setComponents) {
+  $bp_path = drupal_get_path('module', 'bootstrap_paragraphs');
+  $yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/' . $ymlFileName . '.yml'));
+
+  $entity = \Drupal::entityTypeManager()
+    ->getStorage($entityType)
+    ->load($id);
+  foreach ($setComponents as $key => $value) {
+    $parts = explode('.', $value);
+    if (count($parts) == 1) {
+      $entity->setComponent($key, $yml[$value]);
+    }
+    else {
+      $value = NestedArray::getValue($yml, $parts);
+      $entity->setComponent($key, $value);
+    }
+  }
+
+  $entity->save();
+}
+
+/**
+ * Adds Column Wrapper paragraphs bundle.
+ */
+function bootstrap_paragraphs_update_8201() {
+  // Sets variable for the path.
+  $bp_path = drupal_get_path('module', 'bootstrap_paragraphs');
+
+  // Create Paragraphs bundle.
+  bootstrap_paragraphs_read_in_new_config('paragraphs.paragraphs_type.bp_column_wrapper', $bp_path);
+
+  // Create field storage.
+  $field_storage_yml = Yaml::parse(file_get_contents($bp_path . '/config/install/field.storage.paragraph.bp_column_content_w.yml'));
+  if (!FieldStorageConfig::loadByName($field_storage_yml['entity_type'], $field_storage_yml['field_name'])) {
+    FieldStorageConfig::create($field_storage_yml)->save();
+  }
+  // Create field instance.
+  $field_yml = Yaml::parse(file_get_contents($bp_path . '/config/install/field.field.paragraph.bp_column_wrapper.bp_column_content_w.yml'));
+  if (!FieldConfig::loadByName($field_yml['entity_type'], $field_yml['bundle'], $field_yml['field_name'])) {
+    FieldConfig::create($field_yml)->save();
+  }
+
+  // Create Paragraphs bundle form.
+  bootstrap_paragraphs_read_in_new_config('core.entity_form_display.paragraph.bp_column_wrapper.default', $bp_path);
+  // Create Paragraphs bundle view.
+  bootstrap_paragraphs_read_in_new_config('core.entity_view_display.paragraph.bp_column_wrapper.default', $bp_path);
+
+  // Send message to updater.
+  $message = t('The Column Wrapper Paragraphs bundle installed successfully. It allows you to add multiple Paragraphs in a single Column Content field. If you would like to use this bundle, allow it to be selected in the Column Content field of the three Columns Paragraphs bundles. For more detailed information, visit http://bp.jimbir.ch/updates/8201');
+  return $message;
+}
+
+/**
+ * Updates Accordion.
+ */
+function bootstrap_paragraphs_update_8202() {
+  // Sets variable for the path.
+  $bp_path = drupal_get_path('module', 'bootstrap_paragraphs');
+
+  // Create field storage.
+  $bp_accordion_expand_storage_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.storage.paragraph.bp_accordion_expand.yml'));
+  if (!FieldStorageConfig::loadByName($bp_accordion_expand_storage_yml['entity_type'], $bp_accordion_expand_storage_yml['field_name'])) {
+    FieldStorageConfig::create($bp_accordion_expand_storage_yml)->save();
+  }
+  // Create field instance.
+  $bp_accordion_expand_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_accordion.bp_accordion_expand.yml'));
+  if (!FieldConfig::loadByName($bp_accordion_expand_yml['entity_type'], $bp_accordion_expand_yml['bundle'], $bp_accordion_expand_yml['field_name'])) {
+    FieldConfig::create($bp_accordion_expand_yml)->save();
+  }
+
+  // Create field storage.
+  $bp_show_indicators_storage_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.storage.paragraph.bp_show_indicators.yml'));
+  if (!FieldStorageConfig::loadByName($bp_show_indicators_storage_yml['entity_type'], $bp_show_indicators_storage_yml['field_name'])) {
+    FieldStorageConfig::create($bp_show_indicators_storage_yml)->save();
+  }
+  // Create field instance.
+  $bp_show_indicators_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_accordion.bp_show_indicators.yml'));
+  if (!FieldConfig::loadByName($bp_show_indicators_yml['entity_type'], $bp_show_indicators_yml['bundle'], $bp_show_indicators_yml['field_name'])) {
+    FieldConfig::create($bp_show_indicators_yml)->save();
+  }
+
+  // Create field storage.
+  $bp_show_button_storage_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.storage.paragraph.bp_show_button.yml'));
+  if (!FieldStorageConfig::loadByName($bp_show_button_storage_yml['entity_type'], $bp_show_button_storage_yml['field_name'])) {
+    FieldStorageConfig::create($bp_show_button_storage_yml)->save();
+  }
+  // Create field instance.
+  $bp_show_button_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_accordion_section.bp_show_button.yml'));
+  if (!FieldConfig::loadByName($bp_show_button_yml['entity_type'], $bp_show_button_yml['bundle'], $bp_show_button_yml['field_name'])) {
+    FieldConfig::create($bp_show_button_yml)->save();
+  }
+
+  // Updates Accordian form display.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_form_display.paragraph.bp_accordion.default', 'entity_form_display', 'paragraph.bp_accordion.default', [
+    'bp_background' => 'content.bp_background',
+    'bp_width' => 'content.bp_width',
+    'bp_accordion_expand' => 'content.bp_accordion_expand',
+    'bp_show_indicators' => 'content.bp_show_indicators',
+    'bp_accordion_section' => 'content.bp_accordion_section',
+  ]);
+
+  // Updates Accordian Section form display config.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_form_display.paragraph.bp_accordion_section.default', 'entity_form_display', 'paragraph.bp_accordion_section.default', [
+    'bp_show_button' => 'content.bp_show_button',
+    'bp_accordion_section_title' => 'content.bp_accordion_section_title',
+    'bp_accordion_section_body' => 'content.bp_accordion_section_body',
+  ]);
+
+  // Send message to updater.
+  $message = t('Adds fields to the Accordion bundle. For more detailed information, visit http://bp.jimbir.ch/updates/8202');
+  return $message;
+}
+
+/**
+ * Updates Accordion View Display.
+ */
+function bootstrap_paragraphs_update_8203() {
+
+  // Updates Accordian View display config.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_view_display.paragraph.bp_accordion.default', 'entity_view_display', 'paragraph.bp_accordion.default', [
+    'bp_background' => 'content.bp_background',
+    'bp_width' => 'content.bp_width',
+    'bp_accordion_expand' => 'content.bp_accordion_expand',
+    'bp_show_indicators' => 'content.bp_show_indicators',
+    'bp_accordion_section' => 'content.bp_accordion_section',
+  ]);
+
+  // Updates Accordian Section View display config.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_view_display.paragraph.bp_accordion_section.default', 'entity_view_display', 'paragraph.bp_accordion_section.default', [
+    'bp_show_button' => 'content.bp_show_button',
+    'bp_accordion_section_title' => 'content.bp_accordion_section_title',
+    'bp_accordion_section_body' => 'content.bp_accordion_section_body',
+  ]);
+
+  // Send message to updater.
+  $message = t('Adds update to Accordion Section and Accordion View Display');
+  return $message;
+}
+
+/**
+ * Adds Header field to top level bundles.
+ */
+function bootstrap_paragraphs_update_8204() {
+  // Sets variable for the path.
+  $bp_path = drupal_get_path('module', 'bootstrap_paragraphs');
+
+  // Creates field storage.
+  $bp_header_storage_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.storage.paragraph.bp_header.yml'));
+  if (!FieldStorageConfig::loadByName($bp_header_storage_yml['entity_type'], $bp_header_storage_yml['field_name'])) {
+    FieldStorageConfig::create($bp_header_storage_yml)->save();
+  }
+
+  // Accordion - Creates field instance.
+  $bp_accordion_bp_header_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_accordion.bp_header.yml'));
+  if (!FieldConfig::loadByName($bp_accordion_bp_header_yml['entity_type'], $bp_accordion_bp_header_yml['bundle'], $bp_accordion_bp_header_yml['field_name'])) {
+    FieldConfig::create($bp_accordion_bp_header_yml)->save();
+  }
+
+  // Accordion - Updates form display.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_form_display.paragraph.bp_accordion.default', 'entity_form_display', 'paragraph.bp_accordion.default', [
+    'bp_background' => 'content.bp_background',
+    'bp_width' => 'content.bp_width',
+    'bp_accordion_expand' => 'content.bp_accordion_expand',
+    'bp_show_indicators' => 'content.bp_show_indicators',
+    'bp_header' => 'content.bp_header',
+    'bp_accordion_section' => 'content.bp_accordion_section',
+  ]);
+
+  // Blank - Creates field instance.
+  $bp_blank_bp_header_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_blank.bp_header.yml'));
+  if (!FieldConfig::loadByName($bp_blank_bp_header_yml['entity_type'], $bp_blank_bp_header_yml['bundle'], $bp_blank_bp_header_yml['field_name'])) {
+    FieldConfig::create($bp_blank_bp_header_yml)->save();
+  }
+
+  // Blank - Updates form display.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_form_display.paragraph.bp_blank.default', 'entity_form_display', 'paragraph.bp_blank.default', [
+    'bp_background' => 'content.bp_background',
+    'bp_width' => 'content.bp_width',
+    'bp_header' => 'content.bp_header',
+    'bp_unrestricted' => 'content.bp_unrestricted',
+  ]);
+
+  // Block - Creates field instance.
+  $bp_block_bp_header_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_block.bp_header.yml'));
+  if (!FieldConfig::loadByName($bp_block_bp_header_yml['entity_type'], $bp_block_bp_header_yml['bundle'], $bp_block_bp_header_yml['field_name'])) {
+    FieldConfig::create($bp_block_bp_header_yml)->save();
+  }
+
+  // Block - Updates form display.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_form_display.paragraph.bp_block.default', 'entity_form_display', 'paragraph.bp_block.default', [
+    'bp_background' => 'content.bp_background',
+    'bp_width' => 'content.bp_width',
+    'bp_header' => 'content.bp_header',
+    'bp_block' => 'content.bp_block',
+  ]);
+
+  // Columns - Creates field instance.
+  $bp_columns_bp_header_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_columns.bp_header.yml'));
+  if (!FieldConfig::loadByName($bp_columns_bp_header_yml['entity_type'], $bp_columns_bp_header_yml['bundle'], $bp_columns_bp_header_yml['field_name'])) {
+    FieldConfig::create($bp_columns_bp_header_yml)->save();
+  }
+
+  // Columns - Updates form display.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_form_display.paragraph.bp_columns.default', 'entity_form_display', 'paragraph.bp_columns.default', [
+    'bp_background' => 'content.bp_background',
+    'bp_width' => 'content.bp_width',
+    'bp_header' => 'content.bp_header',
+    'bp_column_content_2' => 'content.bp_column_content',
+  ]);
+
+  // Columns Three Uneven - Creates field instance.
+  $bp_columns_three_uneven_bp_header_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_columns_three_uneven.bp_header.yml'));
+  if (!FieldConfig::loadByName($bp_columns_three_uneven_bp_header_yml['entity_type'], $bp_columns_three_uneven_bp_header_yml['bundle'], $bp_columns_three_uneven_bp_header_yml['field_name'])) {
+    FieldConfig::create($bp_columns_three_uneven_bp_header_yml)->save();
+  }
+
+  // Columns Three Uneven - Updates form display.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_form_display.paragraph.bp_columns_three_uneven.default', 'entity_form_display', 'paragraph.bp_columns_three_uneven.default', [
+    'bp_background' => 'content.bp_background',
+    'bp_width' => 'content.bp_width',
+    'bp_column_style_3' => 'content.bp_column_style_3',
+    'bp_header' => 'content.bp_header',
+    'bp_column_content_3' => 'content.bp_column_content_3',
+  ]);
+
+  // Columns Two Uneven - Creates field instance.
+  $bp_columns_two_uneven_bp_header_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_columns_two_uneven.bp_header.yml'));
+  if (!FieldConfig::loadByName($bp_columns_two_uneven_bp_header_yml['entity_type'], $bp_columns_two_uneven_bp_header_yml['bundle'], $bp_columns_two_uneven_bp_header_yml['field_name'])) {
+    FieldConfig::create($bp_columns_two_uneven_bp_header_yml)->save();
+  }
+
+  // Columns Two Uneven - Updates form display.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_form_display.paragraph.bp_columns_two_uneven.default', 'entity_form_display', 'paragraph.bp_columns_two_uneven.default', [
+    'bp_background' => 'content.bp_background',
+    'bp_width' => 'content.bp_width',
+    'bp_column_style_2' => 'content.bp_column_style_2',
+    'bp_header' => 'content.bp_header',
+    'bp_column_content_2' => 'content.bp_column_content_2',
+  ]);
+
+  // Image - Creates field instance.
+  $bp_image_bp_header_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_image.bp_header.yml'));
+  if (!FieldConfig::loadByName($bp_image_bp_header_yml['entity_type'], $bp_image_bp_header_yml['bundle'], $bp_image_bp_header_yml['field_name'])) {
+    FieldConfig::create($bp_image_bp_header_yml)->save();
+  }
+
+  // Image - Updates form display.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_form_display.paragraph.bp_image.default', 'entity_form_display', 'paragraph.bp_image.default', [
+    'bp_background' => 'content.bp_background',
+    'bp_width' => 'content.bp_width',
+    'bp_header' => 'content.bp_header',
+    'bp_link' => 'content.bp_link',
+    'bp_image_field' => 'content.bp_image_field',
+  ]);
+
+  // Modal - Creates field instance.
+  $bp_modal_bp_header_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_modal.bp_header.yml'));
+  if (!FieldConfig::loadByName($bp_modal_bp_header_yml['entity_type'], $bp_modal_bp_header_yml['bundle'], $bp_modal_bp_header_yml['field_name'])) {
+    FieldConfig::create($bp_modal_bp_header_yml)->save();
+  }
+
+  // Modal - Updates form display.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_form_display.paragraph.bp_modal.default', 'entity_form_display', 'paragraph.bp_modal.default', [
+    'bp_background' => 'content.bp_background',
+    'bp_width' => 'content.bp_width',
+    'bp_header' => 'content.bp_header',
+    'bp_modal_button_text' => 'content.bp_modal_button_text',
+    'bp_modal_title' => 'content.bp_modal_title',
+    'bp_modal_body' => 'content.bp_modal_body',
+    'bp_modal_footer' => 'content.bp_modal_footer',
+  ]);
+
+  // Simple - Creates field instance.
+  $bp_simple_bp_header_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_simple.bp_header.yml'));
+  if (!FieldConfig::loadByName($bp_simple_bp_header_yml['entity_type'], $bp_simple_bp_header_yml['bundle'], $bp_simple_bp_header_yml['field_name'])) {
+    FieldConfig::create($bp_simple_bp_header_yml)->save();
+  }
+
+  // Simple - Updates form display.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_form_display.paragraph.bp_simple.default', 'entity_form_display', 'paragraph.bp_simple.default', [
+    'bp_background' => 'content.bp_background',
+    'bp_width' => 'content.bp_width',
+    'bp_header' => 'content.bp_header',
+    'bp_text' => 'content.bp_text',
+  ]);
+
+  // Tabs - Creates field instance.
+  $bp_tabs_bp_header_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_tabs.bp_header.yml'));
+  if (!FieldConfig::loadByName($bp_tabs_bp_header_yml['entity_type'], $bp_tabs_bp_header_yml['bundle'], $bp_tabs_bp_header_yml['field_name'])) {
+    FieldConfig::create($bp_tabs_bp_header_yml)->save();
+  }
+
+  // Tabs - Updates form display.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_form_display.paragraph.bp_tabs.default', 'entity_form_display', 'paragraph.bp_tabs.default', [
+    'bp_background' => 'content.bp_background',
+    'bp_width' => 'content.bp_width',
+    'bp_header' => 'content.bp_header',
+    'bp_tab_section' => 'content.bp_tab_section',
+  ]);
+
+  // View - Creates field instance.
+  $bp_view_bp_header_yml = Yaml::parse(file_get_contents($bp_path . '/config/optional/field.field.paragraph.bp_view.bp_header.yml'));
+  if (!FieldConfig::loadByName($bp_view_bp_header_yml['entity_type'], $bp_view_bp_header_yml['bundle'], $bp_view_bp_header_yml['field_name'])) {
+    FieldConfig::create($bp_view_bp_header_yml)->save();
+  }
+
+  // View - Updates form display.
+  bootstrap_paragraphs_update_entity_from_yml('core.entity_form_display.paragraph.bp_view.default', 'entity_form_display', 'paragraph.bp_view.default', [
+    'bp_background' => 'content.bp_background',
+    'bp_width' => 'content.bp_width',
+    'bp_header' => 'content.bp_header',
+    'bp_view' => 'content.bp_view',
+  ]);
+
+  // Send message to updater.
+  $message = t('Successfully added Header field to Accordion, Blank, Block, Columns (2, 3, and Equal), Image, Modal, Simple, Tabs, and View bundles.');
+  return $message;
+}

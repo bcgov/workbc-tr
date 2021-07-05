@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bp_statistics.bp_background
+    - field.field.paragraph.bp_statistics.bp_header
+    - field.field.paragraph.bp_statistics.bp_width
+    - field.field.paragraph.bp_statistics.bp_statistic
+    - paragraphs.paragraphs_type.bp_statistics
+  module:
+    - paragraphs
+id: paragraph.bp_statistics.default
+targetEntityType: paragraph
+bundle: bp_statistics
+mode: default
+content:
+  bp_background:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  bp_header:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  bp_width:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  bp_statistic:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Stat
+      title_plural: Stats
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: bp_stat
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

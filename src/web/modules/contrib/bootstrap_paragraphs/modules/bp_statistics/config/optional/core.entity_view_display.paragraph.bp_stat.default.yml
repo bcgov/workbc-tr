@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bp_stat.bp_statistic_description
+    - field.field.paragraph.bp_stat.bp_statistic_header
+    - field.field.paragraph.bp_stat.bp_statistic_item
+    - paragraphs.paragraphs_type.bp_stat
+id: paragraph.bp_stat.default
+targetEntityType: paragraph
+bundle: bp_stat
+mode: default
+content:
+  bp_statistic_description:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  bp_statistic_header:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  bp_statistic_item:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

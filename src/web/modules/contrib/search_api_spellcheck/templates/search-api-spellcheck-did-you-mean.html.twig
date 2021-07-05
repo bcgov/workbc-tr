@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a search did you mean.
+ *
+ * Available variables:
+ * - label: Text to display in front of the did you mean.
+ * - link: The link (\Drupal\Core\Link object) to which the did you mean will
+ *   redirect the user.
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div class="sapi-did-you-mean">
+  <span class="did-you-mean-prefix">{{ label }} </span>
+  {{ link }}
+  <span class="did-you-mean-suffix">?</span>
+</div>
+

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.bp_header
+    - paragraphs.paragraphs_type.bp_quicklinks
+id: paragraph.bp_quicklinks.field_bp_header
+field_name: bp_header
+entity_type: paragraph
+bundle: bp_quicklinks
+label: Header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

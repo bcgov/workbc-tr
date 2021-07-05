@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: bp_statistics
+label: Statistics
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

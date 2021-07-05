@@ -1,0 +1,61 @@
+
+// Core variables and mixins
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
+.container,
+.container-fluid,
+.row,
+.row > [class*="col-"] {
+  box-sizing: border-box;
+}
+
+
+// Core CSS
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/grid";
+
+@mixin new-row-after() {
+  & + * {
+    clear: both;
+  }
+}
+
+@mixin new-row-before() {
+  clear: both;
+}
+
+@media (max-width: $screen-xs-max) {
+  .new-row-before-xs {
+    @include new-row-before();
+  }
+  .new-row-after-xs {
+    @include new-row-after();
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .new-row-before-sm {
+    @include new-row-before();
+  }
+  .new-row-after-sm {
+    @include new-row-after();
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .new-row-before-md {
+    @include new-row-before();
+  }
+  .new-row-after-md {
+    @include new-row-after();
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .new-row-before-lg {
+    @include new-row-before();
+  }
+  .new-row-after-lg {
+    @include new-row-after();
+  }
+}

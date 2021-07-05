@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bp_quicklinks.bp_background
+    - field.field.paragraph.bp_quicklinks.bp_header
+    - field.field.paragraph.bp_quicklinks.bp_quick_link
+    - field.field.paragraph.bp_quicklinks.bp_width
+    - paragraphs.paragraphs_type.bp_quicklinks
+  module:
+    - link
+    - options
+id: paragraph.bp_quicklinks.default
+targetEntityType: paragraph
+bundle: bp_quicklinks
+mode: default
+content:
+  bp_background:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  bp_header:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  bp_quick_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  bp_width:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

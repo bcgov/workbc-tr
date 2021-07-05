@@ -1,0 +1,14 @@
+/**
+ * @file
+ * The CSS file for Bootstrap Paragraphs Card module.
+ *
+ * Compiled from the SCSS file of the same name.
+ */
+.card {
+  margin-bottom: 1rem;
+}
+
+.card-image img {
+  height: auto;
+  max-width: 100%;
+}

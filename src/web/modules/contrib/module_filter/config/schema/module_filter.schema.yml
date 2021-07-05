@@ -1,0 +1,7 @@
+module_filter.settings:
+  type: config_object
+  label: 'Module filter settings'
+  mapping:
+    tabs:
+      type: boolean
+      label: 'Boolean indicating whether the Extend page should be enhanced with tabs'

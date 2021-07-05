@@ -1,0 +1,47 @@
+uuid: 606a94b1-c23b-4699-ac65-0ae15636e4b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cutom_grade_access
+    - field.field.block_content.cutom_grade_access.body
+    - field.field.block_content.cutom_grade_access.field_grade_access_resource_link
+    - field.field.block_content.cutom_grade_access.field_grade_access_title
+  module:
+    - link
+    - text
+id: block_content.cutom_grade_access.default
+targetEntityType: block_content
+bundle: cutom_grade_access
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_grade_access_resource_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_grade_access_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

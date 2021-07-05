@@ -1,0 +1,4 @@
+paragraph_blocks.settings:
+  title: 'Paragraph Blocks settings'
+  parent: system.admin_config_content
+  route_name: paragraph_blocks.settings

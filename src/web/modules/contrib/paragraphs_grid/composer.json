@@ -1,0 +1,14 @@
+{
+  "name": "drupal/paragraphs_grid",
+  "type": "drupal-module",
+  "description": "Provides possibillity to render paragraphs components in a grid with bootstrap grid classes.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/paragraphs_grid",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/paragraphs_grid",
+    "source": "http://cgit.drupalcode.org/paragraphs_grid"
+  },
+  "require": { }
+}

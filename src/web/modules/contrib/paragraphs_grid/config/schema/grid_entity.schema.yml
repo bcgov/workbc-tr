@@ -1,0 +1,106 @@
+paragraphs_grid.grid_entity.*:
+  type: config_entity
+  label: 'Grid config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    breakpoints:
+      type: sequence
+      label: 'Breakpoints and Col-number'
+      sequence:
+        type: sequence
+        label: 'Breakpoint definition'
+        sequence:
+          cols:
+            type: integer
+            label: 'Number of cols inside breakpoint'
+          name:
+            type: string
+            label: 'Literal name'
+          icon:
+            type: string
+            label: 'machine name'
+          bpoint:
+            type: string
+            label: 'Pixel width'
+          fragment:
+            type: string
+            label: 'Fragment used in class name.'
+    library:
+      type: string
+      label: 'Used library of css and js'
+    wrapper:
+      type: sequence
+      label: 'Grid and row wrappers'
+      sequence:
+        type: sequence
+        label: 'Classes'
+        sequence:
+          grid:
+            type: sequence
+            label: 'Container classes'
+            sequence:
+              required:
+                type: boolean
+              options:
+                type: sequence
+          row:
+            type: sequence
+            label: 'Row classes'
+            sequence:
+              required:
+                type: boolean
+              options:
+                type: sequence
+    cell-fallback:
+      type: string
+      label: 'Cell class for every cell'
+    cell-properties:
+      type: sequence
+      label: 'Grid cell class types'
+      sequence:
+        type: sequence
+        label: 'Properties'
+        sequence:
+          name:
+            type: string
+            label: Name
+          label:
+            type: string
+            label: Label
+          formatter:
+            type: string
+            label: 'String Formatter'
+          additional:
+            type: sequence
+            label: 'Additional classes'
+            sequence:
+              type: sequence
+              sequence:
+                name:
+                  type: string
+                  label: Label
+                class:
+                  type: string
+                  label: Class
+          multiple:
+            type: boolean
+            label: 'Multiple values possible'
+          optional:
+            type: boolean
+            label: 'Property is optional'
+          fallback:
+            type: string
+            label: 'Fallback class if nothing selected'
+          default:
+            type: string
+            label: 'Preselected when empty'
+          asc:
+            type: boolean
+            label: 'Ascending Order'

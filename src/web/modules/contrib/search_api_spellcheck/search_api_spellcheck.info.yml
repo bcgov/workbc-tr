@@ -1,0 +1,14 @@
+type: module
+name: 'Search API Spellcheck'
+description: 'Provides spellcheck Views area plugin'
+package: Search
+dependencies:
+  - drupal:views
+  - search_api:search_api
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+# Information added by Drupal.org packaging script on 2020-11-15
+version: '8.x-3.0-beta1'
+project: 'search_api_spellcheck'
+datestamp: 1605436876

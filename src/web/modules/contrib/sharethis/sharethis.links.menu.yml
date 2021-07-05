@@ -1,0 +1,5 @@
+sharethis.configuration_form:
+  route_name: sharethis.configuration_form
+  title: ShareThis
+  description: 'Choose the widget, button family, and services for using ShareThis to share content online.'
+  parent: system.admin_config_services

@@ -1,0 +1,24 @@
+paragraphs_grid.grid_widget:
+  dependencies:
+    - core/drupal
+    - core/jquery
+  css:
+    theme:
+      css/grid_widget.css: {}
+  js:
+    js/grid_widget.js: {}
+
+paragraphs_grid.bootstrap3:
+  css:
+    layout:
+      css/bootstrap3-grid.css: {}
+
+paragraphs_grid.bootstrap4:
+  css:
+    layout:
+      css/bootstrap4-grid.css: {}
+
+paragraphs_grid.mdc:
+  css:
+    layout:
+      css/mdc_grid.css: {}

@@ -1,0 +1,83 @@
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px
+);
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+$grid-columns:                12;
+$grid-gutter-width:           30px;
+
+@import "~bootstrap/scss/bootstrap-grid";
+
+// Is required to always hit the browser border in mobile and desktop browsers.
+html {
+  overflow-y:scroll;
+}
+
+// Full display classes.
+@mixin make-coll-full() {
+  margin-left: calc(-50vw + 50% + 7px);
+  margin-right: calc(-50vw + 50% + 7px);
+  padding: 0;
+  overflow: hidden;
+  max-width: calc(100vw - 16px);
+  flex: 0 0 calc(100vw - 16px);
+  @media (pointer:coarse) {
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    max-width: 100vw;
+    flex: 0 0 100vw;
+  }
+}
+
+.col-full {
+  @include make-coll-full();
+}
+
+@each $key, $value in $grid-breakpoints {
+  @include media-breakpoint-up($key) {
+    .col-#{$key}-full {
+      @include make-coll-full();
+    }
+  }
+}
+
+
+// Display none classes.
+@mixin make-coll-hide() {
+  display: none !important;
+}
+
+.col-hide {
+  @include make-coll-hide();
+}
+
+@each $key, $value in $grid-breakpoints {
+  @include media-breakpoint-between($key, $key) {
+    .col-#{$key}-hide {
+      @include make-coll-hide();
+    }
+  }
+}

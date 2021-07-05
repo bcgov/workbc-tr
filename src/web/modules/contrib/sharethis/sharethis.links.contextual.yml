@@ -1,0 +1,4 @@
+sharethis_block_configure:
+  title: 'Configure Sharethis block'
+  route_name: 'sharethis.configuration_form'
+  group: 'block'

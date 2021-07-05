@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bp_callout.bp_background
+    - field.field.paragraph.bp_callout.bp_callout_content
+    - field.field.paragraph.bp_callout.bp_callout_style
+    - field.field.paragraph.bp_callout.bp_header
+    - field.field.paragraph.bp_callout.bp_width
+    - paragraphs.paragraphs_type.bp_callout
+  module:
+    - paragraphs
+id: paragraph.bp_callout.default
+targetEntityType: paragraph
+bundle: bp_callout
+mode: default
+content:
+  bp_background:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  bp_callout_content:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: 'Callout Content'
+      title_plural: 'Callout Contents'
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  bp_callout_style:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  bp_header:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  bp_width:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

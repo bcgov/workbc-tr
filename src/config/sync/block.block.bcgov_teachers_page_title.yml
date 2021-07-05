@@ -1,0 +1,20 @@
+uuid: e32ab67b-c173-4fc3-8b4c-f48ee8d8ac31
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bcgov_teachers
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: bcgov_teachers_page_title
+theme: bcgov_teachers
+region: content
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

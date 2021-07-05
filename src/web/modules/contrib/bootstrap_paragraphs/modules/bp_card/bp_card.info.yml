@@ -1,0 +1,14 @@
+name: Bootstrap Paragraphs Card
+type: module
+description: A reusable Card Paragraph bundle.
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Paragraphs
+dependencies:
+  - paragraphs:paragraphs
+  - bootstrap_paragraphs:bootstrap_paragraphs
+
+# Information added by Drupal.org packaging script on 2020-10-08
+version: '8.x-2.0-beta7'
+project: 'bootstrap_paragraphs'
+datestamp: 1602190349

@@ -1,0 +1,246 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations of the Keycloak module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\keycloak\Service\KeycloakServiceInterface;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_modules_installed().
+ */
+function keycloak_modules_installed($modules) {
+  // Whether the keycloak module was installed.
+  if (in_array('keycloak', $modules)) {
+    // Show configuration page hint.
+    $settings = Url::fromRoute('openid_connect.admin_settings')->toString();
+    \Drupal::messenger()->addStatus(t('You can now enable Keycloak OpenID Connect sign in at the <a href=":settings">OpenID Connect settings</a> page.', [
+      ':settings' => $settings,
+    ]));
+  }
+}
+
+/**
+ * Implements hook_help().
+ */
+function keycloak_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the keycloak module.
+    case 'help.page.keycloak':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The Keycloak module allows you to authenticate your users against a Keycloak authentication server. You can enable the Keycloak client within the <a href=":settings">OpenID Connect settings</a> page. For more information, see the <a href=":documentation">online documentation for the Keycloak module</a>.', [
+        ':settings' => Url::fromRoute('openid_connect.admin_settings')->toString(),
+        ':documentation' => 'https://www.drupal.org/docs/8/modules/keycloak-openid-connect',
+      ]) . '</p>';
+      $output .= '<h3>' . t('Uses') . '</h3>';
+      $output .= '<dl>';
+      $output .= '<dt>' . t('Login to Drupal using Keycloak OpenID Connect') . '</dt>';
+      $output .= '<dd>' . t('Your Drupal users can use an external Keycloak authentication server to register and login to your Drupal site.') . '</dd>';
+      $output .= '<dt>' . t('Use Keycloak as Drupal authentication back-end') . '</dt>';
+      $output .= '<dd>' . t("Optionally replace Drupal's authentication back-end entirely with Keycloak.") . '</dd>';
+      $output .= '<dt>' . t('Synchronize user fields with OpenID claims') . '</dt>';
+      $output .= '<dd>' . t("During login and user registration you can synchronize user attributes with OpenID claims using the OpenID Connect module's claim mapping.") . '</dd>';
+      $output .= '<dt>' . t('Synchronize email address changes from within Keycloak') . '</dt>';
+      $output .= '<dd>' . t("If the user's email address changed in Keycloak, you can synchronize this change with the Drupal user's email address.") . '</dd>';
+      $output .= '<dt>' . t('Single sign-out') . '</dt>';
+      $output .= '<dd>' . t("Optionally end a user's Keycloak session, when logging out from Drupal, or automatically log out from Drupal when the Keycloak session ends.") . '</dd>';
+      $output .= '<dt>' . t('Multi-language support') . '</dt>';
+      $output .= '<dd>' . t("When using a multi-language Drupal site and a multi-language Keycloak authentication server, you can forward language parameters to the login and register pages and map Keycloak locales to the Drupal user's language settings.") . '</dd>';
+      $output .= '</dl>';
+      return $output;
+
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for openid_connect_admin_settings.
+ */
+function keycloak_form_openid_connect_admin_settings_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  // Add our own submit handler to preprocess Keycloak setting values.
+  if (!$form_state->get('keycloak_processed')) {
+    array_unshift($form['#validate'], 'keycloak_form_openid_connect_admin_settings_validate');
+    array_unshift($form['#submit'], 'keycloak_form_openid_connect_admin_settings_submit');
+    $form_state->set('keycloak_processed', TRUE);
+  }
+}
+
+/**
+ * Custom validation handler to check submitted values of the settings form.
+ *
+ * @param array $form
+ *   An associative array containing the structure of the plugin form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ */
+function keycloak_form_openid_connect_admin_settings_validate(array &$form, FormStateInterface $form_state) {
+  // Whether Keycloak is enabled.
+  if (empty($form_state->getValue(['clients_enabled', 'keycloak']))) {
+    // Don't bother with validating, as Keycloak won't be used.
+    return;
+  }
+
+  // Get Keycloak setting values.
+  $settings = $form_state->getValue(['clients', 'keycloak', 'settings']);
+
+  // Whether a client ID is given.
+  if (empty($settings['client_id'])) {
+    $form_state->setErrorByName('clients][keycloak][settings][client_id', 'The Keycloak client ID is missing.');
+  }
+  // Whether a client secret is given.
+  if (empty($settings['client_secret'])) {
+    $form_state->setErrorByName('clients][keycloak][settings][client_secret', 'The Keycloak client secret is missing.');
+  }
+  // Whether a Keycloak base URL is given.
+  if (empty($settings['keycloak_base'])) {
+    $form_state->setErrorByName('clients][keycloak][settings][keycloak_base', 'The Keycloak base URL is missing.');
+  }
+  // Whether a Keycloak realm is given.
+  if (empty($settings['keycloak_realm'])) {
+    $form_state->setErrorByName('clients][keycloak][settings][keycloak_realm', 'The Keycloak realm is missing.');
+  }
+
+}
+
+/**
+ * Custom submit handler to alter submitted values of the settings form.
+ *
+ * @param array $form
+ *   An associative array containing the structure of the plugin form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ */
+function keycloak_form_openid_connect_admin_settings_submit(array &$form, FormStateInterface $form_state) {
+  // Whether Keycloak is enabled and we have to sanitize
+  // Keycloak setting values.
+  if (empty($form_state->getValue(['clients_enabled', 'keycloak']))) {
+    // Don't bother with sanitizing, as the Keycloak settings won't be saved.
+    return;
+  }
+
+  // Sanitize Keycloak setting values.
+  $settings = $form_state->getValue(['clients', 'keycloak', 'settings']);
+
+  // Remove trailing slashes from base URL.
+  $settings['keycloak_base'] = rtrim($settings['keycloak_base'], '/ ');
+
+  // Keycloak language mapping.
+  $settings['keycloak_i18n']['enabled'] = !empty($settings['keycloak_i18n_enabled']);
+  unset($settings['keycloak_i18n_enabled']);
+  // Store those mappings only, that differ from default locales.
+  $mappings = $settings['keycloak_i18n']['mapping'];
+  $mappings_save = [];
+  if (!empty($mappings)) {
+    foreach ($mappings as $mapping) {
+      if (empty($mapping['target']) || $mapping['langcode'] == $mapping['target']) {
+        continue;
+      }
+      $mappings_save[] = $mapping;
+    }
+  }
+  $settings['keycloak_i18n']['mapping'] = $mappings_save;
+
+  // Single sign-out.
+  $settings['check_session']['enabled'] = !empty($settings['check_session_enabled']);
+  unset($settings['check_session_enabled']);
+
+  $form_state->setValue(['clients', 'keycloak', 'settings'], $settings);
+}
+
+/**
+ * Implements hook_openid_connect_post_authorize().
+ *
+ * Stores the Keycloak session_state parameter to the logged in user's
+ * session.
+ */
+function keycloak_openid_connect_post_authorize(UserInterface $account, array $context) {
+  $tokens = isset($context['tokens']) ? $context['tokens'] : [];
+  $plugin_id = isset($context['plugin_id']) ? $context['plugin_id'] : [];
+
+  // Whether the client used for authentication was not keycloak.
+  if (empty($plugin_id) || $plugin_id !== 'keycloak') {
+    // Nothing to do. Bail out.
+    return;
+  }
+
+  /* @var $keycloak \Drupal\keycloak\Service\KeycloakServiceInterface */
+  $keycloak = \Drupal::service('keycloak.keycloak');
+
+  // Decode user data from ID token. The hook does not provide the decoded
+  // token information. So we create a new instance of the openid_connect
+  // Keycloak plugin and use its decode method to decode the token again.
+  // @see https://www.drupal.org/project/openid_connect/issues/2921095
+  $client = $keycloak->getClientInstance();
+  $user_data = $client->decodeIdToken($tokens['id_token']);
+
+  // Whether a session_state was provided by the IdP.
+  if (!isset($user_data['session_state'])) {
+    return;
+  }
+
+  // Get the session ID (OpenID Connect 'session_state').
+  $session_state = $user_data['session_state'];
+  // Get the client ID (OpenID Connect audience = 'aud').
+  $client_id = $user_data['aud'];
+
+  $session_info = [
+    KeycloakServiceInterface::KEYCLOAK_SESSION_ACCESS_TOKEN => $tokens['access_token'],
+    KeycloakServiceInterface::KEYCLOAK_SESSION_REFRESH_TOKEN => $tokens['refresh_token'],
+    KeycloakServiceInterface::KEYCLOAK_SESSION_ID_TOKEN => $tokens['id_token'],
+    KeycloakServiceInterface::KEYCLOAK_SESSION_CLIENT_ID => $client_id,
+    KeycloakServiceInterface::KEYCLOAK_SESSION_SESSION_ID => $session_state,
+  ];
+
+  $keycloak->setSessionInfo($session_info);
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ *
+ * Add our Keycloak session check to the page, if the user was logged
+ * in with Keycloak and SSO is enabled.
+ */
+function keycloak_page_attachments_alter(array &$build) {
+  /* @var $keycloak \Drupal\keycloak\Service\KeycloakServiceInterface */
+  $keycloak = \Drupal::service('keycloak.keycloak');
+
+  // Whether the current user is not a Keycloak user or check session
+  // is disabled.
+  if (!$keycloak->isKeycloakUser() || !$keycloak->isCheckSessionEnabled()) {
+    return;
+  }
+
+  $session_info = $keycloak->getSessionInfo([
+    KeycloakServiceInterface::KEYCLOAK_SESSION_CLIENT_ID,
+    KeycloakServiceInterface::KEYCLOAK_SESSION_SESSION_ID,
+  ]);
+  // Whether no session parameters were found.
+  if (
+    empty($session_info[KeycloakServiceInterface::KEYCLOAK_SESSION_CLIENT_ID]) ||
+    empty($session_info[KeycloakServiceInterface::KEYCLOAK_SESSION_SESSION_ID])
+  ) {
+    return;
+  }
+
+  // Attach session check JS and session information to the page.
+  $build['#attached']['library'][] = 'keycloak/keycloak-session';
+  $build['#attached']['drupalSettings']['keycloak'] = [
+    'enableSessionCheck' => TRUE,
+    'sessionCheckInterval' => $keycloak->getCheckSessionInterval(),
+    'sessionCheckIframeUrl' => $keycloak->getCheckSessionIframeUrl(),
+    'logoutUrl' => Url::fromRoute('user.logout', [], [
+      'query' => [
+        'op_initiated' => 1,
+      ],
+      'absolute' => TRUE,
+    ])->toString(),
+    'logout' => FALSE,
+    'clientId' => $session_info[KeycloakServiceInterface::KEYCLOAK_SESSION_CLIENT_ID],
+    'sessionId' => $session_info[KeycloakServiceInterface::KEYCLOAK_SESSION_SESSION_ID],
+  ];
+}

@@ -1,0 +1,12 @@
+name: media_library_form_element_test
+type: module
+description: 'Test media library form element integration'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Testing
+hidden: true
+
+# Information added by Drupal.org packaging script on 2020-12-15
+version: '2.0.3'
+project: 'media_library_form_element'
+datestamp: 1608021999

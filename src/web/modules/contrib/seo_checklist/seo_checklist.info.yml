@@ -1,0 +1,14 @@
+name: SEO Checklist
+type: module
+description: Uses best practices to check for proper search engine optimization.
+package: SEO
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:checklistapi
+configure: checklistapi.checklists.seo_checklist
+
+# Information added by Drupal.org packaging script on 2021-05-14
+version: '5.0.0'
+project: 'seo_checklist'
+datestamp: 1621000996

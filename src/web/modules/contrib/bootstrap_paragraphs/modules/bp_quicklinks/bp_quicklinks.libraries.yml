@@ -1,0 +1,4 @@
+bp-quicklinks:
+  css:
+    component:
+      css/bp-quicklinks.min.css: { preprocess: false, minified: true }

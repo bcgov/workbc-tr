@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.bp_card_style
+    - paragraphs.paragraphs_type.bp_card
+  module:
+    - options
+id: paragraph.bp_card.bp_card_style
+field_name: bp_card_style
+entity_type: paragraph
+bundle: bp_card
+label: 'Card Style'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: card--large-top
+default_value_callback: ''
+settings: {  }
+field_type: list_string

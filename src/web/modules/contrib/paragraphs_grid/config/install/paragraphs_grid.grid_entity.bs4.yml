@@ -1,0 +1,91 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - paragraphs_grid
+id: bs4
+label: 'Bootstrap 4 Grid (Flex box)'
+breakpoints:
+  xs:
+    cols: 12
+    name: Mobile
+    icon: mobile
+    bpoint: ≥0
+    fragment: ''
+  sm:
+    cols: 12
+    name: Smartphone
+    icon: smartphone
+    bpoint: ≥576px
+    fragment: '-sm'
+  md:
+    cols: 12
+    name: Tablet
+    icon: tablet
+    bpoint: ≥768px
+    fragment: '-md'
+  lg:
+    cols: 12
+    name: Laptop
+    icon: laptop
+    bpoint: ≥992px
+    fragment: '-lg'
+  xl:
+    cols: 12
+    name: Desktop
+    icon: desktop
+    bpoint: ≥1200px
+    fragment: '-xl'
+library: paragraphs_grid/paragraphs_grid.bootstrap4
+wrapper:
+  grid:
+    required: true
+    options:
+      container: Container
+      container-fluid: 'Container Fluid'
+      none: 'None'
+  row:
+    required: true
+    options:
+      - row
+cell-fallback: col-12
+cell-properties:
+  col:
+    name: col
+    label: Columns
+    formatter: col%bp-%cols
+    additional:
+      full-screen:
+        name: 'full'
+        class: col%bp-full
+      hide:
+        name: 'hide'
+        class: col%bp-hide
+    multiple: false
+    optional: false
+    default: null
+    asc: false
+  offset:
+    name: offset
+    label: Offset
+    formatter: offset%bp-%cols
+    multiple: false
+    optional: true
+    default: null
+    asc: true
+  order:
+    name: order
+    label: Order
+    formatter: order%bp-%cols
+    additional:
+      first:
+        name: first
+        class: order%bp-first
+      last:
+        name: last
+        class: order%bp-last
+    multiple: false
+    optional: true
+    default: null
+    asc: true

@@ -1,0 +1,16 @@
+{
+  "name": "drupal/bp_card",
+  "description": "A reusable Card Paragraph bundle.",
+  "type": "drupal-module",
+  "homepage": "https://drupal.org/project/bootstrap_paragraphs",
+  "require": {
+    "drupal/core": "*",
+    "drupal:bootstrap_paragraphs": "*"
+  },
+  "support": {
+    "issues": "https://drupal.org/project/issues/bootstrap_paragraphs",
+    "source": "https://git.drupalcode.org/project/bootstrap_paragraphs"
+  },
+  "license": "GPL-2.0",
+  "minimum-stability": "dev"
+}

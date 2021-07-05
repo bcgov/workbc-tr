@@ -1,0 +1,8 @@
+keycloak-session:
+  version: 1.x
+  js:
+    js/keycloak-session.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings

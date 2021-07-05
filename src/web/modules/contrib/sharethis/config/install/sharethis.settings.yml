@@ -1,0 +1,28 @@
+button_option: stbc_button
+comments: 0
+late_load: 0
+location: content
+node_types:
+  article: article
+  page: page
+option_extras:
+  'Google Plus One:plusone': 'Google Plus One:plusone'
+  'Facebook Like:fblike': 'Facebook Like:fblike'
+option_neworzero: 0
+option_onhover: 1
+option_shorten: 1
+service_option: '"Facebook:facebook","Tweet:twitter","LinkedIn:linkedin","Email:email","ShareThis:sharethis","Pinterest:pinterest"'
+twitter_handle: ''
+twitter_recommends: ''
+twitter_suffix: ''
+webform_options: ''
+weight: 10
+widget_option: 'st_multi'
+cns:
+  donotcopy:
+  hashaddress:
+sharethisnodes:
+  article:
+    full: 'full'
+  page:
+    full: 'full'

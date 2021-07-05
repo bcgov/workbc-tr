@@ -1,0 +1,17 @@
+{
+  "name": "drupal/bp_quicklinks",
+  "description": "A reusable Quicklinks Paragraph bundle.",
+  "type": "drupal-module",
+  "homepage": "https://drupal.org/project/bootstrap_paragraphs",
+  "require": {
+    "drupal/core": "*",
+    "drupal/bootstrap_paragraphs": "*",
+    "drupal/link_attributes": "*"
+  },
+  "support": {
+    "issues": "https://drupal.org/project/issues/bootstrap_paragraphs",
+    "source": "https://git.drupalcode.org/project/bootstrap_paragraphs"
+  },
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev"
+}

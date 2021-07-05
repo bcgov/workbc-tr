@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.bp_show_indicators
+    - paragraphs.paragraphs_type.bp_accordion
+id: paragraph.bp_accordion.bp_show_indicators
+field_name: bp_show_indicators
+entity_type: paragraph
+bundle: bp_accordion
+label: 'Show Indicators'
+description: 'Check to display open/close indicators for accordions in this section.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

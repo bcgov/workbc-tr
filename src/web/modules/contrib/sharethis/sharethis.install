@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * This file holds the install information for the ShareThis Module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function sharethis_install() {
+  \Drupal::configFactory()->getEditable('sharethis.settings')
+    ->set('publisherID', sharethis_create_publisher_key())
+    ->save();
+}
+
+/**
+ * Creates a publisher key for use with the ShareThis API.
+ */
+function sharethis_create_publisher_key() {
+  $pubkey = "dr-";
+  $pubkey .= dechex(mt_rand(0, 0xffff));
+  $pubkey .= dechex(mt_rand(0, 0xffff)) . "-";
+  $pubkey .= dechex(mt_rand(0, 0xffff)) . "-";
+  $pubkey .= dechex(mt_rand(0, 0xffff)) . "-";
+  $pubkey .= dechex(mt_rand(0, 0xffff)) . "-";
+  $pubkey .= dechex(mt_rand(0, 0xffff));
+  $pubkey .= dechex(mt_rand(0, 0xffff));
+  $pubkey .= dechex(mt_rand(0, 0xffff));
+  return $pubkey;
+}

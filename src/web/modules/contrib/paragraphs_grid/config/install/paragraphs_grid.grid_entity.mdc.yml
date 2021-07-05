@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - paragraphs_grid
+id: mdc
+label: 'MDC Grid (CSS Grid)'
+breakpoints:
+  phone:
+    cols: 4
+    name: Phone
+    icon: mobile
+    bpoint: ≥0
+    fragment: '-phone'
+  tablet:
+    cols: 8
+    name: Tablet
+    icon: tablet
+    bpoint: ≥480px
+    fragment: '-tablet'
+  desktop:
+    cols: 12
+    name: Desktop
+    icon: desktop
+    bpoint: ≥840px
+    fragment: '-desktop'
+library: paragraphs_grid/paragraphs_grid.mdc
+wrapper:
+  grid:
+    required: true
+    options:
+      mdc-layout-grid: 'MDC Grid fluid'
+  row:
+    required: true
+    options:
+      - mdc-layout-grid__inner
+cell-fallback: mdc-layout-grid__cell
+cell-properties:
+  col:
+    name: col
+    label: Columns
+    formatter: mdc-layout-grid__cell--span-%cols%bp
+    multiple: false
+    optional: false
+    default: mdc-layout-grid__cell
+    asc: false
+  order:
+    name: order
+    label: Order
+    formatter: mdc-layout-grid__cell--order-%cols
+    optional: true
+    default: null
+    asc: true

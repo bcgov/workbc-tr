@@ -1,0 +1,5 @@
+
+'use paragraphs_grid config form':
+  title: 'Use paragraphs_grid config form'
+  description: 'Users with this permission can change the grid system and cause data lost.'
+  'restrict access': TRUE

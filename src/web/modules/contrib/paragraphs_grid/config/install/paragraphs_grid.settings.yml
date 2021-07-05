@@ -1,0 +1,4 @@
+langcode: en
+gridtype: paragraphs_grid.grid_entity.bs4
+uselibrary: 1
+use_lib_admin_pages: 0

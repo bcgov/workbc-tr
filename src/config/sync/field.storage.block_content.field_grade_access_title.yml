@@ -1,0 +1,21 @@
+uuid: 005a3467-1cba-43f3-a432-dce81d78a67f
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_grade_access_title
+field_name: field_grade_access_title
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

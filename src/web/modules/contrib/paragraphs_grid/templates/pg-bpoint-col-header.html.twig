@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Header for paragraphs_grid, the field grid_widget breakpoint column header.
+ *
+ * Available variables:
+ * - name: The name of the breakpoint, normaly hidden in display.
+ * - size: The media query description i.e. ≥768px.
+ * - attributes: the header attributes.
+ * - icon_attributes: the icon attributes.
+ *
+ * @see template_preprocess_field()
+ */
+#}
+
+<header{{ attributes }}>
+  <h4 class="visually-hidden" aria-label="{{ name }}">{{ name }}</h4>
+  <span{{ icon_attributes.addClass('device-icon') }}></span>
+  <sub>{{ size }}</sub>
+</header>

@@ -1,0 +1,29 @@
+uuid: b94afc58-3d41-4b98-b511-4d7a46a449b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_term_resource_audience
+    - node.type.resource
+    - taxonomy.vocabulary.key_audiences
+id: node.resource.field_term_resource_audience
+field_name: field_term_resource_audience
+entity_type: node
+bundle: resource
+label: 'Key Audiences'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      key_audiences: key_audiences
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

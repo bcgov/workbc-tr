@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bp_view.bp_background
+    - field.field.paragraph.bp_view.bp_header
+    - field.field.paragraph.bp_view.bp_view
+    - field.field.paragraph.bp_view.bp_width
+    - paragraphs.paragraphs_type.bp_view
+  module:
+    - options
+    - viewsreference
+id: paragraph.bp_view.default
+targetEntityType: paragraph
+bundle: bp_view
+mode: default
+content:
+  bp_background:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  bp_header:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  bp_view:
+    weight: 3
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    type: viewsreference_formatter
+    region: content
+  bp_width:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+hidden:
+  created: true
+  uid: true

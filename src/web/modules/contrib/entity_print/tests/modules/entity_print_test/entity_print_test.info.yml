@@ -1,0 +1,11 @@
+name: Entity Print Test
+type: module
+package: Testing
+hidden: true
+dependencies:
+  - entity_print
+
+# Information added by Drupal.org packaging script on 2020-06-18
+version: '8.x-2.2'
+project: 'entity_print'
+datestamp: 1592473170

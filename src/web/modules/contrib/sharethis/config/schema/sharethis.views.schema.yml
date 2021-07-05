@@ -1,0 +1,5 @@
+# Schema for the views plugins of the Sharethis module.
+
+views.field.sharethis_node:
+  type: views_field
+  label: 'Sharethis node'

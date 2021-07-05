@@ -1,0 +1,97 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+    - paragraphs_grid
+_core:
+  default_config_hash: io3h06KiJn7H7p4uAbgNnjz34bJpTb6D9SI8L3hK_3g
+id: bs3
+label: 'Bootstrap 3 Grid (Box-Model)'
+breakpoints:
+  xs:
+    cols: 12
+    name: Mobile
+    icon: mobile
+    bpoint: '<768'
+    fragment: xs
+  sm:
+    cols: 12
+    name: Smartphone
+    icon: smartphone
+    bpoint: ≥768px
+    fragment: sm
+  md:
+    cols: 12
+    name: Tablet
+    icon: tablet
+    bpoint: ≥992px
+    fragment: md
+  lg:
+    cols: 12
+    name: Laptop
+    icon: laptop
+    bpoint: ≥1200px
+    fragment: lg
+library: paragraphs_grid/paragraphs_grid.bootstrap3
+wrapper:
+  grid:
+    required: false
+    options:
+      container: Container
+      container-fluid: 'Container Fluid'
+      none: 'None'
+  row:
+    required: true
+    options:
+    - row
+cell-fallback: col-xs-12
+cell-properties:
+  col:
+    name: col
+    label: Columns
+    formatter: col-%bp-%cols
+    additional:
+      full-screen:
+        name: full
+        class: col-%bp-full
+    multiple: false
+    optional: false
+    default: null
+    asc: false
+  row:
+    name: row
+    label: 'New row'
+    formatter: null
+    additional:
+      new-row-before:
+        name: before
+        class: new-row-before-%bp
+      new-row-after:
+        name: after
+        class: new-row-after-%bp
+    optional: true
+    default: null
+    asc: false
+  offset:
+    name: offset
+    label: Offset
+    formatter: col-%bp-offset-%cols
+    multiple: false
+    optional: true
+    default: null
+    asc: true
+  push:
+    name: push
+    label: Push
+    formatter: col-%bp-push-%cols
+    optional: true
+    default: null
+    asc: true
+  pull:
+    name: pull
+    label: Pull
+    formatter: col-%bp-pull-%cols
+    optional: true
+    default: null
+    asc: true

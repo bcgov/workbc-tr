@@ -1,0 +1,27 @@
+{#
+/**
+ * @file pg--mdc-fab.html.twig
+ *
+ * Display a material fab https://material.io/develop/web/components/buttons/floating-action-buttons/.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label: The label for the field.
+ * - icon: The icon string for material icons.
+ * - items: List of all the field items. Each item contains:
+ *
+ */
+#}
+{{ attach_library('paragraphs_grid/paragraphs_grid.grid_widget') }}
+{%
+  set classes = [
+    'mdc-fab',
+    label ? 'mdc-fab--extended'
+  ]
+%}
+<button{{ attributes.addClass(classes) }}>
+    <span class="mdc-fab__icon material-icons" data-key="{{ icon }}"></span>
+    {%- if label %}
+        <span class="mdc-fab__label">{{ label }}</span>
+    {% endif -%}
+</button>

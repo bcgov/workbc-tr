@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.bp_show_button
+    - paragraphs.paragraphs_type.bp_accordion_section
+id: paragraph.bp_accordion.bp_show_button
+field_name: bp_show_button
+entity_type: paragraph
+bundle: bp_accordion_section
+label: 'Display expanded'
+description: 'Check to have this accordion section appear open on page load.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

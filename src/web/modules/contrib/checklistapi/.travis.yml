@@ -1,0 +1,68 @@
+---
+language: php
+
+os: linux
+dist: bionic
+
+version: ~> 1.0
+
+php: "7.2"
+
+addons:
+  chrome: stable
+
+cache:
+  directories:
+    - "$HOME/.composer/cache"
+    - "$HOME/.drush/cache"
+    - "$HOME/.rvm"
+    - "${TMPDIR:-/tmp}/phpstan/cache"
+
+branches:
+  only:
+    - 8.x-1.x
+    - 8.x-2.x
+    - wip
+
+env:
+  global:
+    - ORCA_SUT_NAME=drupal/checklistapi
+    - ORCA_SUT_BRANCH=8.x-1.x
+    - ORCA_VERSION=^2
+    - ORCA_PACKAGES_CONFIG=../checklistapi/tests/packages.yml
+
+jobs:
+  fast_finish: true
+  include:
+    - { name: "Static code analysis", env: ORCA_JOB=STATIC_CODE_ANALYSIS }
+    - { name: "Deprecated code scan", env: ORCA_JOB=DEPRECATED_CODE_SCAN }
+    - { name: "Isolated test w/ recommended package versions", env: ORCA_JOB=ISOLATED_RECOMMENDED }
+    # - { name: "Integrated test w/ recommended package versions", env: ORCA_JOB=INTEGRATED_RECOMMENDED }
+    - { name: "Isolated test w/ recommended package versions & previous minor release of Drupal core", env: ORCA_JOB=CORE_PREVIOUS }
+    - { name: "Isolated test w/ dev package versions", env: ORCA_JOB=ISOLATED_DEV }
+    # - { name: "Integrated test w/ dev package versions", env: ORCA_JOB=INTEGRATED_DEV }
+    - { name: "Isolated test w/ dev package versions & next minor dev version of Drupal core", env: ORCA_JOB=CORE_NEXT }
+    - { name: "D9 readiness test", php: "7.3", env: ORCA_JOB=D9_READINESS}
+  allow_failures:
+    - env: ORCA_JOB=ISOLATED_DEV
+    # - env: ORCA_JOB=INTEGRATED_DEV
+    - env: ORCA_JOB=CORE_NEXT
+
+before_install:
+  - nvm use 12.13.1
+  - composer create-project --no-dev acquia/orca ../orca "$ORCA_VERSION"
+  - ../orca/bin/travis/before_install.sh
+
+install: ../orca/bin/travis/install.sh
+
+before_script: ../orca/bin/travis/before_script.sh
+
+script: ../orca/bin/travis/script.sh
+
+before_cache: ../orca/bin/travis/before_cache.sh
+
+after_success: ../orca/bin/travis/after_success.sh
+
+after_failure: ../orca/bin/travis/after_failure.sh
+
+after_script: ../orca/bin/travis/after_script.sh

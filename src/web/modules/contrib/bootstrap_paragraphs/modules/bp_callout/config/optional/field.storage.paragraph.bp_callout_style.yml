@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.bp_callout_style
+field_name: bp_callout_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: callout-style--primary
+      label: Primary
+    -
+      value: callout-style--secondary
+      label: Secondary
+    -
+      value: callout-style--success
+      label: Success
+    -
+      value: callout-style--danger
+      label: Danger
+    -
+      value: callout-style--warning
+      label: Warning
+    -
+      value: callout-style--info
+      label: Info
+    -
+      value: callout-style--dark
+      label: Dark
+    -
+      value: callout-style--light
+      label: Light
+    -
+      value: callout-style--white
+      label: White
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

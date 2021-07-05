@@ -1,0 +1,79 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bp_modal.bp_background
+    - field.field.paragraph.bp_modal.bp_header
+    - field.field.paragraph.bp_modal.bp_modal_body
+    - field.field.paragraph.bp_modal.bp_modal_button_text
+    - field.field.paragraph.bp_modal.bp_modal_footer
+    - field.field.paragraph.bp_modal.bp_modal_title
+    - field.field.paragraph.bp_modal.bp_width
+    - paragraphs.paragraphs_type.bp_modal
+  module:
+    - entity_reference_revisions
+    - options
+id: paragraph.bp_modal.default
+targetEntityType: paragraph
+bundle: bp_modal
+mode: default
+content:
+  bp_background:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  bp_header:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  bp_modal_body:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  bp_modal_button_text:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  bp_modal_footer:
+    type: entity_reference_revisions_entity_view
+    weight: 6
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  bp_modal_title:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  bp_width:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+hidden:
+  created: true
+  uid: true

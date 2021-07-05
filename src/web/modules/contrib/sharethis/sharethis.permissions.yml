@@ -1,0 +1,4 @@
+administer sharethis:
+  title: 'Administer Sharethis'
+  description: 'Change the settings for how ShareThis behaves on the site.'
+  restrict access: TRUE

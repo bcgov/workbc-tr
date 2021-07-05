@@ -1,0 +1,4 @@
+bp-callout:
+  css:
+    component:
+      css/bp-callout.min.css: { preprocess: false, minified: true }

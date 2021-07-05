@@ -1,0 +1,4 @@
+bp-card:
+  css:
+    component:
+      css/bp-card.min.css: { preprocess: false, minified: true }
