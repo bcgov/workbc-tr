@@ -1,8 +1,0 @@
-uuid: 63d26ecc-af4f-475f-978c-56fd448e9a8e
-langcode: en
-status: true
-dependencies: {  }
-id: cutom_grade_access
-label: 'Grade access'
-revision: 0
-description: 'Grade access block home page'

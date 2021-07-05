@@ -1,8 +1,0 @@
-uuid: 5764f45e-4a8c-4566-b526-ce10009555f0
-langcode: en
-status: true
-dependencies: {  }
-name: 'Industry Type'
-vid: industry_type
-description: ''
-weight: 0

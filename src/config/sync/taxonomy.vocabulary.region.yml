@@ -1,8 +1,0 @@
-uuid: 14d42e15-647e-460f-98b0-26ec67b03b16
-langcode: en
-status: true
-dependencies: {  }
-name: Region
-vid: region
-description: ''
-weight: 0
