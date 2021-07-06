@@ -1,16 +1,21 @@
 <?php
-use Drupal\image\Entity\ImageStyle;
 
 /**
  * @file
- * bcgov_teachers theme file.
+ */
+
+use Drupal\node\NodeInterface;
+
+/**
+ * @file
+ * Bcgov_teachers theme file.
  */
 
 /**
  * Implements hook_form_alter().
  */
 function bcgov_teachers_form_alter(&$form, &$form_state, $form_id) {
-  // Replaces the placeholder and the content of the submit button
+  // Replaces the placeholder and the content of the submit button.
   if ($form_id == 'search_block_form') {
     $form['keys']['#size'] = 1;
     $form['keys']['#attributes']['placeholder'] = t('Search for resources here...');
@@ -23,7 +28,7 @@ function bcgov_teachers_form_alter(&$form, &$form_state, $form_id) {
  */
 function bcgov_teachers_preprocess_block(&$vars) {
   if ($vars['base_plugin_id'] == 'block_content') {
-    // Replaces the placeholder for the dynamic year
+    // Replaces the placeholder for the dynamic year.
     if ($vars['elements']['#id'] == 'bcgov_teachers_copyright') {
       $body = $vars['content']['body'][0]['#text'];
       $body = str_replace('{{ dynamic_year }}', date('Y'), $body);
@@ -31,13 +36,30 @@ function bcgov_teachers_preprocess_block(&$vars) {
     }
   }
 
-  // Adds the variable to check if it's the front page
+  // Adds the variable to check if it's the front page.
   if ($vars['plugin_id'] == 'system_branding_block') {
     try {
       $vars['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
     }
     catch (Exception $e) {
       $vars['is_front'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_node_alter().
+ */
+function bcgov_teachers_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof NodeInterface) {
+    if ($node->bundle() == 'resource') {
+      $asset_type = $node->get('field_term_resource_asset_type')->referencedEntities();
+      if (!empty($asset_type)) {
+        $asset_type = reset($asset_type);
+        $asset_type_value = str_replace(" ", "_", strtolower($asset_type->label()));
+        $suggestions[] = 'node__' . $asset_type_value;
+      }
     }
   }
 }
