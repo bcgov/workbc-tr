@@ -109,6 +109,22 @@ objects:
       ports:
       - port: 5432
         targetPort: 5432
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: ${SERVICE_NAME_REPLICA}
+      labels:
+        app: ${APP_NAME}
+        cluster-name:  ${CLUSTER_NAME}
+    spec:
+      type: ClusterIP
+      selector:
+        app: ${APP_NAME}
+        cluster-name: ${CLUSTER_NAME}
+        role: replica
+      ports:
+      - port: 5432
+        targetPort: 5432
   - apiVersion: apps/v1
     kind: StatefulSet
     metadata:
@@ -200,6 +216,8 @@ parameters:
     value: workbc-tr-backend-service
   - name: SERVICE_NAME_MASTER
     value: workbc-tr-service-master
+  - name: SERVICE_NAME_REPLICA
+    value: workbc-tr-service-replica
   - name: SET_NAME
     value: workbc-tr-statefulset
   - name: SECRET_NAME

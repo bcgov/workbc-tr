@@ -1,0 +1,80 @@
+---
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  name: backup-template
+objects:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: ${CLAIM_NAME}
+      labels:
+        app: ${APP_NAME}
+    spec:
+      accessModes:
+      - ReadWriteMany
+      resources:
+        requests:
+          storage: 5Gi
+      storageClassName: netapp-file-backup
+  - apiVersion: batch/v1beta1
+    kind: CronJob
+    metadata:
+      name: workbc-tr-backup
+      labels:
+        app: ${APP_NAME}
+    spec:
+      schedule: "0 7 * * *"       
+      concurrencyPolicy: "Forbid"  
+      jobTemplate:                  
+        spec:
+          template:
+            spec:
+              volumes:
+                - name: db-backup
+                  persistentVolumeClaim:
+                    claimName: ${CLAIM_NAME}
+              containers:
+                - name: db-backup
+                  image: '${IMAGE_NAME}'
+                  command: 
+                    - "/bin/bash"
+                    - "-c"
+                    - >
+                      find /backups -type f -name "$POSTGRES_DB-backup-*" -mtime +5 -print0 | xargs -0 rm -f;
+                      FILENAME=$POSTGRES_DB-backup-`date +%Y%m%d`.bak;
+                      PGPASSWORD=$POSTGRES_PASSWORD pg_dump -U $POSTGRES_USER  -h $POSTGRES_HOST  -p $POSTGRES_PORT -Fc $POSTGRES_DB > /backups/$FILENAME;
+                  env:
+                  - name: POSTGRES_USER
+                    valueFrom:
+                      secretKeyRef:
+                        key: regular-user
+                        name: ${SECRET_NAME}
+                  - name: POSTGRES_PASSWORD
+                    valueFrom:
+                      secretKeyRef:
+                        key: regular-password
+                        name: ${SECRET_NAME}
+                  - name: POSTGRES_HOST
+                    value: ${BACKEND_SERVICE_NAME}
+                  - name: POSTGRES_PORT
+                    value: "5432"
+                  - name: POSTGRES_DB
+                    value: ${DB_NAME}
+                  volumeMounts:
+                    - name: db-backup
+                      mountPath: /backups  
+              restartPolicy: OnFailure
+parameters:
+  - name: APP_NAME
+    value: workbc-tr-backend
+  - name: CLAIM_NAME
+    value: workbc-tr-backup-pvc
+  - name: SECRET_NAME
+    value: workbc-tr-sec
+  - name: BACKEND_SERVICE_NAME
+    value: workbc-tr-service-replica
+  - name: DB_NAME
+    value: workbc_tr_drupal
+  - name: IMAGE_NAME
+    value: image-registry.openshift-image-registry.svc:5000/bdaa18-tools/wdst-ocp-postgres:1.0
