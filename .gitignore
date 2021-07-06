@@ -40,7 +40,7 @@ web/web.config
 
 
 # Ignore Drupal's file directory
-web/sites/*/files
+src/web/sites/*/files
 !web/sites/default/files/.htaccess
 
 # Packages #
