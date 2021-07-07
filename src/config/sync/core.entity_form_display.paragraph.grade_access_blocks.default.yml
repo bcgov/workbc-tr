@@ -1,0 +1,58 @@
+uuid: ecbbb2eb-4827-4dd7-b394-79823e6abe0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.grade_access_blocks.field_grade_access_block_title
+    - field.field.paragraph.grade_access_blocks.field_grade_access_body
+    - field.field.paragraph.grade_access_blocks.field_grade_access_link
+    - paragraphs.paragraphs_type.grade_access_blocks
+  module:
+    - link
+    - text
+id: paragraph.grade_access_blocks.default
+targetEntityType: paragraph
+bundle: grade_access_blocks
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_grade_access_block_title:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_grade_access_body:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_grade_access_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true

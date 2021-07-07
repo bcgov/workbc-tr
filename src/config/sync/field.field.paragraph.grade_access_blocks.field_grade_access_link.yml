@@ -1,0 +1,23 @@
+uuid: 274393a5-073e-4513-8d1f-84fc3f300e71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_grade_access_link
+    - paragraphs.paragraphs_type.grade_access_blocks
+  module:
+    - link
+id: paragraph.grade_access_blocks.field_grade_access_link
+field_name: field_grade_access_link
+entity_type: paragraph
+bundle: grade_access_blocks
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

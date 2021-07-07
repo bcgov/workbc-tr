@@ -1,0 +1,10 @@
+uuid: e4abfd55-f985-4990-bbaa-ddc27d1d668b
+langcode: en
+status: true
+dependencies: {  }
+id: grade_access_blocks
+label: 'Grade Access Blocks'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

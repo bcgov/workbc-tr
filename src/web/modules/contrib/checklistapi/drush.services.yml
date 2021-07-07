@@ -1,6 +1,0 @@
-services:
-  checklistapi.commands:
-    class: \Drupal\checklistapi\Commands\ChecklistapiCommands
-    arguments: ['@logger.factory']
-    tags:
-      - { name: drush.command }

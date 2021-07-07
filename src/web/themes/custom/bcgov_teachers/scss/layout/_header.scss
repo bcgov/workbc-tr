@@ -11,11 +11,11 @@ header {
       height: 145px;
       transition: height 0.4s;
 
-      @media (max-width: 400px) {
+      @media (max-width: 450px) {
         height: auto;
       }
 
-      @media (min-width: 401px) and (max-width: 768px) {
+      @media (min-width: 451px) and (max-width: 767px) {
         height: 65px;
       }
     }
@@ -25,44 +25,66 @@ header {
       margin-right: 0;
       background: none;
 
-      @media (max-width: 400px) {
+      @media (min-width: 451px) {
+        display: table;
+        width: 100%;
+      }
+
+      @media (max-width: 450px) {
         flex-wrap: wrap;
         flex-direction: column;
       }
 
-      @media (min-width: 401px) {
+      @media (min-width: 451px) {
         padding-top: 0;
         padding-bottom: 0;
       }
 
       .site-logo {
+        display: table-cell;
+        width: 260px;
         padding: 0;
         margin: 0;
+
+        @media (max-width: 450px) {
+          display: block;
+        }
+
+        @media (max-width: 767px) {
+          width: 175px;
+          max-width: 100%;
+        }
       }
 
       img {
-        display: block;
-        width: 260px;
-        max-width: 100%;
+        display: inline-block;
+        width: 100%;
         height: auto;
         transition: width 0.4s;
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
           width: 175px;
         }
       }
 
-      h1 {
-        width: 100%;
-        margin-bottom: 0;
-        margin-left: 0;
+      .site-title {
+        display: table-cell;
+        vertical-align: bottom;
+        padding: 0 15px;
+        text-align: center;
+        text-transform: inherit;
+        font-weight: 400;
+        font-style: normal;
         font-size: 1.4rem;
         line-height: 1.4rem;
+        letter-spacing: normal;
         transition: font-size 0.4s, line-height 0.4s;
 
-        @media (max-width: 400px) {
+        @media (max-width: 450px) {
+          display: block;
           text-align: left;
           margin-top: 10px;
+          padding: 0;
         }
 
         @media (min-width: 768px) {
@@ -79,27 +101,13 @@ header {
         }
       }
 
-      .site-title {
-        display: block;
-        text-transform: inherit;
-        font-size: inherit;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: normal;
-      }
-
       a.site-title {
         color: $teachers-secondary-blue;
       }
     }
 
     .block-system-branding-block {
-      text-align: center;
       flex-grow: 2;
-    }
-
-    .site-logo {
-      float: left;
     }
 
     @media (max-width: 767px) {
@@ -138,8 +146,7 @@ header {
     .form-search {
       width: 245px;
       height: 31px;
-      padding-top: 0;
-      padding-bottom: 0;
+      padding: 0 1rem;
       border: none;
       background: none;
       border-radius: 0;

@@ -1,0 +1,19 @@
+uuid: fa471551-2f8c-42f7-928d-7bec5b790f1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_grade_access_title
+    - paragraphs.paragraphs_type.grade_access
+id: paragraph.grade_access.field_grade_access_title
+field_name: field_grade_access_title
+entity_type: paragraph
+bundle: grade_access
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.content.field_content_body
     - field.field.node.content.field_content_description
     - field.field.node.content.field_content_image
     - field.field.node.content.field_content_items
@@ -28,7 +27,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_content_body: true
   field_content_description: true
   field_content_image: true
   field_content_items: true

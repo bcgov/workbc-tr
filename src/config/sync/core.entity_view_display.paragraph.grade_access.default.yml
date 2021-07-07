@@ -3,21 +3,41 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.grade_access.field_grade_acc
+    - field.field.paragraph.grade_access.field_grade_access_blocks
+    - field.field.paragraph.grade_access.field_grade_access_body
+    - field.field.paragraph.grade_access.field_grade_access_title
     - paragraphs.paragraphs_type.grade_access
+  module:
+    - entity_reference_revisions
+    - text
 id: paragraph.grade_access.default
 targetEntityType: paragraph
 bundle: grade_access
 mode: default
 content:
-  field_grade_acc:
-    weight: 0
+  field_grade_access_blocks:
+    type: entity_reference_revisions_entity_view
+    weight: 3
     label: hidden
     settings:
-      link: true
       view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    region: content
+  field_grade_access_body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_grade_access_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden:
   search_api_excerpt: true
