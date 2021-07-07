@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c29aead231fb286de15a2addc0afcf7c",
+    "content-hash": "7c9da2808d46556843e9ad5c4f8e01da",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1834,35 +1834,33 @@
         },
         {
             "name": "dompdf/dompdf",
-            "version": "v0.8.6",
+            "version": "v0.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dompdf/dompdf.git",
-                "reference": "db91d81866c69a42dad1d2926f61515a1e3f42c5"
+                "reference": "75f13c700009be21a1965dc2c5b68a8708c22ba2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/db91d81866c69a42dad1d2926f61515a1e3f42c5",
-                "reference": "db91d81866c69a42dad1d2926f61515a1e3f42c5",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/75f13c700009be21a1965dc2c5b68a8708c22ba2",
+                "reference": "75f13c700009be21a1965dc2c5b68a8708c22ba2",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-mbstring": "*",
-                "phenx/php-font-lib": "^0.5.2",
-                "phenx/php-svg-lib": "^0.3.3",
-                "php": "^7.1"
+                "phenx/php-font-lib": "0.5.*",
+                "phenx/php-svg-lib": "0.3.*",
+                "php": ">=5.4.0"
             },
             "require-dev": {
-                "mockery/mockery": "^1.3",
-                "phpunit/phpunit": "^7.5",
-                "squizlabs/php_codesniffer": "^3.5"
+                "phpunit/phpunit": "^4.8|^5.5|^6.5",
+                "squizlabs/php_codesniffer": "2.*"
             },
             "suggest": {
                 "ext-gd": "Needed to process images",
                 "ext-gmagick": "Improves image processing performance",
-                "ext-imagick": "Improves image processing performance",
-                "ext-zlib": "Needed for pdf stream compression"
+                "ext-imagick": "Improves image processing performance"
             },
             "type": "library",
             "extra": {
@@ -1902,7 +1900,7 @@
                 "issues": "https://github.com/dompdf/dompdf/issues",
                 "source": "https://github.com/dompdf/dompdf/tree/master"
             },
-            "time": "2020-08-30T22:54:22+00:00"
+            "time": "2018-12-14T02:40:31+00:00"
         },
         {
             "name": "drupal/admin_toolbar",
@@ -3025,6 +3023,58 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/keycloak",
                 "issues": "https://www.drupal.org/project/issues/keycloak"
+            }
+        },
+        {
+            "name": "drupal/media_download_all",
+            "version": "2.0.0-alpha5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_download_all.git",
+                "reference": "2.0.0-alpha5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_download_all-2.0.0-alpha5.zip",
+                "reference": "2.0.0-alpha5",
+                "shasum": "1d92f86fea8f735dee79787b3a318197d78f425d"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-alpha5",
+                    "datestamp": "1601267296",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "azcomi",
+                    "homepage": "https://www.drupal.org/user/454728"
+                },
+                {
+                    "name": "jhaskins",
+                    "homepage": "https://www.drupal.org/user/1358434"
+                },
+                {
+                    "name": "jungle",
+                    "homepage": "https://www.drupal.org/user/2919723"
+                }
+            ],
+            "description": "This module will provide field formatter and block plugin for downloading all media files associated with an entity.",
+            "homepage": "https://www.drupal.org/project/media_download_all",
+            "support": {
+                "source": "https://git.drupalcode.org/project/media_download_all"
             }
         },
         {
@@ -4218,57 +4268,38 @@
         },
         {
             "name": "drupal/viewsreference",
-            "version": "1.7.0",
+            "version": "2.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/viewsreference.git",
-                "reference": "8.x-1.7"
+                "reference": "8.x-2.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/viewsreference-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "6656c717cd78bee180fcc075d28db016fa7775d9"
+                "url": "https://ftp.drupal.org/files/projects/viewsreference-8.x-2.0-beta2.zip",
+                "reference": "8.x-2.0-beta2",
+                "shasum": "146bf8c68e6cbb3805b4368b508d43931fe77c67"
             },
             "require": {
-                "drupal/core": "^8.6|^9.0",
-                "php": "^5.5|^7.0",
-                "squizlabs/php_codesniffer": "*"
+                "drupal/core": "^8 || ^9"
             },
             "conflict": {
                 "drupal/viewsreferennce": "*"
             },
-            "require-dev": {
-                "composer/installers": "^1.2",
-                "drupal-composer/drupal-scaffold": "^2.5",
-                "drupal/coder": "^8.2",
-                "webflo/drupal-core-require-dev": "~8.5"
-            },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1610571201",
+                    "version": "8.x-2.0-beta2",
+                    "datestamp": "1597243219",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
-                },
-                "installer-paths": {
-                    "../build/core": [
-                        "type:drupal-core"
-                    ],
-                    "../build/modules/contrib/{$name}": [
-                        "type:drupal-module"
-                    ],
-                    "../build/themes/contrib/{$name}": [
-                        "type:drupal-theme"
-                    ]
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -4288,14 +4319,14 @@
                     "homepage": "https://www.drupal.org/user/545912"
                 }
             ],
-            "description": "Views Reference",
+            "description": "Views reference",
             "homepage": "http://drupal.org/project/viewsreference",
             "keywords": [
                 "Drupal"
             ],
             "support": {
-                "source": "http://cgit.drupalcode.org/viewsreference",
-                "issues": "http://drupal.org/project/issues/viewsreference"
+                "source": "https://git.drupalcode.org/project/viewsreference",
+                "issues": "https://www.drupal.org/project/issues/viewsreference"
             }
         },
         {
@@ -5464,6 +5495,147 @@
             "time": "2020-10-01T13:52:52+00:00"
         },
         {
+            "name": "mikehaertl/php-shellcommand",
+            "version": "1.6.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikehaertl/php-shellcommand.git",
+                "reference": "3488d7803df1e8f1a343d3d0ca452d527ad8d5e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikehaertl/php-shellcommand/zipball/3488d7803df1e8f1a343d3d0ca452d527ad8d5e5",
+                "reference": "3488d7803df1e8f1a343d3d0ca452d527ad8d5e5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">4.0 <=9.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mikehaertl\\shellcommand\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Härtl",
+                    "email": "haertl.mike@gmail.com"
+                }
+            ],
+            "description": "An object oriented interface to shell commands",
+            "keywords": [
+                "shell"
+            ],
+            "support": {
+                "issues": "https://github.com/mikehaertl/php-shellcommand/issues",
+                "source": "https://github.com/mikehaertl/php-shellcommand/tree/1.6.4"
+            },
+            "time": "2021-03-17T06:54:33+00:00"
+        },
+        {
+            "name": "mikehaertl/php-tmpfile",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikehaertl/php-tmpfile.git",
+                "reference": "70a5b70b17bc0d9666388e6a551ecc93d0b40a10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikehaertl/php-tmpfile/zipball/70a5b70b17bc0d9666388e6a551ecc93d0b40a10",
+                "reference": "70a5b70b17bc0d9666388e6a551ecc93d0b40a10",
+                "shasum": ""
+            },
+            "require-dev": {
+                "php": ">=5.3.0",
+                "phpunit/phpunit": ">4.0 <=9.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mikehaertl\\tmp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Härtl",
+                    "email": "haertl.mike@gmail.com"
+                }
+            ],
+            "description": "A convenience class for temporary files",
+            "keywords": [
+                "files"
+            ],
+            "support": {
+                "issues": "https://github.com/mikehaertl/php-tmpfile/issues",
+                "source": "https://github.com/mikehaertl/php-tmpfile/tree/1.2.1"
+            },
+            "time": "2021-03-01T18:26:25+00:00"
+        },
+        {
+            "name": "mikehaertl/phpwkhtmltopdf",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikehaertl/phpwkhtmltopdf.git",
+                "reference": "17ee71341591415d942774eda2c98d8ba7ea9e90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikehaertl/phpwkhtmltopdf/zipball/17ee71341591415d942774eda2c98d8ba7ea9e90",
+                "reference": "17ee71341591415d942774eda2c98d8ba7ea9e90",
+                "shasum": ""
+            },
+            "require": {
+                "mikehaertl/php-shellcommand": "^1.5.0",
+                "mikehaertl/php-tmpfile": "^1.2.1",
+                "php": ">=5.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">4.0 <9.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mikehaertl\\wkhtmlto\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Haertl",
+                    "email": "haertl.mike@gmail.com"
+                }
+            ],
+            "description": "A slim PHP wrapper around wkhtmltopdf with an easy to use and clean OOP interface",
+            "homepage": "http://mikehaertl.github.com/phpwkhtmltopdf/",
+            "keywords": [
+                "pdf",
+                "wkhtmltoimage",
+                "wkhtmltopdf"
+            ],
+            "support": {
+                "issues": "https://github.com/mikehaertl/phpwkhtmltopdf/issues",
+                "source": "https://github.com/mikehaertl/phpwkhtmltopdf/tree/2.5.0"
+            },
+            "time": "2021-03-01T19:41:06+00:00"
+        },
+        {
             "name": "myclabs/php-enum",
             "version": "1.8.3",
             "source": {
@@ -6489,62 +6661,6 @@
                 "source": "https://github.com/solariumphp/solarium/tree/6.1.4"
             },
             "time": "2021-07-06T10:45:42+00:00"
-        },
-        {
-            "name": "squizlabs/php_codesniffer",
-            "version": "3.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
-                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
-                "shasum": ""
-            },
-            "require": {
-                "ext-simplexml": "*",
-                "ext-tokenizer": "*",
-                "ext-xmlwriter": "*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
-            },
-            "bin": [
-                "bin/phpcs",
-                "bin/phpcbf"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Greg Sherwood",
-                    "role": "lead"
-                }
-            ],
-            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
-            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
-            "keywords": [
-                "phpcs",
-                "standards"
-            ],
-            "support": {
-                "issues": "https://github.com/squizlabs/PHP_CodeSniffer/issues",
-                "source": "https://github.com/squizlabs/PHP_CodeSniffer",
-                "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
-            },
-            "time": "2021-04-09T00:54:41+00:00"
         },
         {
             "name": "stack/builder",
@@ -9148,6 +9264,78 @@
             "time": "2021-05-26T17:39:37+00:00"
         },
         {
+            "name": "tecnickcom/tcpdf",
+            "version": "6.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tecnickcom/TCPDF.git",
+                "reference": "5ba838befdb37ef06a16d9f716f35eb03cb1b329"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/5ba838befdb37ef06a16d9f716f35eb03cb1b329",
+                "reference": "5ba838befdb37ef06a16d9f716f35eb03cb1b329",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "config",
+                    "include",
+                    "tcpdf.php",
+                    "tcpdf_parser.php",
+                    "tcpdf_import.php",
+                    "tcpdf_barcodes_1d.php",
+                    "tcpdf_barcodes_2d.php",
+                    "include/tcpdf_colors.php",
+                    "include/tcpdf_filters.php",
+                    "include/tcpdf_font_data.php",
+                    "include/tcpdf_fonts.php",
+                    "include/tcpdf_images.php",
+                    "include/tcpdf_static.php",
+                    "include/barcodes/datamatrix.php",
+                    "include/barcodes/pdf417.php",
+                    "include/barcodes/qrcode.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Nicola Asuni",
+                    "email": "info@tecnick.com",
+                    "role": "lead"
+                }
+            ],
+            "description": "TCPDF is a PHP class for generating PDF documents and barcodes.",
+            "homepage": "http://www.tcpdf.org/",
+            "keywords": [
+                "PDFD32000-2008",
+                "TCPDF",
+                "barcodes",
+                "datamatrix",
+                "pdf",
+                "pdf417",
+                "qrcode"
+            ],
+            "support": {
+                "issues": "https://github.com/tecnickcom/TCPDF/issues",
+                "source": "https://github.com/tecnickcom/TCPDF/tree/6.4.1"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&currency_code=GBP&business=paypal@tecnick.com&item_name=donation%20for%20tcpdf%20project",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-03-27T16:00:33+00:00"
+        },
+        {
             "name": "twig/twig",
             "version": "v2.14.6",
             "source": {
@@ -9438,6 +9626,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/media_download_all": 15,
         "drupal/search_api_spellcheck": 10,
         "drupal/sharethis": 10
     },

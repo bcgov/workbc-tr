@@ -1,8 +1,9 @@
-uuid: 7f9b6678-2824-42ca-9fd0-318622e2951b
+uuid: ddb58c4d-4038-4a17-88e7-f7fee219678c
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.pdf
     - field.field.node.resource.field_resource_desc
     - field.field.node.resource.field_resource_featured
     - field.field.node.resource.field_resource_images
@@ -15,26 +16,16 @@ dependencies:
     - field.field.node.resource.field_term_resource_stage
     - node.type.resource
   module:
-    - entity_print
     - entity_reference_revisions
     - user
-third_party_settings:
-  entity_print:
-    pdf_label: 'View this as PDF'
-    word_docx_label: 'View Word Document'
-id: node.resource.default
+id: node.resource.pdf
 targetEntityType: node
 bundle: resource
-mode: default
+mode: pdf
 content:
-  entity_print_view_pdf:
-    weight: 11
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_resource_desc:
     type: entity_reference_revisions_entity_view
-    weight: 6
+    weight: 107
     label: above
     settings:
       view_mode: default
@@ -43,7 +34,7 @@ content:
     region: content
   field_resource_images:
     type: entity_reference_entity_view
-    weight: 10
+    weight: 113
     label: above
     settings:
       view_mode: default
@@ -52,7 +43,7 @@ content:
     region: content
   field_resource_summary:
     type: entity_reference_revisions_entity_view
-    weight: 2
+    weight: 102
     label: hidden
     settings:
       view_mode: default
@@ -60,7 +51,7 @@ content:
     third_party_settings: {  }
     region: content
   field_resource_time:
-    weight: 9
+    weight: 112
     label: above
     settings:
       link_to_entity: false
@@ -68,7 +59,7 @@ content:
     type: string
     region: content
   field_term_resource_asset_type:
-    weight: 3
+    weight: 103
     label: above
     settings:
       link: true
@@ -76,7 +67,7 @@ content:
     type: entity_reference_label
     region: content
   field_term_resource_audience:
-    weight: 8
+    weight: 109
     label: above
     settings:
       link: true
@@ -84,7 +75,7 @@ content:
     type: entity_reference_label
     region: content
   field_term_resource_competency:
-    weight: 7
+    weight: 108
     label: above
     settings:
       link: true
@@ -92,7 +83,7 @@ content:
     type: entity_reference_label
     region: content
   field_term_resource_grade:
-    weight: 4
+    weight: 104
     label: above
     settings:
       link: true
@@ -100,7 +91,7 @@ content:
     type: entity_reference_label
     region: content
   field_term_resource_stage:
-    weight: 5
+    weight: 105
     label: above
     settings:
       link: true
@@ -108,17 +99,18 @@ content:
     type: entity_reference_label
     region: content
   links:
-    weight: 1
+    weight: 100
     region: content
     settings: {  }
     third_party_settings: {  }
   sharethis:
-    weight: 0
-    region: content
+    weight: 10
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   entity_print_view_epub: true
+  entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_resource_featured: true
   langcode: true

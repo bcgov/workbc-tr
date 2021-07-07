@@ -36,6 +36,7 @@ module:
   language: 0
   link: 0
   media: 0
+  media_download_all: 0
   media_library: 0
   media_library_form_element: 0
   menu_link_content: 0
