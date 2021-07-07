@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b833c2e38289c36b58281395d7cad6e",
+    "content-hash": "c29aead231fb286de15a2addc0afcf7c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1834,33 +1834,35 @@
         },
         {
             "name": "dompdf/dompdf",
-            "version": "v0.8.3",
+            "version": "v0.8.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dompdf/dompdf.git",
-                "reference": "75f13c700009be21a1965dc2c5b68a8708c22ba2"
+                "reference": "db91d81866c69a42dad1d2926f61515a1e3f42c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/75f13c700009be21a1965dc2c5b68a8708c22ba2",
-                "reference": "75f13c700009be21a1965dc2c5b68a8708c22ba2",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/db91d81866c69a42dad1d2926f61515a1e3f42c5",
+                "reference": "db91d81866c69a42dad1d2926f61515a1e3f42c5",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-mbstring": "*",
-                "phenx/php-font-lib": "0.5.*",
-                "phenx/php-svg-lib": "0.3.*",
-                "php": ">=5.4.0"
+                "phenx/php-font-lib": "^0.5.2",
+                "phenx/php-svg-lib": "^0.3.3",
+                "php": "^7.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8|^5.5|^6.5",
-                "squizlabs/php_codesniffer": "2.*"
+                "mockery/mockery": "^1.3",
+                "phpunit/phpunit": "^7.5",
+                "squizlabs/php_codesniffer": "^3.5"
             },
             "suggest": {
                 "ext-gd": "Needed to process images",
                 "ext-gmagick": "Improves image processing performance",
-                "ext-imagick": "Improves image processing performance"
+                "ext-imagick": "Improves image processing performance",
+                "ext-zlib": "Needed for pdf stream compression"
             },
             "type": "library",
             "extra": {
@@ -1900,7 +1902,7 @@
                 "issues": "https://github.com/dompdf/dompdf/issues",
                 "source": "https://github.com/dompdf/dompdf/tree/master"
             },
-            "time": "2018-12-14T02:40:31+00:00"
+            "time": "2020-08-30T22:54:22+00:00"
         },
         {
             "name": "drupal/admin_toolbar",
@@ -2189,16 +2191,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.2.0",
+            "version": "9.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "0231ec3b5a195d39ab02680672736de781a59599"
+                "reference": "20eb99aa59a265d22a21a4d6fde70901c3b5a37c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/0231ec3b5a195d39ab02680672736de781a59599",
-                "reference": "0231ec3b5a195d39ab02680672736de781a59599",
+                "url": "https://api.github.com/repos/drupal/core/zipball/20eb99aa59a265d22a21a4d6fde70901c3b5a37c",
+                "reference": "20eb99aa59a265d22a21a4d6fde70901c3b5a37c",
                 "shasum": ""
             },
             "require": {
@@ -2437,13 +2439,13 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/9.2.0"
+                "source": "https://github.com/drupal/core/tree/9.2.1"
             },
-            "time": "2021-06-16T12:31:16+00:00"
+            "time": "2021-07-07T13:04:41+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "9.2.0",
+            "version": "9.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -2487,13 +2489,13 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.2.0"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/9.2.1"
             },
             "time": "2020-08-07T22:30:13+00:00"
         },
         {
             "name": "drupal/core-project-message",
-            "version": "9.2.0",
+            "version": "9.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-project-message.git",
@@ -2528,22 +2530,22 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-project-message/tree/9.2.0"
+                "source": "https://github.com/drupal/core-project-message/tree/9.2.1"
             },
             "time": "2020-09-14T13:40:36+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "9.2.0",
+            "version": "9.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "436c459d1c9c8966b4d01e239da1b9165e91aa9d"
+                "reference": "f043a94e9a8aa60016974d60648508258a51bf86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/436c459d1c9c8966b4d01e239da1b9165e91aa9d",
-                "reference": "436c459d1c9c8966b4d01e239da1b9165e91aa9d",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/f043a94e9a8aa60016974d60648508258a51bf86",
+                "reference": "f043a94e9a8aa60016974d60648508258a51bf86",
                 "shasum": ""
             },
             "require": {
@@ -2552,7 +2554,7 @@
                 "doctrine/annotations": "1.13.1",
                 "doctrine/lexer": "1.2.1",
                 "doctrine/reflection": "1.2.2",
-                "drupal/core": "9.2.0",
+                "drupal/core": "9.2.1",
                 "egulias/email-validator": "2.1.25",
                 "guzzlehttp/guzzle": "6.5.5",
                 "guzzlehttp/promises": "1.4.1",
@@ -2615,9 +2617,9 @@
             ],
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/9.2.0"
+                "source": "https://github.com/drupal/core-recommended/tree/9.2.1"
             },
-            "time": "2021-06-16T12:31:16+00:00"
+            "time": "2021-07-07T13:04:41+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -3599,58 +3601,6 @@
             }
         },
         {
-            "name": "drupal/redirect",
-            "version": "1.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/redirect.git",
-                "reference": "8.x-1.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.6.zip",
-                "reference": "8.x-1.6",
-                "shasum": "f848e001deac8425ae57d4b9397087c491d37294"
-            },
-            "require": {
-                "drupal/core": "^8.8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.6",
-                    "datestamp": "1589312204",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Berdir",
-                    "homepage": "https://www.drupal.org/user/214652"
-                },
-                {
-                    "name": "Dave Reid",
-                    "homepage": "https://www.drupal.org/user/53892"
-                },
-                {
-                    "name": "pifagor",
-                    "homepage": "https://www.drupal.org/user/2375692"
-                }
-            ],
-            "description": "Allows users to redirect from old URLs to new URLs.",
-            "homepage": "https://www.drupal.org/project/redirect",
-            "support": {
-                "source": "https://git.drupalcode.org/project/redirect"
-            }
-        },
-        {
             "name": "drupal/search_api",
             "version": "1.19.0",
             "source": {
@@ -4268,38 +4218,57 @@
         },
         {
             "name": "drupal/viewsreference",
-            "version": "2.0.0-beta2",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/viewsreference.git",
-                "reference": "8.x-2.0-beta2"
+                "reference": "8.x-1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/viewsreference-8.x-2.0-beta2.zip",
-                "reference": "8.x-2.0-beta2",
-                "shasum": "146bf8c68e6cbb3805b4368b508d43931fe77c67"
+                "url": "https://ftp.drupal.org/files/projects/viewsreference-8.x-1.7.zip",
+                "reference": "8.x-1.7",
+                "shasum": "6656c717cd78bee180fcc075d28db016fa7775d9"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8.6|^9.0",
+                "php": "^5.5|^7.0",
+                "squizlabs/php_codesniffer": "*"
             },
             "conflict": {
                 "drupal/viewsreferennce": "*"
             },
+            "require-dev": {
+                "composer/installers": "^1.2",
+                "drupal-composer/drupal-scaffold": "^2.5",
+                "drupal/coder": "^8.2",
+                "webflo/drupal-core-require-dev": "~8.5"
+            },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-beta2",
-                    "datestamp": "1597243219",
+                    "version": "8.x-1.7",
+                    "datestamp": "1610571201",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "installer-paths": {
+                    "../build/core": [
+                        "type:drupal-core"
+                    ],
+                    "../build/modules/contrib/{$name}": [
+                        "type:drupal-module"
+                    ],
+                    "../build/themes/contrib/{$name}": [
+                        "type:drupal-theme"
+                    ]
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
@@ -4319,14 +4288,14 @@
                     "homepage": "https://www.drupal.org/user/545912"
                 }
             ],
-            "description": "Views reference",
+            "description": "Views Reference",
             "homepage": "http://drupal.org/project/viewsreference",
             "keywords": [
                 "Drupal"
             ],
             "support": {
-                "source": "https://git.drupalcode.org/project/viewsreference",
-                "issues": "https://www.drupal.org/project/issues/viewsreference"
+                "source": "http://cgit.drupalcode.org/viewsreference",
+                "issues": "http://drupal.org/project/issues/viewsreference"
             }
         },
         {
@@ -6460,16 +6429,16 @@
         },
         {
             "name": "solarium/solarium",
-            "version": "6.1.3",
+            "version": "6.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/solariumphp/solarium.git",
-                "reference": "f6e18891368400b6a15d8863175310997792848c"
+                "reference": "6265dc4484c433325a3f71871ea8e2a2247d27fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solariumphp/solarium/zipball/f6e18891368400b6a15d8863175310997792848c",
-                "reference": "f6e18891368400b6a15d8863175310997792848c",
+                "url": "https://api.github.com/repos/solariumphp/solarium/zipball/6265dc4484c433325a3f71871ea8e2a2247d27fa",
+                "reference": "6265dc4484c433325a3f71871ea8e2a2247d27fa",
                 "shasum": ""
             },
             "require": {
@@ -6517,9 +6486,65 @@
             ],
             "support": {
                 "issues": "https://github.com/solariumphp/solarium/issues",
-                "source": "https://github.com/solariumphp/solarium/tree/6.1.3"
+                "source": "https://github.com/solariumphp/solarium/tree/6.1.4"
             },
-            "time": "2021-06-24T15:04:42+00:00"
+            "time": "2021-07-06T10:45:42+00:00"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
+                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "bin": [
+                "bin/phpcs",
+                "bin/phpcbf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ],
+            "support": {
+                "issues": "https://github.com/squizlabs/PHP_CodeSniffer/issues",
+                "source": "https://github.com/squizlabs/PHP_CodeSniffer",
+                "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
+            },
+            "time": "2021-04-09T00:54:41+00:00"
         },
         {
             "name": "stack/builder",

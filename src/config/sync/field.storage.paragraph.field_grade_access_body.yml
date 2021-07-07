@@ -1,0 +1,19 @@
+uuid: 647252bf-05d8-4104-9921-dd3de1641e50
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_grade_access_body
+field_name: field_grade_access_body
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

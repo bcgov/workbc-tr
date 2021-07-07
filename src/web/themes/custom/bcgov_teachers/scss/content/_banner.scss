@@ -1,10 +1,11 @@
 .banner-content {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   min-height: 350px;
   padding: 10px 0;
   background-position: top center;
+  background-size: cover;
   border-bottom: 4px solid $teachers-fourth-blue;
 
   img {
@@ -26,7 +27,6 @@
   .container {
     display: flex;
     width: 100%;
-    height: 100%;
 
     &.text-pos-right {
       justify-content: flex-end;
@@ -34,16 +34,42 @@
   }
 
   .banner-text {
-    width: 50%;
-    padding: 20px;
-    background: rgba(255,255,255,.7);
+    padding: 10px;
+    background: rgba(255,255,255,.8);
+
+    @media (min-width: 768px) {
+      width: 50%;
+      padding: 20px;
+    }
 
     h1 {
-      font-size: 3.5rem;
+      font-size: 2.3rem;
+      line-height: 2.3rem;
       font-weight: 400;
+
+      @media (min-width: 768px) {
+        font-size: 2rem;
+        line-height: 2rem;
+      }
+      @media (min-width: 991px) {
+        font-size: 2.7rem;
+        line-height: 2.7rem;
+      }
+      @media (min-width: 1195px) {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+      }
     }
     p {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
+
+      @media (min-width: 768px) {
+        font-size: 1.4rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

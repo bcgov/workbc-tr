@@ -1,0 +1,21 @@
+uuid: 4939e26d-cb46-4788-bd3d-77e428f823c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_grade_access_body
+    - paragraphs.paragraphs_type.grade_access_blocks
+  module:
+    - text
+id: paragraph.grade_access_blocks.field_grade_access_body
+field_name: field_grade_access_body
+entity_type: paragraph
+bundle: grade_access_blocks
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -6,6 +6,10 @@ global-styling:
 global-scripts:
   js:
     js/script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
 
 fontawesome_5:
   version: 5.1.0

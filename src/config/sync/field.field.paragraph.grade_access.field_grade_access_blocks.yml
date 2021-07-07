@@ -1,0 +1,89 @@
+uuid: eec833ff-c00b-4ac4-8faf-3b0454177cd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_grade_access_blocks
+    - paragraphs.paragraphs_type.grade_access
+    - paragraphs.paragraphs_type.grade_access_blocks
+  module:
+    - entity_reference_revisions
+    - paragraph_blocks
+third_party_settings:
+  paragraph_blocks:
+    status: 1
+id: paragraph.grade_access.field_grade_access_blocks
+field_name: field_grade_access_blocks
+entity_type: paragraph
+bundle: grade_access
+label: 'Grade Access Blocks'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      grade_access_blocks: grade_access_blocks
+    target_bundles_drag_drop:
+      banner:
+        weight: 20
+        enabled: false
+      bp_accordion:
+        weight: 21
+        enabled: false
+      bp_accordion_section:
+        weight: 22
+        enabled: false
+      bp_blank:
+        weight: 23
+        enabled: false
+      bp_block:
+        weight: 24
+        enabled: false
+      bp_carousel:
+        weight: 25
+        enabled: false
+      bp_column_wrapper:
+        weight: 29
+        enabled: false
+      bp_columns:
+        weight: 26
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 27
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 28
+        enabled: false
+      bp_image:
+        weight: 30
+        enabled: false
+      bp_modal:
+        weight: 31
+        enabled: false
+      bp_simple:
+        weight: 32
+        enabled: false
+      bp_tab_section:
+        weight: 34
+        enabled: false
+      bp_tabs:
+        weight: 33
+        enabled: false
+      bp_view:
+        weight: 35
+        enabled: false
+      grade_access:
+        weight: 36
+        enabled: false
+      grade_access_blocks:
+        enabled: true
+        weight: 37
+      paragraph_simple:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

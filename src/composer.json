@@ -24,7 +24,7 @@
         "drupal/core-project-message": "^9.2",
         "drupal/core-recommended": "^9.2",
         "drupal/ctools": "^3.7",
-	"drupal/devel": "^4.1",
+        "drupal/devel": "^4.1",
         "drupal/entity_print": "^2.2",
         "drupal/field_group": "^3.1",
         "drupal/keycloak": "^1.5",

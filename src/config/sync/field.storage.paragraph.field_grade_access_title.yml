@@ -1,0 +1,21 @@
+uuid: 13d48290-0049-48d4-a81c-3dfa130a3807
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_grade_access_title
+field_name: field_grade_access_title
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

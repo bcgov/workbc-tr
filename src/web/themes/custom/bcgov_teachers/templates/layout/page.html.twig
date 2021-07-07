@@ -54,26 +54,28 @@ set footer_classes = ' '
   {{ page.header }}
 
   {% if page.nav_branding or page.nav_main or page.nav_additional %}
-  <nav class="{{ nav_classes }}">
-    <div class="container row mx-auto">
-      <div class="mobile-search col-auto navbar-toggler">
-        {{ page.nav_branding }}
-      </div>
+    <nav class="{{ nav_classes }}">
+      <div class="container row mx-auto">
+        <div class="mobile-search col-auto navbar-toggler">
+          {{ page.nav_branding }}
+        </div>
 
-      <div class="mobile-menu-toggle col-auto text-right">
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="mobile-menu-toggle col-auto text-right">
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
       </div>
 
       <div class="collapse navbar-collapse col-12 col-md-auto p-0 justify-content-start" id="navbarSupportedContent">
-        {{ page.nav_main }}
-        {{ page.nav_additional }}
+        <div class="container row mx-auto">
+          {{ page.nav_main }}
+          {{ page.nav_additional }}
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
   {% endif %}
 
 </header>

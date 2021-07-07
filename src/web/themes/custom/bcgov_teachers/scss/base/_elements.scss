@@ -64,3 +64,11 @@ html {
 .nobr {
   white-space: nowrap;
 }
+
+.clearfix {
+  &:after {
+    content: " ";
+    clear: both;
+    display: table;
+  }
+}

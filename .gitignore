@@ -2,46 +2,47 @@
 /drush/contrib/
 /drush/Commands/
 /vendor/
-/web/core/
-/web/modules/contrib/
-/web/modules/README.txt
-/web/themes/contrib/
-/web/themes/README.txt
-/web/profiles/contrib/
-/web/profiles/README.txt
+src/vendor/
+src/web/core/
+src/web/modules/contrib/
+src/web/modules/README.txt
+src/web/themes/contrib/
+src/web/themes/README.txt
+src/web/profiles/contrib/
+src/web/profiles/README.txt
 /console/
 
 # Ignore scaffold files
 .drush-lock-update
 .gitattributes
 .editorconfig
-web/.eslintrc.json
-web/INSTALL.txt
-web/README.txt
-web/example.gitignore
-web/.csslintrc
-web/.editorconfig
-web/.eslintignore
-web/.eslintrc
-web/.gitattributes
-web/.htaccess
-web/.ht.router.php
-web/autoload.php
-web/index.php
-web/robots.txt
-web/sites/default/default.services.yml
-web/sites/default/default.settings.php
-web/sites/development.services.yml
-web/sites/example.settings.local.php
-web/sites/example.sites.php
-web/sites/README.txt
-web/update.php
-web/web.config
+src/web/.eslintrc.json
+src/web/INSTALL.txt
+src/web/README.txt
+src/web/example.gitignore
+src/web/.csslintrc
+src/web/.editorconfig
+src/web/.eslintignore
+src/web/.eslintrc
+src/web/.gitattributes
+src/web/.htaccess
+src/web/.ht.router.php
+src/web/autoload.php
+src/web/index.php
+src/web/robots.txt
+src/web/sites/default/default.services.yml
+src/web/sites/default/default.settings.php
+src/web/sites/development.services.yml
+src/web/sites/example.settings.local.php
+src/web/sites/example.sites.php
+src/web/sites/README.txt
+src/web/update.php
+src/web/web.config
 
 
 # Ignore Drupal's file directory
 src/web/sites/*/files
-!web/sites/default/files/.htaccess
+!src/web/sites/default/files/.htaccess
 
 # Packages #
 ############
@@ -70,4 +71,4 @@ Thumbs.db
 
 # One-off environment settings files #
 ######################################
-web/sites/default/settings.azure-migrate.php
+src/web/sites/default/settings.azure-migrate.php
