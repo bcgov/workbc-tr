@@ -1,11 +1,11 @@
 uuid: 0b64b49c-cb72-44c6-a6d4-e7707d5db547
-name: 'Teacher Resources'
+name: 'Career Education Resources'
 mail: admin@educ.gov.bc.ca
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /node/1
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
