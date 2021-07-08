@@ -1,0 +1,10 @@
+uuid: fd5f06ef-0564-4b38-a92c-84e755bff407
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.trimmed
+label: Trimmed
+targetEntityType: paragraph
+cache: true
