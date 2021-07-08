@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:cb06ce94-64c4-433e-a1c7-809d346846a5'
+    - 'block_content:basic:912db691-44e4-4df1-af4d-0045c199134a'
   module:
     - block_content
   theme:
@@ -13,9 +13,9 @@ theme: bcgov_teachers
 region: under_footer
 weight: 0
 provider: null
-plugin: 'block_content:cb06ce94-64c4-433e-a1c7-809d346846a5'
+plugin: 'block_content:912db691-44e4-4df1-af4d-0045c199134a'
 settings:
-  id: 'block_content:cb06ce94-64c4-433e-a1c7-809d346846a5'
+  id: 'block_content:912db691-44e4-4df1-af4d-0045c199134a'
   label: Copyright
   provider: block_content
   label_display: '0'

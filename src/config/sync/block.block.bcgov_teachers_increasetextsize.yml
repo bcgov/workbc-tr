@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:924ed750-50dd-4184-ae3c-c3419d91259c'
+    - 'block_content:basic:204ba063-f181-4284-bb0f-6c715e371ad3'
   module:
     - block_content
   theme:
@@ -11,11 +11,11 @@ dependencies:
 id: bcgov_teachers_increasetextsize
 theme: bcgov_teachers
 region: footer
-weight: -6
+weight: 0
 provider: null
-plugin: 'block_content:924ed750-50dd-4184-ae3c-c3419d91259c'
+plugin: 'block_content:204ba063-f181-4284-bb0f-6c715e371ad3'
 settings:
-  id: 'block_content:924ed750-50dd-4184-ae3c-c3419d91259c'
+  id: 'block_content:204ba063-f181-4284-bb0f-6c715e371ad3'
   label: 'Increase Text Size'
   provider: block_content
   label_display: '0'
