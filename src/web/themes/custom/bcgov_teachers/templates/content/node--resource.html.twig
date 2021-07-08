@@ -84,43 +84,48 @@
 <article{{ attributes.addClass(classes) }}>
     <div class="resource_wrapper">
       <div class="resource_wrapper_intro">
-        <div class="resource_wrapper__intro__title">
-          {{ "Resource: "|t }} {{ node.title.value }}
+		  <div class="container">
+			<div class="resource_wrapper__intro__title">
+			  {{ "Resource: "|t }} {{ node.title.value }}
+			</div>
+			{% if node.field_term_resource_stage.value is not empty %}
+			  <div class="resource_wrapper_intro__life_cycle">
+				  <span>{{ "Career Lifecycle Stage: "|t }}</span> {{ content.field_term_resource_stage }}
+			  </div>
+			{% endif %}
+			{% if node.field_resource_summary.0.entity.field_para_simple_body.getValue().0.value is not empty %}
+			  <div class="resource_wrapper_intro__body">
+				  {{ node.field_resource_summary.0.entity.field_para_simple_body.getValue().0.value|raw }}
+			  </div>
+			{% endif %}
+			<div class="resource_wrapper_intro__tags">
+			  {% if node.field_term_resource_grade.value is not empty %}
+				<div class="resource_wrapper_intro__grade">
+					{{ content.field_term_resource_grade }}
+				</div>
+			  {% endif %}
+			</div>
+		  </div>
+		</div>
+	  <div class="resource_wrapper_main">
+			<div class="container">
+				<div class="resource_wrapper_main__lable">
+					{{ "Resource"|t }}
+				</div>
+				  <div class="resource_wrapper_main_para">
+					{% for key,subentity in node.field_resource_desc if key|first != '#' %}
+					  <div class="resource_wrapper_main_para_item">
+						<div class="resource_wrapper_main_para_item__title">
+						  {{ subentity.entity.field_para_simple_title.value }}
+						</div>
+						<div class="resource_wrapper_main_para_item__body">
+						  {{ subentity.entity.field_para_simple_body.getValue().0.value|raw }}
+						</div>
+					  </div>
+					{% endfor %}
+				  </div>
+			</div>
+          
         </div>
-        {% if node.field_term_resource_stage.value is not empty %}
-          <div class="resource_wrapper_intro__life_cycle">
-              {{ "Career Lifecycle Stage: "|t }} {{ node.field_term_resource_stage.0.entity.name.value }}
-          </div>
-        {% endif %}
-        {% if node.field_resource_summary.0.entity.field_para_simple_body.getValue().0.value is not empty %}
-          <div class="resource_wrapper_intro__body">
-              {{ node.field_resource_summary.0.entity.field_para_simple_body.getValue().0.value|raw }}
-          </div>
-        {% endif %}
-        <div class="resource_wrapper_intro__tags">
-          {% if node.field_term_resource_grade.value is not empty %}
-            <div class="resource_wrapper_intro__grade">
-                {{ node.field_term_resource_grade.0.entity.name.value }}
-            </div>
-          {% endif %}
-        </div>
-        <div class="resource_wrapper_main">
-          <div class="resource_wrapper_main__lable">
-            {{ "Resource"|t }}
-          </div>
-          <div class="resource_wrapper_main_para">
-            {% for key,subentity in node.field_resource_desc if key|first != '#' %}
-              <div class="resource_wrapper_main_para_item">
-                <div clas="resource_wrapper_main_para_item__title">
-                  {{ subentity.entity.field_para_simple_title.value }}
-                </div>
-                <div class="resource_wrapper_main_para_item__body">
-                  {{ subentity.entity.field_para_simple_body.getValue().0.value|raw }}
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
     </div>
 </article>
