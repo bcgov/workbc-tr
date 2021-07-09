@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.paragraph.paragraph_image
     - field.field.paragraph.paragraph_simple.field_para_simple_body
     - field.field.paragraph.paragraph_simple.field_para_simple_title
-    - field.field.paragraph.paragraph_simple.field_paragraph_image
     - paragraphs.paragraphs_type.paragraph_simple
   module:
     - text
@@ -29,15 +28,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_paragraph_image:
-    type: entity_reference_entity_view
-    weight: 2
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
     region: content
 hidden:
   entity_print_view_epub: true

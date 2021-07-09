@@ -1,34 +1,33 @@
-uuid: 1833deb0-c41a-492f-880f-d1feca66a360
+uuid: 47bf9acb-a5d6-44dd-956a-8d372d5d1023
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.page.body
-    - node.type.page
+    - field.field.taxonomy_term.grades.field_grade_color
+    - taxonomy.vocabulary.grades
   module:
+    - color_field
     - text
-    - user
-_core:
-  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
-id: node.page.default
-targetEntityType: node
-bundle: page
+id: taxonomy_term.grades.default
+targetEntityType: taxonomy_term
+bundle: grades
 mode: default
 content:
-  body:
+  description:
     label: hidden
     type: text_default
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-  links:
-    weight: 101
-    region: content
-  sharethis:
-    weight: 10
-    settings: {  }
+  field_grade_color:
+    weight: 1
+    label: above
+    settings:
+      format: hex
+      opacity: true
     third_party_settings: {  }
+    type: color_field_formatter_text
     region: content
 hidden:
   entity_print_view_epub: true

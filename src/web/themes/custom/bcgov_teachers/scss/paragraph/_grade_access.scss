@@ -1,0 +1,158 @@
+.paragraph--type--grade-access {
+  background: $teachers-bg-light-grey;
+
+  > .container {
+    align-items: stretch;
+    align-content: flex-start;
+  }
+
+  .description {
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+    @media (max-width: 991px) {
+      flex: 0 0 100%;
+      max-width: none;
+    }
+
+    h1 {
+      font-size: 2rem;
+      line-height: 2rem;
+      font-weight: 400;
+
+      @media (min-width: 768px) {
+        font-size: 2.6rem;
+        line-height: 2.6rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      p {
+        font-size: 1.3rem;
+      }
+    }
+
+    a:after {
+      display: inline-block;
+      width: 14px;
+      height: 18px;
+      margin-left: 10px;
+      content: " ";
+      background: url('/themes/custom/bcgov_teachers/assets/arrow.svg');
+      background-size: cover;
+      vertical-align: middle;
+      -moz-transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .grade-access-item + .grade-access-item {
+      margin-top: 20px;
+    }
+  }
+
+  .paragraph--type--grade-access-blocks {
+    height: 100%;
+    padding: 30px 20px 20px;
+    text-align: center;
+    background: $white;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      border-color: $teachers-secondary-blue;
+      border-color: var(--grade-color);
+      cursor: pointer;
+
+      .field--name-field-grade-access-link {
+        a {
+          &:link,
+          &:visited,
+          &:hover,
+          &:active,
+          &:focus {
+            color: $white;
+
+            &:after {
+              content: " ";
+              position: absolute;
+              top: 50%;
+              right: 10px;
+              display: block;
+              width: 9px;
+              height: 15px;
+              margin-top: -7px;
+              background: url('/themes/custom/bcgov_teachers/assets/chevron.svg');
+              background-size: cover;
+              vertical-align: middle;
+              -moz-transform: rotate(180deg);
+              -webkit-transform: rotate(180deg);
+              -o-transform: rotate(180deg);
+              -ms-transform: rotate(180deg);
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+
+    .field--name-field-grade-access-block-title {
+      font-weight: bold;
+      color: $teachers-secondary-blue;
+      color: var(--grade-color);
+
+      strong {
+        font-size: 5rem;
+        line-height: 5rem;
+        vertical-align: middle;
+      }
+    }
+
+    .field--name-field-grade-access-link {
+      a {
+        display: block;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+
+        &:link,
+        &:visited {
+          color: $white;
+          background: $teachers-secondary-blue;
+          background: var(--grade-color);
+          text-decoration: none;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+          color: $white;
+          text-decoration: none;
+
+          &:after {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            display: block;
+            width: 9px;
+            height: 15px;
+            margin-top: -7px;
+            background: url('/themes/custom/bcgov_teachers/assets/chevron.svg');
+            background-size: cover;
+            vertical-align: middle;
+            -moz-transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}

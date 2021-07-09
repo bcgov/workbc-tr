@@ -1,0 +1,22 @@
+uuid: 89861c2a-f301-4679-8447-d19ccd44a6d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_grade_color
+    - taxonomy.vocabulary.grades
+  module:
+    - color_field
+id: taxonomy_term.grades.field_grade_color
+field_name: field_grade_color
+entity_type: taxonomy_term
+bundle: grades
+label: 'Grade Color'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

@@ -1,0 +1,10 @@
+uuid: 1759af97-a1b5-425e-9700-79f74bdfcc23
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.grade_color
+label: 'Grade Color'
+targetEntityType: taxonomy_term
+cache: true

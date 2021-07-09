@@ -51,13 +51,8 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 %}
 
 {# Prints div with classes, and content without Width and Background. #}
-<article{{ attributes.addClass(classes) }}>
-  <div class="container mx-auto row">
-    <div class="description col-lg-3">
-      {{ content.field_grade_access_title }}
-      {{ content.field_grade_access_body }}
-    </div>
-
-    {{ content|without('field_grade_access_title', 'field_grade_access_body') }}
+<div{{ attributes.addClass(classes) }}>
+  <div class="container">
+    {{ content }}
   </div>
-</article>
+</div>

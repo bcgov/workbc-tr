@@ -1,0 +1,31 @@
+uuid: e807b468-a23f-4942-8a18-5e61f0947465
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.grade_color
+    - field.field.taxonomy_term.grades.field_grade_color
+    - taxonomy.vocabulary.grades
+  module:
+    - color_field
+id: taxonomy_term.grades.grade_color
+targetEntityType: taxonomy_term
+bundle: grades
+mode: grade_color
+content:
+  field_grade_color:
+    weight: 0
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    type: color_field_formatter_text
+    region: content
+hidden:
+  description: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

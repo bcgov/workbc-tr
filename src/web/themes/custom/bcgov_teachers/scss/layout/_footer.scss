@@ -165,14 +165,14 @@ footer {
         &:link,
         &:visited {
           color: $teachers-secondary-blue;
-          text-decoration: none;
+          text-decoration: underline;
         }
 
         &:hover,
         &:active,
         &:focus {
           color: $teachers-secondary-blue;
-          text-decoration: underline;
+          text-decoration: none;
         }
       }
     }
