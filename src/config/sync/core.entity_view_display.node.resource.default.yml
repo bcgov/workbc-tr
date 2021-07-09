@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.resource.field_resource_images
     - field.field.node.resource.field_resource_summary
     - field.field.node.resource.field_resource_time
+    - field.field.node.resource.field_resources_images_node
     - field.field.node.resource.field_term_resource_asset_type
     - field.field.node.resource.field_term_resource_audience
     - field.field.node.resource.field_term_resource_competency
@@ -17,10 +18,11 @@ dependencies:
   module:
     - entity_print
     - entity_reference_revisions
+    - media_download_all
     - user
 third_party_settings:
   entity_print:
-    pdf_label: 'View this as PDF'
+    pdf_label: Download
     word_docx_label: 'View Word Document'
 id: node.resource.default
 targetEntityType: node
@@ -42,7 +44,7 @@ content:
     third_party_settings: {  }
     region: content
   field_resource_images:
-    type: entity_reference_entity_view
+    type: media_download_all_entity_view
     weight: 10
     label: above
     settings:
@@ -66,6 +68,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_resources_images_node:
+    type: entity_reference_entity_view
+    weight: 106
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
     region: content
   field_term_resource_asset_type:
     weight: 3

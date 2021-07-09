@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.media.field_media_image
     - field.storage.node.field_resource_desc
     - field.storage.node.field_resource_images
     - field.storage.node.field_term_resource_asset_type
@@ -12,6 +13,8 @@ dependencies:
     - taxonomy.vocabulary.career_life_cycle_stage
   module:
     - entity_reference_revisions
+    - image
+    - media
     - node
     - taxonomy
     - user
@@ -40,7 +43,7 @@ display:
         type: views_query
         options:
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_comment: ''
           query_tags: {  }
@@ -229,7 +232,7 @@ display:
             external: false
             replace_spaces: false
             path_case: none
-            trim_whitespace: false
+            trim_whitespace: true
             alt: ''
             rel: ''
             link_class: ''
@@ -245,7 +248,7 @@ display:
             more_link_path: ''
             strip_tags: true
             trim: false
-            preserve_tags: '<p>'
+            preserve_tags: ''
             html: false
           element_type: ''
           element_class: ''
@@ -463,6 +466,70 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_media_image:
+          id: field_media_image
+          table: media__field_media_image
+          field: field_media_image
+          relationship: field_resources_images_node
+          group_type: group
+          admin_label: ''
+          label: Image
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: ''
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -509,7 +576,16 @@ display:
       header: {  }
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        field_resources_images_node:
+          id: field_resources_images_node
+          table: node__field_resources_images_node
+          field: field_resources_images_node
+          relationship: none
+          group_type: group
+          admin_label: 'field_resources_images_node: Media'
+          required: false
+          plugin_id: standard
       arguments:
         nid:
           id: nid
@@ -599,6 +675,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.node.field_resource_desc'
         - 'config:field.storage.node.field_resource_images'
         - 'config:field.storage.node.field_term_resource_asset_type'
@@ -620,6 +697,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.node.field_resource_desc'
         - 'config:field.storage.node.field_resource_images'
         - 'config:field.storage.node.field_term_resource_asset_type'
