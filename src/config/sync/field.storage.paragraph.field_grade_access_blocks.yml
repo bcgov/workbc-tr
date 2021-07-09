@@ -1,0 +1,20 @@
+uuid: 0ee179ad-ff8b-4e9f-bab0-460197c5262c
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+id: paragraph.field_grade_access_blocks
+field_name: field_grade_access_blocks
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

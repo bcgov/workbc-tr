@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Include custom sub theme.
 @import 'custom/variables';
 //@import 'custom/mixins/misc';
@@ -18,4 +19,25 @@
 @import 'layout/content';
 @import 'layout/header';
 @import 'layout/footer';
+=======
+// Include custom sub theme.
+@import 'custom/variables';
+//@import 'custom/mixins/misc';
+//@import 'custom/misc';
+
+// Include bootstrap variables definitions overrides.
+@import 'overrides/variables';
+
+// Include parent theme with all things Bootstrap for full override.
+// Relative path to this styles.scss file.
+// Example: @import "../../../../themes/custom/bootstrap4/scss/style";
+@import "../../../../themes/custom/bootstrap4_bcgov/scss/style";
+
+// Include custom sub theme.
+@import 'base/elements';
+@import 'content/banner';
+@import 'layout/content';
+@import 'layout/header';
+@import 'layout/footer';
+>>>>>>> feb5fb73f78d53ef5143e76323df99557b028e1b
 @import 'navigation/navbar';

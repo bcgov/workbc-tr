@@ -2,10 +2,17 @@
 // Full list of variables in [path to themes/contrib]/bootstrap4/dist/bootstrap/4.4.1/scss/_variables.scss
 // or [path to themes/contrib]/bootstrap4/scss/_theme_variables.scss.
 
-$grid-columns:                12 !default;
 $grid-gutter-width:           20px !default;
 
 $container-max-widths: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1196px
+) !default;
+
+$grid-breakpoints: (
+  xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,

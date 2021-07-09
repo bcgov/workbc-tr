@@ -3,8 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.grade_access.field_grade_acc
+    - field.field.paragraph.grade_access.field_grade_access_blocks
+    - field.field.paragraph.grade_access.field_grade_access_body
+    - field.field.paragraph.grade_access.field_grade_access_title
     - paragraphs.paragraphs_type.grade_access
+  module:
+    - paragraphs
+    - text
 id: paragraph.grade_access.default
 targetEntityType: paragraph
 bundle: grade_access
@@ -12,22 +17,46 @@ mode: default
 content:
   admin_title:
     type: string_textfield
-    weight: -10
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_grade_acc:
-    weight: -9
+  field_grade_access_blocks:
+    type: entity_reference_paragraphs
+    weight: 3
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: grade_access_blocks
+    third_party_settings: {  }
+    region: content
+  field_grade_access_body:
+    weight: 2
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_grade_access_title:
+    weight: 1
+    settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: string_textfield
     region: content
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true

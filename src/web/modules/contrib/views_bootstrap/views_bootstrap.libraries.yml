@@ -1,7 +1,0 @@
-components:
-  version: 1.x
-  js:
-    js/views-bootstrap.js: {}
-  dependencies:
-    - core/drupal
-    - core/jquery

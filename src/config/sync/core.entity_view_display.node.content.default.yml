@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.content.field_content_body
     - field.field.node.content.field_content_description
     - field.field.node.content.field_content_image
     - field.field.node.content.field_content_items
@@ -20,13 +19,6 @@ targetEntityType: node
 bundle: content
 mode: default
 content:
-  field_content_body:
-    weight: 4
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_content_description:
     weight: 2
     label: hidden
@@ -73,5 +65,8 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   langcode: true
   search_api_excerpt: true

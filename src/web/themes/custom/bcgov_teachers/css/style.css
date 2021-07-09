@@ -31,8 +31,8 @@
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "BC Sans";
+  --breakpoint-xl: 1196px;
+  --font-family-sans-serif: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -55,7 +55,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "BC Sans";
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.375;
@@ -353,7 +353,7 @@ template {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 1.375rem;
-  font-family: "BC Sans";
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
   font-weight: 600;
   line-height: 1.2;
 }
@@ -560,7 +560,7 @@ pre code {
     max-width: 992px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1196px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1196px;
   }
@@ -1433,7 +1433,7 @@ pre code {
     margin-left: 91.6666666667%;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1196px) {
   .col-xl {
     flex-basis: 0;
     flex-grow: 1;
@@ -1934,7 +1934,7 @@ pre code {
     border: 0;
   }
 }
-@media (max-width: 1199.98px) {
+@media (max-width: 1195.98px) {
   .table-responsive-xl {
     display: block;
     width: 100%;
@@ -3022,7 +3022,7 @@ input[type=button].btn-block {
     left: auto;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1196px) {
   .dropdown-menu-xl-left {
     right: auto;
     left: 0;
@@ -4176,7 +4176,7 @@ input[type=button].btn-block {
     display: none;
   }
 }
-@media (max-width: 1199.98px) {
+@media (max-width: 1195.98px) {
   .navbar-expand-xl > .container,
 .navbar-expand-xl > .container-fluid,
 .navbar-expand-xl > .container-sm,
@@ -4187,7 +4187,7 @@ input[type=button].btn-block {
     padding-left: 0;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1196px) {
   .navbar-expand-xl {
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -5158,7 +5158,7 @@ a.badge-dark:focus, a.badge-dark.focus {
     border-left-width: 1px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1196px) {
   .list-group-horizontal-xl {
     flex-direction: row;
   }
@@ -5560,7 +5560,7 @@ a.close.disabled {
     max-width: 800px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1196px) {
   .modal-xl {
     max-width: 1140px;
   }
@@ -5570,7 +5570,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "BC Sans";
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
   font-style: normal;
   font-weight: 400;
   line-height: 1.375;
@@ -5672,7 +5672,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "BC Sans";
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
   font-style: normal;
   font-weight: 400;
   line-height: 1.375;
@@ -6426,7 +6426,7 @@ button.bg-dark:focus {
     display: inline-flex !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1196px) {
   .d-xl-none {
     display: none !important;
   }
@@ -7088,7 +7088,7 @@ button.bg-dark:focus {
     align-self: stretch !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1196px) {
   .flex-xl-row {
     flex-direction: row !important;
   }
@@ -7276,7 +7276,7 @@ button.bg-dark:focus {
     float: none !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1196px) {
   .float-xl-left {
     float: left !important;
   }
@@ -9185,7 +9185,7 @@ button.bg-dark:focus {
     margin-left: auto !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1196px) {
   .m-xl-0 {
     margin: 0 !important;
   }
@@ -9703,7 +9703,7 @@ button.bg-dark:focus {
     text-align: center !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1196px) {
   .text-xl-left {
     text-align: left !important;
   }
@@ -10604,13 +10604,20 @@ html body[data-font-size=bigger] {
   white-space: nowrap;
 }
 
+.clearfix:after {
+  content: " ";
+  clear: both;
+  display: table;
+}
+
 .banner-content {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   min-height: 350px;
   padding: 10px 0;
   background-position: top center;
+  background-size: cover;
   border-bottom: 4px solid #073573;
 }
 .banner-content img {
@@ -10630,22 +10637,53 @@ html body[data-font-size=bigger] {
 .banner-content .container {
   display: flex;
   width: 100%;
-  height: 100%;
 }
 .banner-content .container.text-pos-right {
   justify-content: flex-end;
 }
 .banner-content .banner-text {
-  width: 50%;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.8);
+}
+@media (min-width: 768px) {
+  .banner-content .banner-text {
+    width: 50%;
+    padding: 20px;
+  }
 }
 .banner-content .banner-text h1 {
-  font-size: 3.5rem;
+  font-size: 2.3rem;
+  line-height: 2.3rem;
   font-weight: 400;
 }
+@media (min-width: 768px) {
+  .banner-content .banner-text h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
+@media (min-width: 991px) {
+  .banner-content .banner-text h1 {
+    font-size: 2.7rem;
+    line-height: 2.7rem;
+  }
+}
+@media (min-width: 1195px) {
+  .banner-content .banner-text h1 {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+}
 .banner-content .banner-text p {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+}
+@media (min-width: 768px) {
+  .banner-content .banner-text p {
+    font-size: 1.4rem;
+  }
+}
+.banner-content .banner-text p:last-child {
+  margin-bottom: 0;
 }
 
 .lesson_wrapper_intro, .resource_wrapper_intro {
@@ -10945,12 +10983,12 @@ header .region-header > .container {
   height: 145px;
   transition: height 0.4s;
 }
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   header .region-header > .container {
     height: auto;
   }
 }
-@media (min-width: 401px) and (max-width: 768px) {
+@media (min-width: 451px) and (max-width: 767px) {
   header .region-header > .container {
     height: 65px;
   }
@@ -10960,83 +10998,96 @@ header .region-header .navbar-brand {
   margin-right: 0;
   background: none;
 }
-@media (max-width: 400px) {
+@media (min-width: 451px) {
+  header .region-header .navbar-brand {
+    display: table;
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
   header .region-header .navbar-brand {
     flex-wrap: wrap;
     flex-direction: column;
   }
 }
-@media (min-width: 401px) {
+@media (min-width: 451px) {
   header .region-header .navbar-brand {
     padding-top: 0;
     padding-bottom: 0;
   }
 }
 header .region-header .navbar-brand .site-logo {
+  display: table-cell;
+  width: 260px;
   padding: 0;
   margin: 0;
 }
+@media (max-width: 450px) {
+  header .region-header .navbar-brand .site-logo {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  header .region-header .navbar-brand .site-logo {
+    width: 175px;
+    max-width: 100%;
+  }
+}
 header .region-header .navbar-brand img {
-  display: block;
-  width: 260px;
-  max-width: 100%;
+  display: inline-block;
+  width: 100%;
   height: auto;
   transition: width 0.4s;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   header .region-header .navbar-brand img {
     width: 175px;
   }
 }
-header .region-header .navbar-brand h1 {
-  width: 100%;
-  margin-bottom: 0;
-  margin-left: 0;
+header .region-header .navbar-brand .site-title {
+  display: table-cell;
+  vertical-align: bottom;
+  padding: 0 15px;
+  text-align: center;
+  text-transform: inherit;
+  font-weight: 400;
+  font-style: normal;
   font-size: 1.4rem;
   line-height: 1.4rem;
+  letter-spacing: normal;
   transition: font-size 0.4s, line-height 0.4s;
 }
-@media (max-width: 400px) {
-  header .region-header .navbar-brand h1 {
+@media (max-width: 450px) {
+  header .region-header .navbar-brand .site-title {
+    display: block;
     text-align: left;
     margin-top: 10px;
+    padding: 0;
   }
 }
 @media (min-width: 768px) {
-  header .region-header .navbar-brand h1 {
+  header .region-header .navbar-brand .site-title {
     font-size: 1.6rem;
     line-height: 1.6rem;
   }
 }
 @media (min-width: 991px) {
-  header .region-header .navbar-brand h1 {
+  header .region-header .navbar-brand .site-title {
     font-size: 2.2rem;
     line-height: 2.2rem;
   }
 }
 @media (min-width: 1195px) {
-  header .region-header .navbar-brand h1 {
+  header .region-header .navbar-brand .site-title {
     font-size: 3rem;
     line-height: 3rem;
   }
-}
-header .region-header .navbar-brand .site-title {
-  display: block;
-  text-transform: inherit;
-  font-size: inherit;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: normal;
 }
 header .region-header .navbar-brand a.site-title {
   color: #2379A4;
 }
 header .region-header .block-system-branding-block {
-  text-align: center;
   flex-grow: 2;
-}
-header .region-header .site-logo {
-  float: left;
 }
 @media (max-width: 767px) {
   header .region-header .block-search {
@@ -11070,8 +11121,7 @@ header .block-search h2 {
 header .block-search .form-search {
   width: 245px;
   height: 31px;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0 1rem;
   border: none;
   background: none;
   border-radius: 0;
@@ -11232,8 +11282,10 @@ footer {
     display: block;
   }
 }
-.region-under-footer #block-bcgov-teachers-copyright {
-  margin-bottom: 30px;
+@media (max-width: 576px) {
+  .region-under-footer #block-bcgov-teachers-copyright {
+    margin-bottom: 30px;
+  }
 }
 .region-under-footer #block-bcgov-teachers-copyright p {
   margin: 0;
@@ -11241,11 +11293,11 @@ footer {
   font-size: 0.9rem;
 }
 .region-under-footer #block-bcgov-teachers-copyright p a:link, .region-under-footer #block-bcgov-teachers-copyright p a:visited {
-  color: #153A55;
+  color: #2379A4;
   text-decoration: none;
 }
 .region-under-footer #block-bcgov-teachers-copyright p a:hover, .region-under-footer #block-bcgov-teachers-copyright p a:active, .region-under-footer #block-bcgov-teachers-copyright p a:focus {
-  color: #153A55;
+  color: #2379A4;
   text-decoration: underline;
 }
 .region-under-footer #block-bcgov-teachers-footerbclogo p {
@@ -11259,14 +11311,14 @@ footer {
 }
 
 header .navbar {
+  display: block;
   min-height: 55px;
   padding: 0;
   background: #153A55;
   align-items: stretch;
 }
 header .navbar > .container {
-  height: 100%;
-  min-height: 55px;
+  height: 55px;
   align-content: center;
   padding-left: 10px;
   padding-right: 10px;
@@ -11274,6 +11326,9 @@ header .navbar > .container {
 @media (min-width: 768px) {
   header .navbar > .container {
     align-items: stretch;
+  }
+  header .navbar > .container:first-child {
+    display: none;
   }
 }
 header .navbar > .container > .navbar-toggler {
@@ -11307,7 +11362,18 @@ header .navbar .mobile-search .block-search .form-search {
 header .navbar .mobile-menu-toggle .navbar-toggler {
   border: none;
 }
+header .navbar > .navbar-collapse {
+  z-index: 10;
+}
+@media (min-width: 768px) {
+  header .navbar > .navbar-collapse {
+    height: 55px;
+    align-items: stretch;
+    align-content: center;
+  }
+}
 header .navbar .region-nav-main {
+  width: 100%;
   height: 100%;
 }
 header .navbar .menu--main {
@@ -11328,11 +11394,12 @@ header .navbar .menu--main .nav {
   }
 }
 header .navbar .menu--main .nav-item {
-  display: table;
+  display: block;
 }
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   header .navbar .menu--main .nav-item {
-    display: block;
+    display: table;
+    height: 100%;
   }
 }
 header .navbar .menu--main .nav-link {

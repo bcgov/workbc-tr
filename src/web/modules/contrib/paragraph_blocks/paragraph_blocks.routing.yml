@@ -1,8 +1,0 @@
-# Paragraph Blocks routing definition
-paragraph_blocks.settings:
-  path: '/admin/config/content/paragraph_blocks'
-  defaults:
-    _form: '\Drupal\paragraph_blocks\Form\ParagraphBlocksSettingsForm'
-    _title: 'Paragraph Blocks settings'
-  requirements:
-    _permission: 'administer paragraphs settings'

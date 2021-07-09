@@ -6,5 +6,5 @@ id: grade_access
 label: 'Grade Access'
 icon_uuid: null
 icon_default: null
-description: 'Grade access block on Home page'
+description: 'Grade access content (used on Home page)'
 behavior_plugins: {  }

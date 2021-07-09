@@ -1,9 +1,0 @@
-/**
- * @file
- * sharethis styling.
- */
-
-[dir="rtl"] #stcpDiv,
-[dir="rtl"] #st_gdpr_iframe {
-  left: 0 !important;
-}

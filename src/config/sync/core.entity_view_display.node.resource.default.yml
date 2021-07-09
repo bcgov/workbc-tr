@@ -15,16 +15,26 @@ dependencies:
     - field.field.node.resource.field_term_resource_stage
     - node.type.resource
   module:
+    - entity_print
     - entity_reference_revisions
     - user
+third_party_settings:
+  entity_print:
+    pdf_label: 'View this as PDF'
+    word_docx_label: 'View Word Document'
 id: node.resource.default
 targetEntityType: node
 bundle: resource
 mode: default
 content:
+  entity_print_view_pdf:
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_resource_desc:
     type: entity_reference_revisions_entity_view
-    weight: 107
+    weight: 6
     label: above
     settings:
       view_mode: default
@@ -33,7 +43,7 @@ content:
     region: content
   field_resource_images:
     type: entity_reference_entity_view
-    weight: 113
+    weight: 10
     label: above
     settings:
       view_mode: default
@@ -42,7 +52,7 @@ content:
     region: content
   field_resource_summary:
     type: entity_reference_revisions_entity_view
-    weight: 102
+    weight: 2
     label: hidden
     settings:
       view_mode: default
@@ -50,7 +60,7 @@ content:
     third_party_settings: {  }
     region: content
   field_resource_time:
-    weight: 112
+    weight: 9
     label: above
     settings:
       link_to_entity: false
@@ -58,7 +68,7 @@ content:
     type: string
     region: content
   field_term_resource_asset_type:
-    weight: 103
+    weight: 3
     label: above
     settings:
       link: true
@@ -66,7 +76,7 @@ content:
     type: entity_reference_label
     region: content
   field_term_resource_audience:
-    weight: 109
+    weight: 8
     label: above
     settings:
       link: true
@@ -74,7 +84,7 @@ content:
     type: entity_reference_label
     region: content
   field_term_resource_competency:
-    weight: 108
+    weight: 7
     label: above
     settings:
       link: true
@@ -98,7 +108,7 @@ content:
     type: entity_reference_label
     region: content
   links:
-    weight: 100
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -109,7 +119,6 @@ content:
     third_party_settings: {  }
 hidden:
   entity_print_view_epub: true
-  entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_resource_featured: true
   langcode: true

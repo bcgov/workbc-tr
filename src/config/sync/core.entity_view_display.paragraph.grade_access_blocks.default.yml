@@ -1,0 +1,48 @@
+uuid: 5973386d-12bf-42ed-9c73-375ca1744c51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.grade_access_blocks.field_grade_access_block_title
+    - field.field.paragraph.grade_access_blocks.field_grade_access_body
+    - field.field.paragraph.grade_access_blocks.field_grade_access_link
+    - paragraphs.paragraphs_type.grade_access_blocks
+  module:
+    - link
+    - text
+id: paragraph.grade_access_blocks.default
+targetEntityType: paragraph
+bundle: grade_access_blocks
+mode: default
+content:
+  field_grade_access_block_title:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_grade_access_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_grade_access_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true
