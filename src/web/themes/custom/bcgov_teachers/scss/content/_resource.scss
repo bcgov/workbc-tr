@@ -3,6 +3,17 @@
     padding-top: 30px;
     padding-bottom: 40px;
     border-bottom: 10px solid rgba(242, 195, 36, 1);
+    @media only screen and (max-width:1200px){
+      [class^=col]{
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+        + [class^=col]{
+          margin-top: 20px;
+          margin-left:0;
+        } 
+      }
+    }
   }
   &__intro__title{margin-bottom: 20px;
     font-family: $font-family-sans-serif; font-size: 45px; color:$teachers-text; font-weight: normal;
@@ -147,6 +158,7 @@
   width:100%;
   padding:40px 0;
   background:rgba(242, 242, 242, 1);
+  overflow: hidden;
   > h2{
     font-family: $font-family-sans-serif; 
     font-weight: 400;
@@ -185,7 +197,7 @@
     }
   }
   &_img{
-    min-height: 110px;
+    min-height: 110px; background: #2771CA;
     img{object-fit: cover; width:100%; height:100%}
   }
   &--inner{
@@ -260,4 +272,224 @@
     }
   }
 }
+
+
+.download-worksheets-button{
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  color:$teachers-bg-light;
+  background: $teachers-fifth-blue;
+  border-radius: 15px;
+  padding:10px 10px 10px 65px;
+  position: relative;
+  width:100%;
+  margin-bottom:20px;
+  border:2px solid $teachers-fifth-blue;
+  text-decoration: none;
+  max-width: 330px;
+  transition: 0.5s;
+  
+  p{
+    margin: 0;
+    text-align:center;
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left:30px;
+    width:30px;
+    height:30px;
+    background:url(../images/download-white.svg) center no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+  }
+  &:hover{
+    background:$teachers-bg-light;
+    color:$teachers-fifth-blue;
+    &:before{
+      background:url(../images/download-blue.svg) center no-repeat;
+      background-size: cover;
+    }
+    
+  }
+}
+
+.align-item-end{ display: flex; align-items: flex-end;}
+.share-this-resource{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    text-align: right;
+    color:$teachers-bg-grey;
+    display: flex;
+    align-items: center;
+}
+.sharethis-wrapper{
+  display: inline-block;
+  margin-left:5px;
+  .stButton{display: flex; justify-content: center; align-items: center; width:38px; height:38px; background-color: $teachers-bg-grey; border-radius: 100%; background-size: 25px 25px; background-position: center; background-repeat: no-repeat; transition: 0.5s;
+    .stLarge{display: none;}
+    &:hover{background-color:#989898;} 
+  }
+  
+  .st_email_large .stButton{background-image:url(../images/mail.svg);}
+  .st_facebook_large .stButton{background-image:url(../images/facebook.svg); background-size: 13px;}
+  .st_twitter_large .stButton{background-image:url(../images/twitter.svg); background-size: 20px;}
+  .st_linkedin_large .stButton{background-image:url(../images/linkedin.svg); background-size: 18px;}
+  
+}
+
+
+
+.download-worksheets-files-wrapper{display: none;
+  &.open{display: block;}
+  &:before {
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(51,51,51, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+  &__inner {
+    position: fixed;
+    z-index: 11;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    padding: 20px;
+    width:100%;
+    max-width:460px;
+      
+    ul.file-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li{
+          display: flex;
+          justify-content: space-between;
+          @media only screen and (max-width:480px){
+            flex-direction: column;
+          }
+          + li{
+            margin-top:20px;
+          }
+          &.download-all { 
+            padding: 33px 15px;
+            background: rgb(226 226 226);
+            
+            .file-title-all{
+              padding-left:48px;
+              position: relative;
+              font-size: 16px;
+              &:before{
+                content:'';
+                position: absolute;
+                top:50%;
+                transform: translateY(-50%);
+                left:-8px;
+                width: 48px;
+                height:48px;
+                background: url(../images/download-all.svg) center no-repeat;
+              }
+            }
+            .size-all{font-size: 16px; padding:0 5px;
+              @media only screen and (max-width:480px){
+                padding:0;
+                margin: 20px 0;
+              }
+            }
+            .file-url{
+              a{
+                font-size: 16px;
+                color:#fff;
+                background:#2379A4;
+                padding: 8px 10px;
+                text-decoration: none;
+              }
+            }
+          }
+          .file-title{
+            max-width: 200px;
+            word-break: break-word;
+            position: relative;
+            padding-left:45px;
+            font-size: 16px;
+            @media only screen and (max-width:480px){
+              max-width:100%;
+            }
+            &:before{
+              content:'';
+              position: absolute;
+              top:0;
+              left:-8px;
+              width: 48px;
+              height:48px;
+            }
+            &[class$=msword]{
+              &:before{
+                background: url(../images/doc-icon.svg) center no-repeat;
+              }
+            }
+            &[class$=pdf]{
+              &:before{
+                background: url(../images/pdf-icon.svg) center no-repeat;
+              }
+            }
+          }
+          .file-size{font-size: 16px; padding:0 6px;
+            @media only screen and (max-width:480px){
+             padding:0;
+             margin:10px 0;
+            }
+          }
+
+          .file-url{
+            a{
+              color:#0178B5; font-size: 16px;
+            }
+          }
+        }
+    }
+  }
+
+  &__intro--inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    .title{
+      font-size: 21px;
+      display: inline-block;
+      padding-right: 10px;
+    }
+    .close-popup{
+      display: inline-block;
+      width:20px;
+      height: 20px;
+      a{
+        font-size: 0;
+        display: inline-block;
+        width:20px;
+        height:20px;
+        background:url(../images/close.svg) center no-repeat;
+        background-size: cover;
+        vertical-align: top;
+      }
+    }
+  }
+  &__sub-title{
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+}
+
+
 

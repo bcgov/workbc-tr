@@ -84,90 +84,105 @@
 <article{{ attributes.addClass(classes) }}>
 
     <div class="lesson_wrapper">
-      <div class="lesson_wrapper_intro">
-        <div class="container">
-          <div class="lesson_wrapper__intro__title">
-            <span>{{ "Lesson Plan: "|t }}</span> {{ node.title.value }}
-          </div>
-          {% if node.field_term_resource_stage.value is not empty %}
-            <div class="lesson_wrapper_intro__life_cycle">
-                <span>{{ "Career Lifecycle Stage: "|t }}</span> {{ content.field_term_resource_stage }}
-            </div>
-          {% endif %}
-          {% if node.field_resource_summary.0.entity.field_para_simple_body.getValue().0.value is not empty %}
-            <div class="lesson_wrapper_intro__body">
-                {{ node.field_resource_summary.0.entity.field_para_simple_body.getValue().0.value|raw }}
-            </div>
-          {% endif %}
-          <div class="lesson_wrapper_intro__tags">
-            {% if node.field_term_resource_grade.value is not empty %}
-              <div class="lesson_wrapper_intro__grade">
-                  {{ content.field_term_resource_grade }}
-              </div>
-            {% endif %}
-            {% if node.field_resource_time.value is not empty %}
-              <div class="lesson_wrapper_intro__time">
-                  {{ node.field_resource_time.value }}
-              </div>
-            {% endif %}
-          </div>
-          {{ content.field_resource_images }}
-        </div>
-      <div class="download-worksheets-container">
-        <a href="#" class="download-worksheets-button">
-          <p>{{ "Download All Worksheets"|t }}</br>{{ "(PDF & DOC)"|t }}</p>
-        </a>
-        </div>
-        <div class="download-worksheets-files-wrapper">
+		  <div class="lesson_wrapper_intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 col-sm-6 col-xs-12">
+						<div class="lesson_wrapper__intro__title">
+							<span>{{ "Lesson Plan: "|t }}</span> {{ node.title.value }}
+						  </div>
+						  {% if node.field_term_resource_stage.value is not empty %}
+							<div class="lesson_wrapper_intro__life_cycle">
+								<span>{{ "Career Lifecycle Stage: "|t }}</span> {{ content.field_term_resource_stage }}
+							</div>
+						  {% endif %}
+						  {% if node.field_resource_summary.0.entity.field_para_simple_body.getValue().0.value is not empty %}
+							<div class="lesson_wrapper_intro__body">
+								{{ node.field_resource_summary.0.entity.field_para_simple_body.getValue().0.value|raw }}
+							</div>
+						  {% endif %}
+						  <div class="lesson_wrapper_intro__tags">
+							{% if node.field_term_resource_grade.value is not empty %}
+							  <div class="lesson_wrapper_intro__grade">
+								  {{ content.field_term_resource_grade }}
+							  </div>
+							{% endif %}
+							{% if node.field_resource_time.value is not empty %}
+							  <div class="lesson_wrapper_intro__time">
+								  {{ node.field_resource_time.value }}
+							  </div>
+							{% endif %}
+						  </div>
+						  {{ content.field_resource_images }}
+					</div>
+					<div class="col-md-4 offset-md-1 col-sm-6 col-xs-12 align-item-end">
+						 <div class="download-worksheets-container--wrapper">
+							<div class="download-worksheets-container">
+								<a href="#" class="download-worksheets-button">
+								  <p>{{ "Download All Worksheets"|t }}</br>{{ "(PDF & DOC)"|t }}</p>
+								</a>
+							</div>
+							<div class="share-this-resource">
+								{{ "Share Lesson Plan: "|t }}{{ content.sharethis }}
+							</div>
+						</div>
+					</div>
+				</div>
+			 </div>
+			
+			<div class="download-worksheets-files-wrapper">
+
+        <div class="download-worksheets-files-wrapper__inner">
           <div class="download-worksheets-files-wrapper__intro">
-            <div class="download-worksheets-files-wrapper__intro">
-              {{ "Choose Download Option"|t }}
+            <div class="download-worksheets-files-wrapper__intro--inner">
+              <span class="title">{{ "Choose Download Option"|t }}</span><span class="close-popup"><a href="javascript:void(0)">{{ 'Close'|t }}</a></span>
             </div>
-            <div class="download-worksheets-files-wrapper__sub-title">
+          </div>
+           <div class="download-worksheets-files-wrapper__sub-title">
               {{ "Please select desired file format to download activity worksheet."|t }}
             </div>
-          </div>
           <ul class="file-list">
             <li>
               <div class="file-title {{ subentity.entity.field_media_document.0.entity.filemime.value|split('.')|last }}">
-                {{ node.title.value }}
+              {{ node.title.value }}
               </div>
               <div class="file-url">
-                {{ content.entity_print_view_pdf }}
+              {{ content.entity_print_view_pdf }}
               </div>
             </li>
             {% set total_size = '' %}
             {% for key,subentity in node.field_resource_images if key|first != '#' %}
               {% set total_size = total_size + subentity.entity.field_media_document.0.entity.filesize.value %}
               <li>
-                <div class="file-title {{ subentity.entity.field_media_document.0.entity.filemime.value|split('.')|last }}">
-                  {{ subentity.entity.field_media_document.0.entity.filename.value }}
-                </div>
-                <div class="file-size">
-                  {{ _self.bytesToSize(subentity.entity.field_media_document.0.entity.filesize.value) }}
-                </div>
-                <div class="file-url">
-                  <a href="{{ file_url(subentity.entity.field_media_document.0.entity.uri.value) }}" title="{{ subentity.entity.field_media_document.0.entity.filename.value }}" download target="_blank">Download</a>
-                </div>
+              <div class="file-title {{ subentity.entity.field_media_document.0.entity.filemime.value|split('.')|last }}">
+                {{ subentity.entity.field_media_document.0.entity.filename.value }}
+              </div>
+              <div class="file-size">
+                {{ _self.bytesToSize(subentity.entity.field_media_document.0.entity.filesize.value) }}
+              </div>
+              <div class="file-url">
+                <a href="{{ file_url(subentity.entity.field_media_document.0.entity.uri.value) }}" title="{{ subentity.entity.field_media_document.0.entity.filename.value }}" download target="_blank">Download</a>
+              </div>
 
               </li>
             {% endfor %}
             <li class="download-all">
               <div class="file-title-all">
-                  {{ "Download all (ZIP)"|t }}
+                {{ "Download all (ZIP)"|t }}
               </div>
               <div class="size-all">{{ _self.bytesToSize(total_size) }}</div>
               <div class="file-url">
-                <a href="/media_download_all/node/{{ node.nid.value }}/field_resource_images" title="Download All">Download All</a>
+              <a href="/media_download_all/node/{{ node.nid.value }}/field_resource_images" title="Download All">Download All</a>
               </div>
             </li>
           </ul>
         </div>
-      </div>
-      <div class="share-this-resource">
-        {{ "Share Lesson Plan: "|t }}{{ content.sharethis }}
-      </div>
+      </div>	
+			
+		  </div>
+		  
      </div>
+	 
 	 <div class="lesson_wrapper_main">
 		<div class="container">
 			<div class="lesson_wrapper_main__lable">
@@ -187,7 +202,7 @@
 			</div>
 		</div>
       </div>
-  </div>
+
 </article>
 
 {% macro bytesToSize(bytes) %}

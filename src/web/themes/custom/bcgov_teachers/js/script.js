@@ -4,6 +4,20 @@
       if (typeof context.location !== 'undefined') { // Only fire on document load.
         // Insert theme js specific lines here.
       }
+
+      //close download popup js
+      if($('.close-popup').length){
+        $('.close-popup').on('click',function(){
+          $('.download-worksheets-files-wrapper').removeClass('open');
+        });
+      }
+      
+      if($('.download-worksheets-button').length){
+        $('.download-worksheets-button').on('click',function(){
+          $('.download-worksheets-files-wrapper').addClass('open');
+        });
+      }
+      
     }
   };
 
