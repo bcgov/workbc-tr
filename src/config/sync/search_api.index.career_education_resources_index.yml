@@ -5,9 +5,9 @@ dependencies:
   module:
     - search_api_solr
     - search_api
-    - node
     - file
     - media
+    - node
     - paragraphs
     - taxonomy
   config:
@@ -78,7 +78,7 @@ datasource_settings:
       selected: {  }
   'entity:paragraph':
     bundles:
-      default: true
+      default: false
       selected:
         - bp_blank
         - bp_simple
@@ -105,9 +105,21 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
   language_with_fallback: {  }
   rendered_item: {  }
-  solr_date_range: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
 tracker_settings:
   default:
     indexing_order: fifo
