@@ -1,0 +1,32 @@
+uuid: f2e79d4f-e9e3-4a75-9bbf-97828d3cd8ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.trimmed
+    - field.field.paragraph.paragraph_simple.field_para_simple_body
+    - field.field.paragraph.paragraph_simple.field_para_simple_title
+    - field.field.paragraph.paragraph_simple.field_paragraph_image
+    - paragraphs.paragraphs_type.paragraph_simple
+  module:
+    - text
+id: paragraph.paragraph_simple.trimmed
+targetEntityType: paragraph
+bundle: paragraph_simple
+mode: trimmed
+content:
+  field_para_simple_body:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 117
+    third_party_settings: {  }
+    type: text_trimmed
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_para_simple_title: true
+  field_paragraph_image: true
+  search_api_excerpt: true

@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.resource.field_resource_images
     - field.field.node.resource.field_resource_summary
     - field.field.node.resource.field_resource_time
+    - field.field.node.resource.field_resources_images_node
     - field.field.node.resource.field_term_resource_asset_type
     - field.field.node.resource.field_term_resource_audience
     - field.field.node.resource.field_term_resource_competency
@@ -41,6 +42,7 @@ hidden:
   field_resource_images: true
   field_resource_summary: true
   field_resource_time: true
+  field_resources_images_node: true
   field_term_resource_asset_type: true
   field_term_resource_audience: true
   field_term_resource_competency: true
