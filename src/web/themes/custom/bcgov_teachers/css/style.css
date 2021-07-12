@@ -10741,6 +10741,546 @@ h1 {
   margin-bottom: 0;
 }
 
+.lesson_wrapper_intro, .resource_wrapper_intro {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  border-bottom: 10px solid #f2c324;
+}
+@media only screen and (max-width: 1200px) {
+  .lesson_wrapper_intro [class^=col], .resource_wrapper_intro [class^=col] {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+  .lesson_wrapper_intro [class^=col] + [class^=col], .resource_wrapper_intro [class^=col] + [class^=col] {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+}
+.lesson_wrapper__intro__title, .resource_wrapper__intro__title {
+  margin-bottom: 20px;
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+  font-size: 45px;
+  color: #333333;
+  font-weight: normal;
+}
+.lesson_wrapper__intro__title span, .resource_wrapper__intro__title span {
+  font-weight: 700;
+}
+.lesson_wrapper_intro__life_cycle, .resource_wrapper_intro__life_cycle {
+  margin-bottom: 20px;
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+  font-size: 18px;
+  font-weight: normal;
+  color: rgba(51, 51, 51, 0.7215686275);
+  font-style: italic;
+}
+.lesson_wrapper_intro__life_cycle span, .resource_wrapper_intro__life_cycle span {
+  font-weight: 700;
+  font-style: normal;
+}
+.lesson_wrapper_intro__life_cycle .field, .lesson_wrapper_intro__life_cycle .field__item, .resource_wrapper_intro__life_cycle .field, .resource_wrapper_intro__life_cycle .field__item {
+  display: inline-block;
+}
+.lesson_wrapper_intro__body p, .resource_wrapper_intro__body p {
+  font-size: 21px;
+  color: #333333;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.lesson_wrapper_intro__tags, .resource_wrapper_intro__tags {
+  display: inline-block;
+  width: 100%;
+}
+.lesson_wrapper_intro__grade, .resource_wrapper_intro__grade {
+  display: inline-block;
+}
+.lesson_wrapper_intro__grade .field, .resource_wrapper_intro__grade .field {
+  display: flex;
+}
+.lesson_wrapper_intro__grade .field__item, .resource_wrapper_intro__grade .field__item {
+  background: #073573;
+  border-radius: 9px;
+  padding: 4px 32px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: normal;
+}
+.lesson_wrapper_intro__grade .field__item + .field__item, .resource_wrapper_intro__grade .field__item + .field__item {
+  margin-left: 5px;
+}
+.lesson_wrapper_intro__time, .resource_wrapper_intro__time {
+  display: inline-block;
+  border-radius: 9px;
+  background: #FFFFFF;
+  color: #2379A4;
+  font-size: 15px;
+  border: 3px solid #2379A4;
+  padding: 4px 22px;
+  margin-left: 5px;
+}
+.lesson_wrapper_main, .resource_wrapper_main {
+  padding: 40px 0;
+}
+.lesson_wrapper_main__lable, .resource_wrapper_main__lable {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 45px;
+  color: #333333;
+  margin-bottom: 45px;
+}
+.lesson_wrapper_main_para_item__title, .resource_wrapper_main_para_item__title {
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
+  border-bottom: 4px solid #d7d7d7;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 40px;
+}
+.lesson_wrapper_main_para_item__body, .resource_wrapper_main_para_item__body {
+  display: block;
+  width: 100%;
+}
+.lesson_wrapper_main_para_item__body p:first-child, .resource_wrapper_main_para_item__body p:first-child {
+  font-size: 21px;
+  line-height: 1.3;
+}
+.lesson_wrapper_main_para_item__body p a, .resource_wrapper_main_para_item__body p a {
+  color: #2379A4;
+  text-decoration: none;
+}
+.lesson_wrapper_main_para_item__body ol, .resource_wrapper_main_para_item__body ol {
+  counter-reset: num;
+}
+.lesson_wrapper_main_para_item__body ol li:before, .resource_wrapper_main_para_item__body ol li:before {
+  counter-increment: num;
+  content: counter(num) ".";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 700;
+  font-size: inherit;
+}
+.lesson_wrapper_main_para_item__body ul li:before, .resource_wrapper_main_para_item__body ul li:before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: #333333;
+}
+.lesson_wrapper_main_para_item__body ul, .lesson_wrapper_main_para_item__body ol, .resource_wrapper_main_para_item__body ul, .resource_wrapper_main_para_item__body ol {
+  list-style: none;
+  padding: 0;
+}
+.lesson_wrapper_main_para_item__body ul li, .lesson_wrapper_main_para_item__body ol li, .resource_wrapper_main_para_item__body ul li, .resource_wrapper_main_para_item__body ol li {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  position: relative;
+  padding-left: 20px;
+}
+.lesson_wrapper_main_para_item__body ul li + li, .lesson_wrapper_main_para_item__body ol li + li, .resource_wrapper_main_para_item__body ul li + li, .resource_wrapper_main_para_item__body ol li + li {
+  margin-top: 15px;
+}
+.lesson_wrapper_main_para_item + .lesson_wrapper_main_para_item, .resource_wrapper_main_para_item + .lesson_wrapper_main_para_item {
+  margin-top: 40px;
+}
+
+.resource_wrapper_intro {
+  border-bottom: 10px solid #333333;
+}
+
+.block-views-blockrelated-resource-and-lesson-plan-block-1 {
+  width: 100%;
+  padding: 40px 0;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+.block-views-blockrelated-resource-and-lesson-plan-block-1 > h2 {
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+  color: #333333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.related_news_wrapper .row {
+  justify-content: center;
+}
+.related_news_wrapper--item {
+  border-radius: 15px;
+  overflow: hidden;
+  background: #FFFFFF;
+  height: 100%;
+}
+.related_news_wrapper_assest_type {
+  font-size: 15px;
+  color: #FFFFFF;
+  text-align: center;
+  background: #333;
+  border-radius: 15px 15px 0 0;
+  padding: 6px 5px;
+}
+.related_news_wrapper_assest_type.gray-bg {
+  background: #333333;
+  color: #FFFFFF;
+}
+.related_news_wrapper_assest_type.yellow-bg {
+  background: #f2c324;
+  color: #333333;
+}
+.related_news_wrapper_img {
+  min-height: 110px;
+  background: #2771CA;
+}
+.related_news_wrapper_img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.related_news_wrapper--inner {
+  padding: 15px;
+}
+.related_news_wrapper_title a {
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  color: #2379A4;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.related_news_wrapper_desc p {
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: #494949;
+  line-height: 24px;
+}
+.related_news_wrapper_grade .item-list {
+  display: inline-block;
+  width: 100%;
+}
+.related_news_wrapper_grade ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.related_news_wrapper_grade ul li {
+  margin: 4px 2px 0;
+  padding: 0;
+  background: #073573;
+  border-radius: 9px;
+  padding: 4px 32px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: normal;
+  display: inline-block;
+}
+.related_news_wrapper_grade ul li:nth-child(1n) {
+  background: #073573;
+}
+.related_news_wrapper_grade ul li:nth-child(2n) {
+  background: #2771ca;
+}
+.related_news_wrapper_grade ul li:nth-child(3n) {
+  background: #2379a4;
+}
+.related_news_wrapper_cls {
+  padding: 15px;
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+  font-size: 15px;
+  font-weight: 400;
+  color: #7F7F7F;
+  font-style: italic;
+  border-top: 1px solid #7F7F7F;
+  border-radius: 0 0 15px 15px;
+}
+.related_news_wrapper_cls span {
+  font-weight: 700;
+  color: #333333;
+  font-style: normal;
+}
+.related_news_wrapper_cls .item-list, .related_news_wrapper_cls ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.related_news_wrapper_cls ul {
+  padding: 0;
+  list-style: none;
+}
+.related_news_wrapper_cls ul li {
+  display: inline-block;
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+  font-size: 15px;
+  font-weight: 400;
+  color: #7F7F7F;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
+.related_news_wrapper_cls ul li + li {
+  margin-left: 5px;
+}
+
+.download-worksheets-button {
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  color: #FFFFFF;
+  background: #26A7DF;
+  border-radius: 15px;
+  padding: 10px 10px 10px 65px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 2px solid #26A7DF;
+  text-decoration: none;
+  max-width: 330px;
+  transition: 0.5s;
+}
+.download-worksheets-button p {
+  margin: 0;
+  text-align: center;
+}
+.download-worksheets-button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+  width: 30px;
+  height: 30px;
+  background: url(../images/download-white.svg) center no-repeat;
+  background-size: cover;
+  transition: 0.5s;
+}
+.download-worksheets-button:hover {
+  background: #FFFFFF;
+  color: #26A7DF;
+}
+.download-worksheets-button:hover:before {
+  background: url(../images/download-blue.svg) center no-repeat;
+  background-size: cover;
+}
+
+.align-item-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+.share-this-resource {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  text-align: right;
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+
+.sharethis-wrapper {
+  display: inline-block;
+  margin-left: 5px;
+}
+.sharethis-wrapper .stButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  background-color: #333333;
+  border-radius: 100%;
+  background-size: 25px 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+}
+.sharethis-wrapper .stButton .stLarge {
+  display: none;
+}
+.sharethis-wrapper .stButton:hover {
+  background-color: #989898;
+}
+.sharethis-wrapper .st_email_large .stButton {
+  background-image: url(../images/mail.svg);
+}
+.sharethis-wrapper .st_facebook_large .stButton {
+  background-image: url(../images/facebook.svg);
+  background-size: 13px;
+}
+.sharethis-wrapper .st_twitter_large .stButton {
+  background-image: url(../images/twitter.svg);
+  background-size: 20px;
+}
+.sharethis-wrapper .st_linkedin_large .stButton {
+  background-image: url(../images/linkedin.svg);
+  background-size: 18px;
+}
+
+.download-worksheets-files-wrapper {
+  display: none;
+}
+.download-worksheets-files-wrapper.open {
+  display: block;
+}
+.download-worksheets-files-wrapper:before {
+  content: "";
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(51, 51, 51, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.download-worksheets-files-wrapper__inner {
+  position: fixed;
+  z-index: 11;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 460px;
+}
+.download-worksheets-files-wrapper__inner ul.file-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.download-worksheets-files-wrapper__inner ul.file-list li {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 480px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li {
+    flex-direction: column;
+  }
+}
+.download-worksheets-files-wrapper__inner ul.file-list li + li {
+  margin-top: 20px;
+}
+.download-worksheets-files-wrapper__inner ul.file-list li.download-all {
+  padding: 33px 15px;
+  background: #e2e2e2;
+}
+.download-worksheets-files-wrapper__inner ul.file-list li.download-all .file-title-all {
+  padding-left: 48px;
+  position: relative;
+  font-size: 16px;
+}
+.download-worksheets-files-wrapper__inner ul.file-list li.download-all .file-title-all:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -8px;
+  width: 48px;
+  height: 48px;
+  background: url(../images/download-all.svg) center no-repeat;
+}
+.download-worksheets-files-wrapper__inner ul.file-list li.download-all .size-all {
+  font-size: 16px;
+  padding: 0 5px;
+}
+@media only screen and (max-width: 480px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li.download-all .size-all {
+    padding: 0;
+    margin: 20px 0;
+  }
+}
+.download-worksheets-files-wrapper__inner ul.file-list li.download-all .file-url a {
+  font-size: 16px;
+  color: #fff;
+  background: #2379A4;
+  padding: 8px 10px;
+  text-decoration: none;
+}
+.download-worksheets-files-wrapper__inner ul.file-list li .file-title {
+  max-width: 200px;
+  word-break: break-word;
+  position: relative;
+  padding-left: 45px;
+  font-size: 16px;
+}
+@media only screen and (max-width: 480px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li .file-title {
+    max-width: 100%;
+  }
+}
+.download-worksheets-files-wrapper__inner ul.file-list li .file-title:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -8px;
+  width: 48px;
+  height: 48px;
+}
+.download-worksheets-files-wrapper__inner ul.file-list li .file-title[class$=msword]:before {
+  background: url(../images/doc-icon.svg) center no-repeat;
+}
+.download-worksheets-files-wrapper__inner ul.file-list li .file-title[class$=pdf]:before {
+  background: url(../images/pdf-icon.svg) center no-repeat;
+}
+.download-worksheets-files-wrapper__inner ul.file-list li .file-size {
+  font-size: 16px;
+  padding: 0 6px;
+}
+@media only screen and (max-width: 480px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li .file-size {
+    padding: 0;
+    margin: 10px 0;
+  }
+}
+.download-worksheets-files-wrapper__inner ul.file-list li .file-url a {
+  color: #0178B5;
+  font-size: 16px;
+}
+.download-worksheets-files-wrapper__intro--inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+.download-worksheets-files-wrapper__intro--inner .title {
+  font-size: 21px;
+  display: inline-block;
+  padding-right: 10px;
+}
+.download-worksheets-files-wrapper__intro--inner .close-popup {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.download-worksheets-files-wrapper__intro--inner .close-popup a {
+  font-size: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../images/close.svg) center no-repeat;
+  background-size: cover;
+  vertical-align: top;
+}
+.download-worksheets-files-wrapper__sub-title {
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
 .region-content {
   padding: 0;
 }

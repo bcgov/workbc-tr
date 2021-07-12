@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.resource.field_resource_images
     - field.field.node.resource.field_resource_summary
     - field.field.node.resource.field_resource_time
+    - field.field.node.resource.field_resources_images_node
     - field.field.node.resource.field_term_resource_asset_type
     - field.field.node.resource.field_term_resource_audience
     - field.field.node.resource.field_term_resource_competency
@@ -24,7 +25,7 @@ mode: default
 content:
   field_resource_desc:
     type: entity_reference_paragraphs
-    weight: 5
+    weight: 7
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -36,21 +37,21 @@ content:
     region: content
   field_resource_featured:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_resource_images:
     type: media_library_widget
-    weight: 9
+    weight: 11
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
   field_resource_summary:
     type: entity_reference_paragraphs
-    weight: 1
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -61,46 +62,53 @@ content:
     third_party_settings: {  }
     region: content
   field_resource_time:
-    weight: 8
+    weight: 10
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_resources_images_node:
+    type: media_library_widget
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
   field_term_resource_asset_type:
-    weight: 2
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_term_resource_audience:
-    weight: 7
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_term_resource_competency:
-    weight: 6
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_term_resource_grade:
-    weight: 3
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_term_resource_stage:
-    weight: 4
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true

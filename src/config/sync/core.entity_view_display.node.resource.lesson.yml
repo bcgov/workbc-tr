@@ -1,8 +1,9 @@
-uuid: 7f9b6678-2824-42ca-9fd0-318622e2951b
+uuid: 8aa942ec-3c3f-473a-9fb3-f1c28c3cf5bc
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.lesson
     - field.field.node.resource.field_resource_desc
     - field.field.node.resource.field_resource_featured
     - field.field.node.resource.field_resource_images
@@ -16,26 +17,16 @@ dependencies:
     - field.field.node.resource.field_term_resource_stage
     - node.type.resource
   module:
-    - entity_print
     - entity_reference_revisions
     - user
-third_party_settings:
-  entity_print:
-    pdf_label: Download
-    word_docx_label: 'View Word Document'
-id: node.resource.default
+id: node.resource.lesson
 targetEntityType: node
 bundle: resource
-mode: default
+mode: lesson
 content:
-  entity_print_view_pdf:
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_resource_desc:
     type: entity_reference_revisions_entity_view
-    weight: 3
+    weight: 6
     label: above
     settings:
       view_mode: default
@@ -44,7 +35,7 @@ content:
     region: content
   field_resource_summary:
     type: entity_reference_revisions_entity_view
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       view_mode: default
@@ -52,7 +43,7 @@ content:
     third_party_settings: {  }
     region: content
   field_resource_time:
-    weight: 6
+    weight: 9
     label: above
     settings:
       link_to_entity: false
@@ -60,7 +51,7 @@ content:
     type: string
     region: content
   field_term_resource_asset_type:
-    weight: 2
+    weight: 3
     label: above
     settings:
       link: true
@@ -68,7 +59,7 @@ content:
     type: entity_reference_label
     region: content
   field_term_resource_audience:
-    weight: 5
+    weight: 8
     label: above
     settings:
       link: true
@@ -76,7 +67,7 @@ content:
     type: entity_reference_label
     region: content
   field_term_resource_competency:
-    weight: 4
+    weight: 7
     label: above
     settings:
       link: true
@@ -84,33 +75,34 @@ content:
     type: entity_reference_label
     region: content
   field_term_resource_grade:
-    weight: 9
-    label: hidden
+    weight: 4
+    label: above
     settings:
-      link: false
+      link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_term_resource_stage:
-    weight: 10
-    label: hidden
+    weight: 5
+    label: above
     settings:
-      link: false
+      link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   links:
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   sharethis:
-    weight: 7
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   entity_print_view_epub: true
+  entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_resource_featured: true
   field_resource_images: true

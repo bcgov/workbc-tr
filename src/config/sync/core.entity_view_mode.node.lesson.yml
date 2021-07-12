@@ -1,0 +1,10 @@
+uuid: 098696d9-f95c-40a7-96c5-7a4f26419eb8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.lesson
+label: Lesson
+targetEntityType: node
+cache: true
