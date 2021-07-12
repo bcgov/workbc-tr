@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.grade_access_blocks.field_grade_access_block_title
     - field.field.paragraph.grade_access_blocks.field_grade_access_body
+    - field.field.paragraph.grade_access_blocks.field_grade_access_color
     - field.field.paragraph.grade_access_blocks.field_grade_access_link
     - paragraphs.paragraphs_type.grade_access_blocks
   module:
@@ -28,6 +29,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_grade_access_color:
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: grade_color
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   field_grade_access_link:
     weight: 2

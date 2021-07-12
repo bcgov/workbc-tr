@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_content_items
     - node.type.content
-    - paragraphs.paragraphs_type.bp_simple
     - paragraphs.paragraphs_type.grade_access
     - paragraphs.paragraphs_type.paragraph_simple
   module:
@@ -31,7 +30,6 @@ settings:
     target_bundles:
       grade_access: grade_access
       paragraph_simple: paragraph_simple
-      bp_simple: bp_simple
     target_bundles_drag_drop:
       banner:
         weight: 4
@@ -70,8 +68,8 @@ settings:
         weight: 31
         enabled: false
       bp_simple:
-        enabled: true
         weight: 32
+        enabled: false
       bp_tab_section:
         weight: 34
         enabled: false
@@ -84,7 +82,7 @@ settings:
       grade_access:
         enabled: true
         weight: 5
-      paragraph_image:
+      grade_access_blocks:
         weight: 37
         enabled: false
       paragraph_simple:

@@ -306,7 +306,16 @@
     background-size: cover;
     transition: 0.5s;
   }
-  &:hover{
+
+  &:link,
+  &:visited {
+    color:$teachers-bg-light;
+    background: $teachers-fifth-blue;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
     background:$teachers-bg-light;
     color:$teachers-fifth-blue;
     &:before{

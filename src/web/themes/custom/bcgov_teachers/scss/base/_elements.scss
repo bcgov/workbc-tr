@@ -45,7 +45,7 @@ html {
   }
 
   body {
-    font-family: $font-family-base;
+    font-family: $font-family-sans-serif;
     font-size: $font-size-base;
     color: $teachers-text;
 
@@ -61,6 +61,30 @@ html {
   }
 }
 
+a {
+  &:link,
+  &:visited {
+    color: $teachers-link;
+    text-decoration: none;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: $teachers-link;
+    text-decoration: underline;
+  }
+}
+
+article.paragraph,
+article.block-views {
+  padding: 60px 0;
+
+  @media (max-width: 767px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
 .nobr {
   white-space: nowrap;
 }
@@ -70,5 +94,16 @@ html {
     content: " ";
     clear: both;
     display: table;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: 2.6rem;
+    line-height: 2.6rem;
   }
 }

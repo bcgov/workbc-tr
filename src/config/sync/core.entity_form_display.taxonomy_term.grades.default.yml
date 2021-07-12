@@ -1,0 +1,61 @@
+uuid: aaac97b4-45ca-44c3-82cc-b64c647ab31e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.grades.field_grade_color
+    - taxonomy.vocabulary.grades
+  module:
+    - color_field
+    - path
+    - text
+id: taxonomy_term.grades.default
+targetEntityType: taxonomy_term
+bundle: grades
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_grade_color:
+    weight: 1
+    settings:
+      placeholder_color: ''
+      placeholder_opacity: ''
+    third_party_settings: {  }
+    type: color_field_widget_default
+    region: content
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+hidden: {  }

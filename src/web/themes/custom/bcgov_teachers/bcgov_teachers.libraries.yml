@@ -5,6 +5,7 @@ global-styling:
 
 global-scripts:
   js:
+    js/jquery.matchheight-min.js: {}
     js/script.js: {}
   dependencies:
     - core/jquery

@@ -21,6 +21,7 @@
     }
   };
 
+  // Feature to increase text size
   if ($('#block-bcgov-teachers-increasetextsize').length > 0) {
     $('#block-bcgov-teachers-increasetextsize a[class^="size"]').click(function() {
       var elem = $(this);
@@ -37,10 +38,10 @@
 
     bannerContentPosition();
 
-    var resizeTimeout;
+    var bannerResizeTimeout;
     $(window).resize(function() {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(bannerContentPosition,150);
+      clearTimeout(bannerResizeTimeout);
+      bannerResizeTimeout = setTimeout(bannerContentPosition,150);
     });
 
     function bannerContentPosition() {
@@ -60,6 +61,33 @@
           'height': container.outerHeight(),
           'min-height': 'auto'
         })
+      }
+    }
+  }
+
+  if ($('.paragraph--type--grade-access-blocks').length > 0) {
+    // Make the whole block clickable
+    $('.paragraph--type--grade-access-blocks').click(function() {
+      window.location = $(this).find("a").attr("href");
+      return false;
+    });
+
+    gradeElementSizes();
+
+    var gradeResizeTimeout;
+    $(window).resize(function() {
+      clearTimeout(gradeResizeTimeout);
+      gradeResizeTimeout = setTimeout(gradeElementSizes,150);
+    });
+
+    // Resize the elements to have the same height
+    function gradeElementSizes() {
+      if ($(window).width() >= 768) {
+        $('.paragraph--type--grade-access-blocks .field--name-field-grade-access-block-title').matchHeight();
+        $('.paragraph--type--grade-access-blocks .field--name-field-grade-access-body').matchHeight();
+      } else {
+        $('.paragraph--type--grade-access-blocks .field--name-field-grade-access-block-title').matchHeight({remove: true});
+        $('.paragraph--type--grade-access-blocks .field--name-field-grade-access-body').matchHeight({remove: true});
       }
     }
   }
