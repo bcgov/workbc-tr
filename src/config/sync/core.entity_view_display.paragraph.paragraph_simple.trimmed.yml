@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.paragraph.trimmed
     - field.field.paragraph.paragraph_simple.field_para_simple_body
     - field.field.paragraph.paragraph_simple.field_para_simple_title
-    - field.field.paragraph.paragraph_simple.field_paragraph_image
     - paragraphs.paragraphs_type.paragraph_simple
   module:
     - text

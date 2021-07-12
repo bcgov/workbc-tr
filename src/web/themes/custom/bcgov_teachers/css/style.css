@@ -11067,11 +11067,15 @@ h1 {
   background-size: cover;
   transition: 0.5s;
 }
-.download-worksheets-button:hover {
+.download-worksheets-button:link, .download-worksheets-button:visited {
+  color: #FFFFFF;
+  background: #26A7DF;
+}
+.download-worksheets-button:hover, .download-worksheets-button:active, .download-worksheets-button:focus {
   background: #FFFFFF;
   color: #26A7DF;
 }
-.download-worksheets-button:hover:before {
+.download-worksheets-button:hover:before, .download-worksheets-button:active:before, .download-worksheets-button:focus:before {
   background: url(../images/download-blue.svg) center no-repeat;
   background-size: cover;
 }
