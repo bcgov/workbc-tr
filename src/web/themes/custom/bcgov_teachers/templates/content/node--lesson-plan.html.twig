@@ -183,25 +183,32 @@
 		  
      </div>
 	 
-	 <div class="lesson_wrapper_main">
-		<div class="container">
-			<div class="lesson_wrapper_main__lable">
-			  {{ "Lesson Plan"|t }}
-			</div>
-			<div class="lesson_wrapper_main_para">
-			  {% for key,subentity in node.field_resource_desc if key|first != '#' %}
-				<div class="lesson_wrapper_main_para_item">
-				  <div class="lesson_wrapper_main_para_item__title">
-					{{ subentity.entity.field_para_simple_title.value }}
-				  </div>
-				  <div class="lesson_wrapper_main_para_item__body">
-					{{ subentity.entity.field_para_simple_body.getValue().0.value|raw }}
-				  </div>
-				</div>
-			  {% endfor %}
-			</div>
-		</div>
-      </div>
+	<div class="lesson_wrapper_main__lable_wrapper_main">
+    <div class="container">
+        {% for key,subentity in node.field_add_resource_description if key|first != '#' %}
+          <div class="main-section" id="paragraph-{{ subentity.entity.id.value }}">
+            {% if subentity.entity.field_main_heading.value is not empty %}
+              <div class="lesson_wrapper_main__lable">
+                 {{ subentity.entity.field_main_heading.value }}
+              </div>
+            {% endif %}
+            <div class="lesson_wrapper_main_para">
+              {% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}
+              <div class="lesson_wrapper_main_para_item" id="paragraph-{{ lsubentity.entity.id.value }}">
+                <div class="lesson_wrapper_main_para_item__title">
+                  {{ lsubentity.entity.field_para_simple_title.value }}
+                </div>
+                <div class="lesson_wrapper_main_para_item__body">
+                  {{ lsubentity.entity.field_para_simple_body.getValue().0.value|raw }}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
 
 </article>
 
