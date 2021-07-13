@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.lesson
+    - field.field.node.resource.field_add_resource_description
     - field.field.node.resource.field_resource_desc
     - field.field.node.resource.field_resource_featured
     - field.field.node.resource.field_resource_images
@@ -104,6 +105,7 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_add_resource_description: true
   field_resource_featured: true
   field_resource_images: true
   field_resources_images_node: true

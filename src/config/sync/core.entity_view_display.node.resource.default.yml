@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.resource.field_add_resource_description
     - field.field.node.resource.field_resource_desc
     - field.field.node.resource.field_resource_featured
     - field.field.node.resource.field_resource_images
@@ -33,6 +34,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_add_resource_description:
+    type: entity_reference_revisions_entity_view
+    weight: 11
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_resource_desc:
     type: entity_reference_revisions_entity_view
     weight: 3

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.resource.field_add_resource_description
     - field.field.node.resource.field_resource_desc
     - field.field.node.resource.field_resource_featured
     - field.field.node.resource.field_resource_images
@@ -23,7 +24,7 @@ targetEntityType: node
 bundle: resource
 mode: default
 content:
-  field_resource_desc:
+  field_add_resource_description:
     type: entity_reference_paragraphs
     weight: 7
     settings:
@@ -31,8 +32,8 @@ content:
       title_plural: Paragraphs
       edit_mode: open
       add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
+      form_display_mode: simple
+      default_paragraph_type: resource_description
     third_party_settings: {  }
     region: content
   field_resource_featured:
@@ -128,6 +129,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_resource_desc: true
   path: true
   promote: true
   status: true

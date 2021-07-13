@@ -1,0 +1,38 @@
+uuid: c8810655-401b-480f-bf61-28e9a1b0f52f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.paragraph.simple
+    - field.field.paragraph.paragraph_simple.field_para_simple_body
+    - field.field.paragraph.paragraph_simple.field_para_simple_title
+    - field.field.paragraph.paragraph_simple.field_paragraph_image
+    - paragraphs.paragraphs_type.paragraph_simple
+  module:
+    - text
+id: paragraph.paragraph_simple.simple
+targetEntityType: paragraph
+bundle: paragraph_simple
+mode: simple
+content:
+  field_para_simple_body:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_para_simple_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  admin_title: true
+  created: true
+  field_paragraph_image: true
+  status: true

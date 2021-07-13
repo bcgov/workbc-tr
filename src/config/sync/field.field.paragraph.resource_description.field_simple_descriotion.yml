@@ -1,0 +1,92 @@
+uuid: f7dac66e-6e2c-44de-8be6-a257ab469a25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_simple_descriotion
+    - paragraphs.paragraphs_type.paragraph_simple
+    - paragraphs.paragraphs_type.resource_description
+  module:
+    - entity_reference_revisions
+    - paragraph_blocks
+third_party_settings:
+  paragraph_blocks:
+    status: 1
+id: paragraph.resource_description.field_simple_descriotion
+field_name: field_simple_descriotion
+entity_type: paragraph
+bundle: resource_description
+label: 'Simple Descriotion'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      paragraph_simple: paragraph_simple
+    target_bundles_drag_drop:
+      banner:
+        weight: 21
+        enabled: false
+      bp_accordion:
+        weight: 22
+        enabled: false
+      bp_accordion_section:
+        weight: 23
+        enabled: false
+      bp_blank:
+        weight: 24
+        enabled: false
+      bp_block:
+        weight: 25
+        enabled: false
+      bp_carousel:
+        weight: 26
+        enabled: false
+      bp_column_wrapper:
+        weight: 30
+        enabled: false
+      bp_columns:
+        weight: 27
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 28
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 29
+        enabled: false
+      bp_image:
+        weight: 31
+        enabled: false
+      bp_modal:
+        weight: 32
+        enabled: false
+      bp_simple:
+        weight: 33
+        enabled: false
+      bp_tab_section:
+        weight: 35
+        enabled: false
+      bp_tabs:
+        weight: 34
+        enabled: false
+      bp_view:
+        weight: 36
+        enabled: false
+      grade_access:
+        weight: 37
+        enabled: false
+      grade_access_blocks:
+        weight: 38
+        enabled: false
+      paragraph_simple:
+        enabled: true
+        weight: 39
+      resource_description:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions

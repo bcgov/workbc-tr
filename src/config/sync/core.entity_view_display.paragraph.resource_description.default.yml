@@ -1,0 +1,37 @@
+uuid: 6846d78a-68bd-4489-8328-3ce1739540c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.resource_description.field_main_heading
+    - field.field.paragraph.resource_description.field_simple_descriotion
+    - paragraphs.paragraphs_type.resource_description
+  module:
+    - entity_reference_revisions
+id: paragraph.resource_description.default
+targetEntityType: paragraph
+bundle: resource_description
+mode: default
+content:
+  field_main_heading:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_simple_descriotion:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

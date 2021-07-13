@@ -1,0 +1,10 @@
+uuid: af253ad0-ae86-4af3-a407-21f8dee4b37b
+langcode: en
+status: true
+dependencies: {  }
+id: resource_description
+label: 'Resource Description'
+icon_uuid: null
+icon_default: null
+description: 'Add Resource Items'
+behavior_plugins: {  }
