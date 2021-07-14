@@ -84,7 +84,7 @@
 <article{{ attributes.addClass(classes) }}>
   <div class="banner-content" style="background-image: url({{ node.field_content_image.entity.uri.value | image_style('ultra_wide') }})">
 
-    <div class="container text-pos-{{ node.field_content_text_pos.value ? 'left' : 'right' }}">
+    <div class="container{% if node.field_content_text_pos.value is not empty %}{{ node.field_content_text_pos.value ? ' text-pos-right' : ' text-pos-left' }}{% endif %}">
       <div class="banner-text">
         <h1>{{ node.label }}</h1>
         {{ content.field_content_description }}

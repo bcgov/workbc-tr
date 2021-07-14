@@ -3,19 +3,27 @@
     display: inline-block;
 
     &.align-right {
-      margin-left: 30px;
       margin-bottom: 30px;
+      margin-left: 30px;
     }
 
     &.align-left {
-      margin-right: 30px;
       margin-bottom: 30px;
+      margin-right: 30px;
     }
 
     &.align-right,
     &.align-left {
-      max-width: 33%;
       height: auto;
+      max-width: 33%;
+    }
+  }
+
+  .container {
+    .field--name-field-para-simple-body {
+      *:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
