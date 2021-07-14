@@ -4,13 +4,20 @@ status: true
 dependencies:
   module:
     - search_api_solr
+    - node
     - search_api
     - file
     - media
-    - node
     - paragraphs
     - taxonomy
   config:
+    - field.storage.node.field_term_resource_asset_type
+    - field.storage.node.field_term_resource_stage
+    - field.storage.node.field_term_resource_competency
+    - field.storage.node.field_resource_desc
+    - field.storage.node.field_term_resource_grade
+    - field.storage.node.field_term_resource_audience
+    - field.storage.node.field_resource_summary
     - search_api.server.career_resources_solr
 third_party_settings:
   search_api_solr:
@@ -57,7 +64,79 @@ id: career_education_resources_index
 name: 'Career Education Resources - Index'
 description: ''
 read_only: false
-field_settings: {  }
+field_settings:
+  field_resource_desc:
+    label: Description
+    datasource_id: 'entity:node'
+    property_path: field_resource_desc
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_resource_desc
+  field_resource_summary:
+    label: Summary
+    datasource_id: 'entity:node'
+    property_path: field_resource_summary
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_resource_summary
+  field_term_resource_asset_type:
+    label: 'Asset type'
+    datasource_id: 'entity:node'
+    property_path: field_term_resource_asset_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_term_resource_asset_type
+  field_term_resource_audience:
+    label: 'Key Audiences'
+    datasource_id: 'entity:node'
+    property_path: field_term_resource_audience
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_term_resource_audience
+  field_term_resource_competency:
+    label: 'Curricular Competencies'
+    datasource_id: 'entity:node'
+    property_path: field_term_resource_competency
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_term_resource_competency
+  field_term_resource_grade:
+    label: Grade
+    datasource_id: 'entity:node'
+    property_path: field_term_resource_grade
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_term_resource_grade
+  field_term_resource_stage:
+    label: 'Career Lifecycle Stage'
+    datasource_id: 'entity:node'
+    property_path: field_term_resource_stage
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_term_resource_stage
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
 datasource_settings:
   'entity:file': {  }
   'entity:media':

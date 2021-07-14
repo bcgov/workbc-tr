@@ -1,0 +1,28 @@
+uuid: e6f0a2c7-ce78-4dd9-b331-e8871234260f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.solr_results
+  module:
+    - system
+    - views
+  theme:
+    - bcgov_teachers
+id: exposedformsolr_resultspage_1
+theme: bcgov_teachers
+region: content
+weight: -5
+provider: null
+plugin: 'views_exposed_filter_block:solr_results-page_1'
+settings:
+  id: 'views_exposed_filter_block:solr_results-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: "/search\r\n/search/*"
+    negate: false
