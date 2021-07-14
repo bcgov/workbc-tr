@@ -10839,6 +10839,7 @@ html body[data-font-size=bigger] {
 
 .resource_wrapper_intro {
   border-bottom: 10px solid #333333;
+  background: #f2f2f2;
 }
 
 .block-views-blockrelated-resource-and-lesson-plan-block-1 {
@@ -11226,6 +11227,208 @@ html body[data-font-size=bigger] {
   margin-bottom: 35px;
 }
 
+.go-to-resource-wrapper-button a {
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  color: #FFFFFF;
+  background: #26A7DF;
+  border-radius: 15px;
+  padding: 10px 10px 10px 65px;
+  position: relative;
+  width: 100%;
+  border: 2px solid #26A7DF;
+  text-decoration: none;
+  max-width: 330px;
+  transition: 0.5s;
+  text-align: center;
+}
+.go-to-resource-wrapper-button a:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+  width: 30px;
+  height: 30px;
+  background: url(../images/white-resource.svg) center no-repeat;
+  background-size: cover;
+  transition: 0.5s;
+}
+.go-to-resource-wrapper-button a:hover {
+  background: #FFFFFF;
+  color: #26A7DF;
+}
+.go-to-resource-wrapper-button a:hover:before {
+  background: url(../images/blue-resource.svg) center no-repeat;
+  background-size: cover;
+}
+.go-to-resource-wrapper-view-button a {
+  font-size: 16px;
+  color: #333333;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  font-weight: 400;
+  padding: 12px 10px 12px 65px;
+  transition: 0.5s;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+}
+.go-to-resource-wrapper-view-button a:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 43px;
+  width: 25px;
+  height: 25px;
+  background: url(../images/plus-zoom.svg) center no-repeat;
+  background-size: cover;
+}
+.go-to-resource-wrapper-view-button a:hover {
+  box-shadow: 0px 0px 10px #d7d7d7;
+  border-color: #26a7df;
+  color: #26A7DF;
+}
+
+.resource_wrapper .main-section {
+  display: none;
+}
+.resource_wrapper .main-section.active {
+  display: block;
+}
+
+/*-------------left nav design-----------------------*/
+.leftnavbar {
+  max-width: 330px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #d7d7d7;
+  margin-top: 50px;
+  transition: 0.5s;
+}
+.leftnavbar--items {
+  transition: 0.5s;
+  border-bottom: 1px solid #d7d7d7;
+}
+.leftnavbar--items.active .leftnavbar--title, .leftnavbar--items:hover .leftnavbar--title {
+  background: #073573;
+}
+.leftnavbar--items.active .leftnavbar--title a, .leftnavbar--items:hover .leftnavbar--title a {
+  color: #fff;
+  font-weight: 700;
+}
+.leftnavbar--items.active .leftnavbar--title:before, .leftnavbar--items:hover .leftnavbar--title:before {
+  opacity: 1;
+}
+.leftnavbar--items:last-child {
+  border-bottom: 0;
+}
+.leftnavbar--items.active .leftnavbar-item {
+  display: block;
+}
+.leftnavbar--title {
+  padding: 20px 20px;
+  position: relative;
+  border-bottom: 1px solid #d7d7d7;
+  transition: 0.5s;
+}
+.leftnavbar--title:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  background: #fff;
+  opacity: 0;
+  transition: 0.5s;
+}
+.leftnavbar--title a {
+  font-size: 16px;
+  color: #2379a4;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.leftnavbar-item {
+  display: none;
+}
+.leftnavbar-item ul {
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+}
+.leftnavbar-item ul li a {
+  display: inline-block;
+  width: 100%;
+  font-size: 16px;
+  color: #2379a4;
+  text-decoration: none;
+  line-height: 28px;
+  position: relative;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+.leftnavbar-item ul li a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background: #e3a82b;
+  transition: 0.5s;
+  opacity: 0;
+}
+.leftnavbar-item ul li a:hover {
+  font-weight: 700;
+  text-decoration: underline;
+}
+.leftnavbar-item ul li a.active:before, .leftnavbar-item ul li a:hover:before {
+  opacity: 1;
+  height: 100%;
+}
+
+.left-nav {
+  position: relative;
+}
+.left-nav.sticky .leftnavbar {
+  position: fixed;
+  top: 0;
+}
+
+.proceed-nex-link {
+  background: #2379a4;
+  padding: 7px 20px;
+  text-align: right;
+}
+.proceed-nex-link a {
+  font-size: 16px;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  padding-right: 30px;
+}
+.proceed-nex-link a:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  background: url(../images/white-right-arrow.svg) center no-repeat;
+  width: 19px;
+  height: 22px;
+}
+
+/*---------------------left nav design end-----------------------*/
 .region-content {
   padding: 0;
 }

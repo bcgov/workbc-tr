@@ -18,6 +18,67 @@
         });
       }
       
+      //left nav tab js 
+      var div_top = jQuery('.left-nav').offset().top;
+      var right_height = jQuery('.right-nav').height();
+      var right_top = jQuery('.right-nav').offset().top;
+      var differ = right_height + right_top - 400;
+      jQuery(window).scroll(function() {
+         var window_top = jQuery(window).scrollTop();
+        
+         if ((window_top > div_top) && (window_top < differ)) {
+          jQuery('.left-nav').addClass('sticky');
+         } 
+         else {
+          jQuery('.left-nav').removeClass('sticky');
+         }
+       });
+
+       $('.leftnavbar--title a').on('click', function(){
+        $('.right-nav .main-section').removeClass('active');
+        $('.leftnavbar .leftnavbar--items').removeClass('active');
+        $(this).closest('.leftnavbar--items').addClass('active');
+        var hrefattr = $(this).attr('href');
+        $('.right-nav '+hrefattr).addClass('active');
+       });
+
+       $('.proceed-nex-link').on('click',function(){
+        $('.leftnavbar .leftnavbar--items.active').removeClass('active').next('.leftnavbar--items').addClass('active');
+        $('.right-nav .main-section.active').removeClass('active').next('.main-section').addClass('active'); 
+        $('html,body').animate({
+          scrollTop: $('.right-nav').offset().top
+        })
+       });
+
+       window.addEventListener("load", () => {
+        // Retrieve all help sections
+        const sections = Array.from(document.querySelectorAll(".resource_wrapper_main_para_item[id]"));
+       
+        // Once a scrolling event is detected, iterate all elements
+        // whose visibility changed and highlight their navigation entry
+        const scrollHandler = entries =>
+         entries.forEach(entry => {
+          const section = entry.target;
+          const sectionId = section.id;
+          const sectionLink = document.querySelector(`a[href="#${sectionId}"]`);
+       
+          if (entry.intersectionRatio > 0) {
+           section.classList.add("active");
+           sectionLink.classList.add("active");
+          } else {
+           section.classList.remove("active");
+           sectionLink.classList.remove("active");
+          }
+         });
+       
+        // Creates a new scroll observer
+        const observer = new IntersectionObserver(scrollHandler);
+       
+        //noinspection JSCheckFunctionSignatures
+        sections.forEach(section => observer.observe(section));
+       });
+      //left nav tab js end
+
     }
   };
 
