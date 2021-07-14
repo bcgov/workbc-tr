@@ -9,9 +9,11 @@ dependencies:
     - field.storage.node.field_term_resource_asset_type
     - field.storage.node.field_term_resource_grade
     - field.storage.node.field_term_resource_stage
+    - field.storage.taxonomy_term.field_grade_color
     - node.type.resource
     - taxonomy.vocabulary.career_life_cycle_stage
   module:
+    - color_field
     - entity_reference_revisions
     - image
     - media
@@ -326,9 +328,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_label
+          type: entity_reference_entity_view
           settings:
-            link: false
+            view_mode: grade_color
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -530,6 +532,70 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_grade_color:
+          id: field_grade_color
+          table: taxonomy_term__field_grade_color
+          field: field_grade_color
+          relationship: field_term_resource_grade
+          group_type: group
+          admin_label: ''
+          label: 'Grade Color'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: color
+          type: color_field_formatter_text
+          settings:
+            format: hex
+            opacity: false
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -584,6 +650,15 @@ display:
           relationship: none
           group_type: group
           admin_label: 'field_resources_images_node: Media'
+          required: false
+          plugin_id: standard
+        field_term_resource_grade:
+          id: field_term_resource_grade
+          table: node__field_term_resource_grade
+          field: field_term_resource_grade
+          relationship: none
+          group_type: group
+          admin_label: 'field_term_resource_grade: Taxonomy term'
           required: false
           plugin_id: standard
       arguments:
@@ -681,6 +756,7 @@ display:
         - 'config:field.storage.node.field_term_resource_asset_type'
         - 'config:field.storage.node.field_term_resource_grade'
         - 'config:field.storage.node.field_term_resource_stage'
+        - 'config:field.storage.taxonomy_term.field_grade_color'
   block_1:
     display_plugin: block
     id: block_1
@@ -703,3 +779,4 @@ display:
         - 'config:field.storage.node.field_term_resource_asset_type'
         - 'config:field.storage.node.field_term_resource_grade'
         - 'config:field.storage.node.field_term_resource_stage'
+        - 'config:field.storage.taxonomy_term.field_grade_color'
