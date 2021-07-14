@@ -33,20 +33,6 @@ objects:
         name: ${POD_NAME}
         app: ${APP_NAME}
       sessionAffinity: ClientIP
-  - apiVersion: route.openshift.io/v1
-    kind: Route
-    metadata:
-      name: ${ROUTE_NAME}
-      labels:
-        app: ${APP_NAME}
-    spec:
-      to:
-        kind: Service
-        name: ${SERVICE_NAME}
-        weight: 100
-      port:
-        targetPort: ${PORT_NAME}
-      wildcardPolicy: None
   - apiVersion: v1
     kind: DeploymentConfig
     metadata:
@@ -140,8 +126,6 @@ parameters:
     value: workbc-tr-frontend
   - name: PVC_NAME
     value: workbc-tr-pvc
-  - name: ROUTE_NAME
-    value: teacher-resources
   - name: SERVICE_NAME
     value: workbc-tr-frontend-service
   - name: PORT_NAME
