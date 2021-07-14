@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.node.resource.field_add_resource_description
     - field.field.node.resource.field_resource_desc
+    - field.field.node.resource.field_resource_documents
+    - field.field.node.resource.field_resource_external_link
     - field.field.node.resource.field_resource_featured
     - field.field.node.resource.field_resource_images
     - field.field.node.resource.field_resource_summary
@@ -17,6 +19,8 @@ dependencies:
     - field.field.node.resource.field_term_resource_stage
     - node.type.resource
   module:
+    - file
+    - link
     - media_library
     - paragraphs
 id: node.resource.default
@@ -35,6 +39,21 @@ content:
       form_display_mode: simple
       default_paragraph_type: resource_description
     third_party_settings: {  }
+    region: content
+  field_resource_documents:
+    weight: 27
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_resource_external_link:
+    weight: 26
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_resource_featured:
     type: boolean_checkbox
