@@ -50,14 +50,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 
-{# Prints div with classes, and content without Width and Background. #}
-<article{{ attributes.addClass(classes) }}>
-  <div class="container mx-auto row">
-    <div class="description col-lg-3">
-      {{ content.field_grade_access_title }}
-      {{ content.field_grade_access_body }}
-    </div>
-
-    {{ content|without('field_grade_access_title', 'field_grade_access_body') }}
-  </div>
-</article>
+{# {{ devel_dump(content.field_grade_access_color[0]['#taxonomy_term']) }} #}
+<div{{ attributes.addClass(classes) }} style="--grade-color: {{ content.field_grade_access_color.0['#taxonomy_term'].field_grade_color.0.color }};">
+  {{ content|without('field_grade_access_color') }}
+</div>

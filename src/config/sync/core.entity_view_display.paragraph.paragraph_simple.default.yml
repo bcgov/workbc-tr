@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.paragraph_simple.field_para_simple_body
     - field.field.paragraph.paragraph_simple.field_para_simple_title
-    - field.field.paragraph.paragraph_simple.field_paragraph_image
     - paragraphs.paragraphs_type.paragraph_simple
   module:
     - text
@@ -16,14 +15,14 @@ mode: default
 content:
   field_para_simple_body:
     weight: 1
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_para_simple_title:
     weight: 0
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -33,5 +32,4 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
-  field_paragraph_image: true
   search_api_excerpt: true

@@ -307,7 +307,16 @@
     background-size: cover;
     transition: 0.5s;
   }
-  &:hover{
+
+  &:link,
+  &:visited {
+    color:$teachers-bg-light;
+    background: $teachers-fifth-blue;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
     background:$teachers-bg-light;
     color:$teachers-fifth-blue;
     &:before{
@@ -510,6 +519,7 @@
       max-width: 330px;
       transition: 0.5s;
       text-align: center;
+      margin-bottom: 20px;
       &:before{
         content: '';
         position: absolute;
@@ -546,7 +556,7 @@
       display: inline-block;
       width: 100%;
       text-align: center;
-      margin:20px 0;
+      margin-bottom:20px;
       position: relative;
       &:before{
         content: '';

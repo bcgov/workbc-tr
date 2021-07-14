@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies: {  }
 id: paragraph_simple
-label: 'paragraph simple'
+label: Simple
 icon_uuid: null
 icon_default: null
-description: 'Simple paragraph with title and body'
+description: 'Simple content with title and body'
 behavior_plugins: {  }

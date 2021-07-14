@@ -9,13 +9,12 @@ header {
       justify-content: space-between;
       align-items: center;
       height: 145px;
-      transition: height 0.4s;
 
-      @media (max-width: 450px) {
+      @media (max-width: 520px) {
         height: auto;
       }
 
-      @media (min-width: 451px) and (max-width: 767px) {
+      @media (min-width: 521px) and (max-width: 767px) {
         height: 65px;
       }
     }
@@ -25,19 +24,16 @@ header {
       margin-right: 0;
       background: none;
 
-      @media (min-width: 451px) {
+      @media (min-width: 521px) {
         display: table;
         width: 100%;
-      }
-
-      @media (max-width: 450px) {
-        flex-wrap: wrap;
-        flex-direction: column;
-      }
-
-      @media (min-width: 451px) {
         padding-top: 0;
         padding-bottom: 0;
+      }
+
+      @media (max-width: 520px) {
+        flex-wrap: wrap;
+        flex-direction: column;
       }
 
       .site-logo {
@@ -46,7 +42,11 @@ header {
         padding: 0;
         margin: 0;
 
-        @media (max-width: 450px) {
+        @media (max-width: 520px) {
+          display: block;
+        }
+
+        @media (min-width: 768px) and (max-width: 992px) {
           display: block;
         }
 
@@ -60,7 +60,6 @@ header {
         display: inline-block;
         width: 100%;
         height: auto;
-        transition: width 0.4s;
 
         @media (max-width: 767px) {
           width: 175px;
@@ -75,29 +74,39 @@ header {
         text-transform: inherit;
         font-weight: 400;
         font-style: normal;
-        font-size: 1.4rem;
-        line-height: 1.4rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
         letter-spacing: normal;
-        transition: font-size 0.4s, line-height 0.4s;
 
-        @media (max-width: 450px) {
+        @media (max-width: 520px) {
           display: block;
           text-align: left;
           margin-top: 10px;
           padding: 0;
         }
 
+        @media (min-width: 768px) and (max-width: 992px) {
+          display: block;
+          text-align: left;
+          margin-top: 10px;
+          padding: 0;
+        }
+
+        @media (min-width: 340px) {
+          font-size: 1.4rem;
+          line-height: 1.4rem;
+        }
         @media (min-width: 768px) {
           font-size: 1.6rem;
           line-height: 1.6rem;
         }
         @media (min-width: 991px) {
-          font-size: 2.2rem;
-          line-height: 2.2rem;
+          font-size: 1.8rem;
+          line-height: 1.8rem;
         }
         @media (min-width: 1195px) {
-          font-size: 3rem;
-          line-height: 3rem;
+          font-size: 2.6rem;
+          line-height: 2.6rem;
         }
       }
 

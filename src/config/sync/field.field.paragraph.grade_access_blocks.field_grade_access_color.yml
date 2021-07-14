@@ -1,0 +1,29 @@
+uuid: 54b79957-eedb-4350-af15-c4b86cde397d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_grade_access_color
+    - paragraphs.paragraphs_type.grade_access_blocks
+    - taxonomy.vocabulary.grades
+id: paragraph.grade_access_blocks.field_grade_access_color
+field_name: field_grade_access_color
+entity_type: paragraph
+bundle: grade_access_blocks
+label: 'Grade Access Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      grades: grades
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

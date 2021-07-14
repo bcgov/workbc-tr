@@ -1,0 +1,21 @@
+.paragraph--type--paragraph-simple {
+  img {
+    display: inline-block;
+
+    &.align-right {
+      margin-left: 30px;
+      margin-bottom: 30px;
+    }
+
+    &.align-left {
+      margin-right: 30px;
+      margin-bottom: 30px;
+    }
+
+    &.align-right,
+    &.align-left {
+      max-width: 33%;
+      height: auto;
+    }
+  }
+}

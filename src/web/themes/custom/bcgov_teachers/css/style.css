@@ -10586,7 +10586,7 @@ html[data-font-size=bigger] {
   font-size: 20px;
 }
 html body {
-  font-family: "BCSans", "Noto Sans", Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
   font-size: 1.1rem;
   color: #333333;
 }
@@ -10600,6 +10600,27 @@ html body[data-font-size=bigger] {
   font-size: 1.595rem;
 }
 
+a:link, a:visited {
+  color: #2379A4;
+  text-decoration: none;
+}
+a:hover, a:active, a:focus {
+  color: #2379A4;
+  text-decoration: underline;
+}
+
+article.paragraph,
+article.block-views {
+  padding: 60px 0;
+}
+@media (max-width: 767px) {
+  article.paragraph,
+article.block-views {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
 .nobr {
   white-space: nowrap;
 }
@@ -10610,15 +10631,32 @@ html body[data-font-size=bigger] {
   display: table;
 }
 
+h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.6rem;
+    line-height: 2.6rem;
+  }
+}
+
 .banner-content {
   position: relative;
   display: flex;
   align-items: flex-end;
   min-height: 350px;
-  padding: 10px 0;
+  padding: 0;
   background-position: top center;
   background-size: cover;
   border-bottom: 4px solid #073573;
+}
+@media (min-width: 768px) {
+  .banner-content {
+    align-items: center;
+  }
 }
 .banner-content img {
   display: block;
@@ -10637,49 +10675,66 @@ html body[data-font-size=bigger] {
 .banner-content .container {
   display: flex;
   width: 100%;
+  justify-content: center;
 }
-.banner-content .container.text-pos-right {
-  justify-content: flex-end;
+@media (max-width: 767px) {
+  .banner-content .container {
+    max-width: none;
+    text-align: center;
+    background: #073573;
+  }
+}
+@media (min-width: 768px) {
+  .banner-content .container.text-pos-right {
+    justify-content: flex-end;
+  }
+  .banner-content .container.text-pos-left {
+    justify-content: flex-start;
+  }
 }
 .banner-content .banner-text {
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.8);
+  padding: 20px 0;
+  color: #fff;
 }
 @media (min-width: 768px) {
   .banner-content .banner-text {
     width: 50%;
-    padding: 20px;
+    padding: 0;
   }
 }
 .banner-content .banner-text h1 {
   font-size: 2.3rem;
   line-height: 2.3rem;
   font-weight: 400;
+  margin: 0;
 }
 @media (min-width: 768px) {
   .banner-content .banner-text h1 {
     font-size: 2rem;
     line-height: 2rem;
-  }
-}
-@media (min-width: 991px) {
-  .banner-content .banner-text h1 {
-    font-size: 2.7rem;
-    line-height: 2.7rem;
+    font-weight: 600;
   }
 }
 @media (min-width: 1195px) {
   .banner-content .banner-text h1 {
-    font-size: 3.5rem;
-    line-height: 3.5rem;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
   }
+}
+.banner-content .banner-text h1 + * {
+  margin-top: 1rem;
 }
 .banner-content .banner-text p {
   font-size: 1.2rem;
 }
 @media (min-width: 768px) {
   .banner-content .banner-text p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 1195px) {
+  .banner-content .banner-text p {
+    font-size: 1.9rem;
   }
 }
 .banner-content .banner-text p:last-child {
@@ -11013,11 +11068,15 @@ html body[data-font-size=bigger] {
   background-size: cover;
   transition: 0.5s;
 }
-.download-worksheets-button:hover {
+.download-worksheets-button:link, .download-worksheets-button:visited {
+  color: #FFFFFF;
+  background: #26A7DF;
+}
+.download-worksheets-button:hover, .download-worksheets-button:active, .download-worksheets-button:focus {
   background: #FFFFFF;
   color: #26A7DF;
 }
-.download-worksheets-button:hover:before {
+.download-worksheets-button:hover:before, .download-worksheets-button:active:before, .download-worksheets-button:focus:before {
   background: url(../images/download-blue.svg) center no-repeat;
   background-size: cover;
 }
@@ -11242,6 +11301,7 @@ html body[data-font-size=bigger] {
   max-width: 330px;
   transition: 0.5s;
   text-align: center;
+  margin-bottom: 20px;
 }
 .go-to-resource-wrapper-button a:before {
   content: "";
@@ -11275,7 +11335,7 @@ html body[data-font-size=bigger] {
   display: inline-block;
   width: 100%;
   text-align: center;
-  margin: 20px 0;
+  margin-bottom: 20px;
   position: relative;
 }
 .go-to-resource-wrapper-view-button a:before {
@@ -11443,14 +11503,13 @@ header .region-header > .container {
   justify-content: space-between;
   align-items: center;
   height: 145px;
-  transition: height 0.4s;
 }
-@media (max-width: 450px) {
+@media (max-width: 520px) {
   header .region-header > .container {
     height: auto;
   }
 }
-@media (min-width: 451px) and (max-width: 767px) {
+@media (min-width: 521px) and (max-width: 767px) {
   header .region-header > .container {
     height: 65px;
   }
@@ -11460,22 +11519,18 @@ header .region-header .navbar-brand {
   margin-right: 0;
   background: none;
 }
-@media (min-width: 451px) {
+@media (min-width: 521px) {
   header .region-header .navbar-brand {
     display: table;
     width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 520px) {
   header .region-header .navbar-brand {
     flex-wrap: wrap;
     flex-direction: column;
-  }
-}
-@media (min-width: 451px) {
-  header .region-header .navbar-brand {
-    padding-top: 0;
-    padding-bottom: 0;
   }
 }
 header .region-header .navbar-brand .site-logo {
@@ -11484,7 +11539,12 @@ header .region-header .navbar-brand .site-logo {
   padding: 0;
   margin: 0;
 }
-@media (max-width: 450px) {
+@media (max-width: 520px) {
+  header .region-header .navbar-brand .site-logo {
+    display: block;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
   header .region-header .navbar-brand .site-logo {
     display: block;
   }
@@ -11499,7 +11559,6 @@ header .region-header .navbar-brand img {
   display: inline-block;
   width: 100%;
   height: auto;
-  transition: width 0.4s;
 }
 @media (max-width: 767px) {
   header .region-header .navbar-brand img {
@@ -11514,17 +11573,30 @@ header .region-header .navbar-brand .site-title {
   text-transform: inherit;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.4rem;
-  line-height: 1.4rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
   letter-spacing: normal;
-  transition: font-size 0.4s, line-height 0.4s;
 }
-@media (max-width: 450px) {
+@media (max-width: 520px) {
   header .region-header .navbar-brand .site-title {
     display: block;
     text-align: left;
     margin-top: 10px;
     padding: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  header .region-header .navbar-brand .site-title {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    padding: 0;
+  }
+}
+@media (min-width: 340px) {
+  header .region-header .navbar-brand .site-title {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
   }
 }
 @media (min-width: 768px) {
@@ -11535,14 +11607,14 @@ header .region-header .navbar-brand .site-title {
 }
 @media (min-width: 991px) {
   header .region-header .navbar-brand .site-title {
-    font-size: 2.2rem;
-    line-height: 2.2rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
   }
 }
 @media (min-width: 1195px) {
   header .region-header .navbar-brand .site-title {
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 2.6rem;
+    line-height: 2.6rem;
   }
 }
 header .region-header .navbar-brand a.site-title {
@@ -11756,11 +11828,11 @@ footer {
 }
 .region-under-footer #block-bcgov-teachers-copyright p a:link, .region-under-footer #block-bcgov-teachers-copyright p a:visited {
   color: #2379A4;
-  text-decoration: none;
+  text-decoration: underline;
 }
 .region-under-footer #block-bcgov-teachers-copyright p a:hover, .region-under-footer #block-bcgov-teachers-copyright p a:active, .region-under-footer #block-bcgov-teachers-copyright p a:focus {
   color: #2379A4;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .region-under-footer #block-bcgov-teachers-footerbclogo p {
   margin: 0;
@@ -11774,7 +11846,6 @@ footer {
 
 header .navbar {
   display: block;
-  min-height: 55px;
   padding: 0;
   background: #153A55;
   align-items: stretch;
@@ -11883,6 +11954,156 @@ header .navbar .menu--main a:hover, header .navbar .menu--main a:active, header 
 }
 header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
   background-color: #2379A4;
+}
+
+.paragraph--type--grade-access {
+  background: #f2f2f2;
+}
+.paragraph--type--grade-access > .container {
+  align-items: stretch;
+  align-content: flex-start;
+}
+@media (max-width: 767px) {
+  .paragraph--type--grade-access .description {
+    text-align: center;
+  }
+}
+@media (max-width: 991px) {
+  .paragraph--type--grade-access .description {
+    flex: 0 0 100%;
+    max-width: none;
+  }
+}
+.paragraph--type--grade-access .description h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .paragraph--type--grade-access .description h1 {
+    font-size: 2.6rem;
+    line-height: 2.6rem;
+  }
+}
+@media (min-width: 768px) {
+  .paragraph--type--grade-access .description p {
+    font-size: 1.3rem;
+  }
+}
+.paragraph--type--grade-access .description a:after {
+  display: inline-block;
+  width: 14px;
+  height: 18px;
+  margin-left: 10px;
+  content: " ";
+  background: url("/themes/custom/bcgov_teachers/assets/arrow.svg");
+  background-size: cover;
+  vertical-align: middle;
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+@media (max-width: 767px) {
+  .paragraph--type--grade-access .grade-access-item + .grade-access-item {
+    margin-top: 20px;
+  }
+}
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks {
+  height: 100%;
+  padding: 30px 20px 20px;
+  text-align: center;
+  background: #fff;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+}
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover {
+  border-color: #2379A4;
+  border-color: var(--grade-color);
+  cursor: pointer;
+}
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:link, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:visited, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:hover, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:active, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:focus {
+  color: #fff;
+}
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:link:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:visited:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:hover:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:active:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:focus:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  display: block;
+  width: 9px;
+  height: 15px;
+  margin-top: -7px;
+  background: url("/themes/custom/bcgov_teachers/assets/chevron.svg");
+  background-size: cover;
+  vertical-align: middle;
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-block-title {
+  font-weight: bold;
+  color: #2379A4;
+  color: var(--grade-color);
+}
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-block-title strong {
+  font-size: 5rem;
+  line-height: 5rem;
+  vertical-align: middle;
+}
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-link a {
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-link a:link, .paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-link a:visited {
+  color: #fff;
+  background: #2379A4;
+  background: var(--grade-color);
+  text-decoration: none;
+}
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-link a:hover, .paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-link a:active, .paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-link a:focus {
+  color: #fff;
+  text-decoration: none;
+}
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-link a:hover:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-link a:active:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-link a:focus:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  display: block;
+  width: 9px;
+  height: 15px;
+  margin-top: -7px;
+  background: url("/themes/custom/bcgov_teachers/assets/chevron.svg");
+  background-size: cover;
+  vertical-align: middle;
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.paragraph--type--paragraph-simple img {
+  display: inline-block;
+}
+.paragraph--type--paragraph-simple img.align-right {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+.paragraph--type--paragraph-simple img.align-left {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.paragraph--type--paragraph-simple img.align-right, .paragraph--type--paragraph-simple img.align-left {
+  max-width: 33%;
+  height: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

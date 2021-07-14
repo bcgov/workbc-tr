@@ -23,15 +23,19 @@
       var right_height = jQuery('.right-nav').height();
       var right_top = jQuery('.right-nav').offset().top;
       var differ = right_height + right_top - 400;
+
+      
       jQuery(window).scroll(function() {
-         var window_top = jQuery(window).scrollTop();
-        
-         if ((window_top > div_top) && (window_top < differ)) {
-          jQuery('.left-nav').addClass('sticky');
-         } 
-         else {
-          jQuery('.left-nav').removeClass('sticky');
-         }
+        if (window.matchMedia("(min-width: 768px)").matches) {
+          var window_top = jQuery(window).scrollTop();
+          
+          if ((window_top > div_top) && (window_top < differ)) {
+           jQuery('.left-nav').addClass('sticky');
+          } 
+          else {
+           jQuery('.left-nav').removeClass('sticky');
+          }
+        }
        });
 
        $('.leftnavbar--title a').on('click', function(){

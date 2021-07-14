@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:524dfa19-3a9e-4fb9-96b7-dd3b3e417989'
+    - 'block_content:basic:6276e560-24e1-481d-9b15-81b574459b8c'
   module:
     - block_content
   theme:
@@ -13,9 +13,9 @@ theme: bcgov_teachers
 region: under_footer
 weight: 0
 provider: null
-plugin: 'block_content:524dfa19-3a9e-4fb9-96b7-dd3b3e417989'
+plugin: 'block_content:6276e560-24e1-481d-9b15-81b574459b8c'
 settings:
-  id: 'block_content:524dfa19-3a9e-4fb9-96b7-dd3b3e417989'
+  id: 'block_content:6276e560-24e1-481d-9b15-81b574459b8c'
   label: 'Footer BC Logo'
   provider: block_content
   label_display: '0'

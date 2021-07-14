@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:ed6081f2-3d43-4676-989b-8583374fde1a'
+    - 'block_content:basic:ba586341-6a91-4f23-ac5f-22d48f8c10c5'
   module:
     - block_content
   theme:
@@ -11,11 +11,11 @@ dependencies:
 id: bcgov_teachers_socialnetworks
 theme: bcgov_teachers
 region: footer
-weight: -8
+weight: -9
 provider: null
-plugin: 'block_content:ed6081f2-3d43-4676-989b-8583374fde1a'
+plugin: 'block_content:ba586341-6a91-4f23-ac5f-22d48f8c10c5'
 settings:
-  id: 'block_content:ed6081f2-3d43-4676-989b-8583374fde1a'
+  id: 'block_content:ba586341-6a91-4f23-ac5f-22d48f8c10c5'
   label: 'Social Networks'
   provider: block_content
   label_display: '0'
