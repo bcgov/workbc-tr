@@ -123,43 +123,46 @@
       featuredResizeTimeout = setTimeout(featuredElementSizes,150);
     });
 
+    // For demo purpose only
     $('.featured-resources-item').clone(true).appendTo('.featured-carousel');
 
-    $('.featured-carousel').slick({
-      dots: true,
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 3,
-      responsive: [
-        {
-          breakpoint: 1196,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
+    if ($('.featured-resources-item').length > 3) {
+      $('.featured-carousel').slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+          {
+            breakpoint: 1196,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            }
+          },
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 576,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              adaptiveHeight: true
+            }
           }
-        },
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 576,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            adaptiveHeight: true
-          }
-        }
-      ]
-    });
+        ]
+      });
 
-    // On edge hit
-    $('.featured-carousel').on('edge', function(event, slick, direction) {
-      featuredElementSizes();
-    });
+      // On edge hit
+      $('.featured-carousel').on('edge', function(event, slick, direction) {
+        featuredElementSizes();
+      });
+    }
 
     featuredElementSizes();
   }
