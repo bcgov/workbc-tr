@@ -1,0 +1,21 @@
+uuid: 0e2286bb-ea4e-44d7-8aa6-7b3ae12c7d71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_card_summary
+    - node.type.resource
+  module:
+    - text
+id: node.resource.field_resource_card_summary
+field_name: field_resource_card_summary
+entity_type: node
+bundle: resource
+label: 'Card Summary'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
