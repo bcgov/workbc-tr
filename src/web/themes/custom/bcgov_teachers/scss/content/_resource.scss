@@ -42,14 +42,16 @@
     .field{
       display: flex;
     }
-   .field__item{
-      background:rgba(7, 53, 115, 1);
-      border-radius: 9px;
-      padding:4px 32px;
-      color: $teachers-bg-light;
-      text-transform:uppercase;
-      font-size:15px;
-      line-height: normal;
+   .field__item {
+      > div {
+        background:rgba(7, 53, 115, 1);
+        border-radius: 9px;
+        padding:4px 32px;
+        color: $teachers-bg-light;
+        text-transform:uppercase;
+        font-size:15px;
+        line-height: normal;
+      }
       +  .field__item{
         margin-left:5px;
       }
@@ -229,30 +231,20 @@
   &_grade{
       .item-list{display: inline-block; width:100%;}
       ul{margin:0; padding:0; list-style: none;
-        li{
+        li {
           margin:4px 2px 0; 
-          padding:0;
-          background:$secondary_color_4;
-          border-radius: 9px;
-          padding:4px 32px;
-          color: $teachers-bg-light;
-          text-transform:uppercase;
-          font-size:15px;
-          line-height: normal;
           display: inline-block;
-          &:nth-child(1n)
-          {
+          padding:0;
+          div{
             background:$secondary_color_4;
+            border-radius: 9px;
+            padding:4px 32px;
+            color: $teachers-bg-light;
+            text-transform:uppercase;
+            font-size:15px;
+            line-height: normal;
+            display: inline-block;
           }
-          &:nth-child(2n)
-          {
-            background:$secondary_color_5;
-          }
-          &:nth-child(3n)
-          {
-            background:$secondary_color_6;
-          }
-
         }
       }
   }
