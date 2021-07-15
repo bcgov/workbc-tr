@@ -83,11 +83,10 @@
             margin: 10px 10px 0 0;
             padding: 0;
 
-            span {
+            div {
               display: block;
               padding: 2px 30px;
               color: $white;
-              background: var(--grade-color);
               border-radius: 10px;
             }
           }
