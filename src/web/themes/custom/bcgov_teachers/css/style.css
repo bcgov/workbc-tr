@@ -11670,6 +11670,7 @@ header .region-header .navbar-brand .site-logo {
 header .region-header .navbar-brand img {
   display: inline-block;
   width: 100%;
+  max-width: 260px;
   height: auto;
 }
 @media (max-width: 767px) {
