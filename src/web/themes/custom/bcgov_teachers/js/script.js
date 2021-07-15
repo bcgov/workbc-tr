@@ -19,11 +19,49 @@
           return false;
         });
       }
+      
+      //left nav tab js 
+      var div_top = jQuery('.left-nav').offset().top;
+      var right_height = jQuery('.right-nav').height();
+      var right_top = jQuery('.right-nav').offset().top;
+      var differ = right_height + right_top - 400;
+
+      
+      jQuery(window).scroll(function() {
+        if (window.matchMedia("(min-width: 768px)").matches) {
+          var window_top = jQuery(window).scrollTop();
+          
+          if ((window_top > div_top) && (window_top < differ)) {
+           jQuery('.left-nav').addClass('sticky');
+          } 
+          else {
+           jQuery('.left-nav').removeClass('sticky');
+          }
+        }
+       });
+
+       $('.leftnavbar--title a').on('click', function(){
+        $('.right-nav .main-section').removeClass('active');
+        $('.leftnavbar .leftnavbar--items').removeClass('active');
+        $(this).closest('.leftnavbar--items').addClass('active');
+        var hrefattr = $(this).attr('href');
+        $('.right-nav '+hrefattr).addClass('active');
+       });
+
+       $('.proceed-nex-link').on('click',function(){
+        $('.leftnavbar .leftnavbar--items.active').removeClass('active').next('.leftnavbar--items').addClass('active');
+        $('.right-nav .main-section.active').removeClass('active').next('.main-section').addClass('active'); 
+        $('html,body').animate({
+          scrollTop: $('.right-nav').offset().top
+        })
+       });
+
+       
+      //left nav tab js end
 
     }
   };
 
-  // Feature to increase text size
   if ($('#block-bcgov-teachers-increasetextsize').length > 0) {
     $('#block-bcgov-teachers-increasetextsize a[class^="size"]').click(function() {
       var elem = $(this);
@@ -61,10 +99,10 @@
   if ($('.banner-content').length > 0 && !document.currentScript) {
     bannerContentPosition();
 
-    var bannerResizeTimeout;
+    var resizeTimeout;
     $(window).resize(function() {
-      clearTimeout(bannerResizeTimeout);
-      bannerResizeTimeout = setTimeout(bannerContentPosition,150);
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(bannerContentPosition,150);
     });
   }
 

@@ -1,0 +1,46 @@
+uuid: 9e7f30eb-f580-44e2-bd4b-59f13db9649c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.resource_description.field_main_heading
+    - field.field.paragraph.resource_description.field_simple_descriotion
+    - paragraphs.paragraphs_type.resource_description
+  module:
+    - paragraphs
+id: paragraph.resource_description.default
+targetEntityType: paragraph
+bundle: resource_description
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_main_heading:
+    weight: -9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_simple_descriotion:
+    type: entity_reference_paragraphs
+    weight: -8
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: simple
+      default_paragraph_type: paragraph_simple
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

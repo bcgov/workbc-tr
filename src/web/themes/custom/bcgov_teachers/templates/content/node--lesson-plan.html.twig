@@ -82,26 +82,25 @@
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-
-    <div class="lesson_wrapper">
-		  <div class="lesson_wrapper_intro">
+  <div class="lesson_wrapper">
+	  <div class="lesson_wrapper_intro">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-7 col-sm-6 col-xs-12">
-						<div class="lesson_wrapper__intro__title">
+				  <div class="col-md-7 col-sm-6 col-xs-12">
+					  <div class="lesson_wrapper__intro__title">
 							<span>{{ "Lesson Plan: "|t }}</span> {{ node.title.value }}
-						  </div>
-						  {% if node.field_term_resource_stage.value is not empty %}
+						</div>
+						{% if node.field_term_resource_stage.value is not empty %}
 							<div class="lesson_wrapper_intro__life_cycle">
 								<span>{{ "Career Lifecycle Stage: "|t }}</span> {{ content.field_term_resource_stage }}
 							</div>
-						  {% endif %}
-						  {% if node.field_resource_summary.0.entity.field_para_simple_body.getValue().0.value is not empty %}
+						{% endif %}
+						{% if node.field_resource_summary.0.entity.field_para_simple_body.getValue().0.value is not empty %}
 							<div class="lesson_wrapper_intro__body">
 								{{ node.field_resource_summary.0.entity.field_para_simple_body.getValue().0.value|raw }}
 							</div>
-						  {% endif %}
-						  <div class="lesson_wrapper_intro__tags">
+						{% endif %}
+						<div class="lesson_wrapper_intro__tags">
 							{% if node.field_term_resource_grade.value is not empty %}
 							  <div class="lesson_wrapper_intro__grade">
 								  {{ content.field_term_resource_grade }}
@@ -112,12 +111,12 @@
 								  {{ node.field_resource_time.value }}
 							  </div>
 							{% endif %}
-						  </div>
-						  {{ content.field_resource_images }}
+						</div>
+				    {{ content.field_resource_images }}
 					</div>
 					<div class="col-md-4 offset-md-1 col-sm-6 col-xs-12 align-item-end">
-						 <div class="download-worksheets-container--wrapper">
-							<div class="download-worksheets-container">
+					  <div class="download-worksheets-container--wrapper">
+						  <div class="download-worksheets-container">
 								<a href="#" class="download-worksheets-button">
 								  <p>{{ "Download All Worksheets"|t }}</br>{{ "(PDF & DOC)"|t }}</p>
 								</a>
@@ -129,41 +128,38 @@
 					</div>
 				</div>
 			 </div>
-			
 			<div class="download-worksheets-files-wrapper">
-
         <div class="download-worksheets-files-wrapper__inner">
           <div class="download-worksheets-files-wrapper__intro">
             <div class="download-worksheets-files-wrapper__intro--inner">
               <span class="title">{{ "Choose Download Option"|t }}</span><span class="close-popup"><a href="javascript:void(0)">{{ 'Close'|t }}</a></span>
             </div>
           </div>
-           <div class="download-worksheets-files-wrapper__sub-title">
-              {{ "Please select desired file format to download activity worksheet."|t }}
-            </div>
+          <div class="download-worksheets-files-wrapper__sub-title">
+            {{ "Please select desired file format to download activity worksheet."|t }}
+          </div>
           <ul class="file-list">
             <li>
               <div class="file-title {{ subentity.entity.field_media_document.0.entity.filemime.value|split('.')|last }}">
-              {{ node.title.value }}
+                {{ node.title.value }}
               </div>
               <div class="file-url">
-              {{ content.entity_print_view_pdf }}
+                {{ content.entity_print_view_pdf }}
               </div>
             </li>
             {% set total_size = '' %}
             {% for key,subentity in node.field_resource_images if key|first != '#' %}
               {% set total_size = total_size + subentity.entity.field_media_document.0.entity.filesize.value %}
               <li>
-              <div class="file-title {{ subentity.entity.field_media_document.0.entity.filemime.value|split('.')|last }}">
-                {{ subentity.entity.field_media_document.0.entity.filename.value }}
-              </div>
-              <div class="file-size">
-                {{ _self.bytesToSize(subentity.entity.field_media_document.0.entity.filesize.value) }}
-              </div>
-              <div class="file-url">
-                <a href="{{ file_url(subentity.entity.field_media_document.0.entity.uri.value) }}" title="{{ subentity.entity.field_media_document.0.entity.filename.value }}" download target="_blank">Download</a>
-              </div>
-
+                <div class="file-title {{ subentity.entity.field_media_document.0.entity.filemime.value|split('.')|last }}">
+                  {{ subentity.entity.field_media_document.0.entity.filename.value }}
+                </div>
+                <div class="file-size">
+                  {{ _self.bytesToSize(subentity.entity.field_media_document.0.entity.filesize.value) }}
+                </div>
+                <div class="file-url">
+                  <a href="{{ file_url(subentity.entity.field_media_document.0.entity.uri.value) }}" title="{{ subentity.entity.field_media_document.0.entity.filename.value }}" download target="_blank">Download</a>
+                </div>
               </li>
             {% endfor %}
             <li class="download-all">
@@ -172,37 +168,56 @@
               </div>
               <div class="size-all">{{ _self.bytesToSize(total_size) }}</div>
               <div class="file-url">
-              <a href="/media_download_all/node/{{ node.nid.value }}/field_resource_images" title="Download All">Download All</a>
+                <a href="/media_download_all/node/{{ node.nid.value }}/field_resource_images" title="Download All">Download All</a>
               </div>
             </li>
           </ul>
         </div>
-      </div>	
-			
-		  </div>
-		  
-     </div>
-	 
-	 <div class="lesson_wrapper_main">
-		<div class="container">
-			<div class="lesson_wrapper_main__lable">
-			  {{ "Lesson Plan"|t }}
-			</div>
-			<div class="lesson_wrapper_main_para">
-			  {% for key,subentity in node.field_resource_desc if key|first != '#' %}
-				<div class="lesson_wrapper_main_para_item">
-				  <div class="lesson_wrapper_main_para_item__title">
-					{{ subentity.entity.field_para_simple_title.value }}
-				  </div>
-				  <div class="lesson_wrapper_main_para_item__body">
-					{{ subentity.entity.field_para_simple_body.getValue().0.value|raw }}
-				  </div>
-				</div>
-			  {% endfor %}
-			</div>
-		</div>
       </div>
-
+		</div>
+    {# Main Container #}
+    <div class="container">
+      <div class="row">
+        <div class="left-nav col-md-4">
+          <div class="leftnavbar">
+            <div class="leftnavbar--title">
+              {{ 'Lesson Plan'|t }}
+            </div>
+            <ul>
+              {% for key,subentity in node.field_resource_desc if key|first != '#' %}
+                {% if subentity.entity.field_para_simple_title.value is not empty %}
+                  <li>
+                    <a href="#paragraph-{{ subentity.entity.id.value }}">{{ subentity.entity.field_para_simple_title.value }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="right-nav col-md-8">
+          <div class="lesson_wrapper_main__lable_wrapper_main">
+            <div class="lesson_wrapper_main__lable">
+               {{ 'Lesson Plan'|t }}
+            </div>
+            {% for key,subentity in node.field_resource_desc if key|first != '#' %}
+              <div class="main-section" id="paragraph-{{ subentity.entity.id.value }}">
+                <div class="lesson_wrapper_main_para">
+                  <div class="lesson_wrapper_main_para_item" id="paragraph-{{ subentity.entity.id.value }}">
+                    <div class="lesson_wrapper_main_para_item__title">
+                      {{ subentity.entity.field_para_simple_title.value }}
+                    </div>
+                    <div class="lesson_wrapper_main_para_item__body">
+                      {{ subentity.entity.field_para_simple_body.getValue().0.value|raw }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </article>
 
 {% macro bytesToSize(bytes) %}

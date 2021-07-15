@@ -1,0 +1,19 @@
+uuid: c787471c-5105-448c-bb20-377ba04352a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_main_heading
+    - paragraphs.paragraphs_type.resource_description
+id: paragraph.resource_description.field_main_heading
+field_name: field_main_heading
+entity_type: paragraph
+bundle: resource_description
+label: 'Main Heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
