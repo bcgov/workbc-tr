@@ -32,4 +32,5 @@ content:
 hidden:
   admin_title: true
   created: true
+  field_paragraph_image: true
   status: true

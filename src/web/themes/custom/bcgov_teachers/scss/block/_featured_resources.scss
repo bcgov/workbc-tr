@@ -1,3 +1,154 @@
 .block-featured-resources {
+  h1 {
+    margin-bottom: 60px;
+    text-align: center;
 
+    @media (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .featured-resources-content {
+    display: inline-block;
+    border: 2px solid #e2e2e2;
+    border-radius: 15px;
+    overflow: hidden;
+
+    &:hover {
+      background: #F2F2F2;
+      box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    }
+
+    .views-field-field-term-resource-asset-type {
+      padding: 5px 10px;
+      background: #E2E2E2;
+      color: $teachers-text-light;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    &.type-lesson-plan {
+      .views-field-field-term-resource-asset-type {
+        background: #333;
+        color: $teachers-text-light;
+      }
+    }
+
+    &.type-resource {
+      .views-field-field-term-resource-asset-type {
+        background: #E2E2E2;
+        color: $teachers-text;
+      }
+    }
+
+    .views-field-field-resources-images-node {
+      margin-bottom: 10px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .views-field-field-resource-card-summary {
+      p {
+        margin: 0;
+
+        + p {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .views-field:not(.views-field-field-term-resource-asset-type) + .views-field {
+      margin-top: 10px;
+      padding: 0 10px;
+
+      &.views-field-field-term-resource-stage {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+
+    .views-field-field-term-resource-grade {
+      .item-list {
+        ul {
+          margin: -10px 0 0;
+          padding: 0;
+          list-style: none;
+
+          li {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            padding: 0;
+
+            span {
+              display: block;
+              padding: 2px 30px;
+              color: $white;
+              background: var(--grade-color);
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .views-field-field-term-resource-stage {
+      border-top: 2px solid #e2e2e2;
+      font-size: 0.9rem;
+
+      .views-label-field-term-resource-stage {
+        display: inline;
+        font-weight: bold;
+      }
+
+      .field-content {
+        display: inline;
+        font-style: italic;
+        color: $teachers-text-card-stage;
+      }
+    }
+  }
+
+  .slick-dots {
+    li {
+      button {
+        &::before {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    &::before {
+      content: " ";
+      display: block;
+      width: 15px;
+      height: 24px;
+      background: url('/themes/custom/bcgov_teachers/images/chevron-blue.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 1;
+    }
+
+    &:hover {
+      &::before {
+        background: url('/themes/custom/bcgov_teachers/images/chevron-grey.svg');
+      }
+    }
+  }
+
+  .slick-next {
+    &::before {
+      -moz-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+  }
 }

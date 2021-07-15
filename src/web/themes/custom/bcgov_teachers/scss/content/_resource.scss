@@ -11,7 +11,7 @@
         + [class^=col]{
           margin-top: 20px;
           margin-left:0;
-        } 
+        }
       }
     }
   }
@@ -74,7 +74,7 @@
   }
 
   &_main__lable{
-    
+
     font-weight: 400;
     font-style: normal;
     font-size: 45px;
@@ -91,8 +91,8 @@
     display: inline-block;
     padding-bottom:5px;
     margin-bottom: 40px;
-  } 
-  
+  }
+
   &_main_para_item__body{
     display: block;
     width: 100%;
@@ -141,7 +141,7 @@
       }
     }
   }
-  
+
   &_main_para_item{
     + .lesson_wrapper_main_para_item{
       margin-top:40px;
@@ -163,7 +163,7 @@
   background:rgba(242, 242, 242, 1);
   overflow: hidden;
   > h2{
-    font-family: $font-family-sans-serif; 
+    font-family: $font-family-sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 36px;
@@ -171,7 +171,7 @@
     margin-bottom:30px;
     text-align: center;
   }
-  
+
 }
 .related_news_wrapper{
  .row{justify-content: center;}
@@ -188,7 +188,7 @@
     background: #333;
     border-radius: 15px 15px 0 0;
     padding: 6px 5px;
-    
+
     &.gray-bg{
       background:$teachers-bg-grey;
       color: $teachers-text-light;
@@ -207,7 +207,7 @@
     padding:15px;
   }
   &_title a{
-    font-family: $font-family-sans-serif; 
+    font-family: $font-family-sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
@@ -219,7 +219,7 @@
 
   &_desc{
     p{
-      font-family: $font-family-sans-serif; 
+      font-family: $font-family-sans-serif;
       font-weight: 400;
       font-style: normal;
       font-size: 16px;
@@ -232,7 +232,7 @@
       .item-list{display: inline-block; width:100%;}
       ul{margin:0; padding:0; list-style: none;
         li {
-          margin:4px 2px 0; 
+          margin:4px 2px 0;
           display: inline-block;
           padding:0;
           div{
@@ -261,7 +261,7 @@
     ul{padding:0; list-style: none;
       li{display: inline-block; font-family: $font-family-sans-serif; font-size: 15px; font-weight: 400; color:$secondary_color_2; font-style: italic; margin:0; padding:0;
         + li{margin-left:5px;}
-      } 
+      }
     }
   }
 }
@@ -282,7 +282,7 @@
   text-decoration: none;
   max-width: 330px;
   transition: 0.5s;
-  
+
   p{
     margin: 0;
     text-align:center;
@@ -315,7 +315,7 @@
       background:url(../images/download-blue.svg) center no-repeat;
       background-size: cover;
     }
-    
+
   }
 }
 
@@ -334,14 +334,14 @@
   margin-left:5px;
   .stButton{display: flex; justify-content: center; align-items: center; width:38px; height:38px; background-color: $teachers-bg-grey; border-radius: 100%; background-size: 25px 25px; background-position: center; background-repeat: no-repeat; transition: 0.5s;
     .stLarge{display: none;}
-    &:hover{background-color:#989898;} 
+    &:hover{background-color:#989898;}
   }
-  
+
   .st_email_large .stButton{background-image:url(../images/mail.svg);}
   .st_facebook_large .stButton{background-image:url(../images/facebook.svg); background-size: 13px;}
   .st_twitter_large .stButton{background-image:url(../images/twitter.svg); background-size: 20px;}
   .st_linkedin_large .stButton{background-image:url(../images/linkedin.svg); background-size: 18px;}
-  
+
 }
 
 
@@ -369,7 +369,7 @@
     padding: 20px;
     width:100%;
     max-width:460px;
-      
+
     ul.file-list {
         padding: 0;
         margin: 0;
@@ -383,10 +383,10 @@
           + li{
             margin-top:20px;
           }
-          &.download-all { 
+          &.download-all {
             padding: 33px 15px;
             background: rgb(226 226 226);
-            
+
             .file-title-all{
               padding-left:48px;
               position: relative;
@@ -531,7 +531,7 @@
           background:url(../images/blue-resource.svg) center no-repeat;
           background-size: cover;
         }
-        
+
       }
     }
   }
@@ -570,14 +570,14 @@
   }
 }
 
-.resource_wrapper{
-  .main-section{
-    display: none;
-    &.active{
-      display: block;
-    }
-  }
-}
+// .resource_wrapper{
+//   .main-section{
+//     display: none;
+//     &.active{
+//       display: block;
+//     }
+//   }
+// }
 
 /*-------------left nav design-----------------------*/
 
@@ -637,7 +637,7 @@
           transition: 0.5s;
       }
   }
-  
+
   &-item{
     display: none;
         ul{
@@ -653,7 +653,7 @@
                 text-decoration:none;
                 line-height:28px;
                 position:relative;
-                transition:0.5s; 
+                transition:0.5s;
                 padding-left:20px;
                  &:before{
                      content:'';
@@ -675,12 +675,12 @@
                         height:100%;
                      }
                  }
-             } 
+             }
           }
       }
   }
-  
-}  
+
+}
 
 .left-nav{
   position: relative;

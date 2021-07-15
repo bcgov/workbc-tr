@@ -1,11 +1,14 @@
 global-styling:
   css:
     theme:
+      css/slick/slick.css: {}
+      css/slick/slick-theme.css: {}
       css/style.css: {}
 
 global-scripts:
   js:
     js/jquery.matchheight-min.js: {}
+    js/slick.min.js: {}
     js/script.js: {}
   dependencies:
     - core/jquery

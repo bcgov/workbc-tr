@@ -17,6 +17,7 @@
     "require": {
         "composer/installers": "^1.9",
         "drupal/admin_toolbar": "^3.0",
+        "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/bootstrap4": " ^2.1",
         "drupal/bootstrap4_tools": " ^2.1",
         "drupal/bootstrap_paragraphs": " ^2.0",
@@ -27,6 +28,7 @@
         "drupal/ctools": "^3.7",
         "drupal/devel": "^4.1",
         "drupal/entity_print": "^2.2",
+        "drupal/facets": "^1.8",
         "drupal/field_group": "^3.1",
         "drupal/keycloak": "^1.5",
         "drupal/media_download_all": "^2.0@alpha",
