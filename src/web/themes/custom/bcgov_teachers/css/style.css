@@ -10876,7 +10876,7 @@ h2 {
   }
 }
 .lesson_wrapper__intro__title, .resource_wrapper__intro__title {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
   font-size: 45px;
   color: #333333;
@@ -10886,7 +10886,7 @@ h2 {
   font-weight: 700;
 }
 .lesson_wrapper_intro__life_cycle, .resource_wrapper_intro__life_cycle {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
   font-size: 18px;
   font-weight: normal;
@@ -10938,15 +10938,15 @@ h2 {
   padding: 4px 22px;
   margin-left: 5px;
 }
-.lesson_wrapper_main, .resource_wrapper_main {
-  padding: 40px 0;
-}
 .lesson_wrapper_main__lable, .resource_wrapper_main__lable {
   font-weight: 400;
   font-style: normal;
   font-size: 45px;
   color: #333333;
   margin-bottom: 45px;
+}
+.lesson_wrapper_main_para_item + .lesson_wrapper_main_para_item, .lesson_wrapper_main_para_item + .resource_wrapper_main_para_item, .resource_wrapper_main_para_item + .lesson_wrapper_main_para_item, .resource_wrapper_main_para_item + .resource_wrapper_main_para_item {
+  margin-top: 50px;
 }
 .lesson_wrapper_main_para_item__title, .resource_wrapper_main_para_item__title {
   font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
@@ -10961,6 +10961,9 @@ h2 {
 .lesson_wrapper_main_para_item__body, .resource_wrapper_main_para_item__body {
   display: block;
   width: 100%;
+}
+.lesson_wrapper_main_para_item__body p, .resource_wrapper_main_para_item__body p {
+  font-size: 16px;
 }
 .lesson_wrapper_main_para_item__body p:first-child, .resource_wrapper_main_para_item__body p:first-child {
   font-size: 21px;
@@ -11004,10 +11007,10 @@ h2 {
   padding-left: 20px;
 }
 .lesson_wrapper_main_para_item__body ul li + li, .lesson_wrapper_main_para_item__body ol li + li, .resource_wrapper_main_para_item__body ul li + li, .resource_wrapper_main_para_item__body ol li + li {
-  margin-top: 15px;
+  margin-top: 20px;
 }
-.lesson_wrapper_main_para_item + .lesson_wrapper_main_para_item, .resource_wrapper_main_para_item + .lesson_wrapper_main_para_item {
-  margin-top: 40px;
+.lesson_wrapper .main_section, .resource_wrapper .main_section {
+  padding: 55px 0;
 }
 
 .resource_wrapper_intro {
@@ -11039,6 +11042,12 @@ h2 {
   overflow: hidden;
   background: #FFFFFF;
   height: 100%;
+  border: 1px solid #e2e2e2;
+  box-shadow: none;
+  transition: 0.5s;
+}
+.related_news_wrapper--item:hover {
+  box-shadow: rgba(170, 170, 170, 0.35) 0px 0px 10px;
 }
 .related_news_wrapper_assest_type {
   font-size: 15px;
@@ -11086,6 +11095,9 @@ h2 {
   color: #494949;
   line-height: 24px;
 }
+.related_news_wrapper_grade {
+  margin-top: 12px;
+}
 .related_news_wrapper_grade .item-list {
   display: inline-block;
   width: 100%;
@@ -11117,7 +11129,7 @@ h2 {
   font-weight: 400;
   color: #7F7F7F;
   font-style: italic;
-  border-top: 1px solid #7F7F7F;
+  border-top: 1px solid #e2e2e2;
   border-radius: 0 0 15px 15px;
 }
 .related_news_wrapper_cls span {
@@ -11398,6 +11410,11 @@ h2 {
   margin-bottom: 35px;
 }
 
+@media only screen and (min-width: 1201px) {
+  .go-to-resource-wrapper {
+    padding-left: 40px;
+  }
+}
 .go-to-resource-wrapper-button a {
   font-size: 16px;
   font-weight: bold;
@@ -11467,6 +11484,11 @@ h2 {
   color: #26A7DF;
 }
 
+@media only screen and (min-width: 1201px) {
+  .download-worksheets-container--wrapper {
+    padding-left: 40px;
+  }
+}
 .lesson_wrapper .main-section {
   display: none;
 }
@@ -11481,7 +11503,7 @@ h2 {
   border-radius: 15px;
   overflow: hidden;
   border: 1px solid #d7d7d7;
-  margin-top: 50px;
+  margin-top: 5px;
   transition: 0.5s;
 }
 .leftnavbar--items {
@@ -11580,6 +11602,7 @@ h2 {
   background: #2379a4;
   padding: 7px 20px;
   text-align: right;
+  margin-top: 40px;
 }
 .proceed-nex-link a {
   font-size: 16px;

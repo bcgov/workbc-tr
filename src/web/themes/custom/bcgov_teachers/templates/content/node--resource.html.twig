@@ -87,9 +87,9 @@
     <div class="resource_wrapper_intro">
       <div class="container">
 	    <div class="row">
-		<div class="col-md-7 col-sm-6 col-xs-12">
+		<div class="col-md-8 col-sm-6 col-xs-12">
 			<div class="resource_wrapper__intro__title">
-				{{ "Resource: "|t }} {{ node.title.value }}
+				<span>{{ "Resource: "|t }}</span> {{ node.title.value }}
 			</div>
 			{% if node.field_term_resource_stage.value is not empty %}
 				<div class="resource_wrapper_intro__life_cycle">
@@ -109,11 +109,13 @@
 				{% endif %}
 			</div>
 		</div>
-					<div class="col-md-4 offset-md-1 col-sm-6 col-xs-12 align-item-end">
+					<div class="col-md-4 col-sm-6 col-xs-12 align-item-end">
 						<div class="go-to-resource-wrapper">
-							<div class="go-to-resource-wrapper-button">
-								<a href="file_url({{ node.field_resource_documents.entity.uri.value }})" >{{ 'Go to Resource'|t }}</a>
-							</div>
+							{% if node.field_resource_documents.entity.uri.value %}
+								<div class="go-to-resource-wrapper-button">
+									<a href="file_url({{ node.field_resource_documents.entity.uri.value }})" >{{ 'Go to Resource'|t }}</a>
+								</div>
+							{% endif %}
 							<div class="go-to-resource-wrapper-view-button">
 								{{ content.field_resource_external_link }}
 							</div>
@@ -125,47 +127,49 @@
 				</div>
 		  </div>
     </div>
-		<div class="container">
-			<div class="row">
-			  <div class="right-nav col-md-8">
-				  <div class="resource_wrapper_main">
-						{% for key,subentity in node.field_add_resource_description if key|first != '#' %}
-          <div class="main-section" id="paragraph-{{ subentity.entity.id.value }}">
-            {% if subentity.entity.field_main_heading.value is not empty %}
-              <div class="resource_wrapper_main__lable">
-                 {{ subentity.entity.field_main_heading.value }}
-              </div>
-            {% endif %}
-            <div class="resource_wrapper_main_para">
-              {% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}
-              <div class="resource_wrapper_main_para_item" id="paragraph-{{ lsubentity.entity.id.value }}">
-                <div class="resource_wrapper_main_para_item__title">
-                  {{ lsubentity.entity.field_para_simple_title.value }}
-                </div>
-                <div class="resource_wrapper_main_para_item__body">
-                  {{ lsubentity.entity.field_para_simple_body.getValue().0.value|raw }}
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-        {% endfor %}
-			    </div>
-			  </div>
-        <div class="left-nav col-md-4">
-          <div class="resource_wrapper_left__img">
-            {% for key, image in node.field_resources_images_node  %}
-              {% set media = image.entity %}
-              {# The field name in the referenced entity is "field_image_file #}
-              {% set file = media.field_media_image.entity %}
-              {% set uri = file_url(file.uri.value)  %}
-			  <div class="resource-media">
-			    <img class="img-fluid mt-5" src="{{ uri }}" alt="{{ media.field_media_image.alt|default('resource img') }}" />
-			  </div>
-            {% endfor %}
-          </div>
-        </div>
-		  </div>
+		<div class="main_section">
+			<div class="container">
+				<div class="row">
+				<div class="col-md-8">
+					<div class="resource_wrapper_main">
+							{% for key,subentity in node.field_add_resource_description if key|first != '#' %}
+								<div class="main-section" id="paragraph-{{ subentity.entity.id.value }}">
+									{% if subentity.entity.field_main_heading.value is not empty %}
+									<div class="resource_wrapper_main__lable">
+										{{ subentity.entity.field_main_heading.value }}
+									</div>
+									{% endif %}
+									<div class="resource_wrapper_main_para">
+									{% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}
+									<div class="resource_wrapper_main_para_item" id="paragraph-{{ lsubentity.entity.id.value }}">
+										<div class="resource_wrapper_main_para_item__title">
+										{{ lsubentity.entity.field_para_simple_title.value }}
+										</div>
+										<div class="resource_wrapper_main_para_item__body">
+										{{ lsubentity.entity.field_para_simple_body.getValue().0.value|raw }}
+										</div>
+									</div>
+									{% endfor %}
+									</div>
+								</div>
+							{% endfor %}
+					</div>
+				</div>
+			<div class="col-md-4">
+			<div class="resource_wrapper_left__img">
+				{% for key, image in node.field_resources_images_node  %}
+				{% set media = image.entity %}
+				{# The field name in the referenced entity is "field_image_file #}
+				{% set file = media.field_media_image.entity %}
+				{% set uri = file_url(file.uri.value)  %}
+				<div class="resource-media">
+					<img class="img-fluid mt-5" src="{{ uri }}" alt="{{ media.field_media_image.alt|default('resource img') }}" />
+				</div>
+				{% endfor %}
+			</div>
+			</div>
+			</div>
+		</div>
 	  </div>
   </div>
 </article>
