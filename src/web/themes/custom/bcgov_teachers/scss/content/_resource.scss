@@ -570,14 +570,14 @@
   }
 }
 
-// .resource_wrapper{
-//   .main-section{
-//     display: none;
-//     &.active{
-//       display: block;
-//     }
-//   }
-// }
+.lesson_wrapper{
+  .main-section{
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
+}
 
 /*-------------left nav design-----------------------*/
 

@@ -11468,6 +11468,13 @@ h2 {
   color: #26A7DF;
 }
 
+.lesson_wrapper .main-section {
+  display: none;
+}
+.lesson_wrapper .main-section.active {
+  display: block;
+}
+
 /*-------------left nav design-----------------------*/
 .leftnavbar {
   max-width: 330px;
