@@ -10714,11 +10714,10 @@ h2 {
   margin: 10px 10px 0 0;
   padding: 0;
 }
-.block-featured-resources .featured-resources-content .views-field-field-term-resource-grade .item-list ul li span {
+.block-featured-resources .featured-resources-content .views-field-field-term-resource-grade .item-list ul li div {
   display: block;
   padding: 2px 30px;
   color: #fff;
-  background: var(--grade-color);
   border-radius: 10px;
 }
 .block-featured-resources .featured-resources-content .views-field-field-term-resource-stage {
