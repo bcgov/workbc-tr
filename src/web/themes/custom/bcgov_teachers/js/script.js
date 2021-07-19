@@ -19,46 +19,47 @@
           return false;
         });
       }
-      
-      //left nav tab js 
-      var div_top = jQuery('.left-nav').offset().top;
-      var right_height = jQuery('.right-nav').height();
-      var right_top = jQuery('.right-nav').offset().top;
-      var differ = right_height + right_top - 400;
 
-      
-      jQuery(window).scroll(function() {
-        if (window.matchMedia("(min-width: 768px)").matches) {
-          var window_top = jQuery(window).scrollTop();
-          
-          if ((window_top > div_top) && (window_top < differ)) {
-           jQuery('.left-nav').addClass('sticky');
-          } 
-          else {
-           jQuery('.left-nav').removeClass('sticky');
+      //left nav tab js
+      if ($('.left-nav').length > 0) {
+        var div_top = $('.left-nav').offset().top;
+        var right_height = $('.right-nav').height();
+        var right_top = $('.right-nav').offset().top;
+        var differ = right_height + right_top - 400;
+
+
+        $(window).scroll(function() {
+          if (window.matchMedia("(min-width: 768px)").matches) {
+            var window_top = $(window).scrollTop();
+
+            if ((window_top > div_top) && (window_top < differ)) {
+              $('.left-nav').addClass('sticky');
+            }
+            else {
+              $('.left-nav').removeClass('sticky');
+            }
           }
-        }
-       });
+        });
 
-       $('.leftnavbar--title a').on('click', function(){
-        $('.right-nav .main-section').removeClass('active');
-        $('.leftnavbar .leftnavbar--items').removeClass('active');
-        $(this).closest('.leftnavbar--items').addClass('active');
-        var hrefattr = $(this).attr('href');
-        $('.right-nav '+hrefattr).addClass('active');
-       });
+        $('.leftnavbar--title a').on('click', function(){
+          $('.right-nav .main-section').removeClass('active');
+          $('.leftnavbar .leftnavbar--items').removeClass('active');
+          $(this).closest('.leftnavbar--items').addClass('active');
+          var hrefattr = $(this).attr('href');
+          $('.right-nav '+hrefattr).addClass('active');
+        });
 
-       $('.proceed-nex-link').on('click',function(){
-        $('.leftnavbar .leftnavbar--items.active').removeClass('active').next('.leftnavbar--items').addClass('active');
-        $('.right-nav .main-section.active').removeClass('active').next('.main-section').addClass('active'); 
-        $('html,body').animate({
-          scrollTop: $('.right-nav').offset().top
-        })
-       });
+        $('.proceed-nex-link').on('click',function(){
+          $('.leftnavbar .leftnavbar--items.active').removeClass('active').next('.leftnavbar--items').addClass('active');
+          $('.right-nav .main-section.active').removeClass('active').next('.main-section').addClass('active');
+          $('html,body').animate({
+            scrollTop: $('.right-nav').offset().top
+          });
+        });
 
-       
+
       //left nav tab js end
-
+      }
     }
   };
 
@@ -137,6 +138,9 @@
   // Resize the elements to have the same height
   function featuredElementSizes() {
     if ($(window).width() >= 768) {
+      // Reset before applying
+      $('.featured-resources-item, .featured-resources-item .views-field-title, .featured-resources-item .views-field-field-resource-card-summary, .featured-resources-item .views-field-field-term-resource-grade, .featured-resources-item .views-field-field-term-resource-stage').matchHeight({remove: true});
+
       $('.featured-resources-item').matchHeight({byRow:false});
       $('.featured-resources-item .views-field-title').matchHeight({byRow:false});
       $('.featured-resources-item .views-field-field-resource-card-summary').matchHeight({byRow:false});
@@ -144,11 +148,7 @@
       $('.featured-resources-item .views-field-field-term-resource-stage').matchHeight({byRow:false});
     }
     else {
-      $('.featured-resources-item').matchHeight({remove: true});
-      $('.featured-resources-item .views-field-title').matchHeight({remove: true});
-      $('.featured-resources-item .views-field-field-resource-card-summary').matchHeight({remove: true});
-      $('.featured-resources-item .views-field-field-term-resource-grade').matchHeight({remove: true});
-      $('.featured-resources-item .views-field-field-term-resource-stage').matchHeight({remove: true});
+      $('.featured-resources-item, .featured-resources-item .views-field-title, .featured-resources-item .views-field-field-resource-card-summary, .featured-resources-item .views-field-field-term-resource-grade, .featured-resources-item .views-field-field-term-resource-stage').matchHeight({remove: true});
     }
   }
 

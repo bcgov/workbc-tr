@@ -10682,10 +10682,10 @@ h2 {
   background: #E2E2E2;
   color: #333333;
 }
-.block-featured-resources .featured-resources-content .views-field-field-resources-images-node {
+.block-featured-resources .featured-resources-content .views-field-field-resource-card-image {
   margin-bottom: 10px;
 }
-.block-featured-resources .featured-resources-content .views-field-field-resources-images-node img {
+.block-featured-resources .featured-resources-content .views-field-field-resource-card-image img {
   display: block;
   width: 100%;
   height: auto;
@@ -11753,8 +11753,13 @@ header .region-header .navbar-brand .site-title {
     line-height: 2.6rem;
   }
 }
-header .region-header .navbar-brand a.site-title {
+header .region-header .navbar-brand a.site-title:link, header .region-header .navbar-brand a.site-title:visited {
   color: #2379A4;
+  text-decoration: none;
+}
+header .region-header .navbar-brand a.site-title:hover, header .region-header .navbar-brand a.site-title:active, header .region-header .navbar-brand a.site-title:focus {
+  color: #2379A4;
+  text-decoration: underline;
 }
 header .region-header .block-system-branding-block {
   flex-grow: 2;
@@ -12126,6 +12131,11 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
     font-size: 1.3rem;
   }
 }
+@media (max-width: 991px) {
+  .paragraph--type--grade-access .description .field--name-field-grade-access-link {
+    display: none;
+  }
+}
 .paragraph--type--grade-access .description a::after {
   display: inline-block;
   width: 14px;
@@ -12224,6 +12234,25 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
   -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+.paragraph--type--grade-access .link-under {
+  margin-top: 30px;
+  text-align: center;
+}
+.paragraph--type--grade-access .link-under a::after {
+  display: inline-block;
+  width: 14px;
+  height: 18px;
+  margin-left: 10px;
+  content: " ";
+  background: url("/themes/custom/bcgov_teachers/assets/arrow.svg");
+  background-size: cover;
+  vertical-align: middle;
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .paragraph--type--paragraph-simple img {

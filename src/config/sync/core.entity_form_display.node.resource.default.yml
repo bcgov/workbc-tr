@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.resource.field_add_resource_description
+    - field.field.node.resource.field_resource_card_image
     - field.field.node.resource.field_resource_card_summary
     - field.field.node.resource.field_resource_desc
     - field.field.node.resource.field_resource_documents
@@ -30,18 +31,13 @@ targetEntityType: node
 bundle: resource
 mode: default
 content:
-  field_add_resource_description:
-    type: entity_reference_paragraphs
-    weight: 9
-    region: content
+  field_resource_card_image:
+    type: media_library_widget
+    weight: 1
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
+      media_types: {  }
     third_party_settings: {  }
+    region: content
   field_resource_card_summary:
     weight: 2
     settings:
@@ -52,7 +48,7 @@ content:
     region: content
   field_resource_desc:
     type: entity_reference_paragraphs
-    weight: 8
+    weight: 9
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -113,13 +109,13 @@ content:
     region: content
   field_resources_images_node:
     type: media_library_widget
-    weight: 1
+    weight: 5
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
   field_term_resource_asset_type:
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -137,13 +133,13 @@ content:
     type: options_select
     region: content
   field_term_resource_grade:
-    weight: 6
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_term_resource_stage:
-    weight: 7
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -170,6 +166,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_add_resource_description: true
   path: true
   promote: true
   status: true

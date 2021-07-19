@@ -32,6 +32,12 @@
       }
     }
 
+    @media (max-width: 991px) {
+      .field--name-field-grade-access-link {
+        display: none;
+      }
+    }
+
     a {
       &::after {
         display: inline-block;
@@ -154,6 +160,29 @@
             transform: rotate(180deg);
           }
         }
+      }
+    }
+  }
+
+  .link-under {
+    margin-top: 30px;
+    text-align: center;
+
+    a {
+      &::after {
+        display: inline-block;
+        width: 14px;
+        height: 18px;
+        margin-left: 10px;
+        content: ' ';
+        background: url('/themes/custom/bcgov_teachers/assets/arrow.svg');
+        background-size: cover;
+        vertical-align: middle;
+        -moz-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
       }
     }
   }
