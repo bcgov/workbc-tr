@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.paragraph.paragraph_simple.field_para_simple_body
     - field.field.paragraph.paragraph_simple.field_para_simple_title
+    - field.field.paragraph.paragraph_simple.field_paragraph_image
+    - field.field.paragraph.paragraph_simple.field_show_download_link
     - paragraphs.paragraphs_type.paragraph_simple
   module:
     - text
@@ -27,6 +29,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_show_download_link:
+    weight: 2
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
 hidden:
   entity_print_view_epub: true

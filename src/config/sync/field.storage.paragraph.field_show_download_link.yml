@@ -1,0 +1,18 @@
+uuid: 2a96d0a7-0ece-442e-be6b-cddbd34382b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_show_download_link
+field_name: field_show_download_link
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -96,9 +96,9 @@
 								<span>{{ "Career Lifecycle Stage: "|t }}</span> {{ content.field_term_resource_stage }}
 							</div>
 						{% endif %}
-						{% if node.field_resource_summary.0.entity.field_para_simple_body.getValue().0.value is not empty %}
+						{% if node.field_resource_card_summary.getValue().0.value is not empty %}
 							<div class="lesson_wrapper_intro__body">
-								{{ node.field_resource_summary.0.entity.field_para_simple_body.getValue().0.value|raw }}
+								{{ node.field_resource_card_summary.getValue().0.value|raw }}
 							</div>
 						{% endif %}
 						<div class="lesson_wrapper_intro__tags">

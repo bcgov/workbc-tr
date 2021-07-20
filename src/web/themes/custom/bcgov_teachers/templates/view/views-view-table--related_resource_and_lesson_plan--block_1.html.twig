@@ -19,26 +19,28 @@
  */
 #}
 ​
-<section class="related_news_wrapper">
-  <div class="row">
-    {% for key,row in rows %}
-    <div class="col-md-3">
-      <div class="related_news_wrapper--item">
-      {% if row.columns.field_term_resource_asset_type.content.0.field_output['#markup'] == 'Lesson Plan' %}
-        <div class="related_news_wrapper_assest_type yellow-bg">{{ row.columns.field_term_resource_asset_type }}</div> 
-        {% else %}
-          <div class="related_news_wrapper_assest_type gray-bg">{{ row.columns.field_term_resource_asset_type }}</div> 
-      {% endif %}
-        
-        <div class="related_news_wrapper_img">{{ row.columns.field_media_image }}</div>
-        <div class="related_news_wrapper--inner">
-          <div class="related_news_wrapper_title">{{ row.columns.title }}</div>
-          <div class="related_news_wrapper_desc">{{ row.columns.field_resource_desc }}</div>
-          <div class="related_news_wrapper_grade">{{ row.columns.field_term_resource_grade }}</div>
+<section class="related_news_wrapper related_news_slider">
+  <div class="container">
+    <div class="row">
+      {% for key,row in rows %}
+      <div class="col-md-4">
+        <div class="related_news_wrapper--item">
+        {% if row.columns.field_term_resource_asset_type.content.0.field_output['#markup'] == 'Lesson Plan' %}
+          <div class="related_news_wrapper_assest_type yellow-bg">{{ row.columns.field_term_resource_asset_type }}</div> 
+          {% else %}
+            <div class="related_news_wrapper_assest_type gray-bg">{{ row.columns.field_term_resource_asset_type }}</div> 
+        {% endif %}
+          
+          <div class="related_news_wrapper_img">{{ row.columns.field_media_image }}</div>
+          <div class="related_news_wrapper--inner">
+            <div class="related_news_wrapper_title">{{ row.columns.title }}</div>
+            <div class="related_news_wrapper_desc">{{ row.columns.field_resource_desc }}</div>
+            <div class="related_news_wrapper_grade">{{ row.columns.field_term_resource_grade }}</div>
+          </div>
+          <div class="related_news_wrapper_cls"><span>{{ "Career Lifecycle Stage: "|t }}</span>{{ row.columns.field_term_resource_stage }}</div>
         </div>
-        <div class="related_news_wrapper_cls"><span>{{ "Career Lifecycle Stage: "|t }}</span>{{ row.columns.field_term_resource_stage }}</div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </section>

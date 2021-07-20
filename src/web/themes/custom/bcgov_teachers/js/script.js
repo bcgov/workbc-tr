@@ -101,12 +101,33 @@
       //left nav tab js end
 
       //related news slider 
-
-      jQuery('.multiple-items').slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 3
-      });
+      if(jQuery('.related_news_slider .related_news_wrapper--item').length > 3){
+        jQuery('.related_news_slider .row').slick({
+          infinite: false,
+          dots: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          speed: 300,
+          arrow: true,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
+        });
+      }
+      
 
       //related news slider end
       

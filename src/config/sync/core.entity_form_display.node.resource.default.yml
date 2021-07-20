@@ -24,6 +24,7 @@ dependencies:
     - link
     - media_library
     - paragraphs
+    - path
     - text
 id: node.resource.default
 targetEntityType: node
@@ -32,7 +33,7 @@ mode: default
 content:
   field_add_resource_description:
     type: entity_reference_paragraphs
-    weight: 9
+    weight: 7
     region: content
     settings:
       title: Paragraph
@@ -50,27 +51,15 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_resource_desc:
-    type: entity_reference_paragraphs
-    weight: 8
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: simple
-      default_paragraph_type: resource_description
-    third_party_settings: {  }
-    region: content
   field_resource_documents:
-    weight: 16
+    weight: 14
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_resource_external_link:
-    weight: 15
+    weight: 13
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -79,32 +68,20 @@ content:
     region: content
   field_resource_featured:
     type: boolean_checkbox
-    weight: 14
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_resource_images:
     type: media_library_widget
-    weight: 13
+    weight: 11
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
-  field_resource_summary:
-    type: entity_reference_paragraphs
-    weight: 3
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-    region: content
   field_resource_time:
-    weight: 12
+    weight: 10
     settings:
       size: 60
       placeholder: ''
@@ -119,41 +96,54 @@ content:
     third_party_settings: {  }
     region: content
   field_term_resource_asset_type:
-    weight: 5
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_term_resource_audience:
-    weight: 11
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_term_resource_competency:
-    weight: 10
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_term_resource_grade:
-    weight: 6
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_term_resource_stage:
-    weight: 7
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   langcode:
     type: language_select
-    weight: 4
+    weight: 3
     region: content
     settings:
       include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -170,8 +160,8 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  path: true
+  field_resource_desc: true
+  field_resource_summary: true
   promote: true
-  status: true
   sticky: true
   uid: true

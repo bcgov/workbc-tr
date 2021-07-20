@@ -1,0 +1,23 @@
+uuid: 3646be38-5a05-404b-8e9f-de675b34144f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_show_download_link
+    - paragraphs.paragraphs_type.paragraph_simple
+id: paragraph.paragraph_simple.field_show_download_link
+field_name: field_show_download_link
+entity_type: paragraph
+bundle: paragraph_simple
+label: 'Show Download Link'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
