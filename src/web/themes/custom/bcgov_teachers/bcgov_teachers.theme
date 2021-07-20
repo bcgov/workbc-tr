@@ -38,12 +38,15 @@ function bcgov_teachers_preprocess_block(&$vars) {
 
   // Adds the variable to check if it's the front page.
   if ($vars['plugin_id'] == 'system_branding_block') {
+    $vars['is_front'] = FALSE;
     try {
       $vars['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
     }
     catch (Exception $e) {
       $vars['is_front'] = FALSE;
     }
+    // Ensure the cache varies correctly (new in Drupal 8.3).
+    $vars['#cache']['contexts'][] = 'url';
   }
 }
 

@@ -111,8 +111,20 @@ header {
         }
       }
 
-      a.site-title {
-        color: $teachers-secondary-blue;
+      a {
+        &.site-title {
+          &:link,
+          &:visited {
+            color: $teachers-secondary-blue;
+            text-decoration: none;
+          }
+          &:hover,
+          &:active,
+          &:focus {
+            color: $teachers-secondary-blue;
+            text-decoration: underline;
+          }
+        }
       }
     }
 

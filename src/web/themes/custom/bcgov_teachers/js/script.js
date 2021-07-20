@@ -127,11 +127,6 @@
           ]
         });
       }
-      
-
-      //related news slider end
-      
-
     }
   };
 
