@@ -46,7 +46,7 @@ function bcgov_teachers_preprocess_block(&$vars) {
       $vars['is_front'] = FALSE;
     }
     // Ensure the cache varies correctly (new in Drupal 8.3).
-    $variables['#cache']['contexts'][] = 'url.path.is_front';
+    $vars['#cache']['contexts'][] = 'url';
   }
 }
 
