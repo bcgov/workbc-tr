@@ -10657,6 +10657,9 @@ h2 {
     margin-bottom: 30px;
   }
 }
+.block-featured-resources .featured-carousel {
+  justify-content: center;
+}
 .block-featured-resources .featured-resources-content {
   display: inline-block;
   border: 2px solid #e2e2e2;

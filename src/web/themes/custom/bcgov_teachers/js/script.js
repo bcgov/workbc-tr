@@ -135,9 +135,9 @@
     });
   }
 
-  // Resize the elements to have the same height
+  // Resize the featured elements to have the same height
   function featuredElementSizes() {
-    if ($(window).width() >= 768) {
+    if ($(window).outerWidth() >= 576) {
       // Reset before applying
       $('.featured-resources-item, .featured-resources-item .views-field-title, .featured-resources-item .views-field-field-resource-card-summary, .featured-resources-item .views-field-field-term-resource-grade, .featured-resources-item .views-field-field-term-resource-stage').matchHeight({remove: true});
 
@@ -152,19 +152,63 @@
     }
   }
 
-  // Resize the featured elements to have the same height
-  if ($('.featured-resources-item').length > 0) {
+  // For demo purpose only
+  // $($('.featured-resources-item')[0]).clone(true).appendTo('.featured-carousel'); // +1 item
+  $('.featured-resources-item').clone(true).appendTo('.featured-carousel'); // +n items
 
+  var itemLength = $('.featured-resources-item').length;
+  if (itemLength > 1) {
+    // Resize the featured elements to have the same height
     var featuredResizeTimeout;
     $(window).resize(function() {
       clearTimeout(featuredResizeTimeout);
       featuredResizeTimeout = setTimeout(featuredElementSizes,150);
     });
 
-    // For demo purpose only
-    $('.featured-resources-item').clone(true).appendTo('.featured-carousel');
+    // Carousel only on mobile screens for 2-3 items
+    if (itemLength == 2 || itemLength == 3) {
+      $(window).on('load resize orientationchange', function() {
+        $('.featured-carousel').each(function() {
+          var $carousel = $(this);
+          if ($(window).outerWidth() >= 768) {
+            if ($carousel.hasClass('slick-initialized')) {
+              $carousel.slick('unslick');
+            }
+          }
+          else {
+            if (!$carousel.hasClass('slick-initialized')) {
+              $carousel.slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                responsive: [
+                  {
+                    breakpoint: 768,
+                    settings: {
+                      slidesToShow: 2,
+                      slidesToScroll: 2
+                    }
+                  },
+                  {
+                    breakpoint: 576,
+                    settings: {
+                      slidesToShow: 1,
+                      slidesToScroll: 1,
+                      adaptiveHeight: true,
+                      arrows: false
+                    }
+                  }
+                ]
+              });
+            }
+          }
+        });
+      });
+    }
 
-    if ($('.featured-resources-item').length > 3) {
+    // Carousel on all screen sizes for 4+ items
+    if (itemLength > 3) {
       $('.featured-carousel').slick({
         dots: true,
         infinite: true,
@@ -190,18 +234,20 @@
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
-              adaptiveHeight: true
+              adaptiveHeight: true,
+              arrows: false
             }
           }
         ]
       });
-
-      // On edge hit
-      $('.featured-carousel').on('edge', function(event, slick, direction) {
-        featuredElementSizes();
-      });
     }
 
+    // On edge and init hit, it resizes the featured elements to have the same height
+    $('.featured-carousel').on('edge init', function(event, slick, direction) {
+      featuredElementSizes();
+    });
+
+    // Resize the featured elements to have the same height
     featuredElementSizes();
   }
 
