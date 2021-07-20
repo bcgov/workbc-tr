@@ -16,9 +16,10 @@
 {% block content %}
 <div class="navbar-brand">
   {% if site_logo %}
-    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo"><img src="{{ site_logo }}" alt="{{ 'Home'|t }}" /></a>
+    <a href="https://www.workbc.ca/" title="WorkBC" rel="home" class="site-logo" target="_blank"><img src="{{ site_logo }}" alt="WorkBC" /></a>
   {% endif %}
 
+  <!-- is_front: {{ dump(is_front) }} -->
   {% if site_name and not is_front %}
     <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-title">{{ site_name }}</a>
   {% endif %}

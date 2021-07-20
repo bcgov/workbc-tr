@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.paragraph.grade_access.field_grade_access_blocks
     - field.field.paragraph.grade_access.field_grade_access_body
+    - field.field.paragraph.grade_access.field_grade_access_link
     - field.field.paragraph.grade_access.field_grade_access_title
     - paragraphs.paragraphs_type.grade_access
   module:
+    - link
     - paragraphs
     - text
 id: paragraph.grade_access.default
@@ -25,7 +27,7 @@ content:
     third_party_settings: {  }
   field_grade_access_blocks:
     type: entity_reference_paragraphs
-    weight: 3
+    weight: 4
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -42,6 +44,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_grade_access_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_grade_access_title:
     weight: 1

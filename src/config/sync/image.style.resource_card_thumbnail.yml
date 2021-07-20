@@ -1,0 +1,15 @@
+uuid: efc4006a-7e05-4753-b150-e052495c41ea
+langcode: en
+status: true
+dependencies: {  }
+name: resource_card_thumbnail
+label: 'Card thumbnail (520x...)'
+effects:
+  1d1c8c45-32bc-4361-b3d7-7d14fca06431:
+    uuid: 1d1c8c45-32bc-4361-b3d7-7d14fca06431
+    id: image_scale
+    weight: 1
+    data:
+      width: 520
+      height: null
+      upscale: true

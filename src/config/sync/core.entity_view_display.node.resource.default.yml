@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.resource.field_add_resource_description
+    - field.field.node.resource.field_resource_card_image
     - field.field.node.resource.field_resource_card_summary
     - field.field.node.resource.field_resource_desc
     - field.field.node.resource.field_resource_documents
@@ -46,6 +47,15 @@ content:
     settings:
       view_mode: default
       link: ''
+    third_party_settings: {  }
+    region: content
+  field_resource_card_image:
+    type: entity_reference_entity_view
+    weight: 15
+    label: above
+    settings:
+      view_mode: default
+      link: false
     third_party_settings: {  }
     region: content
   field_resource_desc:

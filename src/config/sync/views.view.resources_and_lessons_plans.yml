@@ -3,11 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_resource_card_image
     - field.storage.node.field_resource_card_summary
-    - field.storage.node.field_resources_images_node
     - field.storage.node.field_term_resource_asset_type
     - field.storage.node.field_term_resource_grade
     - field.storage.node.field_term_resource_stage
+    - image.style.resource_card_thumbnail
     - node.type.resource
   module:
     - media
@@ -127,10 +128,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_resources_images_node:
-          id: field_resources_images_node
-          table: node__field_resources_images_node
-          field: field_resources_images_node
+        field_resource_card_image:
+          id: field_resource_card_image
+          table: node__field_resource_card_image
+          field: field_resource_card_image
           relationship: none
           group_type: group
           admin_label: ''
@@ -178,11 +179,11 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_style: ''
+            image_style: resource_card_thumbnail
             image_link: ''
           group_column: entity_id
           group_columns: {  }
-          group_rows: false
+          group_rows: true
           delta_limit: 0
           delta_offset: 0
           delta_reversed: false
@@ -667,8 +668,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_resource_card_image'
         - 'config:field.storage.node.field_resource_card_summary'
-        - 'config:field.storage.node.field_resources_images_node'
         - 'config:field.storage.node.field_term_resource_asset_type'
         - 'config:field.storage.node.field_term_resource_grade'
         - 'config:field.storage.node.field_term_resource_stage'
@@ -702,8 +703,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_resource_card_image'
         - 'config:field.storage.node.field_resource_card_summary'
-        - 'config:field.storage.node.field_resources_images_node'
         - 'config:field.storage.node.field_term_resource_asset_type'
         - 'config:field.storage.node.field_term_resource_grade'
         - 'config:field.storage.node.field_term_resource_stage'
@@ -807,8 +808,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_resource_card_image'
         - 'config:field.storage.node.field_resource_card_summary'
-        - 'config:field.storage.node.field_resources_images_node'
         - 'config:field.storage.node.field_term_resource_asset_type'
         - 'config:field.storage.node.field_term_resource_grade'
         - 'config:field.storage.node.field_term_resource_stage'

@@ -56,8 +56,11 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     <div class="description col-lg-3">
       {{ content.field_grade_access_title }}
       {{ content.field_grade_access_body }}
+      {{ content.field_grade_access_link }}
     </div>
 
-    {{ content|without('field_grade_access_title', 'field_grade_access_body') }}
+    {{ content|without('field_grade_access_title', 'field_grade_access_body', 'field_grade_access_link') }}
+
+    <div class="link-under d-lg-none col-12">{{ content.field_grade_access_link }}</div>
   </div>
 </article>
