@@ -21,6 +21,9 @@
       }
       
       //left nav tab js 
+
+      jQuery('leftnavbar .leftnavbar--items.active .leftnavbar-item ul li:first-child a').addClass('active');
+
       var div_top = jQuery('.left-nav').offset().top;
       var right_height = jQuery('.right-nav .main-section.active').height();
       var right_top = jQuery('.right-nav .main-section.active').offset().top;
@@ -36,22 +39,14 @@
         else {
          jQuery('.left-nav').removeClass('sticky');
         }
-
-
-
-        if (window_top > differ) {
-          jQuery('.left-nav').addClass('align-end');
-        }
-        else{
-          jQuery('.left-nav').removeClass('align-end');
-        }
-
       }
 
       jQuery(window).scroll(function() {
         if (window.matchMedia("(min-width: 768px)").matches) {
           stickynavbar()
         }
+
+
        });
        jQuery(window).resize(function() {
         if (window.matchMedia("(min-width: 768px)").matches) {
@@ -79,27 +74,42 @@
 
 
        //scrolling selecion js
-       window.addEventListener('load', () => {
-
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            const id = entry.target.getAttribute('id');
-            if (entry.intersectionRatio > 0) {
-              document.querySelector(`a[href="#${id}"]`).classList.add('active');
-            } else {
-              document.querySelector(`a[href="#${id}"]`).classList.remove('active');
-            }
-          });
-        });
-      
-        // Track all sections that have an `id` applied
-        document.querySelectorAll('.lesson_wrapper_main_para_item').forEach((section) => {
-          observer.observe(section);
-        });
+      jQuery(window).scroll(function(){
+        var scrollTop = jQuery(document).scrollTop();
+        var anchors = jQuery('body').find('.main-section.active .lesson_wrapper_main_para_item .lesson_wrapper_main_para_item__title');
         
+        for (var i = 0; i < anchors.length; i++){
+            var mainsectionheight = jQuery(anchors[i]).closest('.lesson_wrapper_main_para_item').height();
+        
+            if (scrollTop > jQuery(anchors[i]).offset().top - 200 && scrollTop < jQuery(anchors[i]).offset().top + mainsectionheight - 200) {
+                jQuery('a[href="#' + jQuery(anchors[i]).closest('.lesson_wrapper_main_para_item').attr('id') + '"]').addClass('active');
+            } else {
+                jQuery('a[href="#' + jQuery(anchors[i]).closest('.lesson_wrapper_main_para_item').attr('id') + '"]').removeClass('active');
+            }
+
+            var lastmainsectionheight = jQuery('.main-section.active .lesson_wrapper_main_para_item:last-child').height();
+
+            if(scrollTop > (jQuery('.main-section.active .lesson_wrapper_main_para_item:last-child .lesson_wrapper_main_para_item__title').offset().top + lastmainsectionheight) - 500){
+              jQuery('.left-nav').addClass('align-end');
+            }
+            else{
+              jQuery('.left-nav').removeClass('align-end');
+            }
+        }
       });
 
       //left nav tab js end
+
+      //related news slider 
+
+      jQuery('.multiple-items').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+
+      //related news slider end
+      
 
     }
   };

@@ -97,10 +97,10 @@
     display: block;
     width: 100%;
     p{font-size: 16px;
-      &:first-child{
-        font-size: 21px;
-        line-height: 1.3;
-      }
+      // &:first-child{
+      //   font-size: 21px;
+      //   line-height: 1.3;
+      // }
       a{color:$teachers-secondary-blue; text-decoration: none;}
     }
     ol{counter-reset: num;
@@ -113,6 +113,14 @@
           left:0;
           font-weight: 700;
           font-size: inherit;
+        }
+        > ol{
+          list-style-type: lower-alpha;
+          > li{padding-left:0;
+            + li{margin-top:10px;}
+            &:before{display: none;}
+            &::marker{font-weight: 700;}
+          }
         }
       }
     }
@@ -135,6 +143,7 @@
     ul,ol{list-style: none; padding:0;
       li{
         font-size: 16px; line-height:24px; color:$teachers-bg-grey; position: relative; padding-left:20px;
+        p,span,a{font-size: 16px;}
         + li{
           margin-top:20px;
         }
@@ -457,6 +466,7 @@
                 background:#2379A4;
                 padding: 8px 10px;
                 text-decoration: none;
+                white-space: nowrap;
               }
             }
           }
@@ -629,6 +639,9 @@
     &.active{
       display: block;
     }
+    &:first-child{
+      .lesson_wrapper_main_para_item__body p:first-child, .resource_wrapper_main_para_item__body p:first-child{font-size: 21px; line-height: 1.3;;}
+    }
   }
 }
 
@@ -648,7 +661,7 @@
   &--items{
     transition: 0.5s;
     border-bottom: 1px solid #d7d7d7;
-    &.active, &:hover{
+    &.active{
       .leftnavbar--title{
         background:rgb(7, 53, 115);
         a{
@@ -660,11 +673,23 @@
         }
       }
     }
+    &:hover{
+      a{
+        font-weight:700;
+        text-decoration: underline;
+      }
+      
+    }
     &:last-child{
       border-bottom:0;
     }
     &.active{
       .leftnavbar-item{display: block;}
+    }
+  }
+  .leftnavbar--items:not(.active){
+    .leftnavbar--title{
+      background:rgba(242, 242, 242, 1);
     }
   }
   &--title{
@@ -740,20 +765,25 @@
 
 .left-nav{
   position: relative;
-  &.align-end{
-    display: flex;
-    align-items: flex-end;
-  }
   &.sticky{
     .leftnavbar{
       position: fixed;
       top:280px;
+      //top:0;
       @media only screen and (max-width:991px){
         left:15px;
         max-width:235px;
         width: 100%;
         top:200px;
       }
+    }
+  }
+  &.align-end{
+    display: flex;
+    align-items: flex-end;
+    .leftnavbar{
+      position: relative !important;
+      top:auto;
     }
   }
 }

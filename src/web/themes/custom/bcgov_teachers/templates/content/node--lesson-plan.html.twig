@@ -224,6 +224,13 @@
                           {{ lsubentity.entity.field_para_simple_body.getValue().0.value|raw }}
                         </div>
                       {% endif %}
+                      {% if lsubentity.entity.field_show_download_link.value is not empty and lsubentity.entity.field_show_download_link.value == 1 %}
+                        <div class="download-worksheets-container">
+                          <a href="#" class="download-worksheets-button">
+                            <p>{{ "Download All Worksheets"|t }}</br>{{ "(PDF & DOC)"|t }}</p>
+                          </a>
+                        </div>
+                      {% endif %}
                     </div>
                     {% endfor %}
                     </div>
