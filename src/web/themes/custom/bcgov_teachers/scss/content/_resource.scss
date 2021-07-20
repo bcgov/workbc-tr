@@ -157,7 +157,7 @@
 
 .block-views-blockrelated-resource-and-lesson-plan-block-1{
   width:100%;
-  padding:40px 0;
+  padding:40px 15px;
   background:rgba(242, 242, 242, 1);
   overflow: hidden;
   > h2{
@@ -172,6 +172,27 @@
 
 }
 .related_news_wrapper{
+  //grid css changes
+  @media (min-width: 768px){
+    .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+  }
+
+  @media (min-width: 992px){
+    .col-md-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+  }
+  @media only screen and (max-width:991px){
+    [class^=col-]{
+      padding-top:5px;
+      padding-bottom:5px;
+    }
+  }
+
  .row{justify-content: center;}
  &--item{
    border-radius: 15px;
@@ -340,12 +361,28 @@
   .stButton{display: flex; justify-content: center; align-items: center; width:38px; height:38px; background-color: $teachers-bg-grey; border-radius: 100%; background-size: 25px 25px; background-position: center; background-repeat: no-repeat; transition: 0.5s;
     .stLarge{display: none;}
     &:hover{background-color:#989898;}
+    @media only screen and (max-width:480px){
+      width:30px; height:30px;
+      background-size: 20px; 
+    }
   }
 
   .st_email_large .stButton{background-image:url(../images/mail.svg);}
-  .st_facebook_large .stButton{background-image:url(../images/facebook.svg); background-size: 13px;}
-  .st_twitter_large .stButton{background-image:url(../images/twitter.svg); background-size: 20px;}
-  .st_linkedin_large .stButton{background-image:url(../images/linkedin.svg); background-size: 18px;}
+  .st_facebook_large .stButton{background-image:url(../images/facebook.svg); background-size: 13px;
+    @media only screen and (max-width:480px){
+      background-size: 10px; 
+    }
+  }
+  .st_twitter_large .stButton{background-image:url(../images/twitter.svg); background-size: 20px;
+    @media only screen and (max-width:480px){
+      background-size: 16px; 
+    }
+  }
+  .st_linkedin_large .stButton{background-image:url(../images/linkedin.svg); background-size: 18px;
+    @media only screen and (max-width:480px){
+      background-size: 16px; 
+    }
+  }
 
 }
 
@@ -603,8 +640,11 @@
   border-radius: 15px;
   overflow: hidden;
   border: 1px solid rgb(215, 215, 215);
-  margin-top:5px;
   transition: 0.5s;
+  margin-top:10px;
+  @media only screen and (max-width:767px){
+    margin-bottom: 20px;
+  }
   &--items{
     transition: 0.5s;
     border-bottom: 1px solid #d7d7d7;
@@ -700,10 +740,20 @@
 
 .left-nav{
   position: relative;
+  &.align-end{
+    display: flex;
+    align-items: flex-end;
+  }
   &.sticky{
     .leftnavbar{
       position: fixed;
-      top:0;
+      top:280px;
+      @media only screen and (max-width:991px){
+        left:15px;
+        max-width:235px;
+        width: 100%;
+        top:200px;
+      }
     }
   }
 }

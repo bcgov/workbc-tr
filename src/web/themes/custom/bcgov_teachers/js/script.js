@@ -23,21 +23,38 @@
       //left nav tab js
       if ($('.left-nav').length > 0) {
         var div_top = $('.left-nav').offset().top;
-        var right_height = $('.right-nav').height();
-        var right_top = $('.right-nav').offset().top;
-        var differ = right_height + right_top - 400;
+        var right_height = $('.right-nav .main-section.active').height();
+        var right_top = $('.right-nav .main-section.active').offset().top;
+        var winHeight = $(window).height();
+        var differ = right_height + right_top - 450;
 
+        function stickynavbar() {
+          var window_top = $(window).scrollTop() + 200;
+
+          if ((window_top > div_top) && (window_top < differ)) {
+            $('.left-nav').addClass('sticky');
+          }
+          else {
+            $('.left-nav').removeClass('sticky');
+          }
+
+          if (window_top > differ) {
+            $('.left-nav').addClass('align-end');
+          }
+          else{
+            $('.left-nav').removeClass('align-end');
+          }
+        }
 
         $(window).scroll(function() {
           if (window.matchMedia("(min-width: 768px)").matches) {
-            var window_top = $(window).scrollTop();
+            stickynavbar();
+          }
+        });
 
-            if ((window_top > div_top) && (window_top < differ)) {
-              $('.left-nav').addClass('sticky');
-            }
-            else {
-              $('.left-nav').removeClass('sticky');
-            }
+        $(window).resize(function() {
+          if (window.matchMedia("(min-width: 768px)").matches) {
+            stickynavbar();
           }
         });
 
@@ -57,6 +74,26 @@
           });
         });
 
+        //scrolling selecion js
+        window.addEventListener('load', () => {
+
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              const id = entry.target.getAttribute('id');
+              if (entry.intersectionRatio > 0) {
+                document.querySelector(`a[href="#${id}"]`).classList.add('active');
+              } else {
+                document.querySelector(`a[href="#${id}"]`).classList.remove('active');
+              }
+            });
+          });
+
+          // Track all sections that have an `id` applied
+          document.querySelectorAll('.lesson_wrapper_main_para_item').forEach((section) => {
+            observer.observe(section);
+          });
+
+        });
 
       //left nav tab js end
       }

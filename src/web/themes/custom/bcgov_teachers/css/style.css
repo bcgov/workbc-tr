@@ -11023,7 +11023,7 @@ h2 {
 
 .block-views-blockrelated-resource-and-lesson-plan-block-1 {
   width: 100%;
-  padding: 40px 0;
+  padding: 40px 15px;
   background: #f2f2f2;
   overflow: hidden;
 }
@@ -11037,6 +11037,24 @@ h2 {
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .related_news_wrapper .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .related_news_wrapper .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .related_news_wrapper [class^=col-] {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
 .related_news_wrapper .row {
   justify-content: center;
 }
@@ -11246,6 +11264,13 @@ h2 {
 .sharethis-wrapper .stButton:hover {
   background-color: #989898;
 }
+@media only screen and (max-width: 480px) {
+  .sharethis-wrapper .stButton {
+    width: 30px;
+    height: 30px;
+    background-size: 20px;
+  }
+}
 .sharethis-wrapper .st_email_large .stButton {
   background-image: url(../images/mail.svg);
 }
@@ -11253,13 +11278,28 @@ h2 {
   background-image: url(../images/facebook.svg);
   background-size: 13px;
 }
+@media only screen and (max-width: 480px) {
+  .sharethis-wrapper .st_facebook_large .stButton {
+    background-size: 10px;
+  }
+}
 .sharethis-wrapper .st_twitter_large .stButton {
   background-image: url(../images/twitter.svg);
   background-size: 20px;
 }
+@media only screen and (max-width: 480px) {
+  .sharethis-wrapper .st_twitter_large .stButton {
+    background-size: 16px;
+  }
+}
 .sharethis-wrapper .st_linkedin_large .stButton {
   background-image: url(../images/linkedin.svg);
   background-size: 18px;
+}
+@media only screen and (max-width: 480px) {
+  .sharethis-wrapper .st_linkedin_large .stButton {
+    background-size: 16px;
+  }
 }
 
 .download-worksheets-files-wrapper {
@@ -11506,8 +11546,13 @@ h2 {
   border-radius: 15px;
   overflow: hidden;
   border: 1px solid #d7d7d7;
-  margin-top: 5px;
   transition: 0.5s;
+  margin-top: 10px;
+}
+@media only screen and (max-width: 767px) {
+  .leftnavbar {
+    margin-bottom: 20px;
+  }
 }
 .leftnavbar--items {
   transition: 0.5s;
@@ -11596,9 +11641,21 @@ h2 {
 .left-nav {
   position: relative;
 }
+.left-nav.align-end {
+  display: flex;
+  align-items: flex-end;
+}
 .left-nav.sticky .leftnavbar {
   position: fixed;
-  top: 0;
+  top: 280px;
+}
+@media only screen and (max-width: 991px) {
+  .left-nav.sticky .leftnavbar {
+    left: 15px;
+    max-width: 235px;
+    width: 100%;
+    top: 200px;
+  }
 }
 
 .proceed-nex-link {

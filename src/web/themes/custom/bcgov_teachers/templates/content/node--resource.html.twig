@@ -142,12 +142,16 @@
 									<div class="resource_wrapper_main_para">
 									{% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}
 									<div class="resource_wrapper_main_para_item" id="paragraph-{{ lsubentity.entity.id.value }}">
-										<div class="resource_wrapper_main_para_item__title">
-										{{ lsubentity.entity.field_para_simple_title.value }}
-										</div>
-										<div class="resource_wrapper_main_para_item__body">
-										{{ lsubentity.entity.field_para_simple_body.getValue().0.value|raw }}
-										</div>
+										{% if lsubentity.entity.field_para_simple_title.value is not empty %}
+                      <div class="resource_wrapper_main_para_item__title">
+  										  {{ lsubentity.entity.field_para_simple_title.value }}
+  										</div>
+                    {% endif %}
+                    {% if lsubentity.entity.field_para_simple_body.getValue().0.value is not empty %}
+  										<div class="resource_wrapper_main_para_item__body">
+  										  {{ lsubentity.entity.field_para_simple_body.getValue().0.value|raw }}
+  										</div>
+                    {% endif %}
 									</div>
 									{% endfor %}
 									</div>
