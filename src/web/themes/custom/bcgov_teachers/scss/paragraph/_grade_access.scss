@@ -114,6 +114,16 @@
       color: $teachers-secondary-blue;
       color: var(--grade-color);
 
+      p {
+        font-weight: normal;
+        font-size: 2.3rem;
+
+        &::first-line {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+      }
+
       strong {
         font-size: 5rem;
         line-height: 5rem;

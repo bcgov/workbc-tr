@@ -12256,6 +12256,14 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
   color: #2379A4;
   color: var(--grade-color);
 }
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-block-title p {
+  font-weight: normal;
+  font-size: 2.3rem;
+}
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-block-title p::first-line {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 .paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-block-title strong {
   font-size: 5rem;
   line-height: 5rem;
