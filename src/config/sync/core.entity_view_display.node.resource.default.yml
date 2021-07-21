@@ -49,15 +49,6 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
-  field_resource_card_image:
-    type: entity_reference_entity_view
-    weight: 15
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    region: content
   field_resource_desc:
     type: entity_reference_revisions_entity_view
     weight: 3
@@ -166,6 +157,7 @@ content:
 hidden:
   entity_print_view_epub: true
   entity_print_view_word_docx: true
+  field_resource_card_image: true
   field_resource_card_summary: true
   field_resource_featured: true
   field_resource_images: true
