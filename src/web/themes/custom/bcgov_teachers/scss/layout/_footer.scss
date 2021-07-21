@@ -55,9 +55,19 @@ footer {
 
 #block-bcgov-teachers-footer {
   margin-bottom: 1.375rem;
+
+  @media (max-width: 768px) {
+    .navbar-nav {
+      justify-content: center;
+    }
+  }
 }
 
 .social-icons {
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+
   a {
     display: inline-block;
     overflow: hidden;
@@ -81,7 +91,7 @@ footer {
     &:hover,
     &:active,
     &:focus {
-      background: $teachers-bg-light-grey;
+      background: $teachers-bg-fullight-grey;
     }
 
     &.social-twitter { color: #009cd8; }
@@ -98,6 +108,10 @@ footer {
 }
 
 #block-bcgov-teachers-increasetextsize {
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+
   p {
     color: $white;
     margin-bottom: 0;
@@ -152,26 +166,29 @@ footer {
   }
 
   #block-bcgov-teachers-copyright {
+    order: 1;
+
     @media (max-width: 576px) {
-      margin-bottom: 30px;
+      text-align: center;
     }
 
     p {
       margin: 0;
       padding: 0;
       font-size: 0.9rem;
+      color: $teachers-copyright;
 
       a {
         &:link,
         &:visited {
-          color: $teachers-secondary-blue;
+          color: $teachers-copyright;
           text-decoration: underline;
         }
 
         &:hover,
         &:active,
         &:focus {
-          color: $teachers-secondary-blue;
+          color: $teachers-copyright;
           text-decoration: none;
         }
       }
@@ -179,12 +196,19 @@ footer {
   }
 
   #block-bcgov-teachers-footerbclogo {
+    order: 2;
+
+    @media (max-width: 576px) {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
     p {
       margin: 0;
       padding: 0;
     }
     img {
-      display: block;
+      display: inline-block;
       width: 175px;
       height: auto;
     }

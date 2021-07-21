@@ -4,6 +4,11 @@
   > .container {
     align-content: flex-start;
     align-items: stretch;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   .description {
@@ -14,11 +19,14 @@
       flex: 0 0 100%;
       max-width: none;
     }
+    @media (min-width: 992px) {
+      align-self: center;
+    }
 
     h1 {
-      font-size: 2rem;
+      font-size: 1.6rem;
+      line-height: 1.6rem;
       font-weight: 400;
-      line-height: 2rem;
 
       @media (min-width: 768px) {
         font-size: 2.6rem;
@@ -58,6 +66,10 @@
   }
 
   @media (max-width: 767px) {
+    .grade-access-item {
+      max-width: 274px;
+    }
+
     .grade-access-item + .grade-access-item {
       margin-top: 20px;
     }
@@ -65,12 +77,16 @@
 
   .paragraph--type--grade-access-blocks {
     height: 100%;
-    padding: 30px 20px 20px;
+    padding: 36px 20px 20px;
     text-align: center;
     background: $white;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
     border-radius: 15px;
-    border: 2px solid transparent;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    -khtml-border-radius: 15px;
+    border: 2px solid $white;
+    box-shadow: 0 0 5px rgba(170,170,170, 0.35);
+    overflow: hidden;
 
     &:hover {
       border-color: $teachers-secondary-blue;
@@ -113,30 +129,45 @@
       font-weight: bold;
       color: $teachers-secondary-blue;
       color: var(--grade-color);
+      margin-bottom: 25px;
 
-      p {
+      p:first-child {
+        margin-bottom: 15px;
         font-weight: normal;
         font-size: 2.3rem;
 
         &::first-line {
           font-size: 1.2rem;
+          line-height: 0.4rem;
           font-weight: bold;
         }
       }
 
+      p:last-child {
+        margin-bottom: 0;
+      }
+
       strong {
-        font-size: 5rem;
-        line-height: 5rem;
+        font-size: 4.8rem;
+        line-height: 4.8rem;
         vertical-align: middle;
+      }
+    }
+
+    .field--name-field-grade-access-body {
+      p {
+        font-size: 1rem;
       }
     }
 
     .field--name-field-grade-access-link {
       a {
-        display: block;
-        padding: 10px 20px;
-        border-radius: 10px;
         position: relative;
+        display: block;
+        padding: 15px 20px;
+        border-radius: 15px;
+        font-size: 1rem;
+        line-height: 1.1rem;
 
         &:link,
         &:visited {
