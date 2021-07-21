@@ -161,14 +161,14 @@ footer {
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 576px) {
+  @media (max-width: 768px) {
     display: block;
   }
 
   #block-bcgov-teachers-copyright {
     order: 1;
 
-    @media (max-width: 576px) {
+    @media (max-width: 768px) {
       text-align: center;
     }
 
@@ -198,7 +198,7 @@ footer {
   #block-bcgov-teachers-footerbclogo {
     order: 2;
 
-    @media (max-width: 576px) {
+    @media (max-width: 768px) {
       text-align: center;
       margin-bottom: 30px;
     }
