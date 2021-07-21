@@ -126,6 +126,7 @@ header {
 
         &.active,
         &.is-active {
+          font-weight: bold;
           background-color: $teachers-secondary-blue;
         }
       }

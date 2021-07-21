@@ -39,8 +39,9 @@ header {
       .site-logo {
         display: table-cell;
         width: 260px;
-        padding: 0;
+        padding: 0 0 0 17px;
         margin: 0;
+        box-sizing: content-box;
 
         @media (max-width: 520px) {
           display: block;
@@ -52,7 +53,9 @@ header {
 
         @media (max-width: 767px) {
           width: 175px;
+          min-width: 175px;
           max-width: 100%;
+          padding-left: 0;
         }
       }
 
@@ -90,7 +93,7 @@ header {
           display: block;
           text-align: left;
           margin-top: 10px;
-          padding: 0;
+          padding: 0 0 0 17px;
         }
 
         @media (min-width: 340px) {
@@ -102,8 +105,8 @@ header {
           line-height: 1.6rem;
         }
         @media (min-width: 991px) {
-          font-size: 1.8rem;
-          line-height: 1.8rem;
+          font-size: 1.7rem;
+          line-height: 1.7rem;
         }
         @media (min-width: 1195px) {
           font-size: 2.6rem;
@@ -184,7 +187,7 @@ header {
       height: 31px;
       padding: 0;
       line-height: 31px;
-      background: $teachers-bg-light-grey;
+      background: $teachers-bg-fullight-grey;
       border: none;
       border-radius: 0;
       font-weight: 900;
