@@ -2,10 +2,6 @@ uuid: 7e738038-1fb0-4a95-9653-b2dc28e78038
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:6276e560-24e1-481d-9b15-81b574459b8c'
-  module:
-    - block_content
   theme:
     - bcgov_teachers
 id: bcgov_teachers_footerbclogo

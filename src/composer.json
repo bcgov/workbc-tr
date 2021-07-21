@@ -17,6 +17,7 @@
     "require": {
         "composer/installers": "^1.9",
         "drupal/admin_toolbar": "^3.0",
+        "drupal/anonymous_subscriptions": "^1.0@alpha",
         "drupal/better_exposed_filters": "^5.0@beta",
         "drupal/bootstrap4": " ^2.1",
         "drupal/bootstrap4_tools": " ^2.1",
