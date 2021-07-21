@@ -12119,7 +12119,7 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .region-under-footer {
     display: block;
   }
@@ -12127,7 +12127,7 @@ footer {
 .region-under-footer #block-bcgov-teachers-copyright {
   order: 1;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .region-under-footer #block-bcgov-teachers-copyright {
     text-align: center;
   }
@@ -12149,7 +12149,7 @@ footer {
 .region-under-footer #block-bcgov-teachers-footerbclogo {
   order: 2;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .region-under-footer #block-bcgov-teachers-footerbclogo {
     text-align: center;
     margin-bottom: 30px;
@@ -12291,18 +12291,20 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
     align-items: center;
   }
 }
-@media (max-width: 767px) {
-  .paragraph--type--grade-access .description {
-    text-align: center;
+@media (max-width: 1195px) {
+  .paragraph--type--grade-access > .container {
+    max-width: 768px;
+    align-items: center;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 1195px) {
   .paragraph--type--grade-access .description {
     flex: 0 0 100%;
     max-width: none;
+    text-align: center;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1196px) {
   .paragraph--type--grade-access .description {
     align-self: center;
   }
@@ -12323,7 +12325,7 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
     font-size: 1.3rem;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 1195px) {
   .paragraph--type--grade-access .description .field--name-field-grade-access-link {
     display: none;
   }

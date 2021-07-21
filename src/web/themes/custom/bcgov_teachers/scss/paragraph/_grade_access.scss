@@ -9,17 +9,20 @@
       flex-direction: column;
       align-items: center;
     }
+
+    @media (max-width: 1195px) {
+      max-width: 768px;
+      align-items: center;
+    }
   }
 
   .description {
-    @media (max-width: 767px) {
-      text-align: center;
-    }
-    @media (max-width: 991px) {
+    @media (max-width: 1195px) {
       flex: 0 0 100%;
       max-width: none;
+      text-align: center;
     }
-    @media (min-width: 992px) {
+    @media (min-width: 1196px) {
       align-self: center;
     }
 
@@ -40,7 +43,7 @@
       }
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: 1195px) {
       .field--name-field-grade-access-link {
         display: none;
       }
