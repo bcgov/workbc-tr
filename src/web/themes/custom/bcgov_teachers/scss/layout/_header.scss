@@ -10,28 +10,24 @@ header {
       align-items: center;
       height: 145px;
 
-      @media (max-width: 520px) {
+      @media (max-width: 767px) {
         height: auto;
-      }
-
-      @media (min-width: 521px) and (max-width: 767px) {
-        height: 65px;
       }
     }
 
     .navbar-brand {
+      width: 100%;
       padding: 20px 0;
       margin-right: 0;
       background: none;
 
-      @media (min-width: 521px) {
+      @media (min-width: 768px) {
         display: table;
-        width: 100%;
         padding-top: 0;
         padding-bottom: 0;
       }
 
-      @media (max-width: 520px) {
+      @media (max-width: 767px) {
         flex-wrap: wrap;
         flex-direction: column;
       }
@@ -43,18 +39,16 @@ header {
         margin: 0;
         box-sizing: content-box;
 
-        @media (max-width: 520px) {
-          display: block;
-        }
-
         @media (min-width: 768px) and (max-width: 992px) {
           display: block;
         }
 
         @media (max-width: 767px) {
+          display: block;
           width: 175px;
           min-width: 175px;
           max-width: 100%;
+          margin: 0 auto;
           padding-left: 0;
         }
       }
@@ -82,11 +76,12 @@ header {
         line-height: 1.2rem;
         letter-spacing: normal;
 
-        @media (max-width: 520px) {
+        @media (max-width: 767px) {
           display: block;
           text-align: left;
           margin-top: 10px;
           padding: 0;
+          text-align: center;
         }
 
         @media (min-width: 768px) and (max-width: 992px) {
