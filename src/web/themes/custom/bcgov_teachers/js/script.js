@@ -135,11 +135,11 @@
               x[i] = jQuery(arr[i]).outerHeight(Max_Value);
           }
       }
-      
+
       Array.min = function(array) {
           return Math.min.apply(Math, array);
       };
-      
+
       Array.max = function(array) {
           return Math.max.apply(Math, array);
       };
@@ -147,7 +147,7 @@
       if (window.matchMedia("(min-width: 768px)").matches) {
         setEqualHeight(jQuery('.related_news_slider .related_news_wrapper--item'));
       }
-      
+
       jQuery(window).resize(function(){
         if (window.matchMedia("(min-width: 768px)").matches) {
           setEqualHeight(jQuery('.related_news_slider .related_news_wrapper--item'));
@@ -250,7 +250,7 @@
 
   // For demo purpose only
   // $($('.featured-resources-item')[0]).clone(true).appendTo('.featured-carousel'); // +1 item
-  $('.featured-resources-item').clone(true).appendTo('.featured-carousel'); // +n items
+  // $('.featured-resources-item').clone(true).appendTo('.featured-carousel'); // +n items
 
   var itemLength = $('.featured-resources-item').length;
   if (itemLength > 1) {
