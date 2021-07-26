@@ -10,5 +10,6 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
+  - 'entity print access type node'
   - 'search content'
   - 'view media'
