@@ -106,12 +106,13 @@ set footer_classes = ' '
 
 </main>
 
-{% if page.footer or page.under_footer %}
+{% if page.footer_left or page.footer_right or page.under_footer %}
   <footer class="mt-auto {{ footer_classes }}">
-    {% if page.footer %}
+    {% if page.footer_left or page.footer_right %}
       <div class="footer">
         <div class="container">
-          {{ page.footer }}
+          {{ page.footer_left }}
+          {{ page.footer_right }}
         </div>
       </div>
     {% endif %}

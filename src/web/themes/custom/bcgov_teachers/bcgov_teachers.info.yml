@@ -26,4 +26,6 @@ regions:
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
   footer: Footer
+  footer_right: Footer Right
+  footer_left: Footer Left
   under_footer: Under footer
