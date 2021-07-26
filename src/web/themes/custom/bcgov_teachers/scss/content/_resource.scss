@@ -235,14 +235,14 @@
     border-radius: 15px 15px 0 0;
     padding: 6px 5px;
 
-    &.gray-bg{
-      background:$teachers-bg-grey;
-      color: $teachers-text-light;
+    &.resourceplan{
+      background:rgba(215, 215, 215, 1);
+      color: #333;
     }
 
-    &.yellow-bg{
-      background:$secondary_color_3;
-      color:$teachers-text;
+    &.lessonplan{
+      background:rgba(51, 51, 51, 1);
+      color: #fff;
     }
   }
   &_img{

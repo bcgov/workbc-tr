@@ -1,0 +1,218 @@
+.search_wrapper{margin-bottom: 40px;
+    .container{
+        .row{
+            + .row{
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+/*------------------Filter styling------------------*/
+.block-views-exposed-filter-blocksolr-results-page-1{
+    > h2{display: none;}
+}
+.search-solr-box__inner{
+    background: #f2f2f2;
+    padding:50px 15px 60px 15px;
+    .search-solr-box{margin-bottom: 30px;
+        label{display: none;}
+        .search_keyword{display: flex;
+            .form-item{margin:0;}
+            span{
+                display: inline-block;
+                font-size: 0;
+                flex:0 0 50px;
+                width: 50px;
+                height: 50px;
+                background-color:rgba(35, 121, 164, 1);
+                background-image: url(../images/search-icon.svg);
+                background-repeat: no-repeat;
+                background-size: 20px;
+                background-position: center;
+                cursor: pointer;
+            }
+            input{
+                max-width: 400px;
+                width: 100%;
+                border: 2px solid rgba(35, 121, 164, 1);
+                border-radius: 0;
+                height: 50px;
+                font-size: 16px;
+                &:focus{
+                    border:0;
+                    outline: 0;
+                    border: 2px solid rgba(35, 121, 164, 1);
+                }
+            }
+        }
+        
+    }
+
+    .search-solr-box__filter{
+        .filterbox{
+            display: flex;
+            align-items: center;
+            width:100%;
+            @media only screen and (max-width:1024px){
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            &__title{
+                font-size: 16px;
+                color:#333333;
+                font-weight: 700;
+                position: relative;
+                padding-left:40px;
+                &:before{
+                    content:'';
+                    position: absolute;
+                    top:50%;
+                    transform: translateY(-50%);
+                    left:0;
+                    background: url(../images/filter.png) center no-repeat;
+                    background-size:26px;
+                    width:30px;
+                    height: 30px;
+                }
+            }
+            &__selectgroup{
+                display: flex;
+                width:100%;
+                padding-left:20px;
+                @media only screen and (max-width:1024px){
+                   padding-left:0;
+                   margin-top:10px;
+                   flex-wrap: wrap;
+                }
+            }
+            &__dd{
+                flex:1;
+                @media only screen and (min-width:768px) and (max-width:1023px){
+                    flex: 0 0 50%;
+                    max-width: 100%;
+                    width: 50%;
+                }
+                @media only screen and (max-width:767px){
+                    flex: 0 0 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
+}
+
+.search-solr-box--wrapper{
+    .fieldgroup{
+        margin:0;
+        border:0;
+        position: relative;
+        .card-header{
+            border:0;
+            background:#fff;
+            position: relative;
+            padding:12px 35px 12px 20px;
+            cursor: pointer;
+            &:after{
+                content:'';
+                position:absolute;
+                top:50%;
+                transform: translateY(-50%);
+                right: 10px;
+                background: url(../images/down-gray-arrow.svg) center no-repeat;
+                width: 19px;
+                height: 10px;
+                background-size: 20px;
+                transition: 0.5s;
+            }
+            &.open{
+                &:after{
+                    transform: translateY(-50%) rotate(180deg);
+                }
+                + .card-body{
+                    display: block;
+                }
+            }
+        }
+        .card-body{
+            position: absolute;
+            width: 100%;
+            top: 46px;
+            z-index: 9;
+            background: #fff;
+            display: none;
+            label{
+                padding-left:30px;
+            }
+            .form-checkboxes{
+                label{
+                    position: relative;
+                    display: inline-block;
+                    &:before, &:after{
+                        position: absolute;
+                        content: '';
+                        top:50%;
+                        transform: translateY(-50%);
+                        left:0;
+                        width:15px;
+                        height: 15px;
+                        background: url(../images/untick.svg) center no-repeat;
+                        background-size: 15px;
+                    }
+                    &:after{
+                        background: url(../images/tick.svg) center no-repeat;
+                        opacity: 0;
+                    }
+                }
+                input{
+                    opacity:0;
+                    position:absolute;
+                    &:checked{
+                        + label{
+                            &:after{
+                                opacity: 1;
+                            }
+                            &:before{
+                                opacity: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .fieldset-legend{
+            font-size: 16px;
+            color:#333333;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+    }
+
+    .show-result-wrapper{
+        .container{
+            display: flex;
+            justify-content: flex-end;
+            @media only screen and (max-width:768px){
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+        }
+        .search-assest{
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            .fieldgroup{margin-left:10px;
+                .card-header{
+                    border:2px solid rgba(175, 175, 175, 1);
+                    &:after{background-size:12px;}
+                    .fieldset-legend{font-weight: normal;}
+                }
+                .card-body{top:50px;}
+            }
+        }
+    }
+}
+
+
+/*------------------Filter styling end------------------*/
