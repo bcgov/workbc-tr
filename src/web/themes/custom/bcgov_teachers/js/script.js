@@ -237,11 +237,11 @@
       // Reset before applying
       $('.featured-resources-item, .featured-resources-item .views-field-title, .featured-resources-item .views-field-field-resource-card-summary, .featured-resources-item .views-field-field-term-resource-grade, .featured-resources-item .views-field-field-term-resource-stage').matchHeight({remove: true});
 
-      $('.featured-resources-item').matchHeight({byRow:false});
       $('.featured-resources-item .views-field-title').matchHeight({byRow:false});
       $('.featured-resources-item .views-field-field-resource-card-summary').matchHeight({byRow:false});
       $('.featured-resources-item .views-field-field-term-resource-grade').matchHeight({byRow:false});
       $('.featured-resources-item .views-field-field-term-resource-stage').matchHeight({byRow:false});
+      $('.featured-resources-item').matchHeight({byRow:false});
     }
     else {
       $('.featured-resources-item, .featured-resources-item .views-field-title, .featured-resources-item .views-field-field-resource-card-summary, .featured-resources-item .views-field-field-term-resource-grade, .featured-resources-item .views-field-field-term-resource-stage').matchHeight({remove: true});
