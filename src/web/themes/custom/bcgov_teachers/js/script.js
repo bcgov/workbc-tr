@@ -135,11 +135,11 @@
               x[i] = jQuery(arr[i]).outerHeight(Max_Value);
           }
       }
-      
+
       Array.min = function(array) {
           return Math.min.apply(Math, array);
       };
-      
+
       Array.max = function(array) {
           return Math.max.apply(Math, array);
       };
@@ -150,7 +150,7 @@
           setEqualHeight(jQuery(this).find('.related_news_wrapper--item'));
         });
       }
-      
+
       jQuery(window).resize(function(){
         if (window.matchMedia("(min-width: 768px)").matches) {
           setEqualHeight(jQuery('.related_news_slider .related_news_wrapper--item'));
@@ -265,11 +265,11 @@
       // Reset before applying
       $('.featured-resources-item, .featured-resources-item .views-field-title, .featured-resources-item .views-field-field-resource-card-summary, .featured-resources-item .views-field-field-term-resource-grade, .featured-resources-item .views-field-field-term-resource-stage').matchHeight({remove: true});
 
-      $('.featured-resources-item').matchHeight({byRow:false});
       $('.featured-resources-item .views-field-title').matchHeight({byRow:false});
       $('.featured-resources-item .views-field-field-resource-card-summary').matchHeight({byRow:false});
       $('.featured-resources-item .views-field-field-term-resource-grade').matchHeight({byRow:false});
       $('.featured-resources-item .views-field-field-term-resource-stage').matchHeight({byRow:false});
+      $('.featured-resources-item').matchHeight({byRow:false});
     }
     else {
       $('.featured-resources-item, .featured-resources-item .views-field-title, .featured-resources-item .views-field-field-resource-card-summary, .featured-resources-item .views-field-field-term-resource-grade, .featured-resources-item .views-field-field-term-resource-stage').matchHeight({remove: true});
@@ -278,7 +278,7 @@
 
   // For demo purpose only
   // $($('.featured-resources-item')[0]).clone(true).appendTo('.featured-carousel'); // +1 item
-  $('.featured-resources-item').clone(true).appendTo('.featured-carousel'); // +n items
+  // $('.featured-resources-item').clone(true).appendTo('.featured-carousel'); // +n items
 
   var itemLength = $('.featured-resources-item').length;
   if (itemLength > 1) {

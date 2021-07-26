@@ -12008,30 +12008,25 @@ header .region-header > .container {
   align-items: center;
   height: 145px;
 }
-@media (max-width: 520px) {
+@media (max-width: 767px) {
   header .region-header > .container {
     height: auto;
   }
 }
-@media (min-width: 521px) and (max-width: 767px) {
-  header .region-header > .container {
-    height: 65px;
-  }
-}
 header .region-header .navbar-brand {
+  width: 100%;
   padding: 20px 0;
   margin-right: 0;
   background: none;
 }
-@media (min-width: 521px) {
+@media (min-width: 768px) {
   header .region-header .navbar-brand {
     display: table;
-    width: 100%;
     padding-top: 0;
     padding-bottom: 0;
   }
 }
-@media (max-width: 520px) {
+@media (max-width: 767px) {
   header .region-header .navbar-brand {
     flex-wrap: wrap;
     flex-direction: column;
@@ -12040,14 +12035,9 @@ header .region-header .navbar-brand {
 header .region-header .navbar-brand .site-logo {
   display: table-cell;
   width: 260px;
-  padding: 0 0 0 17px;
+  padding: 0 0 0 20px;
   margin: 0;
   box-sizing: content-box;
-}
-@media (max-width: 520px) {
-  header .region-header .navbar-brand .site-logo {
-    display: block;
-  }
 }
 @media (min-width: 768px) and (max-width: 992px) {
   header .region-header .navbar-brand .site-logo {
@@ -12056,9 +12046,11 @@ header .region-header .navbar-brand .site-logo {
 }
 @media (max-width: 767px) {
   header .region-header .navbar-brand .site-logo {
+    display: block;
     width: 175px;
     min-width: 175px;
     max-width: 100%;
+    margin: 0 auto;
     padding-left: 0;
   }
 }
@@ -12085,12 +12077,13 @@ header .region-header .navbar-brand .site-title {
   line-height: 1.2rem;
   letter-spacing: normal;
 }
-@media (max-width: 520px) {
+@media (max-width: 767px) {
   header .region-header .navbar-brand .site-title {
     display: block;
     text-align: left;
     margin-top: 10px;
     padding: 0;
+    text-align: center;
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
@@ -12098,7 +12091,7 @@ header .region-header .navbar-brand .site-title {
     display: block;
     text-align: left;
     margin-top: 10px;
-    padding: 0 0 0 17px;
+    padding: 0 0 0 20px;
   }
 }
 @media (min-width: 340px) {
@@ -12339,7 +12332,7 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .region-under-footer {
     display: block;
   }
@@ -12347,7 +12340,7 @@ footer {
 .region-under-footer #block-bcgov-teachers-copyright {
   order: 1;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .region-under-footer #block-bcgov-teachers-copyright {
     text-align: center;
   }
@@ -12369,7 +12362,7 @@ footer {
 .region-under-footer #block-bcgov-teachers-footerbclogo {
   order: 2;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .region-under-footer #block-bcgov-teachers-footerbclogo {
     text-align: center;
     margin-bottom: 30px;
@@ -12511,18 +12504,20 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
     align-items: center;
   }
 }
-@media (max-width: 767px) {
-  .paragraph--type--grade-access .description {
-    text-align: center;
+@media (max-width: 1195px) {
+  .paragraph--type--grade-access > .container {
+    max-width: 768px;
+    align-items: center;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 1195px) {
   .paragraph--type--grade-access .description {
     flex: 0 0 100%;
     max-width: none;
+    text-align: center;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1196px) {
   .paragraph--type--grade-access .description {
     align-self: center;
   }
@@ -12543,7 +12538,7 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
     font-size: 1.3rem;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 1195px) {
   .paragraph--type--grade-access .description .field--name-field-grade-access-link {
     display: none;
   }
