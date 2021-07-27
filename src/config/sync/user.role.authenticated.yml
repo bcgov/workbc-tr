@@ -14,7 +14,6 @@ permissions:
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'access taxonomy overview'
-  - 'access toolbar'
   - 'administer meta tags'
   - 'create content content'
   - 'create resource content'
@@ -72,5 +71,4 @@ permissions:
   - 'view media'
   - 'view own unpublished content'
   - 'view resource revisions'
-  - 'view the administration theme'
   - 'view unpublished paragraphs'
