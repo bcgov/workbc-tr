@@ -111,9 +111,9 @@
 		</div>
 					<div class="col-md-4 col-sm-6 col-xs-12 align-item-end">
 						<div class="go-to-resource-wrapper">
-							{% if node.field_resource_documents.entity.uri.value %}
+							{% if node.field_go_to_resource.entity.field_go_to_resource.0.uri %}
 								<div class="go-to-resource-wrapper-button">
-									<a href="{{ file_url(node.field_resource_documents.entity.uri.value) }}" target="_blank" >{{ 'Go to Resource'|t }}</a>
+									<a href="{{ file_url(node.field_go_to_resource.entity.field_go_to_resource.0.uri) }}" target="_blank" >{{ 'Go to Resource'|t }}</a>
 								</div>
 							{% endif %}
               {% if content.field_resource_external_link %}
