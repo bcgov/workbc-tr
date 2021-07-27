@@ -111,19 +111,15 @@
 		</div>
 					<div class="col-md-4 col-sm-6 col-xs-12 align-item-end">
 						<div class="go-to-resource-wrapper">
-							{% if node.field_go_to_resource.entity.field_go_to_resource.0.uri %}
+							{% if node.field_go_to_resource.0.url %}
 								<div class="go-to-resource-wrapper-button">
-									<a href="{{ file_url(node.field_go_to_resource.entity.field_go_to_resource.0.uri) }}" target="_blank" >{{ 'Go to Resource'|t }}</a>
+									<a href="{{ node.field_go_to_resource.0.url }}" target="_blank" >{{ 'Go to Resource'|t }}</a>
 								</div>
 							{% endif %}
-              {% if content.field_resource_external_link %}
+              {% if node.field_go_to_resource.0.url %}
                 <div class="go-to-resource-wrapper-view-button">
-                  {% if node.field_resource_external_link.0.url.external %}
-                  <a class="bg-light" target="_blank" href="{{ node.field_resource_external_link.uri }}">
-                    {{ node.field_resource_external_link.title }}
-                  </a>
-                  {% else %}
-                  <a class="bg-light" target="_blank" href="{{ path(node.field_resource_external_link.0.url.routeName, node.field_resource_external_link.0.url.routeParameters) }}">
+                  {% if node.field_resource_external_link.0.url %}
+                  <a class="bg-light" target="_blank" href="{{ node.field_resource_external_link.0.url }}">
                     {{ node.field_resource_external_link.title }}
                   </a>
                   {% endif %}
