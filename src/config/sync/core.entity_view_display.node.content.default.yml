@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.content.field_add_grade_access
     - field.field.node.content.field_content_description
     - field.field.node.content.field_content_image
     - field.field.node.content.field_content_items
@@ -19,6 +20,15 @@ targetEntityType: node
 bundle: content
 mode: default
 content:
+  field_add_grade_access:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_content_description:
     weight: 2
     label: hidden
@@ -60,10 +70,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   sharethis:
-    weight: 10
+    weight: 6
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
