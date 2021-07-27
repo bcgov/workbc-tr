@@ -1,0 +1,24 @@
+uuid: 87e9f456-27c7-4353-b23c-7a8e3ebdde28
+langcode: en
+status: true
+dependencies:
+  module:
+    - anonymous_subscriptions
+  theme:
+    - bcgov_teachers
+id: anonymoussubscription
+theme: bcgov_teachers
+region: footer_right
+weight: 0
+provider: null
+plugin: subscribe_block
+settings:
+  id: subscribe_block
+  label: 'Anonymous subscription'
+  provider: anonymous_subscriptions
+  label_display: '0'
+  0: node_type
+  1: node_type
+  2: node_type
+  node_type: resource
+visibility: {  }

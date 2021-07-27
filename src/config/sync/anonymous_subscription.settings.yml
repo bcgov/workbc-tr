@@ -1,0 +1,10 @@
+anonymous_subscriptions_verify: 0
+anonymous_subscriptions_send_default: 0
+anonymous_subscriptions_limit_window: '60'
+anonymous_subscriptions_ip_limit: '5'
+anonymous_subscriptions_node_types:
+  resource: resource
+  content: 0
+anonymous_subscriptions_sender: ''
+anonymous_subscriptions_subject_text: 'New content added to [site:name]'
+anonymous_subscriptions_body_text: "A new post or an update to existing post has been made to [site:name]\r\nPlease visit [node:url] to see this new post!"
