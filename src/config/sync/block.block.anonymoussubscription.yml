@@ -1,4 +1,4 @@
-uuid: bee1e607-e45c-45fa-8894-2aeba98f538d
+uuid: 9c91126f-63bd-49e1-b1ca-e50d0656a62f
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
     - bcgov_teachers
 id: anonymoussubscription
 theme: bcgov_teachers
-region: footer
-weight: -8
+region: footer_right
+weight: 0
 provider: null
 plugin: subscribe_block
 settings:
@@ -20,7 +20,5 @@ settings:
   0: node_type
   1: node_type
   2: node_type
-  3: node_type
-  4: node_type
-  node_type: resource
+  node_type: null
 visibility: {  }

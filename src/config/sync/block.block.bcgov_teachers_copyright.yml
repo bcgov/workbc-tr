@@ -7,7 +7,7 @@ dependencies:
 id: bcgov_teachers_copyright
 theme: bcgov_teachers
 region: under_footer
-weight: -9
+weight: -11
 provider: null
 plugin: 'block_content:912db691-44e4-4df1-af4d-0045c199134a'
 settings:

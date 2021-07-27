@@ -12,5 +12,5 @@ anonymous_subscriptions_verify: 0
 _core:
   default_config_hash: NpmcSdhkttCfbCufEZcTx5X9Cr28iAQ_KQWR189mvVc
 anonymous_subscriptions_node_types:
-  resource: resource
   content: 0
+  resource: 0

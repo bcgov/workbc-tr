@@ -6,8 +6,8 @@ dependencies:
     - bcgov_teachers
 id: bcgov_teachers_socialnetworks
 theme: bcgov_teachers
-region: footer
-weight: -11
+region: footer_left
+weight: -10
 provider: null
 plugin: 'block_content:ba586341-6a91-4f23-ac5f-22d48f8c10c5'
 settings:

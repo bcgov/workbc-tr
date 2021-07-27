@@ -6,8 +6,8 @@ dependencies:
     - bcgov_teachers
 id: bcgov_teachers_increasetextsize
 theme: bcgov_teachers
-region: footer
-weight: -9
+region: footer_left
+weight: -11
 provider: null
 plugin: 'block_content:204ba063-f181-4284-bb0f-6c715e371ad3'
 settings:

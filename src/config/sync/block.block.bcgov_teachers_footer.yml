@@ -10,8 +10,8 @@ dependencies:
     - bcgov_teachers
 id: bcgov_teachers_footer
 theme: bcgov_teachers
-region: footer
-weight: -10
+region: footer_left
+weight: -9
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
