@@ -1,0 +1,19 @@
+uuid: a8ef2de0-25e9-4900-b7f0-d50aa25a4175
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_go_to_resource
+field_name: field_go_to_resource
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

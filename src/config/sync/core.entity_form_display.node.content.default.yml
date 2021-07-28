@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.content.field_add_grade_access
     - field.field.node.content.field_content_description
     - field.field.node.content.field_content_image
     - field.field.node.content.field_content_items
@@ -38,6 +39,18 @@ targetEntityType: node
 bundle: content
 mode: default
 content:
+  field_add_grade_access:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   field_content_description:
     weight: 5
     settings:
@@ -56,7 +69,7 @@ content:
     region: content
   field_content_items:
     type: entity_reference_paragraphs
-    weight: 2
+    weight: 3
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -87,7 +100,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 4
+    weight: 5
     region: content
     settings:
       display_label: true

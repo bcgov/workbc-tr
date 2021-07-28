@@ -5,10 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.pdf
     - field.field.node.resource.field_add_resource_description
+    - field.field.node.resource.field_go_to_resource
     - field.field.node.resource.field_resource_card_image
     - field.field.node.resource.field_resource_card_summary
     - field.field.node.resource.field_resource_desc
-    - field.field.node.resource.field_resource_documents
     - field.field.node.resource.field_resource_external_link
     - field.field.node.resource.field_resource_featured
     - field.field.node.resource.field_resource_images
@@ -119,9 +119,9 @@ hidden:
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_add_resource_description: true
+  field_go_to_resource: true
   field_resource_card_image: true
   field_resource_card_summary: true
-  field_resource_documents: true
   field_resource_external_link: true
   field_resource_featured: true
   field_resources_images_node: true
