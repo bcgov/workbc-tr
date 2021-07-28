@@ -1,22 +1,22 @@
-uuid: 700f0c05-2877-4b74-87de-dbac8875a952
+uuid: f53bfe73-6635-46b0-a76c-8c52f72d30a5
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_content_items
+    - field.storage.node.field_add_grade_access
     - node.type.content
-    - paragraphs.paragraphs_type.paragraph_simple
+    - paragraphs.paragraphs_type.grade_access_blocks
   module:
     - entity_reference_revisions
     - paragraph_blocks
 third_party_settings:
   paragraph_blocks:
     status: 1
-id: node.content.field_content_items
-field_name: field_content_items
+id: node.content.field_add_grade_access
+field_name: field_add_grade_access
 entity_type: node
 bundle: content
-label: Items
+label: 'Add Grade Access'
 description: ''
 required: false
 translatable: false
@@ -27,65 +27,65 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      paragraph_simple: paragraph_simple
+      grade_access_blocks: grade_access_blocks
     target_bundles_drag_drop:
       banner:
-        weight: 4
-        enabled: false
-      bp_accordion:
         weight: 21
         enabled: false
-      bp_accordion_section:
+      bp_accordion:
         weight: 22
         enabled: false
-      bp_blank:
+      bp_accordion_section:
         weight: 23
         enabled: false
-      bp_block:
+      bp_blank:
         weight: 24
         enabled: false
-      bp_carousel:
+      bp_block:
         weight: 25
         enabled: false
-      bp_column_wrapper:
-        weight: 29
-        enabled: false
-      bp_columns:
+      bp_carousel:
         weight: 26
         enabled: false
-      bp_columns_three_uneven:
-        weight: 27
-        enabled: false
-      bp_columns_two_uneven:
-        weight: 28
-        enabled: false
-      bp_image:
+      bp_column_wrapper:
         weight: 30
         enabled: false
-      bp_modal:
+      bp_columns:
+        weight: 27
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 28
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 29
+        enabled: false
+      bp_image:
         weight: 31
         enabled: false
-      bp_simple:
+      bp_modal:
         weight: 32
         enabled: false
-      bp_tab_section:
-        weight: 34
-        enabled: false
-      bp_tabs:
+      bp_simple:
         weight: 33
         enabled: false
-      bp_view:
+      bp_tab_section:
         weight: 35
         enabled: false
-      grade_access:
-        weight: 5
+      bp_tabs:
+        weight: 34
         enabled: false
-      grade_access_blocks:
+      bp_view:
+        weight: 36
+        enabled: false
+      grade_access:
         weight: 37
         enabled: false
-      paragraph_simple:
+      grade_access_blocks:
         enabled: true
-        weight: 6
+        weight: 38
+      paragraph_simple:
+        weight: 39
+        enabled: false
       resource_description:
         weight: 40
         enabled: false
