@@ -23,6 +23,7 @@
         "drupal/bootstrap4_tools": " ^2.1",
         "drupal/bootstrap_paragraphs": " ^2.0",
         "drupal/color_field": "^2.4",
+        "drupal/config_ignore": "^2.3",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-project-message": "^9.2",
         "drupal/core-recommended": "^9.2",
