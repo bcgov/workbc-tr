@@ -11091,7 +11091,7 @@ h2 {
     display: none;
   }
 }
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 767px) {
   .lesson_wrapper_main__lable, .resource_wrapper_main__lable {
     font-size: 32px;
     margin-bottom: 25px;
@@ -11160,6 +11160,9 @@ h2 {
 }
 .lesson_wrapper_main_para_item__body ol li > ol > li::marker, .resource_wrapper_main_para_item__body ol li > ol > li::marker {
   font-weight: 700;
+}
+.lesson_wrapper_main_para_item__body ol:last-child, .resource_wrapper_main_para_item__body ol:last-child {
+  margin-bottom: 70px;
 }
 .lesson_wrapper_main_para_item__body ul, .resource_wrapper_main_para_item__body ul {
   padding-left: 25px !important;
@@ -11853,6 +11856,11 @@ h2 {
   text-decoration: none;
   transition: 0.5s;
 }
+@media screen and (max-width: 767px) {
+  .leftnavbar--title a {
+    text-align: center;
+  }
+}
 .leftnavbar-item {
   display: none;
 }
@@ -11913,6 +11921,67 @@ h2 {
 .left-nav.align-end .leftnavbar {
   position: relative !important;
   top: auto;
+}
+@media screen and (max-width: 767px) {
+  .left-nav {
+    display: none;
+  }
+}
+
+.lesson_wrapper .main_section {
+  padding-top: 0;
+}
+@media screen and (max-width: 767px) {
+  .lesson_wrapper .main_section .lesson_wrapper_main__lable {
+    margin-bottom: 45px;
+  }
+}
+
+.mobiletab {
+  display: none;
+  margin-bottom: 30px;
+}
+.mobiletab .leftnavbar {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0;
+  border-radius: 0;
+  border: none;
+}
+.mobiletab .leftnavbar .leftnavbar-item {
+  display: none;
+}
+.mobiletab .leftnavbar .leftnavbar--items {
+  border-bottom: 0;
+  flex: 1;
+}
+.mobiletab .leftnavbar .leftnavbar--items.active .leftnavbar--title {
+  background: #fff;
+}
+.mobiletab .leftnavbar .leftnavbar--items.active .leftnavbar--title a {
+  font-weight: normal;
+  color: #333;
+  font-weight: bold;
+}
+.mobiletab .leftnavbar .leftnavbar--items .leftnavbar--title {
+  border-bottom: 0;
+  padding: 17px 20px;
+  background: #073573;
+}
+.mobiletab .leftnavbar .leftnavbar--items .leftnavbar--title a {
+  color: #fff;
+}
+.mobiletab .leftnavbar .leftnavbar--items .leftnavbar--title:before {
+  display: none;
+}
+.mobiletab .leftnavbar .leftnavbar--items + .leftnavbar--items {
+  border-left: 1px solid #fff;
+}
+@media screen and (max-width: 767px) {
+  .mobiletab {
+    display: block;
+  }
 }
 
 .proceed-nex-link {
@@ -12329,12 +12398,12 @@ header .region-header .navbar-brand .site-title {
   }
 }
 header .region-header .navbar-brand a.site-title:link, header .region-header .navbar-brand a.site-title:visited {
-  color: #2379A4;
+  color: #234075;
   text-decoration: none;
 }
 header .region-header .navbar-brand a.site-title:hover, header .region-header .navbar-brand a.site-title:active, header .region-header .navbar-brand a.site-title:focus {
-  color: #2379A4;
-  text-decoration: underline;
+  color: #234075;
+  text-decoration: none;
 }
 header .region-header .block-system-branding-block {
   flex-grow: 2;

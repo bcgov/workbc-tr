@@ -113,14 +113,14 @@ header {
         &.site-title {
           &:link,
           &:visited {
-            color: $teachers-secondary-blue;
+            color: $secondary_color_7;
             text-decoration: none;
           }
           &:hover,
           &:active,
           &:focus {
-            color: $teachers-secondary-blue;
-            text-decoration: underline;
+            color: $secondary_color_7;
+            text-decoration: none;
           }
         }
       }

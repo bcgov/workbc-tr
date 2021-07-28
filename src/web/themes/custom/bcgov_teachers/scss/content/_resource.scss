@@ -112,7 +112,7 @@
         display: none;
       } 
     }
-    @media only screen and (max-width:640px){
+    @media only screen and (max-width:767px){
       font-size: 32px;
       margin-bottom: 25px;
     }
@@ -176,6 +176,9 @@
             &::marker{font-weight: 700;}
           }
         }
+      }
+      &:last-child{
+        margin-bottom:70px;
       }
     }
 
@@ -847,6 +850,9 @@
           width:100%;
           text-decoration: none;
           transition: 0.5s;
+          @media screen and (max-width:767px) {
+            text-align: center;
+          }
       }
   }
 
@@ -916,6 +922,43 @@
       position: relative !important;
       top:auto;
     }
+  }
+  @media screen and (max-width:767px) {
+    display: none;
+  }
+}
+.lesson_wrapper .main_section{padding-top: 0;
+  @media screen and (max-width:767px) {
+    .lesson_wrapper_main__lable{margin-bottom: 45px;} 
+  }
+}
+.mobiletab{
+  display:none;
+  margin-bottom: 30px;
+  .leftnavbar{
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0; 
+    border-radius: 0;
+    border:none;
+    .leftnavbar-item{display: none;}
+    .leftnavbar--items{border-bottom: 0;
+      flex:1;
+      &.active{
+        .leftnavbar--title{background: #fff; 
+          a{font-weight: normal; color:#333; font-weight: bold;} 
+        }
+      }
+      .leftnavbar--title{border-bottom: 0; padding:17px 20px; background: #073573;
+        a{color:#fff; }
+        &:before{display: none;}
+      }
+      + .leftnavbar--items{border-left: 1px solid #fff;}
+    }
+  }
+  @media screen and (max-width:767px) {
+    display: block;
   }
 }
 

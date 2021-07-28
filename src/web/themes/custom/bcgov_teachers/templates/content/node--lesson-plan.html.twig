@@ -178,6 +178,28 @@
 		</div>
     {# Main Container #}
     <div class="main_section">
+         <div class="left-nav mobiletab">
+            <div class="leftnavbar">
+              {% for key,subentity in node.field_add_resource_description if key|first != '#' %}
+                <div class="leftnavbar--items {% if loop.first %} active {% endif %}">
+                  <div class="leftnavbar--title">
+                    <a href="#paragraph-{{ subentity.entity.id.value }}">{{ subentity.entity.field_main_heading.value }}</a>
+                  </div>
+                  <div class="leftnavbar-item toc">
+                    <ul>
+                      {% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}
+                      {% if lsubentity.entity.field_para_simple_title.value is not empty %}
+                        <li>
+                          <a href="#paragraph-{{ lsubentity.entity.id.value }}">{{ lsubentity.entity.field_para_simple_title.value }}</a>
+                        </li>
+                      {% endif %}
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
       <div class="container">
         <div class="row">
           <div class="left-nav col-md-4">
