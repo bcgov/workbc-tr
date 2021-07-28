@@ -11904,7 +11904,7 @@ h2 {
 }
 .left-nav.sticky .leftnavbar {
   position: fixed;
-  top: 280px;
+  top: 200px;
 }
 @media only screen and (max-width: 991px) {
   .left-nav.sticky .leftnavbar {
@@ -11928,10 +11928,10 @@ h2 {
   }
 }
 
-.lesson_wrapper .main_section {
-  padding-top: 0;
-}
 @media screen and (max-width: 767px) {
+  .lesson_wrapper .main_section {
+    padding-top: 0;
+  }
   .lesson_wrapper .main_section .lesson_wrapper_main__lable {
     margin-bottom: 45px;
   }
@@ -11955,6 +11955,9 @@ h2 {
 .mobiletab .leftnavbar .leftnavbar--items {
   border-bottom: 0;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: auto;
 }
 .mobiletab .leftnavbar .leftnavbar--items.active .leftnavbar--title {
   background: #fff;
@@ -11968,6 +11971,9 @@ h2 {
   border-bottom: 0;
   padding: 17px 20px;
   background: #073573;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 .mobiletab .leftnavbar .leftnavbar--items .leftnavbar--title a {
   color: #fff;
