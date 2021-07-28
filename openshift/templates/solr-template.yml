@@ -5,6 +5,19 @@ metadata:
   name: solr-template
 objects:
   - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: ${PVC_NAME}
+      labels:
+        app: ${APP_NAME}
+    spec:
+      accessModes:
+      - ReadWriteMany
+      resources:
+        requests:
+          storage: 1Gi
+      storageClassName: netapp-file-standard
+  - apiVersion: v1
     kind: Service
     metadata:
       name: ${SERVICE_NAME}
@@ -52,10 +65,17 @@ objects:
         spec:
           volumes:
             - name: data
-              emptyDir: {}
+              persistentVolumeClaim:
+                claimName: ${PVC_NAME}
           containers:
           - name: solr
             image: '${IMAGE_NAME}'
+            env:
+              - name: SOLR_CORE_NAME
+                valueFrom:
+                  configMapKeyRef:
+                    name: workbc-tr-cm
+                    key: workbc-tr.solrcore
             ports:
               - name: ${PORT_NAME}
                 containerPort: 8983
@@ -65,6 +85,8 @@ objects:
 parameters:
   - name: APP_NAME
     value: workbc-tr-solr
+  - name: PVC_NAME
+    value: workbc-tr-solr-pvc
   - name: ROUTE_NAME
     value: teacher-resources-solr
   - name: SERVICE_NAME
@@ -76,4 +98,4 @@ parameters:
   - name: POD_NAME
     value: workbc-tr-solr-pod
   - name: IMAGE_NAME
-    value: image-registry.openshift-image-registry.svc:5000/bdaa18-tools/wdst-ocp-solr:1.0
+    value: image-registry.openshift-image-registry.svc:5000/bdaa18-tools/wdst-ocp-solr:1.2
