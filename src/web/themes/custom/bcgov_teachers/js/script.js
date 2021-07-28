@@ -138,7 +138,8 @@
               breakpoint: 767,
               settings: {
                 slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                arrow: false
               }
             }
           ]
@@ -152,7 +153,7 @@
               x[i] = jQuery(arr[i]).height('auto');
               x[i] = jQuery(arr[i]).outerHeight();
           }
-          Max_Value = Array.max(x) + 15;
+          Max_Value = Array.max(x) + 20;
           for (i = 0; i < arr.length; i++) {
               x[i] = jQuery(arr[i]).outerHeight(Max_Value);
           }
@@ -167,7 +168,7 @@
       };
 
       if (window.matchMedia("(min-width: 768px)").matches) {
-        setEqualHeight(jQuery('.related_news_slider .related_news_wrapper--item'));
+        setEqualHeight(jQuery('.related_news_slider .related_news_wrapper--item-single'));
         jQuery('.search_wrapper .row').each(function(){
           setEqualHeight(jQuery(this).find('.related_news_wrapper--item'));
         });
