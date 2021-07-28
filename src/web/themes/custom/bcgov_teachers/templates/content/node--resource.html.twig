@@ -137,15 +137,20 @@
 				</div>
 		  </div>
     </div>
-		<div class="main_section">
+		<div class="main_section resource_plan_section">
 			<div class="container">
 				<div class="row">
+					<div class="col-md-12 order-1">
+						<div class="resource_wrapper_main__lable xs-show">
+							{{ 'Resource'|t }}
+						</div>
+					</div>
 				<div class="col-md-8">
 					<div class="resource_wrapper_main">
 							{% for key,subentity in node.field_add_resource_description if key|first != '#' %}
 								<div class="main-section" id="paragraph-{{ subentity.entity.id.value }}">
 									{% if subentity.entity.field_main_heading.value is not empty %}
-									<div class="resource_wrapper_main__lable">
+									<div class="resource_wrapper_main__lable xs-hide">
 										{{ subentity.entity.field_main_heading.value }}
 									</div>
 									{% endif %}
@@ -177,7 +182,7 @@
 				{% set file = media.field_media_image.entity %}
 				{% set uri = file_url(file.uri.value)  %}
 				<div class="resource-media">
-					<img class="img-fluid mt-5" src="{{ uri }}" alt="{{ media.field_media_image.alt|default('resource img') }}" />
+					<img class="img-fluid" src="{{ uri }}" alt="{{ media.field_media_image.alt|default('resource img') }}" />
 				</div>
 				{% endfor %}
 			</div>

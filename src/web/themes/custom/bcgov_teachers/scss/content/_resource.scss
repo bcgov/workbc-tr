@@ -17,12 +17,18 @@
   }
   &__intro__title{margin-bottom: 25px;
     font-family: $font-family-sans-serif; font-size: 45px; color:$teachers-text; font-weight: normal;
+    @media only screen and (max-width:767px){
+      font-size: 28px;
+    }
     span{
       font-weight: 700;
     }
   }
   &_intro__life_cycle{margin-bottom: 25px;
-    font-family: $font-family-sans-serif; font-size: 18px; font-weight: normal; color:rgba(51, 51, 51, 0.72156862745098); font-style: italic;
+    font-family: $font-family-sans-serif-bold; font-size: 18px; font-weight: normal; color:rgba(51, 51, 51, 0.72156862745098); font-style: italic;
+    @media only screen and (max-width:767px){
+      font-size: 16px;
+    }
     span{
      font-weight: 700;
      font-style: normal;
@@ -34,7 +40,13 @@
       font-size: 21px;
       color:$teachers-text;
       font-weight: 400;
-      line-height: 1.2;
+      line-height: 1.5;
+      margin-bottom: 33px;
+      @media only screen and (max-width:767px){
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 22px;
+      }
     }
   }
   &_intro__tags{display: inline-block; width:100%;}
@@ -82,26 +94,56 @@
   }
 
   &_main__lable{
-
     font-weight: 400;
     font-style: normal;
     font-size: 45px;
     color:$teachers-bg-grey;
     margin-bottom: 45px;
+    &.xs-show{
+      font-size: 32px;
+      margin-bottom: 25px;
+      @media only screen and (min-width:768px){
+        display: none;
+      }  
+    }
+
+    &.xs-hide{
+      @media only screen and (max-width:767px){
+        display: none;
+      } 
+    }
+    @media only screen and (max-width:640px){
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
   }
   &_main_para_item + &_main_para_item{
       margin-top: 50px;
   }
 
+  &_main_para_item{
+    .download-worksheets-container{
+      margin-top: 70px;
+    }
+  }
   &_main_para_item__title{
     font-family: $font-family-sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 21px;
-    border-bottom:4px solid rgba(215, 215, 215, 1);
     display: inline-block;
     padding-bottom:5px;
     margin-bottom: 40px;
+    position: relative;
+    &:after{
+      position: absolute;
+      content: '';
+      width: calc(100% + 18px);
+      height: 4px;
+      bottom: -3px;
+      background: rgba(215, 215, 215, 1);;
+      left: 0;
+    }
   }
 
   &_main_para_item__body{
@@ -137,17 +179,26 @@
       }
     }
 
-    ul{
+    ul{padding-left: 25px !important;
       li{
         &:before{
           content:'';
           position:absolute;
           top:9px;
           left:0;
-          width:8px;
-          height: 8px;
+          width:5px;
+          height:5px;
           border-radius: 100%;
           background: $teachers-bg-grey;
+        }
+      }
+      ul{
+        margin-top: 5px;
+        li{
+          &:before{
+            background: transparent;
+            border: 1px solid $teachers-bg-grey;
+          }
         }
       }
     }
@@ -165,6 +216,25 @@
 
   .main_section{
     padding:55px 0;
+    &.resource_plan_section{
+      .row{
+        @media only screen and (max-width:767px){
+          flex-direction: column-reverse;
+        }    
+      }
+    }
+    @media only screen and (max-width:640px){
+      padding:25px 0;
+    }
+  }
+
+  &_left__img{
+    @media only screen and (min-width:768px) {
+        margin-top: 40px;
+    }
+    @media only screen and (max-width:767px) {
+      margin-bottom:30px;
+    }
   }
 }
 
@@ -182,13 +252,16 @@
   background:rgba(242, 242, 242, 1);
   overflow: hidden;
   > h2{
-    font-family: $font-family-sans-serif;
+    font-family: $font-family-sans-serif-regular;
     font-weight: 400;
     font-style: normal;
     font-size: 36px;
     color: $teachers-bg-grey;
     margin-bottom:30px;
     text-align: center;
+    @media only screen and (max-width:640px){
+      font-size: 28px;
+    }
   }
 
 }
@@ -314,6 +387,12 @@
 }
 
 
+@media only screen and (max-width:640px){
+  .download-worksheets-container--wrapper{
+    width: 100%;
+  }
+}
+
 .download-worksheets-button{
   font-size: 16px;
   font-weight: bold;
@@ -321,7 +400,7 @@
   color:$teachers-bg-light;
   background: $teachers-fifth-blue;
   border-radius: 15px;
-  padding:10px 10px 10px 65px;
+  padding:7px 10px 7px 65px;
   position: relative;
   width:100%;
   margin-bottom:20px;
@@ -329,7 +408,9 @@
   text-decoration: none;
   max-width: 330px;
   transition: 0.5s;
-
+  @media only screen and (max-width:640px){
+    max-width:100%;
+  }
   p{
     margin: 0;
     text-align:center;
@@ -358,6 +439,7 @@
   &:focus {
     background:$teachers-bg-light;
     color:$teachers-fifth-blue;
+    box-shadow: 0px 0px 10px #d7d7d7;
     &:before{
       background:url(../images/download-blue.svg) center no-repeat;
       background-size: cover;
@@ -375,33 +457,37 @@
     color:$teachers-bg-grey;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    @media only screen and (max-width:640px){
+      justify-content: center;
+    }
 }
 .sharethis-wrapper{
   display: inline-block;
   margin-left:5px;
-  .stButton{display: flex; justify-content: center; align-items: center; width:38px; height:38px; background-color: $teachers-bg-grey; border-radius: 100%; background-size: 25px 25px; background-position: center; background-repeat: no-repeat; transition: 0.5s;
+  .stButton{display: flex; justify-content: center; align-items: center; width:38px; height:38px; margin:0 1px; background-color: $teachers-bg-grey; border-radius: 100%; background-size: 25px 25px; background-position: center; background-repeat: no-repeat; transition: 0.5s;
     .stLarge{display: none;}
     &:hover{background-color:#989898;}
-    @media only screen and (max-width:480px){
-      width:30px; height:30px;
-      background-size: 20px; 
-    }
+    // @media only screen and (max-width:480px){
+    //   width:30px; height:30px;
+    //   background-size: 20px; 
+    // }
   }
 
   .st_email_large .stButton{background-image:url(../images/mail.svg);}
   .st_facebook_large .stButton{background-image:url(../images/facebook.svg); background-size: 13px;
     @media only screen and (max-width:480px){
-      background-size: 10px; 
+      //background-size: 10px; 
     }
   }
   .st_twitter_large .stButton{background-image:url(../images/twitter.svg); background-size: 20px;
     @media only screen and (max-width:480px){
-      background-size: 16px; 
+      //background-size: 16px; 
     }
   }
   .st_linkedin_large .stButton{background-image:url(../images/linkedin.svg); background-size: 18px;
     @media only screen and (max-width:480px){
-      background-size: 16px; 
+      //background-size: 16px; 
     }
   }
 
@@ -562,8 +648,14 @@
   
   @media only screen and (min-width:1201px){
     padding-left:40px;
+    width:100%;
+  }
+  @media only screen and (max-width:640px){
+    width:100%;
   }
   &-button{
+    display: flex;
+    justify-content: center;
     a{
       font-size: 16px;
       font-weight: bold;
@@ -571,7 +663,7 @@
       color:$teachers-bg-light;
       background: $teachers-fifth-blue;
       border-radius: 15px;
-      padding:10px 10px 10px 65px;
+      padding:12px 10px 12px 50px;
       position: relative;
       width:100%;
       border:2px solid $teachers-fifth-blue;
@@ -580,12 +672,16 @@
       transition: 0.5s;
       text-align: center;
       margin-bottom: 20px;
+      @media only screen and (max-width:640px){
+        max-width: 100%;
+        width:100%;
+      }
       &:before{
         content: '';
         position: absolute;
         top:50%;
         transform: translateY(-50%);
-        left:30px;
+        left:17px;
         width:30px;
         height:30px;
         background:url(../images/white-resource.svg) center no-repeat;
@@ -611,28 +707,40 @@
       border:2px solid transparent;
       border-radius: 15px;
       font-weight: 400;
-      padding:12px 10px 12px 65px;
+      padding:12px 10px 12px 30px;
       transition: 0.5s;
       display: inline-block;
       width: 100%;
       text-align: center;
       margin-bottom:20px;
       position: relative;
+      @media only screen and (max-width:640px){
+        max-width: 100%;
+        width:100%
+      }
       &:before{
         content: '';
         position: absolute;
         top:50%;
         transform: translateY(-50%);
-        left:43px;
+        left:30px;
         width:25px;
         height:25px;
         background:url(../images/plus-zoom.svg) center no-repeat;
         background-size: cover;
+        transition: 0.5s;
       }
      &:hover{
         box-shadow: 0px 0px 10px rgb(215 215 215);
         border-color: rgba(38, 167, 223, 1);
         color:#26A7DF;
+        &:before{
+          background: url(../images/blue-plus-zoom.svg) center no-repeat;
+          background-size: cover;
+        }
+      }
+      &.bg-light:focus, &.bg-light:hover{
+        background-color:#fff !important;
       }
     }
   }
@@ -640,6 +748,7 @@
 @media only screen and (min-width:1201px){
   .download-worksheets-container--wrapper{
     padding-left:40px;
+    width: 100%;
   }
   
 }
@@ -855,9 +964,19 @@
     .slick-next{right:-14px;}
   }
   
+  @media only screen and (max-width:767px){
+    .slick-arrow{
+      display:none !important;
+    }  
+    .related_news_wrapper--item-single{padding-left: 0; padding-right: 0;}
+  }
+  
   .slick-dots {bottom:-40px;
     li{margin: 0;
       button:before{font-size: 12px;}
     }
+  }
+  .related_news_wrapper_desc{
+    min-height: 100px;
   }
 } 

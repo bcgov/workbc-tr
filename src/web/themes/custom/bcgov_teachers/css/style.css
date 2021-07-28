@@ -10851,6 +10851,11 @@ h2 {
   background: #fff;
   color: #073573;
 }
+@media only screen and (max-width: 767px) {
+  .anonymous-subscriptions-subscribe-form input[type=submit] {
+    width: 100%;
+  }
+}
 
 .banner-content {
   position: relative;
@@ -10980,16 +10985,26 @@ h2 {
   color: #333333;
   font-weight: normal;
 }
+@media only screen and (max-width: 767px) {
+  .lesson_wrapper__intro__title, .resource_wrapper__intro__title {
+    font-size: 28px;
+  }
+}
 .lesson_wrapper__intro__title span, .resource_wrapper__intro__title span {
   font-weight: 700;
 }
 .lesson_wrapper_intro__life_cycle, .resource_wrapper_intro__life_cycle {
   margin-bottom: 25px;
-  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+  font-family: "BCSans-Bold", "BC Sans Bold", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
   font-size: 18px;
   font-weight: normal;
   color: rgba(51, 51, 51, 0.7215686275);
   font-style: italic;
+}
+@media only screen and (max-width: 767px) {
+  .lesson_wrapper_intro__life_cycle, .resource_wrapper_intro__life_cycle {
+    font-size: 16px;
+  }
 }
 .lesson_wrapper_intro__life_cycle span, .resource_wrapper_intro__life_cycle span {
   font-weight: 700;
@@ -11002,7 +11017,15 @@ h2 {
   font-size: 21px;
   color: #333333;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.5;
+  margin-bottom: 33px;
+}
+@media only screen and (max-width: 767px) {
+  .lesson_wrapper_intro__body p, .resource_wrapper_intro__body p {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 22px;
+  }
 }
 .lesson_wrapper_intro__tags, .resource_wrapper_intro__tags {
   display: inline-block;
@@ -11054,18 +11077,50 @@ h2 {
   color: #333333;
   margin-bottom: 45px;
 }
+.lesson_wrapper_main__lable.xs-show, .resource_wrapper_main__lable.xs-show {
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+@media only screen and (min-width: 768px) {
+  .lesson_wrapper_main__lable.xs-show, .resource_wrapper_main__lable.xs-show {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .lesson_wrapper_main__lable.xs-hide, .resource_wrapper_main__lable.xs-hide {
+    display: none;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .lesson_wrapper_main__lable, .resource_wrapper_main__lable {
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+}
 .lesson_wrapper_main_para_item + .lesson_wrapper_main_para_item, .lesson_wrapper_main_para_item + .resource_wrapper_main_para_item, .resource_wrapper_main_para_item + .lesson_wrapper_main_para_item, .resource_wrapper_main_para_item + .resource_wrapper_main_para_item {
   margin-top: 50px;
+}
+.lesson_wrapper_main_para_item .download-worksheets-container, .resource_wrapper_main_para_item .download-worksheets-container {
+  margin-top: 70px;
 }
 .lesson_wrapper_main_para_item__title, .resource_wrapper_main_para_item__title {
   font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
   font-weight: 400;
   font-style: normal;
   font-size: 21px;
-  border-bottom: 4px solid #d7d7d7;
   display: inline-block;
   padding-bottom: 5px;
   margin-bottom: 40px;
+  position: relative;
+}
+.lesson_wrapper_main_para_item__title:after, .resource_wrapper_main_para_item__title:after {
+  position: absolute;
+  content: "";
+  width: calc(100% + 18px);
+  height: 4px;
+  bottom: -3px;
+  background: #d7d7d7;
+  left: 0;
 }
 .lesson_wrapper_main_para_item__body, .resource_wrapper_main_para_item__body {
   display: block;
@@ -11106,15 +11161,25 @@ h2 {
 .lesson_wrapper_main_para_item__body ol li > ol > li::marker, .resource_wrapper_main_para_item__body ol li > ol > li::marker {
   font-weight: 700;
 }
+.lesson_wrapper_main_para_item__body ul, .resource_wrapper_main_para_item__body ul {
+  padding-left: 25px !important;
+}
 .lesson_wrapper_main_para_item__body ul li:before, .resource_wrapper_main_para_item__body ul li:before {
   content: "";
   position: absolute;
   top: 9px;
   left: 0;
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
   border-radius: 100%;
   background: #333333;
+}
+.lesson_wrapper_main_para_item__body ul ul, .resource_wrapper_main_para_item__body ul ul {
+  margin-top: 5px;
+}
+.lesson_wrapper_main_para_item__body ul ul li:before, .resource_wrapper_main_para_item__body ul ul li:before {
+  background: transparent;
+  border: 1px solid #333333;
 }
 .lesson_wrapper_main_para_item__body ul, .lesson_wrapper_main_para_item__body ol, .resource_wrapper_main_para_item__body ul, .resource_wrapper_main_para_item__body ol {
   list-style: none;
@@ -11136,6 +11201,26 @@ h2 {
 .lesson_wrapper .main_section, .resource_wrapper .main_section {
   padding: 55px 0;
 }
+@media only screen and (max-width: 767px) {
+  .lesson_wrapper .main_section.resource_plan_section .row, .resource_wrapper .main_section.resource_plan_section .row {
+    flex-direction: column-reverse;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .lesson_wrapper .main_section, .resource_wrapper .main_section {
+    padding: 25px 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .lesson_wrapper_left__img, .resource_wrapper_left__img {
+    margin-top: 40px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .lesson_wrapper_left__img, .resource_wrapper_left__img {
+    margin-bottom: 30px;
+  }
+}
 
 .resource_wrapper_intro {
   border-bottom: 10px solid #333333;
@@ -11149,13 +11234,18 @@ h2 {
   overflow: hidden;
 }
 .block-views-blockrelated-resource-and-lesson-plan-block-1 > h2 {
-  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+  font-family: "BCSans-Regular", "BC Sans Regular", "BC Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 36px;
   color: #333333;
   margin-bottom: 30px;
   text-align: center;
+}
+@media only screen and (max-width: 640px) {
+  .block-views-blockrelated-resource-and-lesson-plan-block-1 > h2 {
+    font-size: 28px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -11301,6 +11391,11 @@ h2 {
   margin-left: 5px;
 }
 
+@media only screen and (max-width: 640px) {
+  .download-worksheets-container--wrapper {
+    width: 100%;
+  }
+}
 .download-worksheets-button {
   font-size: 16px;
   font-weight: bold;
@@ -11308,7 +11403,7 @@ h2 {
   color: #FFFFFF;
   background: #26A7DF;
   border-radius: 15px;
-  padding: 10px 10px 10px 65px;
+  padding: 7px 10px 7px 65px;
   position: relative;
   width: 100%;
   margin-bottom: 20px;
@@ -11316,6 +11411,11 @@ h2 {
   text-decoration: none;
   max-width: 330px;
   transition: 0.5s;
+}
+@media only screen and (max-width: 640px) {
+  .download-worksheets-button {
+    max-width: 100%;
+  }
 }
 .download-worksheets-button p {
   margin: 0;
@@ -11340,6 +11440,7 @@ h2 {
 .download-worksheets-button:hover, .download-worksheets-button:active, .download-worksheets-button:focus {
   background: #FFFFFF;
   color: #26A7DF;
+  box-shadow: 0px 0px 10px #d7d7d7;
 }
 .download-worksheets-button:hover:before, .download-worksheets-button:active:before, .download-worksheets-button:focus:before {
   background: url(../images/download-blue.svg) center no-repeat;
@@ -11359,6 +11460,12 @@ h2 {
   color: #333333;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+}
+@media only screen and (max-width: 640px) {
+  .share-this-resource {
+    justify-content: center;
+  }
 }
 
 .sharethis-wrapper {
@@ -11371,6 +11478,7 @@ h2 {
   align-items: center;
   width: 38px;
   height: 38px;
+  margin: 0 1px;
   background-color: #333333;
   border-radius: 100%;
   background-size: 25px 25px;
@@ -11384,13 +11492,6 @@ h2 {
 .sharethis-wrapper .stButton:hover {
   background-color: #989898;
 }
-@media only screen and (max-width: 480px) {
-  .sharethis-wrapper .stButton {
-    width: 30px;
-    height: 30px;
-    background-size: 20px;
-  }
-}
 .sharethis-wrapper .st_email_large .stButton {
   background-image: url(../images/mail.svg);
 }
@@ -11398,30 +11499,14 @@ h2 {
   background-image: url(../images/facebook.svg);
   background-size: 13px;
 }
-@media only screen and (max-width: 480px) {
-  .sharethis-wrapper .st_facebook_large .stButton {
-    background-size: 10px;
-  }
-}
 .sharethis-wrapper .st_twitter_large .stButton {
   background-image: url(../images/twitter.svg);
   background-size: 20px;
-}
-@media only screen and (max-width: 480px) {
-  .sharethis-wrapper .st_twitter_large .stButton {
-    background-size: 16px;
-  }
 }
 .sharethis-wrapper .st_linkedin_large .stButton {
   background-image: url(../images/linkedin.svg);
   background-size: 18px;
 }
-@media only screen and (max-width: 480px) {
-  .sharethis-wrapper .st_linkedin_large .stButton {
-    background-size: 16px;
-  }
-}
-
 .download-worksheets-files-wrapper {
   display: none;
 }
@@ -11577,7 +11662,17 @@ h2 {
 @media only screen and (min-width: 1201px) {
   .go-to-resource-wrapper {
     padding-left: 40px;
+    width: 100%;
   }
+}
+@media only screen and (max-width: 640px) {
+  .go-to-resource-wrapper {
+    width: 100%;
+  }
+}
+.go-to-resource-wrapper-button {
+  display: flex;
+  justify-content: center;
 }
 .go-to-resource-wrapper-button a {
   font-size: 16px;
@@ -11586,7 +11681,7 @@ h2 {
   color: #FFFFFF;
   background: #26A7DF;
   border-radius: 15px;
-  padding: 10px 10px 10px 65px;
+  padding: 12px 10px 12px 50px;
   position: relative;
   width: 100%;
   border: 2px solid #26A7DF;
@@ -11596,12 +11691,18 @@ h2 {
   text-align: center;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 640px) {
+  .go-to-resource-wrapper-button a {
+    max-width: 100%;
+    width: 100%;
+  }
+}
 .go-to-resource-wrapper-button a:before {
   content: "";
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 30px;
+  left: 17px;
   width: 30px;
   height: 30px;
   background: url(../images/white-resource.svg) center no-repeat;
@@ -11623,7 +11724,7 @@ h2 {
   border: 2px solid transparent;
   border-radius: 15px;
   font-weight: 400;
-  padding: 12px 10px 12px 65px;
+  padding: 12px 10px 12px 30px;
   transition: 0.5s;
   display: inline-block;
   width: 100%;
@@ -11631,26 +11732,41 @@ h2 {
   margin-bottom: 20px;
   position: relative;
 }
+@media only screen and (max-width: 640px) {
+  .go-to-resource-wrapper-view-button a {
+    max-width: 100%;
+    width: 100%;
+  }
+}
 .go-to-resource-wrapper-view-button a:before {
   content: "";
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 43px;
+  left: 30px;
   width: 25px;
   height: 25px;
   background: url(../images/plus-zoom.svg) center no-repeat;
   background-size: cover;
+  transition: 0.5s;
 }
 .go-to-resource-wrapper-view-button a:hover {
   box-shadow: 0px 0px 10px #d7d7d7;
   border-color: #26a7df;
   color: #26A7DF;
 }
+.go-to-resource-wrapper-view-button a:hover:before {
+  background: url(../images/blue-plus-zoom.svg) center no-repeat;
+  background-size: cover;
+}
+.go-to-resource-wrapper-view-button a.bg-light:focus, .go-to-resource-wrapper-view-button a.bg-light:hover {
+  background-color: #fff !important;
+}
 
 @media only screen and (min-width: 1201px) {
   .download-worksheets-container--wrapper {
     padding-left: 40px;
+    width: 100%;
   }
 }
 .lesson_wrapper .main-section {
@@ -11845,6 +11961,15 @@ h2 {
     right: -14px;
   }
 }
+@media only screen and (max-width: 767px) {
+  .related_news_slider .slick-arrow {
+    display: none !important;
+  }
+  .related_news_slider .related_news_wrapper--item-single {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .related_news_slider .slick-dots {
   bottom: -40px;
 }
@@ -11853,6 +11978,9 @@ h2 {
 }
 .related_news_slider .slick-dots li button:before {
   font-size: 12px;
+}
+.related_news_slider .related_news_wrapper_desc {
+  min-height: 100px;
 }
 
 .search_wrapper {
