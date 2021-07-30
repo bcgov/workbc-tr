@@ -62,6 +62,7 @@ permissions:
   - 'edit terms in region'
   - 'edit terms in search_data_library'
   - 'edit terms in tags'
+  - 'entity print access bundle resource'
   - 'notify of path changes'
   - 'post comments'
   - 'search content'
