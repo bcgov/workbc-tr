@@ -262,7 +262,7 @@
                   <a href="#">{{ "Proceed to "|t }} {{ node.field_add_resource_description[next_key].entity.field_main_heading.value }}</a>
                 </div>
                 {% endif %}
-              
+
               </div>
               {% endfor %}
             </div>
@@ -283,13 +283,13 @@
     {% if bytes < kilobyte %}
         {{ bytes ~ ' B' }}
     {% elseif bytes < megabyte %}
-        {{ (bytes / kilobyte)|number_format(2, '.') ~ ' KiB' }}
+        {{ (bytes / kilobyte)|number_format(2, '.') ~ ' KB' }}
     {% elseif bytes < gigabyte %}
-        {{ (bytes / megabyte)|number_format(2, '.') ~ ' MiB' }}
+        {{ (bytes / megabyte)|number_format(2, '.') ~ ' MB' }}
     {% elseif bytes < terabyte %}
-        {{ (bytes / gigabyte)|number_format(2, '.') ~ ' GiB' }}
+        {{ (bytes / gigabyte)|number_format(2, '.') ~ ' GB' }}
     {% else %}
-        {{ (bytes / terabyte)|number_format(2, '.') ~ ' TiB' }}
+        {{ (bytes / terabyte)|number_format(2, '.') ~ ' TB' }}
     {% endif %}
 {% endspaceless %}
 {% endmacro %}
