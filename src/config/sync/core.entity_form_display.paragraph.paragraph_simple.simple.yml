@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.paragraph_simple.field_para_simple_body
     - field.field.paragraph.paragraph_simple.field_para_simple_title
     - field.field.paragraph.paragraph_simple.field_paragraph_image
+    - field.field.paragraph.paragraph_simple.field_show_bulb_icon
     - field.field.paragraph.paragraph_simple.field_show_download_link
     - paragraphs.paragraphs_type.paragraph_simple
   module:
@@ -32,6 +33,13 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_show_bulb_icon:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_show_download_link:
     type: boolean_checkbox
     weight: 2
