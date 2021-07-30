@@ -12,4 +12,5 @@ permissions:
   - 'access content'
   - 'entity print access bundle resource'
   - 'search content'
+  - 'subscribe to newsletters'
   - 'view media'
