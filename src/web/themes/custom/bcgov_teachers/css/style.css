@@ -11607,7 +11607,7 @@ h2 {
 .download-worksheets-files-wrapper__inner ul.file-list li .file-title:before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -9px;
   left: -8px;
   width: 48px;
   height: 48px;
@@ -12056,6 +12056,10 @@ h2 {
 }
 .related_news_slider .related_news_wrapper_desc {
   min-height: 100px;
+}
+
+.stwrapper.stwrapper4x, #stwrapper, #stOverlay {
+  display: none !important;
 }
 
 .search_wrapper {

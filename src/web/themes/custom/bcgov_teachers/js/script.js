@@ -5,13 +5,14 @@
         // Insert theme js specific lines here.
       }
 
+
       $.fn.renameTag = function (replaceWithTag) {
         this.each(function () { 
             var outerHtml = this.outerHTML; 
             var tagName = $(this).prop("tagName"); 
             var regexStart = new RegExp("^<" + tagName, "i"); 
             var regexEnd = new RegExp("</" + tagName + ">$", "i");     
-            outerHtml = outerHtml.replace(regexStart, "<" + replaceWithTag)     
+            outerHtml = outerHtml.replace(regexStart, "<" + replaceWithTag);     
             outerHtml = outerHtml.replace(regexEnd, "</" + replaceWithTag + ">"); 
             
             $(this).replaceWith(outerHtml); 
@@ -20,12 +21,13 @@
        return this; 
 
       }
-      $('.sharethis-wrapper .st_email_large').renameTag('a'); 
 
-      $(document).ajaxSuccess(function () { 
-       $('.sharethis-wrapper .st_email_large').renameTag('a'); 
-       $('.sharethis-wrapper .st_email_large').attr("href", "maito:?subject=" + window.location.href); 
-      });
+      var resource_title = jQuery('.resource_wrapper__intro__title').text().trim();
+      var lesson_title = jQuery('.lesson_wrapper__intro__title').text().trim();
+      // mailto:?subject=resource_wrapper__intro__title&body=url
+      $('.sharethis-wrapper .st_email_large').renameTag('a'); 
+      $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject=" + lesson_title+resource_title+ "&body=" + window.location.href);
+
 
       //close download popup js
       if($('.close-popup').length){
