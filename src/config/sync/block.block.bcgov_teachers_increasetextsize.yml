@@ -2,12 +2,16 @@ uuid: 2c276e18-f600-4cc2-878d-50f7f7f1d30a
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'block_content:basic:204ba063-f181-4284-bb0f-6c715e371ad3'
+  module:
+    - block_content
   theme:
     - bcgov_teachers
 id: bcgov_teachers_increasetextsize
 theme: bcgov_teachers
 region: footer_left
-weight: -11
+weight: -9
 provider: null
 plugin: 'block_content:204ba063-f181-4284-bb0f-6c715e371ad3'
 settings:

@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.paragraph_simple.field_para_simple_body
     - field.field.paragraph.paragraph_simple.field_para_simple_title
     - field.field.paragraph.paragraph_simple.field_paragraph_image
+    - field.field.paragraph.paragraph_simple.field_show_bulb_icon
     - field.field.paragraph.paragraph_simple.field_show_download_link
     - paragraphs.paragraphs_type.paragraph_simple
   module:
@@ -42,4 +43,5 @@ hidden:
   admin_title: true
   created: true
   field_paragraph_image: true
+  field_show_bulb_icon: true
   status: true

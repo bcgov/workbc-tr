@@ -239,6 +239,9 @@
                       {% if lsubentity.entity.field_para_simple_title.value is not empty %}
                         <div class="lesson_wrapper_main_para_item__title">
                           {{ lsubentity.entity.field_para_simple_title.value }}
+                          {% if lsubentity.entity.field_show_bulb_icon.value == 1 %}
+                            <span class="icon-bulb"></span>
+                          {% endif %}
                         </div>
                       {% endif %}
                       {% if lsubentity.entity.field_para_simple_body.getValue().0.value is not empty %}

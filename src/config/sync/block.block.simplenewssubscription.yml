@@ -1,0 +1,24 @@
+uuid: 3d96e598-da83-4e30-9b99-19a7ce38b0eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - simplenews
+  theme:
+    - bcgov_teachers
+id: simplenewssubscription
+theme: bcgov_teachers
+region: footer_right
+weight: 0
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Simplenews subscription'
+  provider: simplenews
+  label_display: '0'
+  newsletters:
+    default: default
+  message: ''
+  unique_id: simple-new-teachers
+visibility: {  }

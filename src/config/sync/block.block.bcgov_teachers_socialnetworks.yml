@@ -2,12 +2,16 @@ uuid: 13e70346-4d87-4855-ae80-ddb7c2b589de
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'block_content:basic:ba586341-6a91-4f23-ac5f-22d48f8c10c5'
+  module:
+    - block_content
   theme:
     - bcgov_teachers
 id: bcgov_teachers_socialnetworks
 theme: bcgov_teachers
 region: footer_left
-weight: -10
+weight: -11
 provider: null
 plugin: 'block_content:ba586341-6a91-4f23-ac5f-22d48f8c10c5'
 settings:

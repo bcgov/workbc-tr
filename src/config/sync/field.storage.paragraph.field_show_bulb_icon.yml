@@ -1,0 +1,18 @@
+uuid: 12010a98-0db8-4e09-9ae7-47913b775e7e
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_show_bulb_icon
+field_name: field_show_bulb_icon
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -10,10 +10,8 @@ use Drupal\Core\Form\FormStateInterface;
  *
  */
 function workbc_tr_build_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if ($form_id == 'anonymous_subscriptions_subscribe_form') {
-    $form['description']['#markup'] = '<div class="subscribe-wrapper"><h2 class="main-title">' . t("Sign up for Updates") . '</h2><p>' . t("Subscribe to our mailing list to get updates to your mailbox.") . '<p></div>';
-    $form['email']['#attributes']['placeholder'] = t('Enter your email address');
-    $form['email']['#title_display'] = 'invisible';
-    $form['submit']['#value'] = t('Sign Up');
+  if ($form_id == 'simplenews_subscriptions_block_simple-new-teachers') {
+    $form['mail']['#markup'] = '<div class="subscribe-wrapper"><h2 class="main-title">' . t("Sign up for Updates") . '</h2><p>' . t("Subscribe to our mailing list to get updates to your mailbox.") . '<p></div>';
+    $form['actions']['subscribe']['#value'] = t('Sign Up');
   }
 }
