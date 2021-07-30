@@ -207,6 +207,19 @@
           jQuery('.search-solr-box--wrapper .card-header').removeClass('open');
         }
       });
+
+
+      jQuery('.filterbox__title.hide_title').hide();
+      jQuery('.filterbox__title.show_title').on('click',function(){
+          jQuery(this).closest('.filterbox').addClass('open');
+          jQuery(this).hide();
+          jQuery('.filterbox__title.hide_title').show();
+      });
+      jQuery('.filterbox__title.hide_title').on('click',function(){
+        jQuery(this).closest('.filterbox').removeClass('open');
+        jQuery(this).hide();
+        jQuery('.filterbox__title.show_title').show();
+    });
       //filter open close js end 
     }
   }

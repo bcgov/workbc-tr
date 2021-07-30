@@ -14,11 +14,27 @@
 }
 .search-solr-box__inner{
     background: #f2f2f2;
-    padding:50px 15px 60px 15px;
+    padding:50px 15px 50px 15px;
+    margin-bottom: 30px;
+    @media only screen and (max-width:767px){
+        background: transparent;
+        padding:30px 0 10px 0;
+        margin-bottom: 10px;
+    }
     .search-solr-box{margin-bottom: 30px;
+        @media only screen and (max-width:767px){
+            display: none;
+         }
         label{display: none;}
         .search_keyword{display: flex;
-            .form-item{margin:0;}
+            @media only screen and (max-width:767px){
+               width:100%;
+            }
+            .form-item{margin:0;
+                @media only screen and (max-width:767px){
+                    max-width:100%;
+                 }
+            }
             span{
                 display: inline-block;
                 font-size: 0;
@@ -39,6 +55,9 @@
                 border-radius: 0;
                 height: 50px;
                 font-size: 16px;
+                @media only screen and (max-width:767px){
+                    max-width:100%;
+                 }
                 &:focus{
                     border:0;
                     outline: 0;
@@ -64,6 +83,9 @@
                 font-weight: 700;
                 position: relative;
                 padding-left:40px;
+                @media only screen and (max-width:767px){
+                    display: none;
+                }
                 &:before{
                     content:'';
                     position: absolute;
@@ -92,7 +114,9 @@
                     flex: 0 0 50%;
                     max-width: 100%;
                     width: 50%;
+                    margin-top:5px;
                 }
+               
                 @media only screen and (max-width:767px){
                     flex: 0 0 100%;
                     width: 100%;
@@ -108,6 +132,11 @@
         margin:0;
         border:0;
         position: relative;
+        padding:0 5px;
+        background: transparent;
+        @media only screen and (max-width:767px){
+            padding:0
+        }
         .card-header{
             border:0;
             background:#fff;
@@ -202,7 +231,13 @@
             display: flex;
             align-items: center;
             font-size: 15px;
+            @media only screen and (max-width:767px){
+                width: 100%;
+            }
             .fieldgroup{margin-left:10px;
+                @media only screen and (max-width:767px){
+                    width: 100%;
+                }
                 .card-header{
                     border:2px solid rgba(175, 175, 175, 1);
                     &:after{background-size:12px;}
@@ -214,5 +249,54 @@
     }
 }
 
+.search-solr-box__inner .search-solr-box__filter{
+    .mobfilter{
+        display:none;
+        @media only screen and (max-width:767px){
+            display: block; width:100%;
+            .filterbox__title{display: block; width:100%;
+                background:rgba(35, 121, 164, 1);
+                color:#fff;
+                padding:12px 10px 12px 50px;
+                border-radius: 5px;
+                border:2px solid  rgba(35, 121, 164, 1);
+                border-width: 0;
+                text-align: center;
+                cursor: pointer;
+                &:before{
+                    display: none;
+                }
+                span{position: relative; display: inline-block;
+                    &:before{
+                        content:'';
+                        position: absolute;
+                        top:50%;
+                        transform: translateY(-50%);
+                        left:-45px;
+                        background-size:26px;
+                        width:30px;
+                        height: 30px;
+                        background: url(../images/white-filter.svg) center no-repeat;
+                    }
+                }
+                &:hover{
+                    background: #fff;
+                    border-width: 2px;
+                    color:rgba(35, 121, 164, 1);
+                    span{
+                        &:before{
+                            background: url(../images/blue-filter.svg) center no-repeat;
+                            background-size:26px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and (max-width:767px){
+        .filterbox__selectgroup{display: none;}
+    }
 
+    .filterbox.open .filterbox__selectgroup{display: flex;}
+}
 /*------------------Filter styling end------------------*/
