@@ -12089,6 +12089,8 @@ h2 {
     background: transparent;
     padding: 30px 0 10px 0;
     margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
   }
 }
 .search-solr-box__inner .search-solr-box {
@@ -12232,6 +12234,11 @@ h2 {
   padding: 12px 35px 12px 20px;
   cursor: pointer;
 }
+@media only screen and (max-width: 767px) {
+  .search-solr-box--wrapper .fieldgroup .card-header {
+    padding: 20px 35px 20px 20px;
+  }
+}
 .search-solr-box--wrapper .fieldgroup .card-header:after {
   content: "";
   position: absolute;
@@ -12306,6 +12313,28 @@ h2 {
     justify-content: flex-start;
   }
 }
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup {
+  padding: 0;
+}
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body {
+  padding: 0;
+}
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes .form-item {
+  margin: 0;
+}
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label {
+  padding: 3px 20px;
+  cursor: pointer;
+  margin: 0;
+  width: 100%;
+}
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label:before, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label:after {
+  display: none;
+}
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label:hover {
+  background: #e85333;
+  color: #fff;
+}
 .search-solr-box--wrapper .show-result-wrapper .search-assest {
   display: flex;
   align-items: center;
@@ -12335,6 +12364,11 @@ h2 {
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup .card-body {
   top: 50px;
+}
+@media only screen and (max-width: 767px) {
+  .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup .card-body {
+    top: 67px;
+  }
 }
 
 .search-solr-box__inner .search-solr-box__filter .mobfilter {
@@ -12392,6 +12426,16 @@ h2 {
 }
 .search-solr-box__inner .search-solr-box__filter .filterbox.open .filterbox__selectgroup {
   display: flex;
+}
+@media only screen and (max-width: 767px) {
+  .search-solr-box__inner .search-solr-box__filter .filterbox.open .filterbox__selectgroup {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .search-solr-box__inner .search-solr-box__filter .filterbox.open .filterbox__selectgroup .filterbox__dd {
+    border-bottom: 1px solid #e5e5e5;
+  }
 }
 
 /*------------------Filter styling end------------------*/

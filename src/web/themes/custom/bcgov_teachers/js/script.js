@@ -108,7 +108,7 @@
 
             var lastmainsectionheight = $('.main-section.active .lesson_wrapper_main_para_item:last-child').height();
 
-            if(scrollTop > ($('.main-section.active .lesson_wrapper_main_para_item:last-child .lesson_wrapper_main_para_item__title').offset().top + lastmainsectionheight) - 500){
+            if(scrollTop > ($('.main-section.active .lesson_wrapper_main_para_item:last-child .lesson_wrapper_main_para_item__title').offset().top + lastmainsectionheight) - 800){
               $('.left-nav').addClass('align-end');
             }
             else {
