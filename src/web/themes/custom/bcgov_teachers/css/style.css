@@ -10791,51 +10791,76 @@ h2 {
 }
 
 @media only screen and (max-width: 1000px) {
-  .anonymous-subscriptions-subscribe-form {
+  .anonymous-subscriptions-subscribe-for, .simplenews-subscriptions-block-simple-new-teachers {
     margin-top: 20px;
   }
 }
-.anonymous-subscriptions-subscribe-form .subscribe-wrapper .main-title {
+.anonymous-subscriptions-subscribe-for form, .simplenews-subscriptions-block-simple-new-teachers form {
+  display: flex;
+  align-items: flex-end;
+}
+@media only screen and (max-width: 767px) {
+  .anonymous-subscriptions-subscribe-for form, .simplenews-subscriptions-block-simple-new-teachers form {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .anonymous-subscriptions-subscribe-for form .form-wrapper, .simplenews-subscriptions-block-simple-new-teachers form .form-wrapper {
+    padding-right: 5px;
+  }
+}
+.anonymous-subscriptions-subscribe-for .subscribe-wrapper .main-title, .simplenews-subscriptions-block-simple-new-teachers .subscribe-wrapper .main-title {
   font-weight: 700;
   color: #fff;
   font-size: 16px;
   margin-bottom: 5px;
 }
-.anonymous-subscriptions-subscribe-form .subscribe-wrapper p {
+.anonymous-subscriptions-subscribe-for .subscribe-wrapper p, .simplenews-subscriptions-block-simple-new-teachers .subscribe-wrapper p {
   color: #fff;
   font-weight: normal;
   font-size: 16px;
 }
-.anonymous-subscriptions-subscribe-form .form-item {
+.anonymous-subscriptions-subscribe-for .form-item, .simplenews-subscriptions-block-simple-new-teachers .form-item {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
 }
-.anonymous-subscriptions-subscribe-form input {
+.anonymous-subscriptions-subscribe-for .form-item label, .anonymous-subscriptions-subscribe-for .form-item .description, .simplenews-subscriptions-block-simple-new-teachers .form-item label, .simplenews-subscriptions-block-simple-new-teachers .form-item .description {
+  display: none;
+}
+.anonymous-subscriptions-subscribe-for .form-actions, .simplenews-subscriptions-block-simple-new-teachers .form-actions {
+  display: inline-block;
+  margin: 0;
+}
+@media only screen and (max-width: 767px) {
+  .anonymous-subscriptions-subscribe-for .form-actions, .simplenews-subscriptions-block-simple-new-teachers .form-actions {
+    width: 100%;
+  }
+}
+.anonymous-subscriptions-subscribe-for input, .simplenews-subscriptions-block-simple-new-teachers input {
   border-radius: 0;
   min-height: 50px;
   border: 2px solid #073573;
   max-width: 450px;
 }
 @media only screen and (max-width: 1199px) {
-  .anonymous-subscriptions-subscribe-form input {
+  .anonymous-subscriptions-subscribe-for input, .simplenews-subscriptions-block-simple-new-teachers input {
     max-width: 100%;
-    margin-bottom: 10px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1000px) {
-  .anonymous-subscriptions-subscribe-form input {
+  .anonymous-subscriptions-subscribe-for input, .simplenews-subscriptions-block-simple-new-teachers input {
     max-width: 500px;
     margin-bottom: 0;
   }
 }
 @media only screen and (max-width: 767px) {
-  .anonymous-subscriptions-subscribe-form input {
+  .anonymous-subscriptions-subscribe-for input, .simplenews-subscriptions-block-simple-new-teachers input {
     max-width: 100%;
     margin-bottom: 10px;
   }
 }
-.anonymous-subscriptions-subscribe-form input[type=submit] {
+.anonymous-subscriptions-subscribe-for input[type=submit], .simplenews-subscriptions-block-simple-new-teachers input[type=submit] {
   margin: 0;
   display: inline-block;
   vertical-align: middle;
@@ -10847,12 +10872,12 @@ h2 {
   padding: 10px 25px;
   transition: 0.5s;
 }
-.anonymous-subscriptions-subscribe-form input[type=submit]:hover {
+.anonymous-subscriptions-subscribe-for input[type=submit]:hover, .simplenews-subscriptions-block-simple-new-teachers input[type=submit]:hover {
   background: #fff;
   color: #073573;
 }
 @media only screen and (max-width: 767px) {
-  .anonymous-subscriptions-subscribe-form input[type=submit] {
+  .anonymous-subscriptions-subscribe-for input[type=submit], .simplenews-subscriptions-block-simple-new-teachers input[type=submit] {
     width: 100%;
   }
 }

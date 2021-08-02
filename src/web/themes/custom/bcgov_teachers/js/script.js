@@ -6,6 +6,14 @@
       }
 
 
+      //add placeholder in subscription form
+      if(jQuery('.simplenews-subscriptions-block-simple-new-teachers').length){
+        jQuery('.simplenews-subscriptions-block-simple-new-teachers input').attr('placeholder', 'Enter your email address');
+      }
+      
+
+      //add placeholder in subscription form end
+
       $.fn.renameTag = function (replaceWithTag) {
         this.each(function () { 
             var outerHtml = this.outerHTML; 
