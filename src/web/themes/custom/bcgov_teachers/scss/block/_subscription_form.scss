@@ -16,9 +16,21 @@
   }
 }
 
-.anonymous-subscriptions-subscribe-form{
+.anonymous-subscriptions-subscribe-for, .simplenews-subscriptions-block-simple-new-teachers{
   @media only screen and (max-width:1000px){
     margin-top: 20px;
+  }
+  form{
+    display: flex;
+    align-items: flex-end;
+    @media only screen and (max-width:767px){
+      flex-wrap: wrap;
+    }
+    @media only screen and (min-width:768px){
+      .form-wrapper{
+        padding-right: 5px;
+      }
+    }
   }
   .subscribe-wrapper{
     .main-title{
@@ -37,6 +49,12 @@
     display: inline-block;
     vertical-align: middle;
     margin:0;
+    label, .description{display: none;}
+  }
+  .form-actions{display: inline-block; margin: 0;
+    @media only screen and (max-width:767px) {
+      width: 100%;
+   }
   }
   
  input{
@@ -46,7 +64,7 @@
    max-width: 450px;
   @media only screen and (max-width:1199px){
     max-width: 100%;
-    margin-bottom:10px;
+    //margin-bottom:10px;
   }
   @media only screen and (min-width:768px) and (max-width:1000px){
     max-width: 500px;
