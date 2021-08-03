@@ -11147,6 +11147,11 @@ h2 {
   background: #d7d7d7;
   left: 0;
 }
+.lesson_wrapper_main_para_item__title .icon-bulb, .resource_wrapper_main_para_item__title .icon-bulb {
+  position: absolute;
+  right: -40px;
+  top: 0;
+}
 .lesson_wrapper_main_para_item__body, .resource_wrapper_main_para_item__body {
   display: block;
   width: 100%;
