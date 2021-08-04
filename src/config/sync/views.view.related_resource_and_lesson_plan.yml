@@ -692,7 +692,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Related Resource and Lesson Plan'
+      title: 'Related Lesson Plans & Resource'
       header: {  }
       footer: {  }
       empty: {  }
