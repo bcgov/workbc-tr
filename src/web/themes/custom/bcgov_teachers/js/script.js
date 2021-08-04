@@ -156,16 +156,19 @@
           ]
         });
       }
-      if ($('.resource_wrapper_left__img .resource-media').length > 1) {
-        $('.resource_wrapper_left__img').slick({
-          infinite: false,
-          dots: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          speed: 300,
-          arrow: false,
-        });
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        if ($('.resource_wrapper_left__img .resource-media').length > 1) {
+          $('.resource_wrapper_left__img').slick({
+            infinite: false,
+            dots: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 300,
+            arrow: false,
+          });
+        }
       }
+      
 
       //equal height for related plan box
       function setEqualHeight(arr) {
