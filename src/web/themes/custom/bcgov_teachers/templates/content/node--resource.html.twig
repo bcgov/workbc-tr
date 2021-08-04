@@ -116,15 +116,15 @@
 									<a href="{{ node.field_go_to_resource.0.url }}" target="_blank" >{{ 'Go to Resource'|t }}</a>
 								</div>
 							{% endif %}
-              {% if node.field_go_to_resource.0.url %}
-                <div class="go-to-resource-wrapper-view-button">
-                  {% if node.field_resource_external_link.0.url %}
-                  <a class="bg-light" target="_blank" href="{{ node.field_resource_external_link.0.url }}">
-                    {{ node.field_resource_external_link.title }}
-                  </a>
-                  {% endif %}
-							  </div>
-              {% endif %}
+							{% if node.field_go_to_resource.0.url %}
+								<div class="go-to-resource-wrapper-view-button">
+								{% if node.field_resource_external_link.0.url %}
+								<a class="bg-light" target="_blank" href="{{ node.field_resource_external_link.0.url }}">
+									{{ node.field_resource_external_link.title }}
+								</a>
+								{% endif %}
+											</div>
+							{% endif %}
 							<div class="share-this-resource">
 						    {{ "Share Resource: "|t }}{{ content.sharethis }}
 						  </div>
@@ -154,18 +154,18 @@
 									{% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}
 									<div class="resource_wrapper_main_para_item" id="paragraph-{{ lsubentity.entity.id.value }}">
 										{% if lsubentity.entity.field_para_simple_title.value is not empty %}
-                      <div class="resource_wrapper_main_para_item__title">
-  										  {{ lsubentity.entity.field_para_simple_title.value }}
-                        {% if lsubentity.entity.field_show_bulb_icon.value == 1 %}
-                          <span class="icon-bulb"></span>
-                        {% endif %}
-  										</div>
-                    {% endif %}
-                    {% if lsubentity.entity.field_para_simple_body.getValue().0.value is not empty %}
-  										<div class="resource_wrapper_main_para_item__body">
-  										  {{ lsubentity.entity.field_para_simple_body.getValue().0.value|raw }}
-  										</div>
-                    {% endif %}
+										<div class="resource_wrapper_main_para_item__title">
+											{{ lsubentity.entity.field_para_simple_title.value }}
+											{% if lsubentity.entity.field_show_bulb_icon.value == 1 %}
+												<span class="icon-bulb"><img src="/themes/custom/bcgov_teachers/images/bulb.svg" /></span>
+											{% endif %}
+											</div>
+										{% endif %}
+										{% if lsubentity.entity.field_para_simple_body.getValue().0.value is not empty %}
+															<div class="resource_wrapper_main_para_item__body">
+															{{ lsubentity.entity.field_para_simple_body.getValue().0.value|raw }}
+															</div>
+										{% endif %}
 									</div>
 									{% endfor %}
 									</div>

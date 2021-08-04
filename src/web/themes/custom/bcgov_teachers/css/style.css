@@ -12473,6 +12473,10 @@ h2 {
   padding: 0;
 }
 
+.field--name-field-show-download-link {
+  display: none;
+}
+
 header .region-header {
   background: #fff;
   border-bottom: none;
