@@ -402,9 +402,11 @@
 }
 
 
-.download-worksheets-container{
-  display: flex;
-  justify-content: flex-end;
+.lesson_wrapper_intro{
+  .download-worksheets-container{
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 .download-worksheets-button{
   font-size: 16px;
@@ -530,7 +532,7 @@
     border-radius: 15px;
     padding: 20px;
     width:100%;
-    max-width:460px;
+    max-width:800px;
 
     ul.file-list {
         padding: 0;
@@ -582,7 +584,7 @@
             }
           }
           .file-title{
-            max-width: 200px;
+            max-width: 100%;
             word-break: break-word;
             position: relative;
             padding-left:45px;
@@ -611,12 +613,15 @@
           }
           .file-size{font-size: 16px; padding:0 6px;
             @media only screen and (max-width:480px){
-             padding:0;
-             margin:10px 0;
+             padding:0 0 0 45px;
+             margin:10px 0 0 0;
             }
           }
 
-          .file-url{
+          .file-url{margin-top: 10px; 
+            @media only screen and (max-width:480px){
+              padding:0 0 0 45px;
+             }
             a{
               color:#0178B5; font-size: 16px;
             }
@@ -1003,7 +1008,7 @@
 /*---------------------left nav design end-----------------------*/
 
 
-.related_news_slider{
+.related_news_slider, .resource_wrapper_left__img{
   .slick-prev:before, .slick-next:before{
     content:'';
     width:15px; 
@@ -1038,4 +1043,7 @@
   }
 } 
 
+.resource_wrapper_left__img{
+  img{margin: 0 auto; display: block;} 
+}
 .stwrapper.stwrapper4x, #stwrapper, #stOverlay{display: none !important;}

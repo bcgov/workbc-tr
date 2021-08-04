@@ -11429,7 +11429,7 @@ h2 {
     width: 100%;
   }
 }
-.download-worksheets-container {
+.lesson_wrapper_intro .download-worksheets-container {
   display: flex;
   justify-content: flex-end;
 }
@@ -11571,7 +11571,7 @@ h2 {
   border-radius: 15px;
   padding: 20px;
   width: 100%;
-  max-width: 460px;
+  max-width: 800px;
 }
 .download-worksheets-files-wrapper__inner ul.file-list {
   padding: 0;
@@ -11628,7 +11628,7 @@ h2 {
   white-space: nowrap;
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-title {
-  max-width: 200px;
+  max-width: 100%;
   word-break: break-word;
   position: relative;
   padding-left: 45px;
@@ -11659,8 +11659,16 @@ h2 {
 }
 @media only screen and (max-width: 480px) {
   .download-worksheets-files-wrapper__inner ul.file-list li .file-size {
-    padding: 0;
-    margin: 10px 0;
+    padding: 0 0 0 45px;
+    margin: 10px 0 0 0;
+  }
+}
+.download-worksheets-files-wrapper__inner ul.file-list li .file-url {
+  margin-top: 10px;
+}
+@media only screen and (max-width: 480px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li .file-url {
+    padding: 0 0 0 45px;
   }
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-url a {
@@ -12051,7 +12059,7 @@ h2 {
 }
 
 /*---------------------left nav design end-----------------------*/
-.related_news_slider .slick-prev:before, .related_news_slider .slick-next:before {
+.related_news_slider .slick-prev:before, .related_news_slider .slick-next:before, .resource_wrapper_left__img .slick-prev:before, .resource_wrapper_left__img .slick-next:before {
   content: "";
   width: 15px;
   height: 25px;
@@ -12060,37 +12068,42 @@ h2 {
   display: inline-block;
   top: 0;
 }
-.related_news_slider .slick-next:before {
+.related_news_slider .slick-next:before, .resource_wrapper_left__img .slick-next:before {
   transform: rotate(180deg);
 }
 @media only screen and (max-width: 1200px) {
-  .related_news_slider .slick-prev {
+  .related_news_slider .slick-prev, .resource_wrapper_left__img .slick-prev {
     left: -14px;
   }
-  .related_news_slider .slick-next {
+  .related_news_slider .slick-next, .resource_wrapper_left__img .slick-next {
     right: -14px;
   }
 }
 @media only screen and (max-width: 767px) {
-  .related_news_slider .slick-arrow {
+  .related_news_slider .slick-arrow, .resource_wrapper_left__img .slick-arrow {
     display: none !important;
   }
-  .related_news_slider .related_news_wrapper--item-single {
+  .related_news_slider .related_news_wrapper--item-single, .resource_wrapper_left__img .related_news_wrapper--item-single {
     padding-left: 0;
     padding-right: 0;
   }
 }
-.related_news_slider .slick-dots {
+.related_news_slider .slick-dots, .resource_wrapper_left__img .slick-dots {
   bottom: -40px;
 }
-.related_news_slider .slick-dots li {
+.related_news_slider .slick-dots li, .resource_wrapper_left__img .slick-dots li {
   margin: 0;
 }
-.related_news_slider .slick-dots li button:before {
+.related_news_slider .slick-dots li button:before, .resource_wrapper_left__img .slick-dots li button:before {
   font-size: 12px;
 }
-.related_news_slider .related_news_wrapper_desc {
+.related_news_slider .related_news_wrapper_desc, .resource_wrapper_left__img .related_news_wrapper_desc {
   min-height: 100px;
+}
+
+.resource_wrapper_left__img img {
+  margin: 0 auto;
+  display: block;
 }
 
 .stwrapper.stwrapper4x, #stwrapper, #stOverlay {
@@ -12692,6 +12705,7 @@ footer {
 .footer .nav-item .nav-link {
   margin-right: 0.5rem;
   padding: 0;
+  font-size: 0.9rem;
 }
 .footer .nav-item .nav-link:after {
   content: " ";
@@ -12804,6 +12818,9 @@ footer {
 }
 #block-bcgov-teachers-increasetextsize a.size-bigger {
   font-size: 1.6rem;
+}
+#block-bcgov-teachers-increasetextsize .increase-title {
+  font-size: 0.9rem;
 }
 
 .region-under-footer {

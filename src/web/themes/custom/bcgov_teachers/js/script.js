@@ -32,9 +32,10 @@
 
       var resource_title = jQuery('.resource_wrapper__intro__title').text().trim();
       var lesson_title = jQuery('.lesson_wrapper__intro__title').text().trim();
-      // mailto:?subject=resource_wrapper__intro__title&body=url
+      var site_title = jQuery('a.site-title').text().trim();
+      
       $('.sharethis-wrapper .st_email_large').renameTag('a'); 
-      $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject=" + lesson_title+resource_title+ "&body=" + window.location.href);
+      $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject="+site_title +" " + lesson_title+resource_title + "&body=Check out the" +lesson_title+resource_title+ "for" +site_title+ "Resources here:\n" + window.location.href);
 
 
       //close download popup js
@@ -153,6 +154,16 @@
               }
             }
           ]
+        });
+      }
+      if ($('.resource_wrapper_left__img .resource-media').length > 1) {
+        $('.resource_wrapper_left__img').slick({
+          infinite: false,
+          dots: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          speed: 300,
+          arrow: false,
         });
       }
 

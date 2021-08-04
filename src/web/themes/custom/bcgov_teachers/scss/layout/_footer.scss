@@ -18,6 +18,7 @@ footer {
     .nav-link {
       margin-right: 0.5rem;
       padding: 0;
+      font-size: 0.9rem;
 
       &:after {
         content: " ";
@@ -152,6 +153,9 @@ footer {
     &.size-bigger {
       font-size: 1.6rem;
     }
+  }
+  .increase-title{
+    font-size: 0.9rem;
   }
 }
 
