@@ -119,7 +119,7 @@
 					  <div class="download-worksheets-container--wrapper">
 						  <div class="download-worksheets-container">
 								<a href="#" class="download-worksheets-button">
-								  <p>{{ "Download All Worksheets"|t }}</br>{{ "(PDF & DOC)"|t }}</p>
+								  <p>{{ "Download All Worksheets"|t }}<span>{{ "(PDF & DOC)"|t }}</span></p>
 								</a>
 							</div>
 							<div class="share-this-resource">
@@ -252,7 +252,7 @@
                       {% if lsubentity.entity.field_show_download_link.value is not empty and lsubentity.entity.field_show_download_link.value == 1 %}
                         <div class="download-worksheets-container">
                           <a href="#" class="download-worksheets-button">
-                            <p>{{ "Download All Worksheets"|t }}</br>{{ "(PDF & DOC)"|t }}</p>
+                            <p>{{ "Download All Worksheets"|t }}<span>{{ "(PDF & DOC)"|t }}</span></p>
                           </a>
                         </div>
                       {% endif %}

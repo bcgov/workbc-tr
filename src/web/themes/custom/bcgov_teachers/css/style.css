@@ -10573,6 +10573,13 @@ fieldset.card legend {
   src: url("../fonts/BCSans-BoldItalic.eot?#iefix") format("embedded-opentype"), url(../fonts/BCSans-BoldItalic.woff2) format("woff2"), url(../fonts/BCSans-BoldItalic.woff) format("woff");
   /* Modern Browsers */
 }
+@font-face {
+  font-family: "BCSans-Italic";
+  font-style: italic;
+  src: url("../fonts/BCSans-Italic.eot");
+  src: url("../fonts/BCSans-Italic.eot?#iefix") format("embedded-opentype"), url(../fonts/BCSans-Italic.woff2) format("woff2"), url(../fonts/BCSans-Italic.woff) format("woff");
+  /* Modern Browsers */
+}
 html {
   font-size: 16px;
 }
@@ -11024,12 +11031,14 @@ h2 {
   font-size: 18px;
   font-weight: normal;
   color: rgba(51, 51, 51, 0.7215686275);
-  font-style: italic;
 }
 @media only screen and (max-width: 767px) {
   .lesson_wrapper_intro__life_cycle, .resource_wrapper_intro__life_cycle {
     font-size: 16px;
   }
+}
+.lesson_wrapper_intro__life_cycle .field__item, .resource_wrapper_intro__life_cycle .field__item {
+  font-family: "BCSans-Italic", "BC Sans Italic", sans-serif;
 }
 .lesson_wrapper_intro__life_cycle span, .resource_wrapper_intro__life_cycle span {
   font-weight: 700;
@@ -11459,6 +11468,12 @@ h2 {
   margin: 0;
   text-align: center;
 }
+.download-worksheets-button p span {
+  font-weight: normal;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
 .download-worksheets-button:before {
   content: "";
   position: absolute;
@@ -11571,7 +11586,7 @@ h2 {
   border-radius: 15px;
   padding: 20px;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
 }
 .download-worksheets-files-wrapper__inner ul.file-list {
   padding: 0;
@@ -11626,6 +11641,12 @@ h2 {
   padding: 8px 10px;
   text-decoration: none;
   white-space: nowrap;
+  border: 2px solid #2379A4;
+  transition: 0.5s;
+}
+.download-worksheets-files-wrapper__inner ul.file-list li.download-all .file-url a:hover {
+  background: #fff;
+  color: #2379A4;
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-title {
   max-width: 100%;
@@ -11674,6 +11695,12 @@ h2 {
 .download-worksheets-files-wrapper__inner ul.file-list li .file-url a {
   color: #0178B5;
   font-size: 16px;
+  padding: 6px 10px;
+  border: 2px solid transparent;
+  transition: 0.5s;
+}
+.download-worksheets-files-wrapper__inner ul.file-list li .file-url a:hover {
+  border-color: #2379A4;
 }
 .download-worksheets-files-wrapper__intro--inner {
   display: flex;

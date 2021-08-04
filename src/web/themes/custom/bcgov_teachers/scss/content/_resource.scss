@@ -25,9 +25,12 @@
     }
   }
   &_intro__life_cycle{margin-bottom: 25px;
-    font-family: $font-family-sans-serif-bold; font-size: 18px; font-weight: normal; color:rgba(51, 51, 51, 0.72156862745098); font-style: italic;
+    font-family: $font-family-sans-serif-bold; font-size: 18px; font-weight: normal; color:rgba(51, 51, 51, 0.72156862745098);
     @media only screen and (max-width:767px){
       font-size: 16px;
+    }
+    .field__item{
+      font-family: $font-family-sans-serif-italic;
     }
     span{
      font-weight: 700;
@@ -429,6 +432,12 @@
   p{
     margin: 0;
     text-align:center;
+    span{
+      font-weight: normal;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
   }
   &:before{
     content: '';
@@ -532,7 +541,7 @@
     border-radius: 15px;
     padding: 20px;
     width:100%;
-    max-width:800px;
+    max-width:900px;
 
     ul.file-list {
         padding: 0;
@@ -580,6 +589,12 @@
                 padding: 8px 10px;
                 text-decoration: none;
                 white-space: nowrap;
+                border:2px solid #2379A4;
+                transition: 0.5s;
+                &:hover{
+                  background:#fff;
+                  color:#2379A4;
+                }
               }
             }
           }
@@ -611,7 +626,7 @@
               }
             }
           }
-          .file-size{font-size: 16px; padding:0 6px;
+          .file-size{font-size: 16px; padding:0 6px; 
             @media only screen and (max-width:480px){
              padding:0 0 0 45px;
              margin:10px 0 0 0;
@@ -623,7 +638,14 @@
               padding:0 0 0 45px;
              }
             a{
-              color:#0178B5; font-size: 16px;
+              color:#0178B5; 
+              font-size: 16px;  
+              padding: 6px 10px;  
+              border:2px solid transparent;
+              transition: 0.5s;
+              &:hover{
+                border-color:#2379A4;
+              }
             }
           }
         }
