@@ -5,7 +5,6 @@
         // Insert theme js specific lines here.
       }
 
-
       //add placeholder in subscription form
       if(jQuery('.simplenews-subscriptions-block-simple-new-teachers').length){
         jQuery('.simplenews-subscriptions-block-simple-new-teachers input').attr('placeholder', 'Enter your email address');
@@ -450,3 +449,34 @@
     }
   }
 })(jQuery, Drupal, drupalSettings);
+
+
+function departmentFunction(){
+  jQuery('.dept-appned').remove();
+  jQuery('.filterbox__selectgroup input[type=checkbox]:checked').each(function () {
+    if(this.checked){
+        var selectedValue = jQuery(this).val();
+        var response = jQuery('label[for="' + this.id + '"]').html();
+
+        jQuery(".search_filter__results").append("<div class='dept-appned'><span class='dept-title-section'>" + response + "</span><span class='deptclose' data-removed='"+ this.id +"'>x</span></div>" );
+      }
+    });
+}
+
+
+jQuery(document).ajaxComplete(function(event, xhr, settings) {
+  departmentFunction();
+  
+  jQuery( ".deptclose" ).click(function(event) {
+    event.stopPropagation();
+    var self = this;
+    var ValueRemoved = jQuery(self).attr('data-removed');
+    jQuery('#' + ValueRemoved).click();
+    //setTimeout(function() {
+    jQuery(self).parent().hide();
+  }); 
+});
+
+jQuery("#views-exposed-form-solr-results-page-1").submit(function(e) {
+  departmentFunction();
+});
