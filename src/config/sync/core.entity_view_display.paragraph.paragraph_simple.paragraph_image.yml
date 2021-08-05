@@ -25,13 +25,12 @@ content:
     type: text_default
     region: content
   field_para_simple_title:
+    type: text_default
     weight: 0
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true

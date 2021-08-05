@@ -30,7 +30,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: text_textfield
     region: content
   field_show_download_link:
     weight: 2

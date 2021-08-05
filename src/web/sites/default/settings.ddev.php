@@ -15,7 +15,7 @@ $port = 3306;
 if (empty(getenv('DDEV_PHP_VERSION') && getenv('IS_DDEV_PROJECT') == 'true')) {
   $host = "127.0.0.1";
   $port = -1;
-} 
+}
 
 $databases['default']['default'] = array(
   'database' => "db",
@@ -50,3 +50,8 @@ if (defined('CONFIG_SYNC_DIRECTORY') && empty($config_directories[CONFIG_SYNC_DI
 elseif (empty($settings['config_sync_directory'])) {
   $settings['config_sync_directory'] = 'sites/default/files/sync';
 }
+
+// Disable performance settings.
+$config['system.performance']['cache']['page']['max_age'] = 0;
+$config['system.performance']['css']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess'] = FALSE;

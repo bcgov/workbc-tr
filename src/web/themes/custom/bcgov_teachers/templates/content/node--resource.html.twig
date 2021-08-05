@@ -155,7 +155,7 @@
 									<div class="resource_wrapper_main_para_item" id="paragraph-{{ lsubentity.entity.id.value }}">
 										{% if lsubentity.entity.field_para_simple_title.value is not empty %}
 										<div class="resource_wrapper_main_para_item__title">
-											{{ lsubentity.entity.field_para_simple_title.value }}
+											{{ lsubentity.entity.field_para_simple_title.value|raw }}
 											{% if lsubentity.entity.field_show_bulb_icon.value == 1 %}
 												<span class="icon-bulb"><img src="/themes/custom/bcgov_teachers/images/bulb.svg" /></span>
 											{% endif %}

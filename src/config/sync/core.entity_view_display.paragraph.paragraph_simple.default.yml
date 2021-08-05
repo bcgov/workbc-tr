@@ -26,10 +26,9 @@ content:
   field_para_simple_title:
     weight: 0
     label: hidden
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    type: string
+    type: text_default
     region: content
   field_show_bulb_icon:
     weight: 3
