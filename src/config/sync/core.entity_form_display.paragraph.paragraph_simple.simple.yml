@@ -26,13 +26,13 @@ content:
     type: text_textarea
     region: content
   field_para_simple_title:
+    type: text_textfield
     weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_show_bulb_icon:
     type: boolean_checkbox
     weight: 3

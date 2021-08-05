@@ -10998,6 +10998,7 @@ h2 {
   padding-top: 30px;
   padding-bottom: 40px;
   border-bottom: 10px solid #f2c324;
+  background-color: #f2f2f2;
 }
 @media only screen and (max-width: 1200px) {
   .lesson_wrapper_intro [class^=col], .resource_wrapper_intro [class^=col] {

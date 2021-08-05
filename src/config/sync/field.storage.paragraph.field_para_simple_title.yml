@@ -1,18 +1,17 @@
-uuid: ea73c05f-aa88-48e7-960c-8a77904ad4ac
+uuid: 1502a3d7-6b00-4b80-9033-51524e97f0c6
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
+    - text
 id: paragraph.field_para_simple_title
 field_name: field_para_simple_title
 entity_type: paragraph
-type: string
+type: text
 settings:
   max_length: 255
-  is_ascii: false
-  case_sensitive: false
-module: core
+module: text
 locked: false
 cardinality: 1
 translatable: true
