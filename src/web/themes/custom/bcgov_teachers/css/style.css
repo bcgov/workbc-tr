@@ -10779,10 +10779,12 @@ h2 {
 
 .footer .container {
   display: flex;
+  justify-content: space-around;
 }
 @media only screen and (max-width: 1000px) {
   .footer .container {
     flex-wrap: wrap;
+    flex-direction: column-reverse;
   }
 }
 .footer .region {
@@ -10790,8 +10792,17 @@ h2 {
   width: 50%;
   max-width: 100%;
 }
+.footer .region.region-footer-right {
+  flex: 0 0 40%;
+  width: 40%;
+}
 @media only screen and (max-width: 1000px) {
   .footer .region {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  .footer .region.region-footer-right {
+    margin-bottom: 30px;
     flex: 0 0 100%;
     width: 100%;
   }
@@ -10814,6 +10825,11 @@ h2 {
 @media only screen and (min-width: 768px) {
   .anonymous-subscriptions-subscribe-for form .form-wrapper, .simplenews-subscriptions-block-simple-new-teachers form .form-wrapper {
     padding-right: 5px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .anonymous-subscriptions-subscribe-for .subscribe-wrapper, .simplenews-subscriptions-block-simple-new-teachers .subscribe-wrapper {
+    text-align: center;
   }
 }
 .anonymous-subscriptions-subscribe-for .subscribe-wrapper .main-title, .simplenews-subscriptions-block-simple-new-teachers .subscribe-wrapper .main-title {
