@@ -243,6 +243,10 @@
         jQuery('.filterbox__title.show_title').show();
     });
       //filter open close js end 
+
+      //show resut position replacement
+      var result = jQuery('#block-bcgov-teachers-content .view-header').text();
+      jQuery('.show-result-wrapper .container .view-header').text(result);
     }
   }
 

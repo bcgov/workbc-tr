@@ -1125,7 +1125,17 @@ display:
             label: Relevance
           plugin_id: search_api
       title: 'Search Results'
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          content: 'Showing @total results'
+          plugin_id: result
       footer: {  }
       empty: {  }
       relationships: {  }

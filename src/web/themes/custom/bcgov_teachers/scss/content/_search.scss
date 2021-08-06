@@ -225,10 +225,15 @@
     .show-result-wrapper{
         .container{
             display: flex;
-            justify-content: flex-end;
-            @media only screen and (max-width:768px){
-                flex-direction: column;
-                justify-content: flex-start;
+            justify-content: space-between;
+            align-items: center;
+            .view-header{
+                font-size: 16px;
+                margin-top:40px;
+            }
+            @media only screen and (max-width:767px){
+                align-items: flex-start;
+                flex-direction: column-reverse;
             }
             .fieldgroup{padding: 0;
                 .card-body{padding:0;
@@ -387,4 +392,5 @@
         }
     }
 }
+#block-bcgov-teachers-content .view-header{display: none;}
 /*------------------Filter styling end------------------*/
