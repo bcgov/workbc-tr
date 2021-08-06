@@ -164,16 +164,21 @@ footer {
   padding: 30px 0;
   align-items: center;
   justify-content: space-between;
-
-  @media (max-width: 768px) {
-    display: block;
+  @media only screen and (max-width:1000px){
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
   }
+
+  // @media (max-width: 768px) {
+  //   display: block;
+  // }
 
   #block-bcgov-teachers-copyright {
     order: 1;
 
     @media (max-width: 768px) {
       text-align: center;
+      width: 320px;
     }
 
     p {

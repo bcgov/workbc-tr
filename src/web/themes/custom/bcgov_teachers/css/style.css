@@ -12873,9 +12873,10 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
-@media (max-width: 768px) {
+@media only screen and (max-width: 1000px) {
   .region-under-footer {
-    display: block;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
   }
 }
 .region-under-footer #block-bcgov-teachers-copyright {
@@ -12884,6 +12885,7 @@ footer {
 @media (max-width: 768px) {
   .region-under-footer #block-bcgov-teachers-copyright {
     text-align: center;
+    width: 320px;
   }
 }
 .region-under-footer #block-bcgov-teachers-copyright p {
