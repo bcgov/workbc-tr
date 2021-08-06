@@ -10788,8 +10788,8 @@ h2 {
   }
 }
 .footer .region {
-  flex: 0 0 50%;
-  width: 50%;
+  flex: 0 0 60%;
+  width: 60%;
   max-width: 100%;
 }
 .footer .region.region-footer-right {
