@@ -12428,12 +12428,17 @@ h2 {
 }
 .search-solr-box--wrapper .show-result-wrapper .container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
 }
-@media only screen and (max-width: 768px) {
+.search-solr-box--wrapper .show-result-wrapper .container .view-header {
+  font-size: 16px;
+  margin-top: 40px;
+}
+@media only screen and (max-width: 767px) {
   .search-solr-box--wrapper .show-result-wrapper .container {
-    flex-direction: column;
-    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column-reverse;
   }
 }
 .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup {
@@ -12617,6 +12622,10 @@ h2 {
   .search-solr-box__inner .search-solr-box__filter .filterbox.open .filterbox__selectgroup .filterbox__dd {
     border-bottom: 1px solid #e5e5e5;
   }
+}
+
+#block-bcgov-teachers-content .view-header {
+  display: none;
 }
 
 /*------------------Filter styling end------------------*/
