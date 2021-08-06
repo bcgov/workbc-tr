@@ -29,12 +29,12 @@
 
       }
 
-      var resource_title = jQuery('.resource_wrapper__intro__title').text().trim();
-      var lesson_title = jQuery('.lesson_wrapper__intro__title').text().trim();
+      var resource_title = jQuery('.resource_wrapper__intro__title').text().trim().replace(':', '');
+      var lesson_title = jQuery('.lesson_wrapper__intro__title').text().trim().replace(':', '');
       var site_title = jQuery('a.site-title').text().trim();
       
       $('.sharethis-wrapper .st_email_large').renameTag('a'); 
-      $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject="+site_title +" " + lesson_title+resource_title + "&body=Check out the" +lesson_title+resource_title+ "for" +site_title+ "Resources here:\n" + window.location.href);
+      $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject="+site_title +" - " + lesson_title+resource_title + "&body=Check out the " +lesson_title+resource_title+ " from " +site_title+ " here:<br><a href='" + window.location.href +"'>"+ window.location.href+"</a>");
 
 
       //close download popup js

@@ -1,17 +1,28 @@
 .footer{
   .container{
     display: flex;
+    justify-content: space-around;
     @media only screen and (max-width:1000px){
       flex-wrap: wrap;
+      flex-direction: column-reverse;
     }
   }
   .region{
     flex: 0 0 50%;
     width:50%;
     max-width:100%;
+    &.region-footer-right{
+      flex: 0 0 40%;
+      width:40%;
+    }
     @media only screen and (max-width:1000px){
       flex: 0 0 100%;
       width: 100%;
+      &.region-footer-right{
+        margin-bottom: 30px;
+        flex: 0 0 100%;
+        width:100%;
+      }
     }
   }
 }
@@ -33,6 +44,9 @@
     }
   }
   .subscribe-wrapper{
+    @media only screen and (max-width:767px){
+      text-align: center;
+    }
     .main-title{
       font-weight: 700;
       color:#fff;
