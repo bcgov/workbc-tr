@@ -271,6 +271,62 @@
     }
 }
 
+.search_filter__results{
+    margin:20px 0;
+    .container{
+        display: flex;
+        align-items: center;
+    }
+    .search_filter__results-inner{
+        display: flex;
+        margin-left: -10px;
+        margin-right: -10px;
+        flex-wrap: wrap;
+        
+    }
+    .clear-all{margin-left:20px;
+        a{font-size: 15px;
+            &:hover{text-decoration: underline;}
+        }
+    }
+    .dept-appned{
+        display: flex;
+        align-items: center;
+        border: 2px solid rgba(35, 121, 164, 1);
+        border-radius: 18px;
+        padding:5px 12px 5px 12px;
+        color:rgba(35, 121, 164, 1);
+        cursor: pointer;
+        transition: 0.5s;
+        margin: 5px 10px;
+        .dept-title-section{
+            font-family: 'ArialMT', 'Arial', sans-serif;
+            font-size: 15px;
+            white-space: nowrap;
+        }
+        
+        .deptclose{
+            font-size: 0;
+            background: url(../images/close-filter.svg) center no-repeat;
+            background-size: 11px;
+            width:11px;
+            height: 11px;
+            margin-left:15px;
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        &:hover{
+            background: rgba(35, 121, 164, 1);
+            color:#fff;
+            .deptclose{
+                background: url(../images/white-close-filter.svg) center no-repeat;
+                background-size: 11px;
+            }
+        }
+    }
+}
+
 .search-solr-box__inner .search-solr-box__filter{
     .mobfilter{
         display:none;

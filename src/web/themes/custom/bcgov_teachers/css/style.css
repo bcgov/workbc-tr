@@ -10788,8 +10788,8 @@ h2 {
   }
 }
 .footer .region {
-  flex: 0 0 50%;
-  width: 50%;
+  flex: 0 0 60%;
+  width: 60%;
   max-width: 100%;
 }
 .footer .region.region-footer-right {
@@ -11614,22 +11614,45 @@ h2 {
   display: flex;
   justify-content: space-between;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 767px) {
   .download-worksheets-files-wrapper__inner ul.file-list li {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 }
 .download-worksheets-files-wrapper__inner ul.file-list li + li {
   margin-top: 20px;
 }
+@media only screen and (max-width: 767px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li:first-child .file-url {
+    padding-left: 35px;
+  }
+}
 .download-worksheets-files-wrapper__inner ul.file-list li.download-all {
   padding: 33px 15px;
   background: #e2e2e2;
+}
+@media only screen and (max-width: 767px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li.download-all {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li.download-all {
+    justify-content: flex-start;
+  }
 }
 .download-worksheets-files-wrapper__inner ul.file-list li.download-all .file-title-all {
   padding-left: 48px;
   position: relative;
   font-size: 16px;
+}
+@media only screen and (max-width: 480px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li.download-all .file-title-all {
+    flex: 0 0 100%;
+    width: 100%;
+  }
 }
 .download-worksheets-files-wrapper__inner ul.file-list li.download-all .file-title-all:before {
   content: "";
@@ -11645,10 +11668,21 @@ h2 {
   font-size: 16px;
   padding: 0 5px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 767px) {
   .download-worksheets-files-wrapper__inner ul.file-list li.download-all .size-all {
     padding: 0;
     margin: 20px 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li.download-all .size-all {
+    padding-left: 50px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li.download-all .file-url {
+    padding-left: 20px;
+    margin: 0;
   }
 }
 .download-worksheets-files-wrapper__inner ul.file-list li.download-all .file-url a {
@@ -11666,15 +11700,17 @@ h2 {
   color: #2379A4;
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-title {
-  max-width: 100%;
+  max-width: 500px;
+  min-width: 400px;
   word-break: break-word;
   position: relative;
   padding-left: 45px;
   font-size: 16px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 767px) {
   .download-worksheets-files-wrapper__inner ul.file-list li .file-title {
     max-width: 100%;
+    flex: 0 0 100%;
   }
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-title:before {
@@ -11694,19 +11730,19 @@ h2 {
 .download-worksheets-files-wrapper__inner ul.file-list li .file-size {
   font-size: 16px;
   padding: 0 6px;
+  white-space: nowrap;
+  min-width: 120px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 767px) {
   .download-worksheets-files-wrapper__inner ul.file-list li .file-size {
     padding: 0 0 0 45px;
-    margin: 10px 0 0 0;
+    margin: 13px 0 0 0;
   }
 }
-.download-worksheets-files-wrapper__inner ul.file-list li .file-url {
-  margin-top: 10px;
-}
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 767px) {
   .download-worksheets-files-wrapper__inner ul.file-list li .file-url {
-    padding: 0 0 0 45px;
+    padding: 0 0 0 20px;
+    margin-top: 10px;
   }
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-url a {
@@ -12458,6 +12494,64 @@ h2 {
   }
 }
 
+.search_filter__results {
+  margin: 20px 0;
+}
+.search_filter__results .container {
+  display: flex;
+  align-items: center;
+}
+.search_filter__results .search_filter__results-inner {
+  display: flex;
+  margin-left: -10px;
+  margin-right: -10px;
+  flex-wrap: wrap;
+}
+.search_filter__results .clear-all {
+  margin-left: 20px;
+}
+.search_filter__results .clear-all a {
+  font-size: 15px;
+}
+.search_filter__results .clear-all a:hover {
+  text-decoration: underline;
+}
+.search_filter__results .dept-appned {
+  display: flex;
+  align-items: center;
+  border: 2px solid #2379a4;
+  border-radius: 18px;
+  padding: 5px 12px 5px 12px;
+  color: #2379a4;
+  cursor: pointer;
+  transition: 0.5s;
+  margin: 5px 10px;
+}
+.search_filter__results .dept-appned .dept-title-section {
+  font-family: "ArialMT", "Arial", sans-serif;
+  font-size: 15px;
+  white-space: nowrap;
+}
+.search_filter__results .dept-appned .deptclose {
+  font-size: 0;
+  background: url(../images/close-filter.svg) center no-repeat;
+  background-size: 11px;
+  width: 11px;
+  height: 11px;
+  margin-left: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.search_filter__results .dept-appned:hover {
+  background: #2379a4;
+  color: #fff;
+}
+.search_filter__results .dept-appned:hover .deptclose {
+  background: url(../images/white-close-filter.svg) center no-repeat;
+  background-size: 11px;
+}
+
 .search-solr-box__inner .search-solr-box__filter .mobfilter {
   display: none;
 }
@@ -12739,6 +12833,11 @@ footer {
 .footer {
   padding: 60px 0;
   background: #2379A4;
+}
+@media only screen and (max-width: 767px) {
+  .footer {
+    padding: 0 0 20px;
+  }
 }
 .footer .region-footer {
   padding: 0;

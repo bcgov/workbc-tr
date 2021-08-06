@@ -5,7 +5,6 @@
         // Insert theme js specific lines here.
       }
 
-
       //add placeholder in subscription form
       if(jQuery('.simplenews-subscriptions-block-simple-new-teachers').length){
         jQuery('.simplenews-subscriptions-block-simple-new-teachers input').attr('placeholder', 'Enter your email address');
@@ -36,6 +35,7 @@
       
       $('.sharethis-wrapper .st_email_large').renameTag('a'); 
       $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject="+site_title +" - " + lesson_title+resource_title + "&body=Check out the " +lesson_title+resource_title+ " from " +site_title+ " here:<br><a href='" + window.location.href +"'>"+ window.location.href+"</a>");
+      //$('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject="+site_title +" - " + lesson_title+resource_title + "&body=Check out the " +lesson_title+resource_title+ " from " +site_title+ " here:%3Cbr%3E%3Ca href='" + window.location.href +"'%3E"+ window.location.href+"%3C/a%3E");
 
 
       //close download popup js
@@ -450,3 +450,53 @@
     }
   }
 })(jQuery, Drupal, drupalSettings);
+
+
+function departmentFunction(){
+  jQuery('.search_filter__results').show();
+  jQuery('.dept-appned').remove();
+  jQuery('.filterbox__selectgroup input[type=checkbox]:checked').each(function () {
+    if(this.checked){
+        var selectedValue = jQuery(this).val();
+        var response = jQuery('label[for="' + this.id + '"]').html();
+
+        jQuery(".search_filter__results .search_filter__results-inner").append("<div class='dept-appned'><span class='dept-title-section'>" + response + "</span><span class='deptclose' data-removed='"+ this.id +"'>x</span></div>" );
+      }
+    });
+}
+
+//departmentFunction();
+  if(jQuery('.dept-appned').length > 0){
+    jQuery( ".clear-all" ).show();
+  }
+  else{
+    jQuery( ".clear-all" ).hide();
+  }
+jQuery(document).ajaxComplete(function(event, xhr, settings) {
+  departmentFunction();
+  
+  jQuery( ".deptclose" ).click(function(event) {
+    event.stopPropagation();
+    var self = this;
+    var ValueRemoved = jQuery(self).attr('data-removed');
+    jQuery('#' + ValueRemoved).click();
+    //setTimeout(function() {
+    jQuery(self).parent().hide();
+  }); 
+
+  if(jQuery('.dept-appned').length > 0){
+    jQuery( ".clear-all" ).show();
+  }
+  else{
+    jQuery( ".clear-all" ).hide();
+  }
+  jQuery( ".clear-all" ).on('click', function(event) {
+    jQuery('.filterbox__selectgroup input[type=checkbox]:checked').click();
+    jQuery('.search_filter__results').hide();
+  }); 
+
+});
+
+jQuery("#views-exposed-form-solr-results-page-1").submit(function(e) {
+  departmentFunction();
+});

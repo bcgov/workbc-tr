@@ -16,7 +16,7 @@
   #}
 {{ q }}
 {% endif %}
-
+{{ attach_library('bcgov_teachers/filters') }}
 <div class="search-solr-box--wrapper">
   <div class="search-solr-box__inner">
     <div class="container">
@@ -57,6 +57,7 @@
           </div>
         </div>
       </div>
+     
     </div>
   </div>
 
@@ -67,6 +68,13 @@
       </div>
     </div>
   </div>
+   <div class="search_filter__results">
+      <div class="container">
+        <div class="search_filter__results-inner">
+        </div>
+        <div class="clear-all"><a href="javascript:void(0)">Clear all</a></div>
+      </div>
+   </div>
 </div>
    
 
