@@ -551,20 +551,37 @@
         li{
           display: flex;
           justify-content: space-between;
-          @media only screen and (max-width:480px){
-            flex-direction: column;
+          @media only screen and (max-width:767px){
+            flex-wrap: wrap;
+            justify-content: flex-start;
           }
           + li{
             margin-top:20px;
           }
+          @media only screen and (max-width:767px){
+            &:first-child{
+              .file-url{padding-left:35px;}
+            }
+          }
           &.download-all {
             padding: 33px 15px;
             background: rgb(226 226 226);
+            @media only screen and (max-width:767px){
+              justify-content: space-between;
+              align-items: center;
+            }
+            @media only screen and (max-width:767px){
+              justify-content: flex-start
+            }
 
             .file-title-all{
               padding-left:48px;
               position: relative;
               font-size: 16px;
+              @media only screen and (max-width:480px){
+               flex: 0 0 100%;
+               width:100%;
+              }
               &:before{
                 content:'';
                 position: absolute;
@@ -577,12 +594,19 @@
               }
             }
             .size-all{font-size: 16px; padding:0 5px;
-              @media only screen and (max-width:480px){
+              @media only screen and (max-width:767px){
                 padding:0;
                 margin: 20px 0;
               }
+              @media only screen and (max-width:480px){
+                padding-left:50px;
+              }
             }
             .file-url{
+              @media only screen and (max-width:480px){
+                padding-left:20px;
+                margin:0;
+              }
               a{
                 font-size: 16px;
                 color:#fff;
@@ -600,13 +624,15 @@
             }
           }
           .file-title{
-            max-width: 100%;
+            max-width: 500px;
+            min-width:400px;
             word-break: break-word;
             position: relative;
             padding-left:45px;
             font-size: 16px;
-            @media only screen and (max-width:480px){
+            @media only screen and (max-width:767px){
               max-width:100%;
+              flex:0 0 100%;
             }
             &:before{
               content:'';
@@ -627,16 +653,17 @@
               }
             }
           }
-          .file-size{font-size: 16px; padding:0 6px; 
-            @media only screen and (max-width:480px){
+          .file-size{font-size: 16px; padding:0 6px; white-space: nowrap; min-width: 120px;
+            @media only screen and (max-width:767px){
              padding:0 0 0 45px;
-             margin:10px 0 0 0;
+             margin:13px 0 0 0;
             }
           }
 
-          .file-url{margin-top: 10px; 
-            @media only screen and (max-width:480px){
-              padding:0 0 0 45px;
+          .file-url{
+            @media only screen and (max-width:767px){
+              padding:0 0 0 20px;
+              margin-top: 10px; 
              }
             a{
               color:#0178B5; 

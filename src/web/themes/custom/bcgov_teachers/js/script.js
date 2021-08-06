@@ -35,6 +35,7 @@
       
       $('.sharethis-wrapper .st_email_large').renameTag('a'); 
       $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject="+site_title +" - " + lesson_title+resource_title + "&body=Check out the " +lesson_title+resource_title+ " from " +site_title+ " here:<br><a href='" + window.location.href +"'>"+ window.location.href+"</a>");
+      //$('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject="+site_title +" - " + lesson_title+resource_title + "&body=Check out the " +lesson_title+resource_title+ " from " +site_title+ " here:%3Cbr%3E%3Ca href='" + window.location.href +"'%3E"+ window.location.href+"%3C/a%3E");
 
 
       //close download popup js
