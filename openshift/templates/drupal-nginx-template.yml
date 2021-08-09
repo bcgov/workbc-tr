@@ -110,6 +110,8 @@ objects:
                       ln -s /contents/public /app/web/sites/default/files;
                       ln -s /contents/private /app/private;
                       drush cr;
+                      drush updb -y;
+                      drush cr;
                       drush cim -y;
           - name: nginx
             image: '${IMAGE_REPO}/${IMAGE_NAMESPACE}/${IMAGE_NAME2}'
