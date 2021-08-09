@@ -75,8 +75,8 @@ content:
       title_plural: Paragraphs
       edit_mode: open
       add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
+      form_display_mode: content
+      default_paragraph_type: paragraph_simple
     third_party_settings: {  }
     region: content
   field_content_text_pos:
