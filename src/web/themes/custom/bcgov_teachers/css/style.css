@@ -11617,7 +11617,7 @@ h2 {
 @media only screen and (max-width: 767px) {
   .download-worksheets-files-wrapper__inner ul.file-list li {
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
 }
 .download-worksheets-files-wrapper__inner ul.file-list li + li {
@@ -11638,9 +11638,9 @@ h2 {
     align-items: center;
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 500px) {
   .download-worksheets-files-wrapper__inner ul.file-list li.download-all {
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
 }
 .download-worksheets-files-wrapper__inner ul.file-list li.download-all .file-title-all {
@@ -11648,7 +11648,7 @@ h2 {
   position: relative;
   font-size: 16px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
   .download-worksheets-files-wrapper__inner ul.file-list li.download-all .file-title-all {
     flex: 0 0 100%;
     width: 100%;
@@ -11671,7 +11671,7 @@ h2 {
 @media only screen and (max-width: 767px) {
   .download-worksheets-files-wrapper__inner ul.file-list li.download-all .size-all {
     padding: 0;
-    margin: 20px 0;
+    margin: 14px 0;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -11732,6 +11732,7 @@ h2 {
   padding: 0 6px;
   white-space: nowrap;
   min-width: 120px;
+  text-align: right;
 }
 @media only screen and (max-width: 767px) {
   .download-worksheets-files-wrapper__inner ul.file-list li .file-size {
@@ -11754,6 +11755,27 @@ h2 {
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-url a:hover {
   border-color: #2379A4;
+}
+.download-worksheets-files-wrapper__inner ul.file-list .size-url-wrap {
+  display: flex;
+}
+.download-worksheets-files-wrapper__inner ul.file-list .size-url-wrap .file-url {
+  margin-left: 50px;
+}
+.download-worksheets-files-wrapper__inner ul.file-list .download-all {
+  justify-content: space-between;
+}
+.download-worksheets-files-wrapper__inner ul.file-list .download-all .size-url-wrap {
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 767px) {
+  .download-worksheets-files-wrapper__inner ul.file-list .download-all .size-url-wrap {
+    margin-top: 8px;
+  }
+}
+.download-worksheets-files-wrapper__inner ul.file-list .download-all .size-url-wrap .file-url {
+  margin-left: 13px;
 }
 .download-worksheets-files-wrapper__intro--inner {
   display: flex;
