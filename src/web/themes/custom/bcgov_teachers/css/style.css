@@ -10913,7 +10913,7 @@ h2 {
   padding: 0;
   background-position: top center;
   background-size: cover;
-  border-bottom: 4px solid #073573;
+  border-bottom: 4px solid #e5e5e5;
 }
 @media (min-width: 768px) {
   .banner-content {
@@ -10944,6 +10944,8 @@ h2 {
   .banner-content .container {
     max-width: none;
     background: #073573;
+    justify-content: flex-start;
+    text-align: left;
   }
 }
 @media (min-width: 768px) {
@@ -10962,27 +10964,19 @@ h2 {
 }
 @media (min-width: 768px) {
   .banner-content .banner-text {
-    width: 50%;
     padding: 0;
   }
 }
 .banner-content .banner-text h1 {
-  font-size: 2.3rem;
-  line-height: 2.3rem;
+  font-size: 32px;
+  line-height: normal;
   font-weight: 400;
   margin: 0;
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
 }
 @media (min-width: 768px) {
   .banner-content .banner-text h1 {
-    font-size: 2rem;
-    line-height: 2rem;
-    font-weight: 600;
-  }
-}
-@media (min-width: 1195px) {
-  .banner-content .banner-text h1 {
-    font-size: 2.4rem;
-    line-height: 2.4rem;
+    font-size: 55px;
   }
 }
 .banner-content .banner-text h1 + * {
