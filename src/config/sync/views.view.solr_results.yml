@@ -1157,6 +1157,29 @@ display:
         - 'config:field.storage.node.field_term_resource_grade'
         - 'config:field.storage.node.field_term_resource_stage'
         - 'config:search_api.index.career_education_resources_index'
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: Block
+    position: 1
+    display_options:
+      display_extenders: {  }
+      exposed_block: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+      tags:
+        - 'config:field.storage.node.field_term_resource_asset_type'
+        - 'config:field.storage.node.field_term_resource_competency'
+        - 'config:field.storage.node.field_term_resource_grade'
+        - 'config:field.storage.node.field_term_resource_stage'
+        - 'config:search_api.index.career_education_resources_index'
   page_1:
     display_plugin: page
     id: page_1
@@ -1166,6 +1189,7 @@ display:
       display_extenders: {  }
       path: search
       exposed_block: true
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:

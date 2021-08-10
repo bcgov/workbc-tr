@@ -1,29 +1,29 @@
-uuid: 0449bec6-87c0-4ac6-8979-dd129494e40c
+uuid: ff1ba74f-ed67-43a8-9bb6-f6e4dd88a8ce
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.resources_and_lessons_plans
+    - views.view.solr_results
   module:
     - system
     - views
   theme:
     - bcgov_teachers
-id: views_block__resources_and_lessons_plans_block_1_2
+id: views_block__solr_results_block_1
 theme: bcgov_teachers
 region: content
-weight: -2
+weight: -4
 provider: null
-plugin: 'views_block:resources_and_lessons_plans-block_1'
+plugin: 'views_block:solr_results-block_1'
 settings:
-  id: 'views_block:resources_and_lessons_plans-block_1'
+  id: 'views_block:solr_results-block_1'
   label: ''
   provider: views
-  label_display: visible
+  label_display: '0'
   views_label: ''
   items_per_page: none
 visibility:
   request_path:
     id: request_path
-    pages: '<front>'
+    pages: "/search\r\n/search/*"
     negate: false

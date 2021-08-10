@@ -9,7 +9,7 @@ _core:
 id: bcgov_teachers_local_tasks
 theme: bcgov_teachers
 region: content
-weight: -7
+weight: -10
 provider: null
 plugin: local_tasks_block
 settings:

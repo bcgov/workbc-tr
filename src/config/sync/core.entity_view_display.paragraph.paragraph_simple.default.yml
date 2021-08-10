@@ -30,16 +30,6 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_show_bulb_icon:
-    weight: 3
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
   field_show_download_link:
     weight: 2
     label: above
@@ -55,4 +45,5 @@ hidden:
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_paragraph_image: true
+  field_show_bulb_icon: true
   search_api_excerpt: true

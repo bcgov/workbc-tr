@@ -10655,6 +10655,12 @@ h2 {
   line-height: 1.9rem;
 }
 
+@media (max-width: 767px) {
+  .container, .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
 .block-featured-resources h1 {
   margin-bottom: 60px;
   text-align: center;
@@ -10843,6 +10849,13 @@ h2 {
   font-weight: normal;
   font-size: 16px;
 }
+@media only screen and (max-width: 767px) {
+  .anonymous-subscriptions-subscribe-for .subscribe-wrapper p, .simplenews-subscriptions-block-simple-new-teachers .subscribe-wrapper p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 230px;
+  }
+}
 .anonymous-subscriptions-subscribe-for .form-item, .simplenews-subscriptions-block-simple-new-teachers .form-item {
   display: inline-block;
   vertical-align: middle;
@@ -10913,7 +10926,7 @@ h2 {
   padding: 0;
   background-position: top center;
   background-size: cover;
-  border-bottom: 4px solid #073573;
+  border-bottom: 4px solid #e5e5e5;
 }
 @media (min-width: 768px) {
   .banner-content {
@@ -10944,6 +10957,8 @@ h2 {
   .banner-content .container {
     max-width: none;
     background: #073573;
+    justify-content: flex-start;
+    text-align: left;
   }
 }
 @media (min-width: 768px) {
@@ -10962,27 +10977,19 @@ h2 {
 }
 @media (min-width: 768px) {
   .banner-content .banner-text {
-    width: 50%;
     padding: 0;
   }
 }
 .banner-content .banner-text h1 {
-  font-size: 2.3rem;
-  line-height: 2.3rem;
+  font-size: 32px;
+  line-height: normal;
   font-weight: 400;
   margin: 0;
+  font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
 }
 @media (min-width: 768px) {
   .banner-content .banner-text h1 {
-    font-size: 2rem;
-    line-height: 2rem;
-    font-weight: 600;
-  }
-}
-@media (min-width: 1195px) {
-  .banner-content .banner-text h1 {
-    font-size: 2.4rem;
-    line-height: 2.4rem;
+    font-size: 55px;
   }
 }
 .banner-content .banner-text h1 + * {

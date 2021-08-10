@@ -6,7 +6,7 @@
   padding: 0;
   background-position: top center;
   background-size: cover;
-  border-bottom: 4px solid $teachers-fourth-blue;
+  border-bottom: 4px solid $teachers-gray;
 
   @media (min-width: 768px) {
     align-items: center;
@@ -37,6 +37,8 @@
     @media (max-width: 767px) {
       max-width: none;
       background: $teachers-fourth-blue;
+      justify-content: flex-start;
+      text-align: left;
     }
 
     @media (min-width: 768px) {
@@ -56,25 +58,23 @@
     color: $white;
 
     @media (min-width: 768px) {
-      width: 50%;
       padding: 0;
     }
 
     h1 {
-      font-size: 2.3rem;
-      line-height: 2.3rem;
+      font-size: 32px;
+      line-height: normal;
       font-weight: 400;
       margin: 0;
+      font-family: $font-family-sans-serif;
 
       @media (min-width: 768px) {
-        font-size: 2rem;
-        line-height: 2rem;
-        font-weight: 600;
+        font-size: 55px;
       }
-      @media (min-width: 1195px) {
-        font-size: 2.4rem;
-        line-height: 2.4rem;
-      }
+      // @media (min-width: 1195px) {
+      //   font-size: 2.4rem;
+      //   line-height: 2.4rem;
+      // }
     }
 
     h1 + * {
