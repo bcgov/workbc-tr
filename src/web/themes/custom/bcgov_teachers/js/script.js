@@ -85,7 +85,8 @@
           }
         });
 
-        $('.leftnavbar--title a').on('click', function(){
+        $('.leftnavbar--title a').on('click', function(e){
+          e.preventDefault();
           $('.right-nav .main-section').removeClass('active');
           $('.leftnavbar .leftnavbar--items').removeClass('active');
           $(this).closest('.leftnavbar--items').addClass('active');
@@ -93,38 +94,53 @@
           $('.right-nav '+hrefattr).addClass('active');
         });
 
-        $('.proceed-nex-link').on('click',function(){
+        $('.proceed-nex-link').on('click',function(e){
+          e.preventDefault();
+
           $('.leftnavbar .leftnavbar--items.active').removeClass('active').next('.leftnavbar--items').addClass('active');
           $('.right-nav .main-section.active').removeClass('active').next('.main-section').addClass('active');
-          $('html,body').animate({
-            scrollTop: $('.right-nav').offset().top
-          });
+
+          if (window.matchMedia("(min-width: 768px)").matches) {
+            $('html,body').animate({
+              scrollTop: $('.right-nav').offset().top
+            });
+          }
+          else{
+            $('html,body').animate({
+              scrollTop: $('.left-nav').offset().top
+            });
+          }
+         
+          
+
         });
 
         //scrolling selecion js
-        $(window).scroll(function(){
-          var scrollTop = $(document).scrollTop();
-          var anchors = $('body').find('.main-section.active .lesson_wrapper_main_para_item .lesson_wrapper_main_para_item__title');
+        if (window.matchMedia("(min-width: 768px)").matches) {
+          $(window).scroll(function(){
+            var scrollTop = $(document).scrollTop();
+            var anchors = $('body').find('.main-section.active .lesson_wrapper_main_para_item .lesson_wrapper_main_para_item__title');
 
-          for (var i = 0; i < anchors.length; i++){
-            var mainsectionheight = $(anchors[i]).closest('.lesson_wrapper_main_para_item').height();
+            for (var i = 0; i < anchors.length; i++){
+              var mainsectionheight = $(anchors[i]).closest('.lesson_wrapper_main_para_item').height();
 
-            if (scrollTop > $(anchors[i]).offset().top - 200 && scrollTop < $(anchors[i]).offset().top + mainsectionheight - 200) {
-                $('a[href="#' + $(anchors[i]).closest('.lesson_wrapper_main_para_item').attr('id') + '"]').addClass('active');
-            } else {
-                $('a[href="#' + $(anchors[i]).closest('.lesson_wrapper_main_para_item').attr('id') + '"]').removeClass('active');
+              if (scrollTop > $(anchors[i]).offset().top - 200 && scrollTop < $(anchors[i]).offset().top + mainsectionheight - 200) {
+                  $('a[href="#' + $(anchors[i]).closest('.lesson_wrapper_main_para_item').attr('id') + '"]').addClass('active');
+              } else {
+                  $('a[href="#' + $(anchors[i]).closest('.lesson_wrapper_main_para_item').attr('id') + '"]').removeClass('active');
+              }
+
+              var lastmainsectionheight = $('.main-section.active .lesson_wrapper_main_para_item:last-child').height();
+
+              if(scrollTop > ($('.main-section.active .lesson_wrapper_main_para_item:last-child .lesson_wrapper_main_para_item__title').offset().top + lastmainsectionheight) - 800){
+                $('.left-nav').addClass('align-end');
+              }
+              else {
+                $('.left-nav').removeClass('align-end');
+              }
             }
-
-            var lastmainsectionheight = $('.main-section.active .lesson_wrapper_main_para_item:last-child').height();
-
-            if(scrollTop > ($('.main-section.active .lesson_wrapper_main_para_item:last-child .lesson_wrapper_main_para_item__title').offset().top + lastmainsectionheight) - 800){
-              $('.left-nav').addClass('align-end');
-            }
-            else {
-              $('.left-nav').removeClass('align-end');
-            }
-          }
-        });
+          });
+        }
       }
       //left nav tab js end
 

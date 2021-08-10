@@ -155,11 +155,13 @@
                 <div class="file-title {{ subentity.entity.field_media_document.0.entity.filemime.value|split('.')|last }}">
                   {{ subentity.entity.field_media_document.0.entity.filename.value }}
                 </div>
-                <div class="file-size">
-                  {{ _self.bytesToSize(subentity.entity.field_media_document.0.entity.filesize.value) }}
-                </div>
-                <div class="file-url">
-                  <a href="{{ file_url(subentity.entity.field_media_document.0.entity.uri.value) }}" title="{{ subentity.entity.field_media_document.0.entity.filename.value }}" download target="_blank">Download</a>
+                <div class="size-url-wrap">
+                  <div class="file-size">
+                    {{ _self.bytesToSize(subentity.entity.field_media_document.0.entity.filesize.value) }}
+                  </div>
+                  <div class="file-url">
+                    <a href="{{ file_url(subentity.entity.field_media_document.0.entity.uri.value) }}" title="{{ subentity.entity.field_media_document.0.entity.filename.value }}" download target="_blank">Download</a>
+                  </div>
                 </div>
               </li>
             {% endfor %}
@@ -167,9 +169,11 @@
               <div class="file-title-all">
                 {{ "Download all (ZIP)"|t }}
               </div>
-              <div class="size-all">{{ _self.bytesToSize(total_size) }}</div>
-              <div class="file-url">
-                <a href="/media_download_all/node/{{ node.nid.value }}/field_resource_images" title="Download All">Download All</a>
+              <div class="size-url-wrap">
+                <div class="size-all">{{ _self.bytesToSize(total_size) }}</div>
+                <div class="file-url">
+                  <a href="/media_download_all/node/{{ node.nid.value }}/field_resource_images" title="Download All">Download All</a>
+                </div>
               </div>
             </li>
           </ul>
