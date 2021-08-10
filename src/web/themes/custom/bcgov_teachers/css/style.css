@@ -10655,6 +10655,12 @@ h2 {
   line-height: 1.9rem;
 }
 
+@media (max-width: 767px) {
+  .container, .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
 .block-featured-resources h1 {
   margin-bottom: 60px;
   text-align: center;
@@ -10842,6 +10848,13 @@ h2 {
   color: #fff;
   font-weight: normal;
   font-size: 16px;
+}
+@media only screen and (max-width: 767px) {
+  .anonymous-subscriptions-subscribe-for .subscribe-wrapper p, .simplenews-subscriptions-block-simple-new-teachers .subscribe-wrapper p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 230px;
+  }
 }
 .anonymous-subscriptions-subscribe-for .form-item, .simplenews-subscriptions-block-simple-new-teachers .form-item {
   display: inline-block;
