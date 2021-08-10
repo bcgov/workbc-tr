@@ -553,7 +553,7 @@
           justify-content: space-between;
           @media only screen and (max-width:767px){
             flex-wrap: wrap;
-            justify-content: flex-start;
+            justify-content: flex-end;
           }
           + li{
             margin-top:20px;
@@ -570,15 +570,16 @@
               justify-content: space-between;
               align-items: center;
             }
-            @media only screen and (max-width:767px){
-              justify-content: flex-start
+            @media only screen and (max-width:500px){
+              justify-content: flex-end;
+              
             }
-
+            
             .file-title-all{
               padding-left:48px;
               position: relative;
               font-size: 16px;
-              @media only screen and (max-width:480px){
+              @media only screen and (max-width:500px){
                flex: 0 0 100%;
                width:100%;
               }
@@ -596,7 +597,7 @@
             .size-all{font-size: 16px; padding:0 5px;
               @media only screen and (max-width:767px){
                 padding:0;
-                margin: 20px 0;
+                margin: 14px 0;
               }
               @media only screen and (max-width:480px){
                 padding-left:50px;
@@ -653,7 +654,7 @@
               }
             }
           }
-          .file-size{font-size: 16px; padding:0 6px; white-space: nowrap; min-width: 120px;
+          .file-size{font-size: 16px; padding:0 6px; white-space: nowrap; min-width: 120px; text-align: right;
             @media only screen and (max-width:767px){
              padding:0 0 0 45px;
              margin:13px 0 0 0;
@@ -675,6 +676,22 @@
                 border-color:#2379A4;
               }
             }
+          }
+        }
+        .size-url-wrap{
+          display: flex;
+          .file-url{margin-left:50px;}
+
+        }
+        .download-all{justify-content: space-between;
+          .size-url-wrap{
+            display: flex;
+            align-items: center;
+            @media only screen and (max-width:767px){
+              margin-top:8px;
+            }
+            .file-url{margin-left:13px;}
+  
           }
         }
     }
