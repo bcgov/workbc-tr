@@ -11017,6 +11017,48 @@ h2 {
   margin-bottom: 0;
 }
 
+@media only screen and (max-width: 767px) {
+  .path-frontpage .banner-content .container {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .path-frontpage .banner-content .banner-text {
+    text-align: center;
+  }
+}
+.path-frontpage .banner-content .banner-text h1 {
+  font-family: "BCSans-Bold", "BC Sans Bold", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+  font-size: 42px;
+  font-weight: 700;
+}
+@media only screen and (max-width: 767px) {
+  .path-frontpage .banner-content .banner-text h1 {
+    font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+  }
+}
+.path-frontpage .banner-content .banner-text .field--name-field-content-description {
+  margin-top: 5px;
+}
+.path-frontpage .banner-content .banner-text .field--name-field-content-description p {
+  font-family: "BCSans-Regular", "BC Sans Regular", "BC Sans", sans-serif;
+  font-size: 31px;
+  font-weight: 400;
+  text-align: left;
+}
+@media only screen and (max-width: 767px) {
+  .path-frontpage .banner-content .banner-text .field--name-field-content-description p {
+    font-family: "BCSans-Bold", "BC Sans Bold", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: center;
+  }
+}
+
 .lesson_wrapper_intro, .resource_wrapper_intro {
   padding-top: 30px;
   padding-bottom: 40px;
@@ -11707,17 +11749,23 @@ h2 {
   color: #2379A4;
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-title {
-  max-width: 500px;
+  max-width: 550px;
   min-width: 400px;
   word-break: break-word;
   position: relative;
   padding-left: 45px;
   font-size: 16px;
 }
+@media only screen and (min-width: 768px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li .file-title {
+    margin-left: 18px;
+  }
+}
 @media only screen and (max-width: 767px) {
   .download-worksheets-files-wrapper__inner ul.file-list li .file-title {
     max-width: 100%;
-    flex: 0 0 100%;
+    flex: 0 0 95%;
+    min-width: 320px;
   }
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-title:before {
@@ -11727,6 +11775,11 @@ h2 {
   left: -8px;
   width: 48px;
   height: 48px;
+}
+@media only screen and (min-width: 768px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li .file-title:before {
+    left: -10px;
+  }
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-title[class$=msword]:before {
   background: url(../images/doc-icon.svg) center no-repeat;
@@ -12462,7 +12515,11 @@ h2 {
 }
 .search-solr-box--wrapper .show-result-wrapper .container .view-header {
   font-size: 16px;
-  margin-top: 40px;
+}
+@media only screen and (max-width: 767px) {
+  .search-solr-box--wrapper .show-result-wrapper .container .view-header {
+    margin-top: 40px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .search-solr-box--wrapper .show-result-wrapper .container {
@@ -12653,7 +12710,7 @@ h2 {
   }
 }
 
-#block-bcgov-teachers-content .view-header {
+.view-solr-results .view-header {
   display: none;
 }
 
@@ -12869,7 +12926,7 @@ footer {
 }
 
 .footer {
-  padding: 60px 0;
+  padding: 53px 0 30px 0;
   background: #2379A4;
 }
 @media only screen and (max-width: 767px) {
