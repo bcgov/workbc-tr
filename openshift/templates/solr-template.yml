@@ -75,7 +75,7 @@ objects:
                 valueFrom:
                   configMapKeyRef:
                     name: workbc-tr-cm
-                    key: workbc-tr.solrcore
+                    key: solr.core
             ports:
               - name: ${PORT_NAME}
                 containerPort: 8983
