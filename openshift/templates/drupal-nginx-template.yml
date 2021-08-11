@@ -78,14 +78,14 @@ objects:
             env:
             - name: POSTGRES_USER
               valueFrom:
-                secretKeyRef:
-                  key: regular-user
-                  name: ${SECRET_NAME}
+                configMapKeyRef:
+                  name: ${CM_NAME}
+                  key: patroni.reg_user
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: regular-password
                   name: ${SECRET_NAME}
+                  key: regular-password
             - name: POSTGRES_HOST
               value: ${BACKEND_SERVICE_NAME}
             - name: POSTGRES_PORT
@@ -136,6 +136,8 @@ parameters:
     value: workbc-tr-dc
   - name: POD_NAME
     value: workbc-tr-frontend-pod
+  - name: CM_NAME
+    value: workbc-tr-cm
   - name: SECRET_NAME
     value: workbc-tr-sec
   - name: BACKEND_SERVICE_NAME
