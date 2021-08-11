@@ -11017,6 +11017,48 @@ h2 {
   margin-bottom: 0;
 }
 
+@media only screen and (max-width: 767px) {
+  .path-frontpage .banner-content .container {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .path-frontpage .banner-content .banner-text {
+    text-align: center;
+  }
+}
+.path-frontpage .banner-content .banner-text h1 {
+  font-family: "BCSans-Bold", "BC Sans Bold", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+  font-size: 42px;
+  font-weight: 700;
+}
+@media only screen and (max-width: 767px) {
+  .path-frontpage .banner-content .banner-text h1 {
+    font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+  }
+}
+.path-frontpage .banner-content .banner-text .field--name-field-content-description {
+  margin-top: 5px;
+}
+.path-frontpage .banner-content .banner-text .field--name-field-content-description p {
+  font-family: "BCSans-Regular", "BC Sans Regular", "BC Sans", sans-serif;
+  font-size: 31px;
+  font-weight: 400;
+  text-align: left;
+}
+@media only screen and (max-width: 767px) {
+  .path-frontpage .banner-content .banner-text .field--name-field-content-description p {
+    font-family: "BCSans-Bold", "BC Sans Bold", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: center;
+  }
+}
+
 .lesson_wrapper_intro, .resource_wrapper_intro {
   padding-top: 30px;
   padding-bottom: 40px;
@@ -12884,7 +12926,7 @@ footer {
 }
 
 .footer {
-  padding: 60px 0;
+  padding: 53px 0 30px 0;
   background: #2379A4;
 }
 @media only screen and (max-width: 767px) {

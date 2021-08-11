@@ -101,3 +101,44 @@
     }
   }
 }
+
+.path-frontpage{
+  .banner-content{
+    .container{
+      @media only screen and (max-width:767px){
+        justify-content: center;
+      }
+    }
+    .banner-text {
+      @media only screen and (max-width:767px){
+        text-align: center;
+      }
+      h1{
+        font-family: $font-family-sans-serif-bold;
+        font-size: 42px;
+        font-weight: 700;
+        @media only screen and (max-width:767px){
+          font-family: $font-family-sans-serif;
+          font-size: 36px;
+          font-weight: 400;
+          line-height: 44px;
+        }
+      }
+      .field--name-field-content-description{margin-top: 5px;
+        p{
+          font-family: $font-family-sans-serif-regular;
+          font-size: 31px;
+          font-weight: 400;
+          text-align: left;
+          @media only screen and (max-width:767px){
+            font-family: $font-family-sans-serif-bold;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 26px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

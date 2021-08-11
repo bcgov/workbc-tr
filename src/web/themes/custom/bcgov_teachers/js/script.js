@@ -503,7 +503,7 @@ departmentFunction();
 jQuery(document).ajaxComplete(function(event, xhr, settings) {
   departmentFunction();
   
-  jQuery( ".deptclose" ).click(function(event) {
+  jQuery( ".deptclose" ).on('click', function(event) {
     event.stopPropagation();
     var self = this;
     var ValueRemoved = jQuery(self).attr('data-removed');
@@ -524,6 +524,16 @@ jQuery(document).ajaxComplete(function(event, xhr, settings) {
   }); 
 
 });
+
+jQuery( ".deptclose" ).on('click', function(event) {
+  event.stopPropagation();
+  var self = this;
+  var ValueRemoved = jQuery(self).attr('data-removed');
+  jQuery('#' + ValueRemoved).click();
+  //setTimeout(function() {
+  jQuery(self).parent().hide();
+}); 
+
 jQuery( ".clear-all" ).on('click', function(event) {
   jQuery('.filterbox__selectgroup input[type=checkbox]:checked').click();
   jQuery('.search_filter__results').hide();
