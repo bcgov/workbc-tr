@@ -11707,17 +11707,23 @@ h2 {
   color: #2379A4;
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-title {
-  max-width: 500px;
+  max-width: 550px;
   min-width: 400px;
   word-break: break-word;
   position: relative;
   padding-left: 45px;
   font-size: 16px;
 }
+@media only screen and (min-width: 768px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li .file-title {
+    margin-left: 18px;
+  }
+}
 @media only screen and (max-width: 767px) {
   .download-worksheets-files-wrapper__inner ul.file-list li .file-title {
     max-width: 100%;
-    flex: 0 0 100%;
+    flex: 0 0 95%;
+    min-width: 320px;
   }
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-title:before {
@@ -11727,6 +11733,11 @@ h2 {
   left: -8px;
   width: 48px;
   height: 48px;
+}
+@media only screen and (min-width: 768px) {
+  .download-worksheets-files-wrapper__inner ul.file-list li .file-title:before {
+    left: -10px;
+  }
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-title[class$=msword]:before {
   background: url(../images/doc-icon.svg) center no-repeat;
@@ -12462,7 +12473,11 @@ h2 {
 }
 .search-solr-box--wrapper .show-result-wrapper .container .view-header {
   font-size: 16px;
-  margin-top: 40px;
+}
+@media only screen and (max-width: 767px) {
+  .search-solr-box--wrapper .show-result-wrapper .container .view-header {
+    margin-top: 40px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .search-solr-box--wrapper .show-result-wrapper .container {
@@ -12653,7 +12668,7 @@ h2 {
   }
 }
 
-#block-bcgov-teachers-content .view-header {
+.view-solr-results .view-header {
   display: none;
 }
 

@@ -229,7 +229,9 @@
             align-items: center;
             .view-header{
                 font-size: 16px;
-                margin-top:40px;
+                @media only screen and (max-width:767px){
+                    margin-top:40px;
+                }
             }
             @media only screen and (max-width:767px){
                 align-items: flex-start;
@@ -392,5 +394,5 @@
         }
     }
 }
-#block-bcgov-teachers-content .view-header{display: none;}
+.view-solr-results .view-header{display: none;}
 /*------------------Filter styling end------------------*/

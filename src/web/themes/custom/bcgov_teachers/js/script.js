@@ -98,8 +98,15 @@
         $('.proceed-nex-link').on('click',function(e){
           e.preventDefault();
 
-          $('.leftnavbar .leftnavbar--items.active').removeClass('active').next('.leftnavbar--items').addClass('active');
-          $('.right-nav .main-section.active').removeClass('active').next('.main-section').addClass('active');
+          $('.leftnavbar .leftnavbar--items').removeClass('active');
+          //$('.right-nav .main-section.active').removeClass('active');
+          $('.main-section').removeClass('active');
+          $(this).closest('.main-section').next('.main-section').addClass('active');
+          //$('.right-nav .main-section.active').next('.main-section').addClass('active');
+          
+          var targetid =   $('.right-nav .main-section.active').attr('id');
+          console.log(targetid);
+          $('.left-'+targetid).closest('.leftnavbar--items').addClass('active');
 
           if (window.matchMedia("(min-width: 768px)").matches) {
             $('html,body').animate({
@@ -134,10 +141,10 @@
               var lastmainsectionheight = $('.main-section.active .lesson_wrapper_main_para_item:last-child').height();
 
               if(scrollTop > ($('.main-section.active .lesson_wrapper_main_para_item:last-child .lesson_wrapper_main_para_item__title').offset().top + lastmainsectionheight) - 800){
-                $('.left-nav').addClass('align-end');
+                $('.left-nav:not(.mobiletab)').addClass('align-end');
               }
               else {
-                $('.left-nav').removeClass('align-end');
+                $('.left-nav:not(.mobiletab)').removeClass('align-end');
               }
             }
           });
@@ -262,7 +269,7 @@
       //filter open close js end 
 
       //show resut position replacement
-      var result = jQuery('#block-bcgov-teachers-content .view-header').text();
+      var result = jQuery('.view-solr-results .view-header').text();
       jQuery('.show-result-wrapper .container .view-header').text(result);
     }
   }
@@ -486,7 +493,7 @@ function departmentFunction(){
     });
 }
 
-//departmentFunction();
+departmentFunction();
   if(jQuery('.dept-appned').length > 0){
     jQuery( ".clear-all" ).show();
   }
@@ -517,6 +524,10 @@ jQuery(document).ajaxComplete(function(event, xhr, settings) {
   }); 
 
 });
+jQuery( ".clear-all" ).on('click', function(event) {
+  jQuery('.filterbox__selectgroup input[type=checkbox]:checked').click();
+  jQuery('.search_filter__results').hide();
+}); 
 
 jQuery("#views-exposed-form-solr-results-page-1").submit(function(e) {
   departmentFunction();

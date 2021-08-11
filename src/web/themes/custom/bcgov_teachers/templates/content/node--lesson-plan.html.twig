@@ -211,14 +211,14 @@
               {% for key,subentity in node.field_add_resource_description if key|first != '#' %}
                 <div class="leftnavbar--items {% if loop.first %} active {% endif %}">
                   <div class="leftnavbar--title">
-                    <a href="#paragraph-{{ subentity.entity.id.value }}">{{ subentity.entity.field_main_heading.value }}</a>
+                    <a class="left-paragraph-{{ subentity.entity.id.value }}" href="#paragraph-{{ subentity.entity.id.value }}">{{ subentity.entity.field_main_heading.value }}</a>
                   </div>
-                  <div class="leftnavbar-item toc">
+                  <div class="leftnavbar-item">
                     <ul>
                       {% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}
                       {% if lsubentity.entity.field_para_simple_title.value is not empty %}
                         <li>
-                          <a href="#paragraph-{{ lsubentity.entity.id.value }}">{{ lsubentity.entity.field_para_simple_title.value|striptags }}</a>
+                          <a class="left-paragraph-{{ subentity.entity.id.value }}" href="#paragraph-{{ lsubentity.entity.id.value }}">{{ lsubentity.entity.field_para_simple_title.value|striptags }}</a>
                         </li>
                       {% endif %}
                       {% endfor %}

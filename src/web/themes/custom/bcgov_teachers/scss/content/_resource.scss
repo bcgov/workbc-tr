@@ -625,15 +625,19 @@
             }
           }
           .file-title{
-            max-width: 500px;
+            max-width: 550px;
             min-width:400px;
             word-break: break-word;
             position: relative;
             padding-left:45px;
             font-size: 16px;
+            @media only screen and (min-width:768px){
+              margin-left: 18px;
+            }
             @media only screen and (max-width:767px){
               max-width:100%;
-              flex:0 0 100%;
+              flex:0 0 95%;
+              min-width: 320px;
             }
             &:before{
               content:'';
@@ -642,6 +646,9 @@
               left:-8px;
               width: 48px;
               height:48px;
+              @media only screen and (min-width:768px){
+                left:-10px;
+              }
             }
             &[class$=msword]{
               &:before{
