@@ -74,8 +74,8 @@ objects:
               - name: SOLR_CORE_NAME
                 valueFrom:
                   configMapKeyRef:
-                    name: workbc-tr-cm
-                    key: workbc-tr.solrcore
+                    name: ${CM_NAME}
+                    key: solr.core
             ports:
               - name: ${PORT_NAME}
                 containerPort: 8983
@@ -97,5 +97,7 @@ parameters:
     value: workbc-tr-solr-dc
   - name: POD_NAME
     value: workbc-tr-solr-pod
+  - name: CM_NAME
+    value: workbc-tr-cm
   - name: IMAGE_NAME
     value: image-registry.openshift-image-registry.svc:5000/bdaa18-tools/wdst-ocp-solr:1.2

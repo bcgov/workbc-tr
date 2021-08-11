@@ -169,14 +169,20 @@ objects:
             - name: PATRONI_KUBERNETES_LABELS
               value: '{app: ${APP_NAME}, cluster-name: ${CLUSTER_NAME}}'
             - name: PATRONI_SUPERUSER_USERNAME
-              value: postgres
+              valueFrom: 
+                configMapKeyRef:
+                  name: ${CM_NAME}
+                  key: patroni.super_user
             - name: PATRONI_SUPERUSER_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: ${SECRET_NAME}
                   key: superuser-password
             - name: PATRONI_REPLICATION_USERNAME
-              value: standby
+              valueFrom:
+                configMapKeyRef:
+                  name: ${CM_NAME}
+                  key: patroni.rep_user
             - name: PATRONI_REPLICATION_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -234,6 +240,8 @@ parameters:
     value: workbc-tr-statefulset
   - name: CLAIM_NAME
     value: pgdata
+  - name: CM_NAME
+    value: workbc-tr-cm
   - name: SECRET_NAME
     value: workbc-tr-sec
   - name: IMAGE_NAME
