@@ -47,14 +47,14 @@ objects:
                   env:
                   - name: POSTGRES_USER
                     valueFrom:
-                      secretKeyRef:
-                        key: regular-user
-                        name: ${SECRET_NAME}
+                      configMapKeyRef:
+                        name: ${CM_NAME}
+                        key: patroni.reg_user
                   - name: POSTGRES_PASSWORD
                     valueFrom:
                       secretKeyRef:
-                        key: regular-password
                         name: ${SECRET_NAME}
+                        key: regular-password
                   - name: POSTGRES_HOST
                     value: ${BACKEND_SERVICE_NAME}
                   - name: POSTGRES_PORT
@@ -76,5 +76,7 @@ parameters:
     value: workbc-tr-service-replica
   - name: DB_NAME
     value: workbc_tr_drupal
+  - name: CM_NAME
+    value: workbc-tr-cm
   - name: IMAGE_NAME
     value: image-registry.openshift-image-registry.svc:5000/bdaa18-tools/wdst-ocp-postgres:1.0
