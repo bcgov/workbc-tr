@@ -171,7 +171,7 @@ objects:
             - name: PATRONI_SUPERUSER_USERNAME
               valueFrom: 
                 configMapKeyRef:
-                  name: workbc-tr-cm
+                  name: ${CM_NAME}
                   key: patroni.super_user
             - name: PATRONI_SUPERUSER_PASSWORD
               valueFrom:
@@ -181,7 +181,7 @@ objects:
             - name: PATRONI_REPLICATION_USERNAME
               valueFrom:
                 configMapKeyRef:
-                  name: workbc-tr-cm
+                  name: ${CM_NAME}
                   key: patroni.rep_user
             - name: PATRONI_REPLICATION_PASSWORD
               valueFrom:
@@ -240,6 +240,8 @@ parameters:
     value: workbc-tr-statefulset
   - name: CLAIM_NAME
     value: pgdata
+  - name: CM_NAME
+    value: workbc-tr-cm
   - name: SECRET_NAME
     value: workbc-tr-sec
   - name: IMAGE_NAME
