@@ -27,13 +27,13 @@
     }
 
     h1 {
-      font-size: 1.6rem;
-      line-height: 1.6rem;
+      font-size:30px;
+      line-height:normal;
       font-weight: 400;
 
       @media (min-width: 768px) {
-        font-size: 2.6rem;
-        line-height: 2.6rem;
+        font-size: 40px;
+        line-height: normal;
       }
     }
 
@@ -152,9 +152,13 @@
       }
 
       strong {
-        font-size: 4.8rem;
+        font-size: 75px;
         line-height: 4.8rem;
         vertical-align: middle;
+        font-weight: 700;
+        font-family: $font-family-sans-serif-bold;
+        margin-top: 6px;
+        display: inline-block;
       }
     }
 
