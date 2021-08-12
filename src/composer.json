@@ -50,6 +50,7 @@
         "drupal/seo_checklist": "^5.0",
         "drupal/sharethis": "^2.0@beta",
         "drupal/simplenews": "^3.0@alpha",
+        "drupal/smtp": "^1.0",
         "drupal/token": "^1.9",
         "drupal/twig_tweak": "^3.1",
         "drupal/views_bootstrap": "^4.3",
