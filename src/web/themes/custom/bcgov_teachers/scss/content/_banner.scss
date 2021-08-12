@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: 350px;
+  min-height: 340px;
   padding: 0;
   background-position: top center;
   background-size: cover;
@@ -59,6 +59,7 @@
 
     @media (min-width: 768px) {
       padding: 0;
+      margin-top: -70px;
     }
 
     h1 {

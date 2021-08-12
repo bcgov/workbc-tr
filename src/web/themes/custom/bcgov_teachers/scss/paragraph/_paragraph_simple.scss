@@ -24,6 +24,12 @@
       *:last-child {
         margin-bottom: 0;
       }
+      h2:first-child,p:first-child{
+        font-size: 21px;
+      }
+      p{
+        font-size: 16px;
+      }
     }
   }
 }

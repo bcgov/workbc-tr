@@ -108,13 +108,13 @@
       margin-bottom: 25px;
       @media only screen and (min-width:768px){
         display: none;
-      }  
+      }
     }
 
     &.xs-hide{
       @media only screen and (max-width:767px){
         display: none;
-      } 
+      }
     }
     @media only screen and (max-width:767px){
       font-size: 32px;
@@ -232,7 +232,7 @@
       .row{
         @media only screen and (max-width:767px){
           flex-direction: column-reverse;
-        }    
+        }
       }
     }
     @media only screen and (max-width:640px){
@@ -370,12 +370,14 @@
           div{
             background:$secondary_color_4;
             border-radius: 9px;
-            padding:4px 32px;
+            padding:4px 18px;
             color: $teachers-bg-light;
             text-transform:uppercase;
             font-size:15px;
             line-height: normal;
             display: inline-block;
+            text-align: center;
+            min-width: 91px;
           }
         }
       }
@@ -495,24 +497,24 @@
     &:hover{background-color:#989898;}
     // @media only screen and (max-width:480px){
     //   width:30px; height:30px;
-    //   background-size: 20px; 
+    //   background-size: 20px;
     // }
   }
 
   .st_email_large .stButton{background-image:url(../images/mail.svg);}
   .st_facebook_large .stButton{background-image:url(../images/facebook.svg); background-size: 13px;
     @media only screen and (max-width:480px){
-      //background-size: 10px; 
+      //background-size: 10px;
     }
   }
   .st_twitter_large .stButton{background-image:url(../images/twitter.svg); background-size: 20px;
     @media only screen and (max-width:480px){
-      //background-size: 16px; 
+      //background-size: 16px;
     }
   }
   .st_linkedin_large .stButton{background-image:url(../images/linkedin.svg); background-size: 18px;
     @media only screen and (max-width:480px){
-      //background-size: 16px; 
+      //background-size: 16px;
     }
   }
 
@@ -572,9 +574,9 @@
             }
             @media only screen and (max-width:500px){
               justify-content: flex-end;
-              
+
             }
-            
+
             .file-title-all{
               padding-left:48px;
               position: relative;
@@ -671,12 +673,12 @@
           .file-url{
             @media only screen and (max-width:767px){
               padding:0 0 0 20px;
-              margin-top: 10px; 
+              margin-top: 10px;
              }
             a{
-              color:#0178B5; 
-              font-size: 16px;  
-              padding: 6px 10px;  
+              color:#0178B5;
+              font-size: 16px;
+              padding: 6px 10px;
               border:2px solid transparent;
               transition: 0.5s;
               &:hover{
@@ -698,7 +700,7 @@
               margin-top:8px;
             }
             .file-url{margin-left:13px;}
-  
+
           }
         }
     }
@@ -737,7 +739,7 @@
 
 
 .go-to-resource-wrapper{
-  
+
   @media only screen and (min-width:1201px){
     padding-left:40px;
     width:100%;
@@ -842,7 +844,7 @@
     padding-left:40px;
     width: 100%;
   }
-  
+
 }
 
 // show/hide resouce des
@@ -1019,7 +1021,7 @@
 .lesson_wrapper .main_section{
   @media screen and (max-width:767px) {
     padding-top: 0;
-    .lesson_wrapper_main__lable{margin-bottom: 45px;} 
+    .lesson_wrapper_main__lable{margin-bottom: 45px;}
   }
 }
 .mobiletab{
@@ -1029,7 +1031,7 @@
     display: flex;
     width: 100%;
     max-width: 100%;
-    margin-top: 0; 
+    margin-top: 0;
     border-radius: 0;
     border:none;
     .leftnavbar-item{display: none;}
@@ -1039,8 +1041,8 @@
       flex-direction: column;
       height: auto;
       &.active{
-        .leftnavbar--title{background: #fff; 
-          a{font-weight: normal; color:#333; font-weight: bold;} 
+        .leftnavbar--title{background: #fff;
+          a{font-weight: normal; color:#333; font-weight: bold;}
         }
       }
       .leftnavbar--title{border-bottom: 0; padding:17px 20px; background: #073573; display: flex; align-items: center; height: 100%;
@@ -1085,7 +1087,7 @@
 .related_news_slider, .resource_wrapper_left__img{
   .slick-prev:before, .slick-next:before{
     content:'';
-    width:15px; 
+    width:15px;
     height:25px;
     background: url(../images/slider-arrow.svg) center no-repeat;
     background-size:cover;
@@ -1099,14 +1101,14 @@
     .slick-prev{left:-14px;}
     .slick-next{right:-14px;}
   }
-  
+
   @media only screen and (max-width:767px){
     .slick-arrow{
       display:none !important;
-    }  
+    }
     .related_news_wrapper--item-single{padding-left: 0; padding-right: 0;}
   }
-  
+
   .slick-dots {bottom:-40px;
     li{margin: 0;
       button:before{font-size: 12px;}
@@ -1115,9 +1117,14 @@
   .related_news_wrapper_desc{
     min-height: 100px;
   }
-} 
+}
 
 .resource_wrapper_left__img{
-  img{margin: 0 auto; display: block;} 
+  img{margin: 0 auto; display: block;}
 }
 .stwrapper.stwrapper4x, #stwrapper, #stOverlay{display: none !important;}
+
+@media only screen and (max-width:1200px){
+  .slick-prev{left:-9px;}
+  .slick-next{right:-14px;}
+}

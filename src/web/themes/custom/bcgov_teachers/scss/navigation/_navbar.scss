@@ -12,12 +12,16 @@ header {
       padding-left: 10px;
       padding-right: 10px;
 
+
       @media (min-width: 768px) {
         align-items: stretch;
 
         &:first-child {
           display: none;
         }
+      }
+      @media (max-width: 767px) {
+        max-width: 100%;
       }
 
       > .navbar-toggler {
@@ -104,6 +108,7 @@ header {
       .nav-link {
         display: table-cell;
         vertical-align: middle;
+        font-size: 16px;
 
         @media (max-width: 767px) {
           display: block;
