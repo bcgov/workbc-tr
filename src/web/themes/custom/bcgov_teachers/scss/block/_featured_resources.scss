@@ -5,7 +5,7 @@
     font-style: normal;
     font-size: 36px;
     color: $teachers-bg-grey;
-    margin-bottom:\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\60px;
+    margin-bottom:60px;
     text-align: center;
     @media only screen and (max-width:640px){
       font-size: 28px;
@@ -26,7 +26,7 @@
       line-height: 1.6rem;
     }
   }
-  
+
 
   .featured-carousel {
     justify-content: center;
@@ -101,7 +101,7 @@
     }
 
     .views-field-field-term-resource-grade {
-      .item-list {
+      .item-list {margin-top: 16px;
         ul {
           margin: -10px 0 0;
           padding: 0;
@@ -109,14 +109,17 @@
 
           li {
             display: inline-block;
-            margin: 10px 10px 0 0;
+            margin: 10px 5px 0 0;
             padding: 0;
 
             div {
               display: block;
-              padding: 2px 30px;
+              font-size: 15px;
+              padding: 4px 18px;
               color: $white;
-              border-radius: 10px;
+              border-radius: 9px;
+              min-width: 91px;
+              text-align: center;
             }
           }
         }

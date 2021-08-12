@@ -10667,7 +10667,7 @@ h2 {
   font-style: normal;
   font-size: 36px;
   color: #333333;
-  margin-bottom: \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`px;
+  margin-bottom: 60px;
   text-align: center;
 }
 @media only screen and (max-width: 640px) {
@@ -10747,6 +10747,9 @@ h2 {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.block-featured-resources .featured-resources-content .views-field-field-term-resource-grade .item-list {
+  margin-top: 16px;
+}
 .block-featured-resources .featured-resources-content .views-field-field-term-resource-grade .item-list ul {
   margin: -10px 0 0;
   padding: 0;
@@ -10754,14 +10757,17 @@ h2 {
 }
 .block-featured-resources .featured-resources-content .views-field-field-term-resource-grade .item-list ul li {
   display: inline-block;
-  margin: 10px 10px 0 0;
+  margin: 10px 5px 0 0;
   padding: 0;
 }
 .block-featured-resources .featured-resources-content .views-field-field-term-resource-grade .item-list ul li div {
   display: block;
-  padding: 2px 30px;
+  font-size: 15px;
+  padding: 4px 18px;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 9px;
+  min-width: 91px;
+  text-align: center;
 }
 .block-featured-resources .featured-resources-content .views-field-field-term-resource-stage {
   border-top: 2px solid #e2e2e2;
@@ -10847,11 +10853,6 @@ h2 {
     flex-wrap: wrap;
   }
 }
-@media only screen and (min-width: 768px) {
-  .anonymous-subscriptions-subscribe-for form .form-wrapper, .simplenews-subscriptions-block-simple-new-teachers form .form-wrapper {
-    padding-right: 5px;
-  }
-}
 @media only screen and (max-width: 767px) {
   .anonymous-subscriptions-subscribe-for .subscribe-wrapper, .simplenews-subscriptions-block-simple-new-teachers .subscribe-wrapper {
     text-align: center;
@@ -10876,20 +10877,26 @@ h2 {
   }
 }
 .anonymous-subscriptions-subscribe-for .form-item, .simplenews-subscriptions-block-simple-new-teachers .form-item {
-  display: inline-block;
+  display: flex;
   vertical-align: middle;
   margin: 0;
+}
+@media only screen and (max-width: 767px) {
+  .anonymous-subscriptions-subscribe-for .form-item, .simplenews-subscriptions-block-simple-new-teachers .form-item {
+    flex-direction: column;
+  }
 }
 .anonymous-subscriptions-subscribe-for .form-item label, .anonymous-subscriptions-subscribe-for .form-item .description, .simplenews-subscriptions-block-simple-new-teachers .form-item label, .simplenews-subscriptions-block-simple-new-teachers .form-item .description {
   display: none;
 }
 .anonymous-subscriptions-subscribe-for .form-actions, .simplenews-subscriptions-block-simple-new-teachers .form-actions {
   display: inline-block;
-  margin: 0;
+  margin: 0 0 0 10px;
 }
 @media only screen and (max-width: 767px) {
   .anonymous-subscriptions-subscribe-for .form-actions, .simplenews-subscriptions-block-simple-new-teachers .form-actions {
     width: 100%;
+    margin: 0;
   }
 }
 .anonymous-subscriptions-subscribe-for input, .simplenews-subscriptions-block-simple-new-teachers input {
@@ -11476,12 +11483,14 @@ h2 {
 .related_news_wrapper_grade ul li div {
   background: #073573;
   border-radius: 9px;
-  padding: 4px 32px;
+  padding: 4px 18px;
   color: #FFFFFF;
   text-transform: uppercase;
   font-size: 15px;
   line-height: normal;
   display: inline-block;
+  text-align: center;
+  min-width: 91px;
 }
 .related_news_wrapper_cls {
   padding: 15px;
@@ -12294,6 +12303,15 @@ h2 {
   display: none !important;
 }
 
+@media only screen and (max-width: 1200px) {
+  .slick-prev {
+    left: -9px;
+  }
+
+  .slick-next {
+    right: -14px;
+  }
+}
 .search_wrapper {
   margin-bottom: 40px;
 }
@@ -13157,6 +13175,11 @@ header .navbar > .container {
     display: none;
   }
 }
+@media (max-width: 767px) {
+  header .navbar > .container {
+    max-width: 100%;
+  }
+}
 header .navbar > .container > .navbar-toggler {
   border: none;
 }
@@ -13465,6 +13488,12 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
 }
 .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body *:last-child {
   margin-bottom: 0;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body h2:first-child, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body p:first-child {
+  font-size: 21px;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body p {
+  font-size: 16px;
 }
 
 /* Slider */

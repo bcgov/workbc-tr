@@ -9,36 +9,41 @@
       if(jQuery('.simplenews-subscriptions-block-simple-new-teachers').length){
         jQuery('.simplenews-subscriptions-block-simple-new-teachers input').attr('placeholder', 'Enter your email address');
       }
-      
+
 
       //add placeholder in subscription form end
 
       $.fn.renameTag = function (replaceWithTag) {
-        this.each(function () { 
-            var outerHtml = this.outerHTML; 
-            var tagName = $(this).prop("tagName"); 
-            var regexStart = new RegExp("^<" + tagName, "i"); 
-            var regexEnd = new RegExp("</" + tagName + ">$", "i");     
-            outerHtml = outerHtml.replace(regexStart, "<" + replaceWithTag);     
-            outerHtml = outerHtml.replace(regexEnd, "</" + replaceWithTag + ">"); 
-            
-            $(this).replaceWith(outerHtml); 
-       
-       }); 
-       return this; 
+        this.each(function () {
+            var outerHtml = this.outerHTML;
+            var tagName = $(this).prop("tagName");
+            var regexStart = new RegExp("^<" + tagName, "i");
+            var regexEnd = new RegExp("</" + tagName + ">$", "i");
+            outerHtml = outerHtml.replace(regexStart, "<" + replaceWithTag);
+            outerHtml = outerHtml.replace(regexEnd, "</" + replaceWithTag + ">");
+
+            $(this).replaceWith(outerHtml);
+
+       });
+       return this;
 
       }
 
       var resource_title = jQuery('.resource_wrapper__intro__title').text().trim().replace(':', '');
       var lesson_title = jQuery('.lesson_wrapper__intro__title').text().trim().replace(':', '');
       var site_title = jQuery('a.site-title').text().trim();
-      
+
       var email_body = 'Check out the ' +lesson_title+resource_title+ ' from ' +site_title+ ' here: \n '+ window.location.href;
-      
-      $('.sharethis-wrapper .st_email_large').renameTag('a'); 
+
+      $('.sharethis-wrapper .st_email_large').renameTag('a');
       $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject="+site_title +" - " + lesson_title+resource_title + "&body=" + encodeURIComponent(email_body));
 
 
+
+    //subscription  button js
+      var actionbtn = $('#simplenews-subscriptions-block-simple-new-teachers .form-actions').detach();
+      $('#simplenews-subscriptions-block-simple-new-teachers .js-form-type-email').append(actionbtn);
+    //subscription  button js end
       //close download popup js
       if($('.close-popup').length){
         $('.close-popup').on('click',function(){
@@ -103,7 +108,7 @@
           $('.main-section').removeClass('active');
           $(this).closest('.main-section').next('.main-section').addClass('active');
           //$('.right-nav .main-section.active').next('.main-section').addClass('active');
-          
+
           var targetid =   $('.right-nav .main-section.active').attr('id');
           console.log(targetid);
           $('.left-'+targetid).closest('.leftnavbar--items').addClass('active');
@@ -118,8 +123,8 @@
               scrollTop: $('.left-nav').offset().top
             });
           }
-         
-          
+
+
 
         });
 
@@ -192,7 +197,7 @@
           });
         }
       }
-      
+
 
       //equal height for related plan box
       function setEqualHeight(arr) {
@@ -239,16 +244,16 @@
         event.stopPropagation();
         if(jQuery(this).hasClass('open')){
           jQuery(this).removeClass('open');
-        } 
+        }
         else{
           jQuery('.search-solr-box--wrapper .card-header').removeClass('open');
-          jQuery(this).addClass('open'); 
+          jQuery(this).addClass('open');
         }
       });
 
       var $target = jQuery('.search-solr-box--wrapper .card-header');
       jQuery(document).mouseup(e => {
-        if (!$target.is(e.target) && $target.has(e.target).length === 0) 
+        if (!$target.is(e.target) && $target.has(e.target).length === 0)
         {
           jQuery('.search-solr-box--wrapper .card-header').removeClass('open');
         }
@@ -266,7 +271,7 @@
         jQuery(this).hide();
         jQuery('.filterbox__title.show_title').show();
     });
-      //filter open close js end 
+      //filter open close js end
 
       //show resut position replacement
       var result = jQuery('.view-solr-results .view-header').text();
@@ -503,7 +508,7 @@ departmentFunction();
   }
 jQuery(document).ajaxComplete(function(event, xhr, settings) {
   departmentFunction();
-  
+
   jQuery( ".deptclose" ).on('click', function(event) {
     event.stopPropagation();
     var self = this;
@@ -511,7 +516,7 @@ jQuery(document).ajaxComplete(function(event, xhr, settings) {
     jQuery('#' + ValueRemoved).click();
     //setTimeout(function() {
     jQuery(self).parent().hide();
-  }); 
+  });
 
   if(jQuery('.dept-appned').length > 0){
     jQuery( ".clear-all" ).show();
@@ -522,7 +527,7 @@ jQuery(document).ajaxComplete(function(event, xhr, settings) {
   jQuery( ".clear-all" ).on('click', function(event) {
     jQuery('.filterbox__selectgroup input[type=checkbox]:checked').click();
     jQuery('.search_filter__results').hide();
-  }); 
+  });
 
 });
 
@@ -533,12 +538,12 @@ jQuery( ".deptclose" ).on('click', function(event) {
   jQuery('#' + ValueRemoved).click();
   //setTimeout(function() {
   jQuery(self).parent().hide();
-}); 
+});
 
 jQuery( ".clear-all" ).on('click', function(event) {
   jQuery('.filterbox__selectgroup input[type=checkbox]:checked').click();
   jQuery('.search_filter__results').hide();
-}); 
+});
 
 jQuery("#views-exposed-form-solr-results-page-1").submit(function(e) {
   departmentFunction();
