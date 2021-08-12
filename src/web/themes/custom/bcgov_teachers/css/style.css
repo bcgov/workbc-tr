@@ -10661,6 +10661,25 @@ h2 {
     padding-left: 15px;
   }
 }
+.block-featured-resources h2 {
+  font-family: "BCSans-Regular", "BC Sans Regular", "BC Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+  color: #333333;
+  margin-bottom: \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\`px;
+  text-align: center;
+}
+@media only screen and (max-width: 640px) {
+  .block-featured-resources h2 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 767px) {
+  .block-featured-resources h2 {
+    margin-bottom: 30px;
+  }
+}
 .block-featured-resources h1 {
   margin-bottom: 60px;
   text-align: center;
@@ -11017,6 +11036,9 @@ h2 {
   margin-bottom: 0;
 }
 
+.path-frontpage .banner-content {
+  border-bottom: 4px solid #073573;
+}
 @media only screen and (max-width: 767px) {
   .path-frontpage .banner-content .container {
     justify-content: center;
@@ -13273,6 +13295,7 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
 @media (min-width: 768px) {
   .paragraph--type--grade-access .description p {
     font-size: 1.3rem;
+    padding-top: 20px;
   }
 }
 @media (max-width: 1195px) {

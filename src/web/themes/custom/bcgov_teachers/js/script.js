@@ -498,6 +498,7 @@ departmentFunction();
     jQuery( ".clear-all" ).show();
   }
   else{
+    jQuery('.search_filter__results').hide();
     jQuery( ".clear-all" ).hide();
   }
 jQuery(document).ajaxComplete(function(event, xhr, settings) {

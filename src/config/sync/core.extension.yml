@@ -69,6 +69,7 @@ module:
   sharethis: 0
   shortcut: 0
   simplenews: 0
+  smtp: 0
   system: 0
   taxonomy: 0
   text: 0
