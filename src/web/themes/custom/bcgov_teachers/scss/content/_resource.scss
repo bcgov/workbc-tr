@@ -656,6 +656,7 @@
                 left:-10px;
               }
             }
+            &[class$=document],
             &[class$=msword]{
               &:before{
                 background: url(../images/doc-icon.svg) center no-repeat;

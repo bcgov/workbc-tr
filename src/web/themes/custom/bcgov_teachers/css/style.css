@@ -11834,7 +11834,7 @@ h2 {
     left: -10px;
   }
 }
-.download-worksheets-files-wrapper__inner ul.file-list li .file-title[class$=msword]:before {
+.download-worksheets-files-wrapper__inner ul.file-list li .file-title[class$=document]:before, .download-worksheets-files-wrapper__inner ul.file-list li .file-title[class$=msword]:before {
   background: url(../images/doc-icon.svg) center no-repeat;
 }
 .download-worksheets-files-wrapper__inner ul.file-list li .file-title[class$=pdf]:before {
