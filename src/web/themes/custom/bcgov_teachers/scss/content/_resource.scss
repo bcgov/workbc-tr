@@ -656,6 +656,7 @@
                 left:-10px;
               }
             }
+            &[class$=document],
             &[class$=msword]{
               &:before{
                 background: url(../images/doc-icon.svg) center no-repeat;
@@ -859,7 +860,11 @@
       display: block;
     }
     &:first-child{
-      .lesson_wrapper_main_para_item:first-child .lesson_wrapper_main_para_item__body p:first-child{font-size: 21px; line-height: 1.3;}
+      .lesson_wrapper_main_para_item:first-child .lesson_wrapper_main_para_item__body p:first-child{font-size: 21px; line-height: 1.3;
+        @media only screen and (max-width:767px){
+          font-size: 18px;
+        }
+      }
     }
   }
 }

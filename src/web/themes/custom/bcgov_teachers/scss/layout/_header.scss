@@ -12,6 +12,8 @@ header {
 
       @media (max-width: 767px) {
         height: auto;
+        max-width: 100%;
+        width:100%;
       }
     }
 
@@ -48,7 +50,7 @@ header {
           width: 175px;
           min-width: 175px;
           max-width: 100%;
-          margin: 0 auto;
+          /*margin: 0 auto;*/
           padding-left: 0;
         }
       }
@@ -77,7 +79,7 @@ header {
         letter-spacing: normal;
 
         @media (max-width: 767px) {
-          display: block;
+          display: none;
           text-align: left;
           margin-top: 10px;
           padding: 0;

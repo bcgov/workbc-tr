@@ -26,6 +26,9 @@
       }
       h2:first-child,p:first-child{
         font-size: 21px;
+        @media only screen and (max-width:767px){
+          font-size: 18px;
+        }
       }
       p{
         font-size: 16px;
