@@ -62,7 +62,10 @@
       > div {
         background:rgba(7, 53, 115, 1);
         border-radius: 9px;
-        padding:4px 32px;
+        padding:2px;
+        width: 91px;
+        height: 27px;
+        text-align: center;
         color: $teachers-bg-light;
         text-transform:uppercase;
         font-size:15px;
@@ -304,7 +307,7 @@
    border-radius: 15px;
    //overflow: hidden;
    background: $teachers-text-light;
-   height:100%;
+   height: auto;
    border:1px solid rgb(226, 226, 226);
    box-shadow: none;
   transition: 0.5s;
@@ -370,14 +373,15 @@
           div{
             background:$secondary_color_4;
             border-radius: 9px;
-            padding:4px 18px;
+            padding:2px;
             color: $teachers-bg-light;
             text-transform:uppercase;
             font-size:15px;
             line-height: normal;
             display: inline-block;
             text-align: center;
-            min-width: 91px;
+            width: 91px;
+            height: 27px;
           }
         }
       }

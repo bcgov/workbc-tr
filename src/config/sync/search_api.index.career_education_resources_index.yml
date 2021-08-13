@@ -12,6 +12,8 @@ dependencies:
     - taxonomy
   config:
     - field.storage.node.field_term_resource_asset_type
+    - field.storage.node.field_resource_card_image
+    - field.storage.node.field_resource_card_summary
     - field.storage.node.field_term_resource_stage
     - field.storage.node.field_term_resource_competency
     - field.storage.node.field_resource_desc
@@ -65,6 +67,22 @@ name: 'Career Education Resources - Index'
 description: ''
 read_only: false
 field_settings:
+  field_resource_card_image:
+    label: 'Card image'
+    datasource_id: 'entity:node'
+    property_path: field_resource_card_image
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_resource_card_image
+  field_resource_card_summary:
+    label: 'Card Summary'
+    datasource_id: 'entity:node'
+    property_path: field_resource_card_summary
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_resource_card_summary
   field_resource_desc:
     label: Description
     datasource_id: 'entity:node'
