@@ -5,7 +5,7 @@
     font-style: normal;
     font-size: 36px;
     color: $teachers-bg-grey;
-    margin-bottom:60px;
+    margin-bottom: 60px;
     text-align: center;
     @media only screen and (max-width:640px){
       font-size: 28px;
@@ -115,10 +115,11 @@
             div {
               display: block;
               font-size: 15px;
-              padding: 4px 18px;
+              padding: 2px;
               color: $white;
               border-radius: 9px;
-              min-width: 91px;
+              width: 91px;
+              height: 27px;
               text-align: center;
             }
           }
