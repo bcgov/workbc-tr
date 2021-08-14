@@ -14,6 +14,7 @@ src/web/profiles/README.txt
 
 # Ignore local service.yml
 *services.local.yml
+*settings.*.php
 
 # Ignore Solr server config
 *search_api.server.*.yml
