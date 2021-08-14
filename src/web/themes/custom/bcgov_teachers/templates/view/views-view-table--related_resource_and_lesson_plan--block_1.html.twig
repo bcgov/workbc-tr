@@ -26,9 +26,9 @@
       <div class="col-md-4 related_news_wrapper--item-single">
         <div class="related_news_wrapper--item">
         {% if row.columns.field_term_resource_asset_type.content.0.field_output['#markup'] == 'Lesson Plan' %}
-          <div class="related_news_wrapper_assest_type lessonplan">{{ row.columns.field_term_resource_asset_type }}</div> 
+          <div class="related_news_wrapper_assest_type lessonplan">{{ row.columns.field_term_resource_asset_type }}</div>
           {% else %}
-            <div class="related_news_wrapper_assest_type resourceplan">{{ row.columns.field_term_resource_asset_type }}</div> 
+            <div class="related_news_wrapper_assest_type resourceplan">{{ row.columns.field_term_resource_asset_type }}</div>
         {% endif %}
 
           <div class="related_news_wrapper_img">{{ row.columns.field_resource_card_image }}</div>

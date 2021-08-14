@@ -12,6 +12,13 @@ src/web/profiles/contrib/
 src/web/profiles/README.txt
 /console/
 
+# Ignore local service.yml
+*services.local.yml
+*settings.*.php
+
+# Ignore Solr server config
+*search_api.server.*.yml
+
 # Ignore scaffold files
 .drush-lock-update
 .gitattributes

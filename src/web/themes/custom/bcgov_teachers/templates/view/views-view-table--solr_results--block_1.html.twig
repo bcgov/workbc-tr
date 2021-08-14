@@ -22,10 +22,10 @@
 
 <section class="related_news_wrapper search_wrapper">
   <div class="container">
-    <div class="row">
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1">
       {% for key,row in rows %}
-      <div class="col-md-4">
-        <div class="related_news_wrapper--item">
+      <div class="col mb-3">
+        <div class="related_news_wrapper--item h-100">
         {% if row.columns.field_term_resource_asset_type.content.0.field_output['#markup'] == 'Lesson Plan' %}
           <div class="related_news_wrapper_assest_type lessonplan">{{ row.columns.field_term_resource_asset_type }}</div>
           {% else %}
@@ -41,9 +41,6 @@
           <div class="related_news_wrapper_cls"><span>{{ "Career Lifecycle Stage: "|t }}</span>{{ row.columns.field_term_resource_stage }}</div>
         </div>
       </div>
-        {% if loop.index is divisible by(3) %}
-            </div><div class="row">
-        {% endif %}
       {% endfor %}
     </div>
   </div>

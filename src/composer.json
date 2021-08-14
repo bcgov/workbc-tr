@@ -30,6 +30,7 @@
         "drupal/core-recommended": "^9.2",
         "drupal/ctools": "^3.7",
         "drupal/devel": "^4.1",
+        "drupal/editor_advanced_link": "^2.0",
         "drupal/entity_print": "^2.2",
         "drupal/facets": "^1.8",
         "drupal/field_group": "^3.1",

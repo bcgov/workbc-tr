@@ -11430,13 +11430,13 @@ h2 {
 .related_news_wrapper--item {
   border-radius: 15px;
   background: #FFFFFF;
-  height: auto;
   border: 1px solid #e2e2e2;
   box-shadow: none;
   transition: 0.5s;
 }
 .related_news_wrapper--item:hover {
   box-shadow: rgba(170, 170, 170, 0.35) 0px 0px 10px;
+  background: #f2f2f2;
 }
 .related_news_wrapper_assest_type {
   font-size: 15px;
@@ -12339,11 +12339,15 @@ h2 {
     right: -14px;
   }
 }
+.search_wrapper .row {
+  justify-content: flex-start;
+}
+
 .search_wrapper {
   margin-bottom: 40px;
 }
 .search_wrapper .container .row + .row {
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 /*------------------Filter styling------------------*/
@@ -12412,6 +12416,7 @@ h2 {
   border-radius: 0;
   height: 50px;
   font-size: 16px;
+  min-width: 400px;
 }
 @media only screen and (max-width: 767px) {
   .search-solr-box__inner .search-solr-box .search_keyword input {
@@ -12779,6 +12784,10 @@ h2 {
 
 .view-solr-results .view-header {
   display: none;
+}
+
+form#views-exposed-form-solr-results-page-1 .form-actions {
+  margin: 0;
 }
 
 /*------------------Filter styling end------------------*/
