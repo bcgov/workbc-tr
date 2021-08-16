@@ -35,6 +35,7 @@
         "drupal/facets": "^1.8",
         "drupal/field_group": "^3.1",
         "drupal/keycloak": "^1.5",
+        "drupal/linkit": "^6.0@beta",
         "drupal/media_download_all": "^2.0@alpha",
         "drupal/media_library_form_element": "^2.0",
         "drupal/media_library_theme_reset": "^1.1",
