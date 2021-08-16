@@ -1127,7 +1127,9 @@
     min-height: 100px;
   }
 }
-
+.slick-disabled {
+    opacity: 0.5;
+}
 .resource_wrapper_left__img{
   img{margin: 0 auto; display: block;}
 }

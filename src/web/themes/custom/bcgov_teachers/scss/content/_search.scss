@@ -239,6 +239,11 @@
                 flex-direction: column-reverse;
             }
             .fieldgroup{padding: 0;
+                .card-header{
+                      @media only screen and (max-width:767px){
+                          padding:10px 35px 10px 20px;
+                      }
+                }
                 .card-body{padding:0;
                     .form-checkboxes{
                         .form-item{margin: 0;}

@@ -396,7 +396,7 @@
             if (!$carousel.hasClass('slick-initialized')) {
               $carousel.slick({
                 dots: true,
-                infinite: true,
+                infinite: false,
                 slidesToShow: 3,
                 slidesToScroll: 3,
                 responsive: [
@@ -428,7 +428,7 @@
     if (itemLength > 3) {
       $('.featured-carousel').slick({
         dots: true,
-        infinite: true,
+        infinite: false,
         slidesToShow: 3,
         slidesToScroll: 3,
         responsive: [
