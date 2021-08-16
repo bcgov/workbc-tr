@@ -86,4 +86,5 @@ permissions:
   - 'view media'
   - 'view own unpublished content'
   - 'view resource revisions'
+  - 'view the administration theme'
   - 'view unpublished paragraphs'
