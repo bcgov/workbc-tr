@@ -18,6 +18,9 @@ src/web/profiles/README.txt
 
 # Ignore Solr server config
 *search_api.server.*.yml
+smtp.settings.yml
+update.settings.yml
+openid_connect.settings.keycloak.yml
 
 # Ignore scaffold files
 .drush-lock-update
