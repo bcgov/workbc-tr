@@ -12321,6 +12321,10 @@ h2 {
   min-height: 100px;
 }
 
+.slick-disabled {
+  opacity: 0.5;
+}
+
 .resource_wrapper_left__img img {
   margin: 0 auto;
   display: block;
@@ -12601,6 +12605,11 @@ h2 {
 }
 .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup {
   padding: 0;
+}
+@media only screen and (max-width: 767px) {
+  .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-header {
+    padding: 10px 35px 10px 20px;
+  }
 }
 .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body {
   padding: 0;
@@ -13315,7 +13324,6 @@ header .navbar .menu--main a:hover, header .navbar .menu--main a:active, header 
   text-decoration: underline;
 }
 header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
-  font-weight: bold;
   background-color: #2379A4;
 }
 
