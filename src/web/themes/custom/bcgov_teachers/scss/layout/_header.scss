@@ -216,3 +216,14 @@ header {
     }
   }
 }
+
+body:not(.path-frontpage){
+    @media (max-width: 767px){
+      header .region-header .navbar-brand{
+        .site-logo {
+          margin: 0 auto 6px;
+        }
+        .site-title{display: block; text-align: center;}
+      }
+    }
+}
