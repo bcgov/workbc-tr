@@ -84,6 +84,10 @@
           if (window.matchMedia("(min-width: 768px)").matches) {
             stickynavbar()
           }
+          var winscrolltop = $(window).scrollTop();
+          if (winscrolltop == 0){
+            $('.leftnavbar .leftnavbar--items.active ul li:first-child a').addClass('active');
+          }
         });
         $(window).resize(function() {
           if (window.matchMedia("(min-width: 768px)").matches) {
@@ -100,18 +104,19 @@
           $('.right-nav '+hrefattr).addClass('active');
         });
 
+        setTimeout(function(){
+          $('.leftnavbar .leftnavbar--items.active ul li:first-child a').addClass('active');
+        },100);
+
         $('.proceed-nex-link').on('click',function(e){
           e.preventDefault();
-
           $('.leftnavbar .leftnavbar--items').removeClass('active');
-          //$('.right-nav .main-section.active').removeClass('active');
           $('.main-section').removeClass('active');
           $(this).closest('.main-section').next('.main-section').addClass('active');
-          //$('.right-nav .main-section.active').next('.main-section').addClass('active');
-
           var targetid =   $('.right-nav .main-section.active').attr('id');
           console.log(targetid);
           $('.left-'+targetid).closest('.leftnavbar--items').addClass('active');
+          $('.left-' + targetid).closest('.leftnavbar--items').find('ul li:first-child a').addClass('active');
 
           if (window.matchMedia("(min-width: 768px)").matches) {
             $('html,body').animate({
@@ -123,9 +128,6 @@
               scrollTop: $('.left-nav').offset().top
             });
           }
-
-
-
         });
 
         //scrolling selecion js
@@ -141,6 +143,10 @@
                   $('a[href="#' + $(anchors[i]).closest('.lesson_wrapper_main_para_item').attr('id') + '"]').addClass('active');
               } else {
                   $('a[href="#' + $(anchors[i]).closest('.lesson_wrapper_main_para_item').attr('id') + '"]').removeClass('active');
+              }
+
+              if (scrollTop < $(anchors[0]).offset().top){
+                $('.leftnavbar .leftnavbar--items.active ul li:first-child a').addClass('active');
               }
 
               var lastmainsectionheight = $('.main-section.active .lesson_wrapper_main_para_item:last-child').height();
