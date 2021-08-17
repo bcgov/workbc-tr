@@ -125,3 +125,8 @@ h2 {
 @media (max-width: 767px) {
   .container, .container-fluid, .container-xl, .container-lg, .container-md, .container-sm{padding-right:15px; padding-left: 15px;}
 }
+
+input[type="text"]::placeholder, input[type="email"]::placeholder{color:rgb(153, 153, 153); font-size: 15px;}
+input[type="text"]::-webkit-input-placeholder,input[type="email"]::-webkit-input-placeholder{color:rgb(153, 153, 153); font-size: 15px;}
+input[type="text"]:-moz-placeholder, input[type="email"]:-moz-placeholder{color:rgb(153, 153, 153); font-size: 15px;}
+input[type="text"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder{color:rgb(153, 153, 153); font-size: 15px;}
