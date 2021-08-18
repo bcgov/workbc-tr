@@ -127,19 +127,22 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|All Lesson Plans & Resources'
+                    filter_rewrite_values: 'Select All|All Lesson Plans & Resources'
                   collapsible: false
                   is_secondary: false
-                select_all_none: false
+                select_all_none: true
                 select_all_none_nested: false
                 display_inline: false
       pager:
         type: mini
         options:
-          items_per_page: 10
+          items_per_page: 12
           offset: 0
           id: 0
           total_pages: null
+          tags:
+            previous: ‹‹
+            next: ››
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -148,9 +151,6 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
       style:
         type: table
         options:
@@ -408,7 +408,7 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: false
+          hide_empty: true
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id

@@ -246,6 +246,10 @@
       //equal height for related plan box end
 
       //filter open close js
+      setTimeout(function(){
+        jQuery('.search-assest .card-body .bef-toggle').text('All Lesson Plans & Resources');
+      },1000);
+
       jQuery('.search-solr-box--wrapper .card-header').on('click', function (event) {
         event.stopPropagation();
         if(jQuery(this).hasClass('open')){
