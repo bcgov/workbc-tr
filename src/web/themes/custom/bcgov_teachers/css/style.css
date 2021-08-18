@@ -12686,21 +12686,26 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body {
   padding: 0;
+  width: 100%;
 }
 .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes .form-item {
   margin: 0;
 }
-.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label {
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes .bef-toggle {
+  display: inline-block;
+  width: 100%;
   padding: 3px 20px;
   cursor: pointer;
   margin: 0;
   width: 100%;
+  color: #333;
 }
-.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label:before, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label:after {
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label:before, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label:after, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes .bef-toggle:before, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes .bef-toggle:after {
   display: none;
 }
-.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label:hover {
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label:hover, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes .bef-toggle:hover {
   background: #e85333;
+  text-decoration: none;
   color: #fff;
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest {
