@@ -12107,7 +12107,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   width: 100%;
   border-radius: 15px;
   overflow: hidden;
-  border: 1px solid #d7d7d7;
   transition: 0.5s;
   margin-top: 10px;
 }
@@ -12118,9 +12117,12 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .leftnavbar--items {
   transition: 0.5s;
-  border-bottom: 1px solid #d7d7d7;
+}
+.leftnavbar--items:first-child .leftnavbar--title {
+  border-radius: 15px 15px 0 0;
 }
 .leftnavbar--items.active .leftnavbar--title {
+  border: 0;
   background: #073573;
 }
 .leftnavbar--items.active .leftnavbar--title a {
@@ -12130,12 +12132,24 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 .leftnavbar--items.active .leftnavbar--title:before {
   opacity: 1;
 }
+.leftnavbar--items.active:last-child {
+  border-bottom: 0;
+}
 .leftnavbar--items:hover .leftnavbar--title a {
   font-weight: 700;
   text-decoration: underline;
 }
-.leftnavbar--items:last-child {
+.leftnavbar--items:last-child .leftnavbar-item {
+  border-bottom: 1px solid #d7d7d7;
+  border-radius: 0 0 15px 15px;
+}
+.leftnavbar--items:last-child .leftnavbar--title {
+  border-bottom: 1px solid #d7d7d7;
+  border-radius: 0 0 15px 15px;
+}
+.leftnavbar--items.active:last-child .leftnavbar--title {
   border-bottom: 0;
+  border-radius: 0;
 }
 .leftnavbar--items.active .leftnavbar-item {
   display: block;
@@ -12146,7 +12160,10 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 .leftnavbar--title {
   padding: 20px 20px;
   position: relative;
-  border-bottom: 1px solid #d7d7d7;
+  border-top: 1px solid #d7d7d7;
+  transition: 0.5s;
+  border-left: 1px solid #d7d7d7;
+  border-right: 1px solid #d7d7d7;
   transition: 0.5s;
 }
 .leftnavbar--title:before {
@@ -12176,6 +12193,8 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .leftnavbar-item {
   display: none;
+  border-left: 1px solid #d7d7d7;
+  border-right: 1px solid #d7d7d7;
 }
 .leftnavbar-item ul {
   padding: 20px;
@@ -13493,6 +13512,11 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
   border: 2px solid #fff;
   box-shadow: 0 0 5px rgba(170, 170, 170, 0.35);
   overflow: hidden;
+}
+@media only screen and (max-width: 767px) {
+  .paragraph--type--grade-access .paragraph--type--grade-access-blocks {
+    padding: 36px 16px 20px;
+  }
 }
 .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover {
   border-color: #2379A4;

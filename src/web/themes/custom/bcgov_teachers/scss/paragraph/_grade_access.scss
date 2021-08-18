@@ -92,6 +92,9 @@
     box-shadow: 0 0 5px rgba(170,170,170, 0.35);
     overflow: hidden;
 
+    @media only screen and (max-width:767px){
+      padding: 36px 16px 20px;
+    }
     &:hover {
       border-color: $teachers-secondary-blue;
       border-color: var(--grade-color);

@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_add_grade_access
     - node.type.content
-    - paragraphs.paragraphs_type.grade_access_blocks
+    - paragraphs.paragraphs_type.grade_access
   module:
     - entity_reference_revisions
     - paragraph_blocks
@@ -27,7 +27,7 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      grade_access_blocks: grade_access_blocks
+      grade_access: grade_access
     target_bundles_drag_drop:
       banner:
         weight: 21
@@ -78,11 +78,11 @@ settings:
         weight: 36
         enabled: false
       grade_access:
-        weight: 37
-        enabled: false
-      grade_access_blocks:
         enabled: true
+        weight: 37
+      grade_access_blocks:
         weight: 38
+        enabled: false
       paragraph_simple:
         weight: 39
         enabled: false

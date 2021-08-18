@@ -904,7 +904,7 @@
   width:100%;
   border-radius: 15px;
   overflow: hidden;
-  border: 1px solid rgb(215, 215, 215);
+  //border: 1px solid rgb(215, 215, 215);
   transition: 0.5s;
   margin-top:10px;
   @media only screen and (max-width:767px){
@@ -912,9 +912,14 @@
   }
   &--items{
     transition: 0.5s;
-    border-bottom: 1px solid #d7d7d7;
+    &:first-child{
+      .leftnavbar--title{
+        border-radius: 15px 15px 0 0;
+      }
+    }
     &.active{
       .leftnavbar--title{
+        border: 0;
         background:rgb(7, 53, 115);
         a{
           color:#fff;
@@ -925,6 +930,9 @@
         }
       }
     }
+    &.active:last-child{
+      border-bottom: 0;
+    }
     &:hover{
       .leftnavbar--title{
         a{
@@ -934,7 +942,20 @@
       }
     }
     &:last-child{
-      border-bottom:0;
+      .leftnavbar-item{
+        border-bottom: 1px solid #d7d7d7;
+        border-radius: 0 0 15px 15px;
+      }
+      .leftnavbar--title{
+        border-bottom: 1px solid #d7d7d7;
+        border-radius: 0 0 15px 15px;
+      }
+    }
+    &.active:last-child{
+      .leftnavbar--title{
+        border-bottom: 0;
+        border-radius:0;
+      }
     }
     &.active{
       .leftnavbar-item{display: block;}
@@ -948,7 +969,10 @@
   &--title{
       padding:20px 20px;
       position:relative;
-      border-bottom: 1px solid rgb(215, 215, 215);
+      border-top: 1px solid rgb(215, 215, 215);
+      transition: 0.5s;
+      border-left: 1px solid rgb(215, 215, 215);
+      border-right: 1px solid rgb(215, 215, 215);
       transition: 0.5s;
        &:before{
           content:'';
@@ -977,6 +1001,8 @@
 
   &-item{
     display: none;
+    border-left: 1px solid rgb(215, 215, 215);
+    border-right: 1px solid rgb(215, 215, 215);
         ul{
           padding:20px;
           margin:0;
