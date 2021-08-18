@@ -83,7 +83,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|Career Lifecycle Stage'
+                    filter_rewrite_values: "- Any -|Career Lifecycle Stage\r\nSelect All|All Career Lifecycle Stages"
                   collapsible: false
                   is_secondary: false
                 select_all_none: false
@@ -94,7 +94,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|Focus Area Levels'
+                    filter_rewrite_values: "- Any -|Focus Area Levels\r\nSelect All|All Grades"
                   collapsible: false
                   is_secondary: false
                 select_all_none: false
@@ -105,7 +105,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|Curricular Competencies'
+                    filter_rewrite_values: "- Any -|Curricular Competencies\r\nSelect All|All Curricular Competencies"
                   collapsible: false
                   is_secondary: false
                 select_all_none: false
@@ -116,7 +116,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|Key Audiences'
+                    filter_rewrite_values: "- Any -|Key Audiences\r\nSelect All|All Audiences"
                   collapsible: false
                   is_secondary: false
                 select_all_none: false

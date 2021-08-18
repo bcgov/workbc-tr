@@ -21,6 +21,15 @@ function bcgov_teachers_form_alter(&$form, &$form_state, $form_id) {
     $form['keys']['#attributes']['placeholder'] = t('Search for resources here...');
     $form['actions']['submit']['#value'] = '';
   }
+  $view_ids = ['solr_results'];
+  $view = $form_state->getStorage('view');
+  if ($form_id == 'views_exposed_form' && in_array($view['view']->id(), $view_ids)) {
+    $form['field_term_resource_stage']['#options'] = array("-ALL-" => t("All Career Lifecycle Stages")) + $form['field_term_resource_stage']['#options'];
+    $form['field_term_resource_grade']['#options'] = array("-ALL-" => t("All Grades")) + $form['field_term_resource_grade']['#options'];
+    $form['field_term_resource_competency']['#options'] = array("-ALL-" => t("All Curricular Competencies")) + $form['field_term_resource_competency']['#options'];
+    $form['field_term_resource_audience']['#options'] = array("-ALL-" => t("All Audiences")) + $form['field_term_resource_audience']['#options'];
+    array_unshift($form['#submit'], 'bcgov_teachers_exposed_form_submit');
+  }
 }
 
 /**
