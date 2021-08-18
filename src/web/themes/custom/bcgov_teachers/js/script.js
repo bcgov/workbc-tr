@@ -276,7 +276,35 @@
         jQuery(this).closest('.filterbox').removeClass('open');
         jQuery(this).hide();
         jQuery('.filterbox__title.show_title').show();
-    });
+      });
+
+      jQuery('.search-solr-box__inner .card-body .form-checkboxes .form-item:first-child').addClass('parent-item');
+      jQuery('.search-solr-box__inner .card-body .form-checkboxes .form-item + .form-item').addClass('child-item');
+
+      jQuery(".parent-item").each(function () {
+        jQuery(this).nextUntil(".parent-item").addBack().wrapAll('<div class="checkbox-item parent-checkbox-item"></div>');
+      });
+      jQuery(".child-item").each(function () {
+        jQuery(this).nextUntil(".child-item").addBack().wrapAll('<div class="checkbox-item child-checkbox-item"></div>');
+      });
+
+      jQuery('.parent-checkbox-item > .form-item input').on('change', function () {
+        jQuery(this).closest('.parent-checkbox-item').find('.checkbox-item input[type="checkbox"]').prop('checked', this.checked);
+      });
+
+      jQuery('.child-checkbox-item .form-item input').on('change', function () {
+        var totalcheckbox = jQuery(this).closest('.parent-checkbox-item').find('input').length;
+        var chechedchekbox = jQuery(this).closest('.parent-checkbox-item').find('input:checked').length;
+        var notcheckedbox = totalcheckbox - chechedchekbox;
+        if (notcheckedbox == 0) {
+          jQuery(this).closest('.parent-checkbox-item').find('> .form-item input').prop('checked', 'checked');
+        }
+        else {
+          jQuery(this).closest('.parent-checkbox-item').find('> .form-item input').prop('checked', '');
+        }
+      });
+
+
       //filter open close js end
 
       //show resut position replacement
