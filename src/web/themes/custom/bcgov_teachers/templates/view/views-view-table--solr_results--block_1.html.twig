@@ -38,7 +38,9 @@
             <div class="related_news_wrapper_desc">{{ row.columns.field_resource_card_summary }}</div>
             <div class="related_news_wrapper_grade">{{ row.columns.field_term_resource_grade }}</div>
           </div>
-          <div class="related_news_wrapper_cls"><span>{{ "Career Lifecycle Stage: "|t }}</span>{{ row.columns.field_term_resource_stage }}</div>
+          {% if row.columns.field_term_resource_stage.content is not empty %}
+            <div class="related_news_wrapper_cls"><span>{{ "Career Lifecycle Stage: "|t }}</span>{{ row.columns.field_term_resource_stage }}</div>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
