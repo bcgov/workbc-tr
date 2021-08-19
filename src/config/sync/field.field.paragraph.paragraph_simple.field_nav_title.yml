@@ -1,0 +1,21 @@
+uuid: e52704d1-2296-49bf-ba28-f7f046b639ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nav_title
+    - paragraphs.paragraphs_type.paragraph_simple
+  module:
+    - text
+id: paragraph.paragraph_simple.field_nav_title
+field_name: field_nav_title
+entity_type: paragraph
+bundle: paragraph_simple
+label: 'Nav Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

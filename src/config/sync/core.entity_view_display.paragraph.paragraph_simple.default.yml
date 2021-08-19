@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.paragraph_simple.field_nav_title
     - field.field.paragraph.paragraph_simple.field_para_simple_body
     - field.field.paragraph.paragraph_simple.field_para_simple_title
     - field.field.paragraph.paragraph_simple.field_paragraph_image
@@ -16,6 +17,13 @@ targetEntityType: paragraph
 bundle: paragraph_simple
 mode: default
 content:
+  field_nav_title:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_para_simple_body:
     weight: 1
     label: hidden

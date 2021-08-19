@@ -328,6 +328,7 @@
    &:hover{
     box-shadow:rgba(170, 170, 170, 0.35) 0px 0px 10px;
     background: #f2f2f2;
+    .related_news_wrapper_title a{text-decoration: underline;}
    }
   }
   &_assest_type{
@@ -484,6 +485,7 @@
     background:$teachers-bg-light;
     color:$teachers-fifth-blue;
     box-shadow: 0px 0px 10px #d7d7d7;
+    text-decoration: none;
     &:before{
       background:url(../images/download-blue.svg) center no-repeat;
       background-size: cover;
@@ -914,7 +916,9 @@
     transition: 0.5s;
     &:first-child{
       .leftnavbar--title{
-        border-radius: 15px 15px 0 0;
+        @media only screen and (min-width:768px){
+          border-radius: 15px 15px 0 0;
+        }
       }
     }
     &.active{
@@ -938,17 +942,25 @@
         a{
           font-weight:700;
           text-decoration: underline;
+          @media only screen and (max-width:767px){
+            text-decoration: none;
+         }
         }
       }
     }
     &:last-child{
       .leftnavbar-item{
         border-bottom: 1px solid #d7d7d7;
-        border-radius: 0 0 15px 15px;
+         @media only screen and (min-width:768px){
+            border-radius: 0 0 15px 15px;
+         }
+
       }
       .leftnavbar--title{
         border-bottom: 1px solid #d7d7d7;
-        border-radius: 0 0 15px 15px;
+         @media only screen and (min-width:768px){
+            border-radius: 0 0 15px 15px;
+         }
       }
     }
     &.active:last-child{
@@ -974,6 +986,9 @@
       border-left: 1px solid rgb(215, 215, 215);
       border-right: 1px solid rgb(215, 215, 215);
       transition: 0.5s;
+       @media only screen and (max-width:767px){
+          border:0;
+        }
        &:before{
           content:'';
           position:absolute;
@@ -995,6 +1010,9 @@
           transition: 0.5s;
           @media screen and (max-width:767px) {
             text-align: center;
+            &:focus{
+              text-decoration: none;
+            }
           }
       }
   }
@@ -1100,6 +1118,9 @@
         }
       }
       .leftnavbar--title{border-bottom: 0; padding:17px 20px; background: #073573; display: flex; align-items: center; height: 100%;
+        @media screen and (max-width:767px) {
+          padding:17px 12px;
+        }
         a{color:#fff; }
         &:before{display: none;}
       }

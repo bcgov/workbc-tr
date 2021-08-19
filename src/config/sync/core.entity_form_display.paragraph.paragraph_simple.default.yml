@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.paragraph_simple.field_nav_title
     - field.field.paragraph.paragraph_simple.field_para_simple_body
     - field.field.paragraph.paragraph_simple.field_para_simple_title
     - field.field.paragraph.paragraph_simple.field_paragraph_image
@@ -42,6 +43,7 @@ content:
 hidden:
   admin_title: true
   created: true
+  field_nav_title: true
   field_paragraph_image: true
   field_show_bulb_icon: true
   status: true

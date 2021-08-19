@@ -165,6 +165,16 @@
                 </div>
               </li>
             {% endfor %}
+             <li>
+                <div class="file-title {{ node.title.value }}">
+                  {{ node.title.value }}
+                </div>
+                <div class="size-url-wrap">
+                  <div class="file-url">
+                    <a href="{{ file_url(subentity.entity.field_media_document.0.entity.uri.value) }}" title="{{ subentity.entity.field_media_document.0.entity.filename.value }}" download target="_blank">Download</a>
+                  </div>
+                </div>
+              </li>
             <li class="download-all">
               <div class="file-title-all">
                 {{ "Download all (ZIP)"|t }}
@@ -216,11 +226,17 @@
                   <div class="leftnavbar-item">
                     <ul>
                       {% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}
-                      {% if lsubentity.entity.field_para_simple_title.value is not empty %}
-                        <li>
-                          <a class="left-paragraph-{{ subentity.entity.id.value }}" href="#paragraph-{{ lsubentity.entity.id.value }}">{{ lsubentity.entity.field_para_simple_title.value|striptags }}</a>
-                        </li>
-                      {% endif %}
+                        {% if lsubentity.entity.field_nav_title.value is not empty %}
+                          <li>
+                            <a class="left-paragraph-{{ subentity.entity.id.value }}" href="#paragraph-{{ lsubentity.entity.id.value }}">{{ lsubentity.entity.field_nav_title.value|striptags }}</a>
+                          </li>
+                        {% else %}
+                          {% if lsubentity.entity.field_para_simple_title.value is not empty %}
+                            <li>
+                              <a class="left-paragraph-{{ subentity.entity.id.value }}" href="#paragraph-{{ lsubentity.entity.id.value }}">{{ lsubentity.entity.field_para_simple_title.value|striptags }}</a>
+                            </li>
+                          {% endif %}
+                        {% endif %}
                       {% endfor %}
                     </ul>
                   </div>
