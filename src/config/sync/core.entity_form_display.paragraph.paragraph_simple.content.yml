@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.paragraph.content
+    - field.field.paragraph.paragraph_simple.field_nav_title
     - field.field.paragraph.paragraph_simple.field_para_simple_body
     - field.field.paragraph.paragraph_simple.field_para_simple_title
     - field.field.paragraph.paragraph_simple.field_paragraph_image
@@ -51,5 +52,6 @@ content:
 hidden:
   admin_title: true
   created: true
+  field_nav_title: true
   field_show_bulb_icon: true
   status: true
