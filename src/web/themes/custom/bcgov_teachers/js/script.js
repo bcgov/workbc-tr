@@ -5,6 +5,13 @@
         // Insert theme js specific lines here.
       }
 
+      if(jQuery('.card-body .form-checkboxes').length){
+        jQuery('.card-body .form-checkboxes input:checked').each(function() {
+           var label = jQuery(this).next().text();
+           jQuery('.card-header .fieldset-legend').text(label);
+        });
+      }
+
       //add placeholder in subscription form
       if(jQuery('.simplenews-subscriptions-block-simple-new-teachers').length){
         jQuery('.simplenews-subscriptions-block-simple-new-teachers input').attr('placeholder', 'Enter your email address');
