@@ -11482,6 +11482,9 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   box-shadow: rgba(170, 170, 170, 0.35) 0px 0px 10px;
   background: #f2f2f2;
 }
+.related_news_wrapper--item:hover .related_news_wrapper_title a {
+  text-decoration: underline;
+}
 .related_news_wrapper_assest_type {
   font-size: 15px;
   color: #FFFFFF;
@@ -11656,6 +11659,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   background: #FFFFFF;
   color: #26A7DF;
   box-shadow: 0px 0px 10px #d7d7d7;
+  text-decoration: none;
 }
 .download-worksheets-button:hover:before, .download-worksheets-button:active:before, .download-worksheets-button:focus:before {
   background: url(../images/download-blue.svg) center no-repeat;
@@ -12118,8 +12122,10 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 .leftnavbar--items {
   transition: 0.5s;
 }
-.leftnavbar--items:first-child .leftnavbar--title {
-  border-radius: 15px 15px 0 0;
+@media only screen and (min-width: 768px) {
+  .leftnavbar--items:first-child .leftnavbar--title {
+    border-radius: 15px 15px 0 0;
+  }
 }
 .leftnavbar--items.active .leftnavbar--title {
   border: 0;
@@ -12139,13 +12145,26 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   font-weight: 700;
   text-decoration: underline;
 }
+@media only screen and (max-width: 767px) {
+  .leftnavbar--items:hover .leftnavbar--title a {
+    text-decoration: none;
+  }
+}
 .leftnavbar--items:last-child .leftnavbar-item {
   border-bottom: 1px solid #d7d7d7;
-  border-radius: 0 0 15px 15px;
+}
+@media only screen and (min-width: 768px) {
+  .leftnavbar--items:last-child .leftnavbar-item {
+    border-radius: 0 0 15px 15px;
+  }
 }
 .leftnavbar--items:last-child .leftnavbar--title {
   border-bottom: 1px solid #d7d7d7;
-  border-radius: 0 0 15px 15px;
+}
+@media only screen and (min-width: 768px) {
+  .leftnavbar--items:last-child .leftnavbar--title {
+    border-radius: 0 0 15px 15px;
+  }
 }
 .leftnavbar--items.active:last-child .leftnavbar--title {
   border-bottom: 0;
@@ -12165,6 +12184,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   border-left: 1px solid #d7d7d7;
   border-right: 1px solid #d7d7d7;
   transition: 0.5s;
+}
+@media only screen and (max-width: 767px) {
+  .leftnavbar--title {
+    border: 0;
+  }
 }
 .leftnavbar--title:before {
   content: "";
@@ -12189,6 +12213,9 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 @media screen and (max-width: 767px) {
   .leftnavbar--title a {
     text-align: center;
+  }
+  .leftnavbar--title a:focus {
+    text-decoration: none;
   }
 }
 .leftnavbar-item {
@@ -12306,6 +12333,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   display: flex;
   align-items: center;
   height: 100%;
+}
+@media screen and (max-width: 767px) {
+  .mobiletab .leftnavbar .leftnavbar--items .leftnavbar--title {
+    padding: 17px 12px;
+  }
 }
 .mobiletab .leftnavbar .leftnavbar--items .leftnavbar--title a {
   color: #fff;
