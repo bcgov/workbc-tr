@@ -1161,15 +1161,24 @@
 
 
 .related_news_slider, .resource_wrapper_left__img{
-  .slick-prev:before, .slick-next:before{
-    content:'';
-    width:15px;
-    height:25px;
-    background: url(../images/slider-arrow.svg) center no-repeat;
-    background-size:cover;
-    display: inline-block;
-    top:0;
+  .slick-prev, .slick-next{
+    &:before{
+      content:'';
+      width:15px;
+      height:25px;
+      background: url(../images/slider-arrow.svg) center no-repeat;
+      background-size:cover;
+      display: inline-block;
+      top:0;
+    }
+    &.slick-disabled {
+      &:before{
+        background: url('/themes/custom/bcgov_teachers/images/chevron-grey.svg');
+        opacity: 1;
+      }
+    }
   }
+
   .slick-next:before{
     transform: rotate(180deg);
   }
@@ -1195,9 +1204,7 @@
     font-size: 16px;
   }
 }
-.slick-disabled {
-    opacity: 0.5;
-}
+
 .resource_wrapper_left__img{
   img{margin: 0 auto; display: block;}
 }

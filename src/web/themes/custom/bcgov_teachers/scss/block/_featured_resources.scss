@@ -167,7 +167,7 @@
       opacity: 1;
     }
 
-    &:hover {
+    &:hover, &.slick-disabled{
       &::before {
         background: url('/themes/custom/bcgov_teachers/images/chevron-grey.svg');
       }
