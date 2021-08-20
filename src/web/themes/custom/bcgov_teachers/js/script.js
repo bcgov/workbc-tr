@@ -6,7 +6,7 @@
       }
 
       if(jQuery('.sort-box .card-body .form-checkboxes').length){
-        jQuery('.card-body .form-checkboxes input:checked').each(function() {
+        jQuery('.sort-box .card-body .form-checkboxes input:checked').each(function() {
            var label = jQuery(this).next().text();
            jQuery('.sort-box .card-header .fieldset-legend').text(label);
         });
