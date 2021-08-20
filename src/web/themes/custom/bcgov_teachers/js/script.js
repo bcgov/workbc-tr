@@ -342,6 +342,12 @@
       //show resut position replacement
       var result = jQuery('.view-solr-results .view-header').text();
       jQuery('.show-result-wrapper .container .view-header').text(result);
+
+      if (jQuery('.search_keyword .search-btn').length > 0) {
+        jQuery('.search_keyword .search-btn').on('click', function () {
+          jQuery('form#views-exposed-form-solr-results-page-1').submit();
+        });
+      }
     }
   }
 

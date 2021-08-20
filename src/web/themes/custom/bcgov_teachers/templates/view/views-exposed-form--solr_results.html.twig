@@ -24,7 +24,7 @@
       <div class="search-solr-box">
           <div class="filterbox">
               <div class="filterbox__input search_keyword">
-                  {{ form.keys }}<span>search</span>
+                  {{ form.keys }}<span class="search-btn">search</span>
               </div>
           </div>
       </div>
@@ -36,9 +36,9 @@
             <div class="filterbox__title show_title"><span>{{ "Show Filters"|t }}</span></div>
             <div class="filterbox__title hide_title"><span>{{ "Hide Filters"|t }}</span></div>
           </div>
-          
+
           <div class="filterbox__selectgroup">
-      
+
             <div class="filterbox__dd filterbox__dd-grade">
               {{ form.field_term_resource_grade }}
             </div>
@@ -46,11 +46,11 @@
             <div class="filterbox__dd filterbox__dd-stage">
               {{ form.field_term_resource_stage }}
             </div>
-        
+
             <div class="filterbox__dd filterbox__dd-competency">
               {{ form.field_term_resource_competency}}
             </div>
-        
+
             <div class="filterbox__dd filterbox__dd-audience">
               {{ form.field_term_resource_audience}}
             </div>
@@ -58,7 +58,7 @@
           </div>
         </div>
       </div>
-     
+
     </div>
   </div>
 
@@ -78,6 +78,6 @@
       </div>
    </div>
 </div>
-   
+
 
 {{ form|without('field_term_resource_asset_type', 'field_term_resource_audience', 'field_term_resource_competency', 'field_term_resource_stage', 'field_term_resource_grade', 'keys') }}
