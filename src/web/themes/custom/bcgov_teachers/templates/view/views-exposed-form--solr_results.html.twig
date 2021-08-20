@@ -17,13 +17,14 @@
 {{ q }}
 {% endif %}
 {{ attach_library('bcgov_teachers/filters') }}
+
 <div class="search-solr-box--wrapper">
   <div class="search-solr-box__inner">
     <div class="container">
       <div class="search-solr-box">
           <div class="filterbox">
               <div class="filterbox__input search_keyword">
-                  {{ form.search_api_fulltext }}<span>search</span>
+                  {{ form.keys }}<span>search</span>
               </div>
           </div>
       </div>
@@ -79,4 +80,4 @@
 </div>
    
 
-{{ form|without('field_term_resource_asset_type', 'field_term_resource_audience', 'field_term_resource_competency', 'field_term_resource_stage', 'field_term_resource_grade', 'search_api_fulltext') }}
+{{ form|without('field_term_resource_asset_type', 'field_term_resource_audience', 'field_term_resource_competency', 'field_term_resource_stage', 'field_term_resource_grade', 'keys') }}
