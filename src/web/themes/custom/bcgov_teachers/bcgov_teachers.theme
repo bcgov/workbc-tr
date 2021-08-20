@@ -20,6 +20,7 @@ function bcgov_teachers_form_alter(&$form, &$form_state, $form_id) {
     $form['keys']['#size'] = 1;
     $form['keys']['#attributes']['placeholder'] = t('Search for resources here...');
     $form['actions']['submit']['#value'] = '';
+    $form['#action'] = '/search';
   }
   $view_ids = ['solr_results'];
   $view = $form_state->getStorage('view');
