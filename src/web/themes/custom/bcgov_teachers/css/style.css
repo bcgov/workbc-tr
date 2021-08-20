@@ -11242,6 +11242,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   border: 3px solid #2379A4;
   padding: 0px 18px 0 34px;
   position: relative;
+  height: 27px;
 }
 .lesson_wrapper_intro__time:before, .resource_wrapper_intro__time:before {
   content: "";
@@ -12752,6 +12753,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup {
   margin-left: 10px;
+  min-width: 250px;
 }
 @media only screen and (max-width: 767px) {
   .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup {
