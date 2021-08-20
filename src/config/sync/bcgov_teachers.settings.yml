@@ -5,7 +5,7 @@ features:
   favicon: 1
 logo:
   use_default: 0
-  path: themes/custom/bcgov_teachers/assets/logo-workbc.png
+  path: themes/custom/bcgov_teachers/assets/workbc-logo.svg
 favicon:
   use_default: 1
 b4_top_container: container

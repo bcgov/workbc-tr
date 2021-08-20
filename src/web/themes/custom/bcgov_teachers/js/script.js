@@ -233,24 +233,45 @@
           return Math.max.apply(Math, array);
       };
 
-      // if (window.matchMedia("(min-width: 768px)").matches) {
-      //   setEqualHeight(jQuery('.related_news_slider .related_news_wrapper--item-single'));
-      //   jQuery('.search_wrapper .row').each(function(){
-      //     setEqualHeight(jQuery(this).find('.related_news_wrapper--item'));
-      //   });
-      // }
-
-      // jQuery(window).resize(function(){
-      //   if (window.matchMedia("(min-width: 768px)").matches) {
-      //     setEqualHeight(jQuery('.related_news_slider .related_news_wrapper--item'));
-
-      //     jQuery('.search_wrapper .row').each(function(){
-      //       setEqualHeight(jQuery(this).find('.related_news_wrapper--item'));
-      //     });
-      //   }
-      // });
-
       //equal height for related plan box end
+      if ($('body.page-node-type-resource').length > 0) {
+        function setEqualHeight(arr) {
+          var x = new Array([]);
+          for (i = 0; i < arr.length; i++) {
+            x[i] = jQuery(arr[i]).height('auto');
+            x[i] = jQuery(arr[i]).outerHeight();
+          }
+          Max_Value = Array.max(x);
+          for (i = 0; i < arr.length; i++) {
+            x[i] = jQuery(arr[i]).outerHeight(Max_Value);
+          }
+        }
+
+        Array.min = function (array) {
+          return Math.min.apply(Math, array);
+        };
+
+        Array.max = function (array) {
+          return Math.max.apply(Math, array);
+        };
+
+        if (window.matchMedia("(min-width: 768px)").matches) {
+          setEqualHeight(jQuery('.related_news_slider .related_news_wrapper--item-single'));
+          jQuery('.search_wrapper .row').each(function(){
+            setEqualHeight(jQuery(this).find('.related_news_wrapper--item'));
+          });
+        }
+
+        jQuery(window).resize(function(){
+          if (window.matchMedia("(min-width: 768px)").matches) {
+            setEqualHeight(jQuery('.related_news_slider .related_news_wrapper--item'));
+
+            jQuery('.search_wrapper .row').each(function(){
+              setEqualHeight(jQuery(this).find('.related_news_wrapper--item'));
+            });
+          }
+        });
+      }
 
       //filter open close js
       setTimeout(function(){
@@ -321,6 +342,12 @@
       //show resut position replacement
       var result = jQuery('.view-solr-results .view-header').text();
       jQuery('.show-result-wrapper .container .view-header').text(result);
+
+      if (jQuery('.search_keyword .search-btn').length > 0) {
+        jQuery('.search_keyword .search-btn').on('click', function () {
+          jQuery('form#views-exposed-form-solr-results-page-1').submit();
+        });
+      }
     }
   }
 
