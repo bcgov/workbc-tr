@@ -252,15 +252,15 @@
                           padding:10px 35px 10px 20px;
                       }
                 }
-                .card-body{padding:0; width:100%;
+                .card-body{padding:0; width:100%; border: 1px solid #000;
                     .form-checkboxes{
                         .form-item{margin: 0;}
                         label, .bef-toggle{display: inline-block; width:100%; padding:3px 20px; cursor: pointer; margin: 0; width:100%; color:#333;
                             &:before,&:after{display: none;}
                             &:hover{
-                                background:#e85333;
+                                background:#009CDE;
                                 text-decoration: none;
-                                color: #fff;;
+                                color: #fff;
                             }
                         }
                     }
