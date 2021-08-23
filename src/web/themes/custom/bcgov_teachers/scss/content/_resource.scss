@@ -505,8 +505,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    @media only screen and (max-width:640px){
-      justify-content: center;
+    @media only screen and (max-width:1200px){
+      justify-content: flex-start;
     }
 }
 .sharethis-wrapper{
@@ -822,7 +822,7 @@
       border:2px solid transparent;
       border-radius: 15px;
       font-weight: 400;
-      padding:12px 10px 12px 30px;
+      padding:12px 10px 12px 70px;
       transition: 0.5s;
       display: inline-block;
       width: 100%;
