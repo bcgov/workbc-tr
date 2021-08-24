@@ -875,28 +875,28 @@
     &.active{
       display: block;
     }
-    &:first-child{
+    /*&:first-child{
       .lesson_wrapper_main_para_item:first-child .lesson_wrapper_main_para_item__body p:first-child{font-size: 21px; line-height: 31px;
         @media only screen and (max-width:767px){
           font-size: 18px;
           line-height: 28px;
         }
       }
-    }
+    }*/
   }
 }
 
 // show/hide resouce des
 .resource_wrapper{
   .main-section{
-    &:first-child{
+   /* &:first-child{
       .resource_wrapper_main_para_item:first-child .resource_wrapper_main_para_item__body p:first-child{font-size: 21px; line-height: 31px;
          @media only screen and (max-width:767px){
           font-size: 18px;
           line-height: 28px;
         }
       }
-    }
+    }*/
   }
 }
 
