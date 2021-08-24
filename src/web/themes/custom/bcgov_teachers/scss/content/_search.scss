@@ -421,10 +421,10 @@ form#views-exposed-form-solr-results-page-1{
 
 .show-result-wrapper{
     .view-header--wrapper{display: flex; align-items: center; justify-content: space-between; width: 100%;}
-    .clear-all{display: none; margin-top:40px;
+    .clear-all{display: none; margin-top:40px;     visibility: hidden;
         a{font-size: 15px;}
         @media only screen and (max-width:767px){
-            display: block;
+            display: block; visibility:visible;
         }
     }
 }

@@ -113,6 +113,9 @@
           $(this).closest('.leftnavbar--items').addClass('active');
           var hrefattr = $(this).attr('href');
           $('.right-nav '+hrefattr).addClass('active');
+          $('html,body').animate({
+            scrollTop: $('.right-nav').offset().top
+          });
         });
 
         setTimeout(function(){
