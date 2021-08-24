@@ -12807,6 +12807,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 .search_filter__results .clear-all a:hover {
   text-decoration: underline;
 }
+@media only screen and (max-width: 767px) {
+  .search_filter__results .clear-all {
+    display: none !important;
+  }
+}
 .search_filter__results .dept-appned {
   display: flex;
   align-items: center;
@@ -12916,6 +12921,25 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 
 form#views-exposed-form-solr-results-page-1 .form-actions {
   margin: 0;
+}
+
+.show-result-wrapper .view-header--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.show-result-wrapper .clear-all {
+  display: none;
+  margin-top: 40px;
+}
+.show-result-wrapper .clear-all a {
+  font-size: 15px;
+}
+@media only screen and (max-width: 767px) {
+  .show-result-wrapper .clear-all {
+    display: block;
+  }
 }
 
 /*------------------Filter styling end------------------*/
@@ -13572,15 +13596,15 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
     padding: 36px 16px 20px;
   }
 }
-.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover {
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus {
   border-color: #2379A4;
   border-color: var(--grade-color);
   cursor: pointer;
 }
-.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:link, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:visited, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:hover, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:active, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:focus {
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:link, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:visited, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:hover, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:active, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:focus, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:link, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:visited, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:hover, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:active, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:focus {
   color: #fff;
 }
-.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:link:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:visited:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:hover:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:active:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:focus:after {
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:link:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:visited:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:hover:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:active:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:focus:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:link:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:visited:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:hover:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:active:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:focus:after {
   content: " ";
   position: absolute;
   top: 50%;

@@ -64,7 +64,10 @@
 
   <div class="show-result-wrapper">
     <div class="container">
-      <div class="view-header"></div>
+      <div class="view-header--wrapper">
+        <div class="view-header"></div>
+       <div class="clear-all"><a href="javascript:void(0)">{{ 'Clear all'|t }}</a></div>
+      </div>
       <div class="sort-box search-assest">
         {{ "Show:"|t }} {{ form.field_term_resource_asset_type }}
       </div>

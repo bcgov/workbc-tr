@@ -312,6 +312,9 @@
         a{font-size: 15px; white-space: nowrap;
             &:hover{text-decoration: underline;}
         }
+        @media only screen and (max-width:767px){
+            display: none !important;
+        }
     }
     .dept-appned{
         display: flex;
@@ -414,5 +417,15 @@
 .view-solr-results .view-header{display: none;}
 form#views-exposed-form-solr-results-page-1{
     .form-actions{margin: 0;}
+}
+
+.show-result-wrapper{
+    .view-header--wrapper{display: flex; align-items: center; justify-content: space-between; width: 100%;}
+    .clear-all{display: none; margin-top:40px;
+        a{font-size: 15px;}
+        @media only screen and (max-width:767px){
+            display: block;
+        }
+    }
 }
 /*------------------Filter styling end------------------*/

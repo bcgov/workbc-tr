@@ -77,7 +77,8 @@
         var right_height = $('.right-nav .main-section.active').height();
         var right_top = $('.right-nav .main-section.active').offset().top;
         var winHeight = $(window).height();
-        var differ = right_height + right_top - 450;
+       // var differ = right_height + right_top - 450;
+        var differ = right_height + right_top;
 
         function stickynavbar(){
           var window_top = $(window).scrollTop() + 200;
