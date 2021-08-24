@@ -12447,6 +12447,10 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   justify-content: flex-start;
 }
 
+.slick-prev, .slick-next {
+  height: 28px;
+}
+
 .search_wrapper {
   margin-bottom: 40px;
 }
