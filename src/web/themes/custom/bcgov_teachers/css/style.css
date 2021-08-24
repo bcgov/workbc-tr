@@ -13002,9 +13002,9 @@ header .region-header .navbar-brand img {
 }
 header .region-header .navbar-brand .site-title {
   display: table-cell;
-  vertical-align: bottom;
+  vertical-align: top;
   padding: 0 15px;
-  text-align: center;
+  text-align: left;
   text-transform: inherit;
   font-weight: 400;
   font-style: normal;
