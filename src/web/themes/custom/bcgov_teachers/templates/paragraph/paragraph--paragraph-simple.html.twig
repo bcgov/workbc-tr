@@ -59,7 +59,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
             {{ content.field_para_simple_body }}
           </div>
           <div class="col-md-4 d-none d-lg-block">
-            <img src="{{ file_url(paragraph.field_paragraph_image.entity.field_media_image.entity.uri.value) }}" alt="{{ label }}" class="simple-img" />
+            <img src="{{ file_url(paragraph.field_paragraph_image.entity.field_media_image.entity.uri.value) }}" alt="{{ label }}" class="simple-img img-fluid" />
           </div>
         </div>
       {% else %}
