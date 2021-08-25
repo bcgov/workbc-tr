@@ -5,10 +5,10 @@
         // Insert theme js specific lines here.
       }
 
-      if($('.sort-box .card-body .form-checkboxes').length){
-        $('.sort-box .card-body .form-checkboxes .js-form-type-checkbox input[type=checkbox]').each(function() {
+      if ($('.sort-box .card-body .form-radios').length){
+        $('.sort-box .card-body .form-radios .js-form-type-radio input[type=radio]').each(function() {
           if (this.checked) {
-            var label = $(this).next().text();
+            var label = $(this).next('label').text();
             $('.sort-box .card-header .fieldset-legend').text(label);
           }
 

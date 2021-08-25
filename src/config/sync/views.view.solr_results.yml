@@ -127,10 +127,10 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: "Select All|All Lesson Plans & Resources\r\nLesson Plan|Lesson Plans Only\r\nResource|Resources Only"
+                    filter_rewrite_values: "- Any -|All Lesson Plans & Resources\r\n1|Lesson Plans Only\r\n3|Resources Only"
                   collapsible: false
                   is_secondary: false
-                select_all_none: true
+                select_all_none: false
                 select_all_none_nested: false
                 display_inline: false
       pager:
@@ -1980,7 +1980,7 @@ display:
             identifier: field_term_resource_asset_type
             required: false
             remember: false
-            multiple: true
+            multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
