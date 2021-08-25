@@ -39,7 +39,7 @@ display:
         type: none
         options: {  }
       cache:
-        type: tag
+        type: none
         options: {  }
       query:
         type: views_query
@@ -1287,7 +1287,7 @@ display:
           expose:
             label: Relevance
           plugin_id: search_api
-      title: 'Search Results'
+      title: 'Lesson Plans & Resources'
       header:
         result:
           id: result
@@ -1657,6 +1657,7 @@ display:
         operator: AND
         groups:
           1: AND
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -1683,7 +1684,7 @@ display:
       display_extenders: {  }
       path: search
       exposed_block: true
-      enabled: false
+      enabled: true
       filters:
         search_api_fulltext:
           id: search_api_fulltext

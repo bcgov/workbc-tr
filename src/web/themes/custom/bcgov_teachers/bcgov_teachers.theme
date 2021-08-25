@@ -98,3 +98,10 @@ function bcgov_teachers_theme_suggestions_taxonomy_term_alter(array &$suggestion
   $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
   $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
 }
+
+/**
+ * Prepares global variables for all templates.
+ */
+function bcgov_teachers_preprocess(&$variables) {
+  $variables['base_path'] = base_path();
+}
