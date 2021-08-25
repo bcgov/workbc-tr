@@ -12,7 +12,7 @@ dependencies:
 id: views_block__resources_and_lessons_plans_block_2
 theme: bcgov_teachers
 region: content
-weight: -1
+weight: -2
 provider: null
 plugin: 'views_block:resources_and_lessons_plans-block_2'
 settings:

@@ -12438,7 +12438,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   }
 
   .slick-next {
-    right: -14px;
+    right: -18px;
   }
 }
 .search_wrapper .row {

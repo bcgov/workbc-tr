@@ -285,7 +285,8 @@
         jQuery('.search-assest .card-body .bef-toggle').text('All Lesson Plans & Resources');
       },1000);
 
-      jQuery('.search-solr-box--wrapper .card-header').on('click', function (event) {
+      jQuery('.search-solr-box--wrapper .card-header').bind('click', function (event) {
+        event.stopImmediatePropagation();
         event.stopPropagation();
         if(jQuery(this).hasClass('open')){
           jQuery(this).removeClass('open');

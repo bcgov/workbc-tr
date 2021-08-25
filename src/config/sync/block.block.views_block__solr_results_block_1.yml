@@ -1,6 +1,6 @@
 uuid: ff1ba74f-ed67-43a8-9bb6-f6e4dd88a8ce
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.solr_results
@@ -12,7 +12,7 @@ dependencies:
 id: views_block__solr_results_block_1
 theme: bcgov_teachers
 region: content
-weight: -4
+weight: -1
 provider: null
 plugin: 'views_block:solr_results-block_1'
 settings:

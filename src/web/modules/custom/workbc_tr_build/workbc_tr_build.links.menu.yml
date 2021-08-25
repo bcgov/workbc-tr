@@ -1,0 +1,6 @@
+hello_world.admin:
+  title: 'WorkBC module settings'
+  description: 'Work BC settings'
+  parent: system.admin_config_development
+  route_name: workbc_tr_build.settings_form
+  weight: 100
