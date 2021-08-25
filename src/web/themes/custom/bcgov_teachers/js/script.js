@@ -285,7 +285,7 @@
         jQuery('.search-assest .card-body .bef-toggle').text('All Lesson Plans & Resources');
       },1000);
 
-      jQuery('.search-solr-box--wrapper .card-header').bind('click', function (event) {
+      jQuery('.search-solr-box--wrapper .card-header').on('click', function (event) {
         event.stopImmediatePropagation();
         event.stopPropagation();
         if(jQuery(this).hasClass('open')){
@@ -344,6 +344,14 @@
         }
       });
 
+      jQuery('.filterbox__selectgroup .filterbox__dd').each(function(){
+        if(!jQuery(this).find('input:checked').length > 0){
+          jQuery(this).find('.parent-checkbox-item > .parent-item').addClass('selected');
+        }
+        else{
+          jQuery(this).find('.parent-item').removeClass('selected');
+        }
+      });
 
       //filter open close js end
 
