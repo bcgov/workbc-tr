@@ -110,9 +110,6 @@
         "patches": {
           "drupal/media_download_all": {
             "Compression fails with No active tasks alert":"https://www.drupal.org/files/issues/2021-03-22/3190105-2.patch"
-          },
-          "drupal/rules": {
-            "Support upcasting entity IDs to full entity contexts":"https://www.drupal.org/files/issues/2020-12-17/2800749-68.upcast.patch"
           }
         },
         "drupal-core-project-message": {
