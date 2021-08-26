@@ -7,7 +7,7 @@ _core:
 name: 'Default newsletter'
 id: default
 description: 'This is an example newsletter. Change it.'
-format: plain
+format: html
 priority: 0
 receipt: true
 from_name: 'Career Education Resources'
@@ -15,6 +15,7 @@ subject: '[[simplenews-newsletter:name]] [node:title]'
 from_address: admin@educ.gov.bc.ca
 hyperlinks: false
 allowed_handlers:
+  0: '0'
   simplenews_all: '0'
 new_account: none
 access: default

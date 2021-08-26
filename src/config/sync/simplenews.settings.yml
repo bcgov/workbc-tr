@@ -1,6 +1,6 @@
 hash_expiration: 86400
 newsletter:
-  format: plain
+  format: html
   priority: 0
   receipt: true
   from_address: admin@educ.gov.bc.ca
@@ -25,6 +25,7 @@ mail:
   throttle: 20
   spool_progress_expiration: 3600
   spool_expire: 0
-  debug: false
+  debug: true
+  source_cache: null
 _core:
   default_config_hash: rnNxnXMi72RPRPGLvuGLUXirl-f-OJtK4sv1xY84Xd0
