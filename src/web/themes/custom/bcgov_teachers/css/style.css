@@ -13825,7 +13825,6 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
 
 .slick-slide {
   float: left;
-  height: 100%;
   min-height: 1px;
   display: none;
 }
