@@ -1,0 +1,5 @@
+name: Print Save Custom module
+description: "This module will save the node PDF into node media field upon node save."
+type: module
+core_version_requirement: ^9
+package: custom
