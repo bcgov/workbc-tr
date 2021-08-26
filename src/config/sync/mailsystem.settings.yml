@@ -1,0 +1,11 @@
+theme: current
+defaults:
+  sender: SMTPMailSystem
+  formatter: mime_mail
+_core:
+  default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
+modules:
+  swiftmailer:
+    none:
+      formatter: mime_mail
+      sender: SMTPMailSystem

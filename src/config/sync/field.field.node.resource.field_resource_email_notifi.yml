@@ -1,0 +1,23 @@
+uuid: 0d22af96-f977-4e38-abc1-2f3c0e5daf1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_email_notifi
+    - node.type.resource
+id: node.resource.field_resource_email_notifi
+field_name: field_resource_email_notifi
+entity_type: node
+bundle: resource
+label: 'Email notification'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -23,7 +23,9 @@ use Drupal\simplenews\Entity\Newsletter;
  */
 function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
 
-  if($entity->bundle() == 'resource') {
+  if($entity->bundle() == 'resource' && $entity->isPublished() == TRUE && $entity->get('field_resource_email_notifi')->value == TRUE) {
+    
+        //\Drupal::logger('workbc_tr_content_mail')->warning('<pre><code>' . print_r($entity->get('field_resource_email_notifi')->value, TRUE) . '</code></pre>');
 
         //Query subscribers email subscribed to resource_newsletter
         $database = \Drupal::database();
@@ -76,10 +78,8 @@ function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface
           //Create message for email
           $body = <<<html
               <p>Hello,</p>
-              <p> WorkBC’s Teachers’ Resources have been updated:</p>
-              {$url}
-              <p>Updates will only be sent to you when new resources or lesson plans are available. You can unsubscribe at any time.</p> 
-              <p><a href="{$unsubscribed_url}">Unsubscribe</a></p>
+              <p> WorkBC’s Teachers’ Resources have been updated: {$url}</p>
+              <p>Updates will only be sent to you when new resources or lesson plans are available. You can <a href="{$unsubscribed_url}">Unsubscribe</a> at any time.</p> 
           html;
 
           $params['from'] = "WorkBC.ca No Reply <noreply@gov.bc.ca>";

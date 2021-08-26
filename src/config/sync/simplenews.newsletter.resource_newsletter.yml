@@ -1,19 +1,17 @@
-uuid: 9cf33697-cdc4-4080-9548-9df441d97877
+uuid: e4a15eee-8af9-4207-bb9a-f99968f73902
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 6wgXMbTWVfjhYZ3wFXLy3vAISxQeKEJz9SdNqt9SLMY
-name: 'Default newsletter'
-id: default
-description: 'This is an example newsletter. Change it.'
+name: 'Resource Updates'
+id: resource_newsletter
+description: ''
 format: html
 priority: 0
 receipt: true
 from_name: 'Career Education Resources'
 subject: '[[simplenews-newsletter:name]] [node:title]'
 from_address: admin@educ.gov.bc.ca
-hyperlinks: false
+hyperlinks: true
 allowed_handlers:
   0: '0'
   simplenews_all: '0'

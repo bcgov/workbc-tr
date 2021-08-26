@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.simplenews_issue
     - node.type.simplenews_issue
+    - simplenews.newsletter.resource_newsletter
   module:
     - simplenews
 _core:
@@ -19,16 +20,17 @@ required: true
 translatable: true
 default_value:
   -
-    target_id: default
-    handler: simplenews_all
-    handler_settings: {  }
+    handler: null
+    handler_settings: null
     status: 0
     sent_count: 0
     error_count: 0
     subscribers: 0
+    target_uuid: e4a15eee-8af9-4207-bb9a-f99968f73902
 default_value_callback: ''
 settings:
   handler: 'default:simplenews_newsletter'
   handler_settings:
     target_bundles: null
+    auto_create: false
 field_type: simplenews_issue

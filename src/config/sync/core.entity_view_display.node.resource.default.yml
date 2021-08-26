@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.resource.field_resource_card_image
     - field.field.node.resource.field_resource_card_summary
     - field.field.node.resource.field_resource_desc
+    - field.field.node.resource.field_resource_email_notifi
     - field.field.node.resource.field_resource_external_link
     - field.field.node.resource.field_resource_featured
     - field.field.node.resource.field_resource_images
@@ -68,6 +69,16 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_resource_email_notifi:
+    weight: 16
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_resource_external_link:
     weight: 12
