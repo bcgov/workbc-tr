@@ -908,7 +908,7 @@
   border-radius: 15px;
   overflow: hidden;
   //border: 1px solid rgb(215, 215, 215);
-  transition: 0.5s;
+  transition: 1s;
   margin-top:10px;
   @media only screen and (max-width:767px){
     margin-bottom: 20px;
@@ -1041,17 +1041,21 @@
                      content:'';
                      position:absolute;
                      left:0;
-                     width:2px;
+                     width:4px;
                      height:0;
                      background:rgb(227, 168, 43);
                      transition:0.5s;
                      opacity:0;
                  }
-                 &:hover, &.active{
+                 &:hover{
                     font-weight:700;
                     text-decoration:underline;
                 }
-                 &.active, &:hover{
+                &.active{
+                  font-weight:700;
+                    text-decoration:none;
+                }
+                 &.active{
                      &:before{
                         opacity:1;
                         height:100%;
@@ -1064,8 +1068,21 @@
 
 }
 
+
+@keyframes bottomalign {
+  from {
+
+  }
+  to {
+    position: absolute;
+    top:auto;
+    bottom: 0;
+  }
+}
+
 .left-nav{
   position: relative;
+  transition: 1s;
   &.sticky{
     .leftnavbar{
       position: fixed;
@@ -1080,11 +1097,12 @@
     }
   }
   &.align-end{
-    display: flex;
-    align-items: flex-end;
+      // display: flex;
+      // align-items: flex-end;
     .leftnavbar{
-      position: relative !important;
-      top:auto;
+      animation: bottomalign 3s;
+
+      animation-fill-mode: forwards;
     }
   }
   @media screen and (max-width:767px) {

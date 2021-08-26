@@ -12111,7 +12111,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   width: 100%;
   border-radius: 15px;
   overflow: hidden;
-  transition: 0.5s;
+  transition: 1s;
   margin-top: 10px;
 }
 @media only screen and (max-width: 767px) {
@@ -12243,23 +12243,35 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   content: "";
   position: absolute;
   left: 0;
-  width: 2px;
+  width: 4px;
   height: 0;
   background: #e3a82b;
   transition: 0.5s;
   opacity: 0;
 }
-.leftnavbar-item ul li a:hover, .leftnavbar-item ul li a.active {
+.leftnavbar-item ul li a:hover {
   font-weight: 700;
   text-decoration: underline;
 }
-.leftnavbar-item ul li a.active:before, .leftnavbar-item ul li a:hover:before {
+.leftnavbar-item ul li a.active {
+  font-weight: 700;
+  text-decoration: none;
+}
+.leftnavbar-item ul li a.active:before {
   opacity: 1;
   height: 100%;
 }
 
+@keyframes bottomalign {
+  to {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+  }
+}
 .left-nav {
   position: relative;
+  transition: 1s;
 }
 .left-nav.sticky .leftnavbar {
   position: fixed;
@@ -12273,13 +12285,9 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
     top: 200px;
   }
 }
-.left-nav.align-end {
-  display: flex;
-  align-items: flex-end;
-}
 .left-nav.align-end .leftnavbar {
-  position: relative !important;
-  top: auto;
+  animation: bottomalign 3s;
+  animation-fill-mode: forwards;
 }
 @media screen and (max-width: 767px) {
   .left-nav {
