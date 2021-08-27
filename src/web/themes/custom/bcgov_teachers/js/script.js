@@ -589,6 +589,9 @@ jQuery(document).ajaxComplete(function(event, xhr, settings) {
   jQuery( ".clear-all" ).on('click', function(event) {
     jQuery('.filterbox__selectgroup input[type=checkbox]:checked').click();
     jQuery('.search_filter__results').hide();
+    jQuery('.search_keyword input').val('');
+    jQuery('form#views-exposed-form-solr-results-page-1').submit();
+    jQuery('.search-assest .card-body .form-radios .form-item:first-child input').click();
   });
 
 });
@@ -605,6 +608,9 @@ jQuery( ".deptclose" ).on('click', function(event) {
 jQuery( ".clear-all" ).on('click', function(event) {
   jQuery('.filterbox__selectgroup input[type=checkbox]:checked').click();
   jQuery('.search_filter__results').hide();
+  jQuery('.search_keyword input').val('');
+  jQuery('form#views-exposed-form-solr-results-page-1').submit();
+  jQuery('.search-assest .card-body .form-radios .form-item:first-child input').click();
 });
 
 jQuery("#views-exposed-form-solr-results-page-1").submit(function(e) {
