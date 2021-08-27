@@ -127,7 +127,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: "- Any -|All Lesson Plans & Resources\r\n1|Lesson Plans Only\r\n3|Resources Only"
+                    filter_rewrite_values: "- Any -|All Lesson Plans & Resources\r\nLesson Plan|Lesson Plans Only\r\nResource|Resources Only"
                   collapsible: false
                   is_secondary: false
                 select_all_none: false
