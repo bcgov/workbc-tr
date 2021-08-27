@@ -133,6 +133,9 @@
 
         }
     }
+    .search-solr-box{
+        .filterbox{display: flex; align-items: center;}
+    }
 }
 
 .search-solr-box--wrapper{
@@ -314,6 +317,19 @@
     }
 }
 
+a.clear-search {
+    background: #2379A4;
+    color: #Fff;
+    padding: 12px 15px;
+    margin-left: 5px;
+    border:1px solid #2379A4;
+    transition: 0.5s;
+    &:hover{
+        background: #fff;
+        text-decoration: none;
+        color:#2379A4;
+    }
+}
 .search_filter__results{
     margin:20px 0;
     .container{
