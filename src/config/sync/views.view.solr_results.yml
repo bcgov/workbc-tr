@@ -127,7 +127,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: "- Any -|All Lesson Plans & Resources\r\n1|Lesson Plans Only\r\n3|Resources Only"
+                    filter_rewrite_values: "- Any -|All Lesson Plans & Resources\r\nLesson Plan|Lesson Plans Only\r\nResource|Resources Only"
                   collapsible: false
                   is_secondary: false
                 select_all_none: false
@@ -1286,6 +1286,18 @@ display:
           exposed: false
           expose:
             label: Relevance
+          plugin_id: search_api
+        title:
+          id: title
+          table: search_api_index_career_education_resources_index
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
           plugin_id: search_api
       title: 'Lesson Plans & Resources'
       header:
