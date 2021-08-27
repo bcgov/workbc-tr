@@ -1,0 +1,106 @@
+<?php
+/**
+ * @file
+ * File for writing module related helper functions
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\StreamWrapper\PublicStream;
+use Drupal\media\Entity\Media;
+use Drupal\file\Entity\File;
+use Drupal\Core\File\FileSystemInterface;
+
+/*
+ * Implements hook_node_insert
+ */
+function print_save_node_insert($node) {
+
+  save_as_pdf($node);
+
+}
+
+
+
+/**
+ * Implements hook_node_presave
+ */
+function print_save_node_presave($node) {
+
+  if ($node_id = $node->id()) {
+	
+    save_as_pdf($node);
+  
+  }
+
+}
+
+/**
+ * Save resource as PDF
+ */
+function save_as_pdf($node) {
+
+  $type_name = $node->type->entity->label();
+
+  if ($type_name == 'Resource') {
+	  
+    //$path = PublicStream::basePath();
+    //$host = \Drupal::request()->getSchemeAndHttpHost();
+
+    $node_title = $node->get('title')->value;
+    $clean_filename = normalizeString($node_title).'.pdf';
+ 
+    $print_engine = \Drupal::service('plugin.manager.entity_print.print_engine')->createSelectedInstance('pdf');
+    $print_builder = \Drupal::service('entity_print.print_builder');
+    $uri = $print_builder->savePrintable([$node], $print_engine, 'public', $clean_filename);
+
+    // drupal file saving mechanism
+    $file = file_save_data(file_get_contents($uri), 'public://'.$clean_filename, FileSystemInterface::EXISTS_REPLACE);
+
+    // delete old PDF media entity
+    $ids = \Drupal::entityQuery('media')
+            ->condition('bundle', 'document')
+            ->execute();
+
+    $storageHandler = \Drupal::entityTypeManager()->getStorage('media');
+    $entities = $storageHandler->loadMultiple($ids);
+    foreach ($entities as $entity) {
+      $media_name = $entity->getName();
+      if ($media_name == $node_title . ' PDF') {
+         $entity->delete();
+      }
+    }
+
+    // create media entry
+    $media = Media::create([
+      'bundle'           => 'document',
+      'uid'              => '1',
+      'field_media_document' => [
+        'target_id' => $file->id(),
+      ],
+    ]);
+    $media->setName($node_title . ' PDF')->setPublished(TRUE)->save();
+
+    // save media to node
+    $node->get('field_resource_images')->appendItem($media);
+    
+  }
+
+}
+
+/**
+ * Clean the String for filename
+ */
+function normalizeString ($str = '')
+{
+    $str = strip_tags($str); 
+    $str = preg_replace('/[\r\n\t ]+/', ' ', $str);
+    $str = preg_replace('/[\"\*\/\:\<\>\?\'\|\(\)]+/', ' ', $str);
+    $str = html_entity_decode( $str, ENT_QUOTES, "utf-8" );
+    $str = htmlentities($str, ENT_QUOTES, "utf-8");
+    $str = preg_replace("/(&)([a-z])([a-z]+;)/i", '$2', $str);
+    $str = trim($str);
+    $str = str_replace(' ', '_', $str);
+    $str = rawurlencode($str);
+    $str = str_replace('%', '_', $str);
+    return $str;
+}
