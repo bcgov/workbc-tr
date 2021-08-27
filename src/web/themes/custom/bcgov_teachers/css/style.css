@@ -11180,6 +11180,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .lesson_wrapper_intro__life_cycle .field__item, .resource_wrapper_intro__life_cycle .field__item {
   font-family: "BCSans-Italic", "BC Sans Italic", sans-serif;
+  font-style: italic;
 }
 .lesson_wrapper_intro__life_cycle span, .resource_wrapper_intro__life_cycle span {
   font-weight: 700;
@@ -12610,6 +12611,10 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
     flex: 0 0 276px;
   }
 }
+.search-solr-box__inner .search-solr-box .filterbox {
+  display: flex;
+  align-items: center;
+}
 
 .search-solr-box--wrapper .fieldgroup {
   margin: 0;
@@ -12805,6 +12810,20 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup .card-body {
   top: 46px;
+}
+
+a.clear-search {
+  background: #2379A4;
+  color: #Fff;
+  padding: 12px 15px;
+  margin-left: 5px;
+  border: 1px solid #2379A4;
+  transition: 0.5s;
+}
+a.clear-search:hover {
+  background: #fff;
+  text-decoration: none;
+  color: #2379A4;
 }
 
 .search_filter__results {
@@ -13100,6 +13119,9 @@ header .region-header .navbar-brand .site-title {
     font-size: 1.7rem;
     line-height: 1.7rem;
     padding: 0 15px 0 54px;
+    padding: 0 30px 0 25px;
+    display: table-cell;
+    vertical-align: middle;
   }
 }
 @media (min-width: 1195px) {
@@ -13760,8 +13782,75 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
     font-size: 18px;
   }
 }
-.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body p {
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body p, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body li span, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body li a {
   font-size: 16px;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol {
+  counter-reset: num;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li:before {
+  counter-increment: num;
+  content: counter(num) ".";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 700;
+  font-size: inherit;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li > ol {
+  list-style-type: lower-alpha;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li > ol > li {
+  padding-left: 0;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li > ol > li + li {
+  margin-top: 10px;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li > ol > li:before {
+  display: none;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li > ol > li::marker {
+  font-weight: 700;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol:last-child {
+  margin-bottom: 70px;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul {
+  padding-left: 25px !important;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li:before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background: #333333;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul ul {
+  margin-top: 5px;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul ul li:before {
+  background: transparent;
+  border: 1px solid #333333;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol {
+  list-style: none;
+  padding: 0;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  position: relative;
+  padding-left: 20px;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li p, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li span, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li a, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li p, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li span, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li a {
+  font-size: 16px;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li + li, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li + li {
+  margin-top: 20px;
 }
 
 /* Slider */
