@@ -1287,6 +1287,18 @@ display:
           expose:
             label: Relevance
           plugin_id: search_api
+        title:
+          id: title
+          table: search_api_index_career_education_resources_index
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
       title: 'Lesson Plans & Resources'
       header:
         result:
