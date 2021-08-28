@@ -3,5 +3,6 @@ ignored_config_entities:
   - smtp.settings
   - update.settings
   - openid_connect.settings.keycloak
+  - workbc.settings
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

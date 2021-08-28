@@ -16,8 +16,10 @@ permissions:
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'access taxonomy overview'
+  - 'access toolbar'
   - 'administer meta tags'
   - 'administer nodes'
+  - 'administer site configuration'
   - 'create content content'
   - 'create document media'
   - 'create image media'
@@ -88,3 +90,4 @@ permissions:
   - 'view resource revisions'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
+  - workbc_settings

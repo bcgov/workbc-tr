@@ -10818,8 +10818,9 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   background-size: contain;
   opacity: 1;
 }
-.block-featured-resources .slick-prev:hover::before,
-.block-featured-resources .slick-next:hover::before {
+.block-featured-resources .slick-prev:hover::before, .block-featured-resources .slick-prev.slick-disabled::before,
+.block-featured-resources .slick-next:hover::before,
+.block-featured-resources .slick-next.slick-disabled::before {
   background: url("/themes/custom/bcgov_teachers/images/chevron-grey.svg");
 }
 .block-featured-resources .slick-next::before {
@@ -11179,6 +11180,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .lesson_wrapper_intro__life_cycle .field__item, .resource_wrapper_intro__life_cycle .field__item {
   font-family: "BCSans-Italic", "BC Sans Italic", sans-serif;
+  font-style: italic;
 }
 .lesson_wrapper_intro__life_cycle span, .resource_wrapper_intro__life_cycle span {
   font-weight: 700;
@@ -11242,6 +11244,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   border: 3px solid #2379A4;
   padding: 0px 18px 0 34px;
   position: relative;
+  height: 27px;
 }
 .lesson_wrapper_intro__time:before, .resource_wrapper_intro__time:before {
   content: "";
@@ -11482,6 +11485,9 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   box-shadow: rgba(170, 170, 170, 0.35) 0px 0px 10px;
   background: #f2f2f2;
 }
+.related_news_wrapper--item:hover .related_news_wrapper_title a {
+  text-decoration: underline;
+}
 .related_news_wrapper_assest_type {
   font-size: 15px;
   color: #FFFFFF;
@@ -11656,6 +11662,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   background: #FFFFFF;
   color: #26A7DF;
   box-shadow: 0px 0px 10px #d7d7d7;
+  text-decoration: none;
 }
 .download-worksheets-button:hover:before, .download-worksheets-button:active:before, .download-worksheets-button:focus:before {
   background: url(../images/download-blue.svg) center no-repeat;
@@ -11677,9 +11684,9 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   align-items: center;
   justify-content: flex-end;
 }
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 1200px) {
   .share-this-resource {
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 
@@ -12028,7 +12035,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   border: 2px solid transparent;
   border-radius: 15px;
   font-weight: 400;
-  padding: 12px 10px 12px 30px;
+  padding: 12px 10px 12px 70px;
   transition: 0.5s;
   display: inline-block;
   width: 100%;
@@ -12075,30 +12082,28 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .lesson_wrapper .main-section {
   display: none;
+  /*&:first-child{
+    .lesson_wrapper_main_para_item:first-child .lesson_wrapper_main_para_item__body p:first-child{font-size: 21px; line-height: 31px;
+      @media only screen and (max-width:767px){
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+  }*/
 }
 .lesson_wrapper .main-section.active {
   display: block;
 }
-.lesson_wrapper .main-section:first-child .lesson_wrapper_main_para_item:first-child .lesson_wrapper_main_para_item__body p:first-child {
-  font-size: 21px;
-  line-height: 31px;
-}
-@media only screen and (max-width: 767px) {
-  .lesson_wrapper .main-section:first-child .lesson_wrapper_main_para_item:first-child .lesson_wrapper_main_para_item__body p:first-child {
-    font-size: 18px;
-    line-height: 28px;
-  }
-}
 
-.resource_wrapper .main-section:first-child .resource_wrapper_main_para_item:first-child .resource_wrapper_main_para_item__body p:first-child {
-  font-size: 21px;
-  line-height: 31px;
-}
-@media only screen and (max-width: 767px) {
-  .resource_wrapper .main-section:first-child .resource_wrapper_main_para_item:first-child .resource_wrapper_main_para_item__body p:first-child {
-    font-size: 18px;
-    line-height: 28px;
-  }
+.resource_wrapper .main-section {
+  /* &:first-child{
+     .resource_wrapper_main_para_item:first-child .resource_wrapper_main_para_item__body p:first-child{font-size: 21px; line-height: 31px;
+        @media only screen and (max-width:767px){
+         font-size: 18px;
+         line-height: 28px;
+       }
+     }
+   }*/
 }
 
 /*-------------left nav design-----------------------*/
@@ -12107,7 +12112,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   width: 100%;
   border-radius: 15px;
   overflow: hidden;
-  transition: 0.5s;
+  transition: 1s;
   margin-top: 10px;
 }
 @media only screen and (max-width: 767px) {
@@ -12118,8 +12123,10 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 .leftnavbar--items {
   transition: 0.5s;
 }
-.leftnavbar--items:first-child .leftnavbar--title {
-  border-radius: 15px 15px 0 0;
+@media only screen and (min-width: 768px) {
+  .leftnavbar--items:first-child .leftnavbar--title {
+    border-radius: 15px 15px 0 0;
+  }
 }
 .leftnavbar--items.active .leftnavbar--title {
   border: 0;
@@ -12139,13 +12146,26 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   font-weight: 700;
   text-decoration: underline;
 }
+@media only screen and (max-width: 767px) {
+  .leftnavbar--items:hover .leftnavbar--title a {
+    text-decoration: none;
+  }
+}
 .leftnavbar--items:last-child .leftnavbar-item {
   border-bottom: 1px solid #d7d7d7;
-  border-radius: 0 0 15px 15px;
+}
+@media only screen and (min-width: 768px) {
+  .leftnavbar--items:last-child .leftnavbar-item {
+    border-radius: 0 0 15px 15px;
+  }
 }
 .leftnavbar--items:last-child .leftnavbar--title {
   border-bottom: 1px solid #d7d7d7;
-  border-radius: 0 0 15px 15px;
+}
+@media only screen and (min-width: 768px) {
+  .leftnavbar--items:last-child .leftnavbar--title {
+    border-radius: 0 0 15px 15px;
+  }
 }
 .leftnavbar--items.active:last-child .leftnavbar--title {
   border-bottom: 0;
@@ -12165,6 +12185,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   border-left: 1px solid #d7d7d7;
   border-right: 1px solid #d7d7d7;
   transition: 0.5s;
+}
+@media only screen and (max-width: 767px) {
+  .leftnavbar--title {
+    border: 0;
+  }
 }
 .leftnavbar--title:before {
   content: "";
@@ -12189,6 +12214,9 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 @media screen and (max-width: 767px) {
   .leftnavbar--title a {
     text-align: center;
+  }
+  .leftnavbar--title a:focus {
+    text-decoration: none;
   }
 }
 .leftnavbar-item {
@@ -12216,23 +12244,35 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   content: "";
   position: absolute;
   left: 0;
-  width: 2px;
+  width: 4px;
   height: 0;
   background: #e3a82b;
   transition: 0.5s;
   opacity: 0;
 }
-.leftnavbar-item ul li a:hover, .leftnavbar-item ul li a.active {
+.leftnavbar-item ul li a:hover {
   font-weight: 700;
   text-decoration: underline;
 }
-.leftnavbar-item ul li a.active:before, .leftnavbar-item ul li a:hover:before {
+.leftnavbar-item ul li a.active {
+  font-weight: 700;
+  text-decoration: none;
+}
+.leftnavbar-item ul li a.active:before {
   opacity: 1;
   height: 100%;
 }
 
+@keyframes bottomalign {
+  to {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+  }
+}
 .left-nav {
   position: relative;
+  transition: 1s;
 }
 .left-nav.sticky .leftnavbar {
   position: fixed;
@@ -12246,13 +12286,9 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
     top: 200px;
   }
 }
-.left-nav.align-end {
-  display: flex;
-  align-items: flex-end;
-}
 .left-nav.align-end .leftnavbar {
-  position: relative !important;
-  top: auto;
+  animation: bottomalign 3s;
+  animation-fill-mode: forwards;
 }
 @media screen and (max-width: 767px) {
   .left-nav {
@@ -12307,6 +12343,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   align-items: center;
   height: 100%;
 }
+@media screen and (max-width: 767px) {
+  .mobiletab .leftnavbar .leftnavbar--items .leftnavbar--title {
+    padding: 17px 12px;
+  }
+}
 .mobiletab .leftnavbar .leftnavbar--items .leftnavbar--title a {
   color: #fff;
 }
@@ -12357,6 +12398,10 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   display: inline-block;
   top: 0;
 }
+.related_news_slider .slick-prev.slick-disabled:before, .related_news_slider .slick-next.slick-disabled:before, .resource_wrapper_left__img .slick-prev.slick-disabled:before, .resource_wrapper_left__img .slick-next.slick-disabled:before {
+  background: url("/themes/custom/bcgov_teachers/images/chevron-grey.svg");
+  opacity: 1;
+}
 .related_news_slider .slick-next:before, .resource_wrapper_left__img .slick-next:before {
   transform: rotate(180deg);
 }
@@ -12383,10 +12428,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   font-size: 16px;
 }
 
-.slick-disabled {
-  opacity: 0.5;
-}
-
 .resource_wrapper_left__img img {
   margin: 0 auto;
   display: block;
@@ -12406,11 +12447,15 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   }
 
   .slick-next {
-    right: -14px;
+    right: -18px;
   }
 }
 .search_wrapper .row {
   justify-content: flex-start;
+}
+
+.slick-prev, .slick-next {
+  height: 28px;
 }
 
 .search_wrapper {
@@ -12566,6 +12611,10 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
     flex: 0 0 276px;
   }
 }
+.search-solr-box__inner .search-solr-box .filterbox {
+  display: flex;
+  align-items: center;
+}
 
 .search-solr-box--wrapper .fieldgroup {
   margin: 0;
@@ -12622,12 +12671,15 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 .search-solr-box--wrapper .fieldgroup .card-body label {
   padding-left: 30px;
 }
+.search-solr-box--wrapper .fieldgroup .card-body .form-radios label,
 .search-solr-box--wrapper .fieldgroup .card-body .form-checkboxes label {
   position: relative;
   display: inline-block;
   font-size: 16px;
 }
-.search-solr-box--wrapper .fieldgroup .card-body .form-checkboxes label:before, .search-solr-box--wrapper .fieldgroup .card-body .form-checkboxes label:after {
+.search-solr-box--wrapper .fieldgroup .card-body .form-radios label:before, .search-solr-box--wrapper .fieldgroup .card-body .form-radios label:after,
+.search-solr-box--wrapper .fieldgroup .card-body .form-checkboxes label:before,
+.search-solr-box--wrapper .fieldgroup .card-body .form-checkboxes label:after {
   position: absolute;
   content: "";
   top: 6px;
@@ -12637,17 +12689,25 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   background: url(../images/untick.svg) center no-repeat;
   background-size: 15px;
 }
+.search-solr-box--wrapper .fieldgroup .card-body .form-radios label:after,
 .search-solr-box--wrapper .fieldgroup .card-body .form-checkboxes label:after {
   background: url(../images/tick.svg) center no-repeat;
   opacity: 0;
 }
+.search-solr-box--wrapper .fieldgroup .card-body .form-radios .selected label:after,
+.search-solr-box--wrapper .fieldgroup .card-body .form-checkboxes .selected label:after {
+  opacity: 1;
+}
+.search-solr-box--wrapper .fieldgroup .card-body .form-radios input,
 .search-solr-box--wrapper .fieldgroup .card-body .form-checkboxes input {
   opacity: 0;
   position: absolute;
 }
+.search-solr-box--wrapper .fieldgroup .card-body .form-radios input:checked + label:after,
 .search-solr-box--wrapper .fieldgroup .card-body .form-checkboxes input:checked + label:after {
   opacity: 1;
 }
+.search-solr-box--wrapper .fieldgroup .card-body .form-radios input:checked + label:before,
 .search-solr-box--wrapper .fieldgroup .card-body .form-checkboxes input:checked + label:before {
   opacity: 0;
 }
@@ -12656,6 +12716,17 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   color: #333333;
   font-weight: 700;
   white-space: nowrap;
+}
+@media only screen and (max-width: 767px) {
+  .search-solr-box--wrapper .search-solr-box__inner .card-body {
+    width: 100%;
+    padding-top: 0;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-top: -6px;
+  }
 }
 .search-solr-box--wrapper .show-result-wrapper .container {
   display: flex;
@@ -12687,11 +12758,12 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body {
   padding: 0;
   width: 100%;
+  border: 1px solid #000;
 }
-.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes .form-item {
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-radios .form-item {
   margin: 0;
 }
-.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes .bef-toggle {
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-radios label, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-radios .bef-toggle {
   display: inline-block;
   width: 100%;
   padding: 3px 20px;
@@ -12700,11 +12772,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   width: 100%;
   color: #333;
 }
-.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label:before, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label:after, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes .bef-toggle:before, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes .bef-toggle:after {
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-radios label:before, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-radios label:after, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-radios .bef-toggle:before, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-radios .bef-toggle:after {
   display: none;
 }
-.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes label:hover, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-checkboxes .bef-toggle:hover {
-  background: #e85333;
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-radios label:hover, .search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-radios .bef-toggle:hover {
+  background: #009CDE;
   text-decoration: none;
   color: #fff;
 }
@@ -12720,6 +12792,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup {
   margin-left: 10px;
+  min-width: 275px;
 }
 @media only screen and (max-width: 767px) {
   .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup {
@@ -12736,12 +12809,21 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   font-weight: normal;
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup .card-body {
-  top: 50px;
+  top: 46px;
 }
-@media only screen and (max-width: 767px) {
-  .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup .card-body {
-    top: 67px;
-  }
+
+a.clear-search {
+  background: #2379A4;
+  color: #Fff;
+  padding: 12px 15px;
+  margin-left: 5px;
+  border: 1px solid #2379A4;
+  transition: 0.5s;
+}
+a.clear-search:hover {
+  background: #fff;
+  text-decoration: none;
+  color: #2379A4;
 }
 
 .search_filter__results {
@@ -12766,6 +12848,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .search_filter__results .clear-all a:hover {
   text-decoration: underline;
+}
+@media only screen and (max-width: 767px) {
+  .search_filter__results .clear-all {
+    display: none !important;
+  }
 }
 .search_filter__results .dept-appned {
   display: flex;
@@ -12878,6 +12965,27 @@ form#views-exposed-form-solr-results-page-1 .form-actions {
   margin: 0;
 }
 
+.show-result-wrapper .view-header--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.show-result-wrapper .clear-all {
+  display: none;
+  margin-top: 40px;
+  visibility: hidden;
+}
+.show-result-wrapper .clear-all a {
+  font-size: 15px;
+}
+@media only screen and (max-width: 767px) {
+  .show-result-wrapper .clear-all {
+    display: block;
+    visibility: visible;
+  }
+}
+
 /*------------------Filter styling end------------------*/
 .region-content {
   padding: 0;
@@ -12962,9 +13070,9 @@ header .region-header .navbar-brand img {
 }
 header .region-header .navbar-brand .site-title {
   display: table-cell;
-  vertical-align: bottom;
+  vertical-align: top;
   padding: 0 15px;
-  text-align: center;
+  text-align: left;
   text-transform: inherit;
   font-weight: 400;
   font-style: normal;
@@ -13011,6 +13119,9 @@ header .region-header .navbar-brand .site-title {
     font-size: 1.7rem;
     line-height: 1.7rem;
     padding: 0 15px 0 54px;
+    padding: 0 30px 0 25px;
+    display: table-cell;
+    vertical-align: middle;
   }
 }
 @media (min-width: 1195px) {
@@ -13532,15 +13643,15 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
     padding: 36px 16px 20px;
   }
 }
-.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover {
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus {
   border-color: #2379A4;
   border-color: var(--grade-color);
   cursor: pointer;
 }
-.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:link, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:visited, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:hover, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:active, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:focus {
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:link, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:visited, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:hover, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:active, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:focus, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:link, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:visited, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:hover, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:active, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:focus {
   color: #fff;
 }
-.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:link:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:visited:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:hover:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:active:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:focus:after {
+.paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:link:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:visited:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:hover:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:active:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:hover .field--name-field-grade-access-link a:focus:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:link:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:visited:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:hover:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:active:after, .paragraph--type--grade-access .paragraph--type--grade-access-blocks:focus .field--name-field-grade-access-link a:focus:after {
   content: " ";
   position: absolute;
   top: 50%;
@@ -13671,8 +13782,75 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
     font-size: 18px;
   }
 }
-.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body p {
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body p, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body li span, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body li a {
   font-size: 16px;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol {
+  counter-reset: num;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li:before {
+  counter-increment: num;
+  content: counter(num) ".";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 700;
+  font-size: inherit;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li > ol {
+  list-style-type: lower-alpha;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li > ol > li {
+  padding-left: 0;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li > ol > li + li {
+  margin-top: 10px;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li > ol > li:before {
+  display: none;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li > ol > li::marker {
+  font-weight: 700;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol:last-child {
+  margin-bottom: 70px;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul {
+  padding-left: 25px !important;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li:before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background: #333333;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul ul {
+  margin-top: 5px;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul ul li:before {
+  background: transparent;
+  border: 1px solid #333333;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol {
+  list-style: none;
+  padding: 0;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  position: relative;
+  padding-left: 20px;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li p, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li span, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li a, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li p, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li span, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li a {
+  font-size: 16px;
+}
+.paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li + li, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li + li {
+  margin-top: 20px;
 }
 
 /* Slider */
@@ -13736,7 +13914,6 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
 
 .slick-slide {
   float: left;
-  height: 100%;
   min-height: 1px;
   display: none;
 }

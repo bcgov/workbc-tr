@@ -39,7 +39,7 @@ display:
         type: none
         options: {  }
       cache:
-        type: tag
+        type: none
         options: {  }
       query:
         type: views_query
@@ -127,10 +127,10 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: 'Select All|All Lesson Plans & Resources'
+                    filter_rewrite_values: "- Any -|All Lesson Plans & Resources\r\nLesson Plan|Lesson Plans Only\r\nResource|Resources Only"
                   collapsible: false
                   is_secondary: false
-                select_all_none: true
+                select_all_none: false
                 select_all_none_nested: false
                 display_inline: false
       pager:
@@ -1287,7 +1287,19 @@ display:
           expose:
             label: Relevance
           plugin_id: search_api
-      title: 'Search Results'
+        title:
+          id: title
+          table: search_api_index_career_education_resources_index
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
+      title: 'Lesson Plans & Resources'
       header:
         result:
           id: result
@@ -1330,6 +1342,334 @@ display:
     display_options:
       display_extenders: {  }
       exposed_block: true
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_career_education_resources_index
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: 'Fulltext search'
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: keys
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            placeholder: ''
+            expose_fields: false
+            searched_fields_id: search_api_fulltext_searched_fields
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields: {  }
+          plugin_id: search_api_fulltext
+        status:
+          id: status
+          table: search_api_index_career_education_resources_index
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_boolean
+        field_term_resource_stage:
+          id: field_term_resource_stage
+          table: search_api_index_career_education_resources_index
+          field: field_term_resource_stage
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_term_resource_stage_op
+            label: 'Career Lifecycle Stage'
+            description: ''
+            use_operator: false
+            operator: field_term_resource_stage_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_term_resource_stage
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: career_life_cycle_stage
+          hierarchy: false
+          error_message: true
+          plugin_id: search_api_term
+        field_term_resource_grade:
+          id: field_term_resource_grade
+          table: search_api_index_career_education_resources_index
+          field: field_term_resource_grade
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_term_resource_grade_op
+            label: 'Focus Area Levels'
+            description: ''
+            use_operator: false
+            operator: field_term_resource_grade_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_term_resource_grade
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: grades
+          hierarchy: false
+          error_message: true
+          plugin_id: search_api_term
+        field_term_resource_competency:
+          id: field_term_resource_competency
+          table: search_api_index_career_education_resources_index
+          field: field_term_resource_competency
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_term_resource_competency_op
+            label: 'Curricular Competencies'
+            description: ''
+            use_operator: false
+            operator: field_term_resource_competency_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_term_resource_competency
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: curricular_competencies
+          hierarchy: false
+          error_message: true
+          plugin_id: search_api_term
+        field_term_resource_audience:
+          id: field_term_resource_audience
+          table: search_api_index_career_education_resources_index
+          field: field_term_resource_audience
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_term_resource_audience_op
+            label: 'Key Audiences'
+            description: ''
+            use_operator: false
+            operator: field_term_resource_audience_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_term_resource_audience
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: key_audiences
+          hierarchy: false
+          error_message: true
+          plugin_id: search_api_term
+        field_term_resource_asset_type:
+          id: field_term_resource_asset_type
+          table: search_api_index_career_education_resources_index
+          field: field_term_resource_asset_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_term_resource_asset_type_op
+            label: 'All Lesson Plans & Resources'
+            description: ''
+            use_operator: false
+            operator: field_term_resource_asset_type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_term_resource_asset_type
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: asset_type
+          hierarchy: false
+          error_message: true
+          plugin_id: search_api_term
+      defaults:
+        filters: false
+        filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -1356,7 +1696,334 @@ display:
       display_extenders: {  }
       path: search
       exposed_block: true
-      enabled: false
+      enabled: true
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_career_education_resources_index
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: 'Fulltext search'
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: keys
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            placeholder: ''
+            expose_fields: false
+            searched_fields_id: search_api_fulltext_searched_fields
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields: {  }
+          plugin_id: search_api_fulltext
+        status:
+          id: status
+          table: search_api_index_career_education_resources_index
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_boolean
+        field_term_resource_stage:
+          id: field_term_resource_stage
+          table: search_api_index_career_education_resources_index
+          field: field_term_resource_stage
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_term_resource_stage_op
+            label: 'Career Lifecycle Stage'
+            description: ''
+            use_operator: false
+            operator: field_term_resource_stage_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_term_resource_stage
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: career_life_cycle_stage
+          hierarchy: false
+          error_message: true
+          plugin_id: search_api_term
+        field_term_resource_grade:
+          id: field_term_resource_grade
+          table: search_api_index_career_education_resources_index
+          field: field_term_resource_grade
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_term_resource_grade_op
+            label: 'Focus Area Levels'
+            description: ''
+            use_operator: false
+            operator: field_term_resource_grade_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_term_resource_grade
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: grades
+          hierarchy: false
+          error_message: true
+          plugin_id: search_api_term
+        field_term_resource_competency:
+          id: field_term_resource_competency
+          table: search_api_index_career_education_resources_index
+          field: field_term_resource_competency
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_term_resource_competency_op
+            label: 'Curricular Competencies'
+            description: ''
+            use_operator: false
+            operator: field_term_resource_competency_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_term_resource_competency
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: curricular_competencies
+          hierarchy: false
+          error_message: true
+          plugin_id: search_api_term
+        field_term_resource_audience:
+          id: field_term_resource_audience
+          table: search_api_index_career_education_resources_index
+          field: field_term_resource_audience
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_term_resource_audience_op
+            label: 'Key Audiences'
+            description: ''
+            use_operator: false
+            operator: field_term_resource_audience_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_term_resource_audience
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: key_audiences
+          hierarchy: false
+          error_message: true
+          plugin_id: search_api_term
+        field_term_resource_asset_type:
+          id: field_term_resource_asset_type
+          table: search_api_index_career_education_resources_index
+          field: field_term_resource_asset_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_term_resource_asset_type_op
+            label: 'All Lesson Plans & Resources'
+            description: ''
+            use_operator: false
+            operator: field_term_resource_asset_type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_term_resource_asset_type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: asset_type
+          hierarchy: false
+          error_message: true
+          plugin_id: search_api_term
+      defaults:
+        filters: false
+        filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:

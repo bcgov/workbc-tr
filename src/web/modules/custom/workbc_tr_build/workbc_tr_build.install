@@ -4,7 +4,6 @@
  * @file
  */
 
-
 /**
  * Implements hook_install().
  *
@@ -15,3 +14,18 @@ function workbc_tr_build_update_8506() {
   $field_definition = $definition_update_manager->getFieldStorageDefinition('field_para_simple_title', 'paragraph');
   $definition_update_manager->updateFieldStorageDefinition($field_definition);
 }
+
+/**
+ * Implements hook_install().
+ *
+ * Update all user author to admin.
+ */
+function workbc_tr_build_update_8507() {
+  $nids = \Drupal::entityQuery('node')->execute();
+  $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+  foreach ($nodes as $node) {
+    $node->setOwnerId(1);
+    $node->save();
+  }
+}
+

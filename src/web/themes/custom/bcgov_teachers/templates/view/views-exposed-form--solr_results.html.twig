@@ -17,14 +17,16 @@
 {{ q }}
 {% endif %}
 {{ attach_library('bcgov_teachers/filters') }}
+
 <div class="search-solr-box--wrapper">
   <div class="search-solr-box__inner">
     <div class="container">
       <div class="search-solr-box">
           <div class="filterbox">
               <div class="filterbox__input search_keyword">
-                  {{ form.search_api_fulltext }}<span>search</span>
+                  {{ form.keys }}<span class="search-btn">search</span>
               </div>
+              {# <a href="javascript:void(0)" class="clear-search">{{ 'Clear Search'|t }}</a> #}
           </div>
       </div>
 
@@ -35,9 +37,9 @@
             <div class="filterbox__title show_title"><span>{{ "Show Filters"|t }}</span></div>
             <div class="filterbox__title hide_title"><span>{{ "Hide Filters"|t }}</span></div>
           </div>
-          
+
           <div class="filterbox__selectgroup">
-      
+
             <div class="filterbox__dd filterbox__dd-grade">
               {{ form.field_term_resource_grade }}
             </div>
@@ -45,11 +47,11 @@
             <div class="filterbox__dd filterbox__dd-stage">
               {{ form.field_term_resource_stage }}
             </div>
-        
+
             <div class="filterbox__dd filterbox__dd-competency">
               {{ form.field_term_resource_competency}}
             </div>
-        
+
             <div class="filterbox__dd filterbox__dd-audience">
               {{ form.field_term_resource_audience}}
             </div>
@@ -57,13 +59,16 @@
           </div>
         </div>
       </div>
-     
+
     </div>
   </div>
 
   <div class="show-result-wrapper">
     <div class="container">
-      <div class="view-header"></div>
+      <div class="view-header--wrapper">
+        <div class="view-header"></div>
+       <div class="clear-all"><a href="javascript:void(0)">{{ 'Clear all'|t }}</a></div>
+      </div>
       <div class="sort-box search-assest">
         {{ "Show:"|t }} {{ form.field_term_resource_asset_type }}
       </div>
@@ -77,6 +82,6 @@
       </div>
    </div>
 </div>
-   
 
-{{ form|without('field_term_resource_asset_type', 'field_term_resource_audience', 'field_term_resource_competency', 'field_term_resource_stage', 'field_term_resource_grade', 'search_api_fulltext') }}
+
+{{ form|without('field_term_resource_asset_type', 'field_term_resource_audience', 'field_term_resource_competency', 'field_term_resource_stage', 'field_term_resource_grade', 'keys') }}

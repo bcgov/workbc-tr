@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.paragraph_image
+    - field.field.paragraph.paragraph_simple.field_nav_title
     - field.field.paragraph.paragraph_simple.field_para_simple_body
     - field.field.paragraph.paragraph_simple.field_para_simple_title
     - field.field.paragraph.paragraph_simple.field_paragraph_image
@@ -35,6 +36,7 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_nav_title: true
   field_paragraph_image: true
   field_show_bulb_icon: true
   field_show_download_link: true

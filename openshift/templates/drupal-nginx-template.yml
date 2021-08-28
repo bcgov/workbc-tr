@@ -107,6 +107,8 @@ objects:
                       cp -rf /code/. /app;
                       mkdir -p /contents/public;
                       mkdir -p /contents/private;
+                      chmod 775 /contents/public;
+                      chmod 775 /contents/private;
                       ln -s /contents/public /app/web/sites/default/files;
                       ln -s /contents/private /app/private;
                       drush cr;

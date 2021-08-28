@@ -133,6 +133,9 @@
 
         }
     }
+    .search-solr-box{
+        .filterbox{display: flex; align-items: center;}
+    }
 }
 
 .search-solr-box--wrapper{
@@ -184,9 +187,11 @@
             transform: translateX(-50%);
             display: none;
             padding:20px 13px;
+
             label{
                 padding-left:30px;
             }
+            .form-radios,
             .form-checkboxes{
                 label{
                     position: relative;
@@ -207,6 +212,11 @@
                         opacity: 0;
                     }
                 }
+                .selected{
+                    label{
+                        &:after{opacity: 1;}
+                    }
+                }
                 input{
                     opacity:0;
                     position:absolute;
@@ -223,6 +233,7 @@
                 }
             }
         }
+
         .fieldset-legend{
             font-size: 16px;
             color:#333333;
@@ -230,6 +241,17 @@
             white-space: nowrap;
         }
     }
+     .search-solr-box__inner .card-body{
+            @media only screen and (max-width:767px){
+                width:100%;
+                padding-top:0;
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                margin-top: -6px;
+            }
+        }
 
     .show-result-wrapper{
         .container{
@@ -252,15 +274,15 @@
                           padding:10px 35px 10px 20px;
                       }
                 }
-                .card-body{padding:0; width:100%;
-                    .form-checkboxes{
+                .card-body{padding:0; width:100%; border: 1px solid #000;
+                    .form-radios{
                         .form-item{margin: 0;}
                         label, .bef-toggle{display: inline-block; width:100%; padding:3px 20px; cursor: pointer; margin: 0; width:100%; color:#333;
                             &:before,&:after{display: none;}
                             &:hover{
-                                background:#e85333;
+                                background:#009CDE;
                                 text-decoration: none;
-                                color: #fff;;
+                                color: #fff;
                             }
                         }
                     }
@@ -274,7 +296,9 @@
             @media only screen and (max-width:767px){
                 width: 100%;
             }
-            .fieldgroup{margin-left:10px;
+            .fieldgroup{
+                margin-left:10px;
+                min-width: 275px;
                 @media only screen and (max-width:767px){
                     width: 100%;
                 }
@@ -283,16 +307,29 @@
                     &:after{background-size:12px;}
                     .fieldset-legend{font-weight: normal;}
                 }
-                .card-body{top:50px;
-                    @media only screen and (max-width:767px){
-                        top:67px;
-                    }
+                .card-body{top:46px;
+                    // @media only screen and (max-width:767px){
+                    //     top:67px;
+                    // }
                 }
             }
         }
     }
 }
 
+a.clear-search {
+    background: #2379A4;
+    color: #Fff;
+    padding: 12px 15px;
+    margin-left: 5px;
+    border:1px solid #2379A4;
+    transition: 0.5s;
+    &:hover{
+        background: #fff;
+        text-decoration: none;
+        color:#2379A4;
+    }
+}
 .search_filter__results{
     margin:20px 0;
     .container{
@@ -309,6 +346,9 @@
     .clear-all{margin-left:20px;
         a{font-size: 15px; white-space: nowrap;
             &:hover{text-decoration: underline;}
+        }
+        @media only screen and (max-width:767px){
+            display: none !important;
         }
     }
     .dept-appned{
@@ -412,5 +452,15 @@
 .view-solr-results .view-header{display: none;}
 form#views-exposed-form-solr-results-page-1{
     .form-actions{margin: 0;}
+}
+
+.show-result-wrapper{
+    .view-header--wrapper{display: flex; align-items: center; justify-content: space-between; width: 100%;}
+    .clear-all{display: none; margin-top:40px;     visibility: hidden;
+        a{font-size: 15px;}
+        @media only screen and (max-width:767px){
+            display: block; visibility:visible;
+        }
+    }
 }
 /*------------------Filter styling end------------------*/

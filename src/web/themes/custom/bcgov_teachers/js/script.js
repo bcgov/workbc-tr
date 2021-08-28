@@ -5,6 +5,16 @@
         // Insert theme js specific lines here.
       }
 
+      if ($('.sort-box .card-body .form-radios').length){
+        $('.sort-box .card-body .form-radios .js-form-type-radio input[type=radio]').each(function() {
+          if (this.checked) {
+            var label = $(this).next('label').text();
+            $('.sort-box .card-header .fieldset-legend').text(label);
+          }
+
+        });
+      }
+
       //add placeholder in subscription form
       if(jQuery('.simplenews-subscriptions-block-simple-new-teachers').length){
         jQuery('.simplenews-subscriptions-block-simple-new-teachers input').attr('placeholder', 'Enter your email address');
@@ -67,7 +77,8 @@
         var right_height = $('.right-nav .main-section.active').height();
         var right_top = $('.right-nav .main-section.active').offset().top;
         var winHeight = $(window).height();
-        var differ = right_height + right_top - 450;
+       // var differ = right_height + right_top - 450;
+        var differ = right_height + right_top;
 
         function stickynavbar(){
           var window_top = $(window).scrollTop() + 200;
@@ -102,6 +113,9 @@
           $(this).closest('.leftnavbar--items').addClass('active');
           var hrefattr = $(this).attr('href');
           $('.right-nav '+hrefattr).addClass('active');
+          $('html,body').animate({
+            scrollTop: $('.right-nav').offset().top
+          });
         });
 
         setTimeout(function(){
@@ -226,24 +240,45 @@
           return Math.max.apply(Math, array);
       };
 
-      // if (window.matchMedia("(min-width: 768px)").matches) {
-      //   setEqualHeight(jQuery('.related_news_slider .related_news_wrapper--item-single'));
-      //   jQuery('.search_wrapper .row').each(function(){
-      //     setEqualHeight(jQuery(this).find('.related_news_wrapper--item'));
-      //   });
-      // }
-
-      // jQuery(window).resize(function(){
-      //   if (window.matchMedia("(min-width: 768px)").matches) {
-      //     setEqualHeight(jQuery('.related_news_slider .related_news_wrapper--item'));
-
-      //     jQuery('.search_wrapper .row').each(function(){
-      //       setEqualHeight(jQuery(this).find('.related_news_wrapper--item'));
-      //     });
-      //   }
-      // });
-
       //equal height for related plan box end
+      if ($('body.page-node-type-resource').length > 0) {
+        function setEqualHeight(arr) {
+          var x = new Array([]);
+          for (i = 0; i < arr.length; i++) {
+            x[i] = jQuery(arr[i]).height('auto');
+            x[i] = jQuery(arr[i]).outerHeight();
+          }
+          Max_Value = Array.max(x);
+          for (i = 0; i < arr.length; i++) {
+            x[i] = jQuery(arr[i]).outerHeight(Max_Value);
+          }
+        }
+
+        Array.min = function (array) {
+          return Math.min.apply(Math, array);
+        };
+
+        Array.max = function (array) {
+          return Math.max.apply(Math, array);
+        };
+
+        if (window.matchMedia("(min-width: 768px)").matches) {
+          setEqualHeight(jQuery('.related_news_slider .related_news_wrapper--item-single'));
+          jQuery('.search_wrapper .row').each(function(){
+            setEqualHeight(jQuery(this).find('.related_news_wrapper--item'));
+          });
+        }
+
+        jQuery(window).resize(function(){
+          if (window.matchMedia("(min-width: 768px)").matches) {
+            setEqualHeight(jQuery('.related_news_slider .related_news_wrapper--item'));
+
+            jQuery('.search_wrapper .row').each(function(){
+              setEqualHeight(jQuery(this).find('.related_news_wrapper--item'));
+            });
+          }
+        });
+      }
 
       //filter open close js
       setTimeout(function(){
@@ -251,6 +286,7 @@
       },1000);
 
       jQuery('.search-solr-box--wrapper .card-header').on('click', function (event) {
+        event.stopImmediatePropagation();
         event.stopPropagation();
         if(jQuery(this).hasClass('open')){
           jQuery(this).removeClass('open');
@@ -282,38 +318,26 @@
         jQuery('.filterbox__title.show_title').show();
       });
 
-      jQuery('.search-solr-box__inner .card-body .form-checkboxes .form-item:first-child').addClass('parent-item');
-      jQuery('.search-solr-box__inner .card-body .form-checkboxes .form-item + .form-item').addClass('child-item');
-
-      jQuery(".parent-item").each(function () {
-        jQuery(this).nextUntil(".parent-item").addBack().wrapAll('<div class="checkbox-item parent-checkbox-item"></div>');
-      });
-      jQuery(".child-item").each(function () {
-        jQuery(this).nextUntil(".child-item").addBack().wrapAll('<div class="checkbox-item child-checkbox-item"></div>');
-      });
-
-      jQuery('.parent-checkbox-item > .form-item input').on('change', function () {
-        jQuery(this).closest('.parent-checkbox-item').find('.checkbox-item input[type="checkbox"]').prop('checked', this.checked);
-      });
-
-      jQuery('.child-checkbox-item .form-item input').on('change', function () {
-        var totalcheckbox = jQuery(this).closest('.parent-checkbox-item').find('input').length;
-        var chechedchekbox = jQuery(this).closest('.parent-checkbox-item').find('input:checked').length;
-        var notcheckedbox = totalcheckbox - chechedchekbox;
-        if (notcheckedbox == 0) {
-          jQuery(this).closest('.parent-checkbox-item').find('> .form-item input').prop('checked', 'checked');
+      jQuery('.filterbox__selectgroup .filterbox__dd').each(function(){
+        if(!jQuery(this).find('input:checked').length > 0){
+          jQuery(this).find('.parent-checkbox-item > .parent-item').addClass('selected');
         }
-        else {
-          jQuery(this).closest('.parent-checkbox-item').find('> .form-item input').prop('checked', '');
+        else{
+          jQuery(this).find('.parent-item').removeClass('selected');
         }
       });
-
 
       //filter open close js end
 
       //show resut position replacement
       var result = jQuery('.view-solr-results .view-header').text();
       jQuery('.show-result-wrapper .container .view-header').text(result);
+
+      if (jQuery('.search_keyword .search-btn').length > 0) {
+        jQuery('.search_keyword .search-btn').on('click', function () {
+          jQuery('form#views-exposed-form-solr-results-page-1').submit();
+        });
+      }
     }
   }
 
@@ -565,6 +589,9 @@ jQuery(document).ajaxComplete(function(event, xhr, settings) {
   jQuery( ".clear-all" ).on('click', function(event) {
     jQuery('.filterbox__selectgroup input[type=checkbox]:checked').click();
     jQuery('.search_filter__results').hide();
+    jQuery('.search_keyword input').val('');
+    jQuery('form#views-exposed-form-solr-results-page-1').submit();
+    jQuery('.search-assest .card-body .form-radios .form-item:first-child input').click();
   });
 
 });
@@ -581,8 +608,44 @@ jQuery( ".deptclose" ).on('click', function(event) {
 jQuery( ".clear-all" ).on('click', function(event) {
   jQuery('.filterbox__selectgroup input[type=checkbox]:checked').click();
   jQuery('.search_filter__results').hide();
+  jQuery('.search_keyword input').val('');
+  jQuery('form#views-exposed-form-solr-results-page-1').submit();
+  jQuery('.search-assest .card-body .form-radios .form-item:first-child input').click();
 });
 
 jQuery("#views-exposed-form-solr-results-page-1").submit(function(e) {
   departmentFunction();
 });
+
+
+
+//search filter parent child relation js
+ (function(){
+   jQuery('.search-solr-box__inner .card-body .form-checkboxes .form-item:first-child').addClass('parent-item');
+   jQuery('.search-solr-box__inner .card-body .form-checkboxes .form-item + .form-item').addClass('child-item');
+
+   jQuery(".parent-item").each(function () {
+     jQuery(this).nextUntil(".parent-item").addBack().wrapAll('<div class="checkbox-item parent-checkbox-item"></div>');
+   });
+   jQuery(".child-item").each(function () {
+     jQuery(this).nextUntil(".child-item").addBack().wrapAll('<div class="checkbox-item child-checkbox-item"></div>');
+   });
+
+   jQuery('.parent-checkbox-item > .form-item input').on('change', function () {
+     jQuery(this).closest('.parent-checkbox-item').find('.checkbox-item input[type="checkbox"]').prop('checked', this.checked);
+   });
+
+   jQuery('.child-checkbox-item .form-item input').on('change', function () {
+     var totalcheckbox = jQuery(this).closest('.parent-checkbox-item').find('input').length;
+     var chechedchekbox = jQuery(this).closest('.parent-checkbox-item').find('input:checked').length;
+     var notcheckedbox = totalcheckbox - chechedchekbox;
+     if (notcheckedbox == 0) {
+       jQuery(this).closest('.parent-checkbox-item').find('> .form-item input').prop('checked', 'checked');
+     }
+     else {
+       jQuery(this).closest('.parent-checkbox-item').find('> .form-item input').prop('checked', '');
+     }
+   });
+ })();
+
+//search filter parent child relation js end

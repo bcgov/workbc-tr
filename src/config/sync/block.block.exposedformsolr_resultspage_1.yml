@@ -12,7 +12,7 @@ dependencies:
 id: exposedformsolr_resultspage_1
 theme: bcgov_teachers
 region: content
-weight: -5
+weight: -6
 provider: null
 plugin: 'views_exposed_filter_block:solr_results-page_1'
 settings:

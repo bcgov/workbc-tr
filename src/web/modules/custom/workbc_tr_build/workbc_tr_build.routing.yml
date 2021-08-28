@@ -1,0 +1,7 @@
+workbc_tr_build.settings_form:
+  path: '/admin/config/workbc/settings'
+  defaults:
+    _form: '\Drupal\workbc_tr_build\Form\WorkBcSettingForm'
+    _title: 'Set settings'
+  requirements:
+    _permission: 'workbc_settings'

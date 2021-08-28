@@ -1,0 +1,3 @@
+workbc_settings:
+  title: 'Allow user to set workbc settings'
+  description: 'This permission will allow user to set settings'
