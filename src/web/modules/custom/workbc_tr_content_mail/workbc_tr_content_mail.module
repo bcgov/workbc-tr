@@ -1,0 +1,107 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\simplenews\SubscriberInterface;
+use Drupal\user\Entity\User;
+use Drupal\Core\Entity;
+use Drupal\user\UserInterface;
+use Drupal\simplenews\Entity\Subscriber;
+use Drupal\Core\Mail\MailFormatHelper;
+use Drupal\Component\Utility\Mail;
+use Drupal\Core\Render\Markup;
+use Drupal\Core\Utility;
+use Drupal\simplenews\Entity\Newsletter;
+
+/**
+ * Implementing hook_entity_update
+ * Prepare email to send to subscriber on Resource content update
+ * 
+ */
+function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
+
+  if($entity->bundle() == 'resource' && $entity->isPublished() == TRUE && $entity->get('field_resource_email_notifi')->value == TRUE) {
+    
+        //\Drupal::logger('workbc_tr_content_mail')->warning('<pre><code>' . print_r($entity->get('field_resource_email_notifi')->value, TRUE) . '</code></pre>');
+
+        //Query subscribers email subscribed to resource_newsletter
+        $database = \Drupal::database();
+        $query = $database->select('simplenews_subscriber', 's');
+        $query = $query->fields('s', array('mail'))
+          ->condition('s_sub.deleted', '0')
+          ->condition('s_sub.subscriptions_target_id','resource_newsletter');
+        $query->join('simplenews_subscriber__subscriptions', 's_sub', 's.id = s_sub.entity_id');
+        $result = $query->execute();
+
+        $base_url = \Drupal::request()->getSchemeAndHttpHost();
+        $url = $base_url.$entity->toUrl()->toString();
+
+        //Initialize subscribers array
+        $to_subscribers = [];
+
+        foreach ($result as $record) {
+          \Drupal::logger('workbc_tr_content_mail')->warning('<pre><code>' . print_r($url, TRUE) . '</code></pre>');
+          $subscribers[] = $record->mail;
+        }
+
+        //Get Newsletter object
+        $newsletters = Newsletter::loadMultiple();
+        $entity_type = \Drupal::entityTypeManager()->getDefinition('simplenews_newsletter');
+        $newsletters = uasort($newsletters, [$entity_type->getClass(), 'sort']);
+
+        foreach (simplenews_newsletter_get_all() as $newsletter) {
+          if($newsletter->id() == 'resource_newsletter') {
+            $newsletter_obj = $newsletter;
+          }
+        }
+
+        //$user = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties(['mail'=> 'hemantsanvaria@gmail.com']);
+        $language = \Drupal::languageManager()->getDefaultLanguage()->getId();
+
+        //Initialize mail
+        $newMail = \Drupal::service('plugin.manager.mail');
+
+        //Create emails for subscribers
+        foreach ( $subscribers as $subscriber ) {
+          $s = Subscriber::loadByMail($subscriber);
+          $sm_data = [
+            'newsletter' => $newsletter,
+            'simplenews_subscriber' => $s,
+          ];
+
+          //Create string from unsubscribe-url token
+          $unsubscribed_url = \Drupal::token()->replace('[simplenews-subscriber:unsubscribe-url]', $sm_data);
+
+          //Create message for email
+          $body = <<<html
+              <p>Hello,</p>
+              <p> WorkBC’s Teachers’ Resources have been updated: {$url}</p>
+              <p>Updates will only be sent to you when new resources or lesson plans are available. You can <a href="{$unsubscribed_url}">Unsubscribe</a> at any time.</p> 
+          html;
+
+          $params['from'] = "WorkBC.ca No Reply <noreply@gov.bc.ca>";
+          $params['body'] = $body;
+
+          $params['subject'] = 'WorkBC Teachers’ Resources: New resource(s) available';
+          $newMail->mail('workbc_tr_content_mail', 'workbc_tr_email', $subscriber, 'en', $params, $reply = null, $send = TRUE);
+        }
+       
+        $messenger = \Drupal::messenger();
+        $messenger->addMessage('Mail has been sent.', 'status');
+   }
+}
+
+function workbc_tr_content_mail_mail_alter(&$message) {
+  if($message['key'] == 'workbc_tr_email') {
+    $message['subject'] = $message['params']['subject'];
+    $message['headers']['From'] = $message['params']['from'];
+    $message['from'] = $message['params']['from'];
+    $message['headers']['From'] = $message['params']['from'];
+    $message['headers']['Sender'] = $message['params']['from'];
+    $message['headers']['Return-Path'] = $message['params']['from'];
+    $message['body'][] = Markup::create($message['params']['body']);
+  }
+}

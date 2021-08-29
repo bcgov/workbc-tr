@@ -23,6 +23,7 @@ module:
   ctools: 0
   ctools_views: 0
   datetime: 0
+  dblog: 0
   dynamic_page_cache: 0
   editor: 0
   editor_advanced_link: 0
@@ -44,6 +45,7 @@ module:
   language: 0
   link: 0
   linkit: 0
+  mailsystem: 0
   media: 0
   media_download_all: 0
   media_library: 0
@@ -52,6 +54,7 @@ module:
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
+  mimemail: 0
   module_filter: 0
   node: 0
   openid_connect: 0
@@ -62,6 +65,7 @@ module:
   path: 0
   path_alias: 0
   print_save: 0
+  queue_mail: 0
   quickedit: 0
   rdf: 0
   search: 0
@@ -73,6 +77,7 @@ module:
   shortcut: 0
   simplenews: 0
   smtp: 0
+  swiftmailer: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -80,12 +85,14 @@ module:
   toolbar: 0
   tour: 0
   twig_tweak: 0
+  typed_data: 0
   update: 0
   user: 0
   views_bootstrap: 0
   views_ui: 0
   viewsreference: 0
   workbc_tr_build: 0
+  workbc_tr_content_mail: 0
   pathauto: 1
   views: 10
   paragraphs: 11

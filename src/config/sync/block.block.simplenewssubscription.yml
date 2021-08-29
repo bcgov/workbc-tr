@@ -1,4 +1,4 @@
-uuid: 3d96e598-da83-4e30-9b99-19a7ce38b0eb
+uuid: 8bc03167-5049-4248-b0f2-39a73840603b
 langcode: en
 status: true
 dependencies:
@@ -18,7 +18,7 @@ settings:
   provider: simplenews
   label_display: '0'
   newsletters:
-    default: default
+    resource_newsletter: resource_newsletter
   message: ''
   unique_id: simple-new-teachers
 visibility: {  }
