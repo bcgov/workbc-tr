@@ -304,7 +304,8 @@
                 }
                 .card-header{
                     border:2px solid rgba(175, 175, 175, 1);
-                    &:after{background-size:12px;}
+                    padding:12px 35px 12px 10px;
+                    &:after{background-size:12px; right:0;}
                     .fieldset-legend{font-weight: normal;}
                 }
                 .card-body{top:46px;
