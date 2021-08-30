@@ -550,14 +550,21 @@
 function departmentFunction(){
   jQuery('.search_filter__results').show();
   jQuery('.dept-appned').remove();
-  jQuery('.filterbox__selectgroup input[type=checkbox]:checked').each(function () {
-    if(this.checked){
+    jQuery('.filterbox__selectgroup input[type=checkbox]:checked').each(function () {
+      if(this.checked){
         var selectedValue = jQuery(this).val();
         var response = jQuery('label[for="' + this.id + '"]').html();
 
         jQuery(".search_filter__results .search_filter__results-inner").append("<div class='dept-appned'><span class='dept-title-section'>" + response + "</span><span class='deptclose' data-removed='"+ this.id +"'>x</span></div>" );
       }
     });
+
+    var searchkeyword = jQuery('.search_keyword input').val();
+    if (searchkeyword.length){
+      jQuery(".search_filter__results .search_filter__results-inner").append("<div class='dept-appned'><span class='dept-title-section'>" + searchkeyword + "</span><span class='deptclose' data-removed='" + this.id + "'>x</span></div>");
+    }
+
+
 }
 
 departmentFunction();
@@ -580,12 +587,14 @@ jQuery(document).ajaxComplete(function(event, xhr, settings) {
     jQuery(self).parent().hide();
   });
 
-  if(jQuery('.dept-appned').length > 0){
-    jQuery( ".clear-all" ).show();
+  if (jQuery('.dept-appned').length > 0) {
+    jQuery(".clear-all").show();
   }
-  else{
-    jQuery( ".clear-all" ).hide();
+  else {
+    jQuery('.search_filter__results').hide();
+    jQuery(".clear-all").hide();
   }
+
   jQuery( ".clear-all" ).on('click', function(event) {
     jQuery('.filterbox__selectgroup input[type=checkbox]:checked').click();
     jQuery('.search_filter__results').hide();
