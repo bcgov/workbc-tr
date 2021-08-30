@@ -12414,6 +12414,9 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
     padding-right: 0;
   }
 }
+.related_news_slider .related_news_slider .related_news_wrapper--item-single, .resource_wrapper_left__img .related_news_slider .related_news_wrapper--item-single {
+  padding-bottom: 10px;
+}
 .related_news_slider .slick-dots, .resource_wrapper_left__img .slick-dots {
   bottom: -40px;
 }
@@ -12801,9 +12804,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup .card-header {
   border: 2px solid #afafaf;
+  padding: 12px 35px 12px 10px;
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup .card-header:after {
   background-size: 12px;
+  right: 0;
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup .card-header .fieldset-legend {
   font-weight: normal;

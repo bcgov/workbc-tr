@@ -1211,6 +1211,11 @@
     }
     .related_news_wrapper--item-single{padding-left: 0; padding-right: 0;}
   }
+  .related_news_slider{
+    .related_news_wrapper--item-single{
+      padding-bottom: 10px;
+    }
+  }
 
   .slick-dots {bottom:-40px;
     li{margin: 0;
