@@ -16,7 +16,7 @@ id: paragraph.resource_description.field_simple_descriotion
 field_name: field_simple_descriotion
 entity_type: paragraph
 bundle: resource_description
-label: 'Simple Descriotion'
+label: 'Simple Description'
 description: ''
 required: false
 translatable: false
