@@ -11399,7 +11399,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   position: relative;
   padding-left: 40px;
   margin-top: 10px;
-  counter-reset: revert;
 }
 .lesson_wrapper_main_para_item__body ul li ul li, .lesson_wrapper_main_para_item__body ol li ol li, .resource_wrapper_main_para_item__body ul li ul li, .resource_wrapper_main_para_item__body ol li ol li {
   font-size: 16px;
