@@ -74,13 +74,22 @@ function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface
 
           //Create string from unsubscribe-url token
           $unsubscribed_url = \Drupal::token()->replace('[simplenews-subscriber:unsubscribe-url]', $sm_data);
+          //Get Resource title
+          $title = $entity->getTitle();
+
+          //Resource type
+          $asset_type = $entity->field_term_resource_asset_type->entity->label();
 
           //Create message for email
           $body = <<<html
               <p>Hello,</p>
-              <p> WorkBC’s Teachers’ Resources have been updated: {$url}</p>
-              <p>Updates will only be sent to you when new resources or lesson plans are available. You can <a href="{$unsubscribed_url}">Unsubscribe</a> at any time.</p> 
+              <p>Check out the new {$asset_type} - <a href="{$url}">{$title}</a>:</p>
+              <p>You can <a href="{$unsubscribed_url}">Unsubscribe</a>  at any time.</p> 
+              <p>The WorkBC.ca Team <br> 
+              https://www.workbc.ca</p>
           html;
+
+          //\Drupal::logger('workbc_tr_content_mail')->warning('<pre><code>' . print_r($body, TRUE) . '</code></pre>');
 
           $params['from'] = "WorkBC.ca No Reply <noreply@gov.bc.ca>";
           $params['body'] = $body;
@@ -105,3 +114,9 @@ function workbc_tr_content_mail_mail_alter(&$message) {
     $message['body'][] = Markup::create($message['params']['body']);
   }
 }
+
+// function workbc_tr_content_mail_form_alter (&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+//   if($form_id == 'simplenews_confirm_removal') {
+
+//   }
+// }
