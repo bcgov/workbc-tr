@@ -29,3 +29,9 @@ regions:
   footer_right: Footer Right
   footer_left: Footer Left
   under_footer: Under footer
+
+#entity
+entity_print:
+ node:
+    # Adds the all-nodes library to all node PDF’s.
+   all: 'bcgov_teachers/global-styling'
