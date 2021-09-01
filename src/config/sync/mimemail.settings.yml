@@ -1,5 +1,5 @@
-name: ''
-mail: ''
+name: 'Career Education Resources'
+mail: no-reply@gov.bc.ca
 simple_address: false
 sitestyle: true
 textonly: false
@@ -9,6 +9,6 @@ format: full_html
 preserve_class: false
 advanced:
   incoming: false
-  key: ''
+  key: xXZNWStj5I5NNwjNuyFX1ZTjhEGHQ3prkc4UqY1lBKo
 _core:
   default_config_hash: rpfRQVoEn2ZWd_lw-iULKPiuina5CqcmzXWlz1OjTwM
