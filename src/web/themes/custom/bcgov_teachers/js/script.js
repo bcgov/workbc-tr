@@ -43,10 +43,10 @@
       var lesson_title = jQuery('.lesson_wrapper__intro__title').text().trim().replace(':', '');
       var site_title = jQuery('a.site-title').text().trim();
 
-      var email_body = 'Check out the ' +lesson_title+resource_title+ ' : \n '+ window.location.href;
+      var email_body = 'Check out the ' +lesson_title+resource_title+ ' from ' +site_title+ ' here: \n '+ window.location.href;
 
       $('.sharethis-wrapper .st_email_large').renameTag('a');
-      $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject=WorkBC’s "+site_title +" - " + lesson_title+resource_title + "&body=" + encodeURIComponent(email_body));
+      $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject="+site_title +" - " + lesson_title+resource_title + "&body=" + encodeURIComponent(email_body));
 
 
 
@@ -75,15 +75,17 @@
 
         var div_top = $('.left-nav:not(.mobiletab)').offset().top;
         var right_height = $('.right-nav .main-section.active').height();
+        //var left_height = $('.left-nav').height();
         var right_top = $('.right-nav .main-section.active').offset().top;
         var winHeight = $(window).height();
-       // var differ = right_height + right_top - 450;
+        //var differ = right_height + right_top - 450;
         var differ = right_height + right_top;
-
+        //var left_total = left_height + div_top;
+      
         function stickynavbar(){
           var window_top = $(window).scrollTop() + 200;
-
-          if ((window_top > div_top) && (window_top < differ)) {
+  
+          if ((window_top > div_top)) {
            $('.left-nav:not(.mobiletab)').addClass('sticky');
           }
           else {
@@ -128,6 +130,7 @@
           $('.main-section').removeClass('active');
           $(this).closest('.main-section').next('.main-section').addClass('active');
           var targetid =   $('.right-nav .main-section.active').attr('id');
+
           $('.left-'+targetid).closest('.leftnavbar--items').addClass('active');
           $('.left-' + targetid).closest('.leftnavbar--items').find('ul li:first-child a').addClass('active');
 
@@ -166,6 +169,7 @@
 
               if(scrollTop > ($('.main-section.active .lesson_wrapper_main_para_item:last-child .lesson_wrapper_main_para_item__title').offset().top + lastmainsectionheight) - 800){
                 $('.left-nav:not(.mobiletab)').addClass('align-end');
+                $('.left-nav:not(.mobiletab)').removeClass('sticky');
               }
               else {
                 $('.left-nav:not(.mobiletab)').removeClass('align-end');
