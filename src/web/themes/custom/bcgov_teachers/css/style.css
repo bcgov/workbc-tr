@@ -11284,7 +11284,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   }
 }
 .lesson_wrapper_main_para_item + .lesson_wrapper_main_para_item, .lesson_wrapper_main_para_item + .resource_wrapper_main_para_item, .resource_wrapper_main_para_item + .lesson_wrapper_main_para_item, .resource_wrapper_main_para_item + .resource_wrapper_main_para_item {
-  margin-top: 50px;
+  margin-top: 38px;
 }
 .lesson_wrapper_main_para_item .download-worksheets-container, .resource_wrapper_main_para_item .download-worksheets-container {
   margin-top: 70px;
