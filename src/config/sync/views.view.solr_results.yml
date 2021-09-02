@@ -9,7 +9,7 @@ dependencies:
     - field.storage.node.field_term_resource_competency
     - field.storage.node.field_term_resource_grade
     - field.storage.node.field_term_resource_stage
-    - image.style.resource_card_thumbnail
+    - image.style.card_style_374_160
     - search_api.index.career_education_resources_index
     - taxonomy.vocabulary.asset_type
     - taxonomy.vocabulary.career_life_cycle_stage
@@ -847,7 +847,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_style: resource_card_thumbnail
+            image_style: card_style_374_160
             image_link: ''
           group_column: target_id
           group_columns: {  }
