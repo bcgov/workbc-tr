@@ -2,3 +2,8 @@
   padding: 0;
 }
 .field--name-field-show-download-link{display: none;}
+
+.path-newsletter #block-bcgov-teachers-content {
+  @extend .container;
+  padding: 60px 0px;
+}

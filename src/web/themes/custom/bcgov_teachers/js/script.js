@@ -560,7 +560,7 @@ function departmentFunction(){
     });
 
     var searchkeyword = jQuery('.search_keyword input').val();
-    if (searchkeyword.length){
+    if (searchkeyword != ''){
       jQuery(".search_filter__results .search_filter__results-inner").append("<div class='dept-appned'><span class='dept-title-section'>" + searchkeyword + "</span><span class='deptclose' data-removed='" + this.id + "'>x</span></div>");
     }
 

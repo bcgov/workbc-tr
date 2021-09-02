@@ -20,6 +20,7 @@ permissions:
   - 'administer meta tags'
   - 'administer nodes'
   - 'administer site configuration'
+  - 'bypass node access'
   - 'create content content'
   - 'create document media'
   - 'create image media'

@@ -9,6 +9,7 @@ use Drupal\Core\StreamWrapper\PublicStream;
 use Drupal\media\Entity\Media;
 use Drupal\file\Entity\File;
 use Drupal\Core\File\FileSystemInterface;
+use Drupal\taxonomy\Entity\Term;
 
 /*
  * Implements hook_node_insert
@@ -47,7 +48,11 @@ function save_as_pdf($node) {
     //$host = \Drupal::request()->getSchemeAndHttpHost();
 
     $node_title = $node->get('title')->value;
-    $clean_filename = normalizeString($node_title).'.pdf';
+    $term = Term::load($node->get('field_term_resource_asset_type')->target_id);
+    $asset_type = $term->getName();
+
+    $clean_filename = normalizeString($asset_type.'_'.$node_title).'.pdf';
+    $set_media_name = $asset_type.' '.$node_title . ' PDF';
  
     $print_engine = \Drupal::service('plugin.manager.entity_print.print_engine')->createSelectedInstance('pdf');
     $print_builder = \Drupal::service('entity_print.print_builder');
@@ -65,7 +70,7 @@ function save_as_pdf($node) {
     $entities = $storageHandler->loadMultiple($ids);
     foreach ($entities as $entity) {
       $media_name = $entity->getName();
-      if ($media_name == $node_title . ' PDF') {
+      if ($media_name == $node_title . ' PDF' || $media_name == $set_media_name) {
          $entity->delete();
       }
     }
@@ -78,7 +83,7 @@ function save_as_pdf($node) {
         'target_id' => $file->id(),
       ],
     ]);
-    $media->setName($node_title . ' PDF')->setPublished(TRUE)->save();
+    $media->setName($set_media_name)->setPublished(TRUE)->save();
 
     // save media to node
     $node->get('field_resource_images')->appendItem($media);
