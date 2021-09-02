@@ -8,7 +8,7 @@ dependencies:
     - field.storage.node.field_term_resource_asset_type
     - field.storage.node.field_term_resource_grade
     - field.storage.node.field_term_resource_stage
-    - image.style.card_style_374_160
+    - image.style.resource_card_thumbnail
     - node.type.resource
   module:
     - media
@@ -179,7 +179,7 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_style: card_style_374_160
+            image_style: resource_card_thumbnail
             image_link: ''
           group_column: entity_id
           group_columns: {  }
