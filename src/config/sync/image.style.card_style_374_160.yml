@@ -1,0 +1,15 @@
+uuid: 6603abd8-2682-4900-83a2-dddb3dc925cf
+langcode: en
+status: true
+dependencies: {  }
+name: card_style_374_160
+label: 'Card style 374*160'
+effects:
+  37911bd6-d51e-44ae-ad2e-5a6e7162dc72:
+    uuid: 37911bd6-d51e-44ae-ad2e-5a6e7162dc72
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 374
+      height: 160
+      anchor: center-center

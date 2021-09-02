@@ -11,15 +11,15 @@ dependencies:
     - paragraphs
     - taxonomy
   config:
-    - field.storage.node.field_term_resource_asset_type
     - field.storage.node.field_resource_card_image
     - field.storage.node.field_resource_card_summary
-    - field.storage.node.field_term_resource_stage
-    - field.storage.node.field_term_resource_competency
     - field.storage.node.field_resource_desc
-    - field.storage.node.field_term_resource_grade
-    - field.storage.node.field_term_resource_audience
     - field.storage.node.field_resource_summary
+    - field.storage.node.field_term_resource_asset_type
+    - field.storage.node.field_term_resource_audience
+    - field.storage.node.field_term_resource_competency
+    - field.storage.node.field_term_resource_grade
+    - field.storage.node.field_term_resource_stage
     - search_api.server.career_resources_solr
 third_party_settings:
   search_api_solr:
@@ -212,6 +212,29 @@ processor_settings:
     suffix: '</strong>'
     weights:
       postprocess_query: 0
+  ignore_character:
+    all_fields: false
+    fields:
+      - field_resource_card_summary
+      - field_resource_desc
+      - field_resource_summary
+      - field_term_resource_asset_type
+      - field_term_resource_competency
+      - field_term_resource_grade
+      - field_term_resource_stage
+      - title
+    ignorable: '[''¿¡!?,:;]'
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
   language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range:
