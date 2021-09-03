@@ -1309,7 +1309,7 @@ display:
           group_type: group
           admin_label: ''
           empty: true
-          content: 'Showing @total results'
+          content: '@total'
           plugin_id: result
       footer: {  }
       empty: {  }
