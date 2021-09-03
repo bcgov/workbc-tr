@@ -43,10 +43,10 @@
       var lesson_title = jQuery('.lesson_wrapper__intro__title').text().trim().replace(':', '');
       var site_title = jQuery('a.site-title').text().trim();
 
-      var email_body = 'Check out the ' +lesson_title+resource_title+ ' from ' +site_title+ ' here: \n '+ window.location.href;
+      var email_body = 'Check out the ' +lesson_title+resource_title+ ' : \n '+ window.location.href;
 
       $('.sharethis-wrapper .st_email_large').renameTag('a');
-      $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject="+site_title +" - " + lesson_title+resource_title + "&body=" + encodeURIComponent(email_body));
+      $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject=WorkBC’s "+site_title +" - " + lesson_title+resource_title + "&body=" + encodeURIComponent(email_body));
 
 
 
@@ -81,10 +81,10 @@
         //var differ = right_height + right_top - 450;
         var differ = right_height + right_top;
         //var left_total = left_height + div_top;
-      
+
         function stickynavbar(){
           var window_top = $(window).scrollTop() + 200;
-  
+
           if ((window_top > div_top)) {
            $('.left-nav:not(.mobiletab)').addClass('sticky');
           }
