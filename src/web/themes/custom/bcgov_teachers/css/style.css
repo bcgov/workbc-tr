@@ -11284,7 +11284,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   }
 }
 .lesson_wrapper_main_para_item + .lesson_wrapper_main_para_item, .lesson_wrapper_main_para_item + .resource_wrapper_main_para_item, .resource_wrapper_main_para_item + .lesson_wrapper_main_para_item, .resource_wrapper_main_para_item + .resource_wrapper_main_para_item {
-  margin-top: 38px;
+  margin-top: 50px;
 }
 .lesson_wrapper_main_para_item .download-worksheets-container, .resource_wrapper_main_para_item .download-worksheets-container {
   margin-top: 70px;
@@ -11358,11 +11358,10 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   font-weight: 700;
 }
 .lesson_wrapper_main_para_item__body ol:last-child, .resource_wrapper_main_para_item__body ol:last-child {
-  margin-bottom: 20px;
+  margin-bottom: 70px;
 }
 .lesson_wrapper_main_para_item__body ul, .resource_wrapper_main_para_item__body ul {
   padding-left: 25px !important;
-  margin-top: 10px;
 }
 .lesson_wrapper_main_para_item__body ul li:before, .resource_wrapper_main_para_item__body ul li:before {
   content: "";
@@ -11391,20 +11390,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   color: #333333;
   position: relative;
   padding-left: 20px;
-}
-.lesson_wrapper_main_para_item__body ul li ul, .lesson_wrapper_main_para_item__body ol li ol, .resource_wrapper_main_para_item__body ul li ul, .resource_wrapper_main_para_item__body ol li ol {
-  font-size: 16px;
-  line-height: 24px;
-  color: #333333;
-  position: relative;
-  padding-left: 40px;
-  margin-top: 10px;
-}
-.lesson_wrapper_main_para_item__body ul li ul li, .lesson_wrapper_main_para_item__body ol li ol li, .resource_wrapper_main_para_item__body ul li ul li, .resource_wrapper_main_para_item__body ol li ol li {
-  font-size: 16px;
-  line-height: 24px;
-  color: #333333;
-  position: relative;
 }
 .lesson_wrapper_main_para_item__body ul li p, .lesson_wrapper_main_para_item__body ul li span, .lesson_wrapper_main_para_item__body ul li a, .lesson_wrapper_main_para_item__body ol li p, .lesson_wrapper_main_para_item__body ol li span, .lesson_wrapper_main_para_item__body ol li a, .resource_wrapper_main_para_item__body ul li p, .resource_wrapper_main_para_item__body ul li span, .resource_wrapper_main_para_item__body ul li a, .resource_wrapper_main_para_item__body ol li p, .resource_wrapper_main_para_item__body ol li span, .resource_wrapper_main_para_item__body ol li a {
   font-size: 16px;
@@ -12560,6 +12545,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   border: 0;
   outline: 0;
   border: 2px solid #2379a4;
+  box-shadow: none;
 }
 .search-solr-box__inner .search-solr-box__filter .filterbox {
   display: flex;
