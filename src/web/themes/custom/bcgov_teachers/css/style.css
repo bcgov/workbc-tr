@@ -10818,8 +10818,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   background-size: contain;
   opacity: 1;
 }
-.block-featured-resources .slick-prev:hover::before, .block-featured-resources .slick-prev.slick-disabled::before,
-.block-featured-resources .slick-next:hover::before,
+.block-featured-resources .slick-prev.slick-disabled::before,
 .block-featured-resources .slick-next.slick-disabled::before {
   background: url("/themes/custom/bcgov_teachers/images/chevron-grey.svg");
 }
@@ -11480,6 +11479,9 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   border: 1px solid #e2e2e2;
   box-shadow: none;
   transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .related_news_wrapper--item:hover {
   box-shadow: rgba(170, 170, 170, 0.35) 0px 0px 10px;
@@ -12389,7 +12391,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 
 /*---------------------left nav design end-----------------------*/
-.related_news_slider .slick-prev:before, .related_news_slider .slick-next:before, .resource_wrapper_left__img .slick-prev:before, .resource_wrapper_left__img .slick-next:before {
+.related_news_slider .slick-prev:before, .related_news_slider .slick-next:before, .related_news_slider .slick-arrow:focus:before, .related_news_slider .slick-arrow:hover:before, .resource_wrapper_left__img .slick-prev:before, .resource_wrapper_left__img .slick-next:before, .resource_wrapper_left__img .slick-arrow:focus:before, .resource_wrapper_left__img .slick-arrow:hover:before {
   content: "";
   width: 15px;
   height: 25px;
@@ -12398,7 +12400,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   display: inline-block;
   top: 0;
 }
-.related_news_slider .slick-prev.slick-disabled:before, .related_news_slider .slick-next.slick-disabled:before, .resource_wrapper_left__img .slick-prev.slick-disabled:before, .resource_wrapper_left__img .slick-next.slick-disabled:before {
+.related_news_slider .slick-prev.slick-disabled:before, .related_news_slider .slick-prev.slick-disabled:focus:before, .related_news_slider .slick-prev.slick-disabled:hover:before, .related_news_slider .slick-next.slick-disabled:before, .related_news_slider .slick-next.slick-disabled:focus:before, .related_news_slider .slick-next.slick-disabled:hover:before, .related_news_slider .slick-arrow:focus.slick-disabled:before, .related_news_slider .slick-arrow:focus.slick-disabled:focus:before, .related_news_slider .slick-arrow:focus.slick-disabled:hover:before, .related_news_slider .slick-arrow:hover.slick-disabled:before, .related_news_slider .slick-arrow:hover.slick-disabled:focus:before, .related_news_slider .slick-arrow:hover.slick-disabled:hover:before, .resource_wrapper_left__img .slick-prev.slick-disabled:before, .resource_wrapper_left__img .slick-prev.slick-disabled:focus:before, .resource_wrapper_left__img .slick-prev.slick-disabled:hover:before, .resource_wrapper_left__img .slick-next.slick-disabled:before, .resource_wrapper_left__img .slick-next.slick-disabled:focus:before, .resource_wrapper_left__img .slick-next.slick-disabled:hover:before, .resource_wrapper_left__img .slick-arrow:focus.slick-disabled:before, .resource_wrapper_left__img .slick-arrow:focus.slick-disabled:focus:before, .resource_wrapper_left__img .slick-arrow:focus.slick-disabled:hover:before, .resource_wrapper_left__img .slick-arrow:hover.slick-disabled:before, .resource_wrapper_left__img .slick-arrow:hover.slick-disabled:focus:before, .resource_wrapper_left__img .slick-arrow:hover.slick-disabled:hover:before {
   background: url("/themes/custom/bcgov_teachers/images/chevron-grey.svg");
   opacity: 1;
 }
@@ -13224,6 +13226,7 @@ header .navbar .region-nav-branding .form-actions {
   body:not(.path-frontpage) header .region-header .navbar-brand .site-title {
     display: block;
     text-align: center;
+    white-space: normal;
   }
 }
 
@@ -13689,6 +13692,7 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
   margin-bottom: 15px;
   font-weight: normal;
   font-size: 2.3rem;
+  line-height: 0;
 }
 .paragraph--type--grade-access .paragraph--type--grade-access-blocks .field--name-field-grade-access-block-title p:first-child::first-line {
   font-size: 1.2rem;

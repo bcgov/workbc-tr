@@ -226,7 +226,7 @@ body:not(.path-frontpage){
         .site-logo {
           margin: 0 auto 6px;
         }
-        .site-title{display: block; text-align: center;}
+        .site-title{display: block; text-align: center; white-space: normal;}
       }
     }
 }
