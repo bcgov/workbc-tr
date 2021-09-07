@@ -326,7 +326,10 @@
    background: $teachers-text-light;
    border:1px solid rgb(226, 226, 226);
    box-shadow: none;
-  transition: 0.5s;
+   transition: 0.5s;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
    &:hover{
     box-shadow:rgba(170, 170, 170, 0.35) 0px 0px 10px;
     background: #f2f2f2;
@@ -1179,7 +1182,7 @@
 
 
 .related_news_slider, .resource_wrapper_left__img{
-  .slick-prev, .slick-next{
+  .slick-prev, .slick-next, .slick-arrow:focus, .slick-arrow:hover{
     &:before{
       content:'';
       width:15px;
@@ -1189,7 +1192,7 @@
       display: inline-block;
       top:0;
     }
-    &.slick-disabled {
+    &.slick-disabled,&.slick-disabled:focus, &.slick-disabled:hover  {
       &:before{
         background: url('/themes/custom/bcgov_teachers/images/chevron-grey.svg');
         opacity: 1;
