@@ -1,0 +1,15 @@
+uuid: 58f15ecf-9b25-42e7-9531-1b9dfe4a9103
+langcode: en
+status: true
+dependencies: {  }
+name: resource_350
+label: 'Resource 350'
+effects:
+  3a5b8da6-7b98-48c0-bcc2-fade42b87285:
+    uuid: 3a5b8da6-7b98-48c0-bcc2-fade42b87285
+    id: image_scale
+    weight: 1
+    data:
+      width: 350
+      height: null
+      upscale: false

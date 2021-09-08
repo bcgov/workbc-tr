@@ -555,7 +555,7 @@ function departmentFunction(){
 
     var searchkeyword = jQuery('.search_keyword input').val();
     if (searchkeyword != ''){
-      jQuery(".search_filter__results .search_filter__results-inner").append("<div class='dept-appned'><span class='dept-title-section'>" + searchkeyword + "</span><span class='deptclose' data-removed='" + this.id + "'>x</span></div>");
+      jQuery(".search_filter__results .search_filter__results-inner").append("<div class='dept-appned'><span class='dept-title-section'>" + searchkeyword + "</span><span class='key-title deptclose' data-removed='" + this.id + "'>x</span></div>");
     }
 
 
@@ -572,6 +572,10 @@ jQuery(document).ajaxComplete(function(event, xhr, settings) {
     jQuery('#' + ValueRemoved).click();
     //setTimeout(function() {
     jQuery(self).parent().hide();
+    if (jQuery(self).hasClass('key-title')) {
+      jQuery('.search_keyword input').val('');
+      jQuery('form#views-exposed-form-solr-results-page-1').submit();
+    }
   });
 
   if (jQuery('.dept-appned').length > 0) {
