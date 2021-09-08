@@ -179,9 +179,9 @@
 				{% set media = image.entity %}
 				{# The field name in the referenced entity is "field_image_file #}
 				{% set file = media.field_media_image.entity %}
-				{% set uri = file_url(file.uri.value)  %}
-				<div class="resource-media">
-					<img class="img-fluid" src="{{ uri }}" alt="{{ media.field_media_image.alt|default('resource img') }}" />
+				{% set uri = file.uri.value %}
+				<div class="resource-media mb-4">
+					<img class="img-fluid" src="{{ uri | image_style('resource_350') }}" alt="{{ media.field_media_image.alt|default('resource img') }}" />
 				</div>
 				{% endfor %}
 			</div>
