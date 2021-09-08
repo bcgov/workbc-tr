@@ -113,6 +113,11 @@
           },
           "drupal/media_download_all": {
             "3190105 - Compression fails with No active tasks alert":"https://www.drupal.org/files/issues/2021-03-22/3190105-2.patch"
+          },
+	  "drupal/entity_print": {
+            "Respect label inline status in entity-print.css": "https://www.drupal.org/files/issues/2019-08-30/improve_print_css-3078189-2.patch",
+            "Fix PDF generation errors related to CSS properties": "https://www.drupal.org/files/issues/2020-02-15/entity_print-dompdf-2969184-13.patch",
+            "fix CSS on servers https://www.drupal.org/project/entity_print/issues/2996197": "https://www.drupal.org/files/issues/2020-06-13/2996197-absolute-path-css-7.patch"
           }
         },
         "drupal-core-project-message": {
