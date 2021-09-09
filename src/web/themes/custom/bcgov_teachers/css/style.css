@@ -12126,8 +12126,14 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   transition: 0.5s;
 }
 @media only screen and (min-width: 768px) {
+  .leftnavbar--items .leftnavbar--title {
+    padding: 10px 10px;
+  }
+}
+@media only screen and (min-width: 768px) {
   .leftnavbar--items:first-child .leftnavbar--title {
     border-radius: 15px 15px 0 0;
+    padding: 10px 10px;
   }
 }
 .leftnavbar--items.active .leftnavbar--title {
@@ -12226,6 +12232,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   border-left: 1px solid #d7d7d7;
   border-right: 1px solid #d7d7d7;
 }
+@media screen and (min-width: 768px) {
+  .leftnavbar-item ul {
+    padding: 10px;
+  }
+}
 .leftnavbar-item ul {
   padding: 20px;
   margin: 0;
@@ -12285,7 +12296,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
     left: 15px;
     max-width: 235px;
     width: 100%;
-    top: 200px;
+    top: 10px;
   }
 }
 .left-nav.align-end .leftnavbar {

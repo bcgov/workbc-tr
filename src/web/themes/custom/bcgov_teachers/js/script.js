@@ -85,7 +85,7 @@
         function stickynavbar(){
           var window_top = $(window).scrollTop() + 200;
 
-          if ((window_top > div_top)) {
+          if ((window_top > right_top)) {
            $('.left-nav:not(.mobiletab)').addClass('sticky');
           }
           else {
@@ -119,6 +119,14 @@
             scrollTop: $('.right-nav').offset().top
           });
         });
+
+        // $('.leftnavbar-item a').on('click', function(e){	
+        //   e.preventDefault();	
+        //   $('.leftnavbar-item a').removeClass('active');	
+        //   var href = $(this).attr('href');	
+        //   var aTag = $(href);	
+        //   $('html,body').animate({scrollTop: aTag.offset().top},'slow');	
+        //  });
 
         setTimeout(function(){
           $('.leftnavbar .leftnavbar--items.active ul li:first-child a').addClass('active');

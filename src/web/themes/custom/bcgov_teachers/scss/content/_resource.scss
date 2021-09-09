@@ -919,10 +919,16 @@
   }
   &--items{
     transition: 0.5s;
+    .leftnavbar--title{
+      @media only screen and (min-width:768px){
+        padding: 10px 10px;
+      }
+    }
     &:first-child{
       .leftnavbar--title{
         @media only screen and (min-width:768px){
           border-radius: 15px 15px 0 0;
+          padding: 10px 10px;
         }
       }
     }
@@ -1026,6 +1032,11 @@
     display: none;
     border-left: 1px solid rgb(215, 215, 215);
     border-right: 1px solid rgb(215, 215, 215);
+    @media screen and (min-width:768px) {
+      & ul {
+        padding: 10px;
+      }
+    }
         ul{
           padding:20px;
           margin:0;
@@ -1095,7 +1106,7 @@
         left:15px;
         max-width:235px;
         width: 100%;
-        top:200px;
+        top:10px;
       }
     }
   }
