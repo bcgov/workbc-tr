@@ -11343,6 +11343,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .lesson_wrapper_main_para_item__body ol li > ol, .resource_wrapper_main_para_item__body ol li > ol {
   list-style-type: lower-alpha;
+  padding-left: 20px;
 }
 .lesson_wrapper_main_para_item__body ol li > ol > li, .resource_wrapper_main_para_item__body ol li > ol > li {
   padding-left: 0;

@@ -195,6 +195,7 @@
         }
         > ol{
           list-style-type: lower-alpha;
+	  padding-left:20px;
           > li{padding-left:0;
             + li{margin-top:10px;}
             &:before{display: none;}
