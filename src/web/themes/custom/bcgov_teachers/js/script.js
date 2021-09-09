@@ -86,10 +86,7 @@
           }
         }
       });
-      $(window).scroll(function () {
 
-
-      });
       if ($('.left-nav:not(.mobiletab)').length > 0) {
         $('leftnavbar .leftnavbar--items.active .leftnavbar-item ul li:first-child a').addClass('active');
         $('.leftnavbar--title a').on('click', function(e){
