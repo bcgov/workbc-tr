@@ -51,7 +51,7 @@ function save_as_pdf($node) {
     $term = Term::load($node->get('field_term_resource_asset_type')->target_id);
     $asset_type = $term->getName();
 
-    $clean_filename = normalizeString($asset_type.'_'.$node_title).'.pdf';
+    $clean_filename = normalizeString($asset_type.' - '.$node_title).'.pdf';
     $set_media_name = $asset_type.' '.$node_title . ' PDF';
  
     $print_engine = \Drupal::service('plugin.manager.entity_print.print_engine')->createSelectedInstance('pdf');
@@ -104,8 +104,8 @@ function normalizeString ($str = '')
     $str = htmlentities($str, ENT_QUOTES, "utf-8");
     $str = preg_replace("/(&)([a-z])([a-z]+;)/i", '$2', $str);
     $str = trim($str);
-    $str = str_replace(' ', '_', $str);
-    $str = rawurlencode($str);
-    $str = str_replace('%', '_', $str);
+    //$str = str_replace(' ', '_', $str);
+    //$str = rawurlencode($str);
+    $str = str_replace('%', '-', $str);
     return $str;
 }
