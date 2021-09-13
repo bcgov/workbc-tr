@@ -135,7 +135,7 @@
     }
   }
   &_main_para_item + &_main_para_item{
-      margin-top: 50px;
+      margin-top: 38px;
   }
 
   &_main_para_item{
@@ -209,7 +209,7 @@
       }
     }
 
-    ul{padding-left: 25px !important;
+    ul{padding-left: 25px !important; margin-top: 10px;
       li{
         &:before{
           content:'';
@@ -239,6 +239,10 @@
         p,span,a{font-size: 16px;}
         + li{
           margin-top:20px;
+        }
+        ul, ol{
+            padding-left: 40px;
+            margin-top: 10px;
         }
       }
     }
@@ -913,8 +917,6 @@
   width:100%;
   border-radius: 15px;
   overflow: hidden;
-  //border: 1px solid rgb(215, 215, 215);
-  transition: 1s;
   margin-top:10px;
   @media only screen and (max-width:767px){
     margin-bottom: 20px;
@@ -1086,16 +1088,16 @@
 }
 
 
-@keyframes bottomalign {
-  from {
+// @keyframes bottomalign {
+//   from {
 
-  }
-  to {
-    position: absolute;
-    top:auto;
-    bottom: 0;
-  }
-}
+//   }
+//   to {
+//     position: absolute;
+//     top:auto;
+//     bottom: 0;
+//   }
+// }
 
 .left-nav{
   position: relative;
@@ -1103,11 +1105,17 @@
   &.sticky{
     .leftnavbar{
       position: fixed;
-      top:200px;
+      //top:200px;
+      top: 50%;
+      transform: translateY(-50%);
       @media only screen and (max-width:991px){
         left:15px;
-        max-width:235px;
+        max-width:260px;
         width: 100%;
+        //top:200px;
+      }
+      @media only screen and (max-width:800px){
+        max-width:230px;
         top:10px;
       }
     }
@@ -1116,9 +1124,12 @@
       // display: flex;
       // align-items: flex-end;
     .leftnavbar{
-      animation: bottomalign 3s;
-
-      animation-fill-mode: forwards;
+      // animation: bottomalign 3s;
+      // animation-fill-mode: forwards;
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      transform: none;
     }
   }
   @media screen and (max-width:767px) {
@@ -1267,3 +1278,10 @@
   }
 }
 .slick-prev, .slick-next{height:28px;}
+
+
+@media only screen and (max-width:1024px){
+  .lesson_wrapper{
+    .container{max-width: 100% !important;}
+  }
+}

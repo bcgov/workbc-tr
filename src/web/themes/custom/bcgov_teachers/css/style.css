@@ -11283,7 +11283,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   }
 }
 .lesson_wrapper_main_para_item + .lesson_wrapper_main_para_item, .lesson_wrapper_main_para_item + .resource_wrapper_main_para_item, .resource_wrapper_main_para_item + .lesson_wrapper_main_para_item, .resource_wrapper_main_para_item + .resource_wrapper_main_para_item {
-  margin-top: 50px;
+  margin-top: 38px;
 }
 .lesson_wrapper_main_para_item .download-worksheets-container, .resource_wrapper_main_para_item .download-worksheets-container {
   margin-top: 70px;
@@ -11363,6 +11363,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .lesson_wrapper_main_para_item__body ul, .resource_wrapper_main_para_item__body ul {
   padding-left: 25px !important;
+  margin-top: 10px;
 }
 .lesson_wrapper_main_para_item__body ul li:before, .resource_wrapper_main_para_item__body ul li:before {
   content: "";
@@ -11397,6 +11398,10 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .lesson_wrapper_main_para_item__body ul li + li, .lesson_wrapper_main_para_item__body ol li + li, .resource_wrapper_main_para_item__body ul li + li, .resource_wrapper_main_para_item__body ol li + li {
   margin-top: 20px;
+}
+.lesson_wrapper_main_para_item__body ul li ul, .lesson_wrapper_main_para_item__body ul li ol, .lesson_wrapper_main_para_item__body ol li ul, .lesson_wrapper_main_para_item__body ol li ol, .resource_wrapper_main_para_item__body ul li ul, .resource_wrapper_main_para_item__body ul li ol, .resource_wrapper_main_para_item__body ol li ul, .resource_wrapper_main_para_item__body ol li ol {
+  padding-left: 40px;
+  margin-top: 10px;
 }
 .lesson_wrapper .main_section, .resource_wrapper .main_section {
   padding: 55px 0;
@@ -12116,7 +12121,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   width: 100%;
   border-radius: 15px;
   overflow: hidden;
-  transition: 1s;
   margin-top: 10px;
 }
 @media only screen and (max-width: 767px) {
@@ -12278,32 +12282,33 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   height: 100%;
 }
 
-@keyframes bottomalign {
-  to {
-    position: absolute;
-    top: auto;
-    bottom: 0;
-  }
-}
 .left-nav {
   position: relative;
   transition: 1s;
 }
 .left-nav.sticky .leftnavbar {
   position: fixed;
-  top: 200px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 @media only screen and (max-width: 991px) {
   .left-nav.sticky .leftnavbar {
     left: 15px;
-    max-width: 235px;
+    max-width: 260px;
     width: 100%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .left-nav.sticky .leftnavbar {
+    max-width: 230px;
     top: 10px;
   }
 }
 .left-nav.align-end .leftnavbar {
-  animation: bottomalign 3s;
-  animation-fill-mode: forwards;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  transform: none;
 }
 @media screen and (max-width: 767px) {
   .left-nav {
@@ -12485,6 +12490,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   height: 28px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .lesson_wrapper .container, .lesson_wrapper .path-newsletter #block-bcgov-teachers-content, .path-newsletter .lesson_wrapper #block-bcgov-teachers-content {
+    max-width: 100% !important;
+  }
+}
 .search_wrapper {
   margin-bottom: 40px;
 }
@@ -12819,7 +12829,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   }
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup {
-  margin-left: 10px;
+  margin-left: 12px;
   min-width: 275px;
 }
 @media only screen and (max-width: 767px) {
@@ -12829,17 +12839,27 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup .card-header {
   border: 2px solid #afafaf;
-  padding: 12px 35px 12px 10px;
+  padding: 6px 35px 6px 10px;
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup .card-header:after {
-  background-size: 12px;
-  right: 0;
+  width: 8px;
+  height: 8px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #333 #333 transparent transparent;
+  background: none;
+  transform: rotate(135deg);
+  top: 10px;
+  right: 4px;
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup .card-header .fieldset-legend {
   font-weight: normal;
 }
 .search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup .card-body {
-  top: 46px;
+  top: 38px;
+}
+.search-solr-box--wrapper .show-result-wrapper .search-assest .fieldgroup .card-body label {
+  padding: 3px 10px !important;
 }
 
 a.clear-search {
