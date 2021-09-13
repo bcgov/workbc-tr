@@ -606,6 +606,10 @@ jQuery(document).ajaxComplete(function(event, xhr, settings) {
 });
 
 //search filter parent child relation js
+function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
 jQuery(document).ready(function(){
   setTimeout(function(){
     jQuery('.search-solr-box__inner .card-body .form-checkboxes .form-item:first-child').addClass('parent-item');
@@ -673,6 +677,43 @@ jQuery(document).ready(function(){
     jQuery("#views-exposed-form-solr-results-page-1").submit(function (e) {
       departmentFunction();
     });
+
+
+    //subscription form popup js
+
+    jQuery('#simplenews-subscriptions-block-simple-new-teachers .form-actions input').attr('type', 'button');
+    jQuery('#simplenews-subscriptions-block-simple-new-teachers .form-actions input').on('click', function () {
+      if(isEmail(jQuery('#simplenews-subscriptions-block-simple-new-teachers .form-email').val())){
+        jQuery('#simplenews-subscriptions-block-simple-new-teachers .form-email').removeClass('error');
+        jQuery('#confirm-submit').addClass('in');
+      }
+      else{
+        jQuery('#simplenews-subscriptions-block-simple-new-teachers .form-email').addClass('error');
+        return false;
+      }
+
+    });
+
+    jQuery('#submit-form').on('click', function () {
+      if (jQuery("#terms").is(":checked")){
+        jQuery('.term-agree').removeClass('error');
+        jQuery('#simplenews-subscriptions-block-simple-new-teachers').submit();
+        jQuery('#confirm-submit').removeClass('in');
+      }
+      else{
+        jQuery('.term-agree').addClass('error');
+        return false;
+      }
+    });
+
+    jQuery('.cancel-form').on('click',function(){
+      jQuery('#confirm-submit').removeClass('in');
+      jQuery('.term-agree').removeClass('error');
+    });
+  //subscription form popup js end
+
   },100);
+
+
 
 });
