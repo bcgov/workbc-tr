@@ -21,6 +21,7 @@ dependencies:
     - media
     - search_api
     - text
+    - views_infinite_scroll
 id: solr_results
 label: 'Solr Results'
 module: views
@@ -134,7 +135,7 @@ display:
                 select_all_none_nested: false
                 display_inline: false
       pager:
-        type: mini
+        type: infinite_scroll
         options:
           items_per_page: 12
           offset: 0
@@ -151,6 +152,10 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          views_infinite_scroll:
+            button_text: 'Load More'
+            automatically_load_content: true
+            initially_load_all_pages: false
       style:
         type: table
         options:
