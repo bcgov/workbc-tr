@@ -1,8 +1,9 @@
 default_css: true
 force_download: true
 print_engines:
-  pdf_engine: tcpdfv1
+  pdf_engine: dompdf
   epub_engine: ''
   word_docx_engine: ''
 _core:
   default_config_hash: nF3sn8D7n0S0cxMK-kk9HmtudLA5iIm0EXJo7xJQQRY
+absolute_path_to_css: false

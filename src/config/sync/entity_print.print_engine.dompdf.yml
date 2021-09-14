@@ -14,4 +14,4 @@ settings:
   cafile: ''
   verify_peer: true
   verify_peer_name: true
-  enable_debug: false
+  enable_debug: 0
