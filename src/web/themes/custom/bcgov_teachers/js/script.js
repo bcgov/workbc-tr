@@ -685,11 +685,14 @@ jQuery(document).ready(function(){
     jQuery('#simplenews-subscriptions-block-simple-new-teachers .form-actions input').attr('type', 'button');
     jQuery('#simplenews-subscriptions-block-simple-new-teachers .form-actions input').on('click', function () {
       if(isEmail(jQuery('#simplenews-subscriptions-block-simple-new-teachers .form-email').val())){
-        jQuery('#simplenews-subscriptions-block-simple-new-teachers .form-email').removeClass('error');
+        //jQuery('#simplenews-subscriptions-block-simple-new-teachers .form-email').removeClass('error');
         jQuery('#confirm-submit').addClass('in');
+        jQuery('#confirm-submit .modal-dialog').scrollTop(0);
+        jQuery('html').addClass('o-hidden');
       }
       else{
-        jQuery('#simplenews-subscriptions-block-simple-new-teachers .form-email').addClass('error');
+        jQuery('#simplenews-subscriptions-block-simple-new-teachers .form-email').focus();
+        //jQuery('#simplenews-subscriptions-block-simple-new-teachers .form-email').addClass('error');
         return false;
       }
 
@@ -697,7 +700,7 @@ jQuery(document).ready(function(){
 
     jQuery('#submit-form').on('click', function () {
       if (jQuery("#terms").is(":checked")){
-        jQuery('.term-agree').removeClass('error');
+        //jQuery('.term-agree').removeClass('error');
         jQuery('#simplenews-subscriptions-block-simple-new-teachers').submit();
         jQuery('#confirm-submit').removeClass('in');
       }
@@ -709,7 +712,11 @@ jQuery(document).ready(function(){
 
     jQuery('.cancel-form').on('click',function(){
       jQuery('#confirm-submit').removeClass('in');
-      jQuery('.term-agree').removeClass('error');
+      jQuery('html').removeClass('o-hidden');
+      if (jQuery("#terms").is(":checked")) {
+        jQuery("#terms").prop("checked", false);
+      }
+      //jQuery('.term-agree').removeClass('error');
     });
   //subscription form popup js end
 

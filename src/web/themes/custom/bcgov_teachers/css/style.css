@@ -10945,7 +10945,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
     margin-bottom: 10px;
   }
 }
-.anonymous-subscriptions-subscribe-for input[type=submit], .simplenews-subscriptions-block-simple-new-teachers input[type=submit] {
+.anonymous-subscriptions-subscribe-for .form-actions input, .simplenews-subscriptions-block-simple-new-teachers .form-actions input {
   margin: 0;
   display: inline-block;
   vertical-align: middle;
@@ -10957,12 +10957,12 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   padding: 10px 25px;
   transition: 0.5s;
 }
-.anonymous-subscriptions-subscribe-for input[type=submit]:hover, .simplenews-subscriptions-block-simple-new-teachers input[type=submit]:hover {
+.anonymous-subscriptions-subscribe-for .form-actions input:hover, .simplenews-subscriptions-block-simple-new-teachers .form-actions input:hover {
   background: #fff;
   color: #073573;
 }
 @media only screen and (max-width: 767px) {
-  .anonymous-subscriptions-subscribe-for input[type=submit], .simplenews-subscriptions-block-simple-new-teachers input[type=submit] {
+  .anonymous-subscriptions-subscribe-for .form-actions input, .simplenews-subscriptions-block-simple-new-teachers .form-actions input {
     width: 100%;
   }
 }
@@ -12546,6 +12546,10 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 #confirm-submit .modal-dialog .term-agree.error label {
   color: red;
+}
+
+.o-hidden {
+  overflow: hidden;
 }
 
 .search_wrapper {
