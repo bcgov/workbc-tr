@@ -634,6 +634,7 @@ jQuery(document).ready(function(){
         jQuery(this).closest('.parent-checkbox-item').find('> .form-item input').prop('checked', 'checked');
       }
       else {
+        jQuery(this).closest('.parent-checkbox-item').find('.parent-item').removeClass('selected');
         jQuery(this).closest('.parent-checkbox-item').find('> .form-item input').prop('checked', '');
       }
     });

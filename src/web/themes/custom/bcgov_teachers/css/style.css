@@ -12301,14 +12301,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 @media only screen and (max-width: 800px) {
   .left-nav.sticky .leftnavbar {
     max-width: 230px;
-    top: 10px;
   }
 }
-.left-nav.align-end .leftnavbar {
-  position: absolute;
-  top: auto;
-  bottom: 0;
-  transform: none;
+.left-nav.align-end {
+  display: flex;
+  align-items: flex-end;
 }
 @media screen and (max-width: 767px) {
   .left-nav {
@@ -12480,6 +12477,14 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 
   .slick-next {
     right: -18px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .related_news_slider .slick-track {
+    display: flex;
+  }
+  .related_news_slider .slick-track .slick-slide {
+    height: inherit;
   }
 }
 .search_wrapper .row {
