@@ -85,16 +85,17 @@
 
 <a href="https://www.workbc.ca/" title="WorkBC" rel="home" class="site-logo" target="_blank">
   <img src="/themes/custom/bcgov_teachers/assets/logo-workbc.png" alt="WorkBC" width="220" height="40">
-  <font size="15">Career Education Resources</font>
+  <font size="20">Career Education Resources</font>
 </a>
 
 <article{{ attributes.addClass(classes) }}>
 
 <br /><br />
 
-  <font size="20"><b>{{ "Lesson Plan: "|t }}</b> {{ node.title.value }}</font>
+  <font size="18"><b>{{ "Lesson Plan: "|t }}</b> {{ node.title.value }}</font>
+  <br /><br />
   {% if node.field_term_resource_stage.value is not empty %}
-    {{ "Career Lifecycle Stage: "|t }} {{ content.field_term_resource_stage }}
+    {{ content.field_term_resource_stage }}
   {% endif %}
   {% if node.field_resource_card_summary.getValue().0.value is not empty %}
     {{ node.field_resource_card_summary.getValue().0.value|raw }}
