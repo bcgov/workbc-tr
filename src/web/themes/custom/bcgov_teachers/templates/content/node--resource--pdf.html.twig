@@ -93,28 +93,20 @@
 <br /><br />
 
   <font size="18"><b>{{ "Lesson Plan: "|t }}</b> {{ node.title.value }}</font>
-  <br /><br />
-  {% if node.field_term_resource_stage.value is not empty %}
-    {{ content.field_term_resource_stage }}
-  {% endif %}
+  <br />
   {% if node.field_resource_card_summary.getValue().0.value is not empty %}
     {{ node.field_resource_card_summary.getValue().0.value|raw }}
-  {% endif %}
-  {% if node.field_term_resource_grade.value is not empty %}
-    {{ content.field_term_resource_grade }}
-  {% endif %}
-  {% if node.field_resource_time.value is not empty %}
-    {{ node.field_resource_time.value }}
   {% endif %}
   <br /><br />
   
   {# Main Container #}
   {% for key,subentity in node.field_add_resource_description if key|first != '#' %}
     {% if subentity.entity.field_main_heading.value is not empty %}
-      <font size="15"><b><u>{{ subentity.entity.field_main_heading.value }}</u></b></font><br />
+      <font size="15"><b><u>{{ subentity.entity.field_main_heading.value }}</u></b></font>
     {% endif %}
     {% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}
       {% if lsubentity.entity.field_para_simple_title.value is not empty %}
+        <br /><br />
         <font size="15">{{ lsubentity.entity.field_para_simple_title.value|raw }}</font>
       {% endif %}
       {% if lsubentity.entity.field_para_simple_body.getValue().0.value is not empty %}
