@@ -10,6 +10,7 @@ global-scripts:
     js/jquery.matchheight-min.js: {}
     js/slick.min.js: {}
     js/script.js: {}
+    js/snowplow_tracker.js: {}
   dependencies:
     - core/jquery
     - core/drupal
