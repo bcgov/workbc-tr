@@ -12875,6 +12875,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   text-decoration: none;
   color: #fff;
 }
+.search-solr-box--wrapper .show-result-wrapper .container .fieldgroup .card-body .form-radios input[type=radio]:checked + label, .search-solr-box--wrapper .show-result-wrapper .path-newsletter #block-bcgov-teachers-content .fieldgroup .card-body .form-radios input[type=radio]:checked + label, .path-newsletter .search-solr-box--wrapper .show-result-wrapper #block-bcgov-teachers-content .fieldgroup .card-body .form-radios input[type=radio]:checked + label {
+  background: #009CDE;
+  text-decoration: none;
+  color: #fff;
+}
 .search-solr-box--wrapper .show-result-wrapper .search-assest {
   display: flex;
   align-items: center;
