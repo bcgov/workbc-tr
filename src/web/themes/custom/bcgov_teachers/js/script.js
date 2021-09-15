@@ -70,19 +70,21 @@
       }
 
       $(window).resize(function () {
-        setTimeout(function(){
-          $('.left-nav:not(.mobiletab)').removeClass('sticky');
-        },1000);
-
-        if ($(window).width() >= 768) {
-          var lefttop = $('.left-nav:not(.mobiletab)').offset().top;
-          var window_top = $(window).scrollTop() + 200;
-
-          if ((window_top > lefttop)) {
-            $('.left-nav:not(.mobiletab)').addClass('sticky');
-          }
-          else {
+        if($('.left-nav:not(.mobiletab)').length){
+          setTimeout(function () {
             $('.left-nav:not(.mobiletab)').removeClass('sticky');
+          }, 1000);
+
+          if ($(window).width() >= 768) {
+            var lefttop = $('.left-nav:not(.mobiletab)').offset().top;
+            var window_top = $(window).scrollTop() + 200;
+
+            if ((window_top > lefttop)) {
+              $('.left-nav:not(.mobiletab)').addClass('sticky');
+            }
+            else {
+              $('.left-nav:not(.mobiletab)').removeClass('sticky');
+            }
           }
         }
       });
@@ -99,6 +101,7 @@
           $('html,body').animate({
             scrollTop: $('.right-nav').offset().top
           });
+          $(this).parent('.leftnavbar--title').next('.leftnavbar-item').find('ul li:first-child a').click();
         });
 
 
@@ -229,7 +232,6 @@
           });
         }
       }
-
 
       //equal height for related plan box
       function setEqualHeight(arr) {
@@ -570,6 +572,14 @@ function departmentFunction(){
 
 }
 
+function removeparam(){
+  var uri = window.location.toString();
+  if (uri.indexOf("?") > 0) {
+    var clean_uri = uri.substring(0, uri.indexOf("?"));
+    window.history.replaceState({}, document.title, clean_uri);
+  }
+  location.reload();
+}
 
 jQuery(document).ajaxComplete(function(event, xhr, settings) {
   departmentFunction();
@@ -601,6 +611,7 @@ jQuery(document).ajaxComplete(function(event, xhr, settings) {
     jQuery('.search_keyword input').val('');
     jQuery('form#views-exposed-form-solr-results-page-1').submit();
     jQuery('.search-assest .card-body .form-radios .form-item:first-child input').click();
+    removeparam();
   });
 
 });
@@ -673,6 +684,7 @@ jQuery(document).ready(function(){
       jQuery('.search_keyword input').val('');
       // jQuery('form#views-exposed-form-solr-results-page-1').submit();
       jQuery('.search-assest .card-body .form-radios .form-item:first-child input').click();
+      removeparam();
    });
 
     jQuery("#views-exposed-form-solr-results-page-1").submit(function (e) {
@@ -722,6 +734,69 @@ jQuery(document).ready(function(){
 
   },100);
 
+  jQuery(window).resize(function () {
+    if (jQuery(window).width() <= 767) {
+      if (jQuery('.resource_wrapper_left__img .resource-media').length > 1) {
+        jQuery('.resource_wrapper_left__img').slick({
+          infinite: false,
+          dots: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          speed: 300,
+          arrow: false,
+        });
+      }
+    }
+    else {
+      jQuery('.resource_wrapper_left__img').slick('unslick');
+    }
+
+    if (jQuery('.related_news_slider .related_news_wrapper--item').length > 3) {
+      jQuery('.related_news_slider .row').not('.slick-initialized').slick({
+        infinite: false,
+        dots: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        speed: 300,
+        arrow: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              arrow: false
+            }
+          }
+        ]
+      });
+    }
+  });
 
 
+
+  // if (jQuery('.path-search').length > 0){
+  //   if (sessionStorage.getItem("searchkey") == "") {
+  //     // alert('ngot');
+  //     sessionStorage.setItem("searchkey", "search-page");
+  //   }
+  //   else {
+  //     // alert('nogot');
+
+  //     location.reload();
+
+  //   }
+  // }
+
+
+  // if (sessionStorage.getItem("searchkey") == "search-page") {
+  //   sessionStorage.setItem("searchkey", "");
+  // }
 });
