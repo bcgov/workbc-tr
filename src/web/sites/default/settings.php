@@ -801,7 +801,7 @@ if (is_readable($ddev_settings) && getenv('IS_DDEV_PROJECT') == 'true') {
 if (php_sapi_name() != 'cli') {
   switch ($http_host = $_SERVER['HTTP_HOST']) {
     // LOCAL
-    case 'teachersnew.ddev.site':
+    case 'teachers.ddev.site':
       include $app_root . '/' . $site_path . '/settings.ddev.postgres.php';
       break;
     // CGI internal Dev server
@@ -819,7 +819,7 @@ else {
     include $app_root . '/' . $site_path . '/settings.openshift.php';
   } else if (file_exists($app_root . '/' . $site_path . '/settings.local.php') && getenv('VIRTUAL_HOST') == 'erebus.wbu-dev.com') {
     include $app_root . '/' . $site_path . '/settings.local.php';
-  } else if (file_exists($app_root . '/' . $site_path . '/settings.ddev.postgres.php') && getenv('VIRTUAL_HOST') == 'teachersnew.ddev.site') {
+  } else if (file_exists($app_root . '/' . $site_path . '/settings.ddev.postgres.php') && getenv('VIRTUAL_HOST') == 'teachers.ddev.site') {
     include $app_root . '/' . $site_path . '/settings.ddev.postgres.php';
   }
 }
