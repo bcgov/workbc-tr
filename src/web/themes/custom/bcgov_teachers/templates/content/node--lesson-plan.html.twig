@@ -140,25 +140,36 @@
             {{ "Please select desired file format to download."|t }}
           </div>
           <ul class="file-list">
+            <li>
+              <div class="file-title application/pdf">
+                {{ node.title.value }}
+              </div>
+              <div class="file-url">
+                {{ content.entity_print_view_pdf }}
+              </div>
+            </li>
             {% set total_size = '' %}
             {% for key,subentity in node.field_resource_images if key|first != '#' %}
-              {% if subentity.entity.field_media_document.0.entity.filename.value != '' %}
-                {% set total_size = total_size + subentity.entity.field_media_document.0.entity.filesize.value %}
-                <li>
-                  <div class="file-title {{ subentity.entity.field_media_document.0.entity.filemime.value|split('.')|last }}">
-                    {{ subentity.entity.field_media_document.0.entity.filename.value }}
+		{% if subentity.entity.field_media_document.0.entity.filename.value != '' %}
+              {% set total_size = total_size + subentity.entity.field_media_document.0.entity.filesize.value %}
+              <li>
+                <div class="file-title {{ subentity.entity.field_media_document.0.entity.filemime.value|split('.')|last }}">
+                  {{ subentity.entity.field_media_document.0.entity.filename.value }}
+                </div>
+                <div class="size-url-wrap">
+                  <div class="file-size">
+                    {{ _self.bytesToSize(subentity.entity.field_media_document.0.entity.filesize.value) }}
+
                   </div>
-                  <div class="size-url-wrap">
-                    <div class="file-size">
-                      {{ _self.bytesToSize(subentity.entity.field_media_document.0.entity.filesize.value) }}
-                    </div>
-                    <div class="file-url">
-                      <a href="{{ file_url(subentity.entity.field_media_document.0.entity.uri.value) }}" title="{{ subentity.entity.field_media_document.0.entity.filename.value }}" download target="_blank">Download</a>
-                    </div>
+		<div class="file-url">
+                    <a href="{{ file_url(subentity.entity.field_media_document.0.entity.uri.value) }}" title="{{ subentity.entity.field_media_document.0.entity.filename.value }}" download target="_blank">Download</a>
+
                   </div>
+		</div>
                 </li>
-              {%  endif %}
+		{% endif %}
             {% endfor %}
+
             <li class="download-all">
               <div class="file-title-all">
                 {{ "Download all (ZIP)"|t }}
