@@ -113,10 +113,10 @@ function workbc_tr_content_mail_mail_alter(&$message) {
     $message['headers']['Return-Path'] = $message['params']['from'];
     $message['body'][] = Markup::create($message['params']['body']);
   }
+
+  //Remove extra "-" from subscription confirmation email
+  if($message['key'] == 'subscribe_combined') {
+    $body = html_entity_decode(str_replace('-','',$message['body'][0]->__toString()));
+    $message['body'] = $body;
+  }
 }
-
-// function workbc_tr_content_mail_form_alter (&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-//   if($form_id == 'simplenews_confirm_removal') {
-
-//   }
-// }

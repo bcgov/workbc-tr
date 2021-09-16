@@ -5,6 +5,12 @@
         // Insert theme js specific lines here.
       }
 
+      //Cancel action on subscription changes
+      $('.simplenews-confirm-removal #edit-cancel, .simplenews-confirm-multi #edit-cancel').on('click', function(e) {
+        e.preventDefault();
+        window.location.href = '/';
+      });
+
       if ($('.sort-box .card-body .form-radios').length){
         $('.sort-box .card-body .form-radios .js-form-type-radio input[type=radio]').each(function() {
           if (this.checked) {
