@@ -672,9 +672,14 @@ jQuery(document).ready(function(){
       event.stopPropagation();
       var self = this;
       var ValueRemoved = jQuery(self).attr('data-removed');
+
       jQuery('#' + ValueRemoved).click();
       //setTimeout(function() {
       jQuery(self).parent().hide();
+      if (jQuery(self).hasClass('key-title')) {
+        jQuery('.search_keyword input').val('');
+        jQuery('form#views-exposed-form-solr-results-page-1').submit();
+      }
     });
 
     jQuery(".clear-all").on('click', function (event) {

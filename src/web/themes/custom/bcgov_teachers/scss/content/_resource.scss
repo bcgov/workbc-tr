@@ -180,7 +180,7 @@
       //   font-size: 21px;
       //   line-height: 1.3;
       // }
-      a{color:$teachers-secondary-blue; text-decoration: none;}
+      a{color:$teachers-secondary-blue; text-decoration: none; word-break: break-all;}
     }
     ol{
       //counter-reset: num;
@@ -921,6 +921,9 @@
   border-radius: 15px;
   overflow: hidden;
   margin-top:10px;
+  @media only screen and (max-width:1199px){
+    max-width: 300px;
+  }
   @media only screen and (max-width:767px){
     margin-bottom: 20px;
   }
