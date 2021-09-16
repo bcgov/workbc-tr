@@ -11329,12 +11329,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   color: #2379A4;
   text-decoration: none;
 }
-.lesson_wrapper_main_para_item__body ol, .resource_wrapper_main_para_item__body ol {
-  counter-reset: num;
-}
 .lesson_wrapper_main_para_item__body ol li:before, .resource_wrapper_main_para_item__body ol li:before {
-  counter-increment: num;
-  content: counter(num) ".";
   position: absolute;
   top: 0;
   left: 0;
@@ -11342,7 +11337,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   font-size: inherit;
 }
 .lesson_wrapper_main_para_item__body ol li > ol, .resource_wrapper_main_para_item__body ol li > ol {
-  list-style-type: lower-alpha;
   padding-left: 40px;
   padding-top: 20px;
 }
@@ -11366,7 +11360,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   margin-top: 10px;
 }
 .lesson_wrapper_main_para_item__body ul li:before, .resource_wrapper_main_para_item__body ul li:before {
-  content: "";
   position: absolute;
   top: 9px;
   left: 0;
@@ -11383,7 +11376,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   border: 1px solid #333333;
 }
 .lesson_wrapper_main_para_item__body ul, .lesson_wrapper_main_para_item__body ol, .resource_wrapper_main_para_item__body ul, .resource_wrapper_main_para_item__body ol {
-  list-style: none;
   padding: 0;
 }
 .lesson_wrapper_main_para_item__body ul li, .lesson_wrapper_main_para_item__body ol li, .resource_wrapper_main_para_item__body ul li, .resource_wrapper_main_para_item__body ol li {

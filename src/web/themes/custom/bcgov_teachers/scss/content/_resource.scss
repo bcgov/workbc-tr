@@ -182,11 +182,12 @@
       // }
       a{color:$teachers-secondary-blue; text-decoration: none;}
     }
-    ol{counter-reset: num;
+    ol{
+      //counter-reset: num;
       li{
         &:before{
-          counter-increment: num;
-          content: counter(num)".";
+          //counter-increment: num;
+          //content: counter(num)".";
           position:absolute;
           top:0;
           left:0;
@@ -194,7 +195,7 @@
           font-size: inherit;
         }
         > ol{
-	  list-style-type: lower-alpha;
+	  //list-style-type: lower-alpha;
 	  padding-left:40px;
 	  padding-top:20px;
           > li{padding-left:0;
@@ -212,7 +213,7 @@
     ul{padding-left: 25px !important; margin-top: 10px;
       li{
         &:before{
-          content:'';
+          //content:'';
           position:absolute;
           top:9px;
           left:0;
@@ -233,7 +234,9 @@
       }
     }
 
-    ul,ol{list-style: none; padding:0;
+    ul,ol{
+      //list-style: none;
+      padding:0;
       li{
         font-size: 16px; line-height:24px; color:$teachers-bg-grey; position: relative; padding-left:20px;
         p,span,a{font-size: 16px;}
