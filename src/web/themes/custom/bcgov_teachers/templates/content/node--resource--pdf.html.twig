@@ -83,10 +83,8 @@
 
 {{ attach_library('classy/node') }}
 
-<a href="https://www.workbc.ca/" title="WorkBC" rel="home" class="site-logo" target="_blank">
-  <img src="/themes/custom/bcgov_teachers/assets/logo-workbc.png" alt="WorkBC" width="220" height="40">
-  <font size="20">Career Education Resources</font>
-</a>
+<img src="/themes/custom/bcgov_teachers/assets/logo-workbc.png" alt="WorkBC" width="120" height="22">
+&nbsp;&nbsp;<font size="25">Career Education Resources</font>
 
 <article{{ attributes.addClass(classes) }}>
 
@@ -96,6 +94,16 @@
   <br />
   {% if node.field_resource_card_summary.getValue().0.value is not empty %}
     {{ node.field_resource_card_summary.getValue().0.value|raw }}
+  {% endif %}
+
+  {% if node.field_term_resource_stage.value is not empty %}
+    {{ content.field_term_resource_stage }}
+  {% endif %}
+  {% if node.field_term_resource_grade.value is not empty %}
+    {{ content.field_term_resource_grade }}
+  {% endif %}
+  {% if node.field_resource_time.value is not empty %}
+    {{ node.field_resource_time.value }}
   {% endif %}
   <br /><br />
   
