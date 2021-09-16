@@ -161,5 +161,45 @@ set footer_classes = ' '
         {{ page.under_footer }}
       </div>
     {% endif %}
+    {# subscription form popup start #}
+    <div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Terms of Use CER
+                </div>
+                <div class="modal-body">
+                    <p>Users will be required to accept the Terms of Use by clicking on the Checkbox.</p>
+                    <h2>Career Education Resources – Terms of Use</h2>
+                    <p>The following Terms of Use set out the terms and conditions under which the Career Education Resources subscription service (the “Service”) is made available to you. By clicking ‘I Agree” box, you are indicating your initial and ongoing acceptance and agreement to be bound by these Terms of Use. </p>
+                    <p>IT IS IMPORTANT THAT YOU CAREFULLY READ AND UNDERSTAND THE TERMS OF USE.</p>
+                    <h3><b>How the Service Works and Collection, Use and Disclosure of Personal Information</b></h3>
+                    <h3><b></b>Subscription Service</b></h3>
+                    <p>The Ministry of Advanced Education and Skills Training is providing a subscription notification Service within the Career Education Resources tool.  The Service is designed to notify you when updates have been made to the resources and lesson plans within the  Career Education Resources microsite.  The subscription Service is optional, and you can ‘unsubscribe’ to this Service at any time.</p>
+                    <p>As a user of this Service, you will be providing an email address. The email you provided is being used for the purpose of notifying you of any updates to resources on the Career Education Resources microsite. </p>
+                    <p>If you are accessing your account or the Service from outside of Canada, you hereby consent to your personal information being accessed from outside of Canada. You also understand and agree that any non-personal information provided by you through your use of the Service may be used, in aggregate form only, for program review, analysis and reporting and for statistical research purposes.</p>
+                    <h3>Collection Notice</h3>
+                    <p>This information that is collected from you is being collected, used and disclosed in accordance with the British Columbia Freedom of Information and Protection of Privacy Act (“FOIPPA”).  This information is collected by the Ministry of Advanced Education and Skills Training under the authority from Section 26(c) of FOIPPA. Should you have any questions about the collection of your personal information please contact:</p>
+                    <p>Manager of Client Engagement Marketing<br>
+                        PO Box 9189<br>
+                        Stn Prov Govt<br>
+                        Victoria, B.C.<br>
+                        V8W 9E6<br>
+                        <b>778-676-2540</b></p>
+                    <h3>Conditions of Use</h3>
+                    <p>By accessing and using the Career Education Resources you agree that your use of this site and the Service is entirely at your own risk and that you will be liable for any failure to abide by these Terms of Use. The Province has no obligation to provide, or continue to provide, the Service to you and all functionalities of the Service are provided on an “AS AVAILABLE” basis. The Province is not responsible and assumes no liability with respect to this Service, <a href="https://www2.gov.bc.ca/gov/content/home/disclaimer" target="_blank">disclaimer</a>.</p>
+
+                    <div class="term-agree">
+                        <input type="checkbox" name="terms" id="terms"> <label for="terms">I agree to this Terms of Use.</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default cancel-form" data-dismiss="modal">Cancel</button>
+                    <a href="#" id="submit-form" class="btn btn-success success">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# subscription form popup end #}
   </footer>
 {% endif %}

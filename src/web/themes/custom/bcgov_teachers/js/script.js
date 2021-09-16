@@ -780,23 +780,7 @@ jQuery(document).ready(function(){
     }
   });
 
-
-
-  // if (jQuery('.path-search').length > 0){
-  //   if (sessionStorage.getItem("searchkey") == "") {
-  //     // alert('ngot');
-  //     sessionStorage.setItem("searchkey", "search-page");
-  //   }
-  //   else {
-  //     // alert('nogot');
-
-  //     location.reload();
-
-  //   }
-  // }
-
-
-  // if (sessionStorage.getItem("searchkey") == "search-page") {
-  //   sessionStorage.setItem("searchkey", "");
-  // }
+  if (jQuery('.path-search').length > 0) {
+    jQuery('.search-assest .card-body .form-radios .form-item:first-child input').click();
+  }
 });
