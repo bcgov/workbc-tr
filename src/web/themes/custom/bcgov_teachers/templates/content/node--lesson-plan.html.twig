@@ -142,43 +142,29 @@
           <ul class="file-list">
             <li>
               <div class="file-title application/pdf">
-                {{ "Lesson Plan"|t }} - {{ node.title.value }}
+                <a href="/print/pdf/node/{{ node.id }}" title="{{ "Lesson Plan"|t }} - {{ node.title.value }}{{ ".pdf"|t }}" download target="_blank">{{ "Lesson Plan"|t }} - {{ node.title.value }}{{ ".pdf"|t }}</a>
               </div>
-              <div class="file-url">
-                {{ content.entity_print_view_pdf }}
-              </div>
+              <div class="size-url-wrap">
+                <div class="file-size">
+                  {{ "100 KB"|t }}
+                </div>
+              </div
             </li>
-            {% set total_size = '' %}
             {% for key,subentity in node.field_resource_images if key|first != '#' %}
-          		{% if subentity.entity.field_media_document.0.entity.filename.value != '' %}
-                {% set total_size = total_size + subentity.entity.field_media_document.0.entity.filesize.value %}
+              {% if subentity.entity.field_media_document.0.entity.filename.value != '' %}
                 <li>
                   <div class="file-title {{ subentity.entity.field_media_document.0.entity.filemime.value|split('.')|last }}">
-                    {{ subentity.entity.field_media_document.0.entity.filename.value }}
+                    <a href="{{ file_url(subentity.entity.field_media_document.0.entity.uri.value) }}" title="{{ subentity.entity.field_media_document.0.entity.filename.value }}" download target="_blank">{{ subentity.entity.field_media_document.0.entity.filename.value }}</a>
                   </div>
                   <div class="size-url-wrap">
                     <div class="file-size">
                       {{ _self.bytesToSize(subentity.entity.field_media_document.0.entity.filesize.value) }}
                     </div>
-	                	<div class="file-url">
-                      <a href="{{ file_url(subentity.entity.field_media_document.0.entity.uri.value) }}" title="{{ subentity.entity.field_media_document.0.entity.filename.value }}" download target="_blank">Download</a>
-                    </div>
-              		</div>
+              	  </div>
                 </li>
               {% endif %}
             {% endfor %}
 
-            <li class="download-all">
-              <div class="file-title-all">
-                {{ "Download all (ZIP)"|t }}
-              </div>
-              <div class="size-url-wrap">
-                <div class="size-all">{{ _self.bytesToSize(total_size) }}</div>
-                <div class="file-url">
-                  <a href="/media_download_all/node/{{ node.nid.value }}/field_resource_images" title="Download All">Download All</a>
-                </div>
-              </div>
-            </li>
           </ul>
         </div>
       </div>
@@ -300,13 +286,13 @@
     {% if bytes < kilobyte %}
         {{ bytes ~ ' B' }}
     {% elseif bytes < megabyte %}
-        {{ (bytes / kilobyte)|number_format(2, '.') ~ ' KB' }}
+        {{ (bytes / kilobyte)|round ~ ' KB' }}
     {% elseif bytes < gigabyte %}
-        {{ (bytes / megabyte)|number_format(2, '.') ~ ' MB' }}
+        {{ (bytes / megabyte)|round ~ ' MB' }}
     {% elseif bytes < terabyte %}
-        {{ (bytes / gigabyte)|number_format(2, '.') ~ ' GB' }}
+        {{ (bytes / gigabyte)|round ~ ' GB' }}
     {% else %}
-        {{ (bytes / terabyte)|number_format(2, '.') ~ ' TB' }}
+        {{ (bytes / terabyte)|round ~ ' TB' }}
     {% endif %}
 {% endspaceless %}
 {% endmacro %}
