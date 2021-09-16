@@ -11328,6 +11328,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 .lesson_wrapper_main_para_item__body p a, .resource_wrapper_main_para_item__body p a {
   color: #2379A4;
   text-decoration: none;
+  word-break: break-all;
 }
 .lesson_wrapper_main_para_item__body ol li:before, .resource_wrapper_main_para_item__body ol li:before {
   position: absolute;
@@ -12114,6 +12115,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   border-radius: 15px;
   overflow: hidden;
   margin-top: 10px;
+}
+@media only screen and (max-width: 1199px) {
+  .leftnavbar {
+    max-width: 300px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .leftnavbar {
