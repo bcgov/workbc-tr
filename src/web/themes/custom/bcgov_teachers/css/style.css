@@ -11342,7 +11342,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   font-size: inherit;
 }
 .lesson_wrapper_main_para_item__body ol li > ol, .resource_wrapper_main_para_item__body ol li > ol {
-  list-style-type: lower-alpha;
   padding-left: 40px;
   padding-top: 20px;
 }
