@@ -84,11 +84,11 @@
 {{ attach_library('classy/node') }}
 
 <img src="/themes/custom/bcgov_teachers/assets/logo-workbc.png" alt="WorkBC" width="120" height="22">
-&nbsp;&nbsp;<font size="25">Career Education Resources</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="25">Career Education Resources</font>
 
 <article{{ attributes.addClass(classes) }}>
 
-<br /><br />
+<br /><br /><br /><br />
 
   <font size="18"><b>{{ "Lesson Plan: "|t }}</b> {{ node.title.value }}</font>
   <br />
@@ -97,19 +97,29 @@
   {% endif %}
 
   {% if node.field_term_resource_stage.value is not empty %}
-    {{ content.field_term_resource_stage }}
+    <span style="font-size=11px;">Career Lifecycle Stages: 
+    {% for item in content.field_term_resource_stage|children %}
+      {{ item }}{% if not loop.last %},{% endif %}
+    {% endfor %}
+    </span>
   {% endif %}
   {% if node.field_term_resource_grade.value is not empty %}
-    {{ content.field_term_resource_grade }}
+    <br /><br />
+    <span style="font-size=11px;">Grades:
+    {% for item in content.field_term_resource_grade|children %}
+      {{ item }}{% if not loop.last %},{% endif %}
+    {% endfor %}
+    </span>
   {% endif %}
   {% if node.field_resource_time.value is not empty %}
-    {{ node.field_resource_time.value }}
+    <br /><br />
+    <span style="font-size=11px;">Time to complete: {{ node.field_resource_time.value }}</span>
   {% endif %}
-  <br /><br />
+  <br />
   
   {# Main Container #}
   {% for key,subentity in node.field_add_resource_description if key|first != '#' %}
-    {% if subentity.entity.field_main_heading.value is not empty %}
+    {% if subentity.entity.field_main_heading.value is not empty and subentity.entity.field_main_heading.value != 'Lesson Plan' %}
       <font size="15"><b><u>{{ subentity.entity.field_main_heading.value }}</u></b></font>
     {% endif %}
     {% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}

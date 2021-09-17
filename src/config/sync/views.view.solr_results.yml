@@ -1800,7 +1800,7 @@ display:
           exposed: true
           expose:
             operator_id: field_term_resource_stage_op
-            label: 'Career Lifecycle Stage'
+            label: 'Career Lifecycle Stages'
             description: ''
             use_operator: false
             operator: field_term_resource_stage_op
@@ -1847,7 +1847,7 @@ display:
           exposed: true
           expose:
             operator_id: field_term_resource_grade_op
-            label: 'Focus Area Levels'
+            label: Grades
             description: ''
             use_operator: false
             operator: field_term_resource_grade_op

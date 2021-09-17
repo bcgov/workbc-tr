@@ -681,7 +681,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
-      title: 'Featured Lesson Plans & Resources'
+      title: Featured
       defaults:
         title: false
         style: false
