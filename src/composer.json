@@ -12,12 +12,27 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        }
+        },
+	{
+	    "type": "package",
+	    "package": {
+                "name": "ckeditor/liststyle",
+                "version": "4.8.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor/plugins/liststyle"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/liststyle/releases/liststyle_4.8.0.zip",
+                    "type": "zip"
+                }
+            }
+	}
     ],
     "require": {
-        "composer/installers": "^1.9",
+        "ckeditor/liststyle": "4.8.0",
+        "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
-        "dompdf/dompdf": "0.8.5",
         "drupal/admin_toolbar": "^3.0",
         "drupal/anonymous_subscriptions": "^1.0@alpha",
         "drupal/backup_migrate": "^5.0",
@@ -25,6 +40,7 @@
         "drupal/bootstrap4": " ^2.1",
         "drupal/bootstrap4_tools": " ^2.1",
         "drupal/bootstrap_paragraphs": " ^2.0",
+        "drupal/ckeditor_liststyle": "^1.4",
         "drupal/color_field": "^2.4",
         "drupal/config_ignore": "^2.3",
         "drupal/core-composer-scaffold": "^9.2",
@@ -63,7 +79,6 @@
         "drupal/views_bootstrap": "^4.3",
         "drupal/views_infinite_scroll": "^1.8",
         "drush/drush": "^10.5",
-        "mikehaertl/phpwkhtmltopdf": "~2.1",
         "tecnickcom/tcpdf": "~6"
     },
     "conflict": {
