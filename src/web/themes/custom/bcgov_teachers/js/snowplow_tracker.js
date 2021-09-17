@@ -69,26 +69,32 @@
             audience = splashAudienceArray.join(',')
         }
 
+        waitForElement(".show-result-wrapper .view-header",function(){
+            console.log('done');
+
         $('.view-solr-results').once('snowplow').each(function() {
             count_result = 0;
-            var action_event = "update";
+            var action_event = "load";
             count_result = $('.show-result-wrapper .view-header').text().trim().split(" ")[1];
-            window.snowplow('trackSelfDescribingEvent', {"schema":"iglu:ca.bc.gov.workbc/find_resources/jsonschema/1-0-0",
-            "data": {
-                "action": action_event,
-                "count": count_result,
-                "filters": {
-                "focus_area": grades,
-                "lifecycle_stage": stage,
-                "competencies": competency,
-                "audiences": audience,
-                "show_category": category,
-                "keyword": keyword
+
+                window.snowplow('trackSelfDescribingEvent', {"schema":"iglu:ca.bc.gov.workbc/find_resources/jsonschema/1-0-0",
+                "data": {
+                    "action": action_event,
+                    "count": parseInt(count_result),
+                    "filters": {
+                    "focus_area": grades,
+                    "lifecycle_stage": stage,
+                    "competencies": competency,
+                    "audiences": audience,
+                    "show_category": category,
+                    "keyword": keyword
+                    }
                 }
-            }
+                });
             });
         });
-       
+        
+
         //Track resource and lesson plans click
         $('.leftnavbar a, .download-worksheets-files-wrapper a, .go-to-resource-wrapper a, a[target="_blank"],'+
         '.related_news_wrapper_title a, .sharethis-wrapper span').on('click', function(e) {
@@ -151,6 +157,16 @@
                 });
             });
         } 
+
+        function waitForElement(elementPath, callBack){
+            window.setTimeout(function(){
+              if($(elementPath).length){
+                callBack(elementPath, $(elementPath));
+              }else{
+                waitForElement(elementPath, callBack);
+              }
+            },1000)
+          }
     }
 }
 })(jQuery, Drupal, drupalSettings);
