@@ -83,8 +83,9 @@ function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface
           //Create message for email
           $body = <<<html
               <p>Hello,</p>
-              <p>Check out the new {$asset_type} - <a href="{$url}">{$title}</a>:</p>
-              <p>You can <a href="{$unsubscribed_url}">Unsubscribe</a>  at any time.</p> 
+              <p>A new {$asset_type}: {$title} has been added to Career Education Resources. To view, visit: {$url}</p>
+              <p>You can <a href="{$unsubscribed_url}">Unsubscribe</a> at any time.</p> 
+              <p>Thanks you,</p>
               <p>The WorkBC.ca Team <br> 
               https://www.workbc.ca</p>
           html;
@@ -116,7 +117,7 @@ function workbc_tr_content_mail_mail_alter(&$message) {
 
   //Remove extra "-" from subscription confirmation email
   if($message['key'] == 'subscribe_combined') {
-    $body = html_entity_decode(str_replace('-','',$message['body'][0]->__toString()));
+    $body = html_entity_decode(str_replace(' - ','',$message['body'][0]->__toString()));
     $message['body'] = $body;
   }
 }
