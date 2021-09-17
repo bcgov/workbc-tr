@@ -19,6 +19,7 @@ settings:
           items:
             - Bold
             - Italic
+            - Underline
         -
           name: Linking
           items:
@@ -41,7 +42,23 @@ settings:
         -
           name: Tools
           items:
+            - Copy
+            - Paste
+            - Cut
             - Source
+            - Table
+            - HorizontalRule
+            - Undo
+            - Redo
+        -
+          name: Align
+          items:
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+            - JustifyLeft
+            - Indent
+            - Outdent
   plugins:
     stylescombo:
       styles: ''
