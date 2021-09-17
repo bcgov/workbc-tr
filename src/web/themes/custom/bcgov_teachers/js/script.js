@@ -565,8 +565,9 @@ function departmentFunction(){
       if(this.checked){
         var selectedValue = jQuery(this).val();
         var response = jQuery('label[for="' + this.id + '"]').html();
-
-        jQuery(".search_filter__results .search_filter__results-inner").append("<div class='dept-appned'><span class='dept-title-section'>" + response + "</span><span class='deptclose' data-removed='"+ this.id +"'>x</span></div>" );
+        var value = this.value;
+        var name = this.name;
+        jQuery(".search_filter__results .search_filter__results-inner").append("<div class='dept-appned'><span class='dept-title-section'>" + response + "</span><span class='deptclose' data-removed='" + this.id + "' data-name='" + name + "' data-value='" + value +"'>x</span></div>" );
       }
     });
 
@@ -601,7 +602,24 @@ jQuery(document).ajaxComplete(function(event, xhr, settings) {
       jQuery('.search_keyword input').val('');
       jQuery('form#views-exposed-form-solr-results-page-1').submit();
     }
+    var inputvalue = jQuery(self).attr('data-value');
+    var inputname = jQuery(self).attr('data-name');
+
+    var param = inputname + '=' + inputvalue;
+    var searchquery = decodeURIComponent(window.location.search).split('&');
+    if (jQuery.inArray(param, searchquery) == 1) {
+      searchquery = jQuery.grep(searchquery, function (value) {
+        return value != param;
+      });
+      searchquery = searchquery.join('&');
+      window.history.pushState({}, document.title, "?" + searchquery);
+      jQuery('form#views-exposed-form-solr-results-page-1').submit();
+      alert(searchquery);
+    }
   });
+
+
+
 
   if (jQuery('.dept-appned').length > 0) {
     jQuery(".clear-all").show();
@@ -685,6 +703,21 @@ jQuery(document).ready(function(){
       if (jQuery(self).hasClass('key-title')) {
         jQuery('.search_keyword input').val('');
         jQuery('form#views-exposed-form-solr-results-page-1').submit();
+      }
+
+      var inputvalue = jQuery(self).attr('data-value');
+      var inputname = jQuery(self).attr('data-name');
+
+      var param = inputname + '=' + inputvalue;
+      var searchquery = decodeURIComponent(window.location.search).split('&');
+      if (jQuery.inArray(param, searchquery) == 1) {
+        searchquery = jQuery.grep(searchquery, function (value) {
+          return value != param;
+        });
+        searchquery = searchquery.join('&');
+        window.history.pushState({}, document.title, "?" + searchquery);
+        jQuery('form#views-exposed-form-solr-results-page-1').submit();
+        alert(searchquery);
       }
     });
 
