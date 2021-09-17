@@ -36,6 +36,15 @@ settings:
             - Blockquote
             - DrupalImage
         -
+          name: Align
+          items:
+            - JustifyCenter
+            - JustifyRight
+            - JustifyLeft
+            - JustifyBlock
+            - Indent
+            - Outdent
+        -
           name: 'Block Formatting'
           items:
             - Format
@@ -50,15 +59,6 @@ settings:
             - HorizontalRule
             - Undo
             - Redo
-        -
-          name: Align
-          items:
-            - JustifyCenter
-            - JustifyRight
-            - JustifyBlock
-            - JustifyLeft
-            - Indent
-            - Outdent
   plugins:
     stylescombo:
       styles: ''

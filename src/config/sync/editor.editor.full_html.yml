@@ -19,6 +19,7 @@ settings:
           items:
             - Bold
             - Italic
+            - Underline
             - Strike
             - Superscript
             - Subscript
@@ -48,16 +49,35 @@ settings:
         -
           name: Tools
           items:
+            - Maximize
+            - SpecialChar
+            - PasteFromWord
+            - DrupalMediaLibrary
+            - Copy
+            - PasteText
+            - Paste
+            - Cut
+            - Redo
+            - Undo
             - ShowBlocks
             - Source
+        -
+          name: Align
+          items:
+            - JustifyLeft
+            - JustifyBlock
+            - JustifyRight
+            - JustifyCenter
+            - Indent
+            - Outdent
   plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
     drupallink:
       linkit_enabled: true
       linkit_profile: default
-    language:
-      language_list: un
-    stylescombo:
-      styles: ''
 image_upload:
   status: true
   scheme: public
