@@ -11330,6 +11330,9 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   text-decoration: none;
   word-break: break-all;
 }
+.lesson_wrapper_main_para_item__body ol li, .resource_wrapper_main_para_item__body ol li {
+  padding-left: 5px;
+}
 .lesson_wrapper_main_para_item__body ol li:before, .resource_wrapper_main_para_item__body ol li:before {
   position: absolute;
   top: 0;
@@ -11342,7 +11345,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   padding-top: 20px;
 }
 .lesson_wrapper_main_para_item__body ol li > ol > li, .resource_wrapper_main_para_item__body ol li > ol > li {
-  padding-left: 0;
+  padding-left: 5px;
 }
 .lesson_wrapper_main_para_item__body ol li > ol > li + li, .resource_wrapper_main_para_item__body ol li > ol > li + li {
   margin-top: 10px;
@@ -11384,7 +11387,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   line-height: 24px;
   color: #333333;
   position: relative;
-  padding-left: 2px;
 }
 .lesson_wrapper_main_para_item__body ul li p, .lesson_wrapper_main_para_item__body ul li span, .lesson_wrapper_main_para_item__body ul li a, .lesson_wrapper_main_para_item__body ol li p, .lesson_wrapper_main_para_item__body ol li span, .lesson_wrapper_main_para_item__body ol li a, .resource_wrapper_main_para_item__body ul li p, .resource_wrapper_main_para_item__body ul li span, .resource_wrapper_main_para_item__body ul li a, .resource_wrapper_main_para_item__body ol li p, .resource_wrapper_main_para_item__body ol li span, .resource_wrapper_main_para_item__body ol li a {
   font-size: 16px;
@@ -11393,7 +11395,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   margin-top: 20px;
 }
 .lesson_wrapper_main_para_item__body ul li ul, .lesson_wrapper_main_para_item__body ul li ol, .lesson_wrapper_main_para_item__body ol li ul, .lesson_wrapper_main_para_item__body ol li ol, .resource_wrapper_main_para_item__body ul li ul, .resource_wrapper_main_para_item__body ul li ol, .resource_wrapper_main_para_item__body ol li ul, .resource_wrapper_main_para_item__body ol li ol {
-  padding-left: 40px;
+  padding-left: 20px;
   margin-top: 10px;
 }
 .lesson_wrapper .main_section, .resource_wrapper .main_section {

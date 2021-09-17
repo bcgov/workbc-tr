@@ -185,6 +185,7 @@
     ol{
       //counter-reset: num;
       li{
+        padding-left:5px;
         &:before{
           //counter-increment: num;
           //content: counter(num)".";
@@ -195,10 +196,10 @@
           font-size: inherit;
         }
         > ol{
-	  //list-style-type: lower-alpha;
-	  padding-left:40px;
-	  padding-top:20px;
-          > li{padding-left:0;
+          //list-style-type: lower-alpha;
+          padding-left:40px;
+          padding-top:20px;
+          > li{padding-left:5px;
             + li{margin-top:10px;}
             &:before{display: none;}
             &::marker{font-weight: normal;}
@@ -238,13 +239,13 @@
       //list-style: none;
       padding:16px;
       li{
-        font-size: 16px; line-height:24px; color:$teachers-bg-grey; position: relative; padding-left:2px;
+        font-size: 16px; line-height:24px; color:$teachers-bg-grey; position: relative;
         p,span,a{font-size: 16px;}
         + li{
           margin-top:20px;
         }
         ul, ol{
-            padding-left: 40px;
+            padding-left: 20px;
             margin-top: 10px;
         }
       }
