@@ -201,7 +201,7 @@
           > li{padding-left:0;
             + li{margin-top:10px;}
             &:before{display: none;}
-            &::marker{font-weight: 700;}
+            &::marker{font-weight: normal;}
           }
         }
       }
@@ -210,7 +210,7 @@
       }
     }
 
-    ul{padding-left: 25px !important; margin-top: 10px;
+    ul{padding-left: 18px !important; margin-top: 10px;
       li{
         &:before{
           //content:'';
@@ -236,9 +236,9 @@
 
     ul,ol{
       //list-style: none;
-      padding:0;
+      padding:16px;
       li{
-        font-size: 16px; line-height:24px; color:$teachers-bg-grey; position: relative; padding-left:20px;
+        font-size: 16px; line-height:24px; color:$teachers-bg-grey; position: relative; padding-left:2px;
         p,span,a{font-size: 16px;}
         + li{
           margin-top:20px;
@@ -575,9 +575,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 15px;
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
     width:100%;
-    max-width:900px;
+    max-width:750px;
 
     ul.file-list {
         padding: 0;

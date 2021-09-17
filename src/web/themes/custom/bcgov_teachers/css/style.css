@@ -11351,13 +11351,13 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   display: none;
 }
 .lesson_wrapper_main_para_item__body ol li > ol > li::marker, .resource_wrapper_main_para_item__body ol li > ol > li::marker {
-  font-weight: 700;
+  font-weight: normal;
 }
 .lesson_wrapper_main_para_item__body ol:last-child, .resource_wrapper_main_para_item__body ol:last-child {
   margin-bottom: 30px;
 }
 .lesson_wrapper_main_para_item__body ul, .resource_wrapper_main_para_item__body ul {
-  padding-left: 25px !important;
+  padding-left: 18px !important;
   margin-top: 10px;
 }
 .lesson_wrapper_main_para_item__body ul li:before, .resource_wrapper_main_para_item__body ul li:before {
@@ -11377,14 +11377,14 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   border: 1px solid #333333;
 }
 .lesson_wrapper_main_para_item__body ul, .lesson_wrapper_main_para_item__body ol, .resource_wrapper_main_para_item__body ul, .resource_wrapper_main_para_item__body ol {
-  padding: 0;
+  padding: 16px;
 }
 .lesson_wrapper_main_para_item__body ul li, .lesson_wrapper_main_para_item__body ol li, .resource_wrapper_main_para_item__body ul li, .resource_wrapper_main_para_item__body ol li {
   font-size: 16px;
   line-height: 24px;
   color: #333333;
   position: relative;
-  padding-left: 20px;
+  padding-left: 2px;
 }
 .lesson_wrapper_main_para_item__body ul li p, .lesson_wrapper_main_para_item__body ul li span, .lesson_wrapper_main_para_item__body ul li a, .lesson_wrapper_main_para_item__body ol li p, .lesson_wrapper_main_para_item__body ol li span, .lesson_wrapper_main_para_item__body ol li a, .resource_wrapper_main_para_item__body ul li p, .resource_wrapper_main_para_item__body ul li span, .resource_wrapper_main_para_item__body ul li a, .resource_wrapper_main_para_item__body ol li p, .resource_wrapper_main_para_item__body ol li span, .resource_wrapper_main_para_item__body ol li a {
   font-size: 16px;
@@ -11755,9 +11755,9 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 15px;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
   width: 100%;
-  max-width: 900px;
+  max-width: 750px;
 }
 .download-worksheets-files-wrapper__inner ul.file-list {
   padding: 0;
