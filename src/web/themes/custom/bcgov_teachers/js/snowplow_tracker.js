@@ -44,15 +44,13 @@
         
         var grades = stage = competency = audience = "All";
 
-        var category = "All Lesson Plans & Resources";
-        category = $('input[name="field_term_resource_asset_type"]:checked').parent().find('label').text();
-
-        var keyword = $('.search_keyword input').val();
-
-        if(keyword == '') {
-            keyword = null;
+        var category = $('input[name="field_term_resource_asset_type"]:checked').parent().find('label').text();
+        if(category == '') {
+            category = "All Lesson Plans & Resources";
         }
 
+        var keyword = null;
+        
         if(splashGradeArray.length !== 0) {
             grades = splashGradeArray.join(',')
         }
@@ -69,14 +67,13 @@
             audience = splashAudienceArray.join(',')
         }
 
-        waitForElement(".show-result-wrapper .view-header",function(){
-            console.log('done');
-
+        waitForElement(".show-result-wrapper .view-header",".search_keyword input", function(){
         $('.view-solr-results').once('snowplow').each(function() {
             count_result = 0;
             var action_event = "load";
             count_result = $('.show-result-wrapper .view-header').text().trim().split(" ")[1];
-
+            var keyword = $('.search_keyword input').val();
+            console.log(keyword);
                 window.snowplow('trackSelfDescribingEvent', {"schema":"iglu:ca.bc.gov.workbc/find_resources/jsonschema/1-0-0",
                 "data": {
                     "action": action_event,
@@ -158,12 +155,12 @@
             });
         } 
 
-        function waitForElement(elementPath, callBack){
+        function waitForElement(elementPath, searchbox, callBack){
             window.setTimeout(function(){
-              if($(elementPath).length){
+              if($(elementPath).length && $(searchbox).length){
                 callBack(elementPath, $(elementPath));
               }else{
-                waitForElement(elementPath, callBack);
+                waitForElement(elementPath, searchbox, callBack);
               }
             },1000)
           }
