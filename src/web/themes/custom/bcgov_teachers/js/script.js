@@ -49,10 +49,10 @@
       var lesson_title = jQuery('.lesson_wrapper__intro__title').text().trim().replace(':', '');
       var site_title = jQuery('a.site-title').text().trim();
 
-      var email_body = 'Check out the ' +lesson_title+resource_title+ ' : \n '+ window.location.href;
+      var email_body = 'Check out the ' +lesson_title+' - '+resource_title+ ' : \n '+ window.location.href;
 
       $('.sharethis-wrapper .st_email_large').renameTag('a');
-      $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject=WorkBC’s "+site_title +" - " + lesson_title+resource_title + "&body=" + encodeURIComponent(email_body));
+      $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject=WorkBC’s "+site_title +" - Share a Lesson Plan or Resource" + "&body=" + encodeURIComponent(email_body));
 
 
 
