@@ -614,7 +614,6 @@ jQuery(document).ajaxComplete(function(event, xhr, settings) {
       searchquery = searchquery.join('&');
       window.history.pushState({}, document.title, "?" + searchquery);
       jQuery('form#views-exposed-form-solr-results-page-1').submit();
-      alert(searchquery);
     }
   });
 
