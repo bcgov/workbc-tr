@@ -10760,6 +10760,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 .block-featured-resources .featured-resources-content .views-field-field-resource-card-summary p + p {
   margin-top: 10px;
 }
+@media screen and (max-width: 767px) {
+  .block-featured-resources .featured-resources-content .views-field-field-resource-card-summary span {
+    font-size: 0.9rem;
+  }
+}
 .block-featured-resources .featured-resources-content .views-field:not(.views-field-field-term-resource-asset-type) + .views-field {
   margin-top: 10px;
   padding: 0 10px;
@@ -13962,7 +13967,7 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
   padding: 0;
 }
 .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li, .paragraph--type--paragraph-simple .path-newsletter #block-bcgov-teachers-content .field--name-field-para-simple-body ul li, .path-newsletter .paragraph--type--paragraph-simple #block-bcgov-teachers-content .field--name-field-para-simple-body ul li, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li, .paragraph--type--paragraph-simple .path-newsletter #block-bcgov-teachers-content .field--name-field-para-simple-body ol li, .path-newsletter .paragraph--type--paragraph-simple #block-bcgov-teachers-content .field--name-field-para-simple-body ol li {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 24px;
   color: #333333;
   position: relative;
