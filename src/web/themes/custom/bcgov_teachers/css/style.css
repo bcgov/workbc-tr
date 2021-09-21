@@ -11183,7 +11183,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   }
 }
 .lesson_wrapper_intro__life_cycle .field__item, .resource_wrapper_intro__life_cycle .field__item {
-  font-family: "BCSans-Italic", "BC Sans Italic", sans-serif;
   font-style: italic;
 }
 .lesson_wrapper_intro__life_cycle span, .resource_wrapper_intro__life_cycle span {
