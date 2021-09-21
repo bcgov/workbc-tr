@@ -28,10 +28,18 @@ function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface
         //\Drupal::logger('workbc_tr_content_mail')->warning('<pre><code>' . print_r($entity->get('field_resource_email_notifi')->value, TRUE) . '</code></pre>');
 
         //Query subscribers email subscribed to resource_newsletter
+        // SELECT DISTINCT "simplenews_subscriber"."uid" AS "simplenews_subscriber_uid", "simplenews_subscriber"."id" AS "id"
+        // FROM
+        // {simplenews_subscriber} "simplenews_subscriber"
+        // LEFT JOIN {simplenews_subscriber__subscriptions} "simplenews_subscriber__subscriptions" ON simplenews_subscriber.id = simplenews_subscriber__subscriptions.entity_id AND simplenews_subscriber__subscriptions.deleted = '0'
+        // WHERE ("simplenews_subscriber"."status" = '1') AND ("simplenews_subscriber__subscriptions"."subscriptions_status" IN ('1'))
+        // LIMIT 30 OFFSET 0
+
         $database = \Drupal::database();
         $query = $database->select('simplenews_subscriber', 's');
         $query = $query->fields('s', array('mail'))
           ->condition('s_sub.deleted', '0')
+          ->condition('s_sub.subscriptions_status','1','IN')
           ->condition('s_sub.subscriptions_target_id','resource_newsletter');
         $query->join('simplenews_subscriber__subscriptions', 's_sub', 's.id = s_sub.entity_id');
         $result = $query->execute();
@@ -43,7 +51,7 @@ function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface
         $to_subscribers = [];
 
         foreach ($result as $record) {
-          \Drupal::logger('workbc_tr_content_mail')->warning('<pre><code>' . print_r($url, TRUE) . '</code></pre>');
+          //\Drupal::logger('workbc_tr_content_mail')->warning('<pre><code>' . print_r($record, TRUE) . '</code></pre>');
           $subscribers[] = $record->mail;
         }
 
@@ -65,42 +73,45 @@ function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface
         $newMail = \Drupal::service('plugin.manager.mail');
 
         //Create emails for subscribers
-        foreach ( $subscribers as $subscriber ) {
-          $s = Subscriber::loadByMail($subscriber);
-          $sm_data = [
-            'newsletter' => $newsletter,
-            'simplenews_subscriber' => $s,
-          ];
-
-          //Create string from unsubscribe-url token
-          $unsubscribed_url = \Drupal::token()->replace('[simplenews-subscriber:unsubscribe-url]', $sm_data);
-          //Get Resource title
-          $title = $entity->getTitle();
-
-          //Resource type
-          $asset_type = $entity->field_term_resource_asset_type->entity->label();
-
-          //Create message for email
-          $body = <<<html
-              <p>Hello,</p>
-              <p>A new {$asset_type}: {$title} has been added to Career Education Resources. To view, visit: {$url}</p>
-              <p>You can <a href="{$unsubscribed_url}">Unsubscribe</a> at any time.</p> 
-              <p>Thanks you,</p>
-              <p>The WorkBC.ca Team <br> 
-              https://www.workbc.ca</p>
-          html;
-
-          //\Drupal::logger('workbc_tr_content_mail')->warning('<pre><code>' . print_r($body, TRUE) . '</code></pre>');
-
-          $params['from'] = "WorkBC.ca No Reply <noreply@gov.bc.ca>";
-          $params['body'] = $body;
-
-          $params['subject'] = 'WorkBC Teachers’ Resources: New resource(s) available';
-          $newMail->mail('workbc_tr_content_mail', 'workbc_tr_email', $subscriber, 'en', $params, $reply = null, $send = TRUE);
+        if(!empty($subscribers)) {
+          foreach ( $subscribers as $subscriber ) {
+            $s = Subscriber::loadByMail($subscriber);
+            $sm_data = [
+              'newsletter' => $newsletter,
+              'simplenews_subscriber' => $s,
+            ];
+  
+            //Create string from unsubscribe-url token
+            $unsubscribed_url = \Drupal::token()->replace('[simplenews-subscriber:unsubscribe-url]', $sm_data);
+            //Get Resource title
+            $title = $entity->getTitle();
+  
+            //Resource type
+            $asset_type = $entity->field_term_resource_asset_type->entity->label();
+  
+            //Create message for email
+            $body = <<<html
+                <p>Hello,</p>
+                <p>A new {$asset_type}: {$title} has been added to Career Education Resources. To view, visit: {$url}</p>
+                <p>You can <a href="{$unsubscribed_url}">Unsubscribe</a> at any time.</p> 
+                <p>Thanks you,</p>
+                <p>The WorkBC.ca Team <br> 
+                https://www.workbc.ca</p>
+            html;
+  
+            //\Drupal::logger('workbc_tr_content_mail')->warning('<pre><code>' . print_r($body, TRUE) . '</code></pre>');
+  
+            $params['from'] = "WorkBC.ca No Reply <noreply@gov.bc.ca>";
+            $params['body'] = $body;
+  
+            $params['subject'] = 'WorkBC Teachers’ Resources: New resource(s) available';
+            $newMail->mail('workbc_tr_content_mail', 'workbc_tr_email', $subscriber, 'en', $params, $reply = null, $send = TRUE);
+          }
+         
+          $messenger = \Drupal::messenger();
+          $messenger->addMessage('Mail has been sent.', 'status');
         }
-       
-        $messenger = \Drupal::messenger();
-        $messenger->addMessage('Mail has been sent.', 'status');
+        
    }
 }
 
