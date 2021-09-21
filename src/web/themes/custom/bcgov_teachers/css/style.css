@@ -11333,11 +11333,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   color: #2379A4;
   text-decoration: none;
 }
-@media only screen and (max-width: 767px) {
-  .lesson_wrapper_main_para_item__body p a, .resource_wrapper_main_para_item__body p a {
-    word-break: break-all;
-  }
-}
 .lesson_wrapper_main_para_item__body ol li, .resource_wrapper_main_para_item__body ol li {
   padding-left: 5px;
 }
@@ -12467,7 +12462,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 .resource_wrapper_left__img img {
   margin: 0 auto;
   display: block;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+}
+@media only screen and (min-width: 767px) {
+  .resource_wrapper_left__img img {
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .stwrapper.stwrapper4x, #stwrapper, #stOverlay {

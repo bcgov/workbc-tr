@@ -182,7 +182,7 @@
       // }
       a{color:$teachers-secondary-blue; text-decoration: none; 
         @media only screen and (max-width:767px){
-          word-break: break-all;
+          //word-break: break-all;
         }
       }
     }
@@ -1273,7 +1273,12 @@
       padding:10px 0;
     }
   }
-  img{margin: 0 auto; display: block; box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);}
+  img{
+    margin: 0 auto; display: block; 
+    @media only screen and (min-width:767px){
+      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+    }
+  }
 }
 .stwrapper.stwrapper4x, #stwrapper, #stOverlay{display: none !important;}
 
