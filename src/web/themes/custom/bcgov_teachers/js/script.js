@@ -357,7 +357,22 @@
 
   if ($('#block-bcgov-teachers-increasetextsize').length > 0) {
     $('#block-bcgov-teachers-increasetextsize a[class^="size"]').click(function() {
+
       var elem = $(this);
+
+      if(elem.hasClass('size-bigger') || elem.hasClass('size-big')) {
+        $('.navbar-brand .site-logo').removeClass('d-table-cell');
+        $('.navbar-brand .site-title').removeClass('d-table-cell');
+        $('.navbar-brand .site-logo').addClass('d-block');
+        $('.navbar-brand .site-title').addClass('d-block');
+      } else {
+        if($(window).width() > 768) {
+          $('.navbar-brand .site-logo').addClass('d-table-cell');
+          $('.navbar-brand .site-title').addClass('d-table-cell');
+        }
+        $('.navbar-brand .site-logo').removeClass('d-block');
+        $('.navbar-brand .site-title').removeClass('d-block');
+      }
       var size = elem.attr('class').substr(5);
       $('html').attr('data-font-size',size);
       adjustDynamicElements();
@@ -810,6 +825,10 @@ jQuery(document).ready(function(){
           arrow: false,
         });
       }
+      jQuery('.navbar-brand .site-logo').removeClass('d-block');
+      jQuery('.navbar-brand .site-title').removeClass('d-block');
+      jQuery('.navbar-brand .site-logo').removeClass('d-table-cell');
+      jQuery('.navbar-brand .site-title').removeClass('d-table-cell');
     }
     else {
       jQuery('.resource_wrapper_left__img').slick('unslick');
