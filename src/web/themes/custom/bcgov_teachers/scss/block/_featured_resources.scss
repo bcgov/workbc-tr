@@ -88,6 +88,12 @@
           margin-top: 10px;
         }
       }
+
+      @media screen and (max-width: 767px) {
+        span {
+          font-size: 0.9rem;
+        }
+      }
     }
 
     .views-field:not(.views-field-field-term-resource-asset-type) + .views-field {
