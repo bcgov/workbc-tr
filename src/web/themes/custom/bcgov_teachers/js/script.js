@@ -97,7 +97,8 @@
 
       if ($('.left-nav:not(.mobiletab)').length > 0) {
         $('leftnavbar .leftnavbar--items.active .leftnavbar-item ul li:first-child a').addClass('active');
-        $('.leftnavbar--title a').on('click', function(e){
+        $('.leftnavbar--title a').click(function(e){
+          e.stopImmediatePropagation();
           e.preventDefault();
           $('.right-nav .main-section').removeClass('active');
           $('.leftnavbar .leftnavbar--items').removeClass('active');
@@ -112,7 +113,9 @@
 
 
         $('.leftnavbar-item li a').on('click', function (e) {
-
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          e.stopPropagation();
           var hrefattr = $(this).attr('href');
 
           $('html,body').animate({
@@ -200,7 +203,7 @@
 
       //related news slider
       if ($('.related_news_slider .related_news_wrapper--item').length > 3) {
-        $('.related_news_slider .row').slick({
+        $('.related_news_slider .row').not('.slick-initialized').slick({
           infinite: false,
           dots: true,
           slidesToShow: 3,
@@ -354,7 +357,7 @@
 
   if ($('#block-bcgov-teachers-increasetextsize').length > 0) {
     $('#block-bcgov-teachers-increasetextsize a[class^="size"]').click(function() {
-      
+
       var elem = $(this);
 
       if(elem.hasClass('size-bigger') || elem.hasClass('size-big')) {
@@ -621,14 +624,23 @@ jQuery(document).ajaxComplete(function(event, xhr, settings) {
     var inputname = jQuery(self).attr('data-name');
 
     var param = inputname + '=' + inputvalue;
-    var searchquery = decodeURIComponent(window.location.search).split('&');
-    if (jQuery.inArray(param, searchquery) == 1) {
-      searchquery = jQuery.grep(searchquery, function (value) {
-        return value != param;
-      });
-      searchquery = searchquery.join('&');
-      window.history.pushState({}, document.title, "?" + searchquery);
-      jQuery('form#views-exposed-form-solr-results-page-1').submit();
+    if (window.location.search.indexOf('&') > 1) {
+      var searchquery = decodeURIComponent(window.location.search).split('&');
+      if (jQuery.inArray(param, searchquery) == 1) {
+        searchquery = jQuery.grep(searchquery, function (value) {
+          return value != param;
+        });
+        searchquery = searchquery.join('&');
+        window.history.pushState({}, document.title, "?" + searchquery);
+        jQuery('form#views-exposed-form-solr-results-page-1').submit();
+      }
+    }
+    else {
+      var searchquery = decodeURIComponent(window.location.search).split('?');
+      if (param == searchquery[1]) {
+        window.history.pushState({}, document.title, "?" + searchquery);
+        jQuery('form#views-exposed-form-solr-results-page-1').submit();
+      }
     }
   });
 
@@ -723,15 +735,25 @@ jQuery(document).ready(function(){
       var inputname = jQuery(self).attr('data-name');
 
       var param = inputname + '=' + inputvalue;
-      var searchquery = decodeURIComponent(window.location.search).split('&');
-      if (jQuery.inArray(param, searchquery) == 1) {
-        searchquery = jQuery.grep(searchquery, function (value) {
-          return value != param;
-        });
-        searchquery = searchquery.join('&');
-        window.history.pushState({}, document.title, "?" + searchquery);
-        jQuery('form#views-exposed-form-solr-results-page-1').submit();
+      if (window.location.search.indexOf('&') > 1) {
+        var searchquery = decodeURIComponent(window.location.search).split('&');
+        if (jQuery.inArray(param, searchquery) == 1) {
+          searchquery = jQuery.grep(searchquery, function (value) {
+            return value != param;
+          });
+          searchquery = searchquery.join('&');
+          window.history.pushState({}, document.title, "?" + searchquery);
+          jQuery('form#views-exposed-form-solr-results-page-1').submit();
+        }
       }
+      else{
+        var searchquery = decodeURIComponent(window.location.search).split('?');
+        if ( param == searchquery[1]) {
+          window.history.pushState({}, document.title, "?" + searchquery);
+          jQuery('form#views-exposed-form-solr-results-page-1').submit();
+        }
+      }
+
     });
 
     jQuery(".clear-all").on('click', function (event) {
