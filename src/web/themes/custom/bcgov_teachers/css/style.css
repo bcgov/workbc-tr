@@ -11258,7 +11258,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 .lesson_wrapper_main__lable, .resource_wrapper_main__lable {
   font-weight: 400;
   font-style: normal;
-  font-size: 45px;
+  font-size: 2.813rem;
   color: #333333;
   margin-bottom: 45px;
 }
@@ -11292,7 +11292,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
   font-weight: 400;
   font-style: normal;
-  font-size: 21px;
+  font-size: 1.313rem;
   display: inline-block;
   padding-bottom: 5px;
   margin-bottom: 43px;
@@ -11322,8 +11322,8 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   width: 100%;
 }
 .lesson_wrapper_main_para_item__body p, .resource_wrapper_main_para_item__body p {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .lesson_wrapper_main_para_item__body p a, .resource_wrapper_main_para_item__body p a {
   color: #2379A4;
@@ -11393,7 +11393,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   position: relative;
 }
 .lesson_wrapper_main_para_item__body ul li p, .lesson_wrapper_main_para_item__body ul li span, .lesson_wrapper_main_para_item__body ul li a, .lesson_wrapper_main_para_item__body ol li p, .lesson_wrapper_main_para_item__body ol li span, .lesson_wrapper_main_para_item__body ol li a, .resource_wrapper_main_para_item__body ul li p, .resource_wrapper_main_para_item__body ul li span, .resource_wrapper_main_para_item__body ul li a, .resource_wrapper_main_para_item__body ol li p, .resource_wrapper_main_para_item__body ol li span, .resource_wrapper_main_para_item__body ol li a {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .lesson_wrapper_main_para_item__body ul li + li, .lesson_wrapper_main_para_item__body ol li + li, .resource_wrapper_main_para_item__body ul li + li, .resource_wrapper_main_para_item__body ol li + li {
   margin-top: 20px;
@@ -13897,15 +13897,15 @@ header .navbar .menu--main a.active, header .navbar .menu--main a.is-active {
   margin-bottom: 0;
 }
 .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body h2:first-child, .paragraph--type--paragraph-simple .path-newsletter #block-bcgov-teachers-content .field--name-field-para-simple-body h2:first-child, .path-newsletter .paragraph--type--paragraph-simple #block-bcgov-teachers-content .field--name-field-para-simple-body h2:first-child, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body p:first-child, .paragraph--type--paragraph-simple .path-newsletter #block-bcgov-teachers-content .field--name-field-para-simple-body p:first-child, .path-newsletter .paragraph--type--paragraph-simple #block-bcgov-teachers-content .field--name-field-para-simple-body p:first-child {
-  font-size: 21px;
+  font-size: 1.313rem;
 }
 @media only screen and (max-width: 767px) {
   .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body h2:first-child, .paragraph--type--paragraph-simple .path-newsletter #block-bcgov-teachers-content .field--name-field-para-simple-body h2:first-child, .path-newsletter .paragraph--type--paragraph-simple #block-bcgov-teachers-content .field--name-field-para-simple-body h2:first-child, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body p:first-child, .paragraph--type--paragraph-simple .path-newsletter #block-bcgov-teachers-content .field--name-field-para-simple-body p:first-child, .path-newsletter .paragraph--type--paragraph-simple #block-bcgov-teachers-content .field--name-field-para-simple-body p:first-child {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }
 .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body p, .paragraph--type--paragraph-simple .path-newsletter #block-bcgov-teachers-content .field--name-field-para-simple-body p, .path-newsletter .paragraph--type--paragraph-simple #block-bcgov-teachers-content .field--name-field-para-simple-body p, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol li, .paragraph--type--paragraph-simple .path-newsletter #block-bcgov-teachers-content .field--name-field-para-simple-body ol li, .path-newsletter .paragraph--type--paragraph-simple #block-bcgov-teachers-content .field--name-field-para-simple-body ol li, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ul li, .paragraph--type--paragraph-simple .path-newsletter #block-bcgov-teachers-content .field--name-field-para-simple-body ul li, .path-newsletter .paragraph--type--paragraph-simple #block-bcgov-teachers-content .field--name-field-para-simple-body ul li, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body li span, .paragraph--type--paragraph-simple .path-newsletter #block-bcgov-teachers-content .field--name-field-para-simple-body li span, .path-newsletter .paragraph--type--paragraph-simple #block-bcgov-teachers-content .field--name-field-para-simple-body li span, .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body li a, .paragraph--type--paragraph-simple .path-newsletter #block-bcgov-teachers-content .field--name-field-para-simple-body li a, .path-newsletter .paragraph--type--paragraph-simple #block-bcgov-teachers-content .field--name-field-para-simple-body li a {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .paragraph--type--paragraph-simple .container .field--name-field-para-simple-body ol, .paragraph--type--paragraph-simple .path-newsletter #block-bcgov-teachers-content .field--name-field-para-simple-body ol, .path-newsletter .paragraph--type--paragraph-simple #block-bcgov-teachers-content .field--name-field-para-simple-body ol {
   counter-reset: num;

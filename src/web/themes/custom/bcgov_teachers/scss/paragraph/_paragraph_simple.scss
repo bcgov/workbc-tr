@@ -25,13 +25,13 @@
         margin-bottom: 0;
       }
       h2:first-child,p:first-child{
-        font-size: 21px;
+        font-size: 1.313rem;
         @media only screen and (max-width:767px){
-          font-size: 18px;
+          font-size: 1.125rem;
         }
       }
       p, ol li, ul li, li span, li a{
-        font-size: 16px;
+        font-size: 1rem;
       }
       ol{counter-reset: num;
         li{
