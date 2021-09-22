@@ -256,6 +256,11 @@
     }
   }
 
+  .lesson_wrapper_main_para_item .lesson_wrapper_main_para_item__body > ol,
+  .lesson_wrapper_main_para_item .lesson_wrapper_main_para_item__body > ul{
+    padding-top: 0px;
+  }
+
   .main_section{
     padding:55px 0;
     &.resource_plan_section{
