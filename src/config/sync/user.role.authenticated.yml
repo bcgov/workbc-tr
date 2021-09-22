@@ -19,6 +19,7 @@ permissions:
   - 'access toolbar'
   - 'administer meta tags'
   - 'administer nodes'
+  - 'administer simplenews subscriptions'
   - 'administer site configuration'
   - 'bypass node access'
   - 'create content content'
@@ -81,6 +82,7 @@ permissions:
   - 'notify of path changes'
   - 'post comments'
   - 'search content'
+  - 'send newsletter'
   - 'skip comment approval'
   - 'subscribe to newsletters'
   - 'update any media'
@@ -89,6 +91,7 @@ permissions:
   - 'view media'
   - 'view own unpublished content'
   - 'view resource revisions'
+  - 'view simplenews subscriptions'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
   - workbc_settings
