@@ -99,7 +99,7 @@
   {% if node.field_term_resource_stage.value is not empty %}
     <span style="font-size=11px;">Career Lifecycle Stages: 
     {% for item in content.field_term_resource_stage|children %}
-      {{ item|striptags }}{% if not loop.last %},{% endif %}
+      {{ item }}{% if not loop.last %},{% endif %}
     {% endfor %}
     </span>
   {% endif %}
