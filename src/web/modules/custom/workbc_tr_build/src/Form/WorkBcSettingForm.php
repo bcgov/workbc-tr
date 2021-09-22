@@ -54,7 +54,7 @@ class WorkBcSettingForm extends ConfigFormBase {
    *
    * @var string
    */
-  const SETTINGS = 'workbc.settings';
+  const SETTINGS = 'workbc_tr_build.settings';
 
   /**
    * {@inheritdoc}

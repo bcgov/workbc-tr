@@ -103,7 +103,7 @@ set footer_classes = ' '
 
 </header>
 {# drupal_config('workbc.settings', 'search_page.banner_image') #}
-{% set hero_banner = drupal_config('workbc.settings', 'search_page.banner_image') %}
+{% set hero_banner = drupal_config('workbc_tr_build.settings', 'search_page.banner_image') %}
 {% if hero_banner is not empty %}
   {% set hero_banner = hero_banner | image_style('ultra_wide') %}
 {% else %}
