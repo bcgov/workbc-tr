@@ -11287,10 +11287,10 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   }
 }
 .lesson_wrapper_main_para_item + .lesson_wrapper_main_para_item, .lesson_wrapper_main_para_item + .resource_wrapper_main_para_item, .resource_wrapper_main_para_item + .lesson_wrapper_main_para_item, .resource_wrapper_main_para_item + .resource_wrapper_main_para_item {
-  margin-top: 38px;
+  margin-top: 10px;
 }
 .lesson_wrapper_main_para_item .download-worksheets-container, .resource_wrapper_main_para_item .download-worksheets-container {
-  margin-top: 70px;
+  margin-top: 10px;
 }
 .lesson_wrapper_main_para_item__title, .resource_wrapper_main_para_item__title {
   font-family: "BC Sans", "myriad-pro", Calibri, "Helvetica Neue", Arial, "Noto Sans", "sans serif";
@@ -11299,7 +11299,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   font-size: 1.313rem;
   display: inline-block;
   padding-bottom: 5px;
-  margin-bottom: 43px;
+  margin-bottom: 15px;
   position: relative;
 }
 @media only screen and (max-width: 767px) {
@@ -11345,7 +11345,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .lesson_wrapper_main_para_item__body ol li > ol, .resource_wrapper_main_para_item__body ol li > ol {
   padding-left: 40px;
-  padding-top: 20px;
 }
 .lesson_wrapper_main_para_item__body ol li > ol > li, .resource_wrapper_main_para_item__body ol li > ol > li {
   padding-left: 5px;
@@ -11359,12 +11358,8 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 .lesson_wrapper_main_para_item__body ol li > ol > li::marker, .resource_wrapper_main_para_item__body ol li > ol > li::marker {
   font-weight: normal;
 }
-.lesson_wrapper_main_para_item__body ol:last-child, .resource_wrapper_main_para_item__body ol:last-child {
-  margin-bottom: 30px;
-}
 .lesson_wrapper_main_para_item__body ul, .resource_wrapper_main_para_item__body ul {
   padding-left: 18px !important;
-  margin-top: 10px;
 }
 .lesson_wrapper_main_para_item__body ul li:before, .resource_wrapper_main_para_item__body ul li:before {
   position: absolute;
@@ -11374,9 +11369,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   height: 5px;
   border-radius: 100%;
   background: #333333;
-}
-.lesson_wrapper_main_para_item__body ul ul, .resource_wrapper_main_para_item__body ul ul {
-  margin-top: 5px;
 }
 .lesson_wrapper_main_para_item__body ul ul li:before, .resource_wrapper_main_para_item__body ul ul li:before {
   background: transparent;
@@ -11399,7 +11391,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 .lesson_wrapper_main_para_item__body ul li ul, .lesson_wrapper_main_para_item__body ul li ol, .lesson_wrapper_main_para_item__body ol li ul, .lesson_wrapper_main_para_item__body ol li ol, .resource_wrapper_main_para_item__body ul li ul, .resource_wrapper_main_para_item__body ul li ol, .resource_wrapper_main_para_item__body ol li ul, .resource_wrapper_main_para_item__body ol li ol {
   padding-left: 20px;
-  margin-top: 10px;
+  margin-bottom: -20px;
 }
 .lesson_wrapper .main_section, .resource_wrapper .main_section {
   padding: 55px 0;

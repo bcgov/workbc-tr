@@ -135,12 +135,12 @@
     }
   }
   &_main_para_item + &_main_para_item{
-      margin-top: 38px;
+      margin-top: 10px;
   }
 
   &_main_para_item{
     .download-worksheets-container{
-      margin-top: 70px;
+      margin-top: 10px;
     }
   }
   &_main_para_item__title{
@@ -150,7 +150,7 @@
     font-size: 1.313rem;
     display: inline-block;
     padding-bottom:5px;
-    margin-bottom: 43px;
+    margin-bottom: 15px;
     position: relative;
     @media only screen and (max-width:767px){
       margin-bottom: 23px;
@@ -202,7 +202,7 @@
         > ol{
           //list-style-type: lower-alpha;
           padding-left:40px;
-          padding-top:20px;
+          //padding-top:20px;
           > li{padding-left:5px;
             + li{margin-top:10px;}
             &:before{display: none;}
@@ -211,11 +211,11 @@
         }
       }
       &:last-child{
-        margin-bottom:30px;
+        //margin-bottom:10px;
       }
     }
 
-    ul{padding-left: 18px !important; margin-top: 10px;
+    ul{padding-left: 18px !important; //margin-top: 10px;
       li{
         &:before{
           //content:'';
@@ -229,7 +229,7 @@
         }
       }
       ul{
-        margin-top: 5px;
+        //margin-top: 5px;
         li{
           &:before{
             background: transparent;
@@ -250,7 +250,7 @@
         }
         ul, ol{
             padding-left: 20px;
-            margin-top: 10px;
+            margin-bottom: -20px;
         }
       }
     }
