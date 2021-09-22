@@ -11393,6 +11393,11 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   padding-left: 20px;
   margin-bottom: -20px;
 }
+.lesson_wrapper .lesson_wrapper_main_para_item .lesson_wrapper_main_para_item__body > ol,
+.lesson_wrapper .lesson_wrapper_main_para_item .lesson_wrapper_main_para_item__body > ul, .resource_wrapper .lesson_wrapper_main_para_item .lesson_wrapper_main_para_item__body > ol,
+.resource_wrapper .lesson_wrapper_main_para_item .lesson_wrapper_main_para_item__body > ul {
+  padding-top: 0px;
+}
 .lesson_wrapper .main_section, .resource_wrapper .main_section {
   padding: 55px 0;
 }
