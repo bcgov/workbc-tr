@@ -344,20 +344,6 @@
     $('#block-bcgov-teachers-increasetextsize a[class^="size"]').click(function() {
 
       var elem = $(this);
-
-      // if(elem.hasClass('size-bigger') || elem.hasClass('size-big')) {
-      //   $('.navbar-brand .site-logo').removeClass('d-table-cell');
-      //   $('.navbar-brand .site-title').removeClass('d-table-cell');
-      //   $('.navbar-brand .site-logo').addClass('d-block');
-      //   $('.navbar-brand .site-title').addClass('d-block');
-      // } else {
-      //   if($(window).width() > 768) {
-      //     $('.navbar-brand .site-logo').addClass('d-table-cell');
-      //     $('.navbar-brand .site-title').addClass('d-table-cell');
-      //   }
-      //   $('.navbar-brand .site-logo').removeClass('d-block');
-      //   $('.navbar-brand .site-title').removeClass('d-block');
-      // }
       var size = elem.attr('class').substr(5);
       $('html').attr('data-font-size',size);
       adjustDynamicElements();
@@ -592,6 +578,7 @@ function removeparam(){
 }
 
 jQuery(document).ajaxComplete(function(event, xhr, settings) {
+  
   departmentFunction();
 
   jQuery( ".deptclose" ).on('click', function(event) {
@@ -656,7 +643,115 @@ function isEmail(email) {
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   return regex.test(email);
 }
-jQuery(document).ready(function(){
+
+
+
+jQuery(document).ready(function(){  
+
+  //Wait for the count div to load
+  function waitForElement(elementPath, searchbox, callBack){
+    window.setTimeout(function(){
+      if(jQuery(elementPath).length && jQuery(searchbox).length){
+        callBack(elementPath, jQuery(elementPath));
+      }else{
+        waitForElement(elementPath, searchbox, callBack);
+      }
+    },1000)
+  }
+
+  /*** Initial Load ***/
+  waitForElement(".show-result-wrapper .view-header",".search_keyword input", function(){
+    //Send tracking info to snowplow
+    s_tracker('load');
+  });
+
+  //////////////////////////////
+  /////////////Snowplow Tracker for search results/////////////////
+
+function s_tracker(action_event) {
+  var splashGradeArray = new Array();
+  var splashStageArray = new Array();
+  var splashCompetencyArray = new Array();
+  var splashAudienceArray = new Array();
+  console.log('click');
+
+  jQuery('.filterbox__selectgroup .filterbox__dd-grade input[type=checkbox]:checked').each(function () {
+      if(this.checked){
+          var label = jQuery(this).parent().find('label').text();
+          splashGradeArray.push(label);
+      }
+  });
+
+  jQuery('.filterbox__selectgroup .filterbox__dd-stage input[type=checkbox]:checked').each(function () {
+      if(this.checked){
+          var label = jQuery(this).parent().find('label').text();
+          splashStageArray.push(label);
+      }
+  });
+
+  jQuery('.filterbox__selectgroup .filterbox__dd-competency input[type=checkbox]:checked').each(function () {
+      if(this.checked){
+          var label = jQuery(this).parent().find('label').text();
+          splashCompetencyArray.push(label);
+      }
+  });
+
+  jQuery('.filterbox__selectgroup .filterbox__dd-audience input[type=checkbox]:checked').each(function () {
+      if(this.checked){
+          var label = jQuery(this).parent().find('label').text();
+          splashAudienceArray.push(label);
+      }
+  });
+   
+  var grades = stage = competency = audience = "All";
+
+  var category = jQuery('input[name="field_term_resource_asset_type"]:checked').parent().find('label').text();
+  if(category == '') {
+      category = "All Lesson Plans & Resources";
+  }
+
+  var keyword = null;
+  
+  if(splashGradeArray.length !== 0) {
+      grades = splashGradeArray.join(',')
+  }
+
+  if(splashStageArray.length !== 0) {
+      stage = splashStageArray.join(',')
+  }
+
+  if(splashCompetencyArray.length !== 0) {
+      competency = splashCompetencyArray.join(',')
+  }
+
+  if(splashAudienceArray.length !== 0) {
+      audience = splashAudienceArray.join(',')
+  }
+
+  //var action_event = "update";
+  
+  var count_result = jQuery('.show-result-wrapper .view-header').text().trim().split(" ")[1];
+  console.log(count_result);
+  var keyword = jQuery('.search_keyword input').val();
+  if(keyword == "") {
+      keyword = null;
+  }
+    window.snowplow('trackSelfDescribingEvent', {"schema":"iglu:ca.bc.gov.workbc/find_resources/jsonschema/1-0-0",
+      "data": {
+          "action": action_event,
+          "count": parseInt(count_result),
+          "filters": {
+          "focus_area": grades,
+          "lifecycle_stage": stage,
+          "competencies": competency,
+          "audiences": audience,
+          "show_category": category,
+          "keyword": keyword
+          }
+      }
+    });
+  }
+
   setTimeout(function(){
     jQuery('.search-solr-box__inner .card-body .form-checkboxes .form-item:first-child').addClass('parent-item');
     jQuery('.search-solr-box__inner .card-body .form-checkboxes .form-item + .form-item').addClass('child-item');
@@ -670,9 +765,22 @@ jQuery(document).ready(function(){
 
     jQuery('.parent-checkbox-item > .form-item input').on('change', function () {
       jQuery(this).closest('.parent-checkbox-item').find('.checkbox-item input[type="checkbox"]').prop('checked', this.checked);
+      var count_p = 0;
+      jQuery(document).ajaxComplete(function(){
+        if(count_p == 0)
+        s_tracker('update');
+        count_p++;
+      });
     });
 
     jQuery('.child-checkbox-item .form-item input').on('change', function () {
+      var count_c = 0;
+      jQuery(document).ajaxComplete(function(event, xhr, settings){
+        if(count_c == 0)
+        s_tracker('update');
+        count_c++;
+      });
+   
       var totalcheckbox = jQuery(this).closest('.parent-checkbox-item').find('input').length;
       var chechedchekbox = jQuery(this).closest('.parent-checkbox-item').find('input:checked').length;
       var notcheckedbox = totalcheckbox - chechedchekbox;

@@ -5,6 +5,7 @@
         if (typeof context.location !== 'undefined') { // Only fire on document load.
             var action_event = "load";
             var count = 0;
+            
         }
         //var count_results = $('.search_wrapper .row > div').length;
         var splashGradeArray = new Array();
@@ -15,7 +16,6 @@
         $('.filterbox__selectgroup .filterbox__dd-grade input[type=checkbox]:checked').each(function () {
             if(this.checked){
                 var label = $(this).parent().find('label').text();
-                console.log(label);
                 splashGradeArray.push(label);
             }
         });
@@ -67,30 +67,30 @@
         }
 
         waitForElement(".show-result-wrapper .view-header",".search_keyword input", function(){
-        $('.view-solr-results').once('snowplow').each(function() {
-            count_result = 0;
-            var action_event = "load";
-            count_result = $('.show-result-wrapper .view-header').text().trim().split(" ")[1];
-            var keyword = $('.search_keyword input').val();
-            if(keyword == "") {
-                keyword = null;
-            }
-            console.log(keyword);
-                window.snowplow('trackSelfDescribingEvent', {"schema":"iglu:ca.bc.gov.workbc/find_resources/jsonschema/1-0-0",
-                "data": {
-                    "action": action_event,
-                    "count": parseInt(count_result),
-                    "filters": {
-                    "focus_area": grades,
-                    "lifecycle_stage": stage,
-                    "competencies": competency,
-                    "audiences": audience,
-                    "show_category": category,
-                    "keyword": keyword
-                    }
-                }
-                });
-            });
+        // $('.view-solr-results').once('snowplow').each(function() {
+        //     count_result = 0;
+        //     var action_event = "load";
+        //     count_result = $('.show-result-wrapper .view-header').text().trim().split(" ")[1];
+        //     var keyword = $('.search_keyword input').val();
+        //     if(keyword == "") {
+        //         keyword = null;
+        //     }
+        //     console.log(keyword);
+        //         window.snowplow('trackSelfDescribingEvent', {"schema":"iglu:ca.bc.gov.workbc/find_resources/jsonschema/1-0-0",
+        //         "data": {
+        //             "action": action_event,
+        //             "count": parseInt(count_result),
+        //             "filters": {
+        //             "focus_area": grades,
+        //             "lifecycle_stage": stage,
+        //             "competencies": competency,
+        //             "audiences": audience,
+        //             "show_category": category,
+        //             "keyword": keyword
+        //             }
+        //         }
+        //         });
+        //     });
         });
         
         
@@ -215,4 +215,3 @@
     }
 }
 })(jQuery, Drupal, drupalSettings);
-  
