@@ -644,10 +644,7 @@ function isEmail(email) {
   return regex.test(email);
 }
 
-
-
 jQuery(document).ready(function(){  
-
   //Wait for the count div to load
   function waitForElement(elementPath, searchbox, callBack){
     window.setTimeout(function(){
@@ -665,42 +662,40 @@ jQuery(document).ready(function(){
     s_tracker('load');
   });
 
-  //////////////////////////////
-  /////////////Snowplow Tracker for search results/////////////////
+/////////////Snowplow Tracker for search results/////////////////
 
 function s_tracker(action_event) {
   var splashGradeArray = new Array();
   var splashStageArray = new Array();
   var splashCompetencyArray = new Array();
   var splashAudienceArray = new Array();
-  console.log('click');
 
   jQuery('.filterbox__selectgroup .filterbox__dd-grade input[type=checkbox]:checked').each(function () {
-      if(this.checked){
-          var label = jQuery(this).parent().find('label').text();
-          splashGradeArray.push(label);
-      }
+    if(this.checked){
+        var label = jQuery(this).parent().find('label').text();
+        splashGradeArray.push(label);
+    }
   });
 
   jQuery('.filterbox__selectgroup .filterbox__dd-stage input[type=checkbox]:checked').each(function () {
-      if(this.checked){
-          var label = jQuery(this).parent().find('label').text();
-          splashStageArray.push(label);
-      }
+    if(this.checked){
+        var label = jQuery(this).parent().find('label').text();
+        splashStageArray.push(label);
+    }
   });
 
   jQuery('.filterbox__selectgroup .filterbox__dd-competency input[type=checkbox]:checked').each(function () {
-      if(this.checked){
-          var label = jQuery(this).parent().find('label').text();
-          splashCompetencyArray.push(label);
-      }
+    if(this.checked){
+        var label = jQuery(this).parent().find('label').text();
+        splashCompetencyArray.push(label);
+    }
   });
 
   jQuery('.filterbox__selectgroup .filterbox__dd-audience input[type=checkbox]:checked').each(function () {
-      if(this.checked){
-          var label = jQuery(this).parent().find('label').text();
-          splashAudienceArray.push(label);
-      }
+    if(this.checked){
+        var label = jQuery(this).parent().find('label').text();
+        splashAudienceArray.push(label);
+    }
   });
    
   var grades = stage = competency = audience = "All";
@@ -770,6 +765,15 @@ function s_tracker(action_event) {
         if(count_p == 0)
         s_tracker('update');
         count_p++;
+      });
+    });
+
+    jQuery('.search-assest .form-item input').on('change', function () {
+      var count_a = 0;
+      jQuery(document).ajaxComplete(function(event, xhr, settings){
+        if(count_a == 0)
+        s_tracker('update');
+        count_a++;
       });
     });
 
