@@ -121,6 +121,13 @@ set footer_classes = ' '
     </div>
   </div>
 </div>
+  <div class="banner-content banner-content-mobile">
+    <div class="container text-pos-left">
+      <div class="banner-text py-md-2">
+        <h1>{{ page['#title']|raw }}</h1>
+      </div>
+    </div>
+   </div>
 
   {%
   set sidebar_first_classes = (page.sidebar_first and page.sidebar_second) ? 'col-12 col-sm-6 col-lg-3' : 'col-12 col-lg-3'
