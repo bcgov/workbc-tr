@@ -154,3 +154,32 @@
     }
   }
 }
+
+
+.banner-content-mobile{
+  display: none;
+  min-height: 1px;
+}
+@media (max-width: 767px) {
+  .banner-content{
+    border-bottom: none;
+    &:not(.banner-content-mobile){
+      min-height: 220px;
+    }
+    > .container{display: none;}
+    &.banner-content-mobile{
+      display: block;
+      > .container{display: block;}
+    }
+  }
+  .path-frontpage{
+    .banner-content{
+      background-position: top left;
+    }
+  }
+  body:not(.path-frontpage){
+     .banner-content{
+      background-position: top right;
+    }
+  }
+}

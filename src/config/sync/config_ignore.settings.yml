@@ -1,7 +1,6 @@
 ignored_config_entities:
   - 'search_api.server.*'
   - smtp.settings
-  - update.settings
   - openid_connect.settings.keycloak
   - workbc_tr_build.settings
 _core:
