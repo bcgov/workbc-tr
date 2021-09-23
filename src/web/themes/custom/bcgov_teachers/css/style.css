@@ -11132,6 +11132,36 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   }
 }
 
+.banner-content-mobile {
+  display: none;
+  min-height: 1px;
+}
+
+@media (max-width: 767px) {
+  .banner-content {
+    border-bottom: none;
+  }
+  .banner-content:not(.banner-content-mobile) {
+    min-height: 220px;
+  }
+  .banner-content > .container, .path-newsletter .banner-content > #block-bcgov-teachers-content {
+    display: none;
+  }
+  .banner-content.banner-content-mobile {
+    display: block;
+  }
+  .banner-content.banner-content-mobile > .container, .path-newsletter .banner-content.banner-content-mobile > #block-bcgov-teachers-content {
+    display: block;
+  }
+
+  .path-frontpage .banner-content {
+    background-position: top left;
+  }
+
+  body:not(.path-frontpage) .banner-content {
+    background-position: top right;
+  }
+}
 .lesson_wrapper_intro, .resource_wrapper_intro {
   padding-top: 38px;
   padding-bottom: 40px;
@@ -12459,11 +12489,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 .resource_wrapper_left__img img {
   margin: 0 auto;
   display: block;
-}
-@media only screen and (min-width: 767px) {
-  .resource_wrapper_left__img img {
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
-  }
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
 }
 
 .stwrapper.stwrapper4x, #stwrapper, #stOverlay {
@@ -12489,7 +12515,6 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   }
   .related_news_slider .slick-track .slick-slide {
     height: inherit;
-    outline: none;
   }
 }
 .search_wrapper .row {
