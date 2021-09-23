@@ -66,32 +66,32 @@
             audience = splashAudienceArray.join(',')
         }
 
-        waitForElement(".show-result-wrapper .view-header",".search_keyword input", function(){
-        // $('.view-solr-results').once('snowplow').each(function() {
-        //     count_result = 0;
-        //     var action_event = "load";
-        //     count_result = $('.show-result-wrapper .view-header').text().trim().split(" ")[1];
-        //     var keyword = $('.search_keyword input').val();
-        //     if(keyword == "") {
-        //         keyword = null;
-        //     }
-        //     console.log(keyword);
-        //         window.snowplow('trackSelfDescribingEvent', {"schema":"iglu:ca.bc.gov.workbc/find_resources/jsonschema/1-0-0",
-        //         "data": {
-        //             "action": action_event,
-        //             "count": parseInt(count_result),
-        //             "filters": {
-        //             "focus_area": grades,
-        //             "lifecycle_stage": stage,
-        //             "competencies": competency,
-        //             "audiences": audience,
-        //             "show_category": category,
-        //             "keyword": keyword
-        //             }
-        //         }
-        //         });
-        //     });
-        });
+        // waitForElement(".show-result-wrapper .view-header",".search_keyword input", function(){
+        // // $('.view-solr-results').once('snowplow').each(function() {
+        // //     count_result = 0;
+        // //     var action_event = "load";
+        // //     count_result = $('.show-result-wrapper .view-header').text().trim().split(" ")[1];
+        // //     var keyword = $('.search_keyword input').val();
+        // //     if(keyword == "") {
+        // //         keyword = null;
+        // //     }
+        // //     console.log(keyword);
+        // //         window.snowplow('trackSelfDescribingEvent', {"schema":"iglu:ca.bc.gov.workbc/find_resources/jsonschema/1-0-0",
+        // //         "data": {
+        // //             "action": action_event,
+        // //             "count": parseInt(count_result),
+        // //             "filters": {
+        // //             "focus_area": grades,
+        // //             "lifecycle_stage": stage,
+        // //             "competencies": competency,
+        // //             "audiences": audience,
+        // //             "show_category": category,
+        // //             "keyword": keyword
+        // //             }
+        // //         }
+        // //         });
+        // //     });
+        // });
         
         
         if($('.lesson_wrapper__intro__title').length > 0) {
@@ -116,7 +116,6 @@
               count++;
               var click_type = $(this).parents('.leftnavbar--items').find('.leftnavbar--title a').text();
               click_type = "nav_"+click_type.replace(' ','_')+"_"+$(this).text().replace(' ','_').replace(':','_');
-              console.log(click_type);
               snowplow_tracker(category, click_type, link_text, count)
             }
             var hrefattr = $(this).attr('href');
@@ -203,15 +202,15 @@
             });
         } 
 
-        function waitForElement(elementPath, searchbox, callBack){
-            window.setTimeout(function(){
-              if($(elementPath).length && $(searchbox).length){
-                callBack(elementPath, $(elementPath));
-              }else{
-                waitForElement(elementPath, searchbox, callBack);
-              }
-            },1000)
-          }
+        // function waitForElement(elementPath, searchbox, callBack){
+        //     window.setTimeout(function(){
+        //       if($(elementPath).length && $(searchbox).length){
+        //         callBack(elementPath, $(elementPath));
+        //       }else{
+        //         waitForElement(elementPath, searchbox, callBack);
+        //       }
+        //     },1000)
+        //   }
     }
 }
 })(jQuery, Drupal, drupalSettings);

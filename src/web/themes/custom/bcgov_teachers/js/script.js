@@ -168,12 +168,11 @@
                 if (scrollTop < $(anchors[0]).offset().top) {
                   $('.leftnavbar .leftnavbar--items.active ul li:first-child a').addClass('active');
                 }
-
-                var lastmainsectionheight = $('.main-section.active .lesson_wrapper_main_para_item:last-child').height();
-
-                //if (scrollTop > ($('.main-section.active .lesson_wrapper_main_para_item:last-child .lesson_wrapper_main_para_item__title').offset().top + lastmainsectionheight) - 800) {
-                if (scrollTop >= ($('.main-section.active .lesson_wrapper_main_para_item:last-child').offset().top - 250) && 
-                 (lastmainsectionheight <= $('.main_section .row .left-nav > .leftnavbar').height())) {
+                
+                var footer_top = $("#block-views-block-related-resource-and-lesson-plan-block-1").offset().top;
+                var nav_height = $(".main_section .row .left-nav > .leftnavbar").height();
+                
+                if (scrollTop + nav_height + 250 > footer_top) {
                   $('.left-nav:not(.mobiletab)').addClass('align-end');
                   $('.left-nav:not(.mobiletab)').removeClass('sticky');
                 }
