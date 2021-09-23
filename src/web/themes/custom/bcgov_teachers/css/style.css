@@ -13247,6 +13247,7 @@ header .region-header .navbar-brand .site-title {
   header .region-header .navbar-brand .site-title {
     font-size: 41px;
     line-height: 36px;
+    vertical-align: bottom;
   }
 }
 header .region-header .navbar-brand a.site-title:link, header .region-header .navbar-brand a.site-title:visited {
