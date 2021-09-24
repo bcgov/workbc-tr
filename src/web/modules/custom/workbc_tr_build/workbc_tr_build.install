@@ -28,4 +28,15 @@ function workbc_tr_build_update_8507() {
     $node->save();
   }
 }
-
+/**
+ * Implements hook_install().
+ *
+ * Clear key_value for update_fetch_task.
+ */
+function workbc_tr_build_update_8508() {
+  $database = \Drupal::database();
+  $database
+    ->delete('key_value')
+    ->condition('collection', 'update_fetch_task')
+    ->execute();
+}
