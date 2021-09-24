@@ -11139,27 +11139,17 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 
 @media (max-width: 767px) {
   .banner-content {
-    border-bottom: none;
-  }
-  .banner-content:not(.banner-content-mobile) {
-    min-height: 220px;
-  }
-  .banner-content > .container, .path-newsletter .banner-content > #block-bcgov-teachers-content {
     display: none;
+    border-bottom: none;
   }
   .banner-content.banner-content-mobile {
     display: block;
   }
-  .banner-content.banner-content-mobile > .container, .path-newsletter .banner-content.banner-content-mobile > #block-bcgov-teachers-content {
-    display: block;
-  }
-
-  .path-frontpage .banner-content {
-    background-position: top left;
-  }
-
-  body:not(.path-frontpage) .banner-content {
-    background-position: top right;
+  .banner-content.banner-content-mobile .img-wrapper {
+    min-height: 220px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 .lesson_wrapper_intro, .resource_wrapper_intro {
@@ -12582,6 +12572,16 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   overflow: hidden;
 }
 
+/*slick slider pagination css*/
+.slick-dots li button:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 100%;
+}
+
+/*slick slider pagination css end*/
 .search_wrapper {
   margin-bottom: 40px;
 }

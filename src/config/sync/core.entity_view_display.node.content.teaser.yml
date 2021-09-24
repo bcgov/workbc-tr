@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.content.field_content_image
     - field.field.node.content.field_content_items
     - field.field.node.content.field_content_text_pos
+    - field.field.node.content.field_mobile_image
     - node.type.content
   module:
     - user
@@ -36,5 +37,6 @@ hidden:
   field_content_image: true
   field_content_items: true
   field_content_text_pos: true
+  field_mobile_image: true
   langcode: true
   search_api_excerpt: true

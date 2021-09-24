@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.content.field_content_image
     - field.field.node.content.field_content_items
     - field.field.node.content.field_content_text_pos
+    - field.field.node.content.field_mobile_image
     - image.style.thumbnail
     - node.type.content
   module:
@@ -24,6 +25,7 @@ third_party_settings:
         - field_content_description
         - field_content_text_pos
         - field_content_image
+        - field_mobile_image
       parent_name: ''
       weight: 0
       format_type: fieldset
@@ -84,6 +86,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
+  field_mobile_image:
+    weight: 8
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
     region: content
   langcode:
     type: language_select

@@ -1359,3 +1359,20 @@
 }
 
 .o-hidden{overflow: hidden;}
+
+
+/*slick slider pagination css*/
+.slick-dots{
+  li{
+    button{
+      &:before{
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: black;
+        border-radius: 100%;
+      }
+    }
+  }
+}
+/*slick slider pagination css end*/
