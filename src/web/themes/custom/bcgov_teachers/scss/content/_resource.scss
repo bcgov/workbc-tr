@@ -1273,14 +1273,20 @@
 
 .resource_wrapper_left__img{
   .resource-media{
-    + .resource-media{margin-top:30px;}
+    + .resource-media{
+      @media only screen and (min-width:767px){
+        margin-top:30px;
+      }
+    }
     @media only screen and (max-width:767px){
       padding:10px 0;
     }
   }
   img{
     margin: 0 auto; display: block;
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+    @media only screen and (min-width:767px){
+      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+    }
   }
 }
 .stwrapper.stwrapper4x, #stwrapper, #stOverlay{display: none !important;}
