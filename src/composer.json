@@ -74,7 +74,7 @@
         "drupal/swiftmailer": "^2.0",
         "drupal/token": "^1.9",
         "drupal/twig_tweak": "^3.1",
-	"drupal/ultimate_cron": "^2.0@alpha",
+        "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/views_bootstrap": "^4.3",
         "drupal/views_infinite_scroll": "^1.8",
         "drush/drush": "^10.5",
@@ -126,7 +126,8 @@
         "enable-patching": true,
         "patches": {
           "drupal/core": {
-            "2885351 - Query string duplications" : "https://www.drupal.org/files/issues/query_string_duplications-2885351-6.patch"
+            "2885351 - Query string duplications" : "https://www.drupal.org/files/issues/query_string_duplications-2885351-6.patch",
+            "2715499 - Update manager fails" : "https://www.drupal.org/files/issues/2021-05-13/14102501-32.patch"
           },
           "drupal/media_download_all": {
             "3190105 - Compression fails with No active tasks alert":"https://www.drupal.org/files/issues/2021-03-22/3190105-2.patch"
