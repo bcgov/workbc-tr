@@ -147,13 +147,21 @@ class WorkBcSettingForm extends ConfigFormBase {
 
     $values = $form_state->getValues();
     try {
-      if (!empty($values['banner_image']) && !empty($values['banner_mobile_image'])) {
+      if (!empty($values['banner_image'])) {
         $filename = $this->fileSystem->copy($values['banner_image']->getFileUri(), 'public://');
-        $filename_mobile = $this->fileSystem->copy($values['banner_mobile_image']->getFileUri(), 'public://');
         // Retrieve the configuration.
         $this->configFactory->getEditable(static::SETTINGS)
           // Set the submitted configuration setting.
           ->set('search_page.banner_image', $filename)
+          // You can set multiple configurations at once by making
+          // multiple calls to set().
+          ->save();
+      }
+      if (!empty($values['banner_mobile_image'])) {
+        $filename_mobile = $this->fileSystem->copy($values['banner_mobile_image']->getFileUri(), 'public://');
+        // Retrieve the configuration.
+        $this->configFactory->getEditable(static::SETTINGS)
+          // Set the submitted configuration setting.
           ->set('search_page.banner_mobile_image', $filename_mobile)
           // You can set multiple configurations at once by making
           // multiple calls to set().
