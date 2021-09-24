@@ -109,19 +109,25 @@ set footer_classes = ' '
 {% else %}
   {% set hero_banner = base_path ~ directory ~ '/assets/search_page_default.png' %}
 {% endif %}
+{% set hero_banner_mobile = drupal_config('workbc_tr_build.settings', 'search_page.banner_mobile_image') %}
+{% if hero_banner_mobile is not empty %}
+  {% set hero_banner_mobile = hero_banner_mobile | image_style('here_mobile_640x320') %}
+{% else %}
+  {% set hero_banner_mobile = base_path ~ directory ~ '/assets/search_page_default.png' %}
+{% endif %}
 
 
 <main role="main">
   <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
   <div class="banner-content" style="background-image:url({{ hero_banner }})">
-
-  <div class="container text-pos-left">
-    <div class="banner-text py-md-2">
-      <h1>{{ page['#title']|raw }}</h1>
+    <div class="container text-pos-left">
+      <div class="banner-text py-md-2">
+        <h1>{{ page['#title']|raw }}</h1>
+      </div>
     </div>
   </div>
-</div>
   <div class="banner-content banner-content-mobile">
+    <div class="img-wrapper" style="background-image:url({{ hero_banner_mobile }})"></div>
     <div class="container text-pos-left">
       <div class="banner-text py-md-2">
         <h1>{{ page['#title']|raw }}</h1>

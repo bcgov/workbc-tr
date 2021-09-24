@@ -1,0 +1,15 @@
+uuid: 2eac42bd-a148-4e65-ae5a-ad4149690890
+langcode: en
+status: true
+dependencies: {  }
+name: here_mobile_640x320
+label: here_mobile_640x320
+effects:
+  64210448-d1cc-4b0a-a9f6-f1caa00e2576:
+    uuid: 64210448-d1cc-4b0a-a9f6-f1caa00e2576
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 640
+      height: 320
+      anchor: center-center

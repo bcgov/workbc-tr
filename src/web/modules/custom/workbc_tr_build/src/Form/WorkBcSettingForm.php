@@ -101,6 +101,17 @@ class WorkBcSettingForm extends ConfigFormBase {
       '#upload_location' => 'public://',
     ];
 
+    $form['search_page']['banner_mobile_image'] = [
+      '#type' => 'file',
+      '#title' => $this->t('Upload banner mobile image'),
+      '#maxlength' => 40,
+      '#description' => $this->t("Upload Search page Hero banner mobile image"),
+      '#autoupload' => TRUE,
+      '#upload_validators' => [
+        'file_validate_is_image' => [],
+      ],
+      '#upload_location' => 'public://',
+    ];
     return parent::buildForm($form, $form_state);
   }
 
@@ -119,6 +130,11 @@ class WorkBcSettingForm extends ConfigFormBase {
           // Put the temporary file in form_values so we can save it on submit.
           $form_state->setValue('banner_image', $file);
         }
+        $file_mobile = _file_save_upload_from_form($form['search_page']['banner_mobile_image'], $form_state, 0);
+        if ($file_mobile) {
+          // Put the temporary file in form_values so we can save it on submit.
+          $form_state->setValue('banner_mobile_image', $file_mobile);
+        }
       }
     }
   }
@@ -131,12 +147,14 @@ class WorkBcSettingForm extends ConfigFormBase {
 
     $values = $form_state->getValues();
     try {
-      if (!empty($values['banner_image'])) {
+      if (!empty($values['banner_image']) && !empty($values['banner_mobile_image'])) {
         $filename = $this->fileSystem->copy($values['banner_image']->getFileUri(), 'public://');
+        $filename_mobile = $this->fileSystem->copy($values['banner_mobile_image']->getFileUri(), 'public://');
         // Retrieve the configuration.
         $this->configFactory->getEditable(static::SETTINGS)
           // Set the submitted configuration setting.
           ->set('search_page.banner_image', $filename)
+          ->set('search_page.banner_mobile_image', $filename_mobile)
           // You can set multiple configurations at once by making
           // multiple calls to set().
           ->save();

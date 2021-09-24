@@ -162,24 +162,16 @@
 }
 @media (max-width: 767px) {
   .banner-content{
+    display: none;
     border-bottom: none;
-    &:not(.banner-content-mobile){
-      min-height: 220px;
-    }
-    > .container{display: none;}
     &.banner-content-mobile{
       display: block;
-      > .container{display: block;}
-    }
-  }
-  .path-frontpage{
-    .banner-content{
-      background-position: top left;
-    }
-  }
-  body:not(.path-frontpage){
-     .banner-content{
-      background-position: top right;
+      .img-wrapper{
+        min-height: 220px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
     }
   }
 }

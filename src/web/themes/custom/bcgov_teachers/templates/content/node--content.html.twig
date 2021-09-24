@@ -91,6 +91,7 @@
     </div>
   </div>
   <div class="banner-content banner-content-mobile">
+    <div class="img-wrapper" style="background-image: url({{ node.field_mobile_image.entity.uri.value | image_style('here_mobile_640x320') }})"></div>
     <div class="mobile-banner-content container{% if node.field_content_text_pos.value is not empty %}{{ node.field_content_text_pos.value ? ' text-pos-right' : ' text-pos-left' }}{% endif %}">
       <div class="banner-text">
         <h1>{{ node.label }}</h1>
@@ -101,6 +102,6 @@
 
 
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content|without('field_content_description','field_content_image','field_content_text_pos') }}
+    {{ content|without('field_content_description','field_content_image','field_content_text_pos', 'field_mobile_image') }}
   </div>
 </article>
