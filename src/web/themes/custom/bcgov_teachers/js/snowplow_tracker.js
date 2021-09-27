@@ -99,8 +99,9 @@
         } else if('resource_wrapper__intro__title') {
             var resource_id = $('.resource_wrapper__intro__title').text().trim();
         } else {
-            var resource_id = 'content';
+            var resource_id = null;
         }
+
         var path =  window.location.pathname; 
         var category = path.split("/")[1];   
         var link_text = null;
@@ -167,11 +168,20 @@
             snowplow_tracker(category, click_type, link_text, count);
         });
 
-        //Proceed links
-        $('.proceed-nex-link a',context).once('num_'+count).on('click', function() {
+        //Social share links
+        $('.page-node-type-resource .sharethis-wrapper span',context).once('num_'+count).on('click', function() {
+            link_text = $(this).attr('displaytext');
+            count++;
+            click_type = 'social';
+            snowplow_tracker(category, click_type, link_text, count);
+        });
+
+        //clear all event
+        $('.search_filter__results .clear-all',context).once('num_'+count).on('click', function() {
             count++;
             link_text = $(this).text();
-            click_type = "nav_"+link_text;
+            click_type = "Clear All";
+            resource_id = 'search_page';
             snowplow_tracker(category, click_type, link_text, count);
         });
 
