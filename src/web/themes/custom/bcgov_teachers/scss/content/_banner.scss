@@ -160,6 +160,16 @@
   display: none;
   min-height: 1px;
 }
+body{
+  &:not(.path-frontpage){
+    .banner-content{background-position: right top;
+      @media (min-width:1200px) {
+          background-position: right center;
+      }
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .banner-content{
     display: none;
@@ -167,11 +177,15 @@
     &.banner-content-mobile{
       display: block;
       .img-wrapper{
-        min-height: 220px;
+        min-height: 340px;
         background-size: cover;
-        background-position: center;
+        background-position: center top;
         background-repeat: no-repeat;
       }
     }
   }
+}
+
+@media (max-width: 535px) {
+  .banner-content.banner-content-mobile .img-wrapper{min-height: 220px;}
 }

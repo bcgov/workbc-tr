@@ -11137,6 +11137,15 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   min-height: 1px;
 }
 
+body:not(.path-frontpage) .banner-content {
+  background-position: right top;
+}
+@media (min-width: 1200px) {
+  body:not(.path-frontpage) .banner-content {
+    background-position: right center;
+  }
+}
+
 @media (max-width: 767px) {
   .banner-content {
     display: none;
@@ -11146,10 +11155,15 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
     display: block;
   }
   .banner-content.banner-content-mobile .img-wrapper {
-    min-height: 220px;
+    min-height: 340px;
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
+  }
+}
+@media (max-width: 535px) {
+  .banner-content.banner-content-mobile .img-wrapper {
+    min-height: 220px;
   }
 }
 .lesson_wrapper_intro, .resource_wrapper_intro {
