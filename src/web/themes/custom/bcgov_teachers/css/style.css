@@ -10976,10 +10976,13 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: 340px;
+  min-height: 350px;
   padding: 0;
-  background-position: top center;
-  background-size: cover;
+  background-position: left center;
+  background-size: 1200px 350px;
+  background-color: #00637a;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   border-bottom: 4px solid #e5e5e5;
 }
 @media (min-width: 768px) {
@@ -11143,6 +11146,10 @@ body:not(.path-frontpage) .banner-content {
 @media (min-width: 1200px) {
   body:not(.path-frontpage) .banner-content {
     background-position: right center;
+    background-color: #353a3f;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 1944px 340px;
   }
 }
 
