@@ -7,3 +7,9 @@ label: 'Content: Resource'
 tags:
   description: '[node:field_content_body]'
   keywords: 'Grade 4, Grade 5, Grade 6, Grade 7, Grade 8, Grade 9, CLE, CLC, students, teachers, lesson plans, resources'
+  og_description: '[node:field_resource_card_summary]'
+  og_image_url: '[node:field_resource_card_image:entity:field_media_image:entity:url]'
+  twitter_cards_description: '[node:field_resource_card_summary]'
+  twitter_cards_image: '[node:field_resource_card_image:entity:field_media_image:entity:url]'
+  twitter_cards_title: '[current-page:title]'
+  twitter_cards_type: summary_large_image
