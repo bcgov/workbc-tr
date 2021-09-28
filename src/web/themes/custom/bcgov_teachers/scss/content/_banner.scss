@@ -2,10 +2,13 @@
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: 340px;
+  min-height: 350px;
   padding: 0;
-  background-position: top center;
-  background-size: cover;
+  background-position: left center;
+  background-size: 1200px 350px;
+  background-color: rgb(0, 99, 122);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   border-bottom: 4px solid $teachers-gray;
 
   @media (min-width: 768px) {
@@ -164,7 +167,11 @@ body{
   &:not(.path-frontpage){
     .banner-content{background-position: right top;
       @media (min-width:1200px) {
-          background-position: right center;
+        background-position: right center;
+        background-color: rgba(53, 58, 63, 1);
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: 1944px 340px;
       }
     }
   }

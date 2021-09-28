@@ -82,7 +82,7 @@
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-  <div class="banner-content" style="background-image: url({{ node.field_content_image.entity.uri.value | image_style('ultra_wide') }})">
+  <div class="banner-content" style="background-image: url({{ file_url(node.field_content_image.entity.uri.value) }})">
     <div class="container{% if node.field_content_text_pos.value is not empty %}{{ node.field_content_text_pos.value ? ' text-pos-right' : ' text-pos-left' }}{% endif %}">
       <div class="banner-text">
         <h1>{{ node.label }}</h1>
