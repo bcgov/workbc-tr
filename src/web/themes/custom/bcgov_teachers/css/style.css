@@ -11037,7 +11037,7 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
 }
 @media (max-width: 768px) {
   .banner-content .banner-text {
-    max-width: 567px;
+    max-width: 605px;
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
