@@ -95,9 +95,9 @@
         
         
         if($('.lesson_wrapper__intro__title').length > 0) {
-            var resource_id = $('.lesson_wrapper__intro__title').text().trim();
+            var resource_id = $('.lesson_wrapper__intro__title').text().replace('  ', ' ').trim();
         } else if('resource_wrapper__intro__title') {
-            var resource_id = $('.resource_wrapper__intro__title').text().trim();
+            var resource_id = $('.resource_wrapper__intro__title').text().replace('  ', ' ').trim();
         } else {
             var resource_id = null;
         }
