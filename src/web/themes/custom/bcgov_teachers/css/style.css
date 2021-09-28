@@ -11145,11 +11145,10 @@ body:not(.path-frontpage) .banner-content {
 }
 @media (min-width: 1200px) {
   body:not(.path-frontpage) .banner-content {
-    background-position: right center;
     background-color: #353a3f;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-size: 1944px 340px;
+    background-size: cover;
   }
 }
 
