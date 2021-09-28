@@ -154,7 +154,8 @@
                if($(this).parent().hasClass('related_news_wrapper_title')) {
                     count++;
                     click_type = 'related_resource';
-                    link_text = $(this).text();
+                    var asset_type = $(this).parents('.related_news_wrapper--item').find('.related_news_wrapper_assest_type').text();
+                    link_text = asset_type+': '+$(this).text();
                     snowplow_tracker(category, click_type, link_text, count)
                }
                return true;
