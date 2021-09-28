@@ -167,11 +167,11 @@ body{
   &:not(.path-frontpage){
     .banner-content{background-position: right top;
       @media (min-width:1200px) {
-        background-position: right center;
+        //background-position: right center;
         background-color: rgba(53, 58, 63, 1);
         background-repeat: no-repeat;
         background-attachment: scroll;
-        background-size: 1944px 340px;
+        background-size: cover;
       }
     }
   }
