@@ -3,3 +3,12 @@ entity_type_groups:
     image:
       basic: basic
       advanced: advanced
+  node:
+    content:
+      basic: basic
+      open_graph: open_graph
+      twitter_cards: twitter_cards
+    resource:
+      basic: basic
+      open_graph: open_graph
+      twitter_cards: twitter_cards
