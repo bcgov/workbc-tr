@@ -10,11 +10,13 @@ tags:
   canonical_url: '[site:url]'
   keywords: 'workbc, teacher resources, lesson plans, students, teachers'
   shortlink: '[site:url]'
+  og_description: "WorkBC’s Career Education Resources offers lesson plans, learning activities, tools and resources to support career education in classrooms and online learning environments. \r\n\r\nBy aligning with the Ministry of Education’s career education curriculum and with feedback gathered from teachers and career education counsellors across British Columbia, this collection of resources complements the valuable work that educators already do."
   og_image: '[node:field_mobile_image:resource_card_thumbnail:url]'
   og_image_url: '[node:field_mobile_image:resource_card_thumbnail:url]'
   og_image_width: '200'
   og_title: '[current-page:title]'
   og_url: '[current-page:url]'
+  twitter_cards_description: 'WorkBC’s Career Education Resources offers lesson plans, learning activities, tools and resources to support career education in classrooms and online learning environments.   By aligning with the Ministry of Education’s career education curriculum and with feedback gathered from teachers and career education counsellors across British Columbia, this collection of resources complements the valuable work that educators already do.'
   twitter_cards_image: '[node:field_mobile_image:resource_card_thumbnail:url]'
   twitter_cards_image_height: '200'
   twitter_cards_image_width: '200'
