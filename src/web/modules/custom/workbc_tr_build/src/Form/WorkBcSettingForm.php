@@ -8,6 +8,7 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\media\Entity\Media;
 
 /**
  * Defines a form that configures forms module settings.
@@ -148,7 +149,13 @@ class WorkBcSettingForm extends ConfigFormBase {
     $values = $form_state->getValues();
     try {
       if (!empty($values['banner_image'])) {
-        $filename = $this->fileSystem->copy($values['banner_image']->getFileUri(), 'public://');
+		
+
+        $filename = $values['banner_image']->getFilename();
+        // drupal file saving mechanism
+        $file = file_save_data(file_get_contents($values['banner_image']->getFileUri()), 'public://'.$filename, FileSystemInterface::EXISTS_REPLACE);
+
+        //$filename = $this->fileSystem->copy($values['banner_image']->getFileUri(), 'public://');
         // Retrieve the configuration.
         $this->configFactory->getEditable(static::SETTINGS)
           // Set the submitted configuration setting.
@@ -156,6 +163,17 @@ class WorkBcSettingForm extends ConfigFormBase {
           // You can set multiple configurations at once by making
           // multiple calls to set().
           ->save();
+
+        // create media entry
+        $media = Media::create([
+          'bundle'           => 'document',
+          'uid'              => '1',
+          'field_media_document' => [
+            'target_id' => $file->id(),
+          ],
+        ]);
+	$media->setName($filename)->setPublished(TRUE)->save();
+
       }
       if (!empty($values['banner_mobile_image'])) {
         $filename_mobile = $this->fileSystem->copy($values['banner_mobile_image']->getFileUri(), 'public://');
