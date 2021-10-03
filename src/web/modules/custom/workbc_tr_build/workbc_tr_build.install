@@ -34,7 +34,7 @@ function workbc_tr_build_update_8507() {
  *
  * Clear key_value for update_fetch_task.
  */
-function workbc_tr_build_update_8508() {
+function workbc_tr_build_update_8509() {
   $database = \Drupal::database();
   $database
     ->delete('key_value')
