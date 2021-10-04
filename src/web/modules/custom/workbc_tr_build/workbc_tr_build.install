@@ -28,6 +28,7 @@ function workbc_tr_build_update_8507() {
     $node->save();
   }
 }
+
 /**
  * Implements hook_install().
  *

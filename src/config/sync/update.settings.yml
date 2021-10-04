@@ -3,7 +3,5 @@ check:
   interval_days: 1
 notification:
   emails:
-    - jack.tang@gov.bc.ca
-    - dan.hofman@gov.bc.ca
-    - sonal.bendle@cgi.com
-  threshold: security
+    - WDST.Techs@gov.bc.ca
+  threshold: all
