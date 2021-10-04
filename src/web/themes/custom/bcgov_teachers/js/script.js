@@ -76,23 +76,23 @@
       }
 
       $(window).resize(function () {
-        if($('.left-nav:not(.mobiletab)').length){
-          setTimeout(function () {
-            $('.left-nav:not(.mobiletab)').removeClass('sticky');
-          }, 1000);
+        // if($('.left-nav:not(.mobiletab)').length){
+        //   setTimeout(function () {
+        //     $('.left-nav:not(.mobiletab)').removeClass('sticky');
+        //   }, 1000);
 
-          if ($(window).width() >= 768) {
-            var lefttop = $('.left-nav:not(.mobiletab)').offset().top;
-            var window_top = $(window).scrollTop() + 200;
+        //   if (window.matchMedia("(min-width: 768px)").matches) {
+        //     var lefttop = $('.left-nav:not(.mobiletab)').offset().top;
+        //     var window_top = $(window).scrollTop() + 200;
 
-            if ((window_top > lefttop)) {
-              $('.left-nav:not(.mobiletab)').addClass('sticky');
-            }
-            else {
-              $('.left-nav:not(.mobiletab)').removeClass('sticky');
-            }
-          }
-        }
+        //     if ((window_top > lefttop)) {
+        //       $('.left-nav:not(.mobiletab)').addClass('sticky');
+        //     }
+        //     else {
+        //       $('.left-nav:not(.mobiletab)').removeClass('sticky');
+        //     }
+        //   }
+        // }
       });
 
       if ($('.left-nav:not(.mobiletab)').length > 0) {
@@ -148,6 +148,7 @@
                 $('.left-nav:not(.mobiletab)').addClass('sticky');
               }
               else {
+                console.log('top');
                 $('.left-nav:not(.mobiletab)').removeClass('sticky');
               }
             }
@@ -172,7 +173,7 @@
                 var footer_top = $("#block-views-block-related-resource-and-lesson-plan-block-1").offset().top;
                 var nav_height = $(".main_section .row .left-nav > .leftnavbar").height();
                 
-                if (scrollTop + nav_height + 250 > footer_top) {
+                if (scrollTop + nav_height + 500 > footer_top) {
                   $('.left-nav:not(.mobiletab)').addClass('align-end');
                   $('.left-nav:not(.mobiletab)').removeClass('sticky');
                 }
