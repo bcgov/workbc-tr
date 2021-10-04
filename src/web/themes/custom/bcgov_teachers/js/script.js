@@ -148,7 +148,6 @@
                 $('.left-nav:not(.mobiletab)').addClass('sticky');
               }
               else {
-                console.log('top');
                 $('.left-nav:not(.mobiletab)').removeClass('sticky');
               }
             }
