@@ -2,6 +2,5 @@ check:
   disabled_extensions: false
   interval_days: 1
 notification:
-  emails:
-    - WDST.Techs@gov.bc.ca
+  emails: {  }
   threshold: all
