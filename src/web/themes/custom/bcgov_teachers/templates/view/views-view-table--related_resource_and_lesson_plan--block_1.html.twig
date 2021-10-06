@@ -18,7 +18,7 @@
  * @ingroup themeable
  */
 #}
-​
+
 <section class="related_news_wrapper related_news_slider">
   <div class="container">
     <div class="row">
@@ -27,19 +27,19 @@
         <div class="related_news_wrapper--item h-100">
           <div class="related_news_wrapper--top">
             {% if row.columns.field_term_resource_asset_type.content.0.field_output['#markup'] == 'Lesson Plan' %}
-              <div class="related_news_wrapper_assest_type lessonplan">{{ row.columns.field_term_resource_asset_type }}</div>
+              <div class="related_news_wrapper_assest_type lessonplan">{{ row.columns.field_term_resource_asset_type.content.0.field_output }}</div>
               {% else %}
-                <div class="related_news_wrapper_assest_type resourceplan">{{ row.columns.field_term_resource_asset_type }}</div>
+                <div class="related_news_wrapper_assest_type resourceplan">{{ row.columns.field_term_resource_asset_type.content.0.field_output }}</div>
             {% endif %}
-            <div class="related_news_wrapper_img">{{ row.columns.field_resource_card_image }}</div>
+            <div class="related_news_wrapper_img">{{ row.columns.field_resource_card_image.content.0.field_output }}</div>
             <div class="related_news_wrapper--inner">
-              <div class="related_news_wrapper_title">{{ row.columns.title }}</div>
-              <div class="related_news_wrapper_desc">{{ row.columns.field_resource_card_summary }}</div>
-              <div class="related_news_wrapper_grade">{{ row.columns.field_term_resource_grade }}</div>
+              <div class="related_news_wrapper_title">{{ row.columns.title.content.0.field_output }}</div>
+              <div class="related_news_wrapper_desc">{{ row.columns.field_resource_card_summary.content.0.field_output }}</div>
+              <div class="related_news_wrapper_grade">{{ row.columns.field_term_resource_grade.content.0.field_output }}</div>
             </div>
           </div>
           {% if row.columns.field_term_resource_stage.content is not empty %}
-            <div class="related_news_wrapper_cls"><span>{{ "Career Lifecycle Stage: "|t }}</span>{{ row.columns.field_term_resource_stage }}</div>
+            <div class="related_news_wrapper_cls"><span>{{ "Career Lifecycle Stage: "|t }}</span>{{ row.columns.field_term_resource_stage.content.0.field_output }}</div>
           {% endif %}
 
         </div>
