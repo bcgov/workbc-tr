@@ -106,3 +106,15 @@ function bcgov_teachers_theme_suggestions_taxonomy_term_alter(array &$suggestion
 function bcgov_teachers_preprocess(&$variables) {
   $variables['base_path'] = base_path();
 }
+
+function bcgov_teachers_page_attachments_alter(array &$page) {
+  // Replace http with https in meta tags
+  foreach ($page['#attached']['html_head'] as $key => $value){
+    if (isset($value[0]['#attributes']['href'])) {
+      $page['#attached']['html_head'][$key][0]['#attributes']['href'] = str_replace('http:','https:',$value[0]['#attributes']['href']);
+    }
+    if (isset($value[0]['#attributes']['content'])) {
+      $page['#attached']['html_head'][$key][0]['#attributes']['content'] = str_replace('http:','https:',$value[0]['#attributes']['content']);
+    }
+  }
+}
