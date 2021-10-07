@@ -54,7 +54,13 @@
       $('.sharethis-wrapper .st_email_large').renameTag('a');
       $('.sharethis-wrapper .st_email_large').attr("href", "mailto:?subject=WorkBC’s "+site_title +" - Share a Lesson Plan or Resource" + "&body=" + encodeURIComponent(email_body));
 
+      var twitter_url = $('.sharethis-wrapper .st_twitter_large').attr('st_url');
+      twitter_url = twitter_url.replace('http://','https://');
+      $('.sharethis-wrapper .st_twitter_large').attr('st_url',twitter_url);
 
+      var linkedin_url = $('.sharethis-wrapper .st_linkedin_large').attr('st_url');
+      linkedin_url = linkedin_url.replace('http://','https://');
+      $('.sharethis-wrapper .st_linkedin_large').attr('st_url',linkedin_url);
 
     //subscription  button js
       var actionbtn = $('#simplenews-subscriptions-block-simple-new-teachers .form-actions').detach();
