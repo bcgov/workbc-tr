@@ -51,6 +51,15 @@ set footer_classes = ' '
 %}
 
 <header>
+<div id="ie-alert" style="display:none;">
+  <div style="background-color: #6c757d;font-color: #4b4f56;text-align: center;">
+    <h1>Hmm… looks like your browser isn’t supported</h1>
+    <span style="font-weight:bold">You seem to be using an unsupported browser.</span><br />
+    To get the best experience using our site, download the latest version of any of the following browsers: <br />
+    Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari
+  </div>
+</div>
+
   {{ page.header }}
    <script type="text/javascript">
      ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
@@ -74,7 +83,17 @@ set footer_classes = ' '
       window.snowplow('trackPageView');
 
       // Snowplow stop plowing
+
+      // Internet Explorer 6-11
+      var isIE = /*@cc_on!@*/false || !!document.documentMode;
+      var x = document.getElementById("ie-alert");
+      if (isIE) {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
     </script>
+
   {% if page.nav_branding or page.nav_main or page.nav_additional %}
     <nav class="{{ nav_classes }}">
       <div class="container row mx-auto">
