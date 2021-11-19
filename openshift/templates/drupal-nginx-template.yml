@@ -153,4 +153,4 @@ parameters:
   - name: IMAGE_NAME1
     value: wdst-ocp-drupal-tr:latest
   - name: IMAGE_NAME2
-    value: wdst-ocp-nginx:1.2
+    value: wdst-ocp-nginx:1.3
