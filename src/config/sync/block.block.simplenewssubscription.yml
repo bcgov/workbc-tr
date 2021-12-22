@@ -17,7 +17,9 @@ settings:
   label: 'Simplenews subscription'
   provider: simplenews
   label_display: '0'
-  newsletters:
+  show_manage: 0
+  newsletters: {  }
+  default_newsletters:
     resource_newsletter: resource_newsletter
   message: ''
   unique_id: simple-new-teachers
