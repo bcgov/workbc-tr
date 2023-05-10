@@ -17,8 +17,8 @@ plugin: 'block_content:204ba063-f181-4284-bb0f-6c715e371ad3'
 settings:
   id: 'block_content:204ba063-f181-4284-bb0f-6c715e371ad3'
   label: 'Increase Text Size'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

@@ -17,8 +17,8 @@ plugin: 'block_content:6276e560-24e1-481d-9b15-81b574459b8c'
 settings:
   id: 'block_content:6276e560-24e1-481d-9b15-81b574459b8c'
   label: 'Footer BC Logo'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

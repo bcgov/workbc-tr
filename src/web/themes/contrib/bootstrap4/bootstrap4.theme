@@ -102,8 +102,8 @@ function bootstrap4_form_system_theme_settings_alter(&$form, FormStateInterface 
   ];
 
   // Populating extra options for top container.
-  foreach (explode("\n", theme_get_setting('b4_top_container_config')) as $line) {
-    $values = explode("|", trim($line));
+  foreach (explode("\n", theme_get_setting('b4_top_container_config') ?? '') as $line) {
+    $values = explode("|", trim($line) ?? '');
     if (is_array($values) && (count($values) == 2)) {
       $options_top_container += [trim($values[0]) => trim($values[1])];
     }
@@ -311,12 +311,15 @@ function bootstrap4_form_system_theme_settings_subtheme_submit($form, FormStateI
       $fs->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
 
       $files = $fs->scanDirectory(
-        drupal_get_path('theme', 'bootstrap4') . DIRECTORY_SEPARATOR . $subforder . DIRECTORY_SEPARATOR, '/.*/');
+        \Drupal::service('extension.list.theme')
+          ->getPath('bootstrap4') . DIRECTORY_SEPARATOR . $subforder . DIRECTORY_SEPARATOR, '/.*css/', [
+        'recurse' => FALSE,
+      ]);
       foreach ($files as $file) {
-        //dump($file);
         $fileName = $file->filename;
         $fs->copy(
-          drupal_get_path('theme', 'bootstrap4') . DIRECTORY_SEPARATOR . $subforder . DIRECTORY_SEPARATOR . $fileName,
+          \Drupal::service('extension.list.theme')
+            ->getPath('bootstrap4') . DIRECTORY_SEPARATOR . $subforder . DIRECTORY_SEPARATOR . $fileName,
           $themePath . DIRECTORY_SEPARATOR . $subforder . DIRECTORY_SEPARATOR . $fileName, TRUE);
       }
     }
@@ -328,7 +331,7 @@ function bootstrap4_form_system_theme_settings_subtheme_submit($form, FormStateI
       'screenshot.png',
     ];
     foreach ($files as $fileName) {
-      $fs->copy(drupal_get_path('theme', 'bootstrap4') . DIRECTORY_SEPARATOR . $fileName,
+      $fs->copy(\Drupal::service('extension.list.theme')->getPath('bootstrap4') . DIRECTORY_SEPARATOR . $fileName,
         $themePath . DIRECTORY_SEPARATOR . $fileName, TRUE);
     }
 
@@ -368,7 +371,7 @@ function bootstrap4_form_system_theme_settings_subtheme_submit($form, FormStateI
     ];
     foreach ($files as $fileName => $lines) {
       // Get file content.
-      $content = str_replace('bootstrap4', $themeMName, file_get_contents(drupal_get_path('theme', 'bootstrap4') . DIRECTORY_SEPARATOR . $fileName));
+      $content = str_replace('bootstrap4', $themeMName, file_get_contents(\Drupal::service('extension.list.theme')->getPath('bootstrap4') . DIRECTORY_SEPARATOR . $fileName));
       if (is_array($lines)) {
         $content = implode(PHP_EOL, $lines);
       }
@@ -377,7 +380,7 @@ function bootstrap4_form_system_theme_settings_subtheme_submit($form, FormStateI
     }
 
     // Info yml file generation.
-    $infoYml = Yaml::decode(file_get_contents(drupal_get_path('theme', 'bootstrap4') . DIRECTORY_SEPARATOR . 'bootstrap4.info.yml'));
+    $infoYml = Yaml::decode(file_get_contents(\Drupal::service('extension.list.theme')->getPath('bootstrap4') . DIRECTORY_SEPARATOR . 'bootstrap4.info.yml'));
     $infoYml['name'] = $themeName;
     $infoYml['description'] = $themeName . ' subtheme based on Bootstrap 4 theme.';
     $infoYml['base theme'] = 'bootstrap4';
@@ -397,7 +400,7 @@ function bootstrap4_form_system_theme_settings_subtheme_submit($form, FormStateI
 
     // SCSS files generation.
     $scssPath = $themePath . DIRECTORY_SEPARATOR . 'scss';
-    $b5ScssPath = drupal_get_path('theme', 'bootstrap4') . DIRECTORY_SEPARATOR . 'scss' . DIRECTORY_SEPARATOR;
+    $b5ScssPath = \Drupal::service('extension.list.theme')->getPath('bootstrap4') . DIRECTORY_SEPARATOR . 'scss' . DIRECTORY_SEPARATOR;
     $fs->prepareDirectory($scssPath, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
     $files = [
       'style.scss' => [
@@ -411,7 +414,7 @@ function bootstrap4_form_system_theme_settings_subtheme_submit($form, FormStateI
         "// Include bootstrap.",
         "@import '" .
         str_repeat('../', count(explode(DIRECTORY_SEPARATOR, $subthemePathValue)) + 2) .
-        drupal_get_path('theme', 'bootstrap4') . "/scss/style';",
+        \Drupal::service('extension.list.theme')->getPath('bootstrap4') . "/scss/style';",
         '',
       ],
       '_variables_theme.scss' => $b5ScssPath . '_variables_theme.scss',

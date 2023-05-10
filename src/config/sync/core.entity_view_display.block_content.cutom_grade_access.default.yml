@@ -16,14 +16,14 @@ bundle: cutom_grade_access
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 1
     region: content
   field_grade_access_resource_link:
-    weight: 2
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -32,15 +32,15 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 2
     region: content
   field_grade_access_title:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden:
   entity_print_view_epub: true

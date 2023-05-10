@@ -1,8 +1,8 @@
+_core:
+  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 ignored_config_entities:
   - 'search_api.server.*'
   - smtp.settings
   - update.settings
   - openid_connect.settings.keycloak
   - workbc_tr_build.settings
-_core:
-  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

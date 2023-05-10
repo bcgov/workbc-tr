@@ -25,9 +25,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       paragraph_simple: paragraph_simple
+    negate: 0
     target_bundles_drag_drop:
       banner:
         weight: 4
@@ -84,8 +84,8 @@ settings:
         weight: 37
         enabled: false
       paragraph_simple:
-        enabled: true
         weight: 6
+        enabled: true
       resource_description:
         weight: 40
         enabled: false

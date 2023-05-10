@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: rpfRQVoEn2ZWd_lw-iULKPiuina5CqcmzXWlz1OjTwM
 name: 'Career Education Resources'
 mail: no-reply@gov.bc.ca
 simple_address: false
@@ -10,5 +12,3 @@ preserve_class: false
 advanced:
   incoming: false
   key: xXZNWStj5I5NNwjNuyFX1ZTjhEGHQ3prkc4UqY1lBKo
-_core:
-  default_config_hash: rpfRQVoEn2ZWd_lw-iULKPiuina5CqcmzXWlz1OjTwM

@@ -31,203 +31,23 @@ base_table: search_api_index_career_education_resources_index
 base_field: search_api_id
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Default
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: none
-        options: {  }
-      cache:
-        type: none
-        options: {  }
-      query:
-        type: views_query
-        options:
-          bypass_access: false
-          skip_access: false
-          preserve_facet_query_args: false
-      exposed_form:
-        type: bef
-        options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-          text_input_required: 'Select any filter and click on Apply to see results'
-          text_input_required_format: basic_html
-          bef:
-            general:
-              autosubmit: true
-              autosubmit_exclude_textfield: true
-              autosubmit_textfield_delay: 500
-              autosubmit_hide: true
-              input_required: false
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              secondary_open: false
-            filter:
-              search_api_fulltext:
-                plugin_id: default
-                advanced:
-                  placeholder_text: 'Search lesson plans & resources'
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
-              field_term_resource_stage:
-                plugin_id: bef
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: "- Any -|Career Lifecycle Stage\r\nSelect All|All Career Lifecycle Stages"
-                  collapsible: false
-                  is_secondary: false
-                select_all_none: false
-                select_all_none_nested: false
-                display_inline: false
-              field_term_resource_grade:
-                plugin_id: bef
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: "- Any -|Focus Area Levels\r\nSelect All|All Grades"
-                  collapsible: false
-                  is_secondary: false
-                select_all_none: false
-                select_all_none_nested: false
-                display_inline: false
-              field_term_resource_competency:
-                plugin_id: bef
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: "- Any -|Curricular Competencies\r\nSelect All|All Curricular Competencies"
-                  collapsible: false
-                  is_secondary: false
-                select_all_none: false
-                select_all_none_nested: false
-                display_inline: false
-              field_term_resource_audience:
-                plugin_id: bef
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: "- Any -|Key Audiences\r\nSelect All|All Audiences"
-                  collapsible: false
-                  is_secondary: false
-                select_all_none: false
-                select_all_none_nested: false
-                display_inline: false
-              field_term_resource_asset_type:
-                plugin_id: bef
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: "- Any -|All Lesson Plans & Resources\r\nLesson Plan|Lesson Plans Only\r\nResource|Resources Only"
-                  collapsible: false
-                  is_secondary: false
-                select_all_none: false
-                select_all_none_nested: false
-                display_inline: false
-      pager:
-        type: infinite_scroll
-        options:
-          items_per_page: 12
-          offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          views_infinite_scroll:
-            button_text: 'Load More'
-            automatically_load_content: true
-            initially_load_all_pages: false
-      style:
-        type: table
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          override: true
-          sticky: false
-          caption: ''
-          summary: ''
-          description: ''
-          columns:
-            search_api_solr_score_debugging: search_api_solr_score_debugging
-            field_term_resource_asset_type: field_term_resource_asset_type
-            field_term_resource_stage: field_term_resource_stage
-            field_term_resource_competency: field_term_resource_competency
-            field_term_resource_grade: field_term_resource_grade
-            title: title
-            status: status
-          info:
-            search_api_solr_score_debugging:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_term_resource_asset_type:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_term_resource_stage:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_term_resource_competency:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_term_resource_grade:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            title:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            status:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-          default: '-1'
-          empty_table: false
-      row:
-        type: fields
+      title: 'Lesson Plans & Resources'
       fields:
         search_api_solr_score_debugging:
+          id: search_api_solr_score_debugging
           table: search_api_index_career_education_resources_index
           field: search_api_solr_score_debugging
-          id: search_api_solr_score_debugging
-          entity_type: null
-          entity_field: null
-          plugin_id: search_api
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: null
+          entity_field: null
+          plugin_id: search_api
           label: ''
           exclude: false
           alter:
@@ -280,6 +100,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -366,8 +188,6 @@ display:
                 display_method: label
               tags:
                 display_method: label
-          entity_type: node
-          plugin_id: search_api_field
         field_term_resource_stage:
           id: field_term_resource_stage
           table: search_api_datasource_career_education_resources_index_entity_node
@@ -375,6 +195,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -461,8 +283,6 @@ display:
                 display_method: label
               tags:
                 display_method: label
-          entity_type: node
-          plugin_id: search_api_field
         field_term_resource_competency:
           id: field_term_resource_competency
           table: search_api_datasource_career_education_resources_index_entity_node
@@ -470,6 +290,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -556,8 +378,6 @@ display:
                 display_method: label
               tags:
                 display_method: label
-          entity_type: node
-          plugin_id: search_api_field
         field_term_resource_grade:
           id: field_term_resource_grade
           table: search_api_datasource_career_education_resources_index_entity_node
@@ -565,6 +385,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -651,8 +473,6 @@ display:
                 display_method: label
               tags:
                 display_method: label
-          entity_type: node
-          plugin_id: search_api_field
         title:
           id: title
           table: search_api_datasource_career_education_resources_index_entity_node
@@ -660,6 +480,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -722,8 +544,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
         status:
           id: status
           table: search_api_datasource_career_education_resources_index_entity_node
@@ -731,6 +551,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -776,8 +598,8 @@ display:
           type: boolean
           settings:
             format: default
-            format_custom_true: ''
             format_custom_false: ''
+            format_custom_true: ''
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -799,8 +621,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
         field_resource_card_image:
           id: field_resource_card_image
           table: search_api_datasource_career_education_resources_index_entity_node
@@ -808,6 +628,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -852,8 +674,8 @@ display:
           click_sort_column: target_id
           type: media_thumbnail
           settings:
-            image_style: resource_card_thumbnail
             image_link: ''
+            image_style: resource_card_thumbnail
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -887,8 +709,6 @@ display:
               video:
                 display_method: label
                 view_mode: default
-          entity_type: node
-          plugin_id: search_api_field
         field_resource_card_summary:
           id: field_resource_card_summary
           table: search_api_datasource_career_education_resources_index_entity_node
@@ -896,6 +716,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
           label: Description
           exclude: false
           alter:
@@ -957,8 +779,149 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
+      pager:
+        type: infinite_scroll
+        options:
+          offset: 0
+          items_per_page: 12
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          views_infinite_scroll:
+            button_text: 'Load More'
+            automatically_load_content: true
+            initially_load_all_pages: false
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: true
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            filter:
+              search_api_fulltext:
+                plugin_id: default
+                advanced:
+                  placeholder_text: 'Search lesson plans & resources'
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+              field_term_resource_stage:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: "- Any -|Career Lifecycle Stage\r\nSelect All|All Career Lifecycle Stages"
+                  collapsible: false
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
+              field_term_resource_grade:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: "- Any -|Focus Area Levels\r\nSelect All|All Grades"
+                  collapsible: false
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
+              field_term_resource_competency:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: "- Any -|Curricular Competencies\r\nSelect All|All Curricular Competencies"
+                  collapsible: false
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
+              field_term_resource_audience:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: "- Any -|Key Audiences\r\nSelect All|All Audiences"
+                  collapsible: false
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
+              field_term_resource_asset_type:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: "- Any -|All Lesson Plans & Resources\r\nLesson Plan|Lesson Plans Only\r\nResource|Resources Only"
+                  collapsible: false
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: none
+        options: {  }
+      empty: {  }
+      sorts:
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_career_education_resources_index
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: Relevance
+            field_identifier: search_api_relevance
+          exposed: false
+        title:
+          id: title
+          table: search_api_index_career_education_resources_index
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: title
+          exposed: false
+      arguments: {  }
       filters:
         search_api_fulltext:
           id: search_api_fulltext
@@ -967,6 +930,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           operator: or
           value: ''
           group: 1
@@ -987,8 +951,8 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            placeholder: ''
             expose_fields: false
+            placeholder: ''
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -1005,7 +969,6 @@ display:
           parse_mode: terms
           min_length: null
           fields: {  }
-          plugin_id: search_api_fulltext
         status:
           id: status
           table: search_api_index_career_education_resources_index
@@ -1013,6 +976,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_boolean
           operator: '='
           value: '1'
           group: 1
@@ -1043,7 +1007,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_boolean
         field_term_resource_stage:
           id: field_term_resource_stage
           table: search_api_index_career_education_resources_index
@@ -1051,6 +1014,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1085,12 +1049,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: career_life_cycle_stage
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_term_resource_grade:
           id: field_term_resource_grade
           table: search_api_index_career_education_resources_index
@@ -1098,6 +1061,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1132,12 +1096,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: grades
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_term_resource_competency:
           id: field_term_resource_competency
           table: search_api_index_career_education_resources_index
@@ -1145,6 +1108,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1179,12 +1143,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: curricular_competencies
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_term_resource_audience:
           id: field_term_resource_audience
           table: search_api_index_career_education_resources_index
@@ -1192,6 +1155,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1226,12 +1190,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: key_audiences
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_term_resource_asset_type:
           id: field_term_resource_asset_type
           table: search_api_index_career_education_resources_index
@@ -1239,6 +1202,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1273,38 +1237,80 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: asset_type
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
-      sorts:
-        search_api_relevance:
-          id: search_api_relevance
-          table: search_api_index_career_education_resources_index
-          field: search_api_relevance
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: Relevance
-          plugin_id: search_api
-        title:
-          id: title
-          table: search_api_index_career_education_resources_index
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: search_api
-      title: 'Lesson Plans & Resources'
+      style:
+        type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            search_api_solr_score_debugging: search_api_solr_score_debugging
+            field_term_resource_asset_type: field_term_resource_asset_type
+            field_term_resource_stage: field_term_resource_stage
+            field_term_resource_competency: field_term_resource_competency
+            field_term_resource_grade: field_term_resource_grade
+            title: title
+            status: status
+          default: '-1'
+          info:
+            search_api_solr_score_debugging:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_term_resource_asset_type:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_term_resource_stage:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_term_resource_competency:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_term_resource_grade:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            title:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            status:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
+      row:
+        type: fields
+      query:
+        type: search_api_query
+        options:
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
+      relationships: {  }
+      use_ajax: true
       header:
         result:
           id: result
@@ -1313,15 +1319,11 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: result
           empty: true
           content: '@total'
-          plugin_id: result
       footer: {  }
-      empty: {  }
-      relationships: {  }
-      arguments: {  }
       display_extenders: {  }
-      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -1340,13 +1342,12 @@ display:
         - 'config:field.storage.node.field_term_resource_stage'
         - 'config:search_api.index.career_education_resources_index'
   block_1:
-    display_plugin: block
     id: block_1
     display_title: Block
+    display_plugin: block
     position: 1
     display_options:
-      display_extenders: {  }
-      exposed_block: true
+      enabled: false
       filters:
         search_api_fulltext:
           id: search_api_fulltext
@@ -1355,6 +1356,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           operator: or
           value: ''
           group: 1
@@ -1375,8 +1377,8 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            placeholder: ''
             expose_fields: false
+            placeholder: ''
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -1393,7 +1395,6 @@ display:
           parse_mode: terms
           min_length: null
           fields: {  }
-          plugin_id: search_api_fulltext
         status:
           id: status
           table: search_api_index_career_education_resources_index
@@ -1401,6 +1402,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_boolean
           operator: '='
           value: '1'
           group: 1
@@ -1431,7 +1433,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_boolean
         field_term_resource_stage:
           id: field_term_resource_stage
           table: search_api_index_career_education_resources_index
@@ -1439,6 +1440,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1473,12 +1475,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: career_life_cycle_stage
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_term_resource_grade:
           id: field_term_resource_grade
           table: search_api_index_career_education_resources_index
@@ -1486,6 +1487,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1520,12 +1522,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: grades
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_term_resource_competency:
           id: field_term_resource_competency
           table: search_api_index_career_education_resources_index
@@ -1533,6 +1534,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1567,12 +1569,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: curricular_competencies
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_term_resource_audience:
           id: field_term_resource_audience
           table: search_api_index_career_education_resources_index
@@ -1580,6 +1581,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1614,12 +1616,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: key_audiences
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_term_resource_asset_type:
           id: field_term_resource_asset_type
           table: search_api_index_career_education_resources_index
@@ -1627,6 +1628,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1661,20 +1663,20 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: asset_type
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
-      defaults:
-        filters: false
-        filter_groups: false
       filter_groups:
         operator: AND
         groups:
           1: AND
-      enabled: false
+      defaults:
+        filters: false
+        filter_groups: false
+      exposed_block: true
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -1693,14 +1695,11 @@ display:
         - 'config:field.storage.node.field_term_resource_stage'
         - 'config:search_api.index.career_education_resources_index'
   page_1:
-    display_plugin: page
     id: page_1
     display_title: Page
+    display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
-      path: search
-      exposed_block: true
       enabled: true
       filters:
         search_api_fulltext:
@@ -1710,6 +1709,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           operator: or
           value: ''
           group: 1
@@ -1730,8 +1730,8 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            placeholder: ''
             expose_fields: false
+            placeholder: ''
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -1748,7 +1748,6 @@ display:
           parse_mode: terms
           min_length: null
           fields: {  }
-          plugin_id: search_api_fulltext
         status:
           id: status
           table: search_api_index_career_education_resources_index
@@ -1756,6 +1755,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_boolean
           operator: '='
           value: '1'
           group: 1
@@ -1786,7 +1786,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_boolean
         field_term_resource_stage:
           id: field_term_resource_stage
           table: search_api_index_career_education_resources_index
@@ -1794,6 +1793,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1828,12 +1828,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: career_life_cycle_stage
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_term_resource_grade:
           id: field_term_resource_grade
           table: search_api_index_career_education_resources_index
@@ -1841,6 +1840,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1875,12 +1875,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: grades
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_term_resource_competency:
           id: field_term_resource_competency
           table: search_api_index_career_education_resources_index
@@ -1888,6 +1887,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1922,12 +1922,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: curricular_competencies
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_term_resource_audience:
           id: field_term_resource_audience
           table: search_api_index_career_education_resources_index
@@ -1935,6 +1934,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -1969,12 +1969,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: key_audiences
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
         field_term_resource_asset_type:
           id: field_term_resource_asset_type
           table: search_api_index_career_education_resources_index
@@ -1982,6 +1981,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_term
           operator: or
           value: {  }
           group: 1
@@ -2016,19 +2016,21 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: asset_type
+          type: select
           hierarchy: false
+          limit: true
           error_message: true
-          plugin_id: search_api_term
-      defaults:
-        filters: false
-        filter_groups: false
       filter_groups:
         operator: AND
         groups:
           1: AND
+      defaults:
+        filters: false
+        filter_groups: false
+      exposed_block: true
+      display_extenders: {  }
+      path: search
     cache_metadata:
       max-age: -1
       contexts:

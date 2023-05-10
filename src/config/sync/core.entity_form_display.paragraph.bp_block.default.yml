@@ -24,20 +24,20 @@ content:
       placeholder: ''
     third_party_settings: {  }
   bp_background:
+    type: options_select
     weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   bp_block:
+    type: entity_reference_autocomplete
     weight: 3
+    region: content
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   bp_header:
     type: string_textfield
     weight: 2
@@ -47,11 +47,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   bp_width:
+    type: options_select
     weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
 hidden:
   created: true
   status: true

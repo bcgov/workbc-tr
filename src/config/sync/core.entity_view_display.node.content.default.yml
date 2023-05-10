@@ -23,67 +23,71 @@ mode: default
 content:
   field_add_grade_access:
     type: entity_reference_revisions_entity_view
-    weight: 5
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 5
     region: content
   field_content_description:
-    weight: 3
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 3
     region: content
   field_content_image:
-    weight: 1
+    type: image
     label: hidden
     settings:
-      image_style: ultra_wide
       image_link: ''
+      image_style: ultra_wide
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 1
     region: content
   field_content_items:
     type: entity_reference_revisions_entity_view
-    weight: 4
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 4
     region: content
   field_content_text_pos:
-    weight: 6
+    type: boolean
     label: hidden
     settings:
       format: custom
-      format_custom_true: left
       format_custom_false: right
+      format_custom_true: left
     third_party_settings: {  }
-    type: boolean
+    weight: 6
     region: content
   field_mobile_image:
-    weight: 2
+    type: image
     label: hidden
     settings:
-      image_style: here_mobile_640x320
       image_link: ''
+      image_style: here_mobile_640x320
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 2
     region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 0
     region: content
+  sharethis:
     settings: {  }
     third_party_settings: {  }
-  sharethis:
     weight: 7
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true

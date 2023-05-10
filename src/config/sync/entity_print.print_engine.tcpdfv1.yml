@@ -4,5 +4,7 @@ status: true
 dependencies: {  }
 id: tcpdfv1
 settings:
+  default_paper_size: A4
+  default_paper_orientation: portrait
   page_format: A4
   orientation: portrait

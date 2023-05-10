@@ -21,31 +21,33 @@ bundle: bp_image
 mode: default
 content:
   bp_background:
-    weight: 0
+    type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_key
+    weight: 0
     region: content
   bp_header:
     type: string
-    weight: 2
-    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 2
+    region: content
   bp_image_field:
-    weight: 3
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 3
     region: content
   bp_link:
-    weight: 4
+    type: link_separate
     label: hidden
     settings:
       trim_length: null
@@ -54,14 +56,14 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    type: link_separate
+    weight: 4
     region: content
   bp_width:
-    weight: 1
+    type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_key
+    weight: 1
     region: content
 hidden:
   created: true

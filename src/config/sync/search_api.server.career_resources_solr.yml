@@ -34,10 +34,10 @@ backend_config:
   connector: standard
   connector_config:
     scheme: http
-    host: workbc-tr-solr-service
+    host: solr
     port: 8983
     path: ''
-    core: career_education_resources_dev
+    core: workbc-tr_dev
     timeout: 5
     index_timeout: 5
     optimize_timeout: 10
@@ -47,6 +47,7 @@ backend_config:
     http_method: AUTO
     skip_schema_check: false
     jmx: false
+    jts: false
     solr_install_dir: ''
   disabled_field_types: {  }
   disabled_caches: {  }

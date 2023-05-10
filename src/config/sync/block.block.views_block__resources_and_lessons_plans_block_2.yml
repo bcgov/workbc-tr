@@ -18,12 +18,13 @@ plugin: 'views_block:resources_and_lessons_plans-block_2'
 settings:
   id: 'views_block:resources_and_lessons_plans-block_2'
   label: ''
-  provider: views
   label_display: visible
+  provider: views
   views_label: ''
   items_per_page: none
+  exposed: {  }
 visibility:
   request_path:
     id: request_path
-    pages: "/LessonPlans/*\r\n/Resources/*"
     negate: false
+    pages: "/LessonPlans/*\r\n/Resources/*"

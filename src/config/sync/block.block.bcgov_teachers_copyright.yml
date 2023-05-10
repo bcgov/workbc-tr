@@ -17,8 +17,8 @@ plugin: 'block_content:912db691-44e4-4df1-af4d-0045c199134a'
 settings:
   id: 'block_content:912db691-44e4-4df1-af4d-0045c199134a'
   label: Copyright
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

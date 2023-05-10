@@ -60,8 +60,8 @@ settings:
         weight: 27
         enabled: false
       bp_tab_section:
-        enabled: true
         weight: 16
+        enabled: true
       bp_tabs:
         weight: 28
         enabled: false

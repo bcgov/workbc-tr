@@ -19,15 +19,15 @@ mode: email_plain
 content:
   body:
     type: text_default
-    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    label: hidden
+    weight: 0
     region: content
   sharethis:
-    weight: 10
     settings: {  }
     third_party_settings: {  }
+    weight: 10
     region: content
 hidden:
   entity_print_view_epub: true

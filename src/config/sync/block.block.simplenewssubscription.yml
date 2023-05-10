@@ -15,12 +15,12 @@ plugin: simplenews_subscription_block
 settings:
   id: simplenews_subscription_block
   label: 'Simplenews subscription'
-  provider: simplenews
   label_display: '0'
-  show_manage: 0
+  provider: simplenews
   newsletters: {  }
   default_newsletters:
     resource_newsletter: resource_newsletter
   message: ''
+  show_manage: false
   unique_id: simple-new-teachers
 visibility: {  }

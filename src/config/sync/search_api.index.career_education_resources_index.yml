@@ -2,14 +2,6 @@ uuid: 2d10f016-4427-44d0-83a6-e69cc0b4de2a
 langcode: en
 status: true
 dependencies:
-  module:
-    - search_api_solr
-    - node
-    - search_api
-    - file
-    - media
-    - paragraphs
-    - taxonomy
   config:
     - field.storage.node.field_resource_card_image
     - field.storage.node.field_resource_card_summary
@@ -21,24 +13,29 @@ dependencies:
     - field.storage.node.field_term_resource_grade
     - field.storage.node.field_term_resource_stage
     - search_api.server.career_resources_solr
+  module:
+    - search_api_solr
+    - node
+    - search_api
+    - file
+    - media
+    - paragraphs
+    - taxonomy
 third_party_settings:
   search_api_solr:
     finalize: false
     commit_before_finalize: false
     commit_after_finalize: false
-    multilingual:
-      limit_to_content_language: false
-      include_language_independent: true
     highlighter:
       maxAnalyzedChars: 51200
       fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
       regex:
         slop: 0.5
         pattern: blank
         maxAnalyzedChars: 10000
-      usePhraseHighlighter: true
-      highlightMultiTerm: true
-      preserveMulti: false
       highlight:
         mergeContiguous: false
         requireFieldMatch: false
@@ -62,6 +59,9 @@ third_party_settings:
       index_prefix: ''
       collection: ''
       timezone: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
 id: career_education_resources_index
 name: 'Career Education Resources - Index'
 description: ''
@@ -203,16 +203,19 @@ processor_settings:
   add_url: {  }
   aggregated_field: {  }
   highlight:
-    highlight: always
-    highlight_partial: false
+    weights:
+      postprocess_query: 0
+    prefix: '<strong>'
+    suffix: '</strong>'
     excerpt: true
     excerpt_length: 256
     exclude_fields: {  }
-    prefix: '<strong>'
-    suffix: '</strong>'
-    weights:
-      postprocess_query: 0
+    highlight: always
+    highlight_partial: false
   ignore_character:
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
     all_fields: false
     fields:
       - field_resource_card_summary
@@ -232,9 +235,6 @@ processor_settings:
       - Pi
       - Po
       - Ps
-    weights:
-      preprocess_index: -10
-      preprocess_query: -10
   language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range:
@@ -244,6 +244,6 @@ tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
   cron_limit: 50
+  index_directly: true
 server: career_resources_solr

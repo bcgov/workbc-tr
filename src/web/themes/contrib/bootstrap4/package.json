@@ -6,7 +6,7 @@
   "scripts": {
     "static:start": "http-server . -a localhost -p 8088",
     "lint:sass": "sass-lint -c .sass-lint.yml --verbose",
-    "build:sass": "sass scss/style.scss css/style.css",
+    "build:sass": "sass scss/style.scss css/style.css && sass scss/ck5style.scss css/ck5style.css",
     "build:js": "cross-env BABEL_ENV=legacy node ./bin/babel/babel-es6-build.js",
     "lint:js": "eslint --no-eslintrc -c=./.eslintrc.json js/**.es6.js"
   },
@@ -76,5 +76,8 @@
       }
     }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.59.3"
+  }
 }

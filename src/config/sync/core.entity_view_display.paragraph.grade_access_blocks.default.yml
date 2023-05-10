@@ -17,30 +17,30 @@ bundle: grade_access_blocks
 mode: default
 content:
   field_grade_access_block_title:
-    weight: 0
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 0
     region: content
   field_grade_access_body:
-    weight: 1
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 1
     region: content
   field_grade_access_color:
-    weight: 3
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: grade_color
       link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 3
     region: content
   field_grade_access_link:
-    weight: 2
+    type: link
     label: hidden
     settings:
       trim_length: null
@@ -49,7 +49,7 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    type: link
+    weight: 2
     region: content
 hidden:
   entity_print_view_epub: true
