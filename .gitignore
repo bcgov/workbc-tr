@@ -73,6 +73,7 @@ src/private
 ######################
 *.log
 *.sql
+!workbc-tr.reset.sql
 
 # OS generated files #
 ######################
