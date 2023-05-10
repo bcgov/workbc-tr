@@ -76,7 +76,7 @@
         "drupal/twig_tweak": "^3.1",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/views_bootstrap": "^4.3",
-        "drupal/views_infinite_scroll": "^1.8",
+        "drupal/views_infinite_scroll": "^2.0",
         "drush/drush": "^10.5",
         "tecnickcom/tcpdf": "~6",
         "vlucas/phpdotenv": "5.1"

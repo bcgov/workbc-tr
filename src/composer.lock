@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f73e8d1574238aa0c6157a0829085428",
+    "content-hash": "851596a39e0f7dc81b9dfb46ba7d37e5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5643,26 +5643,26 @@
         },
         {
             "name": "drupal/views_infinite_scroll",
-            "version": "1.9.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_infinite_scroll.git",
-                "reference": "8.x-1.9"
+                "reference": "2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_infinite_scroll-8.x-1.9.zip",
-                "reference": "8.x-1.9",
-                "shasum": "875d58d317d48036ed1d9ef538bc8a76bc3dcb5b"
+                "url": "https://ftp.drupal.org/files/projects/views_infinite_scroll-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "c57a2c63f00c53a9ee7e741c7f37df21eb9e76de"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^9.2 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.9",
-                    "datestamp": "1632421809",
+                    "version": "2.0.1",
+                    "datestamp": "1664716655",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

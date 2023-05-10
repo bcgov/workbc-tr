@@ -1341,6 +1341,7 @@ display:
         - 'config:field.storage.node.field_term_resource_grade'
         - 'config:field.storage.node.field_term_resource_stage'
         - 'config:search_api.index.career_education_resources_index'
+        - 'search_api_list:career_education_resources_index'
   block_1:
     id: block_1
     display_title: Block
@@ -1694,6 +1695,7 @@ display:
         - 'config:field.storage.node.field_term_resource_grade'
         - 'config:field.storage.node.field_term_resource_stage'
         - 'config:search_api.index.career_education_resources_index'
+        - 'search_api_list:career_education_resources_index'
   page_1:
     id: page_1
     display_title: Page
@@ -2048,3 +2050,4 @@ display:
         - 'config:field.storage.node.field_term_resource_grade'
         - 'config:field.storage.node.field_term_resource_stage'
         - 'config:search_api.index.career_education_resources_index'
+        - 'search_api_list:career_education_resources_index'
