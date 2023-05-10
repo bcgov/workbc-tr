@@ -78,7 +78,8 @@
         "drupal/views_bootstrap": "^4.3",
         "drupal/views_infinite_scroll": "^1.8",
         "drush/drush": "^10.5",
-        "tecnickcom/tcpdf": "~6"
+        "tecnickcom/tcpdf": "~6",
+        "vlucas/phpdotenv": "5.1"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -86,7 +87,16 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true
+        }
+    },
+    "autoload": {
+        "files": ["load.environment.php"]
     },
     "extra": {
         "drupal-scaffold": {

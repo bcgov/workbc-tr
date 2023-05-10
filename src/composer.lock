@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bad6f78ea3d832040820917c635f88bd",
+    "content-hash": "f73e8d1574238aa0c6157a0829085428",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5958,6 +5958,68 @@
             "time": "2021-05-06T09:03:35+00:00"
         },
         {
+            "name": "graham-campbell/result-type",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Result-Type.git",
+                "reference": "672eff8cf1d6fe1ef09ca0f89c4b287d6a3eb831"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/672eff8cf1d6fe1ef09ca0f89c4b287d6a3eb831",
+                "reference": "672eff8cf1d6fe1ef09ca0f89c4b287d6a3eb831",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5 || ^8.0",
+                "phpoption/phpoption": "^1.9.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5.32 || ^9.6.3 || ^10.0.12"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\ResultType\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                }
+            ],
+            "description": "An Implementation Of The Result Type",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Result Type",
+                "Result-Type",
+                "result"
+            ],
+            "support": {
+                "issues": "https://github.com/GrahamCampbell/Result-Type/issues",
+                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/graham-campbell/result-type",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-02-25T20:23:15+00:00"
+        },
+        {
             "name": "grasmash/expander",
             "version": "1.0.0",
             "source": {
@@ -7403,6 +7465,81 @@
                 }
             ],
             "time": "2021-08-18T09:14:16+00:00"
+        },
+        {
+            "name": "phpoption/phpoption",
+            "version": "1.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/php-option.git",
+                "reference": "dd3a383e599f49777d8b628dadbb90cae435b87e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/dd3a383e599f49777d8b628dadbb90cae435b87e",
+                "reference": "dd3a383e599f49777d8b628dadbb90cae435b87e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5 || ^8.0"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8.2",
+                "phpunit/phpunit": "^8.5.32 || ^9.6.3 || ^10.0.12"
+            },
+            "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": true,
+                    "forward-command": true
+                },
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpOption\\": "src/PhpOption/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "https://github.com/schmittjoh"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                }
+            ],
+            "description": "Option Type for PHP",
+            "keywords": [
+                "language",
+                "option",
+                "php",
+                "type"
+            ],
+            "support": {
+                "issues": "https://github.com/schmittjoh/php-option/issues",
+                "source": "https://github.com/schmittjoh/php-option/tree/1.9.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpoption/phpoption",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-02-25T19:38:58+00:00"
         },
         {
             "name": "psr/cache",
@@ -11052,6 +11189,86 @@
             "time": "2020-11-07T09:06:16+00:00"
         },
         {
+            "name": "vlucas/phpdotenv",
+            "version": "v5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "448c76d7a9e30c341ff5bc367a923af74ae18467"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/448c76d7a9e30c341ff5bc367a923af74ae18467",
+                "reference": "448c76d7a9e30c341ff5bc367a923af74ae18467",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "graham-campbell/result-type": "^1.0.1",
+                "php": "^7.1.3 || ^8.0",
+                "phpoption/phpoption": "^1.7.4",
+                "symfony/polyfill-ctype": "^1.17",
+                "symfony/polyfill-mbstring": "^1.17",
+                "symfony/polyfill-php80": "^1.17"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4.1",
+                "ext-filter": "*",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.2 || ^9.0"
+            },
+            "suggest": {
+                "ext-filter": "Required to use the boolean validator."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dotenv\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com",
+                    "homepage": "https://gjcampbell.co.uk/"
+                },
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "https://vancelucas.com/"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "support": {
+                "issues": "https://github.com/vlucas/phpdotenv/issues",
+                "source": "https://github.com/vlucas/phpdotenv/tree/master"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/vlucas/phpdotenv",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-07-14T19:26:25+00:00"
+        },
+        {
             "name": "webflo/drupal-finder",
             "version": "1.2.2",
             "source": {
@@ -11222,5 +11439,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }

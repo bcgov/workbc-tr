@@ -10,9 +10,9 @@
       }
 
       .form-actions {
-        margin-top: $spacer / 2;
+        margin-top: divide($spacer, 2);
         @include media-breakpoint-up(md) {
-          margin-left: $spacer / 2;
+          margin-left: divide($spacer, 2);
           margin-top: 0;
         }
       }

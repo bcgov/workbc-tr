@@ -53,6 +53,7 @@ src/web/web.config
 # Ignore Drupal's file directory
 src/web/sites/*/files
 !src/web/sites/default/files/.htaccess
+src/private
 
 # Packages #
 ############
