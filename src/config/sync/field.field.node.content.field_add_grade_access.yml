@@ -25,9 +25,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       grade_access: grade_access
+    negate: 0
     target_bundles_drag_drop:
       banner:
         weight: 21
@@ -78,8 +78,8 @@ settings:
         weight: 36
         enabled: false
       grade_access:
-        enabled: true
         weight: 37
+        enabled: true
       grade_access_blocks:
         weight: 38
         enabled: false

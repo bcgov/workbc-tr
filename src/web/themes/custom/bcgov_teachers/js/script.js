@@ -174,10 +174,10 @@
                 if (scrollTop < $(anchors[0]).offset().top) {
                   $('.leftnavbar .leftnavbar--items.active ul li:first-child a').addClass('active');
                 }
-                
+
                 var footer_top = $("#block-views-block-related-resource-and-lesson-plan-block-1").offset().top;
                 var nav_height = $(".main_section .row .left-nav > .leftnavbar").height();
-                
+
                 if (scrollTop + nav_height + 500 > footer_top) {
                   $('.left-nav:not(.mobiletab)').addClass('align-end');
                   $('.left-nav:not(.mobiletab)').removeClass('sticky');
@@ -584,7 +584,7 @@ function removeparam(){
 }
 
 jQuery(document).ajaxComplete(function(event, xhr, settings) {
-  
+
   departmentFunction();
 
   jQuery( ".deptclose" ).on('click', function(event) {
@@ -650,7 +650,7 @@ function isEmail(email) {
   return regex.test(email);
 }
 
-jQuery(document).ready(function(){  
+jQuery(document).ready(function(){
   //Wait for the count div to load
   function waitForElement(elementPath, searchbox, callBack){
     window.setTimeout(function(){
@@ -703,7 +703,7 @@ function s_tracker(action_event) {
         splashAudienceArray.push(label);
     }
   });
-   
+
   var grades = stage = competency = audience = "All";
 
   var category = jQuery('input[name="field_term_resource_asset_type"]:checked').parent().find('label').text();
@@ -712,7 +712,7 @@ function s_tracker(action_event) {
   }
 
   var keyword = null;
-  
+
   if(splashGradeArray.length !== 0) {
       grades = splashGradeArray.join(',')
   }
@@ -729,10 +729,7 @@ function s_tracker(action_event) {
       audience = splashAudienceArray.join(',')
   }
 
-  //var action_event = "update";
-  
   var count_result = jQuery('.show-result-wrapper .view-header').text().trim().split(" ")[1];
-  console.log(count_result);
   var keyword = jQuery('.search_keyword input').val();
   if(keyword == "") {
       keyword = null;
@@ -790,7 +787,7 @@ function s_tracker(action_event) {
         s_tracker('update');
         count_c++;
       });
-   
+
       var totalcheckbox = jQuery(this).closest('.parent-checkbox-item').find('input').length;
       var chechedchekbox = jQuery(this).closest('.parent-checkbox-item').find('input:checked').length;
       var notcheckedbox = totalcheckbox - chechedchekbox;

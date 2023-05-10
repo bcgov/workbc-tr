@@ -19,12 +19,12 @@ bundle: paragraph_simple
 mode: trimmed
 content:
   field_para_simple_body:
-    weight: 0
+    type: text_trimmed
     label: hidden
     settings:
       trim_length: 117
     third_party_settings: {  }
-    type: text_trimmed
+    weight: 0
     region: content
 hidden:
   entity_print_view_epub: true

@@ -1,8 +1,23 @@
-a {
-  &.tabledrag-handle {
-    .handle {
-      display: table-cell;
-      padding-right: $spacer !important; // sass-lint:disable-line no-important
+.draggable {
+  .field-multiple-drag {
+    vertical-align: top !important;
+    width: 43px !important;
+    padding-left: .5rem !important;
+  }
+
+  a {
+    &.tabledrag-handle {
+      margin: 0;
+      padding-right: .5rem;
+
+      .handle {
+        display: inline-block;
+        background-position-x: 0;
+        padding: 0;
+        margin: 0;
+        height: 1.7rem;
+        width: 1rem;
+      }
     }
   }
 }

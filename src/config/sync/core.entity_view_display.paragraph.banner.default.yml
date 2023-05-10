@@ -17,28 +17,30 @@ bundle: banner
 mode: default
 content:
   field_para_banner_desc:
-    weight: 1
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 1
     region: content
   field_para_banner_image:
-    weight: 2
+    type: image
     label: hidden
     settings:
-      image_style: wide
       image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 2
     region: content
   field_para_banner_title:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
 hidden:
   entity_print_view_epub: true

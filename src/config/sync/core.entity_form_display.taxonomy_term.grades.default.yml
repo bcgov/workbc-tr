@@ -14,13 +14,13 @@ bundle: grades
 mode: default
 content:
   field_grade_color:
+    type: color_field_widget_default
     weight: 1
+    region: content
     settings:
       placeholder_color: ''
       placeholder_opacity: ''
     third_party_settings: {  }
-    type: color_field_widget_default
-    region: content
   name:
     type: string_textfield
     weight: 0
@@ -37,10 +37,10 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 3
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden:
   description: true

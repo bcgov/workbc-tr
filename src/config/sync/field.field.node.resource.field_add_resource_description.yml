@@ -25,9 +25,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       resource_description: resource_description
+    negate: 0
     target_bundles_drag_drop:
       banner:
         weight: 21
@@ -87,6 +87,6 @@ settings:
         weight: 39
         enabled: false
       resource_description:
-        enabled: true
         weight: 40
+        enabled: true
 field_type: entity_reference_revisions

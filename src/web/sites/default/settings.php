@@ -718,6 +718,7 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 $settings['trusted_host_patterns'] = [
   '^erebus.wbu-dev.com$',
   '^teachers.ddev.site$',
+  '^workbc-tr.docker.localhost',
   '^careereducation-dev.workbc.ca',
   '^careereducation-test.workbc.ca',
   '^careereducation.workbc.ca'
@@ -808,6 +809,10 @@ if (php_sapi_name() != 'cli') {
     case 'erebus.wbu-dev.com':
       include $app_root . '/' . $site_path . '/settings.local.php';
       break;
+    // LOCAL (Quartech)
+    case 'workbc-tr.docker.localhost:8000':
+      include $app_root . '/' . $site_path . '/settings.local.php';
+      break;
     default:
       include $app_root . '/' . $site_path . '/settings.openshift.php';
       break;
@@ -818,6 +823,8 @@ else {
   if (file_exists($app_root . '/' . $site_path . '/settings.openshift.php') && getenv('OPENSHIFT_BUILD_NAME') != '') {
     include $app_root . '/' . $site_path . '/settings.openshift.php';
   } else if (file_exists($app_root . '/' . $site_path . '/settings.local.php') && getenv('VIRTUAL_HOST') == 'erebus.wbu-dev.com') {
+    include $app_root . '/' . $site_path . '/settings.local.php';
+  } else if (file_exists($app_root . '/' . $site_path . '/settings.local.php') && getenv('PROJECT_BASE_URL') != '') {
     include $app_root . '/' . $site_path . '/settings.local.php';
   } else if (file_exists($app_root . '/' . $site_path . '/settings.ddev.postgres.php') && getenv('VIRTUAL_HOST') == 'teachers.ddev.site') {
     include $app_root . '/' . $site_path . '/settings.ddev.postgres.php';

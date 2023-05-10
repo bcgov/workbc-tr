@@ -1,7 +1,7 @@
+_core:
+  default_config_hash: L1NLZHorv0hiCyXT83hfpLptiTWHi9nsKNYnDMcMVDg
 queue_mail_keys: 'workbc_tr_*'
 queue_mail_queue_time: 15
 queue_mail_queue_wait_time: 0
 threshold: 50
 requeue_interval: 10800
-_core:
-  default_config_hash: L1NLZHorv0hiCyXT83hfpLptiTWHi9nsKNYnDMcMVDg

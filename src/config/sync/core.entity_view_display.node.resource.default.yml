@@ -36,21 +36,21 @@ bundle: resource
 mode: default
 content:
   entity_print_view_pdf:
-    weight: 8
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 8
+    region: content
   field_add_resource_description:
     type: entity_reference_revisions_entity_view
-    weight: 11
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 11
     region: content
   field_go_to_resource:
-    weight: 15
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -59,29 +59,29 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 15
     region: content
   field_resource_desc:
     type: entity_reference_revisions_entity_view
-    weight: 3
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 3
     region: content
   field_resource_email_notifi:
-    weight: 16
+    type: boolean
     label: above
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
+    weight: 16
     region: content
   field_resource_external_link:
-    weight: 12
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -90,85 +90,85 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 12
     region: content
   field_resource_summary:
     type: entity_reference_revisions_entity_view
-    weight: 1
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 1
     region: content
   field_resource_time:
-    weight: 6
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 6
     region: content
   field_resources_images_node:
     type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
     weight: 14
     region: content
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
   field_term_resource_asset_type:
-    weight: 2
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 2
     region: content
   field_term_resource_audience:
-    weight: 5
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 5
     region: content
   field_term_resource_competency:
-    weight: 4
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 4
     region: content
   field_term_resource_grade:
-    weight: 9
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: false
       view_mode: default
+      link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 9
     region: content
   field_term_resource_stage:
-    weight: 10
+    type: entity_reference_label
     label: hidden
     settings:
       link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 10
     region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 0
     region: content
+  sharethis:
     settings: {  }
     third_party_settings: {  }
-  sharethis:
     weight: 7
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   entity_print_view_epub: true
   entity_print_view_word_docx: true

@@ -53,12 +53,14 @@ src/web/web.config
 # Ignore Drupal's file directory
 src/web/sites/*/files
 !src/web/sites/default/files/.htaccess
+src/private
 
 # Packages #
 ############
 *.7z
 *.dmg
 *.gz
+!workbc-tr.dump.sql.gz
 *.bz2
 *.iso
 *.jar
@@ -71,6 +73,7 @@ src/web/sites/*/files
 ######################
 *.log
 *.sql
+!workbc-tr.reset.sql
 
 # OS generated files #
 ######################

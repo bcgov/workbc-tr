@@ -1,12 +1,11 @@
 <?php
 
 $databases['default']['default'] = array (
-  'database' => 'mst_dev',
-  'username' => 'teachers',
-  'password' => 'Gr1ml0ck',
+  'database' => 'workbc-tr',
+  'username' => 'drupal',
+  'password' => 'drupal',
   'prefix' => '',
-  'host' => 'localhost',
+  'host' => 'postgres',
   'port' => '5432',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\pgsql',
   'driver' => 'pgsql',
 );

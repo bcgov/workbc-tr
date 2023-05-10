@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: rnNxnXMi72RPRPGLvuGLUXirl-f-OJtK4sv1xY84Xd0
 hash_expiration: 86400
 newsletter:
   format: html
@@ -13,12 +15,12 @@ subscription:
   confirm_combined_subject: 'WorkBC’s Career Education Resources – Subscription Service'
   confirm_combined_body: "Hello,\r\n\r\nYou signed up to receive an email when new lesson plans or resources become available. \r\n\r\nTo confirm, please select this link: [simplenews-subscriber:combined-url]\r\n\r\nThank you,\r\n\r\nThe WorkBC.ca Team\r\nhttps://www.workbc.ca"
   confirm_combined_body_unchanged: "We have received a request for the following subscription changes for [simplenews-subscriber:mail] at [site:url]:\r\n\r\n[changes-list]\r\n\r\nNo confirmation necessary because all requested changes equal the current state"
+  confirm_subscribe_page: ''
+  confirm_unsubscribe_page: ''
   confirm_combined_line_subscribe_unsubscribed: 'Subscribe to [simplenews-newsletter:name]'
   confirm_combined_line_subscribe_subscribed: 'Already subscribed to [simplenews-newsletter:name]'
   confirm_combined_line_unsubscribe_subscribed: 'Unsubscribe from [simplenews-newsletter:name]'
   confirm_combined_line_unsubscribe_unsubscribed: 'Already unsubscribed from [simplenews-newsletter:name]'
-  confirm_subscribe_page: ''
-  confirm_unsubscribe_page: ''
 mail:
   use_cron: true
   textalt: false
@@ -27,5 +29,3 @@ mail:
   spool_expire: 0
   debug: true
   source_cache: null
-_core:
-  default_config_hash: rnNxnXMi72RPRPGLvuGLUXirl-f-OJtK4sv1xY84Xd0

@@ -51,9 +51,9 @@ filters:
     weight: 100
     settings:
       default_view_mode: default
+      allowed_view_modes: {  }
       allowed_media_types:
         document: document
         image: image
         remote_video: remote_video
         video: video
-      allowed_view_modes: {  }

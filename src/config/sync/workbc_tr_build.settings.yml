@@ -1,2 +1,3 @@
 search_page:
-  banner_image: ''
+  banner_image: 'public://hero-allresources_1.jpg'
+  banner_mobile_image: 'public://hero-allresources_mobile_1_0.jpg'

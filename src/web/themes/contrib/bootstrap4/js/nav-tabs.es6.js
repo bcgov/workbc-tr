@@ -2,9 +2,10 @@
  * @file
  * Responsive navigation tabs (local tasks)
  *
- * Element requires to have class .is-collapsible and attribute [data-drupal-nav-tabs]
+ * Element requires to have class .is-collapsible and attribute
+ *   [data-drupal-nav-tabs]
  */
-(($, Drupal) => {
+(($, Drupal, once) => {
   function init(i, tab) {
     const $tab = $(tab);
     const $target = $tab.find('[data-drupal-nav-tabs-target]');
@@ -25,12 +26,10 @@
    */
   Drupal.behaviors.navTabs = {
     attach(context) {
-      $(context)
-        .find('[data-drupal-nav-tabs].is-collapsible')
-        .once('nav-tabs')
+      $(once('nav-tabs', '[data-drupal-nav-tabs].is-collapsible', context))
         .each((i, value) => {
           $(value).each(init);
         });
     },
   };
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

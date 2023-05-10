@@ -14,13 +14,13 @@ bundle: grades
 mode: grade_color
 content:
   field_grade_color:
-    weight: 0
+    type: color_field_formatter_text
     label: hidden
     settings:
       format: hex
       opacity: true
     third_party_settings: {  }
-    type: color_field_formatter_text
+    weight: 0
     region: content
 hidden:
   description: true

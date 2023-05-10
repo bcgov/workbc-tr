@@ -30,8 +30,8 @@ settings:
         weight: 11
         enabled: false
       bp_accordion_section:
-        enabled: true
         weight: 10
+        enabled: true
       bp_blank:
         weight: 12
         enabled: false

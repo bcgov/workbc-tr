@@ -18,12 +18,13 @@ plugin: 'views_block:solr_results-block_1'
 settings:
   id: 'views_block:solr_results-block_1'
   label: ''
-  provider: views
   label_display: '0'
+  provider: views
   views_label: ''
   items_per_page: none
+  exposed: {  }
 visibility:
   request_path:
     id: request_path
-    pages: "/search\r\n/search/*"
     negate: false
+    pages: "/search\r\n/search/*"

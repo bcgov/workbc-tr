@@ -49,48 +49,48 @@ settings:
       bp_view: bp_view
     target_bundles_drag_drop:
       bp_accordion:
-        enabled: true
         weight: -28
+        enabled: true
       bp_accordion_section:
         weight: -19
         enabled: false
       bp_blank:
-        enabled: true
         weight: -29
-      bp_block:
         enabled: true
+      bp_block:
         weight: -23
+        enabled: true
       bp_carousel:
         weight: -18
         enabled: false
       bp_column_wrapper:
-        enabled: true
         weight: -27
+        enabled: true
       bp_columns:
-        enabled: true
         weight: -26
+        enabled: true
       bp_columns_three_uneven:
-        enabled: true
         weight: -25
+        enabled: true
       bp_columns_two_uneven:
-        enabled: true
         weight: -24
+        enabled: true
       bp_image:
-        enabled: true
         weight: -30
+        enabled: true
       bp_modal:
-        enabled: true
         weight: -22
-      bp_simple:
         enabled: true
+      bp_simple:
         weight: -31
+        enabled: true
       bp_tab_section:
         weight: -17
         enabled: false
       bp_tabs:
-        enabled: true
         weight: -21
-      bp_view:
         enabled: true
+      bp_view:
         weight: -20
+        enabled: true
 field_type: entity_reference_revisions
