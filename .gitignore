@@ -60,7 +60,7 @@ src/private
 *.7z
 *.dmg
 *.gz
-!workbc-tr.init.sql.gz
+!workbc-tr.dump.sql.gz
 *.bz2
 *.iso
 *.jar

@@ -10,8 +10,8 @@ Career Education Resources, a subsite of [WorkBC.ca](https://www.workbc.ca).
 - Adjust folder permissions:
   - `mkdir src/private && docker-compose exec php sudo chown www-data /var/www/html/private`
   - `docker-compose exec php sudo chown www-data /var/www/html/config/sync`
-- Import the init data dump:
-  - `gunzip -k -c src/scripts/workbc-tr.init.sql.gz | docker-compose exec -T postgres psql -U drupal workbc-tr`
+- Import the data dump:
+  - `gunzip -k -c src/scripts/workbc-tr.dump.sql.gz | docker-compose exec -T postgres psql -U drupal workbc-tr`
 - Create the Solr index:
   - `docker-compose exec -u 0 solr sh -c "chown -R solr:solr /opt/solr/server/solr/workbc-tr_dev"`
   - `docker-compose exec solr sh -c "curl -sIN 'http://localhost:8983/solr/admin/cores?action=CREATE&name=workbc-tr_dev&configSet=workbc-tr&instanceDir=workbc-tr_dev'"`
