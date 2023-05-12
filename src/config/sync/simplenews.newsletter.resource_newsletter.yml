@@ -15,6 +15,6 @@ hyperlinks: true
 allowed_handlers:
   0: '0'
   simplenews_all: '0'
-new_account: none
+new_account: 'on'
 access: default
 weight: 0

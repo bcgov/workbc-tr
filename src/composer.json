@@ -140,7 +140,10 @@
             "2715499 - Update manager fails" : "https://www.drupal.org/files/issues/2021-05-13/14102501-32.patch"
           },
           "drupal/media_download_all": {
-            "3190105 - Compression fails with No active tasks alert":"https://www.drupal.org/files/issues/2021-03-22/3190105-2.patch"
+            "3190105 - Compression fails with No active tasks alert": "https://www.drupal.org/files/issues/2021-03-22/3190105-2.patch"
+          },
+          "drupal/smtp": {
+            "3323386 - Error sending e-mail: Invalid address": "https://www.drupal.org/files/issues/2023-03-16/error-sending-email-16.patch"
           }
         },
         "drupal-core-project-message": {

@@ -14,7 +14,7 @@ subscription:
   tidy_unconfirmed: 7
   confirm_combined_subject: 'WorkBC’s Career Education Resources – Subscription Service'
   confirm_combined_body: "Hello,\r\n\r\nYou signed up to receive an email when new lesson plans or resources become available. \r\n\r\nTo confirm, please select this link: [simplenews-subscriber:combined-url]\r\n\r\nThank you,\r\n\r\nThe WorkBC.ca Team\r\nhttps://www.workbc.ca"
-  confirm_combined_body_unchanged: "Hello,\r\n\r\nYou are already registered for Career Education Resources subscription service: [simplenews-subscriber:mail]\r\n\r\nYou can <a href=\"[simplenews-subscriber:unsubscribe-url]\">unsubscribe</a> at any time.\r\n\r\nThank you,\r\n\r\nThe WorkBC.ca Team\r\nhttps://www.workbc.ca"
+  confirm_combined_body_unchanged: "Hello,\r\n\r\nYou are already registered for Career Education Resources subscription service: [simplenews-subscriber:mail]\r\n\r\nYou can unsubscribe at any time: [simplenews-subscriber:manage-url]\r\n\r\nThank you,\r\n\r\nThe WorkBC.ca Team\r\nhttps://www.workbc.ca"
   confirm_subscribe_page: ''
   confirm_unsubscribe_page: ''
   validate_subject: ''
