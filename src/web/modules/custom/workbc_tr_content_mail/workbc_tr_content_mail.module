@@ -92,11 +92,11 @@ function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface
             //Create message for email
             $body = <<<html
                 <p>Hello,</p>
-                <p>A new {$asset_type}: {$title} has been added to Career Education Resources. To view, visit: {$url}</p>
+                <p>A new {$asset_type}: {$title} has been added to Career Education Resources. To view, visit: <a href="{$url}">{$url}</a></p>
                 <p>You can <a href="{$unsubscribed_url}">unsubscribe</a> at any time.</p> 
                 <p>Thanks you,</p>
                 <p>The WorkBC.ca Team <br> 
-                https://www.workbc.ca</p>
+                <a href="https://www.workbc.ca">https://www.workbc.ca</a></p>
             html;
   
             //\Drupal::logger('workbc_tr_content_mail')->warning('<pre><code>' . print_r($body, TRUE) . '</code></pre>');
