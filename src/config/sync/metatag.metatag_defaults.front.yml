@@ -18,8 +18,5 @@ tags:
   og_url: '[current-page:url]'
   twitter_cards_description: 'WorkBC’s Career Education Resources offers lesson plans, learning activities, tools and resources to support career education in classrooms and online learning environments.   By aligning with the Ministry of Education’s career education curriculum and with feedback gathered from teachers and career education counsellors across British Columbia, this collection of resources complements the valuable work that educators already do.'
   twitter_cards_image: '[node:field_mobile_image:resource_card_thumbnail:url]'
-  twitter_cards_image_height: '200'
-  twitter_cards_image_width: '200'
-  twitter_cards_page_url: '[current-page:url]'
   twitter_cards_title: '[current-page:title]'
   twitter_cards_type: summary_large_image
