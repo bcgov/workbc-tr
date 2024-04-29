@@ -1,77 +1,78 @@
-uuid: ad3320df-88a1-447a-8460-e5d90693c1c0
+uuid: bc452725-9327-498f-a53c-df82215784a6
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.full_html
   module:
-    - ckeditor
-_core:
-  default_config_hash: 967ijj7p6i7rwrYl7r08WQFeCY_c23YAh0h8u-w_CXM
+    - ckeditor5
 format: full_html
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Underline
-            - Strike
-            - Superscript
-            - Subscript
-            - '-'
-            - RemoveFormat
-        -
-          name: Linking
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-        -
-          name: Media
-          items:
-            - Blockquote
-            - DrupalImage
-            - Table
-            - HorizontalRule
-        -
-          name: 'Block Formatting'
-          items:
-            - Format
-        -
-          name: Tools
-          items:
-            - Maximize
-            - SpecialChar
-            - PasteFromWord
-            - DrupalMediaLibrary
-            - Copy
-            - PasteText
-            - Paste
-            - Cut
-            - Redo
-            - Undo
-            - ShowBlocks
-            - Source
-        -
-          name: Align
-          items:
-            - JustifyLeft
-            - JustifyBlock
-            - JustifyRight
-            - JustifyCenter
-            - Indent
-            - Outdent
+    items:
+      - bold
+      - italic
+      - underline
+      - strikethrough
+      - superscript
+      - subscript
+      - removeFormat
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - blockQuote
+      - drupalInsertImage
+      - insertTable
+      - horizontalLine
+      - '|'
+      - heading
+      - codeBlock
+      - '|'
+      - specialCharacters
+      - drupalMedia
+      - redo
+      - undo
+      - sourceEditing
+      - '|'
+      - alignment
+      - indent
+      - outdent
   plugins:
-    drupallink:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
+    ckeditor5_alignment:
+      enabled_alignments:
+        - left
+        - center
+        - right
+        - justify
+    ckeditor5_imageResize:
+      allow_resize: true
+    media_media:
+      allow_view_mode_override: false
+    editor_advanced_link_link:
+      enabled_attributes:
+        - aria-label
+        - class
+        - id
+        - rel
+        - target
+        - title
+    linkit_extension:
       linkit_enabled: true
       linkit_profile: default
 image_upload:
@@ -80,5 +81,5 @@ image_upload:
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: null
-    height: null
+    width: 0
+    height: 0

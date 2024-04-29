@@ -174,7 +174,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: simplenews_subscription_status
+          type: entity_reference_label
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -185,6 +185,8 @@ display:
           multi_type: ul
           separator: ', '
           field_api_classes: false
+          settings:
+            link: false
         status:
           id: status
           table: simplenews_subscriber
@@ -194,8 +196,8 @@ display:
           admin_label: ''
           entity_type: simplenews_subscriber
           entity_field: status
-          plugin_id: boolean
-          label: Active
+          plugin_id: field
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -236,7 +238,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          type: boolean
+          type: list_default
           type_custom_true: ''
           type_custom_false: ''
           not: false
@@ -492,14 +494,15 @@ display:
           admin_label: ''
           entity_type: simplenews_subscriber
           entity_field: status
-          plugin_id: boolean
-          operator: '='
-          value: '1'
+          plugin_id: in_operator
+          operator: in
+          value:
+            1: '1'
           group: 1
           exposed: true
           expose:
             operator_id: ''
-            label: Active
+            label: Status
             description: ''
             use_operator: false
             operator: status_op
@@ -513,48 +516,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        subscriptions_status:
-          id: subscriptions_status
-          table: simplenews_subscriber__subscriptions
-          field: subscriptions_status
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: in_operator
-          operator: in
-          value:
-            1: '1'
-          group: 1
-          exposed: true
-          expose:
-            operator_id: subscriptions_status_op
-            label: Status
-            description: ''
-            use_operator: false
-            operator: subscriptions_status_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: subscriptions_status
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
           is_grouped: false
           group_info:
             label: ''

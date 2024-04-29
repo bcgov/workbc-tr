@@ -1,70 +1,76 @@
-uuid: b8496614-d591-4f34-98b4-b420d6337e83
+uuid: 36524f14-9256-43e0-8449-810c74b7c256
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.basic_html
   module:
-    - ckeditor
-_core:
-  default_config_hash: AqlPmO16LvJI4D0Ih6u4GFQIzqr5OnLgAUSjcUGWk2g
+    - ckeditor5
 format: basic_html
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Underline
-        -
-          name: Linking
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-        -
-          name: Media
-          items:
-            - Blockquote
-            - DrupalImage
-        -
-          name: Align
-          items:
-            - JustifyCenter
-            - JustifyRight
-            - JustifyLeft
-            - JustifyBlock
-            - Indent
-            - Outdent
-        -
-          name: 'Block Formatting'
-          items:
-            - Format
-        -
-          name: Tools
-          items:
-            - Copy
-            - Paste
-            - Cut
-            - Source
-            - Table
-            - HorizontalRule
-            - Undo
-            - Redo
-  plugins: {  }
+    items:
+      - bold
+      - italic
+      - underline
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - blockQuote
+      - drupalInsertImage
+      - '|'
+      - alignment
+      - indent
+      - outdent
+      - '|'
+      - heading
+      - codeBlock
+      - '|'
+      - sourceEditing
+      - insertTable
+      - horizontalLine
+      - undo
+      - redo
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
+    ckeditor5_alignment:
+      enabled_alignments:
+        - left
+        - center
+        - right
+        - justify
+    ckeditor5_imageResize:
+      allow_resize: true
+    editor_advanced_link_link:
+      enabled_attributes:
+        - aria-label
+        - class
+        - id
+        - rel
+        - target
+        - title
+    linkit_extension:
+      linkit_enabled: false
 image_upload:
   status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: null
-    height: null
+    width: 0
+    height: 0
