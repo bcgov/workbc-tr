@@ -100,10 +100,9 @@ module:
   paragraphs: 11
   standard: 1000
 theme:
-  bartik: 0
-  stable: 9
   bootstrap4: 0
   bootstrap4_bcgov: 0
   bcgov_teachers: 0
   claro: 0
+  stable9: 0
 profile: standard
