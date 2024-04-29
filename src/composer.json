@@ -80,7 +80,6 @@
         "drupal/token": "^1.14",
         "drupal/twig_tweak": "^3.3",
         "drupal/ultimate_cron": "^2.0@alpha",
-        "drupal/upgrade_status": "^4.2",
         "drupal/views_bootstrap": "^4.3",
         "drupal/views_infinite_scroll": "^2.0",
         "drupal/viewsreference": "^2.0@beta",
