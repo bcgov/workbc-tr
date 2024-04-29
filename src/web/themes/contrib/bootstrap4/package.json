@@ -26,6 +26,7 @@
     "eslint-plugin-yml": "^0.10.0",
     "glob": "^7.1.2",
     "http-server": "^14.0.0",
+    "sass": "^1.59.3",
     "sass-lint": "^1.13.1"
   },
   "repository": {
@@ -76,8 +77,5 @@
       }
     }
   },
-  "license": "MIT",
-  "dependencies": {
-    "sass": "^1.59.3"
-  }
+  "license": "MIT"
 }

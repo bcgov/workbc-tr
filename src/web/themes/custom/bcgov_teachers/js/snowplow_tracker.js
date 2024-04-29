@@ -1,4 +1,4 @@
-(function ($, Drupal, drupalSettings) {
+(function (Drupal, $, once, drupalSettings) {
     Drupal.behaviors.snowplow = {
       attach: function (context, settings) {
 
@@ -224,4 +224,4 @@
         //   }
     }
 }
-})(jQuery, Drupal, drupalSettings);
+})(Drupal, jQuery, once, drupalSettings);

@@ -6,6 +6,7 @@
   "license": "GPL-2.0-or-later",
   "homepage": "https://www.drupal.org/project/bootstrap4",
   "minimum-stability": "dev",
+  "require": { },
   "authors": [
     {
       "name": "Janna M (jannakha)",

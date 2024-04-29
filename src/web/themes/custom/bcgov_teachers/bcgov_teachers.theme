@@ -30,7 +30,7 @@ function bcgov_teachers_form_alter(&$form, &$form_state, $form_id) {
     $form['field_term_resource_competency']['#options'] = ["-ALL-" => t("All Curricular Competencies")] + $form['field_term_resource_competency']['#options'];
     $form['field_term_resource_audience']['#options'] = ["" => t("All Audiences")] + $form['field_term_resource_audience']['#options'];
     // dd($form['field_term_resource_audience']['#options']);
-    array_unshift($form['#submit'], 'bcgov_teachers_exposed_form_submit');
+    // array_unshift($form['#submit'], 'bcgov_teachers_exposed_form_submit');
   }
 }
 

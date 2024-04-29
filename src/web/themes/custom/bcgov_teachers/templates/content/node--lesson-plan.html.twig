@@ -81,7 +81,7 @@
   ]
 %}
 
-{{ attach_library('classy/node') }}
+{{ attach_library('stable9/node') }}
 <article{{ attributes.addClass(classes) }}>
   <div class="lesson_wrapper">
 	  <div class="lesson_wrapper_intro">
@@ -150,7 +150,7 @@
                 </div>
               </div
             </li>
-            {% for key,subentity in node.field_resource_images if key|first != '#' %}
+            {% for key,subentity in node.field_resource_images|filter((value, key) => key|first != '#') %}
               {% if subentity.entity.field_media_document.0.entity.filename.value != '' %}
                 <li>
                   <div class="file-title {{ subentity.entity.field_media_document.0.entity.filemime.value|split('.')|last }}">
@@ -174,14 +174,14 @@
     <div class="main_section">
          <div class="left-nav mobiletab">
             <div class="leftnavbar">
-              {% for key,subentity in node.field_add_resource_description if key|first != '#' %}
+              {% for key,subentity in node.field_add_resource_description|filter((value, key) => key|first != '#') %}
                 <div class="leftnavbar--items {% if loop.first %} active {% endif %}">
                   <div class="leftnavbar--title">
                     <a class="left-paragraph-{{ subentity.entity.id.value }}" href="#paragraph-{{ subentity.entity.id.value }}">{{ subentity.entity.field_main_heading.value }}</a>
                   </div>
                   <div class="leftnavbar-item">
                     <ul>
-                      {% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}
+                      {% for lkey,lsubentity in subentity.entity.field_simple_descriotion|filter((value, key) => key|first != '#') %}
                       {% if lsubentity.entity.field_para_simple_title.value is not empty %}
                         <li>
                           <a  href="#paragraph-{{ lsubentity.entity.id.value }}">{{ lsubentity.entity.field_para_simple_title.value|striptags }}</a>
@@ -198,14 +198,14 @@
         <div class="row">
           <div class="left-nav col-md-4">
             <div class="leftnavbar">
-              {% for key,subentity in node.field_add_resource_description if key|first != '#' %}
+              {% for key,subentity in node.field_add_resource_description|filter((value, key) => key|first != '#') %}
                 <div class="leftnavbar--items {% if loop.first %} active {% endif %}">
                   <div class="leftnavbar--title">
                     <a class="left-paragraph-{{ subentity.entity.id.value }}" href="#paragraph-{{ subentity.entity.id.value }}">{{ subentity.entity.field_main_heading.value }}</a>
                   </div>
                   <div class="leftnavbar-item">
                     <ul>
-                      {% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}
+                      {% for lkey,lsubentity in subentity.entity.field_simple_descriotion|filter((value, key) => key|first != '#') %}
                         {% if lsubentity.entity.field_nav_title.value is not empty %}
                           <li>
                             <a class="left-paragraph-{{ subentity.entity.id.value }}" href="#paragraph-{{ lsubentity.entity.id.value }}">{{ lsubentity.entity.field_nav_title.value|striptags }}</a>
@@ -226,7 +226,7 @@
           </div>
           <div class="right-nav col-md-8">
             <div class="lesson_wrapper_main">
-              {% for key,subentity in node.field_add_resource_description if key|first != '#' %}
+              {% for key,subentity in node.field_add_resource_description|filter((value, key) => key|first != '#') %}
               <div class="main-section {% if loop.first %} active {% endif %}" id="paragraph-{{ subentity.entity.id.value }}">
                     {% if subentity.entity.field_main_heading.value is not empty %}
                 <div class="lesson_wrapper_main__lable">
@@ -234,7 +234,7 @@
                     </div>
                 {% endif %}
                     <div class="lesson_wrapper_main_para">
-                    {% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}
+                    {% for lkey,lsubentity in subentity.entity.field_simple_descriotion|filter((value, key) => key|first != '#') %}
                     <div class="lesson_wrapper_main_para_item" id="paragraph-{{ lsubentity.entity.id.value }}">
                       {% if lsubentity.entity.field_para_simple_title.value is not empty %}
                         <div class="lesson_wrapper_main_para_item__title">
@@ -277,7 +277,7 @@
 </article>
 
 {% macro bytesToSize(bytes) %}
-{% spaceless %}
+{% apply spaceless %}
     {% set kilobyte = 1024 %}
     {% set megabyte = kilobyte * 1024 %}
     {% set gigabyte = megabyte * 1024 %}
@@ -294,5 +294,5 @@
     {% else %}
         {{ (bytes / terabyte)|round ~ ' TB' }}
     {% endif %}
-{% endspaceless %}
+{% endapply %}
 {% endmacro %}

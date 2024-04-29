@@ -1,4 +1,4 @@
-bootstrap5.settings:
+bootstrap4.settings:
   type: config_object
   label: 'Bootstrap 4 theme settings'
   mapping:

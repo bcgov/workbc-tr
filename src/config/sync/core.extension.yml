@@ -101,8 +101,7 @@ module:
   standard: 1000
 theme:
   bartik: 0
-  stable: 0
-  classy: 0
+  stable: 9
   bootstrap4: 0
   bootstrap4_bcgov: 0
   bcgov_teachers: 0

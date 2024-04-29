@@ -35,7 +35,7 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.4",
         "drupal/better_exposed_filters": "^6.0",
-        "drupal/bootstrap4": " ^2.1",
+        "drupal/bootstrap4": "^3.0",
         "drupal/bootstrap4_tools": " ^2.1",
         "drupal/bootstrap_paragraphs": "^2.0@beta || ^5.0",
         "drupal/checklistapi": "^2.1",
