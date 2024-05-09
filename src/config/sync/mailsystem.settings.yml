@@ -9,3 +9,7 @@ modules:
     none:
       sender: SMTPMailSystem
       formatter: mime_mail
+  symfony_mailer_lite:
+    none:
+      sender: SMTPMailSystem
+      formatter: mime_mail
