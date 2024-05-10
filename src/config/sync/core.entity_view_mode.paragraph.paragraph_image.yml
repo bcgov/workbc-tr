@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.paragraph_image
 label: 'paragraph image'
+description: ''
 targetEntityType: paragraph
 cache: true

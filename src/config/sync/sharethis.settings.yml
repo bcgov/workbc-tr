@@ -16,7 +16,7 @@ option_neworzero: 0
 option_onhover: 1
 option_shorten: 0
 publisherID: dr-b9ea689a-8c95-1140-b2f5-c5a92076c54e
-service_option: '''Email:email'',''Facebook:facebook'',''Twitter:twitter'',''LinkedIn:linkedin'''
+service_option: "'Email:email','Facebook:facebook','Twitter:twitter','LinkedIn:linkedin'"
 twitter_handle: ''
 twitter_recommends: ''
 twitter_suffix: ''
