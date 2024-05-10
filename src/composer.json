@@ -78,7 +78,7 @@
         "drupal/views_bootstrap": "^4.3",
         "drupal/views_infinite_scroll": "^2.0",
         "drupal/viewsreference": "^2.0@beta",
-        "drush/drush": "^11",
+        "drush/drush": "^12",
         "tecnickcom/tcpdf": "~6",
         "vlucas/phpdotenv": "5.1"
     },
