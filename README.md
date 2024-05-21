@@ -21,7 +21,7 @@ Career Education Resources, a subsite of [WorkBC.ca](https://www.workbc.ca).
 127.0.0.1       workbc-tr.docker.localhost
 ```
 - Run the sync script: `docker-compose exec php scripts/sync.sh`
-- Open http://workbc-tr.docker.localhost:8000/ to view the site and login as `admin` (obtain the password from your admin or change the password using `drush upwd aest-local 'password'`)
+- Open http://workbc-tr.docker.localhost:8000/ to view the site and login as `aest-local` (obtain the password from your admin or change the password using `drush upwd aest-local 'password'`)
 # Architecture
 The solution architecture is as below.
 ![Architecture](openshift/architecture.jpg)
