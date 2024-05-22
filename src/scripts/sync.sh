@@ -4,5 +4,5 @@ composer install
 drush cr
 drush updb -y
 drush cim
-drush updb -y
+drush deploy:hook -y
 drush cr
