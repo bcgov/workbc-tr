@@ -22,7 +22,7 @@
 
 {#
   We call a macro which calls itself to render the full tree.
-  @see http://twig.sensiolabs.org/doc/tags/macro.html
+  @see https://twig.symfony.com/doc/3.x/tags/macro.html
 #}
 {{ menus.menu_links(items, attributes, 0) }}
 
@@ -30,26 +30,30 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-<ul{{ attributes.addClass(['nav navbar-nav']) }}>
-  {% else %}
-<ul>
-  {% endif %}
-  {% for item in items %}
-    {%
-      set classes_link = [
-      'nav-link',
-      item.is_expanded ? 'dropdown-toggle',
-      item.is_collapsed ? 'dropdown-toggle',
-      item.in_active_trail ? 'active',
-    ]
-    %}
-    <li{{ item.attributes.addClass('nav-item') }}>
-      {{ link(item.title, item.url, { 'class': classes_link }) }}
-      {% if item.below %}
-        {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+      <ul{{ attributes.addClass(['nav navbar-nav']) }}>
+    {% else %}
+      <ul class="list-unstyled ml-3">
+    {% endif %}
+    {% for item in items %}
+      {%
+        set link_classes = [
+          'nav-link',
+          item.in_active_trail ? 'active',
+        ]
+      %}
+
+      {% set link_attrs = { 'class': link_classes} %}
+      {% if item.in_active_trail %}
+      {% set link_attrs = link_attrs|merge({ 'aria-current': 'page' }) %}
       {% endif %}
-    </li>
-  {% endfor %}
-</ul>
+
+      <li{{ item.attributes.addClass('nav-item') }}>
+        {{ link(item.title, item.url, link_attrs) }}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
   {% endif %}
 {% endmacro %}

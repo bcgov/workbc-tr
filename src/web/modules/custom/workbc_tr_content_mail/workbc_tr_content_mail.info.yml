@@ -1,5 +1,5 @@
 name: Workbc-TR Content update email
 description: "This module is developed to send email on content update"
 type: module
-core_version_requirement: ^8.7.7 || ^9
+core_version_requirement: ^9 || ^10
 package: custom

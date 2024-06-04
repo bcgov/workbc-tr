@@ -14,7 +14,7 @@ global-scripts:
   dependencies:
     - core/jquery
     - core/drupal
-    - core/jquery.once
+    - core/once
 
 fontawesome_5:
   version: 5.1.0

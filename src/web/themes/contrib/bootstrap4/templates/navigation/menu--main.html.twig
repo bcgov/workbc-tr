@@ -50,23 +50,26 @@ We call a macro which calls itself to render the full tree.
   ]
   %}
   {%
-    set link_class = [
-    'nav-item',
-    'nav-link',
+  set link_classes = [
+    menu_level == 0 ? 'nav-link' : 'dropdown-item',
     item.in_active_trail ? 'active',
     menu_level == 0 and (item.is_expanded or item.is_collapsed) ? 'dropdown-toggle',
   ]
   %}
-  {%
-    set toggle_class = [
-  ]
-  %}
-  <li{{ item.attributes.addClass(list_item_classes) }}>
-    {% if menu_level == 0 and item.below %}
-      {{ link(item.title, item.url, { 'class': link_class, 'data-toggle' : 'dropdown', 'title': ('Expand menu' | t) ~ ' ' ~ item.title }) }}
-      {{ menus.build_menu(item.below, attributes, menu_level + 1) }}
-    {% else %}
-      {{ link(item.title, item.url, { 'class': link_class }) }}
-    {% endif %}
+  <li{{item.attributes.addClass(list_item_classes)}}>
+  {% set link_attrs = { 'class': link_classes } %}
+  {% if menu_level == 0 and item.below %}
+    {% set link_attrs = link_attrs|merge({'data-toggle' : 'dropdown', 'title': ('Expand menu' | t) ~ ' ' ~ item.title, 'aria-haspopup' : 'true', 'aria-expanded' : 'false' }) %}
+  {% endif %}
+  {% if item.in_active_trail %}
+    {% set link_attrs = link_attrs|merge({ 'aria-current': 'page' }) %}
+  {% endif %}
+
+  {% if menu_level == 0 and item.below %}
+    {{ link(item.title, item.url, link_attrs) }}
+    {{ menus.build_menu(item.below, attributes, menu_level + 1) }}
+  {% else %}
+    {{ link(item.title, item.url, link_attrs) }}
+  {% endif %}
   </li>
 {% endmacro %}

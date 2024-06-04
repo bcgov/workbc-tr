@@ -1,4 +1,4 @@
-(function ($, Drupal, drupalSettings) {
+(function (Drupal, $, once, drupalSettings) {
   Drupal.behaviors.themeJS = {
     attach: function (context, settings) {
       if (typeof context.location !== 'undefined') { // Only fire on document load.
@@ -550,7 +550,7 @@
       featuredElementSizes();
     }
   }
-})(jQuery, Drupal, drupalSettings);
+})(Drupal, jQuery, once, drupalSettings);
 
 
 function departmentFunction(){

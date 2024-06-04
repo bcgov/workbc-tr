@@ -1,7 +1,42 @@
 uuid: ffd64c49-f873-4536-8870-8a7cd7d185e1
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.basic_html
+    - media.type.document
+    - media.type.image
+    - node.type.content
+    - node.type.resource
+    - taxonomy.vocabulary.asset_type
+    - taxonomy.vocabulary.bachelor_s_graduate_or_professio
+    - taxonomy.vocabulary.career_life_cycle_stage
+    - taxonomy.vocabulary.curricular_competencies
+    - taxonomy.vocabulary.education_type
+    - taxonomy.vocabulary.grades
+    - taxonomy.vocabulary.industry_type
+    - taxonomy.vocabulary.key_audiences
+    - taxonomy.vocabulary.region
+    - taxonomy.vocabulary.search_data_library
+    - taxonomy.vocabulary.tags
+  module:
+    - comment
+    - contact
+    - entity_print
+    - filter
+    - media
+    - metatag
+    - node
+    - paragraphs
+    - path
+    - pathauto
+    - search
+    - shortcut
+    - simplenews
+    - system
+    - taxonomy
+    - toolbar
+    - workbc_tr_build
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
 id: authenticated

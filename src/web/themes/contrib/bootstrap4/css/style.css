@@ -2207,7 +2207,7 @@ textarea.form-control {
   }
 }
 
-.btn, a.button {
+.btn, button.link, a.button {
   display: inline-block;
   font-weight: 400;
   color: #212529;
@@ -2223,22 +2223,22 @@ textarea.form-control {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .btn, a.button {
+  .btn, button.link, a.button {
     transition: none;
   }
 }
-.btn:hover, a.button:hover {
+.btn:hover, button.link:hover, a.button:hover {
   color: #212529;
   text-decoration: none;
 }
-.btn:focus, a.button:focus, .btn.focus, a.focus.button {
+.btn:focus, button.link:focus, a.button:focus, .btn.focus, button.focus.link, a.focus.button {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25);
 }
-.btn.disabled, a.disabled.button, .btn:disabled, a.button:disabled {
+.btn.disabled, button.disabled.link, a.disabled.button, .btn:disabled, button.link:disabled, a.button:disabled {
   opacity: 0.65;
 }
-.btn:not(:disabled):not(.disabled), a.button:not(:disabled):not(.disabled) {
+.btn:not(:disabled):not(.disabled), button.link:not(:disabled):not(.disabled), a.button:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
 a.btn.disabled, a.disabled.button,
@@ -2687,31 +2687,31 @@ fieldset:disabled a.button {
   box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
 }
 
-.btn-link {
+.btn-link, button.link {
   font-weight: 400;
   color: #0056b3;
   text-decoration: none;
 }
-.btn-link:hover {
+.btn-link:hover, button.link:hover {
   color: #003167;
   text-decoration: underline;
 }
-.btn-link:focus, .btn-link.focus {
+.btn-link:focus, button.link:focus, .btn-link.focus, button.focus.link {
   text-decoration: underline;
 }
-.btn-link:disabled, .btn-link.disabled {
+.btn-link:disabled, button.link:disabled, .btn-link.disabled, button.disabled.link {
   color: #6c757d;
   pointer-events: none;
 }
 
-.btn-lg, .btn-group-lg > .btn, .btn-group-lg > a.button {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > button.link, .btn-group-lg > a.button {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem;
 }
 
-.btn-sm, .btn-group-sm > .btn, .btn-group-sm > a.button {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > button.link, .btn-group-sm > a.button {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -3005,23 +3005,28 @@ input[type=button].btn-block {
   display: inline-flex;
   vertical-align: middle;
 }
-.btn-group > .btn, .btn-group > a.button,
+.btn-group > .btn, .btn-group > button.link, .btn-group > a.button,
 .btn-group-vertical > .btn,
+.btn-group-vertical > button.link,
 .btn-group-vertical > a.button {
   position: relative;
   flex: 1 1 auto;
 }
-.btn-group > .btn:hover, .btn-group > a.button:hover,
+.btn-group > .btn:hover, .btn-group > button.link:hover, .btn-group > a.button:hover,
 .btn-group-vertical > .btn:hover,
+.btn-group-vertical > button.link:hover,
 .btn-group-vertical > a.button:hover {
   z-index: 1;
 }
-.btn-group > .btn:focus, .btn-group > a.button:focus, .btn-group > .btn:active, .btn-group > a.button:active, .btn-group > .btn.active, .btn-group > a.active.button,
+.btn-group > .btn:focus, .btn-group > button.link:focus, .btn-group > a.button:focus, .btn-group > .btn:active, .btn-group > button.link:active, .btn-group > a.button:active, .btn-group > .btn.active, .btn-group > button.active.link, .btn-group > a.active.button,
 .btn-group-vertical > .btn:focus,
+.btn-group-vertical > button.link:focus,
 .btn-group-vertical > a.button:focus,
 .btn-group-vertical > .btn:active,
+.btn-group-vertical > button.link:active,
 .btn-group-vertical > a.button:active,
 .btn-group-vertical > .btn.active,
+.btn-group-vertical > button.active.link,
 .btn-group-vertical > a.active.button {
   z-index: 1;
 }
@@ -3035,18 +3040,20 @@ input[type=button].btn-block {
   width: auto;
 }
 
-.btn-group > .btn:not(:first-child), .btn-group > a.button:not(:first-child),
+.btn-group > .btn:not(:first-child), .btn-group > button.link:not(:first-child), .btn-group > a.button:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > a.button:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > button.link:not(:last-child):not(.dropdown-toggle), .btn-group > a.button:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
+.btn-group > .btn-group:not(:last-child) > button.link,
 .btn-group > .btn-group:not(:last-child) > a.button {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.btn-group > .btn:not(:first-child), .btn-group > a.button:not(:first-child),
+.btn-group > .btn:not(:first-child), .btn-group > button.link:not(:first-child), .btn-group > a.button:not(:first-child),
 .btn-group > .btn-group:not(:first-child) > .btn,
+.btn-group > .btn-group:not(:first-child) > button.link,
 .btn-group > .btn-group:not(:first-child) > a.button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -3063,12 +3070,12 @@ input[type=button].btn-block {
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > a.button + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > button.link + .dropdown-toggle-split, .btn-group-sm > a.button + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > a.button + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > button.link + .dropdown-toggle-split, .btn-group-lg > a.button + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
@@ -3078,38 +3085,44 @@ input[type=button].btn-block {
   align-items: flex-start;
   justify-content: center;
 }
-.btn-group-vertical > .btn, .btn-group-vertical > a.button,
+.btn-group-vertical > .btn, .btn-group-vertical > button.link, .btn-group-vertical > a.button,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
-.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > a.button:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > button.link:not(:first-child), .btn-group-vertical > a.button:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > a.button:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > button.link:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > a.button:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn,
+.btn-group-vertical > .btn-group:not(:last-child) > button.link,
 .btn-group-vertical > .btn-group:not(:last-child) > a.button {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > a.button:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > button.link:not(:first-child), .btn-group-vertical > a.button:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.btn-group-vertical > .btn-group:not(:first-child) > button.link,
 .btn-group-vertical > .btn-group:not(:first-child) > a.button {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-.btn-group-toggle > .btn, .btn-group-toggle > a.button,
+.btn-group-toggle > .btn, .btn-group-toggle > button.link, .btn-group-toggle > a.button,
 .btn-group-toggle > .btn-group > .btn,
+.btn-group-toggle > .btn-group > button.link,
 .btn-group-toggle > .btn-group > a.button {
   margin-bottom: 0;
 }
-.btn-group-toggle > .btn input[type=radio], .btn-group-toggle > a.button input[type=radio],
+.btn-group-toggle > .btn input[type=radio], .btn-group-toggle > button.link input[type=radio], .btn-group-toggle > a.button input[type=radio],
 .btn-group-toggle > .btn input[type=checkbox],
+.btn-group-toggle > button.link input[type=checkbox],
 .btn-group-toggle > a.button input[type=checkbox],
 .btn-group-toggle > .btn-group > .btn input[type=radio],
+.btn-group-toggle > .btn-group > button.link input[type=radio],
 .btn-group-toggle > .btn-group > a.button input[type=radio],
 .btn-group-toggle > .btn-group > .btn input[type=checkbox],
+.btn-group-toggle > .btn-group > button.link input[type=checkbox],
 .btn-group-toggle > .btn-group > a.button input[type=checkbox] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -3191,31 +3204,42 @@ input[type=button].btn-block {
 .input-group-append {
   display: flex;
 }
-.input-group-prepend .btn, .input-group-prepend a.button,
+.input-group-prepend .btn, .input-group-prepend button.link, .input-group-prepend a.button,
 .input-group-append .btn,
+.input-group-append button.link,
 .input-group-append a.button {
   position: relative;
   z-index: 2;
 }
-.input-group-prepend .btn:focus, .input-group-prepend a.button:focus,
+.input-group-prepend .btn:focus, .input-group-prepend button.link:focus, .input-group-prepend a.button:focus,
 .input-group-append .btn:focus,
+.input-group-append button.link:focus,
 .input-group-append a.button:focus {
   z-index: 3;
 }
-.input-group-prepend .btn + .btn, .input-group-prepend a.button + .btn, .input-group-prepend .btn + a.button, .input-group-prepend a.button + a.button,
+.input-group-prepend .btn + .btn, .input-group-prepend button.link + .btn, .input-group-prepend .btn + button.link, .input-group-prepend button.link + button.link, .input-group-prepend a.button + .btn, .input-group-prepend a.button + button.link, .input-group-prepend .btn + a.button, .input-group-prepend button.link + a.button, .input-group-prepend a.button + a.button,
 .input-group-prepend .btn + .input-group-text,
+.input-group-prepend button.link + .input-group-text,
 .input-group-prepend a.button + .input-group-text,
 .input-group-prepend .input-group-text + .input-group-text,
 .input-group-prepend .input-group-text + .btn,
+.input-group-prepend .input-group-text + button.link,
 .input-group-prepend .input-group-text + a.button,
 .input-group-append .btn + .btn,
+.input-group-append button.link + .btn,
+.input-group-append .btn + button.link,
+.input-group-append button.link + button.link,
 .input-group-append a.button + .btn,
+.input-group-append a.button + button.link,
 .input-group-append .btn + a.button,
+.input-group-append button.link + a.button,
 .input-group-append a.button + a.button,
 .input-group-append .btn + .input-group-text,
+.input-group-append button.link + .input-group-text,
 .input-group-append a.button + .input-group-text,
 .input-group-append .input-group-text + .input-group-text,
 .input-group-append .input-group-text + .btn,
+.input-group-append .input-group-text + button.link,
 .input-group-append .input-group-text + a.button {
   margin-left: -1px;
 }
@@ -3258,8 +3282,10 @@ input[type=button].btn-block {
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
+.input-group-lg > .input-group-prepend > button.link,
 .input-group-lg > .input-group-prepend > a.button,
 .input-group-lg > .input-group-append > .btn,
+.input-group-lg > .input-group-append > button.link,
 .input-group-lg > .input-group-append > a.button {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
@@ -3277,8 +3303,10 @@ input[type=button].btn-block {
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
+.input-group-sm > .input-group-prepend > button.link,
 .input-group-sm > .input-group-prepend > a.button,
 .input-group-sm > .input-group-append > .btn,
+.input-group-sm > .input-group-append > button.link,
 .input-group-sm > .input-group-append > a.button {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
@@ -3291,27 +3319,32 @@ input[type=button].btn-block {
   padding-right: 1.75rem;
 }
 
-.input-group > .input-group-prepend > .btn, .input-group > .input-group-prepend > a.button,
+.input-group > .input-group-prepend > .btn, .input-group > .input-group-prepend > button.link, .input-group > .input-group-prepend > a.button,
 .input-group > .input-group-prepend > .input-group-text,
 .input-group:not(.has-validation) > .input-group-append:not(:last-child) > .btn,
+.input-group:not(.has-validation) > .input-group-append:not(:last-child) > button.link,
 .input-group:not(.has-validation) > .input-group-append:not(:last-child) > a.button,
 .input-group:not(.has-validation) > .input-group-append:not(:last-child) > .input-group-text,
 .input-group.has-validation > .input-group-append:nth-last-child(n+3) > .btn,
+.input-group.has-validation > .input-group-append:nth-last-child(n+3) > button.link,
 .input-group.has-validation > .input-group-append:nth-last-child(n+3) > a.button,
 .input-group.has-validation > .input-group-append:nth-last-child(n+3) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > button.link:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > a.button:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.input-group > .input-group-append > .btn, .input-group > .input-group-append > a.button,
+.input-group > .input-group-append > .btn, .input-group > .input-group-append > button.link, .input-group > .input-group-append > a.button,
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn,
+.input-group > .input-group-prepend:not(:first-child) > button.link,
 .input-group > .input-group-prepend:not(:first-child) > a.button,
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.input-group > .input-group-prepend:first-child > button.link:not(:first-child),
 .input-group > .input-group-prepend:first-child > a.button:not(:first-child),
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
   border-top-left-radius: 0;
@@ -4533,7 +4566,7 @@ a.badge:hover, a.badge:focus {
   display: none;
 }
 
-.btn .badge, a.button .badge {
+.btn .badge, button.link .badge, a.button .badge {
   position: relative;
   top: -1px;
 }
@@ -4685,7 +4718,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 .alert-dismissible {
   padding-right: 4rem;
 }
-.alert-dismissible .close {
+.alert-dismissible .close, .alert-dismissible .ui-dialog-titlebar-close {
   position: absolute;
   top: 0;
   right: 0;
@@ -5147,7 +5180,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   border-color: #1b1e21;
 }
 
-.close {
+.close, .ui-dialog-titlebar-close {
   float: right;
   font-size: 1.5rem;
   font-weight: 700;
@@ -5156,21 +5189,21 @@ a.badge-dark:focus, a.badge-dark.focus {
   text-shadow: 0 1px 0 #fff;
   opacity: 0.5;
 }
-.close:hover {
+.close:hover, .ui-dialog-titlebar-close:hover {
   color: #000;
   text-decoration: none;
 }
-.close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
+.close:not(:disabled):not(.disabled):hover, .ui-dialog-titlebar-close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus, .ui-dialog-titlebar-close:not(:disabled):not(.disabled):focus {
   opacity: 0.75;
 }
 
-button.close {
+button.close, button.ui-dialog-titlebar-close {
   padding: 0;
   background-color: transparent;
   border: 0;
 }
 
-a.close.disabled {
+a.close.disabled, a.disabled.ui-dialog-titlebar-close {
   pointer-events: none;
 }
 
@@ -5334,7 +5367,7 @@ a.close.disabled {
   border-top-left-radius: calc(0.3rem - 1px);
   border-top-right-radius: calc(0.3rem - 1px);
 }
-.modal-header .close {
+.modal-header .close, .modal-header .ui-dialog-titlebar-close {
   padding: 1rem 1rem;
   margin: -1rem -1rem -1rem auto;
 }
@@ -9171,7 +9204,7 @@ a.text-dark:hover, a.text-dark:focus {
     text-shadow: none !important;
     box-shadow: none !important;
   }
-  a:not(.btn):not(a.button) {
+  a:not(.btn):not(button.link):not(a.button) {
     text-decoration: underline;
   }
   abbr[title]::after {
@@ -9681,13 +9714,36 @@ footer .region-footer {
   width: 1rem;
 }
 
+#views-display-menu-tabs {
+  list-style-type: none;
+}
+
+.form-item-filters-status-removed {
+  float: left;
+}
+
+.ui-dialog-titlebar-close::after {
+  content: "x";
+  display: block;
+}
+
+.views-ui-display-tab-actions .btn-primary {
+  background-color: #fff;
+  color: #0056b3;
+}
+
+.views-ui-dialog .views-ui-rearrange-filter-form .form-type-checkbox,
+.views-ui-dialog .views-ui-rearrange-form .form-type-checkbox {
+  display: inline;
+}
+
 .table-dark th,
 .table-dark td,
 .table-dark thead th {
   background-color: #343a40;
 }
 
-.alert-dismissible .close {
+.alert-dismissible .close, .alert-dismissible .ui-dialog-titlebar-close {
   color: #000;
 }
 

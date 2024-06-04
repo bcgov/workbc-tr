@@ -21,7 +21,7 @@ function workbc_tr_build_update_8506() {
  * Update all user author to admin.
  */
 function workbc_tr_build_update_8507() {
-  $nids = \Drupal::entityQuery('node')->execute();
+  $nids = \Drupal::entityQuery('node')->accessCheck(FALSE)->execute();
   $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
   foreach ($nodes as $node) {
     $node->setOwnerId(1);

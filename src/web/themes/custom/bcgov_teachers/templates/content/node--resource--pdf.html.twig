@@ -81,7 +81,7 @@
   ]
 %}
 
-{{ attach_library('classy/node') }}
+{{ attach_library('stable9/node') }}
 
 <img src="/themes/custom/bcgov_teachers/assets/logo-workbc.png" alt="WorkBC" width="120" height="22">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="25">Career Education Resources</font>
@@ -118,11 +118,11 @@
   <br />
   
   {# Main Container #}
-  {% for key,subentity in node.field_add_resource_description if key|first != '#' %}
+  {% for key,subentity in node.field_add_resource_description|filter((value, key) => key|first != '#') %}
     {% if subentity.entity.field_main_heading.value is not empty and subentity.entity.field_main_heading.value != 'Lesson Plan' %}
       <font size="15"><b><u>{{ subentity.entity.field_main_heading.value }}</u></b></font>
     {% endif %}
-    {% for lkey,lsubentity in subentity.entity.field_simple_descriotion if key|first != '#' %}
+    {% for lkey,lsubentity in subentity.entity.field_simple_descriotion|filter((value, key) => key|first != '#') %}
       {% if lsubentity.entity.field_para_simple_title.value is not empty %}
         <br /><br />
         <font size="15">{{ lsubentity.entity.field_para_simple_title.value|raw }}</font>
@@ -136,7 +136,7 @@
 </article>
 
 {% macro bytesToSize(bytes) %}
-  {% spaceless %}
+  {% apply spaceless %}
     {% set kilobyte = 1024 %}
     {% set megabyte = kilobyte * 1024 %}
     {% set gigabyte = megabyte * 1024 %}
@@ -153,5 +153,5 @@
     {% else %}
       {{ (bytes / terabyte)|number_format(2, '.') ~ ' TB' }}
     {% endif %}
-  {% endspaceless %}
+  {% endapply %}
 {% endmacro %}

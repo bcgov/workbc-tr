@@ -1,8 +1,7 @@
 name: 'Bootstrap 4 BCGov'
 type: theme
 description: 'A subtheme of Bootstrap4 with BC Gov styling'
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 base theme: bootstrap4
 
 # Stylesheets.
