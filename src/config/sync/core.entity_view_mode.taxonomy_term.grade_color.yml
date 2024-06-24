@@ -6,5 +6,6 @@ dependencies:
     - taxonomy
 id: taxonomy_term.grade_color
 label: 'Grade Color'
+description: ''
 targetEntityType: taxonomy_term
 cache: true

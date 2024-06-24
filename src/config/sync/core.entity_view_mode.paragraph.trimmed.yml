@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.trimmed
 label: Trimmed
+description: ''
 targetEntityType: paragraph
 cache: true

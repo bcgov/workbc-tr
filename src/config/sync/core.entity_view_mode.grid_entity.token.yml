@@ -6,5 +6,6 @@ dependencies:
     - paragraphs_grid
 id: grid_entity.token
 label: Token
+description: ''
 targetEntityType: grid_entity
 cache: true

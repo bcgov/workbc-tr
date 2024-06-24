@@ -8,5 +8,6 @@ _core:
   default_config_hash: 3Ly1xMx90SxhhhBmZjDhcBCQ4kyR4u7tS5vLgA84B2M
 id: simplenews_subscriber.account
 label: Account
+description: ''
 targetEntityType: simplenews_subscriber
 cache: true

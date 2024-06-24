@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.h
 label: 'Home page'
+description: ''
 targetEntityType: node
 cache: true

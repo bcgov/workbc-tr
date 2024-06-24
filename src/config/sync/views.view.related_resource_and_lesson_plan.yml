@@ -487,7 +487,7 @@ display:
       pager:
         type: some
         options:
-          offset: null
+          offset: 0
           items_per_page: 9
       exposed_form:
         type: basic
@@ -544,7 +544,6 @@ display:
           title: ''
           default_argument_type: node
           default_argument_options: {  }
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -584,7 +583,6 @@ display:
             vids:
               career_life_cycle_stage: career_life_cycle_stage
             anyall: +
-          default_argument_skip_url: true
           summary_options:
             base_path: ''
             count: true

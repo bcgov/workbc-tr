@@ -226,7 +226,7 @@ processor_settings:
       - field_term_resource_grade
       - field_term_resource_stage
       - title
-    ignorable: '[''¿¡!?,:;]'
+    ignorable: "['¿¡!?,:;]"
     ignorable_classes:
       - Pc
       - Pd
