@@ -39,7 +39,6 @@ function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface
         $query = $database->select('simplenews_subscriber', 's');
         $query = $query->fields('s', array('mail'))
           ->condition('s_sub.deleted', '0')
-          ->condition('s_sub.subscriptions_status','1','IN')
           ->condition('s_sub.subscriptions_target_id','resource_newsletter');
         $query->join('simplenews_subscriber__subscriptions', 's_sub', 's.id = s_sub.entity_id');
         $result = $query->execute();
