@@ -38,6 +38,7 @@ function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface
         $database = \Drupal::database();
         $query = $database->select('simplenews_subscriber', 's');
         $query = $query->fields('s', array('mail'))
+          ->condition('s.status','1','=')
           ->condition('s_sub.deleted', '0')
           ->condition('s_sub.subscriptions_target_id','resource_newsletter');
         $query->join('simplenews_subscriber__subscriptions', 's_sub', 's.id = s_sub.entity_id');
@@ -75,11 +76,14 @@ function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface
         if(!empty($subscribers)) {
           foreach ( $subscribers as $subscriber ) {
             $s = Subscriber::loadByMail($subscriber);
+            if (!$s) {
+              continue;
+            }
             $sm_data = [
               'newsletter' => $newsletter,
               'simplenews_subscriber' => $s,
             ];
-  
+
             //Create string from unsubscribe-url token
             $unsubscribed_url = \Drupal::token()->replace('[simplenews-subscriber:unsubscribe-url]', $sm_data);
             //Get Resource title
