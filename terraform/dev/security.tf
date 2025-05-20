@@ -1,6 +1,5 @@
 # security.tf
 
-# ALB Security Group: Edit to restrict access to the application
 data "aws_security_group" "web" {
   name = "Web_sg"
 }
