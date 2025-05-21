@@ -26,7 +26,7 @@ data "aws_security_group" "efs_security_group" {
 resource "aws_security_group" "allow_nfs" {
   name        = "allow_nfs"
   description = "Allow NFS inbound traffic and all outbound traffic"
-  #vpc_id      = aws_vpc.main.id
+  vpc_id      = module.network.aws_vpc.id
 
   tags = {
     Name = "allow_nfs"
