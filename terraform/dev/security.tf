@@ -60,9 +60,9 @@ resource "aws_security_group" "allow_postgres" {
 resource "aws_vpc_security_group_ingress_rule" "allow_postgres_ipv4" {
   security_group_id = aws_security_group.allow_postgres.id
   cidr_ipv4         = module.network.aws_vpc.cidr_block
-  from_port         = 2049
+  from_port         = 5432
   ip_protocol       = "tcp"
-  to_port           = 2049
+  to_port           = 5432
 }
 
 resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4a" {
