@@ -720,6 +720,8 @@ $settings['trusted_host_patterns'] = [
   '^teachers.ddev.site$',
   '^workbc-tr.docker.localhost',
   '^careereducation-dev.workbc.ca',
+  '^careereducation-dev2\.workbc\.ca$',
+  '^k8s-demo-myapping\.b89n0c-dev\.nimbus\.cloud\.gov\.bc\.ca$',
   '^careereducation-test.workbc.ca',
   '^careereducation.workbc.ca'
 ];
