@@ -52,3 +52,7 @@ jobs:
       - name: Update Kubeconfig
         run: |
           aws eks update-kubeconfig --name eks-test-cluster --region ${{ secrets.AWS_REGION }}
+
+      - name: Set image on Kubernetes deployment
+        run: |
+          kubectl set image deployment/cer drupal=${{ secrets.AWS_ECR_URI }}:${{ github.event.workflow_run.head_sha }} --namespace=demo
