@@ -48,3 +48,7 @@ jobs:
           LICENSE_PLATE: ${{ secrets.MY_LICENSE_PLATE }}
           AWS_ROLE: ${{ secrets.AWS_ROLE_ARN_TO_USE }}
         run: terragrunt run-all apply --terragrunt-non-interactive
+        
+      - name: Update Kubeconfig
+        run: |
+          aws eks update-kubeconfig --name eks-test-cluster --region ${{ secrets.AWS_REGION }}
