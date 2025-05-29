@@ -187,3 +187,48 @@ resource "aws_eks_fargate_profile" "workbc-fp" {
     namespace = "app"
   }
 }
+
+#Cluster auto scaler role
+resource "aws_iam_role" "cluster_auto_scaler_role" {
+  name = "cluster_auto_scaler_role"
+
+  assume_role_policy = jsonencode({
+    Statement = [{
+      Action = [
+          "sts:AssumeRole",
+          "sts:TagSession"
+        ]
+      Effect = "Allow"
+      Principal = {
+        Service = "pods.eks.amazonaws.com"
+      }
+    }]
+    Version = "2012-10-17"
+  })
+}
+
+#Cluster auto scaler policy
+resource "aws_iam_role_policy" "cluster_auto_scaler" {
+  name   = "cluster_auto_scaler"
+  role   = aws_iam_role.cluster_auto_scaler_role.id
+  policy = <<-EOF
+  {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "autoscaling:DescribeAutoScalingGroups",
+                  "autoscaling:DescribeAutoScalingInstances",
+                  "autoscaling:DescribeTags",
+                  "autoscaling:SetDesiredCapacity",
+                  "autoscaling:TerminateInstanceInAutoScalingGroup",
+                  "ec2:DescribeLaunchTemplateVersions",
+                  "ec2:DescribeInstances"
+              ],
+              "Resource": "*"
+          }
+      ]
+  }
+  EOF
+}
