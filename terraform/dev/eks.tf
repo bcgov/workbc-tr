@@ -220,7 +220,7 @@ resource "aws_iam_role_policy" "cluster_auto_scaler" {
               "Action": [
                   "autoscaling:DescribeAutoScalingGroups",
                   "autoscaling:DescribeAutoScalingInstances",
-                  "autoscaling:DescribeLaunchConfigurations"
+                  "autoscaling:DescribeLaunchConfigurations",
                   "autoscaling:DescribeTags",
                   "autoscaling:SetDesiredCapacity",
                   "autoscaling:TerminateInstanceInAutoScalingGroup",
