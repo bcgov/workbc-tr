@@ -24,7 +24,7 @@ resource "aws_iam_role_policy_attachment" "eks-cluster-policy" {
   role       = aws_iam_role.eks-cluster-role.name
 }
 
-#EKS cluster
+/*#EKS cluster
 resource "aws_eks_cluster" "workbc-cluster" {
   name = "workbc-cluster"
   access_config {
@@ -60,7 +60,7 @@ resource "aws_eks_addon" "coredns-addon" {
   cluster_name = aws_eks_cluster.workbc-cluster.name
   addon_name   = "coredns"
 }
-
+*/
 #EFS CSI role
 resource "aws_iam_role" "efs-csi-role" {
   name = "efs-csi-role"
@@ -86,7 +86,7 @@ resource "aws_iam_role_policy_attachment" "ec-AmazonEFSCSIDriverPolicy" {
   role       = aws_iam_role.efs-csi-role.name
 }
 
-resource "aws_eks_addon" "aws-efs-csi-driver" {
+/*resource "aws_eks_addon" "aws-efs-csi-driver" {
   cluster_name = aws_eks_cluster.workbc-cluster.name
   addon_name   = "aws-efs-csi-driver"
 
@@ -94,7 +94,7 @@ resource "aws_eks_addon" "aws-efs-csi-driver" {
     role_arn = aws_iam_role.efs-csi-role.arn
     service_account = "efs-csi-controller-sa"
   }
-}
+}*/
 
 #Node group role
 resource "aws_iam_role" "eks-ng-role" {
@@ -127,7 +127,7 @@ resource "aws_iam_role_policy_attachment" "ng-AmazonEC2ContainerRegistryReadOnly
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
   role       = aws_iam_role.eks-ng-role.name
 }
-
+/*
 #Node group
 resource "aws_eks_node_group" "eks-ng" {
   cluster_name    = aws_eks_cluster.workbc-cluster.name
@@ -152,7 +152,7 @@ resource "aws_eks_node_group" "eks-ng" {
     aws_iam_role_policy_attachment.ng-AmazonEKS_CNI_Policy,
     aws_iam_role_policy_attachment.ng-AmazonEC2ContainerRegistryReadOnly,
   ]
-}
+}*/
 
 #Fargate profile role
 resource "aws_iam_role" "eks-fp-role" {
@@ -175,7 +175,7 @@ resource "aws_iam_role_policy_attachment" "fp-AmazonEKSFargatePodExecutionRolePo
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
   role       = aws_iam_role.eks-fp-role.name
 }
-
+/*
 #Fargate profile
 resource "aws_eks_fargate_profile" "workbc-fp" {
   cluster_name           = aws_eks_cluster.workbc-cluster.name
@@ -186,7 +186,7 @@ resource "aws_eks_fargate_profile" "workbc-fp" {
   selector {
     namespace = "app"
   }
-}
+}*/
 
 #Cluster auto scaler role
 resource "aws_iam_role" "cluster_auto_scaler_role" {
