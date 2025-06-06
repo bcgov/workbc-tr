@@ -5,8 +5,11 @@ core_version_requirement: ^8 || ^9 || ^10
 base theme: bootstrap4
 
 # Stylesheets.
-stylesheets-remove:
-  - '@bootstrap4/css/style.css'
+libraries-override:
+  bootstrap4/global-styling:
+    css:
+      theme:
+        css/style.css: false
 
 # Libraries.
 libraries:
