@@ -175,6 +175,8 @@ display:
           hide_alter_empty: true
           click_sort_column: target_id
           type: entity_reference_label
+          settings:
+            link: false
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -185,8 +187,6 @@ display:
           multi_type: ul
           separator: ', '
           field_api_classes: false
-          settings:
-            link: false
         status:
           id: status
           table: simplenews_subscriber

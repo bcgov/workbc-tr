@@ -2,12 +2,15 @@ name: SUBTHEME
 type: theme
 description: 'SUBTHEME subtheme - a subtheme of Bootstrap 4 BCGov'
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 base theme: bootstrap4_bcgov
 
 # Stylesheets.
-stylesheets-remove:
-  - '@bootstrap4_bcgov/css/style.css'
+libraries-override:
+  bootstrap4_bcgov/global-styling:
+    css:
+      theme:
+        css/style.css: false
 
 # Libraries.
 libraries:
