@@ -19,12 +19,12 @@ use Drupal\simplenews\Entity\Newsletter;
 /**
  * Implementing hook_entity_update
  * Prepare email to send to subscriber on Resource content update
- * 
+ *
  */
 function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
 
   if($entity->bundle() == 'resource' && $entity->isPublished() == TRUE && $entity->get('field_resource_email_notifi')->value == TRUE) {
-    
+
         //\Drupal::logger('workbc_tr_content_mail')->warning('<pre><code>' . print_r($entity->get('field_resource_email_notifi')->value, TRUE) . '</code></pre>');
 
         //Query subscribers email subscribed to resource_newsletter
@@ -88,33 +88,33 @@ function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface
             $unsubscribed_url = \Drupal::token()->replace('[simplenews-subscriber:unsubscribe-url]', $sm_data);
             //Get Resource title
             $title = $entity->getTitle();
-  
+
             //Resource type
             $asset_type = $entity->field_term_resource_asset_type->entity->label();
-  
+
             //Create message for email
             $body = <<<html
                 <p>Hello,</p>
                 <p>A new {$asset_type}: {$title} has been added to Career Education Resources. To view, visit: <a href="{$url}">{$url}</a></p>
-                <p>You can <a href="{$unsubscribed_url}">unsubscribe</a> at any time.</p> 
-                <p>Thanks you,</p>
-                <p>The WorkBC.ca Team <br> 
+                <p>You can <a href="{$unsubscribed_url}">unsubscribe</a> at any time.</p>
+                <p>Thank you,</p>
+                <p>The WorkBC.ca Team <br>
                 <a href="https://www.workbc.ca">https://www.workbc.ca</a></p>
             html;
-  
+
             //\Drupal::logger('workbc_tr_content_mail')->warning('<pre><code>' . print_r($body, TRUE) . '</code></pre>');
-  
+
             $params['from'] = "WorkBC.ca No Reply <noreply@gov.bc.ca>";
             $params['body'] = $body;
-  
+
             $params['subject'] = "WorkBC's Career Education Resources: New resource(s) available";
             $newMail->mail('workbc_tr_content_mail', 'workbc_tr_email', $subscriber, 'en', $params, $reply = null, $send = TRUE);
           }
-         
+
           $messenger = \Drupal::messenger();
           $messenger->addMessage('Mail has been sent.', 'status');
         }
-        
+
    }
 }
 
