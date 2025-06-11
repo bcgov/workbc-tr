@@ -22,7 +22,7 @@ resource "aws_cloudfront_distribution" "workbc-cer" {
 	
 	custom_header {
 	  name = "X-Forwarded-Host"
-	  value = "careereducation-dev2.workbc.ca"
+	  value = "careereducation-dev.workbc.ca"
 	}
 	
   }
