@@ -72,7 +72,7 @@ resource "aws_cloudfront_distribution" "workbc-cer" {
 
   tags = var.common_tags
   
-  aliases = ["careereducation-dev2.workbc.ca"]
+  aliases = ["careereducation-dev.workbc.ca"]
 
   viewer_certificate {
     acm_certificate_arn = "arn:aws:acm:us-east-1:873424993519:certificate/eb107937-bb69-469a-aaec-f1b2289f675f"
