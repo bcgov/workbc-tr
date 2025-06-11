@@ -724,7 +724,9 @@ $settings['trusted_host_patterns'] = [
   '^careereducation-dev2\.workbc\.ca$',
   '^k8s-demo-myapping\.b89n0c-dev\.nimbus\.cloud\.gov\.bc\.ca$',
   '^careereducation-test.workbc.ca',
-  '^careereducation.workbc.ca'
+  '^careereducation-test2\.workbc\.ca$',
+  '^careereducation.workbc.ca',
+  '^careereducation2\.workbc\.ca$'
 ];
 
 /**
