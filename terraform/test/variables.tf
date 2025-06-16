@@ -2,7 +2,7 @@
 
 variable "target_env" {
   description = "AWS workload account env (e.g. dev, test, prod, sandbox, unclass)"
-  default = "dev"
+  default = "test"
 }
 
 variable "aws_region" {
