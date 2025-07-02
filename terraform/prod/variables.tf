@@ -2,18 +2,13 @@
 
 variable "target_env" {
   description = "AWS workload account env (e.g. dev, test, prod, sandbox, unclass)"
-  default = "dev"
+  default = "prod"
 }
 
 variable "aws_region" {
   description = "The AWS region things are created in"
   default     = "ca-central-1"
 }
-
-#variable "ecs_task_execution_role_name" {
-#  description = "ECS task execution role name"
-#  default     = "workbcCcEcsTaskExecutionRole"
-#}
 
 variable "app_name" {
   description = "Name of the application"
