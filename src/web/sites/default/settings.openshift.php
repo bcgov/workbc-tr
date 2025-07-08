@@ -12,3 +12,7 @@ $databases['default']['default'] = array (
 );
 
 $settings['hash_salt'] = json_encode($databases);
+
+// Email sending via AWS SES.
+$config['system.mail']['interface']['default'] = 'ses_mail';
+$config['system.mail']['interface']['webform'] = 'ses_mail';

@@ -2,7 +2,7 @@ _core:
   default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
 theme: current
 defaults:
-  sender: SMTPMailSystem
+  sender: ses_mail
   formatter: mime_mail
 modules:
   swiftmailer:
@@ -11,5 +11,5 @@ modules:
       formatter: mime_mail
   symfony_mailer_lite:
     none:
-      sender: SMTPMailSystem
+      sender: ses_mail
       formatter: mime_mail
