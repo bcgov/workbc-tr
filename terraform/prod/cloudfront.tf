@@ -22,7 +22,7 @@ resource "aws_cloudfront_distribution" "workbc-cer" {
 	
 	custom_header {
 	  name = "X-Forwarded-Host"
-	  value = "careereducation2.workbc.ca"
+	  value = "careereducation.workbc.ca"
 	}
 	
   }
@@ -72,7 +72,7 @@ resource "aws_cloudfront_distribution" "workbc-cer" {
 
   tags = var.common_tags
   
-  aliases = ["careereducation2.workbc.ca"]
+  aliases = ["careereducation.workbc.ca"]
 
   viewer_certificate {
     acm_certificate_arn = "arn:aws:acm:us-east-1:846410483170:certificate/c1c1372a-be9b-4f38-96c3-168ca3220be2"
