@@ -73,6 +73,7 @@ module:
   search_api_autocomplete: 0
   search_api_solr: 0
   seo_checklist: 0
+  ses_mailer: 0
   sharethis: 0
   shortcut: 0
   simplenews: 0
