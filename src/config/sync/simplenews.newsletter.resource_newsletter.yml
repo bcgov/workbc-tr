@@ -10,7 +10,7 @@ priority: 0
 receipt: true
 from_name: 'Career Education Resources'
 subject: '[[simplenews-newsletter:name]] [node:title]'
-from_address: admin@educ.gov.bc.ca
+from_address: noreply@workbc.ca
 hyperlinks: true
 allowed_handlers:
   0: '0'

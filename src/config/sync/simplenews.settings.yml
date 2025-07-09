@@ -5,7 +5,7 @@ newsletter:
   format: html
   priority: 0
   receipt: true
-  from_address: admin@educ.gov.bc.ca
+  from_address: noreply@workbc.ca
   from_name: 'Career Education Resources'
 subscriber:
   sync_fields: true
