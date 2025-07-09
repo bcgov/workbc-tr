@@ -199,3 +199,43 @@ resource "aws_iam_role_policy" "cluster_auto_scaler" {
   }
   EOF
 }
+
+#SES Mailer role
+resource "aws_iam_role" "ses_mailer_role" {
+  name = "ses_mailer_role"
+
+  assume_role_policy = jsonencode({
+    Statement = [{
+      Action = [
+          "sts:AssumeRole",
+          "sts:TagSession"
+        ]
+      Effect = "Allow"
+      Principal = {
+        Service = "pods.eks.amazonaws.com"
+      }
+    }]
+    Version = "2012-10-17"
+  })
+}
+
+#SES Mailer policy
+resource "aws_iam_role_policy" "ses_mailer_policy" {
+  name   = "ses_mailer_policy"
+  role   = aws_iam_role.ses_mailer_role.id
+  policy = <<-EOF
+  {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "ses:SendEmail",
+				  "ses:SendRawEmail"
+              ],
+              "Resource": "*"
+          }
+      ]
+  }
+  EOF
+}
