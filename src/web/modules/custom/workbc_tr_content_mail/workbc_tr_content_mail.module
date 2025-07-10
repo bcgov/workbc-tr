@@ -104,7 +104,7 @@ function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface
 
             //\Drupal::logger('workbc_tr_content_mail')->warning('<pre><code>' . print_r($body, TRUE) . '</code></pre>');
 
-            $params['from'] = "WorkBC.ca No Reply <noreply@gov.bc.ca>";
+            $params['from'] = "WorkBC.ca No Reply <noreply@workbc.ca>";
             $params['body'] = $body;
 
             $params['subject'] = "WorkBC's Career Education Resources: New resource(s) available";
