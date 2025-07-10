@@ -3,7 +3,7 @@ _core:
 theme: current
 defaults:
   sender: ses_mail
-  formatter: mime_mail
+  formatter: ses_mail
 modules:
   swiftmailer:
     none:
@@ -12,4 +12,4 @@ modules:
   symfony_mailer_lite:
     none:
       sender: ses_mail
-      formatter: mime_mail
+      formatter: ses_mail
