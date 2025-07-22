@@ -5,7 +5,7 @@
         if (typeof context.location !== 'undefined') { // Only fire on document load.
             var action_event = "load";
             var count = 0;
-            
+
         }
         //var count_results = $('.search_wrapper .row > div').length;
         var splashGradeArray = new Array();
@@ -40,7 +40,7 @@
                 splashAudienceArray.push(label);
             }
         });
-        
+
         var grades = stage = competency = audience = "All";
 
         var category = $('input[name="field_term_resource_asset_type"]:checked').parent().find('label').text();
@@ -49,7 +49,7 @@
         }
 
         var keyword = null;
-        
+
         if(splashGradeArray.length !== 0) {
             grades = splashGradeArray.join(',')
         }
@@ -92,8 +92,8 @@
         // //         });
         // //     });
         // });
-        
-        
+
+
         if($('.lesson_wrapper__intro__title').length > 0) {
             var resource_id = $('.lesson_wrapper__intro__title').text().replace('  ', ' ').trim();
         } else if('resource_wrapper__intro__title') {
@@ -102,8 +102,8 @@
             var resource_id = null;
         }
 
-        var path =  window.location.pathname; 
-        var category = path.split("/")[1];   
+        var path =  window.location.pathname;
+        var category = path.split("/")[1];
         var link_text = null;
 
         //navbar scroll click event moved
@@ -129,48 +129,41 @@
           },100);
 
         //Track resource and lesson plans click
-        $('.page-node-type-resource .leftnavbar a,'+
+        let target = '.page-node-type-resource .leftnavbar a,'+
           '.page-node-type-resource .download-worksheets-files-wrapper a,' +
           '.page-node-type-resource .go-to-resource-wrapper a,' +
           '.page-node-type-resource .main_section a[target="_blank"],'+
-          '.page-node-type-resource .related_news_wrapper_title a',context).once('num_'+count).on('click', function() {  
-               if($(this).parent().hasClass("file-url") && $(this).text() == "Download All") {
-                   count++;
-                   click_type = 'download_all_worksheets'
-                   snowplow_tracker(category, click_type, link_text, count)
-               } 
-               if($(this).parent().hasClass("file-title")){
-                   count++;
-                   click_type = 'download_file'
-                   link_text = $(this).attr('title');
-                   snowplow_tracker(category, click_type, link_text, count)
-               } 
-               if ($(this).attr('target') == '_blank' && !$(this).parent().hasClass('file-title')) {
-                   count++;
-                   click_type = 'external_link';
-                   link_text = $(this).attr('href');
-                   snowplow_tracker(category, click_type, link_text, count)
-               }
-               if($(this).parent().hasClass('related_news_wrapper_title')) {
-                    count++;
-                    click_type = 'related_resource';
-                    var asset_type = $(this).parents('.related_news_wrapper--item').find('.related_news_wrapper_assest_type').text();
-                    link_text = asset_type+': '+$(this).text();
-                    snowplow_tracker(category, click_type, link_text, count)
-               }
-               return true;
+          '.page-node-type-resource .related_news_wrapper_title a';
+        $(once('num_'+count, target, context)).on('click', function() {
+          if($(this).parent().hasClass("file-url") && $(this).text() == "Download All") {
+             count++;
+             click_type = 'download_all_worksheets'
+             snowplow_tracker(category, click_type, link_text, count)
+           }
+           if($(this).parent().hasClass("file-title")){
+             count++;
+             click_type = 'download_file'
+             link_text = $(this).attr('title');
+             snowplow_tracker(category, click_type, link_text, count)
+           }
+           if ($(this).attr('target') == '_blank' && !$(this).parent().hasClass('file-title')) {
+             count++;
+             click_type = 'external_link';
+             link_text = $(this).attr('href');
+             snowplow_tracker(category, click_type, link_text, count)
+           }
+           if($(this).parent().hasClass('related_news_wrapper_title')) {
+              count++;
+              click_type = 'related_resource';
+              var asset_type = $(this).parents('.related_news_wrapper--item').find('.related_news_wrapper_assest_type').text();
+              link_text = asset_type+': '+$(this).text();
+              snowplow_tracker(category, click_type, link_text, count)
+           }
+           return true;
         });
 
         //Social share links
-        $('.page-node-type-resource .sharethis-wrapper span',context).once('num_'+count).on('click', function() {
-            link_text = $(this).attr('displaytext');
-            count++;
-            click_type = 'social';
-            snowplow_tracker(category, click_type, link_text, count);
-        });
-
-        //Social share links
-        $('.page-node-type-resource .sharethis-wrapper span',context).once('num_'+count).on('click', function() {
+        $(once('num_'+count,'.page-node-type-resource .sharethis-wrapper span',context)).on('click', function() {
             link_text = $(this).attr('displaytext');
             count++;
             click_type = 'social';
@@ -178,7 +171,7 @@
         });
 
         //clear all event
-        $('.search_filter__results .clear-all',context).once('num_'+count).on('click', function() {
+        $(once('num_'+count, '.search_filter__results .clear-all',context)).on('click', function() {
             count++;
             link_text = $(this).text();
             click_type = "Clear All";
@@ -187,11 +180,11 @@
         });
 
         //Download worksheets
-        $('.download-worksheets-button',context).once('num_'+count).on('click', function() {
+        $(once('num_'+count, '.download-worksheets-button',context)).on('click', function() {
             click_type = 'download_worksheets';
             snowplow_tracker(category, click_type, link_text, count);
         });
-        
+
         //Email social link
         $('.page-node-type-resource .sharethis-wrapper > a').on('click', function() {
             count++;
@@ -199,19 +192,19 @@
             link_text = $(this).attr('displaytext');
             snowplow_tracker(category, click_type, link_text, count);
         });
-        
+
         function snowplow_tracker(category, click_type, link_text, count) {
-            $(this, context).once('num_'+count).each(function() {
-                    window.snowplow('trackSelfDescribingEvent', {"schema":"iglu:ca.bc.gov.workbc/resource_click/jsonschema/1-0-0",
-                    "data": {
-                        "category": category.replace('-','_'),
-                        "resource_id": resource_id,
-                        "click_type": click_type,
-                        "text": link_text
-                    }
-                });
+          $(once(click_type+'_'+category+'_'+count, 'html', context)).each(function() {
+            window.snowplow('trackSelfDescribingEvent', {"schema":"iglu:ca.bc.gov.workbc/resource_click/jsonschema/1-0-0",
+              "data": {
+                "category": category.replace('-','_'),
+                "resource_id": resource_id,
+                "click_type": click_type,
+                "text": link_text
+              }
             });
-        } 
+          });
+        }
 
         // function waitForElement(elementPath, searchbox, callBack){
         //     window.setTimeout(function(){
