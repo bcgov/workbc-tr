@@ -194,7 +194,7 @@
         });
 
         function snowplow_tracker(category, click_type, link_text, count) {
-          $(once(click_type+'_'+category+'_'+count, 'html', context)).each(function() {
+          $(once('num_'+count, 'html', context)).each(function() {
             window.snowplow('trackSelfDescribingEvent', {"schema":"iglu:ca.bc.gov.workbc/resource_click/jsonschema/1-0-0",
               "data": {
                 "category": category.replace('-','_'),
