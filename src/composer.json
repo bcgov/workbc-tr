@@ -47,6 +47,8 @@
         "drupal/core-project-message": "^10.2",
         "drupal/core-recommended": "^10.2",
         "drupal/ctools": "^4.0",
+        "drupal/devel": "^5.4",
+        "drupal/devel_kint_extras": "^1.1",
         "drupal/editor_advanced_link": "^2.2",
         "drupal/entity_print": "^2.14",
         "drupal/entity_reference_revisions": "^1.11",
@@ -144,9 +146,6 @@
           },
           "drupal/media_download_all": {
             "3190105 - Compression fails with No active tasks alert": "https://www.drupal.org/files/issues/2021-03-22/3190105-2.patch"
-          },
-          "drupal/smtp": {
-            "3323386 - Error sending e-mail: Invalid address": "https://www.drupal.org/files/issues/2023-03-16/error-sending-email-16.patch"
           }
         },
         "drupal-core-project-message": {
