@@ -28,7 +28,7 @@ jobs:
       
       # Pull AWS credentials
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN_TO_USE_TOOLS }}
           aws-region: ${{ secrets.AWS_REGION }}
