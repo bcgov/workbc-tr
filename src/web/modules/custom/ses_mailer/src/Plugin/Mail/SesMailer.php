@@ -74,6 +74,9 @@ class SesMailer extends PluginBase implements MailInterface, ContainerFactoryPlu
    * {@inheritdoc}
    */
   public function format(array $message) {
+    if (is_string($message['body'])) {
+      $message['body'] = [$message['body']];
+    }
     // Join the body array into one string.
     $message['body'] = implode("\n\n", $message['body']);
     // Convert any HTML to plain-text.
@@ -114,7 +117,7 @@ class SesMailer extends PluginBase implements MailInterface, ContainerFactoryPlu
           $cc = $message['headers']['Cc'];
         }
       }
-      
+
       $bcc = [];
       if (array_key_exists('Bcc', $message['headers'])) {
         if (!is_array($message['headers']['Bcc'])) {

@@ -55,4 +55,4 @@ jobs:
 
       - name: Set image on Kubernetes deployment
         run: |
-          kubectl set image deployment/cer drupal=${{ secrets.AWS_ECR_URI }}:latest-test --record --namespace=app
+          kubectl set image deployment/cer drupal=${{ secrets.AWS_ECR_URI }}:${{ github.event.workflow_run.head_branch }} --record --namespace=app

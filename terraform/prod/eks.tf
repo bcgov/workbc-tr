@@ -231,7 +231,8 @@ resource "aws_iam_role_policy" "ses_mailer_policy" {
               "Effect": "Allow",
               "Action": [
                   "ses:SendEmail",
-				  "ses:SendRawEmail"
+		  "ses:SendRawEmail",
+		  "ses:ListIdentities"
               ],
               "Resource": "*"
           }
