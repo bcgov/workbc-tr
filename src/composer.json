@@ -45,6 +45,8 @@
         "drupal/core-project-message": "~11.2.4",
         "drupal/core-recommended": "~11.2.4",
         "drupal/ctools": "^4.1",
+        "drupal/devel": "^5.4",
+        "drupal/devel_kint_extras": "^1.1",
         "drupal/editor_advanced_link": "2.3.1",
         "drupal/entity_print": "^2.18",
         "drupal/entity_reference_revisions": "^1.12",
