@@ -728,7 +728,10 @@ $settings['trusted_host_patterns'] = [
   '^k8s-app-cerappin\.b89n0c-test\.nimbus\.cloud\.gov\.bc\.ca$',
   '^careereducation.workbc.ca',
   '^careereducation2\.workbc\.ca$',
-  '^k8s-app-cerappin\.b89n0c-prod\.nimbus\.cloud\.gov\.bc\.ca$'
+  '^k8s-app-cerappin\.b89n0c-prod\.nimbus\.cloud\.gov\.bc\.ca$',
+  '^workbc-cer\.a55eb5-dev\.stratus\.cloud\.gov\.bc\.ca$',
+  '^workbc-cer\.a55eb5-test\.stratus\.cloud\.gov\.bc\.ca$',
+  '^workbc-cer\.a55eb5-prod\.stratus\.cloud\.gov\.bc\.ca$'
 ];
 
 /**
