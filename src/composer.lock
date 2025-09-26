@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90ddafce120a6f4aca81e0c258bcab11",
+    "content-hash": "6bb239c46c5515ae265613c2bd2e1459",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3866,20 +3866,20 @@
         },
         {
             "name": "drupal/metatag",
-            "version": "2.1.2",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/metatag.git",
-                "reference": "2.1.2"
+                "reference": "2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/metatag-2.1.2.zip",
-                "reference": "2.1.2",
-                "shasum": "0ef6232c40a3b7a45ea40d033e124b9698941e9d"
+                "url": "https://ftp.drupal.org/files/projects/metatag-2.2.0.zip",
+                "reference": "2.2.0",
+                "shasum": "b6ae4b665a49771d5139644c71cb3d5a68cb4828"
             },
             "require": {
-                "drupal/core": "^9.4 || ^10 || ^11",
+                "drupal/core": "^10.3 || ^11",
                 "drupal/token": "^1.0",
                 "php": ">=8.0"
             },
@@ -3888,7 +3888,7 @@
                 "drupal/hal": "^1 || ^2 || ^9",
                 "drupal/metatag_dc": "*",
                 "drupal/metatag_open_graph": "*",
-                "drupal/page_manager": "*",
+                "drupal/page_manager": "^4.0",
                 "drupal/redirect": "^1.0",
                 "ergebnis/composer-normalize": "*",
                 "mpyw/phpunit-patch-serializable-comparison": "*"
@@ -3896,8 +3896,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.2",
-                    "datestamp": "1757006643",
+                    "version": "2.2.0",
+                    "datestamp": "1758622371",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5132,17 +5132,17 @@
         },
         {
             "name": "drupal/tour",
-            "version": "2.0.12",
+            "version": "2.0.13",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tour.git",
-                "reference": "2.0.12"
+                "reference": "2.0.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tour-2.0.12.zip",
-                "reference": "2.0.12",
-                "shasum": "971bc9b4734a036d4ae933e98fdea78883e096f8"
+                "url": "https://ftp.drupal.org/files/projects/tour-2.0.13.zip",
+                "reference": "2.0.13",
+                "shasum": "314c2ed9208568db7252b2f9fea8fc84f86f8742"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11"
@@ -5158,8 +5158,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.12",
-                    "datestamp": "1754063368",
+                    "version": "2.0.13",
+                    "datestamp": "1758642802",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

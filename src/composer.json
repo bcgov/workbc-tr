@@ -63,7 +63,7 @@
         "drupal/mailsystem": "^4.5",
         "drupal/media_library_form_element": "^2.0",
         "drupal/menu_link_attributes": "^1.5",
-        "drupal/metatag": "^2.1",
+        "drupal/metatag": "^2.2",
         "drupal/mimemail": "^2.0@alpha",
         "drupal/module_filter": "^5.0",
         "drupal/openid_connect": "^3.0@alpha",
