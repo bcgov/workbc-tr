@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6bb239c46c5515ae265613c2bd2e1459",
+    "content-hash": "87397224f3023b6b74346fa19e14fbb9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3735,17 +3735,17 @@
         },
         {
             "name": "drupal/media_library_form_element",
-            "version": "2.1.2",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/media_library_form_element.git",
-                "reference": "2.1.2"
+                "reference": "2.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/media_library_form_element-2.1.2.zip",
-                "reference": "2.1.2",
-                "shasum": "12f6609cd0ee372a06302b378ea9080f5cfc3839"
+                "url": "https://ftp.drupal.org/files/projects/media_library_form_element-2.1.3.zip",
+                "reference": "2.1.3",
+                "shasum": "da8a6293e48f992bb0fb4383d3b33788fd83af74"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11"
@@ -3753,8 +3753,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.2",
-                    "datestamp": "1751647269",
+                    "version": "2.1.3",
+                    "datestamp": "1758914975",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
