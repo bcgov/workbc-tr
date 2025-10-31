@@ -35,6 +35,7 @@
         "composer/installers": "^1.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.6",
+        "drupal/backup_migrate": "^5.1",
         "drupal/better_exposed_filters": "^7.1@beta",
         "drupal/bootstrap4": "^3.0",
         "drupal/bootstrap_paragraphs": "^5.0",
