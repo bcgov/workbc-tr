@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: cutom_grade_access
 label: 'Grade access'
-revision: 0
+revision: false
 description: 'Grade access block home page'

@@ -62,6 +62,7 @@
         "drupal/keycloak": "^2.2",
         "drupal/linkit": "^7.0",
         "drupal/mailsystem": "^4.5",
+        "drupal/meaofd": "^1.1",
         "drupal/media_library_form_element": "^2.1",
         "drupal/menu_link_attributes": "^1.5",
         "drupal/metatag": "^2.2",

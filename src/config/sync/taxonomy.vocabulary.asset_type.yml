@@ -6,3 +6,4 @@ name: 'Asset Type'
 vid: asset_type
 description: 'Type of content'
 weight: 0
+new_revision: false

@@ -6,3 +6,4 @@ name: 'Industry Type'
 vid: industry_type
 description: ''
 weight: 0
+new_revision: false

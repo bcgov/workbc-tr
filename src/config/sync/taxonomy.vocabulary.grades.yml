@@ -6,3 +6,4 @@ name: Grades
 vid: grades
 description: 'Range of grades'
 weight: 0
+new_revision: false
