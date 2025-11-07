@@ -1,5 +1,5 @@
 name: Workbc-TR Custom module
 description: "This module is developed to achieve custom functionality."
 type: module
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9 || ^10 || ^11
 package: custom

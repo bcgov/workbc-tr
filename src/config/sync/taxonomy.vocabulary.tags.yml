@@ -8,3 +8,4 @@ name: Tags
 vid: tags
 description: 'Generic tags - default Vocabulary provided by Drupal.'
 weight: 0
+new_revision: false

@@ -18,7 +18,7 @@ settings:
   label: Search
   label_display: '0'
   provider: search
-  page_id: ''
+  page_id: null
 visibility:
   request_path:
     id: request_path

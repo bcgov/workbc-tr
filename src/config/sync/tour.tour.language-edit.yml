@@ -8,7 +8,6 @@ _core:
   default_config_hash: htvIRulQmOueGSHBeexvOjhVnSRQeyJLzSAFk91-Wq8
 id: language-edit
 label: 'Editing languages'
-module: language
 routes:
   -
     route_name: entity.configurable_language.edit_form

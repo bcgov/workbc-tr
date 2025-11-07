@@ -27,5 +27,5 @@ settings:
   preselect_views: {  }
   enabled_settings:
     argument: argument
-    title: true
+    title: '1'
 field_type: viewsreference
