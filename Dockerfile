@@ -9,3 +9,4 @@ COPY --chown=1001:1 src /code
 #USER 1001
 #RUN chmod -R g+rwX /code
 RUN cd /code && rm -rf .git && composer install && COMPOSER_MEMORY_LIMIT=-1 composer update
+ENV PATH="/app/vendor/bin:${PATH}"
