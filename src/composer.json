@@ -53,6 +53,7 @@
         "drupal/entity_reference_revisions": "^1.12",
         "drupal/externalauth": "^2.0",
         "drupal/field_group": "^3.1",
+        "drupal/jquery_downgrade": "^1.0",
         "drupal/jquery_ui": "^1.8",
         "drupal/jquery_ui_autocomplete": "^2.1",
         "drupal/jquery_ui_datepicker": "^2.1",
