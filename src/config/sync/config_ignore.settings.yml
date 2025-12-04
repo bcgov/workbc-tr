@@ -2,6 +2,7 @@ _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 mode: simple
 ignored_config_entities:
+  - openid_connect.client.keycloak
   - openid_connect.settings.keycloak
   - 'search_api.server.*'
   - smtp.settings

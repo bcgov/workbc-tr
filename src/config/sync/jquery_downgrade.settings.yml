@@ -1,0 +1,7 @@
+node_ids: {  }
+view_routes: {  }
+enable_theme_downgrade: true
+downgrade_themes:
+  bootstrap4: bootstrap4
+  bootstrap4_bcgov: bootstrap4_bcgov
+  bcgov_teachers: bcgov_teachers
