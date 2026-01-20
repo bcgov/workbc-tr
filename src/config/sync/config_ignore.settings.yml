@@ -8,3 +8,4 @@ ignored_config_entities:
   - smtp.settings
   - update.settings
   - workbc_tr_build.settings
+  - 'system.site:page.front'
