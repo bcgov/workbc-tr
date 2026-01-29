@@ -1,4 +1,3 @@
-#FROM 075458558257.dkr.ecr.ca-central-1.amazonaws.com/drupal-base:6.0
 FROM 001674982960.dkr.ecr.ca-central-1.amazonaws.com/drupal-base:1.0
 ARG GITHUB_SHA=unknown
 ENV OPENSHIFT_BUILD_NAME=$GITHUB_SHA
