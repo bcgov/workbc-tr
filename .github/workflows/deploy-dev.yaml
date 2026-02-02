@@ -42,5 +42,10 @@ jobs:
           aws eks update-kubeconfig --name workbc-cluster2 --region ${{ secrets.AWS_REGION }}
 
       - name: Set image on Kubernetes deployment
+        env:
+          IMAGE: ${{ secrets.AWS_ECR_URI }}:${{ github.event.workflow_run.head_sha }}
         run: |
-          kubectl set image deployment/cer drupal=${{ secrets.AWS_ECR_URI }}:${{ github.event.workflow_run.head_sha }} --namespace=app
+          kubectl delete job drupal-drush-cer -n app --ignore-not-found
+          sed "s|__IMAGE__|$IMAGE|g" yaml/drush.yaml | kubectl apply -f -
+          kubectl wait --for=condition=complete job/drupal-drush-cer --timeout=300s -n app
+          kubectl set image deployment/cer drupal=$IMAGE --namespace=app
