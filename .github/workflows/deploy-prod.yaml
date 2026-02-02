@@ -37,22 +37,17 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN_TO_USE_PROD }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-#      - uses: peter-murray/terragrunt-github-action@v1.0.0
-#        with:
-#          terragrunt_version: ${{ env.TG_VERSION }}
 
-#      - name: Terragrunt Apply
-#        working-directory: ${{ env.TG_SRC_PATH }}/${{ env.TFC_WORKSPACE }}
-#        env:
-#          app_image: ${{ env.IMAGE_ID }}:${{ github.event.workflow_run.head_branch }}
-#          LICENSE_PLATE: ${{ secrets.MY_LICENSE_PLATE }}
-#          AWS_ROLE: ${{ secrets.AWS_ROLE_ARN_TO_USE }}
-#        run: terragrunt run-all apply --terragrunt-non-interactive
         
       - name: Update Kubeconfig
         run: |
-          aws eks update-kubeconfig --name workbc-cluster --region ${{ secrets.AWS_REGION }}
+          aws eks update-kubeconfig --name workbc-cluster2 --region ${{ secrets.AWS_REGION }}
 
       - name: Set image on Kubernetes deployment
+        env:
+          IMAGE: ${{ secrets.AWS_ECR_URI }}:${{ github.event.workflow_run.head_branch }}
         run: |
-          kubectl set image deployment/cer drupal=${{ secrets.AWS_ECR_URI }}:${{ github.event.workflow_run.head_branch }} --record --namespace=app
+          kubectl delete job drupal-drush-cer -n app --ignore-not-found
+          sed "s|__IMAGE__|$IMAGE|g" yaml/drush.yaml | kubectl apply -f -
+          kubectl wait --for=condition=complete job/drupal-drush-cer --timeout=300s -n app
+          kubectl set image deployment/cer drupal=$IMAGE --record --namespace=app
