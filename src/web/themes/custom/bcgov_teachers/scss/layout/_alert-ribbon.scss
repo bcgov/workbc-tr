@@ -1,0 +1,55 @@
+.sitewide-alert.alert {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 10px 12px;
+  background-color: #791d5f;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+.sitewide-alert > div {
+  display: block;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.sitewide-alert .close {
+  float: none;
+  margin-left: auto;
+  display: block;
+  height: 28px;
+  width: 32px;
+  border: none;
+  padding: 0;
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.sitewide-alert .close > span {
+  display: block;
+  height: 32px;
+}
+
+.sitewide-alert a {
+  font-weight: 700;
+  color: #fff;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

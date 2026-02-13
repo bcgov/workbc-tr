@@ -81,6 +81,7 @@
         "drupal/seo_checklist": "^5.2",
         "drupal/sharethis": "^3.0",
         "drupal/simplenews": "^4.1",
+        "drupal/sitewide_alert": "^3.0",
         "drupal/smtp": "^1.4",
         "drupal/symfony_mailer_lite": "^2.0",
         "drupal/token": "^1.15",

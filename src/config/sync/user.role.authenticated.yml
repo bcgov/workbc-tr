@@ -33,6 +33,7 @@ dependencies:
     - search
     - shortcut
     - simplenews
+    - sitewide_alert
     - system
     - taxonomy
     - toolbar
@@ -128,6 +129,7 @@ permissions:
   - 'view content revisions'
   - 'view media'
   - 'view own unpublished content'
+  - 'view published sitewide alert entities'
   - 'view resource revisions'
   - 'view simplenews subscriptions'
   - 'view the administration theme'
