@@ -6,6 +6,6 @@ ignored_config_entities:
   - openid_connect.settings.keycloak
   - 'search_api.server.*'
   - smtp.settings
+  - 'system.site:page.front'
   - update.settings
   - workbc_tr_build.settings
-  - 'system.site:page.front'
