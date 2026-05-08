@@ -80,8 +80,9 @@ footer {
     margin-left: 5px;
     border-radius: 50%;
     text-align: center;
-    line-height: 40px;
-    font-size: 21px;
+    background-repeat: no-repeat;
+    background-size: auto 45%;
+    background-position: center;
 
     &:first-child {
       margin-left: 0;
@@ -89,19 +90,33 @@ footer {
 
     &:link,
     &:visited {
-      background: $white;
+      background-color: $white;
     }
 
     &:hover,
     &:active,
     &:focus {
-      background: $teachers-bg-fullight-grey;
+      background-color: $teachers-bg-fullight-grey;
     }
 
-    &.social-twitter { color: #009cd8; }
-    &.social-youtube { color: #d21c22; }
-    &.social-linkedin { color: #006caa; }
-    &.social-facebook { color: #3d5b98; }
+    &.social-twitter {
+      background-size: 32px;
+      background-image: url(../images/social-icon-x.svg);
+    }
+    &.social-youtube {
+      background-image: url(../images/social-icon-youtube.svg);
+    }
+    &.social-linkedin {
+      background-image: url(../images/social-icon-linkedin.svg);
+    }
+    &.social-facebook {
+      background-size: 20px;
+      background-image: url(../images/social-icon-facebook.svg);
+    }
+    &.social-instagram {
+      background-size: 20px;
+      background-image: url(../images/social-icon-instagram.svg);
+    }
   }
 
   span {
