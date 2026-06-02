@@ -80,10 +80,21 @@ class SesMailer extends PluginBase implements MailInterface, ContainerFactoryPlu
     // Join the body array into one string.
     $message['body'] = implode("\n\n", $message['body']);
     // Convert any HTML to plain-text.
-    // $message['body'] = MailFormatHelper::htmlToText($message['body']);
+    if ($message['id'] == "simplenews_subscribe_combined") {
+      $message['body'] = $this->htmlToText($message['body']);
+    }
+    else {
+      $message['body'] = MailFormatHelper::htmlToText($message['body']);
+    }
     // Wrap the mail body for sending.
     $message['body'] = MailFormatHelper::wrapMail($message['body']);
     return $message;
+  }
+
+  private function htmlToText($string) {
+    $string = str_replace("</p>", "\n", $string);
+    $string = strip_tags($string);
+    return $string;
   }
 
   /**
