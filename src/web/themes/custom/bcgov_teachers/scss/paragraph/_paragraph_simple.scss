@@ -17,6 +17,19 @@
       height: auto;
       max-width: 33%;
     }
+
+    &.align-center {
+      display: block;
+    }
+  }
+
+  .resource_wrapper_main_para_item__body {
+    img {
+      &.align-right,
+      &.align-left {
+        max-width: none;
+      }
+    }
   }
 
   .container {
@@ -24,7 +37,7 @@
       *:last-child {
         margin-bottom: 0;
       }
-      
+
       p, ol li, ul li, li span, li a{
         font-size: 1rem;
       }

@@ -150,24 +150,24 @@
 										{{ subentity.entity.field_main_heading.value }}
 									</div>
 									{% endif %}
-									<div class="resource_wrapper_main_para">
-									{% for lkey,lsubentity in subentity.entity.field_simple_descriotion|filter((value, key) => key|first != '#') %}
-									<div class="resource_wrapper_main_para_item" id="paragraph-{{ lsubentity.entity.id.value }}">
-										{% if lsubentity.entity.field_para_simple_title.value is not empty %}
-										<div class="resource_wrapper_main_para_item__title">
-											{{ lsubentity.entity.field_para_simple_title.value|raw }}
-											{% if lsubentity.entity.field_show_bulb_icon.value == 1 %}
-												<span class="icon-bulb"><img src="/themes/custom/bcgov_teachers/images/bulb.svg" /></span>
+									<div class="resource_wrapper_main_para paragraph--type--paragraph-simple">
+										{% for lkey,lsubentity in subentity.entity.field_simple_descriotion|filter((value, key) => key|first != '#') %}
+										<div class="resource_wrapper_main_para_item" id="paragraph-{{ lsubentity.entity.id.value }}">
+											{% if lsubentity.entity.field_para_simple_title.value is not empty %}
+											<div class="resource_wrapper_main_para_item__title">
+												{{ lsubentity.entity.field_para_simple_title.value|raw }}
+												{% if lsubentity.entity.field_show_bulb_icon.value == 1 %}
+													<span class="icon-bulb"><img src="/themes/custom/bcgov_teachers/images/bulb.svg" /></span>
+												{% endif %}
+												</div>
 											{% endif %}
-											</div>
-										{% endif %}
-										{% if lsubentity.entity.field_para_simple_body.getValue().0.value is not empty %}
-															<div class="resource_wrapper_main_para_item__body">
-															{{ lsubentity.entity.field_para_simple_body.getValue().0.value|raw }}
-															</div>
-										{% endif %}
-									</div>
-									{% endfor %}
+											{% if lsubentity.entity.field_para_simple_body.getValue().0.value is not empty %}
+												<div class="clearfix text-formatted resource_wrapper_main_para_item__body">
+													{{ lsubentity.entity.field_para_simple_body.getValue().0.value|check_markup('basic_html') }}
+												</div>
+											{% endif %}
+										</div>
+										{% endfor %}
 									</div>
 								</div>
 							{% endfor %}
