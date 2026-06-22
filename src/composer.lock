@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "484653b3c1fd321f00060e5c4883e1e9",
+    "content-hash": "92e9cfc2eff97b2345a4bc953a5ae649",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1939,6 +1939,58 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/better_exposed_filters",
                 "issues": "https://www.drupal.org/project/issues/better_exposed_filters"
+            }
+        },
+        {
+            "name": "drupal/better_social_sharing_buttons",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/better_social_sharing_buttons.git",
+                "reference": "4.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/better_social_sharing_buttons-4.1.0.zip",
+                "reference": "4.1.0",
+                "shasum": "2c76a58208213ed0a259b334182ca4c5c0729058"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.1.0",
+                    "datestamp": "1733860882",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "flyke",
+                    "homepage": "https://www.drupal.org/user/2750085"
+                },
+                {
+                    "name": "mandclu",
+                    "homepage": "https://www.drupal.org/user/52136"
+                },
+                {
+                    "name": "shelane",
+                    "homepage": "https://www.drupal.org/user/2674989"
+                }
+            ],
+            "description": "Provides a settings page, a field, a paragraph, and a block for social sharing buttons",
+            "homepage": "https://www.drupal.org/project/better_social_sharing_buttons",
+            "support": {
+                "source": "https://git.drupalcode.org/project/better_social_sharing_buttons"
             }
         },
         {
@@ -12156,5 +12208,5 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }

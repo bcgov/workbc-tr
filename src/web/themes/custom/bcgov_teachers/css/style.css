@@ -10175,6 +10175,24 @@ input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder 
   transform: rotate(180deg);
 }
 
+.block-better-social-sharing-buttons {
+  margin-left: 2px;
+}
+
+.social-sharing-buttons {
+  margin: 0px 0px 5px 0px;
+}
+.social-sharing-buttons svg {
+  background: #333333;
+  fill: white;
+}
+.social-sharing-buttons .share-x svg {
+  border: 5px solid #333333;
+}
+.social-sharing-buttons a {
+  margin: 0px 0px 0px 6px;
+}
+
 .footer .container, .footer .path-newsletter #block-bcgov-teachers-content, .path-newsletter .footer #block-bcgov-teachers-content {
   display: flex;
   justify-content: space-around;
