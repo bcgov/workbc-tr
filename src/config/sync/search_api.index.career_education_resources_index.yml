@@ -14,12 +14,11 @@ dependencies:
     - field.storage.node.field_term_resource_stage
     - search_api.server.career_resources_solr
   module:
-    - search_api_solr
-    - node
-    - search_api
     - file
     - media
+    - node
     - paragraphs
+    - search_api_solr
     - taxonomy
 third_party_settings:
   search_api_solr:
@@ -79,7 +78,7 @@ field_settings:
     label: 'Card Summary'
     datasource_id: 'entity:node'
     property_path: field_resource_card_summary
-    type: text
+    type: 'solr_text_custom:ngram'
     dependencies:
       config:
         - field.storage.node.field_resource_card_summary
@@ -87,7 +86,7 @@ field_settings:
     label: Description
     datasource_id: 'entity:node'
     property_path: field_resource_desc
-    type: text
+    type: 'solr_text_custom:ngram'
     dependencies:
       config:
         - field.storage.node.field_resource_desc
@@ -95,7 +94,7 @@ field_settings:
     label: Summary
     datasource_id: 'entity:node'
     property_path: field_resource_summary
-    type: text
+    type: 'solr_text_custom:ngram'
     dependencies:
       config:
         - field.storage.node.field_resource_summary
@@ -151,7 +150,8 @@ field_settings:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
-    type: text
+    type: 'solr_text_custom:ngram'
+    boost: 5.0
     dependencies:
       module:
         - node
@@ -202,12 +202,16 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  auto_aggregated_fulltext_field: {  }
+  custom_value: {  }
+  entity_type: {  }
   highlight:
     weights:
       postprocess_query: 0
     prefix: '<strong>'
     suffix: '</strong>'
     excerpt: true
+    excerpt_always: false
     excerpt_length: 256
     exclude_fields: {  }
     highlight: always
@@ -245,5 +249,7 @@ tracker_settings:
     indexing_order: fifo
 options:
   cron_limit: 50
+  delete_on_fail: true
   index_directly: true
+  track_changes_in_references: true
 server: career_resources_solr
