@@ -93,14 +93,12 @@ function workbc_tr_content_mail_entity_update(Drupal\Core\Entity\EntityInterface
             $asset_type = $entity->field_term_resource_asset_type->entity->label();
 
             //Create message for email
-            $body = <<<html
-                Hello,\n
-                A new {$asset_type}: {$title} has been added to Career Education Resources. To view, visit: {$url}\n
-                You can unsubscribe at any time by selecting this link: {$unsubscribed_url}\n
-                Thank you,\n
-                The WorkBC.ca Team
-                https://www.workbc.ca\n
-            html;
+            $body = "Hello,\n\n";
+            $body .= "A new {$asset_type}: {$title} has been added to Career Education Resources. To view, visit: {$url}\n\n";
+            $body .= "You can unsubscribe at any time by selecting this link: {$unsubscribed_url}\n\n";
+            $body .= "Thank you,\n\n";
+            $body .= "The WorkBC.ca Team\n";
+            $body .= "https://www.workbc.ca\n\n";
 
             $params['from'] = "WorkBC.ca No Reply <noreply@workbc.ca>";
             $params['body'] = $body;
