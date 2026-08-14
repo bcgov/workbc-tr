@@ -131,3 +131,20 @@ function workbc_tr_content_mail_mail_alter(&$message) {
     $message['body'] = $body;
   }
 }
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function workbc_tr_content_mail_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'entity_update' || $hook == 'node_update') {
+    // update implementation order to ensure email is sent after pathauto url alias update
+    if (isset($implementations['workbc_tr_content_mail'])) {
+      // Extract module's implementation info
+      $group = $implementations['workbc_tr_content_mail'];
+      unset($implementations['workbc_tr_content_mail']);
+
+      // Append to the end so it executes last
+      $implementations['workbc_tr_content_mail'] = $group;
+    }
+  }
+}
