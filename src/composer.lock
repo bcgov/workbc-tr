@@ -118,16 +118,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.395.3",
+            "version": "3.395.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "22f2bce297541ae41ca9e03207032ede4e805ad4"
+                "reference": "0756c511a913b57ab5415db6136d8c0c250ace15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/22f2bce297541ae41ca9e03207032ede4e805ad4",
-                "reference": "22f2bce297541ae41ca9e03207032ede4e805ad4",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0756c511a913b57ab5415db6136d8c0c250ace15",
+                "reference": "0756c511a913b57ab5415db6136d8c0c250ace15",
                 "shasum": ""
             },
             "require": {
@@ -209,9 +209,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.395.3"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.395.4"
             },
-            "time": "2026-09-15T18:07:56+00:00"
+            "time": "2026-09-16T18:39:53+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -2302,16 +2302,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "11.4.6",
+            "version": "11.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "3fe867f57e51975d4b32243663c7dfd9b92d978a"
+                "reference": "093cabca228b49f5df2283fc02d7e212ce31b6e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/3fe867f57e51975d4b32243663c7dfd9b92d978a",
-                "reference": "3fe867f57e51975d4b32243663c7dfd9b92d978a",
+                "url": "https://api.github.com/repos/drupal/core/zipball/093cabca228b49f5df2283fc02d7e212ce31b6e3",
+                "reference": "093cabca228b49f5df2283fc02d7e212ce31b6e3",
                 "shasum": ""
             },
             "require": {
@@ -2483,7 +2483,7 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/11.4.6"
+                "source": "https://github.com/drupal/core/tree/11.4.7"
             },
             "funding": [
                 {
@@ -2491,11 +2491,11 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-09-03T08:08:54+00:00"
+            "time": "2026-09-16T14:39:21+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "11.4.6",
+            "version": "11.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -2539,13 +2539,13 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/11.4.6"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/11.4.7"
             },
             "time": "2026-07-09T23:23:24+00:00"
         },
         {
             "name": "drupal/core-project-message",
-            "version": "11.4.6",
+            "version": "11.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-project-message.git",
@@ -2583,29 +2583,29 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-project-message/tree/11.4.6"
+                "source": "https://github.com/drupal/core-project-message/tree/11.4.7"
             },
             "time": "2026-01-07T19:00:53+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "11.4.6",
+            "version": "11.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "e1c13e90c77d5ab2c4febe3f6b64a8afcff0ff0e"
+                "reference": "c033d0c3f0a12627e5a6c879b8a869ff268e3efe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/e1c13e90c77d5ab2c4febe3f6b64a8afcff0ff0e",
-                "reference": "e1c13e90c77d5ab2c4febe3f6b64a8afcff0ff0e",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/c033d0c3f0a12627e5a6c879b8a869ff268e3efe",
+                "reference": "c033d0c3f0a12627e5a6c879b8a869ff268e3efe",
                 "shasum": ""
             },
             "require": {
                 "asm89/stack-cors": "~v2.4.0",
                 "composer/semver": "~3.4.4",
                 "doctrine/lexer": "~3.0.1",
-                "drupal/core": "11.4.6",
+                "drupal/core": "11.4.7",
                 "egulias/email-validator": "~4.0.4",
                 "justinrainbow/json-schema": "~6.8.2",
                 "marc-mabe/php-enum": "~v4.7.2",
@@ -2661,9 +2661,9 @@
             ],
             "description": "Core and its dependencies with known-compatible minor versions. Require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/11.4.6"
+                "source": "https://github.com/drupal/core-recommended/tree/11.4.7"
             },
-            "time": "2026-09-03T08:08:54+00:00"
+            "time": "2026-09-16T14:39:21+00:00"
         },
         {
             "name": "drupal/ctools",
